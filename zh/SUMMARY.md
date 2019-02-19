@@ -15,7 +15,12 @@
     - [FAQ]()
 
 ## 工作流
-- [场景工作流](workflow/scene/ecs-scene.md) @王伟亮
+- [场景工作流](workflow/index.md) @王伟亮
+  - [场景结构](workflow/scene.md)
+  - [坐标系和变换](workflow/transform.md)
+  - [节点的层级](workflow/node-tree.md)
+  - [摄像机](workflow/camera.md)
+  - [光源](workflow/light.md)
 - [资源工作流]() @武云潇
 - [UI 工作流]() @刘雅琼
 - [脚本开发指南]() @朱旭光
@@ -27,3 +32,10 @@
 - [动画系统]() @李楠
 - [物理系统]() @李楠
 - [UI 系统]() @刘雅琼
+
+
+## CC_HIDE_IN_SUMMARY_START
+
+- [关于 Cocos 3D](getting-started/introduction.md)
+
+## CC_HIDE_IN_SUMMARY_END
