@@ -4,10 +4,9 @@
 [介绍](introduction.md) @王伟亮
 - [新手上路](helloworld.md) @申基 @王思忠
     - [关于 Cocos 3D]()
-    - [安装和启动]()
-    - [使用 Dashboard]()
-    - [Hello World]()
-    - [项目结构]()
+    - [安装和启动](getting-started\install.md)
+    - [使用 Dashboard](getting-started\dashboard.md)
+    - [第一个项目：Hello World](getting-started\helloworld.md)
     - [编辑器介绍]()
     - [配置代码编辑环境]()
     - [快速上手：制作第一个游戏]()
@@ -37,5 +36,21 @@
 ## CC_HIDE_IN_SUMMARY_START
 
 - [关于 Cocos 3D](getting-started/introduction.md)
+
+## CC_HIDE_IN_SUMMARY_END
+
+
+## CC_HIDE_IN_SUMMARY_START
+
+- [使用Dashboard](getting-started\dashboard.md)
+- [Hello World项目](getting-started\helloworld.md)
+- [安装和启动](getting-started\install.md)
+- [关于 Cocos 3D](getting-started\introduction.md)
+- [摄像机](workflow\camera.md)
+- [场景制作工作流程](workflow\index.md)
+- [光源](workflow\light.md)
+- [节点的层级](workflow\node-tree.md)
+- [场景结构](workflow\scene.md)
+- [坐标系和变换](workflow\transform.md)
 
 ## CC_HIDE_IN_SUMMARY_END
