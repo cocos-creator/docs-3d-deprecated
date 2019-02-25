@@ -26,7 +26,7 @@
 - [发布跨平台游戏]() @王伟亮
 
 ## 子系统
-- [材质系统]() @武云潇
+- [材质系统](material-system/overview.md) @武云潇
 - [粒子系统]() @朱旭光
 - [动画系统]() @李楠
 - [物理系统]() @李楠
@@ -35,7 +35,16 @@
 
 ## CC_HIDE_IN_SUMMARY_START
 
-- [关于 Cocos 3D](getting-started/introduction.md)
+- [关于 Cocos 3D](getting-started\introduction.md)
+- [Effect 语法](material-system\effect-syntax.md)
+- [材质系统总览](material-system\overview.md)
+- [Pass 可配置参数](material-system\pass-parameter-list.md)
+- [摄像机](workflow\camera.md)
+- [场景制作工作流程](workflow\index.md)
+- [光源](workflow\light.md)
+- [节点的层级](workflow\node-tree.md)
+- [场景结构](workflow\scene.md)
+- [坐标系和变换](workflow\transform.md)
 
 ## CC_HIDE_IN_SUMMARY_END
 
