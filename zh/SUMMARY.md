@@ -35,26 +35,13 @@
 
 ## CC_HIDE_IN_SUMMARY_START
 
-- [关于 Cocos 3D](getting-started\introduction.md)
-- [Effect 语法](material-system\effect-syntax.md)
-- [材质系统总览](material-system\overview.md)
-- [Pass 可配置参数](material-system\pass-parameter-list.md)
-- [摄像机](workflow\camera.md)
-- [场景制作工作流程](workflow\index.md)
-- [光源](workflow\light.md)
-- [节点的层级](workflow\node-tree.md)
-- [场景结构](workflow\scene.md)
-- [坐标系和变换](workflow\transform.md)
-
-## CC_HIDE_IN_SUMMARY_END
-
-
-## CC_HIDE_IN_SUMMARY_START
-
 - [使用Dashboard](getting-started\dashboard.md)
 - [Hello World项目](getting-started\helloworld.md)
 - [安装和启动](getting-started\install.md)
 - [关于 Cocos 3D](getting-started\introduction.md)
+- [Effect 语法](material-system\effect-syntax.md)
+- [材质系统总览](material-system\overview.md)
+- [Pass 可配置参数](material-system\pass-parameter-list.md)
 - [摄像机](workflow\camera.md)
 - [场景制作工作流程](workflow\index.md)
 - [光源](workflow\light.md)
