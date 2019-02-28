@@ -18,7 +18,7 @@
 | blendState.targets[i].<br>blendAlphaEq      | **add**, sub, rev_sub                                                            |
 | blendState.targets[i].<br>blendSrcAlpha     | **one**, zero, src_alpha_saturate,<br>src_alpha, one_minus_src_alpha,<br>dst_alpha, one_minus_dst_alpha,<br>src_color, one_minus_src_color,<br>dst_color, one_minus_dst_color,<br>constant_color, one_minus_constant_color,<br>constant_alpha, one_minus_constant_alpha |
 | blendState.targets[i].<br>blendDstAlpha     | one, **zero**, src_alpha_saturate,<br>src_alpha, one_minus_src_alpha,<br>dst_alpha, one_minus_dst_alpha,<br>src_color, one_minus_src_color,<br>dst_color, one_minus_dst_color,<br>constant_color, one_minus_constant_color,<br>constant_alpha, one_minus_constant_alpha |
-| blendState.targets[i].<br>blendColorMask    | **all**, r, g, b, a, rg, rb, ra, gb, ga, ba, rgb, rga, rba, gba                  |
+| blendState.targets[i].<br>blendColorMask    | **all**, none, r, g, b, a, rg, rb, ra, gb, ga, ba, rgb, rga, rba, gba            |
 | blendState.<br>blendColor                   | **0** (as a number) or **0x0** (as a string) or **[0, 0, 0, 0]**                 |
 | depthStencilState.<br>stencilTestFront      | true, **false**                                                                  |
 | depthStencilState.<br>stencilFuncFront      | never, less, equal, less_equal, greater, not_equal, greater_equal, **always**    |
@@ -36,6 +36,7 @@
 | depthStencilState.<br>stencilZFailOpBack    | **keep**, zero, replace, incr, incr_wrap, decr, decr_wrap, invert                |
 | depthStencilState.<br>stencilPassOpBack     | **keep**, zero, replace, incr, incr_wrap, decr, decr_wrap, invert                |
 | depthStencilState.<br>stencilRefBack        | **1** (as a number) or **0x1** (as a string) or **[0, 0, 0, 1]**                 |
+| dynamics                                    | ***empty string**, concat any of the following with '&#124;':<br>viewport, scissor, line_width, depth_bias, blend_constants,<br>depth_bounds, stencil_write_mask, stencil_compare_mask |
 | property                                    | *see the following section                                                       |
 
 ## Property
