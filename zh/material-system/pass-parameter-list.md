@@ -5,7 +5,8 @@
 
 | Name                                        | Options                                                                          |
 |:-------------------------------------------:|:--------------------------------------------------------------------------------:|
-| stage                                       | **default**                                                                      |
+| switch                                      | ***undefined**, could be any valid macro name that's not defined in the shader   |
+| stage                                       | **default**, could be the name of any stage registered in your runtime pipeline  |
 | primitive                                   | point_list, line_list, line_strip, line_loop,<br>**triangle_list**, triangle_strip, triangle_fan,<br>line_list_adjacency, line_strip_adjacency,<br>triangle_list_adjacency, triangle_strip_adjacency,<br>triangle_patch_adjacency, quad_patch_list, iso_line_list |
 | rasterizerState.<br>cullMode                | front, **back**, none                                                            |
 | depthStencilState.<br>depthTest             | **true**, false                                                                  |
@@ -36,8 +37,12 @@
 | depthStencilState.<br>stencilZFailOpBack    | **keep**, zero, replace, incr, incr_wrap, decr, decr_wrap, invert                |
 | depthStencilState.<br>stencilPassOpBack     | **keep**, zero, replace, incr, incr_wrap, decr, decr_wrap, invert                |
 | depthStencilState.<br>stencilRefBack        | **1** (as a number) or **0x1** (as a string) or **[0, 0, 0, 1]**                 |
-| dynamics                                    | **[]**, an array that contains any of the following:<br>viewport, scissor, line_width, depth_bias, blend_constants,<br>depth_bounds, stencil_write_mask, stencil_compare_mask |
+| dynamics                                    | **[]**, an array containing any of the following:<br>viewport, scissor, line_width, depth_bias, blend_constants,<br>depth_bounds, stencil_write_mask, stencil_compare_mask |
 | property                                    | *see the following section                                                       |
+
+## Switch
+指定这个 pass 的执行依赖于哪个 define, 它不应与使用到的 shader 中定义的任何 define 重名.
+这个字段默认是不存在的, 意味着这个 pass 是无条件执行的.
 
 ## Property
 properties 存储着这个 Pass 哪些 uniform 需要在 Inspector 上显示,<br>
