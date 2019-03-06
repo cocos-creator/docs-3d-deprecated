@@ -36,7 +36,7 @@
 | depthStencilState.<br>stencilZFailOpBack    | **keep**, zero, replace, incr, incr_wrap, decr, decr_wrap, invert                |
 | depthStencilState.<br>stencilPassOpBack     | **keep**, zero, replace, incr, incr_wrap, decr, decr_wrap, invert                |
 | depthStencilState.<br>stencilRefBack        | **1** (as a number) or **0x1** (as a string) or **[0, 0, 0, 1]**                 |
-| dynamics                                    | ***empty string**, concat any of the following with '&#124;':<br>viewport, scissor, line_width, depth_bias, blend_constants,<br>depth_bounds, stencil_write_mask, stencil_compare_mask |
+| dynamics                                    | **[]**, an array that contains any of the following:<br>viewport, scissor, line_width, depth_bias, blend_constants,<br>depth_bounds, stencil_write_mask, stencil_compare_mask |
 | property                                    | *see the following section                                                       |
 
 ## Property
