@@ -1,7 +1,7 @@
 # Effect 语法
 
 如果希望在引擎中实现自定义的着色效果, 需要书写自定义 Effect.<br>
-一个 Effect 文件大体可以分为两部分的内容, 一份 JSON 格式<sup>[1](#footnote-1)</sup>的流程控制清单, 和相关的 (类)GLSL 语法的 shader 片段.<br>
+一个 Effect 文件大体可以分为两部分的内容, 一份 YAML 格式的流程控制清单, 和相关的 (类)GLSL 语法的 shader 片段.<br>
 这两部分内容上相互补充, 共同构成了一个完整的渲染流程描述.
 
 ## 语法框架
@@ -33,14 +33,15 @@ Effect 系统的设计倾向于在游戏项目运行时可以方便地利用 sha
 注意如果在 shahder 中声明了 extension, 这个 extension 必须有且只有一个 define 来控制启用与否.
 
 ### numeric define tag
-对数字类型的 define, 可以这样规定它的取值范围: (这个范围在满足需求情况下越小越好, 因为和 [program key](https://github.com/cocos-creator/engine/blob/3d/cocos/renderer/core/program-lib.ts) 相关)
+对数字和字符串类型的 define, 可以在 pragma 中使用 range 和 options tag 规定它的取值范围或可用选项:
 ```glsl
-#pragma range(0, 4) NUM_POINT_LIGHTS
+#pragma define NUM_POINT_LIGHTS range([0, 4])
+#pragma define METALLIC_SOURCE options([r, g, b, a])
 ```
 
-### define code segments
-也可以通过宏直接定义代码片段, 并可多层嵌套, 如:
-```glsl
+### functional macros
+我们提供函数式预处理宏，可用于快速声明格式相近代码：
+```c
 #define DECL_CURVE_STRUCT(name) \
   uniform int u_##name##_curveMode;
 #define DECL_CURVE_STRUCT_INT(name) \
@@ -60,6 +61,3 @@ DECL_CURVE_STRUCT_INT(velocity_pos_x)
 
 ### 关于 Uniform Block
 出于性能考量, 我们规定在 shader 中所有非 sampler 的 uniform 都应以 block 形式声明, 并应满足每个 block member 16 字节对齐.
-
----
-<a name="footnote-1">[1]</a> 准确地说引擎这里使用的是 HJSON parser, 所以这部份支持如注释, 省略引号逗号等所有 HJSON 格式写法.<br>
