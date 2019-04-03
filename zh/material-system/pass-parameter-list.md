@@ -37,6 +37,9 @@
 | depthStencilState.<br>stencilZFailOpBack    | **keep**, zero, replace, incr, incr_wrap, decr, decr_wrap, invert                |
 | depthStencilState.<br>stencilPassOpBack     | **keep**, zero, replace, incr, incr_wrap, decr, decr_wrap, invert                |
 | depthStencilState.<br>stencilRefBack        | **1** (as a number) or **0x1** (as a string) or **[0, 0, 0, 1]**                 |
+| depthStencilState.<br>stencilReadMask       | *convenient setter for both front/back stencil read mask,<br>always use this for web platforms*  |
+| depthStencilState.<br>stencilWriteMask      | *convenient setter for both front/back stencil write mask,<br>always use this for web platforms* |
+| depthStencilState.<br>stencilRef            | *convenient setter for both front/back stencil ref,<br>always use this for web platforms*        |
 | dynamics                                    | **[]**, an array containing any of the following:<br>viewport, scissor, line_width, depth_bias, blend_constants,<br>depth_bounds, stencil_write_mask, stencil_compare_mask |
 | property                                    | *see the following section                                                       |
 
