@@ -27,7 +27,7 @@
 
 ## 子系统
 - [材质系统](material-system/overview.md) @武云潇
-- [粒子系统]() @朱旭光
+- [粒子系统](particle-system/overview.md) @朱旭光
 - [动画系统]() @李楠
 - [物理系统]() @李楠
 - [UI 系统]() @刘雅琼
