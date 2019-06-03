@@ -33,7 +33,7 @@
 - [材质系统](material-system/overview.md) @武云潇
 - [粒子系统](particle-system/overview.md) @朱旭光
 - [动画系统]() @李楠
-- [物理系统]() @李楠
+- [物理系统](physics/physics.md) @赖嘉鑫
 - [UI 系统](https://docs.cocos.com/creator/2.1/manual/zh/ui/) @刘雅琼
   - [多分辨率适配方案](https://docs.cocos.com/creator/2.1/manual/zh/ui/multi-resolution.html)
   - [对齐策略](https://docs.cocos.com/creator/2.1/manual/zh/ui/widget-align.html)
