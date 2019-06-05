@@ -1,19 +1,19 @@
 # Summary
 
-## 新手入门 @王伟亮
+## 新手入门
 [介绍](introduction.md)
 - [安装和启动](getting-started\install.md)
 - [快速上手：制作第一个游戏]()
 
-## 基础概念 @王伟亮
-- [场景工作流](workflow/scene/index.md)
+## 基础概念
+- [场景](workflow/scene/index.md)
   - [场景结构](workflow/scene/scene.md)
   - [坐标系和变换](workflow/scene/transform.md)
   - [节点的层级](workflow/scene/node-tree.md)
   - [摄像机](workflow/scene/camera.md)
   - [光源](workflow/scene/light.md)
 
-## 编辑器手册   @王斯杰
+## 编辑器手册
 - [快速入门](workflow/scene/index.md) 
   - [导航窗口]
   - [创建新场景]
