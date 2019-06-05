@@ -36,19 +36,18 @@ object1:
 object2:
   key2: value2
   key3: value3
-  object3:
+  nestedObject:
     key4: value4
 ```
 
-* 以 连字符+空格 开头代表数组元素
+* 以 连字符+空格 开头，表示数组元素
 
 ```yaml
-array:
-- element1:
+- arrayElement1:
     key1: value1
-- element2:
+- arrayElement2:
     key2: value2
-- element3:
+- arrayElement3:
     key3: value3
     key4: value4
 ```
@@ -140,4 +139,4 @@ CCEffect %{
 * https://en.wikipedia.org/wiki/YAML
 * https://yaml.org/spec/1.2/spec.html
 
-<a name="footnote-1">[1]</a> 标准 YAML 并不支持制表符，但在解析 effect 数据时，我们会先尝试把其中所有的制表符替换为 2 个空格，以避免偶然插入制表符带来的琐碎的麻烦。但整体上，请一定尽量避免插入制表符以获得更稳定的结果。
+<a name="footnote-1">[1]</a> 标准 YAML 并不支持制表符，但在解析 effect 数据时，我们会先尝试把其中所有的制表符替换为 2 个空格，以避免偶然插入制表符带来的琐碎的麻烦。但整体上，请一定尽量避免插入制表符来确保编译无误。
