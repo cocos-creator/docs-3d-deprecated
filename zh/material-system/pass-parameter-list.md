@@ -50,7 +50,7 @@
 这个字段默认是不存在的，意味着这个 pass 是无条件执行的。
 
 ## Priority
-指定这个 pass 的渲染优先级，数值越小越优先渲染；default 代表默认优先级 (128)，min 代表最小（0），max 代表最大（255），可结合运算符指定相对值。
+指定这个 pass 的渲染优先级，数值越小越优先渲染；default 代表默认优先级 (128)，min 代表最小（0），max 代表最大（255），可结合四则运算符指定相对值。
 
 ## Stage
 指定这个 pass 归属于管线的哪个 stage，对 forward 管线，只有 default 一个 stage。
@@ -62,10 +62,20 @@
 properties 存储着这个 Pass 哪些 uniform 需要在 Inspector 上显示,<br>
 未指定的 uniform 将由引擎在运行时根据自动分析出的数据类型给予[默认初值](#default-values)。
 
-同样地，任何字段如为默认值也都可以省掉。<sup>[1](#footnote-1)</sup><br>
+同样地，任何字段如为默认值也都可以省掉。
 
 effect 资源导入器会自动从 shader 中读取 uniform 的类型等相关信息。<br>
-但由于 GLSL 中没有 `color` 类型，所有的 `color` 类 uniform 需要在 property 中显式指定它的类型，才可以在运行时 `setProperty` 传入 `cc.color` 类型数据来设置。
+另外，各 uniform 会根据 `inspector` 属性调整在编辑器内的显示，如使用 color picker，或设置 tooltip 等。<br>
+
+为方便声明各 property 子属性，可以直接在 properties 内声明 `__metadata__` 项，所有 property 都会继承它声明的内容，如：
+```yaml
+properties:
+  __metadata__: { inspector: { visible: false } }
+  a: { value: [1, 1, 0, 0] }
+  b: { inspector: { type: color } }
+  c: { inspector: { visible: true } }
+```
+这样 uniform a 和 b 已声明的各项参数都不受影响，但全部不会显示在 inspector 上（visible 为 false），而 uniform c 还会正常显示。
 
 ## Property Param List
 | Param                     | Options                              |
@@ -85,7 +95,8 @@ effect 资源导入器会自动从 shader 中读取 uniform 的类型等相关�
 | sampler.<br>maxLOD        | **0**, **remember to override this when enabling mip filter* |
 | sampler.<br>mipLODBias    | **0**                                |
 | inspector.<br>displayName | (any string), ***property name**     |
-| inspector.<br>picker      | **vector**, color                    |
+| inspector.<br>type        | **vector**, color                    |
+| inspector.<br>visible     | **true**, false                      |
 | inspector.<br>tooltip     | (any string), ***property name**     |
 
 ## Default Values
@@ -102,9 +113,7 @@ effect 资源导入器会自动从 shader 中读取 uniform 的类型等相关�
 | sampler2D   | black, grey, white, normal, **default**  |
 | samplerCube | black-cube, white-cube, **default-cube** |
 
-对于 defines:<br>
-boolean 类型默认值为 false<br>
-number 类型默认值为 0，默认取值范围 [0, 4]。
+对于 defines：<br>
+boolean 类型默认值为 false。<br>
+number 类型默认值为 0，默认取值范围 [0, 3]。<br>
 string 类型默认值为 options 数组第一个元素。
-
-<a name="footnote-1">[1]</a> 在引擎实际的 builtin effect 文件中，所有的 property 字段都没有被省略，这只是为了起更好的参考作用。<br>

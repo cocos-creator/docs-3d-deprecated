@@ -7,11 +7,11 @@
 EffectAsset 是由用户书写的着色流程描述文件, 详细结构及书写指南可以参考[这里](effect-syntax.md).<br>
 这里主要介绍引擎读取 EffectAsset 资源的流程:
 
-在编辑器加载 EffectAsset 时, 会对用户书写的内容做一次预处理, 替换 GL 字符串为管线内常量, 提取 shader 信息, 转换 shader 版本等.<br>
-还以 skybox.effect 为例, 预处理输出的 EffectAsset 结构是这样的:
+在编辑器导入 EffectAsset 时, 会对用户书写的内容做一次预处理, 替换 GL 字符串为管线内常量, 提取 shader 信息, 转换 shader 版本等.<br>
+还以 builtin-skybox.effect 为例, 预处理输出的 EffectAsset 结构大致是这样的:
 ```json
   {
-    "name": "builtin-effect-skybox",
+    "name": "builtin-skybox",
     "techniques": [{"passes":[{"rasterizerState":{"cullMode":0}, "depthStencilState":{"depthTest":true, "depthWrite":false}, "program":"builtin-effect-skybox|sky-vs:vert|sky-fs:frag", "properties":{"cubeMap":{"type":32, "value":"default-cube"}}, "priority":10}]}],
     "shaders": [
       {
