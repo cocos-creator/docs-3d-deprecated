@@ -6,39 +6,40 @@
 - [快速上手：制作第一个游戏]()
 
 ## 基础概念
-- [场景](workflow/scene/index.md)
-  - [场景结构](workflow/scene/scene.md)
-  - [坐标系和变换](workflow/scene/transform.md)
-  - [节点的层级](workflow/scene/node-tree.md)
-  - [摄像机](workflow/scene/camera.md)
-  - [光源](workflow/scene/light.md)
+- [坐标系](concepts/scene/index.md)
+- [场景](concepts/scene/index.md)
+  - [场景结构](concepts/scene/scene.md)
+  - [坐标系和变换](concepts/scene/transform.md)
+  - [节点的层级](concepts/scene/node-tree.md)
+  - [摄像机](concepts/scene/camera.md)
+  - [光源](concepts/scene/light.md)
 
 ## 编辑器手册
-- [快速入门](workflow/scene/index.md) 
-  - [导航窗口]
-  - [创建新场景]
-  - [在场景中放置组件]
-  - [灯光等设置]
-  - [构建与运行]
-- [场景](workflow/scene/index.md)
-  - [环境光]
-  - [阴影]
-  - [天空盒]
-- [节点]
-- [组件](workflow/scene/index.md)
-  - [AudioSourceComponent]
-  - [ModelComponent]
-  - [SkinningModelComponent]
-  - [CameraComponent]
-  - [DirectionalLightComponent]
-  - [SphereLightComponent]
-  - [SpotLightComponent]
-  - [AnimationComponent]
-  - [BillboardComponent]
-  - [LineComponent]
-  - [ParticleSystemComponent]
-  - [BoxColliderComponent]
-  - [RigidBodyComponent]
+- [快速入门]() 
+  - [导航窗口]()
+  - [创建新场景]()
+  - [在场景中放置组件]()
+  - [灯光等设置]()
+  - [构建与运行]()
+- [场景]()
+  - [环境光]()
+  - [阴影]()
+  - [天空盒]()
+- [节点]()
+- [组件]()
+  - [AudioSourceComponent]()
+  - [ModelComponent]()
+  - [SkinningModelComponent]()
+  - [CameraComponent]()
+  - [DirectionalLightComponent]()
+  - [SphereLightComponent]()
+  - [SpotLightComponent]()
+  - [AnimationComponent]()
+  - [BillboardComponent]()
+  - [LineComponent]()
+  - [ParticleSystemComponent]()
+  - [BoxColliderComponent]()
+  - [RigidBodyComponent]()
   - [UI Components](ui-system/components/index.md) @刘雅琼
     - [渲染组件参考](ui-system/components/index.md)
       - [SpriteComponent 参考](ui-system/components/sprite.md)
@@ -143,5 +144,88 @@
 - [大小模块(SizeOvertimeModule)](particle-system/size-module.md)
 - [贴图动画模块(TextureAnimationModule)](particle-system/texture-animation-module.md)
 - [速度模块(VelocityOvertimeModule)](particle-system/velocity-module.md)
+
+## CC_HIDE_IN_SUMMARY_END
+
+
+## CC_HIDE_IN_SUMMARY_START
+
+- [使用Dashboard](getting-started\dashboard.md)
+- [Hello World项目](getting-started\helloworld.md)
+- [安装和启动](getting-started\install.md)
+- [关于 Cocos 3D](getting-started\introduction.md)
+- [Effect 语法](material-system\effect-syntax.md)
+- [材质系统总览](material-system\overview.md)
+- [Pass 可配置参数](material-system\pass-parameter-list.md)
+- [YAML 101](material-system\yaml-101.md)
+- [颜色模块(ColorOvertimeModule)](particle-system\color-module.md)
+- [发射器模块(ShapeModule)](particle-system\emitter.md)
+- [加速度模块(ForceOvertimeModule)](particle-system\force-module.md)
+- [限速模块(LimitVelocityOvertimeModule)](particle-system\limit-velocity-module.md)
+- [主模块(ParticleSystemComponent)](particle-system\main-module.md)
+- [粒子系统模块](particle-system\module.md)
+- [Particle System Overview](particle-system\overview.md)
+- [Particle Renderer](particle-system\renderer.md)
+- [旋转模块(RotationOvertimeModule)](particle-system\rotation-module.md)
+- [大小模块(SizeOvertimeModule)](particle-system\size-module.md)
+- [贴图动画模块(TextureAnimationModule)](particle-system\texture-animation-module.md)
+- [速度模块(VelocityOvertimeModule)](particle-system\velocity-module.md)
+- [物理简介](physics\physics.md)
+- [基本图像渲染](ui-system\components\index.md)
+- [Label 组件参考](ui-system\components\label.md)
+- [Mask（遮罩）组件参考](ui-system\components\mask.md)
+- [Sprite 组件参考](ui-system\components\sprite.md)
+- [资源](workflow\resources\index.md)
+- [UI 资源](workflow\resources\ui\index.md)
+- [精灵帧资源（SpriteFrame）](workflow\resources\ui\spriteFrame\spriteFrame.md)
+- [摄像机](workflow\scene\camera.md)
+- [场景](workflow\scene\index.md)
+- [光源](workflow\scene\light.md)
+- [节点的层级](workflow\scene\node-tree.md)
+- [场景结构](workflow\scene\scene.md)
+- [坐标系和变换](workflow\scene\transform.md)
+- [UI 结构](workflow\ui\index.md)
+
+## CC_HIDE_IN_SUMMARY_END
+
+
+## CC_HIDE_IN_SUMMARY_START
+
+- [坐标系](concepts\coord\index.md)
+- [摄像机](concepts\scene\camera.md)
+- [场景](concepts\scene\index.md)
+- [光源](concepts\scene\light.md)
+- [节点的层级](concepts\scene\node-tree.md)
+- [场景结构](concepts\scene\scene.md)
+- [坐标系和变换](concepts\scene\transform.md)
+- [使用Dashboard](getting-started\dashboard.md)
+- [Hello World项目](getting-started\helloworld.md)
+- [安装和启动](getting-started\install.md)
+- [关于 Cocos 3D](getting-started\introduction.md)
+- [Effect 语法](material-system\effect-syntax.md)
+- [材质系统总览](material-system\overview.md)
+- [Pass 可配置参数](material-system\pass-parameter-list.md)
+- [YAML 101](material-system\yaml-101.md)
+- [颜色模块(ColorOvertimeModule)](particle-system\color-module.md)
+- [发射器模块(ShapeModule)](particle-system\emitter.md)
+- [加速度模块(ForceOvertimeModule)](particle-system\force-module.md)
+- [限速模块(LimitVelocityOvertimeModule)](particle-system\limit-velocity-module.md)
+- [主模块(ParticleSystemComponent)](particle-system\main-module.md)
+- [粒子系统模块](particle-system\module.md)
+- [Particle System Overview](particle-system\overview.md)
+- [Particle Renderer](particle-system\renderer.md)
+- [旋转模块(RotationOvertimeModule)](particle-system\rotation-module.md)
+- [大小模块(SizeOvertimeModule)](particle-system\size-module.md)
+- [贴图动画模块(TextureAnimationModule)](particle-system\texture-animation-module.md)
+- [速度模块(VelocityOvertimeModule)](particle-system\velocity-module.md)
+- [物理简介](physics\physics.md)
+- [基本图像渲染](ui-system\components\index.md)
+- [Label 组件参考](ui-system\components\label.md)
+- [Mask（遮罩）组件参考](ui-system\components\mask.md)
+- [Sprite 组件参考](ui-system\components\sprite.md)
+- [资源](workflow\resources\index.md)
+- [UI 资源](workflow\resources\ui\index.md)
+- [精灵帧资源（SpriteFrame）](workflow\resources\ui\spriteFrame\spriteFrame.md)
+- [UI 结构](workflow\ui\index.md)
 
 ## CC_HIDE_IN_SUMMARY_END
