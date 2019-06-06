@@ -34,7 +34,9 @@ Effect 系统的设计倾向于在游戏项目运行时可以方便地利用 sha
 编辑器会在加载资源时收集所有在 shader 中出现的 defines, 然后引擎在运行时动态地将需要的声明加入 shader 内容.<br>
 所以要使用这些预处理宏, 只需要如上面的例子中一样, 在 shader 中直接进行逻辑判断即可.<br>
 所有的 define 都会被序列化到 inspector 上, 供用户调整.<br>
-注意如果在 shader 中声明了 extension, 这个 extension 必须有且只有一个 define 来控制启用与否.
+注意相关写法的一些限制:
+1. 如果在 shader 中声明了 extension, 这个 extension 必须有且只有一个 define 来控制启用与否.
+2. 运行时会显式定义所有 shader 中出现的宏，所以请不要使用 #ifdef 或 #if defined() 这样的形式做判断.
 
 ### macro tags
 虽然我们会自动识别所有出现在预处理分支逻辑中 (#ifdef) 的宏定义，但有时同样利用宏定义可以方便地做一些其他事情，如：
