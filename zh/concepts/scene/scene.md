@@ -7,3 +7,7 @@ Cocos 3D 在 Creator 的 ECS 实体组件系统框架上增加了3D场景结构�
 ECS 与 3D场景结构的关系，如下图所示：
 
 ![ecs & scene](scene/ecs-scene.jpg)
+
+---
+
+继续前往 [节点](node.md) 说明文档。
