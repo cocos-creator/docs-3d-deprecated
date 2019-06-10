@@ -5,9 +5,9 @@
 - [安装和启动](getting-started\install.md)
 - [快速上手：制作第一个游戏]()
 
-## 基础概念
-- [坐标系](concepts/coord/index.md)
+## 引擎模块
 - [场景](concepts/scene/index.md)
+  - [坐标系](concepts/scene/coord.md)
   - [场景结构](concepts/scene/scene.md)
   - [节点](concepts/scene/node.md)
   - [相机](concepts/scene/camera.md)
@@ -28,9 +28,10 @@
   - [限速模块(LimitVelocityOvertimeModule)](particle-system/limit-velocity-module.md)
   - [加速度模块(ForceOvertimeModule)](particle-system/force-module.md)
   - [贴图动画模块(TextureAnimationModule)](particle-system/texture-animation-module.md)
-- [动画]()
+- [动画](animation/index.md)
 - [物理](physics/physics.md)
 - [UI]()
+- [脚本指南]()
 
 ## 编辑器手册
 - [快速入门](concepts/scene/index.md) 
@@ -112,7 +113,6 @@
 - [发布跨平台游戏]() @王伟亮
 
 ## 子系统
-- [动画系统]() @李楠
 - [UI 系统](https://docs.cocos.com/creator/2.1/manual/zh/ui/) @刘雅琼
   - [多分辨率适配方案](https://docs.cocos.com/creator/2.1/manual/zh/ui/multi-resolution.html)
   - [对齐策略](https://docs.cocos.com/creator/2.1/manual/zh/ui/widget-align.html)
@@ -139,10 +139,24 @@
 
 ## CC_HIDE_IN_SUMMARY_START
 
+- [创建Animation组件和动画剪辑](animation/animation-clip.md)
+- [编辑动画序列](animation/animation-curve.md)
+- [添加动画事件](animation/animation-event.md)
+- [关于 Animation](animation/animation.md)
+- [使用脚本控制动画](animation/scripting-animation.md)
+- [编辑序列帧动画](animation/sprite-animation.md)
+- [编辑时间曲线](animation/time-curve.md)
+- [资源工作流](asset-workflow/index.md)
 - [坐标系和变换](concepts/scene/transform.md)
+- [资源管理器](getting-started/assets.md)
 - [使用Dashboard](getting-started/dashboard.md)
 - [Hello World项目](getting-started/helloworld.md)
+- [层级管理器](getting-started/hierarchy.md)
+- [Cocos 3D 入门](getting-started/index.md)
+- [属性检查器](getting-started/inspector.md)
 - [安装和启动](getting-started/install.md)
 - [关于 Cocos 3D](getting-started/introduction.md)
+- [场景编辑器](getting-started/scene.md)
+- [发布工作流](publish-workflow/index.md)
 
 ## CC_HIDE_IN_SUMMARY_END
