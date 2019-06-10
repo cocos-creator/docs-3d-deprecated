@@ -8,6 +8,7 @@
 
 - [Cocos 3D 入门](getting-started/index.md)
 - [资源工作流程](asset-workflow/index.md)
+- [发布工作流程](publish-workflow/index.md)
 - [场景制作工作流程](content-workflow/index.md)
 - [图像和渲染](render/index.md)
 - [UI 系统](ui/index.md)
