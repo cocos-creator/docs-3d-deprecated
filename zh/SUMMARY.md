@@ -30,6 +30,9 @@
   - [贴图动画模块(TextureAnimationModule)](particle-system/texture-animation-module.md)
 - [动画](animation/index.md)
 - [物理](physics/physics.md)
+  - [物理选项](physics/physics-item.md)
+  - [物理组件](physics/physics-component.md)
+  - [物理使用](physics/physics-use.md)
 - [UI]()
 - [脚本指南]()
 

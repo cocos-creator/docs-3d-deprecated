@@ -14,7 +14,7 @@
 - [UI 系统](ui/index.md)
 - [编程开发指南](scripting/index.md)
 - [动画系统](animation/index.md)
-- [碰撞系统](physics/collision/index.md)
+- [物理系统](physics/physics.md)
 - [音乐和音效](audio/index.md)
 - [发布跨平台游戏](publish/index.md)
 - [扩展编辑器](extension/index.md)
