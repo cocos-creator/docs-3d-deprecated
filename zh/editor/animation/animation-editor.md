@@ -1,4 +1,4 @@
-
+# 熟悉动画编辑器
 动画编辑器一共可以划分为 6 个主要部分。
 
 ![animation-editor](animation-editor/main.jpg)
@@ -12,14 +12,14 @@ f. [属性轨道关键帧预览](###f.属性轨道关键帧预览)
 
 ### a.工具栏
 这里负责显示一些常用功能按钮
-1. 移动到第一帧(Ctrl / Cmd + Left)![jump to first frame](animation-editor/menu_first.png)： 点击移动到第一帧。
+1. 移动到第一帧(`Ctrl / Cmd + Left`)![jump to first frame](animation-editor/menu_first.png)： 点击移动到第一帧。
 2. 移动到前一帧(Left)![jump to previous frame](animation-editor/menu_prev.png)： 点击移动到前一帧。
-3. 播放/暂停(Ctrl / Cmd + P)![play/pause](animation-editor/menu_play.png)：点击播放/暂停当前动画。
-4. 移动到下一帧(Right)![jump to next frame](animation-editor/menu_next.png)： 点击移动到下一帧。
-5. 移动到最后一帧(Ctrl / Cmd + Right)![jump to last frame](animation-editor/menu_last.png): 移动到有效范围的最后一帧。
-6. 停止动画(Ctrl / Cmd + S)![stop](animation-editor/menu_stop.png)：点击停止当前动画，停止后将会移动到第一帧。
+3. 播放/暂停(`Ctrl / Cmd + P`)![play/pause](animation-editor/menu_play.png)：点击播放/暂停当前动画。
+4. 移动到下一帧(`Right`)![jump to next frame](animation-editor/menu_next.png)： 点击移动到下一帧。
+5. 移动到最后一帧(`Ctrl / Cmd + Right`)![jump to last frame](animation-editor/menu_last.png): 移动到有效范围的最后一帧。
+6. 停止动画(`Ctrl / Cmd + S`)![stop](animation-editor/menu_stop.png)：点击停止当前动画，停止后将会移动到第一帧。
 7. 控制时间轴显示刻度和当前时间![time](animation-editor/menu_time.png)：
-   - 其中的 time 是一个可以点击的按钮，点击可以切换时间轴的刻度显示，默认是 `00-00`的方式，可以切换为 `frame`的方式。具体关于时间轴刻度可以参见[时间轴的刻度单位表示方式](###时间轴与事件区域)。
+   - 其中的 `time` 是一个可以点击的按钮，点击可以切换时间轴的刻度显示，默认是 `00-00`的方式，可以切换为 `frame`的方式。具体关于时间轴刻度可以参见[时间轴的刻度单位表示方式](###时间轴与事件区域)。
    - 后面的输入框内是显示当前时间控制线的具体时间，也可以手动输入来使当前时间控制线调整到对应时间，支持直接输入 `frame` 或者是 `00-00` 的时间刻度。
 8. 调整默认关键帧间隔数与排列关键帧按钮![spacing](animation-editor/menu_spacing.png)：填入的关键帧间隔数将作为有多个关键帧同时生成时取做间隔数（例如：制作帧动画一次性拖入多张图片，此时添加的多个关键帧之间的间隔会取该值），右边的类似于棋盘的按钮则是用于排列选中的关键帧，选中的关键帧将以第一个帧为基准，以输入框内的数值作为间隔依次排列。
 9. 添加事件关键帧![add event](animation-editor/menu_event.png)： 点击将会在当前时间控制线的位置添加事件关键帧。
