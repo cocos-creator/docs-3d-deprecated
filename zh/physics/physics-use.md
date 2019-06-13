@@ -80,35 +80,55 @@ private onCollision (type: string, event: ICollisionEvent) {
 
 #### 分组
 
-`console.log(Collider.getGroup());`
-获取所在的分组，默认为 0，即 1 << 0 表达式中的 0。
+- 设置位
 
-`Collider.setGroup(1);`
-设置分组为 1，组的范围为 0 到 31，此接口只能设置在一个组中。
+    `console.log(Collider.getGroup());`
+
+    获取分组位，默认为 0，即 1 << 0 表达式中的 0。
+
+    `Collider.setGroup(1);`
+
+    设置分组位，将会进行位操作，即 1 << v。
+
+    **注：使用以上接口表示只存在一个组中**。
+
+- 设置值
+
+    `const group = 1 << 1 + 1 << 2;`
+    `Collider.setCollisionFilterGroup(group);`
+
+    设置分组值，十进制为 6，二进制为 110，可以看作这个group是 1 或 2 的。
+
+    `Collider.getCollisionFilterGroup()`
+
+    获取分组值，此示例中为 6 。
 
 #### 掩码
 
-``console.log(Collider.getMask());``
-获取检测的掩码值，默认为 1，即 1 << 0 表达式的结果。
+- 设置位
 
-`Collider.setMask(1);`
-设置掩码值，这相对于进行了一个这样的操作：mask = 1 << 1。
+    `Collider.setMask(1);`
 
-`Collider.addMask(2);`
-添加某个组的检测，这相对于进行了一个这样的操作：mask += 1 << 2。
+    设置掩码位，此示例中将会把掩码值的第 1 位写为 1，其它位写为 0
 
-#### 更加灵活的设置分组与掩码的接口
+    `Collider.addMask(2);`
 
-**注：如果你非常熟悉可以考虑使用此接口**。
+    添加掩码位，这相对于进行了一个这样的操作：mask += 1 << 2，可以填入需要检测的组。
 
-`const group = 1 << 1 + 1 << 2;`
-十进制为 6，二进制为 110，可以看作这个group是 1 或 2 的。
+    `Collider.removeMask(2);`
 
-`const mask = 1 << 0 + 1 << 1;`
-十进制为 3， 二进制为 011，可以看作这个mask检测的组为 0 或 1 的。
+    移除掩码位，这相对于进行了一个这样的操作：mask -= 1 << 2，可以填入不需要检测的组。
 
-`Collider.setCollisionFilter(group, mask);`
-这将直接设置 CollisionFilterGroup 和 CollisionFilterMask。
+- 设置值
+
+    `console.log(Collider.getCollisionFilterMask());`
+
+    获取掩码值，默认为 1，即 1 << 0 表达式的结果。
+
+    `const mask = 1 << 2 + 1 << 3;`
+    `Collider.setCollisionFilterMask(mask);`
+
+    设置掩码值，十进制位为 12，二进制为 1100，表示检测的为 2 或 3 组的。
 
 **注：灵活使用分组和掩码可以减少额外检测的消耗**。
 
