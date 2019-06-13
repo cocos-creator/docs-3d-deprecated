@@ -28,7 +28,7 @@
   - [限速模块(LimitVelocityOvertimeModule)](particle-system/limit-velocity-module.md)
   - [加速度模块(ForceOvertimeModule)](particle-system/force-module.md)
   - [贴图动画模块(TextureAnimationModule)](particle-system/texture-animation-module.md)
-- [动画](animation/index.md)
+- [动画](engine/animation/index.md)
 - [物理](physics/physics.md)
   - [物理选项](physics/physics-item.md)
   - [物理组件](physics/physics-component.md)
