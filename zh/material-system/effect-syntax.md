@@ -5,7 +5,7 @@
 这两部分内容上相互补充, 共同构成了一个完整的渲染流程描述.
 
 ## 语法框架
-以 skybox.effect 为例, 这个 Effect 文件的内容大致是这样:
+以 builtin-skybox.effect 为例, 这个 Effect 文件的内容大致是这样:
 
 ![effect](effect.png)
 
@@ -48,7 +48,7 @@ float metallic = texture(pbrMap, uv).METALLIC_SOURCE;
 | Tag     | Effect |
 |:-------:|:------:|
 | range   | 针对连续数字类型的宏定义，显式指定它的取值范围，范围应当控制到最小，有利于运行时的 shader 管理 |
-| options | 针对有清晰选项的宏定义，显示指定它的可用选项 |
+| options | 针对有清晰选项的宏定义，显式指定它的可用选项 |
 | default | 针对运行时可能取任意值的宏定义，显式指定它的默认值 |
 
 ```glsl
@@ -79,7 +79,12 @@ DECL_CURVE_STRUCT_INT(velocity_pos_x)
 由于 WebGL 1 仅支持 GLSL 100 标准语法, 在预处理阶段会提供 300 es 转 100 的 fallback shader, 用户基本不需关心这层变化.<br>
 但注意目前的 fallback 只支持一些基本的格式转换，如果使用了 300 es 独有的 shader 函数（texelFetch、textureGrad 等）或 extension，我们推荐根据 \_\_VERSION__ 宏定义判断 shader 版本，自行实现更稳定的 fallback。
 
-### 关于 Uniform Block
-我们规定在 shader 中所有非 sampler 的 uniform 都应以 block 形式声明, 但因 WebGL2 只支持 std140 的布局，<br>
-当 block member 不是 16 字节对齐时（长度小于 vec4）GL 会自动做 padding 补齐，这与渲染器底层的 assumption 相背，<br>
-因此我们会在资源导入期做 UBO 的布局检测，对会引起自动 padding 的 UBO 声明生成警告。
+### 关于 UBO 内存布局
+首先结论是，我们规定在 shader 中所有非 sampler 的 uniform 都应以 block 形式声明，且不应出现 vec3 和任何长度小于 vec4 的数组类型，这两个规则都会在资源导入期做对应检查。
+
+这可能听起来有些过分严格，但背后有非常务实的考量：<br>
+* UBO 是渲染管线内要做到高效数据复用的唯一基本单位，离散声明已不是一个选项；
+* WebGL2 的 UBO 只支持 std140 布局，它遵守一套比较原始的 padding 规则，可以简单总结为对所有 vec3，任意类型的数组和结构体，都会逐元素补齐至 vec4，更详细的可以参考<sup id="a1">[1](#f1)</sup>。<br>这意味着大量的空间浪费，且某些设备的驱动实现也并不完全符合此标准<sup id="a2">[2](#f2)</sup>，因此我们目前选择限制这部分功能的使用，以帮助排除一部分非常隐晦的运行时问题。<br>
+
+<b id="f1">[1]</b> [OpenGL 4.5, Section 7.6.2.2, page 137](http://www.opengl.org/registry/doc/glspec45.core.pdf#page=159) [↩](#a1)<br>
+<b id="f2">[2]</b> [Interface Block - OpenGL Wiki](https://www.khronos.org/opengl/wiki/Interface_Block_(GLSL)#Memory_layout) [↩](#a2)
