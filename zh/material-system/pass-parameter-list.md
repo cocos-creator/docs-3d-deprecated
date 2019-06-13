@@ -65,7 +65,7 @@ properties 存储着这个 Pass 哪些 uniform 需要在 Inspector 上显示,<br
 同样地，任何字段如为默认值也都可以省掉。
 
 effect 资源导入器会自动从 shader 中读取 uniform 的类型等相关信息。<br>
-另外，各 uniform 会根据 `inspector` 属性调整在编辑器内的显示，如使用 color picker，或设置 tooltip 等。<br>
+另外，各 uniform 会根据 `inspector` 属性调整在编辑器内的显示，如使用 color picker，或设置 tooltip 等，具体见 [可配置列表](#property-param-list)。<br>
 
 为方便声明各 property 子属性，可以直接在 properties 内声明 `__metadata__` 项，所有 property 都会继承它声明的内容，如：
 ```yaml
