@@ -11,7 +11,7 @@
 - [发布工作流程](publish-workflow/index.md)
 - [场景制作工作流程](content-workflow/index.md)
 - [图像和渲染](render/index.md)
-- [UI 系统](ui/index.md)
+- [UI 系统](ui-system/components/editor/index.md)
 - [编程开发指南](scripting/index.md)
 - [动画系统](animation/index.md)
 - [物理系统](physics/physics.md)
