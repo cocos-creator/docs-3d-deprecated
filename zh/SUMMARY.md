@@ -67,8 +67,9 @@
   - [BillboardComponent]()
   - [LineComponent]()
   - [ParticleSystemComponent]()
-  - [BoxColliderComponent]()
-  - [RigidBodyComponent]()<!--  -->
+  - [BoxColliderComponent](physics/physics-component.md)
+  - [SphereColliderComponent](physics/physics-component.md)
+  - [RigidBodyComponent](physics/physics-component.md)
   - [UI 组件](ui-system/components/editor/index.md) @刘雅琼
     - [UI 渲染组件](ui-system/components/editor/render-component.md)
       - [SpriteComponent 参考](ui-system/components/editor/sprite.md)
