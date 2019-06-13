@@ -10,7 +10,8 @@
 
 ![add-component](animation-clip/add-component.png)
 
-具体 Animation 组件的参数使用可以参见[Animation组件参考]()
+具体 Animation 组件的参数使用可以参见[Animation组件参考](./../../engine/animation/animation-component.md)
+
 ## 创建与挂载动画剪辑
 
 现在节点上已经有了 Animation 组件了，但是还没有相应的动画剪辑数据，动画剪辑也有两种创建方式：
