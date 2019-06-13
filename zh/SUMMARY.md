@@ -95,7 +95,15 @@
   - [特效]()
   - [光源]()
   - [摄像机]()
-
+- [动画系统](editor/animation/index.md)
+  - [关于 Animation](editor/animation/animation.md)
+  - [熟悉动画编辑器](editor/animation/animation-editor.md)
+  - [创建 Animation 组件和动画剪辑](editor/animation/animation-create.md)
+  - [编辑动画序列](editor/animation/animation-clip.md)
+  - [编辑帧动画](editor/animation/sprite-animation.md)
+  - [编辑动画曲线](editor/animation/animation-curve.md)
+  - [添加动画事件](editor/animation/animation-event.md)
+  - [使用脚本控制动画](editor/animation/scripting-animation.md)
 ## -------------------------------
 
 ## 新手入门
