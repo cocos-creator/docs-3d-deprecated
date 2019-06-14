@@ -40,23 +40,30 @@ Effect 系统的设计倾向于在游戏项目运行时可以方便地利用 sha
 
 ### macro tags
 虽然我们会自动识别所有出现在预处理分支逻辑中 (#ifdef) 的宏定义，但有时同样利用宏定义可以方便地做一些其他事情，如：
-```
+```c
 float metallic = texture(pbrMap, uv).METALLIC_SOURCE;
+
+#if LAYERS == 4
+  // ...
+#elif LAYERS == 5
+  // ...
+#endif
 ```
-针对这类没有在预处理分支逻辑中出现的宏定义，需要选择一个合适的 tag 显式声明：<br>
+针对这类没有在预处理分支逻辑中出现，或任何可能取多个值的宏定义，需要选择一个合适的 tag 显式声明：<br>
 
-| Tag     | Effect |
-|:-------:|:------:|
-| range   | 针对连续数字类型的宏定义，显式指定它的取值范围，范围应当控制到最小，有利于运行时的 shader 管理 |
-| options | 针对有清晰选项的宏定义，显式指定它的可用选项 |
-| default | 针对运行时可能取任意值的宏定义，显式指定它的默认值 |
+| Tag     | Parameter | Default | Effect |
+|:-------:|:---------:|:-------:|:------:|
+| range   | 一个长度为 2 的数组，<br>首元素为最小值，末元素为最大值 | [0, 3] | 针对连续数字类型的宏定义，显式指定它的取值范围，<br>范围应当控制到最小，有利于运行时的 shader 管理 |
+| options | 一个任意长度的数组，<br>每个元素都是一个可能的取值 | 如未显示声明则不会定义任何宏 | 针对有清晰选项的宏定义，<br>显式指定它的可用选项 |
 
-```glsl
-#pragma define NUM_SPOT_LIGHTS range([0, 4])
+比如下面这样的声明：
+```c
+#pragma define LAYERS range([4, 5])
 #pragma define METALLIC_SOURCE options([r, g, b, a])
-#pragma define JOINTS default(30)
 ```
-每个 tag 只有一个参数，支持完整 YAML 语法.
+一个是名为 LAYERS 的宏定义，它在运行时可能的取值范围为 [4, 5]；<br>
+另一个是名为 METALLIC_SOURCE 的宏定义，它在运行时可能的取值为 'r', 'g', 'b', 'a' 四种。<br>
+注意语法中每个 tag 只有一个参数，这个参数可以直接用 YAML 语法去指定。
 
 ### functional macros
 由于 WebGL1 不原生支持，我们将函数式预处理宏提供为资源导入期的功能：
