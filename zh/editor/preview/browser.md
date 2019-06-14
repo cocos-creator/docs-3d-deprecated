@@ -33,7 +33,7 @@
 project-folder
  |--assets
  |--build
- |--preview-templates
+ |--preview-template
         |--index.html
 ```
 
