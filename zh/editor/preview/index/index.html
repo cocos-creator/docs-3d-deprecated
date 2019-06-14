@@ -1,0 +1,83 @@
+<html>
+    <head>
+        <link rel="icon" href="./favicon.ico" />
+        <meta charset="utf-8" />
+        <title>{{title}}</title>
+        <meta
+            name="viewport"
+            content="width=device-width,user-scalable=no,initial-scale=1, minimum-scale=1,maximum-scale=1"
+        />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="full-screen" content="yes" />
+        <meta name="screen-orientation" content="portrait" />
+        <meta name="x5-fullscreen" content="true" />
+        <meta name="360-fullscreen" content="true" />
+        <meta name="renderer" content="webkit" />
+        <meta name="force-rendering" content="webkit" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+        <link rel="stylesheet" type="text/css" href="./index.css" />
+    </head>
+    <body>
+        <div class="toolbar">
+            <div class="item">
+                <select id="opts-device" value="{{config.device}}">
+                    {{each devices value key}}
+                        <option value="{{key}}">{{value.name}}</option>
+                    {{/each}}
+                </select>
+            </div>
+            <div class="item"><button id="btn-rotate"  class="{{config.rotate ? 'checked' : ''}}">Rotate</button></div>
+            <span style="font-size: small;" class="item">Debug Mode:</span>
+            <div class="item">
+                <select id="opts-debug-mode" value="{{config.debugMode}}">
+                    <option value="0">None</option>
+                    <option value="1">Info</option>
+                    <option value="2">Warn</option>
+                    <option value="3">Error</option>
+                    <option value="4">Info For Web Page</option>
+                    <option value="5">Warn For Web Page</option>
+                    <option value="6">Error For Web Page</option>
+                </select>
+            </div>
+            <div class="item"><button id="btn-show-fps" class="{{config.showFps ? 'checked' : ''}}">Show FPS</button></div>
+            <div class="item">
+                <span style="font-size: small;" class="item">FPS:</span><input id="input-set-fps" type="number" value="{{config.fps}}" />
+            </div>
+            <div style="margin-right: 0px;" class="item">
+                <button id="btn-pause">Pause</button><button id="btn-step">Step</button>
+            </div>
+            <div class="item"><button id="btn-step" style="display: none;">Step</button></div>
+            <div class="item"><button id="btn-recompile">Recompile</button></div>
+        </div>
+        <div class="error" id="error">
+            <div class="title">Error</div>
+            <div class="error-main"></div>
+        </div>
+        <div id="content" class="content">
+            <div class="contentWrap">
+                <div id="GameDiv" class="wrapper">
+                    <div id="GameContainer"><canvas id="GameCanvas"></canvas></div>
+                    <div id="splash">
+                        <div class="progress-bar stripes"><span></span></div>
+                    </div>
+                    <div id="bulletin">
+                        <div id="sceneIsEmpty" class="inner">{{tip_sceneIsEmpty}}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="/node_modules/@editor/cocos-script/systemjs.js"></script>
+        <script src="/modular.js"></script>
+        <script src="/socket.io/socket.io.js"></script>
+        <script src="/init.js"></script>
+        <script name="setting" src="/setting.js"></script>
+        <script src="/boot.js"></script>
+        {{if enableDebugger}}
+            <script src="/node_modules/eruda/eruda.min.js"></script>
+            <script>
+                eruda.init();
+            </script>
+        {{/if}}
+        <script src="/engine/bin/.cache/dev/__quick_compile__.js"></script>
+    </body>
+</html>
