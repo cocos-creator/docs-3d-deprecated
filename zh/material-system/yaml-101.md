@@ -2,66 +2,64 @@
 我们使用的是符合 YAML 1.2 标准的解析器，这意味着首先它是与 JSON 完全兼容的，直接书写 JSON 完全不会有问题：
 
 ```yaml
-CCEffect %{
-  "techniques":
+"techniques":
+  [{
+    "passes":
     [{
-      "passes":
-      [{
-        "vert": "skybox-vs",
-        "frag": "skybox-fs",
-        "rasterizerState":
-        {
-          "cullMode": "none"
-        }
-        # ...
-      }]
+      "vert": "skybox-vs",
+      "frag": "skybox-fs",
+      "rasterizerState":
+      {
+        "cullMode": "none"
+      }
+      # ...
     }]
-}%
+  }]
 ```
 
-当然这也意味着繁琐的语法，所以 YAML 提供了一些更简洁的数据表示方式：
+当然这也意味着繁琐的语法，所以 YAML 提供了一些更简洁的数据表示方式：<br>
+（如有疑问可复制代码示例到任何 [在线 YAML JSON 转换器](https://codebeautify.org/yaml-to-json-xml-csv) 观察生成的数据）
 
 * 所有的引号和逗号都可以省略
 
 ```yaml
-key1: string-value1
-key2: string-value2
+key1: 1
+key2: unquoted string
 ```
 
 * 行首的空格缩进数量代表数据的层级<sup id="a1">[1](#f1)</sup>
 
 ```yaml
 object1:
-  key1: string-value1
+  key1: false
 object2:
-  key2: string-value2
-  key3: string-value3
+  key2: 3.14
+  key3: 0xdeadbeef
   nestedObject:
-    key4: string-value4
+    key4: 'quoted string'
 ```
 
 * 以 连字符+空格 开头，表示数组元素
 
 ```yaml
-- arrayElement1: 0
-- arrayElement2: string-value
+- 42
+- "double-quoted string"
 - arrayElement3:
-    key1: string-value1
-    key2: string-value2
+    key1: punctuations? sure.
+    key2: you can even have {}s as long as they are not the first character
+    key3: { nested1: 'but no unquoted string allowed inside brackets', nested2: 'also notice the comma is back too' }
 ```
 
 综合这几点，上面的 effect 内容就可以很简洁地写成这样：
 
 ```yaml
-CCEffect %{
-  techniques:
-  - passes:
-    - vert: skybox-vs
-      frag: skybox-fs
-      rasterizerState:
-        cullMode: none
-      # ...
-}%
+techniques:
+- passes:
+  - vert: skybox-vs
+    frag: skybox-fs
+    rasterizerState:
+      cullMode: none
+    # ...
 ```
 
 另一个对我们的情况非常有用的 YAML 特性是数据间的引用与继承，先来看引用：
@@ -120,16 +118,21 @@ object2:
 对应到我们的 effect 中，比如多个 pass 拥有相同的 property 内容，或很多其他情景下，都可以很方便地复用数据：
 
 ```yaml
+techniques:
+- passes:
+  - # pass 1 specifications...
+    properties: &props # declare once...
+      p1: { value: [ 1, 1, 1, 1 ] }
+      p2: { sampler: { mipFilter: linear } }
+      p3: { inspector: { type: color } }
+  - # pass 2 specifications...
+    properties: *props # reference anywhere
+```
+
+最后，在实际 effect 文件中任何流程声明都需要包在 CCEffect 语法块内：
+```yaml
 CCEffect %{
-  techniques:
-  - passes:
-    - # pass 1 specifications...
-      properties: &props # declare once...
-        p1: { value: [ 1, 1, 1, 1 ] }
-        p2: { sampler: { mipFilter: linear } }
-        p3: { inspector: { type: color } }
-    - # pass 2 specifications...
-      properties: *props # reference anywhere
+  # YAML starts here
 }%
 ```
 
