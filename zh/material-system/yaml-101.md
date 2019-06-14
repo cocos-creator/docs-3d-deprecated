@@ -24,32 +24,30 @@ CCEffect %{
 * 所有的引号和逗号都可以省略
 
 ```yaml
-key1: value1
-key2: value2
+key1: string-value1
+key2: string-value2
 ```
 
-* 行首的空格缩进数量代表数据的层级<sup>[1](footnote-1)
+* 行首的空格缩进数量代表数据的层级<sup id="a1">[1](#f1)</sup>
 
 ```yaml
 object1:
-  key1: value1
+  key1: string-value1
 object2:
-  key2: value2
-  key3: value3
+  key2: string-value2
+  key3: string-value3
   nestedObject:
-    key4: value4
+    key4: string-value4
 ```
 
 * 以 连字符+空格 开头，表示数组元素
 
 ```yaml
-- arrayElement1:
-    key1: value1
-- arrayElement2:
-    key2: value2
+- arrayElement1: 0
+- arrayElement2: string-value
 - arrayElement3:
-    key3: value3
-    key4: value4
+    key1: string-value1
+    key2: string-value2
 ```
 
 综合这几点，上面的 effect 内容就可以很简洁地写成这样：
@@ -126,7 +124,7 @@ CCEffect %{
   techniques:
   - passes:
     - # pass 1 specifications...
-      properties: &props # declare once
+      properties: &props # declare once...
         p1: { value: [ 1, 1, 1, 1 ] }
         p2: { sampler: { mipFilter: linear } }
         p3: { inspector: { type: color } }
@@ -139,4 +137,4 @@ CCEffect %{
 * https://en.wikipedia.org/wiki/YAML
 * https://yaml.org/spec/1.2/spec.html
 
-<a name="footnote-1">[1]</a> 标准 YAML 并不支持制表符，但在解析 effect 数据时，我们会先尝试把其中所有的制表符替换为 2 个空格，以避免偶然插入制表符带来的琐碎的麻烦。但整体上，请一定尽量避免插入制表符来确保编译无误。
+<b id="f1">[1]</b> 标准 YAML 并不支持制表符，但在解析 effect 数据时，我们会先尝试把其中所有的制表符替换为 2 个空格，以避免偶然插入制表符带来的琐碎的麻烦。但整体上，请一定尽量避免插入制表符来确保编译无误。[↩](#a1)<br>
