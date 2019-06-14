@@ -10,11 +10,10 @@
 - [熟悉动画编辑器](animation-editor.md)
 - [创建 Animation 组件和动画剪辑](animation-create.md)
 - [编辑动画序列](animation-clip.md)
-- [编辑帧动画](sprite-animation.md)
+- [制作帧动画](sprite-animation.md)
 - [编辑动画曲线](animation-curve.md)
 - [添加动画事件](animation-event.md)
-- [使用脚本控制动画](scripting-animation.md)
 
 <hr>
 
-先从[熟悉动画编辑器](animation.md)开始了解。
+先从[关于 Animation](animation.md)开始了解。

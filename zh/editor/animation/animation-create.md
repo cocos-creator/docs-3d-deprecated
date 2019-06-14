@@ -24,4 +24,6 @@
 
 ![add-clip](animation-clip/add-clip.png)
 
-至此我们已经完成了动画制作之前的准备工作，下一步就是要[编辑动画序列](animation-clip.md)了。
+---
+
+至此我们已经完成了动画制作之前的准备工作，下一步就是要 [编辑动画序列](animation-clip.md) 了。
