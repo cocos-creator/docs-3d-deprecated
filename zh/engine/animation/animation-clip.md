@@ -109,6 +109,108 @@ Cocos3D 内置的大多数值类型都将其 `lerp` 实现为线性插值；
 若曲线值不满足上述任何条件，或当曲线数据的 `interpolate` 属性为 `false`时，
 将不会进行插值操作 --- 永远使用前一帧的曲线值作为结果。
 
+```ts
+import { AnimationClip, color, IPropertyCurveData, SpriteFrame, v3 } from "Cocos3D";
+
+const animationClip = new AnimationClip();
+
+const keys = [ 0, 0.5, 1.0, 2.0 ];
+animationClip.duration = keys.length === 0 ? 0 : keys[keys.length - 1];
+animationClip.keys = [ keys ]; // 所有曲线共享一列帧时间
+
+// 使用数值的线性插值
+const numberCurve: IPropertyCurveData = {
+    keys: 0,
+    values: [ 0, 1, 2, 3 ],
+    /* interpolate: true, */ // interpolate 属性默认打开
+};
+
+// 使用值类型 Vec3 的 lerp()
+const vec3Curve: IPropertyCurveData = {
+    keys: 0,
+    values: [ v3(0), v3(2), v3(4), v4(6) ],
+    interpolate: true,
+};
+
+// 不插值（因为显式禁用了插值）
+const colorCuve: IPropertyCurveData = {
+    keys: 0,
+    values: [ color(255), color(128), color(61), color(0) ],
+    interpolate: false, // 不进行插值
+};
+
+// 不插值（因为 SpriteFrame 无法进行插值）
+const spriteCurve: IPropertyCurveData = {
+    keys: 0,
+    values: [
+        new SpriteFrame(),
+        new SpriteFrame(),
+        new SpriteFrame(),
+        new SpriteFrame()
+    ],
+};
+```
+
+下列代码展示了如何自定义插值算法：
+
+```ts
+import { ILerpable, IPropertyCurveData, Quat, quat, Vec3, v3, vmath } from "Cocos3D";
+
+class MyCurveValue implements ILerpable {
+    public position: Vec3;
+    public rotation: Quat;
+
+    constructor(position: Vec3, rotation: Quat) {
+        this.position = position;
+        this.rotation = rotation;
+    }
+
+    /** 将调用此方法进行插值。
+     * @param this 起始曲线值
+     * @param to 目标曲线值
+     * @param t 插值比率，取值范围为 [0, 1]
+     * @param dt 起始曲线值和目标曲线值之间的帧时间间隔
+     */
+    lerp (to: MyCurveValue, t: number, dt: number) {
+        return new MyCurveValue(
+            // 位置属性不插值
+            this.position.clone(),
+            // 旋转属性使用 Quat 的 lerp() 方法
+            this.rotation.lerp(to.rotation, t), // 
+        );
+    }
+
+    /** 此方法在不插值时调用。
+      * 它是可选的，若未定义此方法，则使用曲线值本身（即 `this`）作为结果值。
+      */
+    getNoLerp () {
+        return this;
+    }
+}
+
+/**
+ * 创建了一条曲线，它实现了在整个周期内平滑地旋转但是骤然地变换位置。
+ */
+function createMyCurve (): IPropertyCurveData {
+    const rotation1 = quat();
+    const rotation2 = quat();
+    const rotation3 = quat();
+
+    vmath.quat.rotateY(rotation1, rotation1, 0);
+    vmath.quat.rotateY(rotation2, rotation2, Math.PI);
+    vmath.quat.rotateY(rotation3, rotation3, 0);
+
+    return {
+        keys: 0 /* 帧时间 */,
+        values: [
+            new MyCurveValue(v3(0), rotation1),
+            new MyCurveValue(v3(10), rotation2),
+            new MyCurveValue(v3(0), rotation3),
+        ],
+    };
+}
+```
+
 渐变方式和插值方式都影响着动画的平滑度。
 
 <b id="f1">1</b> 动画片段的所在结点是指引用该动画片段的动画状态对象所在动画组件所附加的结点。 [↩](#a1)
