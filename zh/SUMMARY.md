@@ -95,6 +95,8 @@
   - [特效]()
   - [光源]()
   - [摄像机]()
+- [项目预览调试](editor/preview/index.md)
+  - [浏览器预览](editor/preview/browser.md)
 - [动画系统](editor/animation/index.md)
   - [关于 Animation](editor/animation/animation.md)
   - [熟悉动画编辑器](editor/animation/animation-editor.md)
