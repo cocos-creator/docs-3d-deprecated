@@ -14,18 +14,21 @@ f. [属性轨道关键帧预览](###f.属性轨道关键帧预览)
 
 ### a.工具栏
 这里负责显示一些常用功能按钮
-1. 移动到第一帧(`Ctrl / Cmd + Left`)![jump to first frame](animation-editor/menu_first.png)： 点击移动到第一帧。
-2. 移动到前一帧(Left)![jump to previous frame](animation-editor/menu_prev.png)： 点击移动到前一帧。
-3. 播放/暂停(`Ctrl / Cmd + P`)![play/pause](animation-editor/menu_play.png)：点击播放/暂停当前动画。
-4. 移动到下一帧(`Right`)![jump to next frame](animation-editor/menu_next.png)： 点击移动到下一帧。
-5. 移动到最后一帧(`Ctrl / Cmd + Right`)![jump to last frame](animation-editor/menu_last.png): 移动到有效范围的最后一帧。
-6. 停止动画(`Ctrl / Cmd + S`)![stop](animation-editor/menu_stop.png)：点击停止当前动画，停止后将会移动到第一帧。
-7. 控制时间轴显示刻度和当前时间![time](animation-editor/menu_time.png)：
-   - 其中的 `time` 是一个可以点击的按钮，点击可以切换时间轴的刻度显示，默认是 `00-00`的方式，可以切换为 `frame`的方式。具体关于时间轴刻度可以参见[时间轴的刻度单位表示方式](###时间轴与事件区域)。
-   - 后面的输入框内是显示当前时间控制线的具体时间，也可以手动输入来使当前时间控制线调整到对应时间，支持直接输入 `frame` 或者是 `00-00` 的时间刻度。
-8. 调整默认关键帧间隔数与排列关键帧按钮![spacing](animation-editor/menu_spacing.png)：填入的关键帧间隔数将作为有多个关键帧同时生成时取做间隔数（例如：制作帧动画一次性拖入多张图片，此时添加的多个关键帧之间的间隔会取该值），右边的类似于棋盘的按钮则是用于排列选中的关键帧，选中的关键帧将以第一个帧为基准，以输入框内的数值作为间隔依次排列。
-9. 添加事件关键帧![add event](animation-editor/menu_event.png)： 点击将会在当前时间控制线的位置添加事件关键帧。
-10. 退出动画编辑模式：![exit](animation-editor/menu_exit.png)：点击退出动画编辑模式
+
+功能 | 图标 | 快捷键 | 备注
+---- | --- | --- | ---
+移动到第一帧 | ![jump to first frame](animation-editor/menu_first.png) | Ctrl / Cmd + Left | -
+移动到前一帧 | ![jump to previous frame](animation-editor/menu_prev.png) | Left | -
+播放/暂停 | ![play/pause](animation-editor/menu_play.png) | Ctrl / Cmd + P | -
+移动到下一帧 | ![jump to next frame](animation-editor/menu_next.png) | Right | -
+移动到最后一帧 | ![jump to last frame](animation-editor/menu_last.png) | Ctrl / Cmd + Right | 移动到有效范围的最后一帧
+停止动画 | ![stop](animation-editor/menu_stop.png) | Ctrl / Cmd + S | 点击停止当前动画，停止后将会移动到第一帧
+添加事件关键帧 | ![add event](animation-editor/menu_event.png) |-| 点击将会在当前时间控制线的位置添加事件关键帧
+退出动画编辑模式 | ![exit](animation-editor/menu_exit.png)|Ctrl + Q|点击退出动画编辑模式
+切换时间轴显示刻度方式 | ![time](animation-editor/menu-time.png) |-|默认是 `00-00`的方式，点击可以切换为 `frame` （以关键帧数）显示的方式。具体关于时间轴刻度可以参见 [时间轴的刻度单位表示方式](###b.时间轴与事件)。
+显示当前时间与跳转到对应时间 | ![time](animation-editor/menu-time-input.png) | - | 显示当前时间控制线的具体时间，也可以手动输入来使当前时间控制线调整到对应时间，支持直接输入 `frame` 或者是 `00-00` 的时间刻度。
+调整默认关键帧间隔数 | ![spacing](animation-editor/menu-spacing.png)| - |填入的关键帧间隔数将作为有多个关键帧同时生成时取做间隔数（例如：制作帧动画一次性拖入多张图片，此时添加的多个关键帧之间的间隔会取该值）
+排列选中关键帧 |![spacing](animation-editor/menu-spacing-btn.png) | - | 选中的关键帧将以第一个帧为基准，以输入框内的数值作为间隔依次排列。
 
 ### b.时间轴与事件
 这里主要是显示时间轴，添加的自定义事件帧也会在这里显示。同时右键点击可以将事件控制先移动到对应位置，右键菜单可以进行 `添加/移除`、`复制/粘贴` 事件关键帧等，同时动画的有效长度也会有对应的显示效果。
@@ -61,7 +64,7 @@ clip 动画数据中索引节点的方式是以挂载 Animation 组件的节点�
 具体的操作指南可以参见后续创建动画剪辑的章节。
 
 ### d.节点内关键帧预览
-这里主要是显示各个节点上的所有帧的预览。在此处关键帧位置右键菜单可以删除关键帧，亦可以移动关键帧的位置。同时单击此处不同节点的关键帧将会选中对应的节点，双击关键帧可以将时间控制线移动到该位置，在没有选中属性的情况下， Ctrl / Cmd + Shift + Left / Right 可以将时间控制线向上/下一个关键帧位置处移动。
+这里主要是显示各个节点上的所有帧的预览。在此处关键帧位置右键菜单可以删除关键帧，亦可以移动关键帧的位置。同时单击此处不同节点的关键帧将会选中对应的节点，双击关键帧可以将时间控制线移动到该位置，在没有选中属性的情况下，` Ctrl / Cmd + Shift + Left / Right` 可以将时间控制线向上/下一个关键帧位置处移动。
 
 ### e.属性列表
 主要显示当前选中节点上参与动画的属性列表，每条属性显示项上有关键帧的 icon 图示，对应当前属性轨道对应当前时间控制线位置的关键帧状态，点击可以添加/移除对应关键帧。右键菜单可以移除当前轨道或清空数据等。在上方的加号按钮点击可以为当前选中节点添加属性轨道。
@@ -92,7 +95,7 @@ clip 动画数据中索引节点的方式是以挂载 Animation 组件的节点�
 
 ### 更改当前选中的时间
 
- - 在时间轴（图 b 区域）区域内点击任意位置或者拖拽，都可以更改当前的时间节点。
+ - 在时间轴（图 b 区域）区域内点击任意位置或者拖拽时间控制线，都可以更改当前的时间节点。
  - 拖拽时间控制线
  - 在工具栏点击控制时间控制线的按钮
  - 双击关键帧，可以将当前时间跳转到对应位置
@@ -102,23 +105,24 @@ clip 动画数据中索引节点的方式是以挂载 Animation 组件的节点�
 
  - 在图 a 区域内点击播放按钮，按钮会自动变更为暂停，再次点击则是播放
  - 播放状态下，保存场景等操作会终止播放
- - 快捷键 Ctrl / Cmd + P 控制
+ - 快捷键 `Ctrl / Cmd + P` 控制
 
 更多关于关键帧的操作，请查看 [编辑动画序列](animation-clip.md) 章节
 
-## 快捷键
-
- - Left(←)：向前移动一帧，如果已经在第 0 帧，则忽略当前操作。
- - Right(→)：向后移动一帧
- - Ctrl / Cmd + Left(←): 移动到第一帧
- - Ctrl / Cmd + Right(→): 移动到 clip 内最后一帧
- - Delete / Ctrl + Backspace：删除当前所选中的关键帧
- - Alt + P: 播放/暂停
- - Alt + S: 停止
- - Enter：在时间控制线位置添加当前选中节点上选中属性轨道的关键帧，没有选中情况则忽略
- - Ctrl / Cmd + Shift + Left(←): 移动到时间控制线左边最近的一个关键帧（选中属性轨道上或选中节点上）
- - Ctrl / Cmd + Shift + Right(→): 移动到时间控制线右边最近的一个关键帧（选中属性轨道上或选中节点上）
- - Ctrl / Cmd + C: 复制选中的关键帧
- - Ctrl / Cmd + V: 粘贴上一次复制的关键帧
- - Ctrl：按住不放可多选关键帧
- - Alt: 选中关键帧后，按下 Alt 并拖动选中的关键帧可以复制对应的关键帧到新的移动位置 
+## 快捷键汇总
+功能 | 快捷键 | 说明
+---|-----|---
+向前移动一帧 |  Left(←) | 如果已经在第 0 帧，则忽略当前操作
+向后移动一帧 |  Right(→) | -
+移动到第一帧 | Ctrl / Cmd + Left(←) | -
+移动到最后一帧 | Ctrl / Cmd + Left(←) | 当前 clip 内的有效时长
+删除当前选中关键帧 |  Delete / Ctrl + Backspace | -
+播放/暂停动画 | Alt + P | -
+停止动画 | Alt + S | 当前时间将变为 0
+添加快捷键 | Enter | 在时间控制线位置添加当前选中节点上选中属性轨道的关键帧，没有选中情况则忽略
+跳到上一个关键帧 | Ctrl / Cmd + Shift + Left(←) | 移动到时间控制线左边最近的一个关键帧（选中属性轨道上或选中节点上）
+跳到下一个关键帧 | Ctrl / Cmd + Shift + Right(→) |  移动到时间控制线右边最近的一个关键帧（选中属性轨道上或选中节点上）
+多选关键帧 | Ctrl | 按住 Ctrl 点击关键帧可多选关键帧
+复制生成关键帧 | Alt | 选中关键帧后，按下 Alt不放 并拖动选中的关键帧可以复制对应的关键帧到新的移动位置
+复制选中的关键帧 | Ctrl / Cmd + C | -
+粘贴上一次复制的关键帧 | Ctrl / Cmd + V | -
