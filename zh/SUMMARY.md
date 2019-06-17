@@ -106,7 +106,6 @@
   - [编辑帧动画](editor/animation/sprite-animation.md)
   - [编辑动画曲线](editor/animation/animation-curve.md)
   - [添加动画事件](editor/animation/animation-event.md)
-  - [使用脚本控制动画](editor/animation/scripting-animation.md)
 - [构建发布](editor/publish/index.md)
   - [熟悉构建发布面板与通用构建参数](editor/publish/build-panel.md)
   - [发布到 web 平台](editor/publish/publish-web.md)
