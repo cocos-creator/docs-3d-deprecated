@@ -24,7 +24,7 @@ Cocos3D 在编译 Typescript 时就如同使用了以下 `tsc` 编译选项：
         // 必须保持以下属性使得 tsc 的检查行为和 Cocos3D 的编译行为一致
         "target": "es2015",
         "module": "es2015",
-        // 可以自由地改变以下属性：
+        // 可以自由地改变以下属性以约束 tsc 的检查行为：
         "experimentalDecorators": true,
         "strict": false,
         "noImplicitAny": false,
@@ -54,22 +54,22 @@ Cocos3D 在编译 Typescript 时就如同使用了以下 `tsc` 编译选项：
 ```ts
 const myModule = require("path-to-module");
 ```
-对于 `tsc` 来说是合法的，因为`compilerOptions.module` 设置为了 `cjs`。
+在（使用 `tsc` 作为检查器的）IDE 中不会引起错误，因为`compilerOptions.module` 设置为了 `cjs`。
 然而 Cocos3D 隐含的 `compilerOptions.module` 是 `es2015`，
 因此在运行时它可能提示 "require 未定义" 等错误。
 
 脚本代码：
 
 ```ts
-const set = new Set();
+const mySet = new Set();
 ```
-对于 Cocos3D 来说是合法的，但对于 `tsc` 来说是非法的，
+对于 Cocos3D 来说是合法的，但 IDE 可能会报告错误：
 因为`compilerOptions.target` 设置为了 `es5`：ECMAScript 2015 才引入 `Set`。
 
 ------
 
-以下罗列了支持的 `tsc` 编译选项，
-这些选项将影响 Cocos3D 对 Typescript 的编译：
+下列的 `tsc` 编译选项在 Cocos3D 中具有与 `tsc` 相同的含义，
+这些选项也将影响 Cocos3D 对 Typescript 的编译：
 - `compilerOptions.baseUrl`
 - `compilerOptions.paths`
 
@@ -80,13 +80,40 @@ const set = new Set();
 Cocos3D 引擎的 API 都存在于模块 `Cocos3D`中，
 使用标准的 ES6 模块导入语法将其导入：
 
-```
-import { Component, _decorator } from "Cocos3D";
-import * as cocos3d from "Cocos3D";
+```ts
+import {
+    Component, // 导入类 Component
+    _decorator, // 导入命名空间 _decorator
+} from "Cocos3D";
+import * as cocos3d from "Cocos3D"; // 将整个 Cocos3D 模块导入为命名空间 cocos3d
 
-@_decoarator.ccclass("MyComponent")
+@_decorator.ccclass("MyComponent")
 export class MyComponent extends Component {
     public v = new cocos3d.Vec3();
 }
 ```
 
+## 保留标识符 cc
+
+注意，由于历史原因，`cc` 是 Cocos3D 保留使用的标识符，
+其行为*相当于*在任何模块顶部已经定义了名为 cc 的对象。
+因此，你不应该将 `cc` 用作任何**全局**对象的名称：
+
+```ts
+/* const cc = {}; // 每个 Cocos3D 脚本都等价于在此处含有隐式定义 */
+
+import * as cc from "Cocos3D"; // 错误：命名空间导入名称 cc 由 Cocos3D 保留使用
+
+const cc = { x: 0 };
+console.log(cc.x); // 错误：全局对象名称 cc 由 Cocos3D 保留使用
+
+function f () {
+    const cc = { x: 0 };
+    console.log(cc.x); // 正确：cc 可以用作局部对象的名称
+
+    const o = { cc: 0 };
+    console.log(o.cc); // 正确：cc 可以用作属性名
+}
+
+console.log(cc, typeof cc); // 错误：行为是未定义的
+```
