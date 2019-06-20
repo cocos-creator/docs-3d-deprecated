@@ -11,12 +11,16 @@
 
 - **方块(Box)**  
 
+![](particle-system/box_emitter.png)
+
 属性| 作用
 ---|---
 **shapeType** | Box
 **emitFrom** | 粒子从方块的哪个部位发射，**edge**:边框；**shell**:表面；**volume**:内部
 
 - **球、半球(Shpere\Hemisphere)**
+
+![](particle-system/sphere_emitter.png)
 
 属性| 作用
 ---|---
@@ -25,6 +29,8 @@
 **radiusThickness** | 0表示从球表面发射，1表示从球体内部发射，0~1之间表示从表面到球心之间发射
 
 - **圆(Circle)**
+
+![](particle-system/circle_emitter.png)
 
 属性| 作用
 ---|---
@@ -36,6 +42,8 @@
 **speed**|表示粒子沿圆周发射的速度
 
 - **圆锥(Cone)**
+
+![](particle-system/cone_emitter.png)
 
 属性| 作用
 ---|---
