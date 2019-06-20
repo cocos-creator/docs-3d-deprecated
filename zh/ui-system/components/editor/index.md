@@ -10,13 +10,9 @@
 
 ![add-component](add-component.png)
 
-## UI 组件介绍
+## 组件目录
 
-渲染组件参考：
+- #### [**渲染组件**](render-component.md)
 
-- [render-component](render-component.png)
-
-基础组件参考：
-
-- [base-component](base-component.png)
+- #### [**基础组件**](base-component.md)
 
