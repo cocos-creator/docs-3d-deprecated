@@ -83,6 +83,7 @@
 <br/>
 - 添加代码
     <br/>添加onLoad()函数，并输出Hello world</br>
+
         cc.Class({
         extends: cc.Component,
 
