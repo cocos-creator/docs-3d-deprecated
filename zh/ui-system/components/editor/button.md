@@ -129,3 +129,8 @@ cc.Class({
     }
 });
 ```
+---
+
+### [**其他基础模块参考**](base-component.md)
+
+### [**渲染模块参考**](render-component.md)

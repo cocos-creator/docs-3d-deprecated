@@ -163,3 +163,9 @@ cc.Class({
 ```
 
 同样的，你也可以注册 `editing-did-ended`, `text-changed` 和 `editing-return` 事件，这些事件的回调函数的参数与 `editing-did-began` 的参数一致。
+
+---
+
+### [**其他基础模块参考**](base-component.md)
+
+### [**渲染模块参考**](render-component.md)

@@ -113,3 +113,9 @@ cc.Class({
 同样的，你也可以注册 `scrolling`, `touch-up`, `scroll-began` 等事件，这些事件的回调函数的参数与 `scroll-to-top` 的参数一致。
 
 <!-- 关于完整的 ScrollView 的事件列表，可以参考 ScrollView 的 API 文档 [ScrollView API](../../../api/zh/classes/ScrollView.html)。 -->
+
+---
+
+### [**其他基础模块参考**](base-component.md)
+
+### [**渲染模块参考**](render-component.md)

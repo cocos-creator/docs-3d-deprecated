@@ -1,8 +1,9 @@
 # 渲染组件介绍
 
-- [SpriteComponent 参考](sprite.md)
-- [LabelComponent 参考](label.md)
-- [MaskComponent 参考](mask.md)
-- [LabelOutlineComponent 参考](label-outline.md)
-- [Graphics 参考](graphics.md)
-- [RichText 参考](richtext.md)
+- [SpriteComponent 介绍](sprite.md)
+- [LabelComponent 介绍](label.md)
+- [MaskComponent 介绍](mask.md)
+- [LabelOutlineComponent 介绍](label-outline.md)
+- [GraphicsComponent 介绍](graphics.md)
+- [RichTextComponent 介绍](richtext.md)
+- [UIModelComponent 介绍](ui-model.md)

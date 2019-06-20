@@ -17,7 +17,7 @@ Right   | 对齐右边界 | 选中后，将在旁边显示一个输入框，用�
 HorizontalCenter   | 水平方向居中 |
 VerticalCenter     | 竖直方向居中 |
 Target  | 对齐目标   | 指定对齐参照的节点，当这里未指定目标时会使用直接父级节点作为对齐目标
-Align Mode | 指定 widget 的对齐方式，用于决定运行时 widget 应何时更新 | 通常设置为 ON_WINDOWS_RESIZE，仅在初始化和每当窗口大小改变时重新对齐。<br>设置为 ONCE 时，仅在组件初始化时进行一次对齐。<br>设置为 ALWAYS 时，每帧都会对当前 Widget 组件执行对齐逻辑。|
+Align Mode | 指定 widget 的对齐方式，用于决定运行时 widget 应何时更新 | 通常设置为 ALWAYS，每次节点产生变动时重新对齐。<br>设置为 ONCE 时，仅在组件初始化时进行一次对齐。|
 
 ## 对齐边界
 
@@ -71,3 +71,9 @@ Align Mode | 指定 widget 的对齐方式，用于决定运行时 widget 应何
 
 1. 确保 **Widget** 组件的 `Align Mode` 属性设置为 `ONCE`，该属性只会负责在组件初始化（onEnable）时进行一次对齐，而不会每帧再进行一次对齐。可以在初始化时自动完成对齐，然后就可以通过 API 或动画系统对 UI 进行移动变换了。
 2. 通过调用 **Widget** 组件的对齐边距 API，包括 `top`、 `bottom`、 `left`、 `right`，直接修改 Widget 所在节点的位置或某一轴向的拉伸。这些属性也可以在动画编辑器中添加相应关键帧，保证对齐的同时实现各种丰富的 UI 动画。
+
+---
+
+### [**其他基础模块参考**](base-component.md)
+
+### [**渲染模块参考**](render-component.md)

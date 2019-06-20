@@ -26,3 +26,9 @@ Bar Sprite 就可以在场景中控制 Bar Sprite 来显示进度了。
 Bar Sprite 可以是自身节点，子节点，或者任何一个带有`Sprite`组件的节点。另外，Bar Sprite 可以自由选择 Simple、Sliced 和 Filled 渲染模式。
 
 进度条的模式选择 `FILLED` 的情况下，Bar Sprite 的 `Type` 也需要设置为 `FILLED`，否则会报警告。<!--详细使用说明请查阅[ProgressBar UI 控件介绍](../ui/ui-components.md#progressbar-)。-->
+
+---
+
+### [**其他基础模块参考**](base-component.md)
+
+### [**渲染模块参考**](render-component.md)

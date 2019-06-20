@@ -52,3 +52,9 @@ Layout 是一种容器组件，容器能够开启自动布局功能，自动按�
 在使用网格布局时，当 **Start Axis** 设置为 HORIZONTAL 时, 将在新行开始之前填充整行。设置为 VERTICAL 时, 它将在新列开始之前填充整个列。
 
 **注意**：Layout 设置后的结果需要到下一帧才会更新，除非你设置完以后手动调用 `updateLayout` API。
+
+---
+
+### [**其他基础模块参考**](base-component.md)
+
+### [**渲染模块参考**](render-component.md)
