@@ -1,5 +1,6 @@
 ## 贴图动画模块(TextureAnimationModule)
 ![](particle-system/texture_animation.png)
+
 属性| 作用
 ---|---
 **mode** | grid一张贴图包含一个粒子播放的动画帧。
