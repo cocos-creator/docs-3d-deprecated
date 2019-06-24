@@ -9,7 +9,7 @@ Cocos 3D 中只有一个主方向光，主方向光可以理解为场景中的�
 | Color | 光源颜色 |
 | UseColorTemperature | 是否启用色温 |
 | ColorTemperature | 色温 |
-| Illumiance | 照度，单位**勒克斯（lx）** |
+| Illumiance | 照度，单位**勒克斯（*lx*）** |
 
 ---
 
