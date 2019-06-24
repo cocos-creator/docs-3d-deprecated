@@ -1,5 +1,6 @@
 ## 主模块(ParticleSystemComponent)
 ![](particle-system/main.png)
+
 属性|功能
 --|--
 duration|粒子系统运行总时间

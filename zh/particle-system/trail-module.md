@@ -1,5 +1,6 @@
 ## 拖尾模块（TrailModule）
 ![](particle-system/trail_module.png)
+
 属性| 作用
 ---|---
 **mode** | Particle在每个粒子的运动轨迹上形成拖尾效果。
