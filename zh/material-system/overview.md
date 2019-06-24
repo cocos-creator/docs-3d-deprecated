@@ -63,7 +63,7 @@ mat.initialize({
 根据所使用 EffectAsset 的信息, 可以进一步设置每个 Pass 的 uniform 参数等.
 ```ts
 mat.setProperty('cubeMap', someCubeMap);
-console.log(mat.getProperty('cubeMap') === someCubeMap);
+console.log(mat.getProperty('cubeMap') === someCubeMap); // true
 ```
 这些属性都是在材质资源对象本身内部生效, 还并不涉及场景.
 
@@ -109,3 +109,36 @@ const color = cc.color('#dadada');
 color.a = Math.sin(cc.director.getTotalFrames() * 0.01) * 127 + 127;
 pass.setUniform(hColor, color);
 ```
+
+## Builtins
+编辑器内置了几种常见类型的材质，无光照的 unlit、基于物理光照的 standard、skybox、粒子、sprite 等；<br>
+这里列一下最常用的 standard 各项参数的意义和用法：
+
+![Standard](builtin-standard.png)
+
+| Property | Info |
+|:--------:|:----:|
+| tilingOffset | 模型 UV 的平铺和偏移量，xy 对应平铺，zw 对应偏移 |
+| albedo | 漫反射颜色，指定模型的主要基色 |
+| albedoMap | 漫反射贴图，如果有指定，这项会和漫反射颜色相乘 |
+| albedoScale | xyz 对应模型的漫反射权重，用于控制漫反射颜色对于最终颜色的影响权重；<br>w 通道为 alpha test 的测试阈值 |
+| normalMap | 法线贴图，用于增加表面细节 |
+| pbrParams | PBR 材质参数常量：粗糙度、金属度和 AO；<br>每种属性具体对应的通道由 XX_CHANNEL 宏定义决定 |
+| pbrMap | PBR 材质参数贴图：粗糙度、金属度和 AO；如果有指定，这项会替代材质参数常量；<br>每种属性具体对应的通道由 XX_CHANNEL 宏定义决定 |
+| pbrScale | PBR 材质参数的权重：粗糙度、金属度和 AO；<br>每个分量具体对应的通道由 XX_CHANNEL 宏定义决定 |
+| emissive | 自发光颜色，不参与光照计算模型直接发散出的颜色 |
+| emissiveMap | 自发光贴图，如果有指定，这项会和自发光颜色相乘，<br>因此需要把自发光颜色（默认是黑色）调高才会有效果 |
+| emissiveScale | 自发光权重，用于控制自发光颜色的强度 |
+
+相对应的，还有控制这些参数的宏定义：
+
+| Macro | Info |
+|:-----:|:----:|
+| ROUGHNESS_CHANNEL | 指定粗糙度的数据来源通道，默认为 r 通道 |
+| METALLIC_CHANNEL | 指定金属度的数据来源通道，默认为 g 通道 |
+| AO_CHANNEL | 指定 AO 的数据来源通道，默认为 b 通道 |
+| USE_ALPHA_TEST | 是否开启透明测试（镂空效果）？<br>将通过比较漫反射颜色与漫反射权重的 a 通道，决定模型的哪部分将不会被绘制 |
+| USE_ALBEDO_MAP | 是否使用漫反射贴图？ |
+| USE_NORMAL_MAP | 是否使用法线贴图？ |
+| USE_PBR_MAP | 是否使用 PBR 材质参数贴图？ |
+| USE_EMISSIVE_MAP | 是否使用自发光贴图？ |
