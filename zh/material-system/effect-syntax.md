@@ -27,7 +27,7 @@ Shader 片段在语法上是标准 GLSL 300 es 语法的一个超集, 在资源�
 在标准 GLSL 语法上, 我们引入了一些非常自然的 C 风格语法扩展:
 
 ### include 机制
-类似 c 的头文件 include 机制, 可供引用的 builtin 头文件都在 chunks 目录下, 主要包括一些常用的工具函数, 和标准光照模型等. 另外所有在当前 effect 文件中声明的 shader 片段都可相互引用.
+类似 C 的头文件 include 机制, 可供引用的 builtin 头文件都在 chunks 目录下, 主要包括一些常用的工具函数, 和标准光照模型等. 另外所有在当前 effect 文件中声明的 shader 片段都可相互引用.
 
 ### 预处理宏定义
 Effect 系统的设计倾向于在游戏项目运行时可以方便地利用 shader 中的各类预处理宏, 而减少 runtime branching.<br>
@@ -36,11 +36,11 @@ Effect 系统的设计倾向于在游戏项目运行时可以方便地利用 sha
 所有的 define 都会被序列化到 inspector 上, 供用户调整.<br>
 注意相关写法的一些限制:
 1. 如果在 shader 中声明了 extension, 这个 extension 必须有且只有一个 define 来控制启用与否.
-2. 运行时会显式定义所有 shader 中出现的宏，所以请不要使用 #ifdef 或 #if defined() 这样的形式做判断.
+2. 目前运行时会显式定义所有 shader 中出现的宏，所以请不要使用 #ifdef 或 #if defined() 这样的形式做判断.
 
 ### macro tags
 虽然我们会自动识别所有出现在预处理分支逻辑中 (#ifdef) 的宏定义，但有时同样利用宏定义可以方便地做一些其他事情，如：
-```c
+```glsl
 float metallic = texture(pbrMap, uv).METALLIC_SOURCE;
 
 #if LAYERS == 4
@@ -57,7 +57,7 @@ float metallic = texture(pbrMap, uv).METALLIC_SOURCE;
 | options | 一个任意长度的数组，<br>每个元素都是一个可能的取值 | 如未显示声明则不会定义任何宏 | 针对有清晰选项的宏定义，<br>显式指定它的可用选项 |
 
 比如下面这样的声明：
-```c
+```glsl
 #pragma define LAYERS range([4, 5])
 #pragma define METALLIC_SOURCE options([r, g, b, a])
 ```
@@ -67,7 +67,7 @@ float metallic = texture(pbrMap, uv).METALLIC_SOURCE;
 
 ### functional macros
 由于 WebGL1 不原生支持，我们将函数式预处理宏提供为资源导入期的功能：
-```c
+```glsl
 #define DECL_CURVE_STRUCT(name) \
   uniform int u_##name##_curveMode;
 #define DECL_CURVE_STRUCT_INT(name) \
@@ -82,8 +82,58 @@ DECL_CURVE_STRUCT_INT(velocity_pos_x)
   uniform float u_velocity_pos_x_minIntegral[MAX_KEY_NUM - 1];
 ```
 
+### Vertex Input<sup id="a1">[1](#f1)</sup>
+为对接骨骼动画与数据解压流程，我们提供了 `CCVertInput` 工具函数，对所有 3D 模型使用的 shader，可直接在 vs 开始时类似这样写：
+```glsl
+#include <input>
+vec4 vert () {
+  vec3 position;
+  CCVertInput(position);
+  // ... do your thing with `position` (models space, after skinning)
+}
+```
+如果还需需要法线等信息，可直接使用 standard 版本：
+```glsl
+#include <input-standard>
+vec4 vert () {
+  StandardVertInput In;
+  CCVertInput(In);
+  // ... now use `In.position`, etc.
+}
+```
+这会返回模型空间的顶点位置（position）、法线（normal）和切空间（tangent）信息，并对骨骼动画模型做完蒙皮计算。<br>
+注意引用头文件后，不要在 shader 内重复声明这些 attributes（a_position 等）。<br>
+对于其他顶点数据（如 uv 等）还是正常声明 attributes 直接使用。
+
+### Fragment Ouput<sup id="a1">[1](#f1)</sup>
+为对接引擎渲染管线，我们提供了 `CCFragOutput` 工具函数，对所有无光照 shader，可直接在 fs 返回时类似这样写：
+```glsl
+#include <output>
+vec4 frag () {
+  vec4 o = vec4(0.0);
+  // ... do the computation
+  return CCFragOutput(o);
+}
+```
+这样中间的颜色计算就不必区分当前渲染管线是否为 HDR 流程等。<br>
+如需要包含光照计算，可结合标准着色函数 `CCStandardShading` 一起构成 surface shader 流程：
+```glsl
+#include <shading-standard>
+#include <output-standard>
+void surf (out StandardSurface s) {
+  // fill in your data here
+}
+vec4 frag () {
+  StandardSurface s; surf(s);
+  vec4 color = CCStandardShading(s);
+  return CCFragOutput(color);
+}
+```
+在此框架下可方便地实现自己的 surface 输入，或其他 shading 算法；<br>
+注意 `CCFragOutput` 函数一般还是不需要自己实现，它只起与渲染管线对接的作用，且对于这种含有光照计算的输出，因计算结果已经在线性空间，应包含 `output-standard` 而非 `output` 头文件。
+
 ### WebGL 1 fallback 支持
-由于 WebGL 1 仅支持 GLSL 100 标准语法, 在预处理阶段会提供 300 es 转 100 的 fallback shader, 用户基本不需关心这层变化.<br>
+由于 WebGL 1 仅支持 GLSL 100 标准语法, 在预处理阶段会提供 300 es 转 100 的 fallback shader, 用户基本不需关心这层变化。<br>
 但注意目前的 fallback 只支持一些基本的格式转换，如果使用了 300 es 独有的 shader 函数（texelFetch、textureGrad 等）或 extension，我们推荐根据 \_\_VERSION__ 宏定义判断 shader 版本，自行实现更稳定的 fallback。
 
 ### 关于 UBO 内存布局
@@ -91,7 +141,8 @@ DECL_CURVE_STRUCT_INT(velocity_pos_x)
 
 这可能听起来有些过分严格，但背后有非常务实的考量：<br>
 * UBO 是渲染管线内要做到高效数据复用的唯一基本单位，离散声明已不是一个选项；
-* WebGL2 的 UBO 只支持 std140 布局，它遵守一套比较原始的 padding 规则，可以简单总结为对所有 vec3，任意类型的数组和结构体，都会逐元素补齐至 vec4，更详细的可以参考<sup id="a1">[1](#f1)</sup>。<br>这意味着大量的空间浪费，且某些设备的驱动实现也并不完全符合此标准<sup id="a2">[2](#f2)</sup>，因此我们目前选择限制这部分功能的使用，以帮助排除一部分非常隐晦的运行时问题。<br>
+* WebGL2 的 UBO 只支持 std140 布局，它遵守一套比较原始的 padding 规则，可以简单总结为对所有 vec3，任意类型的数组和结构体，都会逐元素补齐至 vec4，更详细的可以参考<sup id="a2">[2](#f2)</sup>。<br>这意味着大量的空间浪费，且某些设备的驱动实现也并不完全符合此标准<sup id="a3">[3](#f3)</sup>，因此我们目前选择限制这部分功能的使用，以帮助排除一部分非常隐晦的运行时问题。<br>
 
-<b id="f1">[1]</b> [OpenGL 4.5, Section 7.6.2.2, page 137](http://www.opengl.org/registry/doc/glspec45.core.pdf#page=159) [↩](#a1)<br>
-<b id="f2">[2]</b> [Interface Block - OpenGL Wiki](https://www.khronos.org/opengl/wiki/Interface_Block_(GLSL)#Memory_layout) [↩](#a2)
+<b id="f1">[1]</b> 不包含粒子、sprite、管线内后处理等不基于 mesh 执行渲染的 shader [↩](#a1)<br>
+<b id="f2">[2]</b> [OpenGL 4.5, Section 7.6.2.2, page 137](http://www.opengl.org/registry/doc/glspec45.core.pdf#page=159) [↩](#a1)<br>
+<b id="f3">[3]</b> [Interface Block - OpenGL Wiki](https://www.khronos.org/opengl/wiki/Interface_Block_(GLSL)#Memory_layout) [↩](#a2)
