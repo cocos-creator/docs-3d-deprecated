@@ -213,6 +213,21 @@ function createMyCurve (): IPropertyCurveData {
 
 渐变方式和插值方式都影响着动画的平滑度。
 
+
+## 循环模式
+
+可以通过设置 `AnimationClip.wrapMode` 为动画片段设置不同的循环模式。
+
+以下列出出了几种常用的循环模式：
+
+| AnimationClip.wrapMode | 效果 |
+|---|---|
+| WrapMode.Normal | 播放到结尾后停止。 |
+| WrapMode.Loop | 循环播放。 |
+| WrapMode.PingPng | 从动画开头播放到结尾后，从结尾开始反向播放到开头，如此循环 |
+
+对于更多的循环模式，见 [WrapMode]()。
+
 <b id="f1">1</b> 动画片段的所在结点是指引用该动画片段的动画状态对象所在动画组件所附加的结点。 [↩](#a1)
 
 <b id="f2">2</b> 对于数值、四元数以及各种向量，Cocos 提供了相应的可插值类以实现[三次样条插值](https://en.wikipedia.org/wiki/Spline_interpolation)。 [↩](#a2)
