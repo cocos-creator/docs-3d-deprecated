@@ -14,4 +14,4 @@
 | SpotAngle | 聚光角度 |
 | Term | 选用的光照强度单位术语<br>聚光灯支持两种单位制系统：**发光功率（LUMINOUS_POWER）** 和 **亮度（LUMINANCE）** |
 | LuminousPower | 发光功率，单位**流明（*lm*）**。<br>当 Term 指定为 LUMINOUS_POWER 时，选用流明来表示光照强度 |
-| Luminance | 亮度，单位**坎德拉每平台米（*cd/m<sup>2</sup>*）**。<br>当 Term 指定为 LUMININANCE 时，选用亮度来表示光照强度 |
+| Luminance | 亮度，单位**坎德拉每平方米（*cd/m<sup>2</sup>*）**。<br>当 Term 指定为 LUMININANCE 时，选用亮度来表示光照强度 |
