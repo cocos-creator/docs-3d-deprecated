@@ -1,12 +1,30 @@
 
-#动画组件
+# 动画组件
 
-动画组件实现了动画播放的控制。
+动画组件控制动画的播放。
+
+像其他组件一样为结点添加动画组件：
+
+```ts
+import { AnimationComponent, Node } from "Cocos3D";
+
+function (node: Node) {
+    const animationComponent = node.addComponent(AnimationComponent);
+}
+```
 
 动画组件管理了一组动画片段。
-动画组件开始运作前，它为每一个动画片段都创建了相应的动画状态对象。
+动画组件开始运作前，它为每一个动画片段都创建了相应的 **动画状态** 对象。
 可以通过 `getState()` 获取动画片段对应的状态，
 并通过动画状态对象的各种接口完成动画的播放、停止、变速、循环能功能。
+
+```ts
+const animationComponent = node.getComponent(AnimationComponent);
+animationComponent.clips = [ idleClip, runClip ];
+
+// 获取 `idleClip` 的状态
+const idleState = animationComponent.getState(idleClip.name);
+```
 
 ## 动画状态
 
@@ -17,24 +35,15 @@
 
 动画状态提供了相应的接口以实现动画的播放控制：
 
-| | |
-|---|---|
-|`play()`|播放|
-|`pause()`|暂停|
-|`resume()`|恢复|
-|`stop()`|停止|
-|`speed`|读取或设置播放速度|
-|||
+接口 | 功能 |
+---|---
+`play()` | 播放。
+`pause()` | 暂停。
+`resume()` | 恢复。
+`stop()` | 停止。
+`speed` | 获取或设置播放速度。
 
-注意，你应该尽量使用动画组件提供的 `play()` 实现动画的播放而不是直接调用动画状态的 `play()`，因为这关系到动画切换。
-
-### 循环模式
-
-|||
-|---|---|
-|normal| 循环到结尾后停止 |
-|loop|循环播放|
-|||
+*注意，你应该尽量使用动画组件提供的 `play()` 实现动画的播放而不是直接调用动画状态的 `play()`，因为这关系到动画切换*。
 
 ## 动画切换
 
