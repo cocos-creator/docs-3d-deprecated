@@ -22,7 +22,6 @@
   - [Effect](material-system/effect-syntax.md)
   - [Pass](material-system/pass-parameter-list.md)
 - [粒子](particle-system/overview.md)
-  - [Particle Renderer](particle-system/renderer.md)
   - [粒子系统模块](particle-system/module.md)
   - [主模块(ParticleSystemComponent)](particle-system/main-module.md)
   - [发射器模块(ShapeModule)](particle-system/emitter.md)
@@ -33,6 +32,7 @@
   - [限速模块(LimitVelocityOvertimeModule)](particle-system/limit-velocity-module.md)
   - [加速度模块(ForceOvertimeModule)](particle-system/force-module.md)
   - [贴图动画模块(TextureAnimationModule)](particle-system/texture-animation-module.md)
+  - [渲染模块(Renderer)](particle-system/renderer.md)
 - [动画](engine/animation/index.md)
   - [动画组件](engine/animation/animation-component.md)
   - [动画剪辑](engine/animation/animation-clip.md)
@@ -113,6 +113,11 @@
 
 - [项目预览调试](editor/preview/index.md)
   - [浏览器预览](editor/preview/browser.md)
+
+- [粒子编辑器]()
+  - [曲线编辑器](particle-system/editor/curve-editor.md)
+  - [渐变色编辑器](particle-system/editor/gradient-editor.md)
+  - [控制面板](particle-system/editor/particle-effect-panel.md)
 
 - [动画系统](editor/animation/index.md)
   - [关于 Animation](editor/animation/animation.md)
