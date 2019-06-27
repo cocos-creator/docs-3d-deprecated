@@ -4,7 +4,7 @@ Cocos3D编辑器的强大之处就是可以让开发者快速的制作游戏原�
 
 下面我们将跟随教程制作一款名叫 **一步两步** 的魔性小游戏。这款游戏考验玩家的反应能力，根据路况选择是要跳一步还是跳两步，“一步两步，一步两步，一步一步似爪牙似魔鬼的步伐”。
 
-可以在[这里](https://gameu3d.github.io/MindYourStep_Tutorial/index.html)体验一下游戏的完成形态。
+可以在 [这里](https://gameu3d.github.io/MindYourStep_Tutorial/index.html) 体验一下游戏的完成形态。
 
 ## 新建项目
 如果您还不了解如何获取和启动 Cocos3D，请阅读 [安装和启动](../install/index.md) 一节。
@@ -755,8 +755,35 @@ export class GameManager extends Component {
 }
 ```
 
+## 光照和阴影
+有光的地方就会有影子，光和影使得3D世界更加的立体。接下来我们为角色加上简单的影子。
+### 开启阴影
+1. 在 **层级管理器** 中点击最顶部的 `Scene` 节点，将planarShadows选项中的Enabled打钩，并修改Distance和Normal参数
+
+    ![planar shadows](./images/planarShadows.png)
+
+2. 点击Player节点下的Body节点，将 `cc.ModelComponent` 下的ShadowCastingMode设置为ON。
+    ![model shadow](./images/model-shadow.png)
+
+此时在场景编辑器中会看到一个阴影面片，预览会发现看不到这个阴影，因为它在模型的正后方，被胶囊体盖住了。
+
+![player shadow](./images/player-shadow-scene.png)
+
+### 调整光照
+新建场景时默认会添加一个 `DirctionalLight` ，由这个平行光计算阴影，所以为了让阴影换个位置显示，我们可以调整这个平行光的方向。
+在 **层级管理器** 中点击选中 `Main Light` 节点，调整Rotation参数为（-10，17，0）。
+
+![main light](./images/main-light.png)
+
+预览可以看到影子效果：
+
+![player shadow preview](./images/player-shadow-preview.png)
+
+
+
+
 ## 总结
-恭喜您完成了用 Cocos3D 制作的第一个游戏！希望这篇快速入门教程能帮助您了解 Cocos3D 游戏开发流程中的基本概念和工作流程。如果您对编写和学习脚本编程不感兴趣，也可以直接从完成版的项目中把写好的脚本复制过来使用。
+恭喜您完成了用 Cocos3D 制作的第一个游戏！在 [这里](https://github.com/cocos-creator/tutorial-mind-your-step-3d) 可以下载完整的工程，希望这篇快速入门教程能帮助您了解 Cocos3D 游戏开发流程中的基本概念和工作流程。如果您对编写和学习脚本编程不感兴趣，也可以直接从完成版的项目工程中把写好的脚本复制过来使用。
 
 接下来您还可以继续完善游戏的各方各面，以下是一些推荐的改进方向：
 - 为游戏增加难度，当角色在原地停留1秒就算失败
