@@ -2,9 +2,9 @@
 
 ## 新手入门
 [介绍](introduction.md)
-- [安装和启动](getting-started\install\index.md)
-- [Hello World!](getting-started\helloworld\index.md)
-- [快速上手：制作第一个游戏](getting-started\first-game\index.md)
+- [安装和启动](getting-started/install/index.md)
+- [Hello World!](getting-started/helloworld/index.md)
+- [快速上手：制作第一个游戏](getting-started/first-game/index.md)
 
 ## 引擎模块
 - [场景](concepts/scene/index.md)
