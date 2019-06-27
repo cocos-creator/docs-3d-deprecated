@@ -2,8 +2,10 @@
 
 ## 新手入门
 [介绍](introduction.md)
-- [安装和启动](getting-started/install/index.md)
-- [Hello World!](getting-started/helloworld/index.md)
+- [安装和启动](getting-started/index.md)
+  - [安装 Cocos 3D](getting-started/install/index.md)
+  - [Dashboard](getting-started/dashboard/index.md)
+  - [Hello world!](getting-started/helloworld/index.md)
 - [快速上手：制作第一个游戏](getting-started/first-game/index.md)
 
 ## 引擎模块
@@ -147,10 +149,6 @@
 - [粒子系统Gizmo](editor/scene/particle-system-gizmo.md)
 - [变换工具Gizmo](editor/scene/transform-gizmo.md)
 - [index](editor/scripting/index.md)
-- [使用Dashboard](getting-started/dashboard/index.md)
-- [快速上手：制作第一个游戏](getting-started/first-game/index.md)
-- [Hello World项目](getting-started/helloworld/index.md)
-- [安装和启动](getting-started/install/index.md)
 - [关于 Cocos 3D](getting-started/introduction/index.md)
 - [拖尾模块（TrailModule）](particle-system/trail-module.md)
 - [arc](ui-system/components/editor/graphics/arc.md)

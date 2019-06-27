@@ -6,20 +6,24 @@
 
 ## 总导读
 
-- [Cocos 3D 入门](getting-started/index.md)
-- [资源工作流程](asset-workflow/index.md)
-- [发布工作流程](publish-workflow/index.md)
-- [场景制作工作流程](content-workflow/index.md)
-- [图像和渲染](render/index.md)
-- [UI 系统](ui-system/components/editor/index.md)
-- [编程开发指南](scripting/index.md)
-- [动画系统](editor/animation/index.md)
-- [物理系统](physics/physics.md)
-- [音乐和音效](audio/index.md)
-- [发布跨平台游戏](publish/index.md)
-- [扩展编辑器](extension/index.md)
-- [进阶主题](advanced-topics/index.md)
-- [SDK 集成](sdk/index.md)
+- 新手入门
+  - [安装和启动](getting-started/index.md)
+  - [快速上手：制作第一个游戏](getting-started/index.md)
+- 引擎模块
+  - [场景](concepts/scene/index.md)
+  - [材质](material-system/overview.md)
+  - [粒子](particle-system/overview.md)
+  - [动画](engine/animation/index.md)
+  - [物理](physics/physics.md)
+  - [UI](ui-system/components/engine/index.md)
+  - [脚本指南](scripting/index.md)
+- 编辑器手册
+  - [快速入门](getting-started/index.md)
+  - [面板介绍](editor/index.md)
+  - [组件](concepts/scene/index.md)
+  - [粒子编辑器]()
+  - [动画系统](editor/animation/index.md)
+  - [构建发布](editor/publish/index.md)
 
 ## 视频教程
 
