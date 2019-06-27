@@ -44,6 +44,8 @@ Cocos3D 目前为用户提供了碰撞器和刚体组件。
 **isKinematic** |   是否由用户来控制该刚体，而不受物理引擎的影响
 **useGravity** |  是否受重力影响
 **fixedRotation** |  碰撞时是否需要固定物体，而不产生旋转
+**linerFactor** | 线性因数，可影响每个轴向的线性速度的变化
+**angularFactor** | 旋转因数，可影响每个轴向的旋转速度的变化
 
 **注： Builtin 中此组件暂时无效**。
 
