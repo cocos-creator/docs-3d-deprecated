@@ -13,9 +13,9 @@ function (node: Node) {
 }
 ```
 
-动画组件管理了一组动画片段。
-动画组件开始运作前，它为每一个动画片段都创建了相应的 **动画状态** 对象。
-可以通过 `getState()` 获取动画片段对应的状态，
+动画组件管理了一组动画剪辑。
+动画组件开始运作前，它为每一个动画剪辑都创建了相应的 **动画状态** 对象。
+可以通过 `getState()` 获取动画剪辑对应的状态，
 并通过动画状态对象的各种接口完成动画的播放、停止、变速、循环能功能。
 
 ```ts
@@ -28,8 +28,8 @@ const idleState = animationComponent.getState(idleClip.name);
 
 ## 动画状态
 
-动画状态控制某个动画片段在结点的播放过程。
-一个动画片段可以同时为多个动画状态所用。
+动画状态控制某个动画剪辑在结点的播放过程。
+一个动画剪辑可以同时为多个动画状态所用。
 
 ### 播放控制
 
@@ -54,7 +54,7 @@ const idleState = animationComponent.getState(idleClip.name);
 ## 默认动画
 
 当动画组件的 `playOnLoad` 为 `true` 时，
-动画组件将在第一次运行时自动播放默认动画片段 `defaultClip`。
+动画组件将在第一次运行时自动播放默认动画剪辑 `defaultClip`。
 
 ## 帧事件
 
@@ -102,5 +102,5 @@ class MyScript extends Component {
 }
 ```
 
-以上代码表示，`MyScript` 组件所在结点的动画组件的默认动画片段
+以上代码表示，`MyScript` 组件所在结点的动画组件的默认动画剪辑
 在进行到第 0.5 秒将调用 `MyScript` 组件的 `test()` 方法并传递参数 `0`。

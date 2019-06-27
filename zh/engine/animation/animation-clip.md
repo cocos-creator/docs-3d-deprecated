@@ -1,7 +1,7 @@
 
-# 动画片段
+# 动画剪辑
 
-动画片段是一组动画曲线，包含了所有动画数据。
+动画剪辑是一组动画曲线，包含了所有动画数据。
 
 ## 动画曲线
 
@@ -18,16 +18,16 @@
 drawCurve(document.getElementById("curve-example-canvas"), 6, {xAxisText: "帧时间（秒）", yAxisText: "曲线值"});
 </script>
 
-以下代码片段演示了如何程序化地创建动画片段。
+以下代码片段演示了如何程序化地创建动画剪辑。
 ```ts
 import { AnimationClip, color, v3 } from "Cocos3D";
 const animationClip = new AnimationClip();
-animationClip.duration = 1.0; // 整个动画片段的周期。任何帧时间都不应该大于此属性。
+animationClip.duration = 1.0; // 整个动画剪辑的周期。任何帧时间都不应该大于此属性。
 const headCurveKeys = [ 0.3, 0.6, 0.9 ];
 const headCurveValues = [ v3(0.0), v3(0.5), v3(0.0) ];
 const bodyCurveKeys = [ 0.0, 0.2, 0.4, 0.6, 0.8, 1.0 ]; 
 const bodyCurveValues = [ color(0), color(51), color(102), color(153), color(204), color(255) ];
-animationClip.keys = [ headCurveKeys, bodyCurveKeys ]; // 该动画片段所有曲线共享的帧时间
+animationClip.keys = [ headCurveKeys, bodyCurveKeys ]; // 该动画剪辑所有曲线共享的帧时间
 animationClip.curveDatas = {
     "/Head": {
         "position": { // `Head` 子结点的 `position` 属性的曲线
@@ -46,7 +46,7 @@ animationClip.curveDatas = {
 };
 ```
 
-以上创建的动画片段包含两条曲线：
+以上创建的动画剪辑包含两条曲线：
 - 一条曲线控制子结点 `Head` 的位置变化，包含 3 帧，使得 `Head` 的 x 坐标由 0 变化为 0.5 再变化为 0。
 - 另一条曲线控制子结点 `Body` 上 `cc.Sprite` 组件的颜色变化，包含 6 帧，
 使得 `Body` 上的 `cc.Sprite` 组件的颜色从黑逐渐变化为白。
@@ -59,11 +59,11 @@ animationClip.curveDatas = {
 动画曲线的目标可以是任意 Cocos3D 结点以及其上附加的组件。
 曲线记录了目标结点的相对路径，
 运行时，由动画组件根据此路径动态确定目标对象。
-例如，若曲线的路径为 `/Spline/Leg` ，而动画片段的所在结点<sup id="a1">[1](#f1)</sup>为 `Human`，
+例如，若曲线的路径为 `/Spline/Leg` ，而动画剪辑的所在结点<sup id="a1">[1](#f1)</sup>为 `Human`，
 则在运行时，曲线的目标结点为 `Human` 结点的 `Spline` 子结点的 `Leg` 子结点；
 而当曲线的路径为 `/` 或空字符串时，曲线的目标结点即为 `Human` 结点本身。
 
-动画曲线的这种动态绑定特性使得动画片段可以复用到多个对象上。
+动画曲线的这种动态绑定特性使得动画剪辑可以复用到多个对象上。
 
 ### 采样
 
@@ -216,7 +216,7 @@ function createMyCurve (): IPropertyCurveData {
 
 ## 循环模式
 
-可以通过设置 `AnimationClip.wrapMode` 为动画片段设置不同的循环模式。
+可以通过设置 `AnimationClip.wrapMode` 为动画剪辑设置不同的循环模式。
 
 以下列出出了几种常用的循环模式：
 
@@ -228,6 +228,6 @@ function createMyCurve (): IPropertyCurveData {
 
 对于更多的循环模式，见 [WrapMode]()。
 
-<b id="f1">1</b> 动画片段的所在结点是指引用该动画片段的动画状态对象所在动画组件所附加的结点。 [↩](#a1)
+<b id="f1">1</b> 动画剪辑的所在结点是指引用该动画剪辑的动画状态对象所在动画组件所附加的结点。 [↩](#a1)
 
 <b id="f2">2</b> 对于数值、四元数以及各种向量，Cocos 提供了相应的可插值类以实现[三次样条插值](https://en.wikipedia.org/wiki/Spline_interpolation)。 [↩](#a2)
