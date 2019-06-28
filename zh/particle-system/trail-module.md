@@ -14,3 +14,5 @@
 **ColorFromParticle** | 拖尾颜色是否继承自粒子
 **ColorOverTrail** | 拖尾颜色随拖尾自身长度的颜色渐变
 **ColorOvertime** | 拖尾颜色随时间的颜色渐变
+
+![](particle-system/trail.gif)

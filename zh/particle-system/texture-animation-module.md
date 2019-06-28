@@ -10,3 +10,5 @@
 **frameOverTime** | 一个周期内动画播放的帧与时间变化曲线。
 **startFrame** | 从第几帧开始播放，时间为整个粒子系统的生命周期。
 **cycleCount** | 一个生命周期内播放几次循环。
+
+![](particle-system/texture_animation.gif)

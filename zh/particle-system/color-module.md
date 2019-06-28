@@ -4,3 +4,5 @@
 属性| 作用
 ---|---
 **color** | 颜色随时间变化的参数，可采用不同的颜色变化模式
+
+![](particle-system/color_overtime.gif)
