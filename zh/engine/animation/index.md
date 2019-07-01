@@ -24,4 +24,4 @@ Cocos3D 内置了通用的动画系统用以实现基于关键帧的动画。
 
 骨骼动画是一种常见但类型特殊的动画，相关详细说明参考：
 
-- [骨骼动画](./skeletal-animation)
+- [骨骼动画](./skeletal-animation.md)
