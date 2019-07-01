@@ -23,9 +23,8 @@
 
  - `--path`：指定项目路径
  - `--build`：指定构建项目使用的参数
-
 在 `--build`  后如果没有指定参数，则会使用 Cocos3D 中构建面板当前的平台、模板等设置来作为默认参数。如果指定了其他参数设置，则会使用指定的参数来覆盖默认参数。可选择的参数有：
-
+- `configPath` - 参数文件路径。如果定义了这个字段，那么构建时将会按照 `json` 文件格式来加载这个数据，并作为构建参数
 - `excludedModules` - engine 中需要排除的模块，模块可以从 [这里](https://github.com/cocos-creator/engine/blob/master/modules.json) 查找到
 - `title` - 项目名
 - `platform` - 构建的平台 [web-mobile、web-desktop、wechatgame、wechatgame-subcontext]
@@ -45,7 +44,6 @@
 - `wechatgame` - 微信小游戏发布选项
   - `appid`- 发布微信小游戏时需要的 id
   - `orientation` - 微信小游戏屏幕方向 [landscape、portrait]
-- `configPath` - 参数文件路径。如果定义了这个字段，那么构建时将会按照 `json` 文件格式来加载这个数据，并作为构建参数
 
 ## 在 Jenkins 上部署
 

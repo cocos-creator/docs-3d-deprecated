@@ -12,7 +12,7 @@
 - [编辑动画序列](animation-clip.md)
 - [制作帧动画](sprite-animation.md)
 - [编辑动画曲线](animation-curve.md)
-- [添加动画事件](animation-event.md)
+- [动画事件](animation-event.md)
 
 <hr>
 

@@ -24,6 +24,7 @@
   - [Effect](material-system/effect-syntax.md)
   - [Pass](material-system/pass-parameter-list.md)
 - [粒子](particle-system/overview.md)
+  - [Particle Renderer](particle-system/renderer.md)
   - [粒子系统模块](particle-system/module.md)
   - [主模块(ParticleSystemComponent)](particle-system/main-module.md)
   - [发射器模块(ShapeModule)](particle-system/emitter.md)
@@ -128,7 +129,7 @@
   - [编辑动画序列](editor/animation/animation-clip.md)
   - [编辑帧动画](editor/animation/sprite-animation.md)
   - [编辑动画曲线](editor/animation/animation-curve.md)
-  - [添加动画事件](editor/animation/animation-event.md)
+  - [动画事件](editor/animation/animation-event.md)
 
 - [构建发布](editor/publish/index.md)
   - [熟悉构建发布面板与通用构建参数](editor/publish/build-panel.md)
