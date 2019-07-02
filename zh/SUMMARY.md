@@ -118,7 +118,7 @@
 - [项目预览调试](editor/preview/index.md)
   - [浏览器预览](editor/preview/browser.md)
 
-- [粒子编辑器]()
+- [粒子编辑器](particle-system/editor/index.md)
   - [曲线编辑器](particle-system/editor/curve-editor.md)
   - [渐变色编辑器](particle-system/editor/gradient-editor.md)
   - [控制面板](particle-system/editor/particle-effect-panel.md)
