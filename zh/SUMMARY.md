@@ -39,6 +39,7 @@
 - [动画](engine/animation/index.md)
   - [动画组件](engine/animation/animation-component.md)
   - [动画剪辑](engine/animation/animation-clip.md)
+  - [骨骼动画](engine/animation/skeletal-animation.md)
 - [物理](physics/physics.md)
   - [物理选项](physics/physics-item.md)
   - [物理组件](physics/physics-component.md)
