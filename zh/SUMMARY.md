@@ -23,6 +23,7 @@
   - [YAML 101](material-system/yaml-101.md)
   - [Effect](material-system/effect-syntax.md)
   - [Pass](material-system/pass-parameter-list.md)
+- [声音](audio-system/overview.md)
 - [粒子](particle-system/overview.md)
   - [粒子系统模块](particle-system/module.md)
   - [主模块(ParticleSystemComponent)](particle-system/main-module.md)
