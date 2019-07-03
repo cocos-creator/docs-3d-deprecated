@@ -10,6 +10,8 @@ ParticleSystemComponent存储了粒子发射的初始状态以及粒子发射后
 [限速模块(LimitVelocityOvertimeModule)](limit-velocity-module.md)  
 [加速模块(ForceOvertimeModule)](force-module.md)  
 [贴图动画模块(TextureAnimationModule)](texture-animation-module.md)  
+[渲染模块(Renderer)](renderer.md)  
+[拖尾模块(TrailModule)](trail-module.md)  
 
 
 
