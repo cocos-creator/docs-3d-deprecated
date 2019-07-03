@@ -6,7 +6,7 @@
 像其他组件一样为结点添加动画组件：
 
 ```ts
-import { AnimationComponent, Node } from "Cocos3D";
+import { AnimationComponent, Node } from "cc";
 
 function (node: Node) {
     const animationComponent = node.addComponent(AnimationComponent);
@@ -102,7 +102,7 @@ animationComponent.getState('idle').speed = 2.0; // 以两倍速播放待机动�
 以下代码演示了这一过程。
 
 ```ts
-import { AnimationComponent, Component } from "Cocos3D";
+import { AnimationComponent, Component } from "cc";
 class MyScript extends Component {
     constructor() {
 

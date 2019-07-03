@@ -1,6 +1,6 @@
 # 精灵帧资源（SpriteFrame）
 
-Cocos3D SpriteFrame 资源跟 Creator 的 SpriteFrame 资源概念一致，是 Texture 资源的一种，用于 UI 制作上。
+Cocos Creator 3D SpriteFrame 资源跟 Creator 的 SpriteFrame 资源概念一致，是 Texture 资源的一种，用于 UI 制作上。
 
 ## 导入精灵帧资源
 

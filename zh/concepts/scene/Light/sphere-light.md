@@ -1,6 +1,6 @@
 # 球面光（Sphere Light）
 
-Cocos 3D 中使用球面光替代 **点光源（Point Light）**，因为真实世界中的物理光源都具有光源大小属性。
+Cocos Creator 3D 中使用球面光替代 **点光源（Point Light）**，因为真实世界中的物理光源都具有光源大小属性。
 
 ![sphere light](sphere-light.jpg)
 

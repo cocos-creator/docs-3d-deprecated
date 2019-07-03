@@ -1,6 +1,6 @@
 # 发布到 Web 平台
 
-Cocos3D 提供了两种 Web 平台的页面模板，可以通过 **发布平台** 的下拉菜单选择 `Web Mobile` 或 `Web Desktop`，他们的区别主要在于 `Web Mobile` 会默认将游戏视图撑满整个浏览器窗口，而 `Web Desktop` 允许在发布时指定一个游戏视图的分辨率，而且之后游戏视图也不会随着浏览器窗口大小变化而变化。
+Cocos Creator 3D 提供了两种 Web 平台的页面模板，可以通过 **发布平台** 的下拉菜单选择 `Web Mobile` 或 `Web Desktop`，他们的区别主要在于 `Web Mobile` 会默认将游戏视图撑满整个浏览器窗口，而 `Web Desktop` 允许在发布时指定一个游戏视图的分辨率，而且之后游戏视图也不会随着浏览器窗口大小变化而变化。
 
 打开主菜单的 `项目 -> 构建发布`，打开构建发布面板。
 ## 参数说明
@@ -21,7 +21,7 @@ Cocos3D 提供了两种 Web 平台的页面模板，可以通过 **发布平台*
 ![web mobile](publish-web/web-desktop.gif)
 ### 浏览器兼容性
 
-Cocos3D 开发过程中测试的桌面浏览器包括： Chrome，Firefox（火狐），IE11
+Cocos Creator 3D 开发过程中测试的桌面浏览器包括： Chrome，Firefox（火狐），IE11
 其他浏览器只要内核版本够高也可以正常使用，对部分浏览器来说请勿开启 IE6 兼容模式。
 
 移动设备上测试的浏览器包括：Safari (iOS)，Chrome，QQ 浏览器，UC 浏览器，百度浏览器，微信内置 Webview。

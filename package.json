@@ -20,12 +20,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ColinCollins/docs-3d.git"
+    "url": "git+https://github.com/cocos-creator/docs-3d.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/ColinCollins/docs-3d/issues"
+    "url": "https://github.com/cocos-creator/docs-3d/issues"
   },
-  "homepage": "https://github.com/ColinCollins/docs-3d#readme"
+  "homepage": "https://github.com/cocos-creator/docs-3d#readme"
 }

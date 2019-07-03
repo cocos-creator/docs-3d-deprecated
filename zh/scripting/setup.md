@@ -3,14 +3,14 @@
 
 ## 创建组件脚本
 
-在 Cocos3D 中，脚本也是资源的一部分。你可以在资源编辑器中通过点击"创建"按钮来添加并选择 JavaScript 或者 TypeScript 来创建一份组件脚本。此时你会在你的资源编辑器中得到一份新的脚本：
+在 Cocos Creator 3D 中，脚本也是资源的一部分。你可以在资源编辑器中通过点击"创建"按钮来添加并选择 JavaScript 或者 TypeScript 来创建一份组件脚本。此时你会在你的资源编辑器中得到一份新的脚本：
 
 ![create-script](setup/create-script.png)
 
 一份简单的组件脚本如下：
 
 ```JavaScript
-import { _decorator, Component } from "Cocos3D";
+import { _decorator, Component } from "cc";
 const { ccclass, property } = _decorator;
 
 @ccclass("NewScript")
@@ -36,7 +36,7 @@ export class NewScript extends Component {
 
 用户可根据自己的需求，选择自己喜爱的文本工具（如：Vim, Sublime Text, Web Storm, VSCode...）进行脚本编辑，请先到 [设置]() 中进行设置。
 
-通过双击脚本资源，可以直接打开脚本编辑器进行编辑。当编辑完脚本并保存，Cocos3D 会自动检测到脚本的改动，并迅速编译。
+通过双击脚本资源，可以直接打开脚本编辑器进行编辑。当编辑完脚本并保存，Cocos Creator 3D 会自动检测到脚本的改动，并迅速编译。
 
 在代码编写之前，请先阅读 [脚本语言支持](basic.md) 了解更多关于脚本的内容。
 

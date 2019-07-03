@@ -2,12 +2,12 @@
 ## 组件
 
 所有继承自 [Component]() 的类都称为组件类，
-其对象称为组件，实现了 Cocos3D EC 系统中的组件概念。
+其对象称为组件，实现了 Cocos Creator 3D EC 系统中的组件概念。
 
 组件类必须是 cc 类。
 
 ```ts
-import { Component } from "Cocos3D";
+import { Component } from "cc";
 
 @ccclass("MyComponent")
 class MyComponent extends Component {
@@ -40,7 +40,7 @@ const myComponent = node.addComponent(MyComponent);
 - 组件从结点上移除之后。
 
 ```ts
-import { Component } from "Cocos3D";
+import { Component } from "cc";
 
 @ccclass("MyComponent")
 class MyComponent extends Component {
