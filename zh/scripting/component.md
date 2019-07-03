@@ -7,7 +7,7 @@
 组件类必须是 cc 类。
 
 ```ts
-import { Component } from "Cocos3D";
+import { Component } from "cc";
 
 @ccclass("MyComponent")
 class MyComponent extends Component {
@@ -40,7 +40,7 @@ const myComponent = node.addComponent(MyComponent);
 - 组件从结点上移除之后。
 
 ```ts
-import { Component } from "Cocos3D";
+import { Component } from "cc";
 
 @ccclass("MyComponent")
 class MyComponent extends Component {

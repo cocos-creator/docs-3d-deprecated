@@ -10,7 +10,7 @@
 一份简单的组件脚本如下：
 
 ```JavaScript
-import { _decorator, Component } from "Cocos3D";
+import { _decorator, Component } from "cc";
 const { ccclass, property } = _decorator;
 
 @ccclass("NewScript")

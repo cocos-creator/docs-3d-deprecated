@@ -76,7 +76,7 @@ Cocos Creator 3D编辑器的强大之处就是可以让开发者快速的制作�
 在打开的 PlayerController 脚本里已经有了预先设置好的一些代码块，如下所示：
 
 ```ts
-import { _decorator, Component } from "Cocos3D";
+import { _decorator, Component } from "cc";
 const { ccclass, property } = _decorator;
 
 @ccclass("PlayerController")
@@ -247,7 +247,7 @@ export class PlayerController extends Component {
 我们需要一个很长的跑道，理想的方法是能动态增加跑道的长度，这样可以永无止境的跑下去，这里为了方便我们先生成一个固定长度的跑道，跑道长度可以自己定义。跑道上会生成一些坑，跳到坑上就GameOver了。
 将GameManager脚本中代码替换成以下代码：
 ```ts
-import { _decorator, Component, Prefab, instantiate, Node, CCInteger} from "Cocos3D";
+import { _decorator, Component, Prefab, instantiate, Node, CCInteger} from "cc";
 const { ccclass, property } = _decorator;
 
 enum BlockType{
@@ -538,7 +538,7 @@ export class GameManager extends Component {
 ## 最终代码
 PlayerController.ts
 ```ts
-import { _decorator, Component, Vec3, vmath, systemEvent, SystemEvent, EventMouse, AnimationComponent } from "Cocos3D";
+import { _decorator, Component, Vec3, vmath, systemEvent, SystemEvent, EventMouse, AnimationComponent } from "cc";
 const { ccclass, property } = _decorator;
 
 @ccclass("PlayerController")
@@ -632,7 +632,7 @@ export class PlayerController extends Component {
 
 GameManager.ts
 ```ts
-import { _decorator, Component, Prefab, instantiate, Node, LabelComponent, CCInteger} from "Cocos3D";
+import { _decorator, Component, Prefab, instantiate, Node, LabelComponent, CCInteger} from "cc";
 import { PlayerController } from "./PlayerController";
 const { ccclass, property } = _decorator;
 

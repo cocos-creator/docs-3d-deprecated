@@ -67,7 +67,7 @@ cc 属性的各种特性是通过 `property()` 的 cc 属性选项参数来指�
 下列代码演示了不同 cc 类型 的 cc 属性的声明：
 
 ```ts
-import { _decorator, CCInteger, Node } from "Cocos3D";
+import { _decorator, CCInteger, Node } from "cc";
 const { ccclass, property } = _decorator;
 @ccclass
 class MyClass {

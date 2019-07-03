@@ -20,7 +20,7 @@ drawCurve(document.getElementById("curve-example-canvas"), 6, {xAxisText: "帧�
 
 以下代码片段演示了如何程序化地创建动画剪辑。
 ```ts
-import { AnimationClip, color, v3 } from "Cocos Creator 3D";
+import { AnimationClip, color, v3 } from "cc";
 const animationClip = new AnimationClip();
 animationClip.duration = 1.0; // 整个动画剪辑的周期。任何帧时间都不应该大于此属性。
 const headCurveKeys = [ 0.3, 0.6, 0.9 ];
@@ -110,7 +110,7 @@ Cocos Creator 3D 内置的大多数值类型都将其 `lerp` 实现为线性插�
 将不会进行插值操作 --- 永远使用前一帧的曲线值作为结果。
 
 ```ts
-import { AnimationClip, color, IPropertyCurveData, SpriteFrame, v3 } from "Cocos3D";
+import { AnimationClip, color, IPropertyCurveData, SpriteFrame, v3 } from "cc";
 
 const animationClip = new AnimationClip();
 
@@ -154,7 +154,7 @@ const spriteCurve: IPropertyCurveData = {
 下列代码展示了如何自定义插值算法：
 
 ```ts
-import { ILerpable, IPropertyCurveData, Quat, quat, Vec3, v3, vmath } from "Cocos3D";
+import { ILerpable, IPropertyCurveData, Quat, quat, Vec3, v3, vmath } from "cc";
 
 class MyCurveValue implements ILerpable {
     public position: Vec3;

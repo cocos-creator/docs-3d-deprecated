@@ -2,19 +2,19 @@
 
 ## 运行环境
 
-Cocos Creator 3D 引擎的 API 都存在于模块 `Cocos3D`中，
+Cocos Creator 3D 引擎的 API 都存在于模块 `cc`中，
 使用标准的 ES6 模块导入语法将其导入：
 
 ```ts
 import {
     Component, // 导入类 Component
     _decorator, // 导入命名空间 _decorator
-} from "Cocos3D";
-import * as cocos3d from "Cocos3D"; // 将整个 Cocos3D 模块导入为命名空间 Cocos Creator 3D
+} from "cc";
+import * as cc from "cc"; // 将整个 Cocos Creator 3D 模块导入为命名空间 Cocos Creator 3D
 
 @_decorator.ccclass("MyComponent")
 export class MyComponent extends Component {
-    public v = new cocos3d.Vec3();
+    public v = new cc.Vec3();
 }
 ```
 
@@ -25,12 +25,12 @@ export class MyComponent extends Component {
 因此，你不应该将 `cc` 用作任何**全局**对象的名称：
 
 ```ts
-/* const cc = {}; // 每个 Cocos3D 脚本都等价于在此处含有隐式定义 */
+/* const cc = {}; // 每个 Cocos Creator 3D 脚本都等价于在此处含有隐式定义 */
 
-import * as cc from "Cocos3D"; // 错误：命名空间导入名称 cc 由 Cocos3D 保留使用
+import * as cc from "cc"; // 错误：命名空间导入名称 cc 由 Cocos Creator 3D 保留使用
 
 const cc = { x: 0 };
-console.log(cc.x); // 错误：全局对象名称 cc 由 Cocos3D 保留使用
+console.log(cc.x); // 错误：全局对象名称 cc 由 Cocos Creator 3D 保留使用
 
 function f () {
     const cc = { x: 0 };
