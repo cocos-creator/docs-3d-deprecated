@@ -1,4 +1,4 @@
-# Cocos 3D User Manual
+# Cocos Creator 3D User Manual
 
 ## Requirements
 

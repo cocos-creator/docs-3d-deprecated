@@ -2,7 +2,7 @@
 
 ## 获取 Collider 组件
 
-Cocos3D 目前支持两种语言进行开发，分别为 JavaScript 和 TypeScript。
+Cocos Creator 3D 目前支持两种语言进行开发，分别为 JavaScript 和 TypeScript。
 
 **注：TypeScript 具有良好的语法分析和类型提示，推荐使用 TypeScript 进行开发**。
 
@@ -26,7 +26,7 @@ Collider 组件具有 isTrigger 属性，当 isTrigger 为 true 时，表示为�
 
 ## Collider 和 RigidBody 的关系
 
-Collider 和 RigidBody 组件都是为了服务于物理元素，分别操控着物理元素上的一部分属性。这也意味着要了解它们之间的关系，需要先了解 Cocos3D 中的物理元素是如何构成的。
+Collider 和 RigidBody 组件都是为了服务于物理元素，分别操控着物理元素上的一部分属性。这也意味着要了解它们之间的关系，需要先了解 Cocos Creator 3D 中的物理元素是如何构成的。
 
 ### 元素如何构成
 
@@ -47,7 +47,7 @@ Collider 和 RigidBody 组件都是为了服务于物理元素，分别操控着
 - 思路 2 增加了节点耦合，节点更新时，需要更新相应的依赖节点。
 - 思路 2 在节点链被破坏时，需要维护内容更多，节点链在反复被破坏时需要处理更复杂的逻辑。
 
-**注：Cocos3D 的物理目前使用的是第一个思路，后续可能会进行调整，请留意版本更新公告**。
+**注：Cocos Creator 3D 的物理目前使用的是第一个思路，后续可能会进行调整，请留意版本更新公告**。
 
 ### Collider 的 attachedRigidbody 属性
 

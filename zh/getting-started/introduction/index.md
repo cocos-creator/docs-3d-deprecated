@@ -1,8 +1,8 @@
-# 关于 Cocos 3D
+# 关于 Cocos Creator 3D
 
 ## 产品定位
 
-Cocos 3D是在Cocos Creator结构的基础上增加3D渲染流程。
+Cocos Creator 3D是在Cocos Creator结构的基础上增加3D渲染流程。
 
 
 ## 工作流程说明

@@ -1,5 +1,5 @@
 # 灯光Gizmo
-有关 Cocos3D 的灯光信息可以查看[光源介绍](../../concepts/scene/light.md)
+有关 Cocos Creator 3D 的灯光信息可以查看[光源介绍](../../concepts/scene/light.md)
 ## 方向光（Directional Light)
 `方向光Gizmo` 显示了当前方向光的方向
 

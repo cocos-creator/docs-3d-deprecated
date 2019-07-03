@@ -1,6 +1,6 @@
 # 物理事件
 
-Cocos3D 的物理事件有触发事件和碰撞事件，分别由触发器和碰撞器产生。
+Cocos Creator 3D 的物理事件有触发事件和碰撞事件，分别由触发器和碰撞器产生。
 
 ## 触发器和碰撞器
 
@@ -17,7 +17,7 @@ Cocos3D 的物理事件有触发事件和碰撞事件，分别由触发器和碰
 
 ### 触发事件
 
-Cocos3D 中的触发事件由触发器生成，目前分为三种 onTriggerEnter、onTriggerStay、onTriggerExit，分别代表着触发开始，触发保持，触发结束。
+Cocos Creator 3D 中的触发事件由触发器生成，目前分为三种 onTriggerEnter、onTriggerStay、onTriggerExit，分别代表着触发开始，触发保持，触发结束。
 
 监听触发事件，可以通过注册事件的方式来添加触发后的回调，以下步骤可以完成触发事件的监听：
 
@@ -39,7 +39,7 @@ private onTrigger (event: ITriggerEvent) {
 
 ### 碰撞事件
 
-Cocos3D 中的碰撞事件由碰撞器生成，目前分为三种 onCollisionEnter、onCollisionStay、onCollisionExit，分别代表着碰撞开始，碰撞保持，碰撞结束。
+Cocos Creator 3D 中的碰撞事件由碰撞器生成，目前分为三种 onCollisionEnter、onCollisionStay、onCollisionExit，分别代表着碰撞开始，碰撞保持，碰撞结束。
 
 监听碰撞事件，可以通过注册事件的方式来添加碰撞后的回调，以下步骤可以完成碰撞事件的监听：
 

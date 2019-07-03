@@ -162,12 +162,13 @@ function pruneLeftBar (dir) {
         var path = allPages[i];
         var content = Fs.readFileSync(path, 'utf8');
         var result = content.replace(PRUNE_LEFT_BAR_RE, '');
-        if (content !== result) {
-            Fs.writeFileSync(path, result, 'utf8');
-        }
-        else {
-            throw 'Prune Summary Failed!';
-        }
+        // if (content !== result) {
+        //     Fs.writeFileSync(path, result, 'utf8');
+        // }
+        // else {
+        //     throw 'Prune Summary Failed!';
+        // }
+        Fs.writeFileSync(path, result, 'utf8');
     }
 }
 

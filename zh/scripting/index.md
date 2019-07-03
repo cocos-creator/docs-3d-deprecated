@@ -1,7 +1,7 @@
 
 # 脚本
 
-Cocos3D 脚本用于实现用户定义的（游戏）行为。
+Cocos Creator 3D 脚本用于实现用户定义的（游戏）行为。
 
 - [脚本创建](./setup.md)
 - [语言支持](./language-support.md)

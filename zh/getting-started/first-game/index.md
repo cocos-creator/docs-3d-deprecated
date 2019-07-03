@@ -1,22 +1,22 @@
 # 快速上手：制作第一个游戏
 
-Cocos3D编辑器的强大之处就是可以让开发者快速的制作游戏原型。
+Cocos Creator 3D编辑器的强大之处就是可以让开发者快速的制作游戏原型。
 
 下面我们将跟随教程制作一款名叫 **一步两步** 的魔性小游戏。这款游戏考验玩家的反应能力，根据路况选择是要跳一步还是跳两步，“一步两步，一步两步，一步一步似爪牙似魔鬼的步伐”。
 
 可以在 [这里](https://gameu3d.github.io/MindYourStep_Tutorial/index.html) 体验一下游戏的完成形态。
 
 ## 新建项目
-如果您还不了解如何获取和启动 Cocos3D，请阅读 [安装和启动](../install/index.md) 一节。
+如果您还不了解如何获取和启动 Cocos Creator 3D，请阅读 [安装和启动](../install/index.md) 一节。
 
-1. 首先启动 Cocos3D，然后新建一个名为 **MindYourStep** 的项目，如果不知道如果创建项目，请阅读 [Hello World!](../helloworld/index.md)。
+1. 首先启动 Cocos Creator 3D，然后新建一个名为 **MindYourStep** 的项目，如果不知道如果创建项目，请阅读 [Hello World!](../helloworld/index.md)。
 
 2. 新建项目后会看到如下的编辑器界面：
 
 ![main window](./images/main-window.png)
 
 ## 创建游戏场景
-在 Cocos3D 中，**游戏场景（Scene）** 是开发时组织游戏内容的中心，也是呈现给玩家所有游戏内容的载体。游戏场景中一般会包括以下内容：
+在 Cocos Creator 3D 中，**游戏场景（Scene）** 是开发时组织游戏内容的中心，也是呈现给玩家所有游戏内容的载体。游戏场景中一般会包括以下内容：
 - 场景物体
 - 角色
 - UI
@@ -29,7 +29,7 @@ Cocos3D编辑器的强大之处就是可以让开发者快速的制作游戏原�
    ![create scene](./images/create-folder.png)
 
 2. 点击先中Scenes目录（下图把一些常用的文件夹都提前创建好了），点击鼠标右键，在弹出的菜单中选择 **场景文件**
-   
+
    ![create scene](./images/create-scene.png)
 
 3. 我们创建了一个名叫 New Scene 的场景文件，创建完成后场景文件 New Scene 的名称会处于编辑状态，将它重命名为 Main。
@@ -70,7 +70,7 @@ Cocos3D编辑器的强大之处就是可以让开发者快速的制作游戏原�
 
    ![create player script](./images/create-player-script.gif)
 
-**注意：** Cocos3D 中脚本名称就是组件的名称，这个命名是大小写敏感的！如果组件名称的大小写不正确，将无法正确通过名称使用组件！
+**注意：** Cocos Creator 3D 中脚本名称就是组件的名称，这个命名是大小写敏感的！如果组件名称的大小写不正确，将无法正确通过名称使用组件！
 
 #### 编写脚本代码
 在打开的 PlayerController 脚本里已经有了预先设置好的一些代码块，如下所示：
@@ -97,7 +97,7 @@ export class PlayerController extends Component {
     // }
 }
 ```
-这些代码就是编写一个组件（脚本）所需的结构。具有这样结构的脚本就是 Cocos3D 中的 **组件（Component）**，他们能够挂载到场景中的节点上，提供控制节点的各种功能，更详细的脚本信息可以查看 [脚本](../../scripting/index.md)。
+这些代码就是编写一个组件（脚本）所需的结构。具有这样结构的脚本就是 Cocos Creator 3D 中的 **组件（Component）**，他们能够挂载到场景中的节点上，提供控制节点的各种功能，更详细的脚本信息可以查看 [脚本](../../scripting/index.md)。
 
 我们在脚本中添加对鼠标事件的监听，然后让Player动起来，将PlayerController中代码做如下修改。
 ```ts
@@ -199,12 +199,12 @@ export class PlayerController extends Component {
    ![add keyframe](./images/add-keyframe.gif)
 
 退出动画编辑模式前前记得要保存动画，否则做的动画就白费了。
-   
+
 3. 我们还可以通过 **资源管理器** 来创建Clip，下面我们创建一个名为twoStep的Clip并将它添加到Body身上的 `AnimationComponent` 上，这里为了录制方便调整了一下面板布局。
-   
+
    ![add animation from assets](./images/add-animation-from-assets.gif)
 4. 进入动画编辑模式，选择并编辑twoStep的clip，类似第2步，添加三个position的关键帧，分别为（0，0，0）、（0，1，0）、（0，0，0）。
-   
+
    ![edit second clip](./images/edit-second-clip.png)
 
 5. 在 `PlayerController组件` 中引用 `动画组件` ，我们需要在代码中根据跳的步数不同来播放不同的动画。
@@ -320,7 +320,7 @@ export class GameManager extends Component {
 开始菜单是游戏不可或缺的一部分，我们可以在这里加入游戏名称、游戏简介、制作人员等信息。
 
 1. 添加一个名为Play的按钮
- 
+
    ![create button](./images/create-button.gif)
 
    这个操作生成了一个Canvas节点，一个PlayButton节点和一个Label节点。因为UI组件需要在带有 `CanvasComponent` 的父节点下才能显示，所以编辑器在发现目前场景中没有带这个组件的节点时会自动添加一个。
@@ -339,7 +339,7 @@ export class GameManager extends Component {
    - 初始化（Init）：显示游戏菜单，初始化一些资源。
    - 游戏进行中（Playing）：隐藏游戏菜单，玩家可以操作角度进行游戏。
    - 结束（End）：游戏结束，显示结束菜单。
-  
+
    使用一个枚举（enum）类型来表示这几个状态。
    ```ts
     enum BlockType{
@@ -497,7 +497,7 @@ export class GameManager extends Component {
 ## 步数显示
 我们可以将当前跳的步数显示到界面上，这样在跳跃过程中看着步数的不断增长会十分有成就感。
 1. 在Canvas下新建一个名为Steps的Label，调整位置、字体大小等属性。
-   
+
    ![steps label](./images/steps-label.png)
 
 2. 在GameManager中引用这个Label
@@ -783,7 +783,7 @@ export class GameManager extends Component {
 
 
 ## 总结
-恭喜您完成了用 Cocos3D 制作的第一个游戏！在 [这里](https://github.com/cocos-creator/tutorial-mind-your-step-3d) 可以下载完整的工程，希望这篇快速入门教程能帮助您了解 Cocos3D 游戏开发流程中的基本概念和工作流程。如果您对编写和学习脚本编程不感兴趣，也可以直接从完成版的项目工程中把写好的脚本复制过来使用。
+恭喜您完成了用 Cocos Creator 3D 制作的第一个游戏！在 [这里](https://github.com/cocos-creator/tutorial-mind-your-step-3d) 可以下载完整的工程，希望这篇快速入门教程能帮助您了解 Cocos Creator 3D 游戏开发流程中的基本概念和工作流程。如果您对编写和学习脚本编程不感兴趣，也可以直接从完成版的项目工程中把写好的脚本复制过来使用。
 
 接下来您还可以继续完善游戏的各方各面，以下是一些推荐的改进方向：
 - 为游戏增加难度，当角色在原地停留1秒就算失败

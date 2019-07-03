@@ -23,7 +23,7 @@
 
  - `--path`：指定项目路径
  - `--build`：指定构建项目使用的参数
-在 `--build`  后如果没有指定参数，则会使用 Cocos3D 中构建面板当前的平台、模板等设置来作为默认参数。如果指定了其他参数设置，则会使用指定的参数来覆盖默认参数。可选择的参数有：
+在 `--build`  后如果没有指定参数，则会使用 Cocos Creator 3D 中构建面板当前的平台、模板等设置来作为默认参数。如果指定了其他参数设置，则会使用指定的参数来覆盖默认参数。可选择的参数有：
 - `configPath` - 参数文件路径。如果定义了这个字段，那么构建时将会按照 `json` 文件格式来加载这个数据，并作为构建参数
 - `excludedModules` - engine 中需要排除的模块，模块可以从 [这里](https://github.com/cocos-creator/engine/blob/master/modules.json) 查找到
 - `title` - 项目名
@@ -47,6 +47,6 @@
 
 ## 在 Jenkins 上部署
 
-Cocos3D 命令行运行的时候也是需要 GUI 环境的。如果你的 Jenkins 无法使用 Cocos3D 命令行运行，一个解决办法是：确保 Jenkins 运行在 agent 模式下，这样才能访问到 WindowServer。详见：<https://stackoverflow.com/questions/13966595/build-unity-project-with-jenkins-failed>
+Cocos Creator 3D 命令行运行的时候也是需要 GUI 环境的。如果你的 Jenkins 无法使用 Cocos Creator 3D 命令行运行，一个解决办法是：确保 Jenkins 运行在 agent 模式下，这样才能访问到 WindowServer。详见：<https://stackoverflow.com/questions/13966595/build-unity-project-with-jenkins-failed>
 
 如果你的 Jenkins 在 Windows 下无法编译，请在 Windows 的 **控制面板 -> 管理工具 -> 服务** 中为 Jenkins 的服务指定一个本地用户，然后重启电脑就可以了。不必单独设置一个 master-slave 模式。
