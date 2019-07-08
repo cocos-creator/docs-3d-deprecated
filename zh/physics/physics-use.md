@@ -9,12 +9,12 @@
 [**物理事件**](physics-event.md) | 介绍了 Cocos Creator 3D 中的物理事件
 [**分组和掩码**](physics-group-mask.md) | 介绍了物理中分组和掩码的使用
 
-## [**阅读** Collider 组件](./physics-use/physics-collider.md)
+### [**阅读** Collider 组件](./physics-use/physics-collider.md)
 
-## [**阅读** Rigidbody 组件](./physics-use/physics-rigidbody.md)
+### [**阅读** Rigidbody 组件](./physics-use/physics-rigidbody.md)
 
-## [**阅读** 物理事件](./physics-use/physics-event.md)
+### [**阅读** 物理事件](./physics-use/physics-event.md)
 
-## [**阅读** 分组和掩码](./physics-use/physics-group-mask.md)
+### [**阅读** 分组和掩码](./physics-use/physics-group-mask.md)
 
-## [**或者回到** 物理简介](physics.md)
+### [**或者回到** 物理简介](physics.md)

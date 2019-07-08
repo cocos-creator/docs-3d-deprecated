@@ -26,7 +26,7 @@ Cocos Creator 3D 目前为用户提供了碰撞器和刚体组件。
 
 ![球碰撞器组件](img/SphereColliderComponent.png)
 
-属性 | 解释（其它参考盒）
+属性 | 解释（其它参考盒碰撞器）
 ---|---
 **radius** | 球的半径
 
@@ -49,6 +49,6 @@ Cocos Creator 3D 目前为用户提供了碰撞器和刚体组件。
 
 **注： Builtin 中此组件暂时无效**。
 
-## [**继续下一篇**物理使用](physics-use.md)
+### [**继续下一篇**物理使用](physics-use.md)
 
-## [**或者回到**物理简介](physics.md)
+### [**或者回到**物理简介](physics.md)

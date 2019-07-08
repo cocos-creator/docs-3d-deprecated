@@ -56,6 +56,6 @@ Collider 和 RigidBody 组件都是为了服务于物理元素，分别操控着
 - 在自身节点无 RigidBody 组件时，该属性返回为 null
 - attachedRigidbody 是一个只能获取并且只读的属性
 
-## [**继续下一篇** Rigidbody 组件](physics-rigidbody.md)
+### [**继续下一篇** Rigidbody 组件](physics-rigidbody.md)
 
-## [**或者回到** 物理使用](./../physics-use.md)
+### [**或者回到** 物理使用](./../physics-use.md)

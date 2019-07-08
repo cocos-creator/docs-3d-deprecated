@@ -23,3 +23,11 @@ Cocos Creator 3D粒子系统以模块来组织功能，包含了以下模块：
 [**ShapeModule**](emitter.md) | 用于控制粒子发射，包括发射方向与速度，支持预定义的发射方向包括方块、圆、锥体、球、半球
 [**AnimatorModule**](module.md) |  用于控制粒子发射后状态更新。已支持的功能有：大小、颜色、旋转、速度、加速度、限速、贴图动画
 [**ParticleSystemRenderer**](renderer.md) |  用于生成粒子渲染所需要的数据。包括vb、ib、渲染状态相关的控制
+
+添加一个粒子系统模块有两种方式：
+1. 像其他组件一样为节点添加粒子系统组件（不推荐）
+2. 使用编辑器添加粒子系统组件（推荐）
+   - 开发者可以通过右侧 Inspector 面板上点击“添加组件”添加粒子，如下图：
+   ![](particle-system/new_ParticleSystemComponent.png)
+   - 也可以通过左侧的层级管理器“右键->创建->特效->粒子系统”来添加一个粒子系统组件，如下图：
+   ![](particle-system/new_ParticleSystemComponent_node.png)
