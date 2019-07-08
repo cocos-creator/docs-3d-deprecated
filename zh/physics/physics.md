@@ -46,7 +46,7 @@ Cocos Creator 3D 目前支持轻量的碰撞检测系统 Builtin 和具有物理
 
 物理系统（PhysicsSystem）是一个模拟真实物理行为的系统，它负责对物理世界中的元素进行物理计算，比如计算各物体是否产生碰撞，以及物体的受力情况。所有元素计算完成后，还会更新到场景世界中，从而使游戏对象产生相应的物理行为。
 
-目前 Cocos Creator 3D 中物理计算所处的流程 ：  所有 Update 结束后 → 物理计算 → 开始绘画
+目前 Cocos Creator 3D 中物理计算所处的流程 ：  所有 Update 结束后 → 物理计算 → 开始渲染
 
 场景世界与物理世界，如图：
 ![场景世界与物理世界](img/SceneAndPhysics.png)
@@ -61,4 +61,4 @@ Cocos Creator 3D 的物理系统的更多内容将通过以下模块来进行更
 [**物理组件**](physics-component.md) | 介绍了一些列物理组件以及面板上的一系列属性
 [**物理使用**](physics-use.md) | 进一步介绍了物理组件的使用
 
-## [**继续下一篇**物理选项](physics-item.md)
+### [**继续下一篇**物理选项](physics-item.md)

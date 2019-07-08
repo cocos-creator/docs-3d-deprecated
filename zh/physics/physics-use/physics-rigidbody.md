@@ -78,6 +78,6 @@ rigidBody.setAngularVelocity(new Vec3(5, 0, 0)); // 改变旋转速度
 
 **注：将因子某分量值设置为 0，可以固定某个轴向的移动或旋转，如果要完全固定旋转，请用 fixedRotation**。
 
-## [**继续下一篇** 物理事件](physics-event.md)
+### [**继续下一篇** 物理事件](physics-event.md)
 
-## [**或者回到** 物理使用](./../physics-use.md)
+### [**或者回到** 物理使用](./../physics-use.md)

@@ -35,7 +35,7 @@
   - [加速度模块(ForceOvertimeModule)](particle-system/force-module.md)
   - [贴图动画模块(TextureAnimationModule)](particle-system/texture-animation-module.md)
   - [渲染模块(Renderer)](particle-system/renderer.md)
-  - [拖尾模块(TrailModule)](trail-module.md)
+  - [拖尾模块(TrailModule)](particle-system/trail-module.md)
 - [动画](engine/animation/index.md)
   - [动画组件](engine/animation/animation-component.md)
   - [动画剪辑](engine/animation/animation-clip.md)
