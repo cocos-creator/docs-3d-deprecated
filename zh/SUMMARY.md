@@ -62,6 +62,10 @@
   - [事件](scripting/event.md)
 
 ## 编辑器手册
+
+- [功能地图](function-guide/index.md)
+  - [阴影](concepts/scene/shadow.md)
+  - [天空盒](concepts/scene/skybox.md)
 - [快速入门](getting-started/index.md)
   - [Dashboard](getting-started/dashboard/index.md)
   - [Hello world!](getting-started/helloworld/index.md)
