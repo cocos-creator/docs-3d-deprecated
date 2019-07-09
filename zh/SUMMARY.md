@@ -115,6 +115,7 @@
 
 - [项目预览调试](editor/preview/index.md)
   - [浏览器预览](editor/preview/browser.md)
+  - [预览流程简介与常见错误处理](preview-guid.md)
 
 - [粒子编辑器](particle-system/editor/index.md)
   - [曲线编辑器](particle-system/editor/curve-editor.md)
@@ -131,7 +132,8 @@
   - [动画事件](editor/animation/animation-event.md)
 
 - [构建发布](editor/publish/index.md)
-  - [熟悉构建发布面板与通用构建参数](editor/publish/build-panel.md)
+  - [熟悉构建发布面板](editor/publish/build-panel.md)
+  - [通用构建参数介绍](editor/publish/build-options.md)
   - [发布到 web 平台](editor/publish/publish-web.md)
   - [发布到微信小游戏](editor/publish/publish-wechatgame.md)
     - [接入微信小游戏的开放数据域](editor/publish/publish-wechatgame-subcontext.md)

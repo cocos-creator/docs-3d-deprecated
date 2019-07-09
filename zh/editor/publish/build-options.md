@@ -44,10 +44,10 @@ url = cc.loader.md5Pipe.transformURL(url);
 ### 引擎模块设置
 这部分设置可以在 `项目设置-->模块设置` 里更改，主要是用于剔除一些项目内不需要使用的引擎模块来减少打包后的包体。
 
-![](build-options/engine-excludes.jpg)
+![](build-options/engine-excludes.png)
 
 ### 引擎物理选项
-这部分设置可以在 `项目设置-->引擎设置-->physics` 里更改，主要是用于设置当前引擎的物理选项配置。详情请参见 [物理选项配置](./../../../physics/physics-item.md)
+这部分设置可以在 `项目设置-->引擎设置-->physics` 里更改，主要是用于设置当前引擎的物理选项配置。详情请参见 [物理选项配置](../../physics/physics-item.md)
 
 ### Canvas 默认设置
-这部分设置可以在 `项目设置-->通用设置-->默认 Canvas 设置` 里更改，主要用于设置多种分辨率的问题，如果项目内没有 Canvas 组件可以忽略该设置，详情请参见[多分辨率适配方案](./../../../ui-system/components/engine/multi-resolution.md)
+这部分设置可以在 `项目设置-->通用设置-->默认 Canvas 设置` 里更改，主要用于设置多种分辨率的问题，如果项目内没有 Canvas 组件可以忽略该设置，详情请参见[多分辨率适配方案](../../ui-system/components/engine/multi-resolution.md)
