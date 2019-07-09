@@ -81,7 +81,7 @@ comp.setMaterial(mat, 1); // 赋给第二个 submodel
 同一个 Material 也可挂载到任意多个 RenderableComponent 上, 一般在编辑器中通过拖拽的方式即可自动赋值. 而当场景中的某个模型的 Material 需要特化的设置, 会在从 RenderableComponent 获取 Material 时自动做拷贝实例化, 从而实现独立的定制.
 ```ts
 const comp2 = someNode2.getComponent(cc.ModelComponent);
-const mat2 = comp2.material; // 拷贝实例化, 接下来对 `mat` 的修改只会影响这个模型
+const mat2 = comp2.material; // 拷贝实例化, 接下来对 `mat2` 的修改只会影响 `comp2` 的模型
 ```
 
 对于一个已初始化的材质, 如果希望修改最初的基本信息, 可以直接再次调用 initialize 函数, 重新创建渲染资源.
@@ -125,7 +125,7 @@ pass.setUniform(hColor, color);
 | normalMap | 法线贴图，用于增加表面细节 |
 | pbrParams | PBR 材质参数常量：粗糙度、金属度和 AO；<br>每种属性具体对应的通道由 XX_CHANNEL 宏定义决定 |
 | pbrMap | PBR 材质参数贴图：粗糙度、金属度和 AO；如果有指定，这项会替代材质参数常量；<br>每种属性具体对应的通道由 XX_CHANNEL 宏定义决定 |
-| pbrScale | PBR 材质参数的权重：粗糙度、金属度和 AO；<br>每个分量具体对应的通道由 XX_CHANNEL 宏定义决定 |
+| pbrScale | PBR 材质参数的权重：粗糙度、金属度和 AO；<br>每个分量具体对应的通道由 XX_CHANNEL 宏定义决定；但 w 通道固定为 normal map 的强度 |
 | emissive | 自发光颜色，不参与光照计算模型直接发散出的颜色 |
 | emissiveMap | 自发光贴图，如果有指定，这项会和自发光颜色相乘，<br>因此需要把自发光颜色（默认是黑色）调高才会有效果 |
 | emissiveScale | 自发光权重，用于控制自发光颜色的强度 |
