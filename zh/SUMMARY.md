@@ -20,6 +20,7 @@
     - [球面光](concepts/scene/light/sphere-light.md)
     - [聚光灯](concepts/scene/light/spot-light.md)
   - [阴影](concepts/scene/shadow.md)
+  - [环境光](concepts/scene/ambient.md)
   - [天空盒](concepts/scene/skybox.md)
 - [材质](material-system/overview.md)
   - [YAML 101](material-system/yaml-101.md)

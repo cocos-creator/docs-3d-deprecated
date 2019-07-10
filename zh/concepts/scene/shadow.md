@@ -25,7 +25,7 @@ Cococs Creator 3D 目前支持高性价比的 Planar Shadow ，后面会提供�
 
 以下介绍了面板的所有属性：
 
-属性 | 解释（其它参考盒）
+属性 | 解释
 ---|---
 **enabled** | 是否开启 planar shadows
 **normal** | 垂直与阴影平面的法线
@@ -34,4 +34,4 @@ Cococs Creator 3D 目前支持高性价比的 Planar Shadow ，后面会提供�
 
 ---
 
-继续前往 [天空盒](skybox.md) 说明文档。
+继续前往 [环境光](ambient.md) 说明文档。
