@@ -19,13 +19,13 @@ Button 组件可以响应用户的点击操作，当用户点击 Button 时，Bu
 | Transition           | 枚举类型，包括 NONE, COLOR，SPRITE 和 SCALE。每种类型对应不同的 Transition 设置。详情见下方的 **Button Transition** 部分。    |
 | Click Event          | 列表类型，默认为空，用户添加的每一个事件由节点引用，组件名称和一个响应函数组成。详情见下方的 **Button 事件** 部分。                 |
 
-## Button Transition
+### Button Transition
 
 Button 的 Transition 用来指定当用户点击 Button 时的状态表现。目前主要有 NONE，COLOR，SPRITE 和 SCALE。
 
 ![transition](button/transition.png)
 
-### Color Transition
+#### Color Transition
 
 ![color-transition](button/color-transition.png)
 
@@ -37,7 +37,7 @@ Button 的 Transition 用来指定当用户点击 Button 时的状态表现。�
 | Disabled       | Button 在 Disabled 状态下的颜色。  |
 | Duration       | Button 状态切换需要的时间间隔。      |
 
-### Sprite Transition
+#### Sprite Transition
 
 ![sprite-transition](button/sprite-transition.png)
 
@@ -48,7 +48,7 @@ Button 的 Transition 用来指定当用户点击 Button 时的状态表现。�
 | Hover          | Button 在 Hover 状态下的 SpriteFrame。    |
 | Disabled       | Button 在 Disabled 状态下的 SpriteFrame。 |
 
-### Scale Transition
+#### Scale Transition
 
 ![scaleTransition](button/scaleTransition.png)
 
@@ -57,7 +57,11 @@ Button 的 Transition 用来指定当用户点击 Button 时的状态表现。�
 | Duration       | Button 状态切换需要的时间间隔。                                                                |
 | ZoomScale      | 当用户点击按钮后，按钮会缩放到一个值，这个值等于 Button 原始 scale * zoomScale, zoomScale 可以为负数  |
 
-## Button 事件
+### 详细说明
+
+Button 目前只支持 Click 事件，即当用户点击并释放 Button 时才会触发相应的回调函数。
+
+### 组件事件结构
 
 ![button-event](button/button-event.png)
 
@@ -68,40 +72,36 @@ Button 的 Transition 用来指定当用户点击 Button 时的状态表现。�
 | Handler         | 指定一个回调函数，当用户点击 Button 并释放时会触发此函数。 |
 | CustomEventData | 用户指定任意的字符串作为事件回调的最后一个参数传入。       |
 
-## 详细说明
-
-Button 目前只支持 Click 事件，即当用户点击并释放 Button 时才会触发相应的回调函数。
-
 ### 通过脚本代码添加回调
 
 #### 方法一
 
 这种方法添加的事件回调和使用编辑器添加的事件回调是一样的，都是通过代码添加。首先需要构造一个 `cc.Component.EventHandler` 对象，然后设置好对应的 `target`、`component`、`handler` 和 `customEventData` 参数。
 
-```js
-//here is your component file, file name = MyComponent.js
-cc.Class({
-    extends: cc.Component,
-    properties: {},
+```ts
+import { _decorator, Component, Event, Node, ButtonComponent } from "cc";
+const { ccclass, property } = _decorator;
 
-    onLoad: function () {
-        var clickEventHandler = new cc.Component.EventHandler();
+@ccclass("example")
+export class example extends Component {
+    onLoad(){
+        const clickEventHandler = new cc.Component.EventHandler();
         clickEventHandler.target = this.node; //这个 node 节点是你的事件处理代码组件所属的节点
-        clickEventHandler.component = "MyComponent";//这个是代码文件名
-        clickEventHandler.handler = "callback";
-        clickEventHandler.customEventData = "foobar";
+        clickEventHandler.component = 'example';//这个是代码文件名
+        clickEventHandler.handler = 'callback';
+        clickEventHandler.customEventData = 'foobar';
 
-        var button = node.getComponent(cc.ButtonComponent);
+        const button = this.node.getComponent(ButtonComponent);
         button.clickEvents.push(clickEventHandler);
-    },
-
-    callback: function (event, customEventData) {
-        //这里 event 是一个 Touch Event 对象，你可以通过 event.target 取到事件的发送节点
-        var node = event.target;
-        var button = node.getComponent(cc.ButtonComponent);
-        //这里的 customEventData 参数就等于你之前设置的 "foobar"
     }
-});
+
+    callback(event: Event, customEventData: string){
+        //这里 event 是一个 Touch Event 对象，你可以通过 event.target 取到事件的发送节点
+        const node = event.target as Node;
+        const button = node.getComponent(ButtonComponent);
+        console.log(customEventData); // foobar
+    }
+}
 ```
 
 #### 方法二
@@ -109,25 +109,24 @@ cc.Class({
 通过 `button.node.on('click', ...)` 的方式来添加，这是一种非常简便的方式，但是该方式有一定的局限性，在事件回调里面无法
 获得当前点击按钮的屏幕坐标点。
 
-```js
+```ts
 //假设我们在一个组件的 onLoad 方法里面添加事件处理回调，在 callback 函数中进行事件处理:
 
-cc.Class({
-    extends: cc.Component,
+import { _decorator, Component, ButtonComponent } from "cc";
+const { ccclass, property } = _decorator;
 
-    properties: {
-       button: cc.ButtonComponent
-    },
-
-    onLoad: function () {
-       this.button.node.on('click', this.callback, this);
-    },
-
-    callback: function (button) {
-       //do whatever you want with button
-       //另外，注意这种方式注册的事件，也无法传递 customEventData
+@ccclass("example")
+export class example extends Component {
+    @property(ButtonComponent)
+    button: ButtonComponent | null = null;
+    onLoad(){
+        this.button.node.on('click', this.callback, this);
     }
-});
+
+    callback(button: ButtonComponent){
+        // 注意这种方式注册的事件，无法传递 customEventData
+    }
+}
 ```
 ---
 

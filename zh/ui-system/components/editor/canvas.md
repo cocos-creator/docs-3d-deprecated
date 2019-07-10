@@ -4,7 +4,6 @@
 
 Canvas 组件不仅是 UI 渲染的根节点，同时在游戏制作时还有一个很重要的功能在多分辨率适配方案，具体请参考[多分辨率适配方案](../engine/multi-resolution.md)。
 
-![Resolution](canvas/resolution.png)
 
 <!-- 画布的脚本接口请参考[Canvas API](../../../api/zh/classes/Canvas.html)。 -->
 

@@ -19,7 +19,7 @@
 
 - 点击动画编辑器上点击右上角的退出按钮，或者在场景编辑器左上角的关闭按钮
 
-更多关于 Animation 的系统设计以及脚本控制 Animation 的内容可以参见 [Animation](./../../engine/animation/index.md)
+更多细节参见 Animation 的[系统设计](./../../engine/animation/index.md)以及 Animation 的[脚本控制](./../../engine/animation/animation-component.md)。
 
 ---
 

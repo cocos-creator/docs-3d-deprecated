@@ -34,7 +34,7 @@ export class NewScript extends Component {
 
 ## 编辑脚本
 
-用户可根据自己的需求，选择自己喜爱的文本工具（如：Vim, Sublime Text, Web Storm, VSCode...）进行脚本编辑，请先到 [设置]() 中进行设置。
+用户可根据自己的需求，选择自己喜爱的文本工具（如：Vim, Sublime Text, Web Storm, VSCode...）进行脚本编辑，请先到 [设置](#默认脚本编辑工具配置) 中进行设置。
 
 通过双击脚本资源，可以直接打开脚本编辑器进行编辑。当编辑完脚本并保存，Cocos Creator 3D 会自动检测到脚本的改动，并迅速编译。
 
@@ -51,6 +51,10 @@ export class NewScript extends Component {
 ![script-in-properties](setup/script-in-inspector.png)
 
 **注意**：用户也可以通过直接拖拽脚本资源到 **属性检查器** 的方式来添加脚本。
+
+## 默认脚本编辑工具配置
+
+![add-defaut-script-config](setup/add-defaut-script-config.png)
 
 ---
 

@@ -53,6 +53,7 @@ class MyComponent extends Component {
     }
 }
 
+// >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 const myComponent = node.addComponent(MyComponent);
 myComponent.printNodeName(); // 正确
 node.removeComponent();

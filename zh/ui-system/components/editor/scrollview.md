@@ -30,12 +30,7 @@ ScrollView 是一种带滚动功能的容器，它提供一种方式可以在有
 
 ![scrollview-event](scroll/scrollview-event.png)
 
-| 属性             | 功能说明                                                |
-| --------------  | -----------                                            |
-| Target          | 带有脚本组件的节点。                                      |
-| Component       | 脚本组件名称。                                           |
-| Handler         | 指定一个回调函数，当 ScrollView 的事件发生的时候会调用此函数。 |
-| CustomEventData | 用户指定任意的字符串作为事件回调的最后一个参数传入。            |
+事件结构参考：[组件事件结构](./button.md#组件事件结构)
 
 Scrollview 的事件回调有两个参数，第一个参数是 ScrollView 本身，第二个参数是 ScrollView 的事件类型。
 
@@ -45,13 +40,13 @@ ScrollBar 是可选的，你可以选择只设置 Horizontal ScrollBar 或者 Ve
 
 ## 详细说明
 
-ScrollView 组件必须有指定的 content 节点才能起作用，通过指定滚动方向和 content 节点在此方向上的长度来计算滚动时的位置信息，Content 节点也可以通过 `UIWidget` 设置自动 resize。
+ScrollView 组件必须有指定的 content 节点才能起作用，通过指定滚动方向和 content 节点在此方向上的长度来计算滚动时的位置信息，Content 节点也可以通过添加 `WidgetComponnet` 设置自动 resize，也可以通过添加 `LayoutComponnet` 来完成子节点布局，但是这两个组件不应该同时添加到一个节点上以避免产生不可预料的后果。
 
 通常一个 ScrollView 的节点树如下图：
 
 ![scrollview-hierarchy](scroll/scrollview-hierarchy.png)
 
-这里的 Viewport 用来定义一个可以显示的滚动区域，所以通常 Mask 组件会被添加到 Viewport 上。可以滚动的内容可以直接放到 content 节点或者添加节 content 的子节点上。
+这里的 view 用来定义一个可以显示的滚动区域，所以通常 MaskComponent 组件会被添加到 view 上。可以滚动的内容可以直接放到 content 节点或者添加节 content 的子节点上。
 
 ## 通过脚本代码添加回调
 
@@ -59,30 +54,29 @@ ScrollView 组件必须有指定的 content 节点才能起作用，通过指定
 
 这种方法添加的事件回调和使用编辑器添加的事件回调是一样的，都是通过代码添加。首先需要构造一个 `cc.Component.EventHandler` 对象，然后设置好对应的 `target`、`component`、`handler` 和 `customEventData` 参数。
 
-```js
-// here is your component file, file name = MyComponent.js
-cc.Class({
-    extends: cc.Component,
-    properties: {},
+```ts
+import { _decorator, Component, ScrollViewComponent } from "cc";
+const { ccclass, property } = _decorator;
 
-    onLoad: function () {
-        var scrollViewEventHandler = new cc.Component.EventHandler();
+@ccclass("example")
+export class example extends Component {
+    onLoad() {
+        const scrollViewEventHandler = new cc.Component.EventHandler();
         scrollViewEventHandler.target = this.node; // 这个 node 节点是你的事件处理代码组件所属的节点
-        scrollViewEventHandler.component = "MyComponent";// 这个是代码文件名
-        scrollViewEventHandler.handler = "callback";
-        scrollViewEventHandler.customEventData = "foobar";
+        scrollViewEventHandler.component = 'example';// 这个是代码文件名
+        scrollViewEventHandler.handler = 'callback';
+        scrollViewEventHandler.customEventData = 'foobar';
 
-        var scrollview = node.getComponent(cc.ScrollViewComponent);
+        const scrollview = this.node.getComponent(ScrollViewComponent);
         scrollview.scrollEvents.push(scrollViewEventHandler);
-    },
-
-	// 注意参数的顺序和类型是固定的
-    callback: function (scrollview, eventType, customEventData) {
-        // 这里 scrollview 是一个 Scrollview 组件对象实例
-        // 这里的 eventType === cc.ScrollView.EventType enum 里面的值
-        // 这里的 customEventData 参数就等于你之前设置的 "foobar"
     }
-});
+
+    callback(scrollview, eventType, customEventData){
+        // 这里 scrollview 是一个 Scrollview 组件对象实例
+        // 这里的 eventType === cc.ScrollViewComponent.EventType enum 里面的值
+        // 这里的 customEventData 参数就等于你之前设置的 'foobar'
+    }
+}
 ```
 
 ### 方法二
@@ -91,23 +85,21 @@ cc.Class({
 
 ```js
 // 假设我们在一个组件的 onLoad 方法里面添加事件处理回调，在 callback 函数中进行事件处理:
+import { _decorator, Component, ScrollViewComponent } from "cc";
+const { ccclass, property } = _decorator;
 
-cc.Class({
-    extends: cc.Component,
-
-    properties: {
-       scrollview: cc.ScrollViewComponent
-    },
-
-    onLoad: function () {
-       this.scrollview.node.on('scroll-to-top', this.callback, this);
-    },
-
-    callback: function (scrollView) {
-       // 回调的参数是 ScrollView 组件
-       // do whatever you want with scrollview
+@ccclass("example")
+export class example extends Component {
+    @property(ScrollViewComponent)
+    scrollview: ScrollViewComponent | null = null;
+    onLoad(){
+        this.scrollview.node.on('scroll-to-top', this.callback, this);
     }
-});
+
+    callback(scrollView: ScrollViewComponent){
+        // 回调的参数是 ScrollView 组件，注意这种方式注册的事件，无法传递 customEventData
+    }
+}
 ```
 
 同样的，你也可以注册 `scrolling`, `touch-up`, `scroll-began` 等事件，这些事件的回调函数的参数与 `scroll-to-top` 的参数一致。

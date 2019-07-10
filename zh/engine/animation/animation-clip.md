@@ -37,7 +37,7 @@ animationClip.curveDatas = {
     },
     "/Body": {
         comps: {
-            "cc.Sprite": { // `Body` 子结点上，`cc.Sprite` 组件的 `color` 属性的曲线
+            "cc.Sprite": { // `Body` 子结点上，`SpriteComponent` 组件的 `color` 属性的曲线
                 keys: 1, // 即 `bodyCruveKeys`
                 values: bodyCurveValues,
             },
@@ -48,8 +48,8 @@ animationClip.curveDatas = {
 
 以上创建的动画剪辑包含两条曲线：
 - 一条曲线控制子结点 `Head` 的位置变化，包含 3 帧，使得 `Head` 的 x 坐标由 0 变化为 0.5 再变化为 0。
-- 另一条曲线控制子结点 `Body` 上 `cc.Sprite` 组件的颜色变化，包含 6 帧，
-使得 `Body` 上的 `cc.Sprite` 组件的颜色从黑逐渐变化为白。
+- 另一条曲线控制子结点 `Body` 上 `SpriteComponent` 组件的颜色变化，包含 6 帧，
+使得 `Body` 上的 `SpriteComponent` 组件的颜色从黑逐渐变化为白。
 
 注意，曲线的帧时间是以引用方式索引到 `AnimationClip.keys` 数组中的。
 如此一来，多条曲线可以共享帧时间。这将带来额外的性能优化。

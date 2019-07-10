@@ -14,12 +14,46 @@ ToggleContainer 不是一个可见的 UI 组件，它可以用来修改一组 To
 
 | 属性 |   功能说明
 | -------------- | ----------- |
-| allowSwitchOff | 如果这个设置为 true， 那么 toggle 按钮在被点击的时候可以反复地被选中和未选中。
+| AllowSwitchOff | 如果这个设置为 true， 那么 toggle 按钮在被点击的时候可以反复地被选中和未选中。
+| CheckEvents | 选中事件。列表类型，默认为空，用户添加的每一个事件由节点引用，组件名称和一个响应函数组成。
+
+## ToggleContainer 事件
+
+事件结构参考：[组件事件结构](./button.md#组件事件结构)      |
+
+ToggleContainer 的事件回调有二个参数，第一个参数是 Toggle 本身, 第二个参数是 customEventData。
 
 ## 详细说明
 
 ToggleContainer 一般不会单独使用，它需要与 `Toggle` 配合使用来实现 RadioButton 的单选效果。
 
+## 通过脚本代码添加回调
+
+这种方法添加的事件回调和使用编辑器添加的事件回调是一样的，都是通过代码添加。首先需要构造一个 `cc.Component.EventHandler` 对象，然后设置好对应的 `target`、`component`、`handler` 和 `customEventData` 参数。
+
+```ts
+import { _decorator, Component, Event, Node, ToggleContainerComponent } from "cc";
+const { ccclass, property } = _decorator;
+
+@ccclass("example")
+export class example extends Component {
+    onLoad(){
+        const containerEventHandler = new cc.Component.EventHandler();
+        containerEventHandler.target = this.node; // 这个 node 节点是你的事件处理代码组件所属的节点
+        containerEventHandler.component = 'example';// 这个是代码文件名
+        containerEventHandler.handler = 'callback';
+        containerEventHandler.customEventData = 'foobar';
+
+        const container = this.node.getComponent(ToggleContainerComponent);
+        container.checkEvents.push(containerEventHandler);
+    }
+
+    callback(event: Event, customEventData: string){
+        //这里 event 是一个 Touch Event 对象，你可以通过 event.target 取到事件的发送节点
+        // 这里的 customEventData 参数就等于之前设置的 'foobar'
+    }
+}
+```
 ---
 
 ### [**其他基础模块参考**](base-component.md)
