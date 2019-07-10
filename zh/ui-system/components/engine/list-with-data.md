@@ -12,32 +12,41 @@ UI 界面只有静态页面内容是不够的，我们会遇到很多需要由�
 - 出售价格
 - ...
 
-<!-- 下面我们将会结合脚本介绍如何定义和使用数据，如果您对 Cocos Creator 的脚本系统还不熟悉，可以先从 [脚本开发工作流程](../scripting/index.md)一章开始学习。 -->
+下面我们将会结合脚本介绍如何定义和使用数据，如果您对 Cocos Creator 3D 的脚本系统还不熟悉，可以先从 [脚本开发指南](../../../scripting/index.md)一章开始学习。
 
 ### 自定义数据类
 
 对于大多数游戏来说，这些数据通常都来自于服务器或本地的数据库，现在我们为了展示流程，暂时把数据存在列表组件里就可以了。您可以新建一个脚本 `ItemList.js`，并添加如下的属性：
 
-```js
-var Item = cc.Class({
-    name: 'Item',
-    properties: {
-        id: 0,
-        itemName: '',
-        itemPrice: 0,
-        iconSF: cc.SpriteFrame
-    }
-});
+```ts
+@ccclass('Item')
+export class Item {
+    @property
+    id = 0;
+    @property
+    itemName = '';
+    @property
+    itemPrice = 0;
+    @property(SpriteFrame)
+    iconSF: SpriteFrame | null = null;
+}
 
-cc.Class({
-    extends: cc.Component,
-    properties: {
-        items: {
-            default: [],
-            type: Item
+@ccclass
+export class ItemList extends Component {
+    @property([Item])
+    items: Item[] = [];
+    @property(Prefab)
+    itemPrefab: Prefab | null = null;
+
+    onLoad() {
+        for (var i = 0; i < this.items.length; ++i) {
+            var item = cc.instantiate(this.itemPrefab);
+            var data = this.items[i];
+            this.node.addChild(item);
+            item.getComponent('ItemTemplate').init(data);
         }
-    },
-});
+    }
+}
 ```
 
 上面脚本的前半部分我们声明了一个叫做 `Item` 的数据类，用来存放我们展示物品需要的各种数据。注意这个类并没有继承 `cc.Component`，因此他不是一个组件，但可以被组件使用。关于声明自定义类的更多内容，请查阅[自定义 Class](../scripting/class.md)文档。
@@ -63,16 +72,18 @@ cc.Class({
 
 您在拼装 Prefab 时可以根据自己的需要自由发挥，上图中展示的仅仅是一个结构的例子。有了物品的模板结构，接下来我们需要一个组件脚本来完成节点结构的绑定。新建一个 `ItemTemplate.js` 的脚本，并将其添加到刚才制作的模板节点上。该脚本内容如下：
 
-```js
-cc.Class({
-    extends: cc.Component,
-    properties: {
-        id: 0,
-        icon: cc.SpriteFrame,
-        itemName: cc.String,
-        itemPrice: cc.String
-    }
-});
+```ts
+@ccclass
+export class ItemTemplate extends Component {
+    @property
+    public id = 0;
+    @property(SpriteComponent)
+    public icon: SpriteComponent | null = null;
+    @property(LabelComponent)
+    public itemName: LabelComponent | null = null;
+    @property(LabelComponent)
+    public itemPrice: LabelComponent | null = null;
+}
 ```
 
 接下来将对应的节点拖拽到该组件的各个属性上：
@@ -85,12 +96,9 @@ cc.Class({
 
 接下来我们需要继续修改 `ItemTemplate.js`，为其添加接受数据后进行处理的逻辑。在上述脚本后面加入以下内容：
 
-```js
-    properties: {
-    ...
-    },
-    // data: {id,iconSF,itemName,itemPrice}
-    init: function (data) {
+```ts
+    // data: { id, iconSF, itemName, itemPrice }
+    init(data: Item) {
         this.id = data.id;
         this.icon.spriteFrame = data.iconSF;
         this.itemName.string = data.itemName;
@@ -104,23 +112,17 @@ cc.Class({
 
 现在让我们回到 `ItemList.js` 脚本，接下来要添加的是物品模板 Prefab 的引用，以及动态生成列表的逻辑。
 
-```js
-    properties: {
-        //...
-        itemPrefab: cc.Prefab
-    },
+```ts
+    //...
+    @property(Prefab)
+    itemPrefab: Prefab | null = null;
 
     onLoad () {
         for (var i = 0; i < this.items.length; ++i) {
             var item = cc.instantiate(this.itemPrefab);
             var data = this.items[i];
             this.node.addChild(item);
-            item.getComponent('ItemTemplate').init({
-                id: data.id,
-                itemName: data.itemName,
-                itemPrice: data.itemPrice,
-                iconSF: data.iconSF
-            });
+            item.getComponent('ItemTemplate').init(data);
         }
     }
 ```

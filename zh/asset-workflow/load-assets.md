@@ -18,7 +18,7 @@ Cocos Creator 3D 采用与Cocos Creator统一的资源管理机制，在本篇�
 
 ```typescript
 // NewScript.ts
-import { _decorator, Component } from "Cocos3D";
+import { _decorator, Component } from "cc";
 const { ccclass, property } = _decorator;
 
 @ccclass("NewScript")
@@ -35,12 +35,12 @@ export class NewScript extends Component {
 
 ```typescript
 // NewScript.ts
-import { _decorator, Component } from "Cocos3D";
+import { _decorator, Component } from "cc";
 const { ccclass, property } = _decorator;
 
 @ccclass("NewScript")
 export class NewScript extends Component {
-    
+
     @property({type: cc.Texture2D})
     public texture: cc.Texture2D = null;
 
@@ -103,18 +103,18 @@ cc.loader.loadRes("test assets/anim", (err: any, clip: cc.AnimationClip) => {
 
 #### 加载 SpriteFrame 或 Texture2D
 
-图片设置为 sprite-frame 或 texture 或其他图片类型后，将会在 **资源管理器** 中生成一个对应类型的资源。但如果直接加载 `test assets/image`，得到的类型将会是 cc.ImageAsset。你必须在图片路径之后加入资源类型，才能加载到图片生成的 对应资源的子资源, 如果不确定对应资源的路径可以在运行或预览时到settings.js中查看：
+图片设置为 sprite-frame 或 texture 或其他图片类型后，将会在 **资源管理器** 中生成一个对应类型的资源。但如果直接加载 `test assets/logo2`，得到的类型将会是 cc.ImageAsset。你必须在图片路径之后加入资源类型，才能加载到图片生成的 对应资源的子资源, 如果不确定对应资源的路径可以在运行或预览时到settings.js中查看：
 
 ```typescript
-// 加载 SpriteFrame
-cc.loader.loadRes("test assets/image/spriteFrame", (err: any, spriteFrame: cc.SpriteFrame) => {
-    this.node.getComponent(cc.Sprite).spriteFrame = spriteFrame;
+// 加载 SpriteFrame，logo2 是 ImageAsset，texture 是 SpriteFrame/Texture-2d
+cc.loader.loadRes("test assets/logo2/texture", (err: any, spriteFrame: cc.SpriteFrame) => {
+    this.node.getComponent('cc.SpriteComponent').spriteFrame = spriteFrame;
 });
 ```
 
 > 如果指定了类型参数，就会在路径下查找指定类型的资源。当你需要获取 “子资源”（例如获取 Texture2D 生成的 SpriteFrame），就需要指定子资源的路径。
 
-#### 加载图集中的 SpriteFrame
+<!-- #### 加载图集中的 SpriteFrame
 
 对从 TexturePacker 等第三方工具导入的图集而言，如果要加载其中的 SpriteFrame，则只能先加载图集，再获取其中的 SpriteFrame。这是一种特殊情况。
 
@@ -125,7 +125,7 @@ cc.loader.loadRes("test assets/sheep", cc.SpriteAtlas, (err: any, atlas: cc.Spri
     const frame = atlas.getSpriteFrame('sheep_down_0');
     sprite.spriteFrame = frame;
 });
-```
+``` -->
 
 #### 资源释放
 

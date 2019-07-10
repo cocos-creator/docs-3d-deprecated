@@ -8,7 +8,7 @@ Layout（自动布局）组件可以挂载在任何节点上，将节点变成�
 
 ### 水平布局（Horizontal)
 
-![horizontal](auto-layout/horizontal.jpg)
+![horizontal](auto-layout/horizontal.png)
 
 `Layout Type` 设为 `Horizontal` 时，所有子节点都会自动横向排列，并根据子节点的宽度（`Width`）总和设置 Layout 节点的宽度。上图中 Layout 包括的两个 Label 节点就自动被横向排列。
 
@@ -16,7 +16,7 @@ Layout（自动布局）组件可以挂载在任何节点上，将节点变成�
 
 ### 垂直布局（Vertical）
 
-![vertical](auto-layout/vertical.jpg)
+![vertical](auto-layout/vertical.png)
 
 `Layout Type` 设为 `Vertical` 时，所有子节点都会自动纵向排列，并根据子节点的高度（`Height`）总和设置 Layout 节点的高度。
 
@@ -34,9 +34,9 @@ Layout 排列子节点时，是以子节点在 **层级管理器** 中显示顺�
 
 可以设置 `Top to Bottom` 或 `Bottom to Top` 两种方向。前者会按照节点在 **层级管理器** 中显示顺序从上到下排列；后者会按照节点显示从下到上排列。
 
-## 其他布局模式还在持续添加中
+## 其他布局模式还在持续拓展中
 
-我们会在下个版本的文档中更新这部分内容。
+我们会在之后版本的文档中更新这部分内容。
 
 其他 Layout 组件的属性请查阅[Layout 组件参考](../editor/layout.md)文档。
 

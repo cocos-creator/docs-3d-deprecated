@@ -13,7 +13,7 @@
 1. LBS（线性混合蒙皮）：骨骼信息以 3x4 矩阵形式存储，直接对矩阵线性插值实现蒙皮，有体积损失等典型已知问题；
 2. DQS（双四元数蒙皮）：（推荐）骨骼信息以双四元数和缩放向量的形式进行线性插值，能正确处理绝大多数情况。
 
-引擎默认使用 DQS，可以通过修改引擎 skinning-model.ts 的 `updateJointData` 函数引用与 cc-skinning.inc 中的头文件引用来切换蒙皮算法。
+引擎默认使用 DQS，可以通过修改引擎 skinning-model.ts 的 `updateJointData` 函数引用与 cc-skinning.inc 中的头文件引用来切换蒙皮算法（该文件在资源管理器的 internal 文件夹的同级目录 chunks 文件夹下）。
 
 ## 骨骼信息上传 GPU 的模式
 

@@ -21,12 +21,7 @@ Toggle 是一个 CheckBox，当它和 ToggleGroup 一起使用的时候，可以
 
 ## Toggle 事件
 
-| 属性            | 功能说明        |
-| --------------  | -----------  |
-| Target          | 带有脚本组件的节点。   |
-| Component       | 脚本组件名称。    |
-| Handler         | 指定一个回调函数，当 Toggle 的事件发生的时候会调用此函数。 |
-| CustomEventData | 用户指定任意的字符串作为事件回调的最后一个参数传入。       |
+事件结构参考：[组件事件结构](./button.md#组件事件结构)      |
 
 Toggle 的事件回调有二个参数，第一个参数是 Toggle 本身, 第二个参数是 customEventData。
 
@@ -44,28 +39,28 @@ Toggle 组件的节点树一般为：
 
 这种方法添加的事件回调和使用编辑器添加的事件回调是一样的，都是通过代码添加。首先需要构造一个 `cc.Component.EventHandler` 对象，然后设置好对应的 `target`、`component`、`handler` 和 `customEventData` 参数。
 
-```js
-var checkEventHandler = new cc.Component.EventHandler();
-checkEventHandler.target = this.node; // 这个 node 节点是你的事件处理代码组件所属的节点
-checkEventHandler.component = "cc.MyComponent"
-checkEventHandler.handler = "callback";
-checkEventHandler.customEventData = "foobar";
+```ts
+import { _decorator, Component, Event, Node, ToggleComponent } from "cc";
+const { ccclass, property } = _decorator;
 
-toggle.checkEvents.push(checkEventHandler);
+@ccclass("example")
+export class example extends Component {
+    onLoad(){
+        const checkEventHandler = new cc.Component.EventHandler();
+        checkEventHandler.target = this.node; //这个 node 节点是你的事件处理代码组件所属的节点
+        checkEventHandler.component = 'example';//这个是代码文件名
+        checkEventHandler.handler = 'callback';
+        checkEventHandler.customEventData = 'foobar';
 
-// here is your component file
-cc.Class({
-    name: 'cc.MyComponent'
-    extends: cc.Component,
-
-    properties: {
-    },
-
-    callback: function(toggle, customEventData) {
-        // 这里的 toggle 是事件发出的 Toggle 组件
-        // 这里的 customEventData 参数就等于之前设置的 "foobar"
+        const toggle = this.node.getComponent(ToggleComponent);
+        toggle.checkEvents.push(checkEventHandler);
     }
-});
+
+    callback(event: Event, customEventData: string){
+        //这里 event 是一个 Touch Event 对象，你可以通过 event.target 取到事件的发送节点
+        // 这里的 customEventData 参数就等于之前设置的 'foobar'
+    }
+}
 ```
 
 ### 方法二
@@ -75,22 +70,21 @@ cc.Class({
 ```js
 // 假设我们在一个组件的 onLoad 方法里面添加事件处理回调，在 callback 函数中进行事件处理:
 
-cc.Class({
-    extends: cc.Component,
+import { _decorator, Component, ToggleComponent } from "cc";
+const { ccclass, property } = _decorator;
 
-    properties: {
-       toggle: cc.ToggleComponnet
-    },
-
-    onLoad: function () {
+@ccclass("example")
+export class example extends Component {
+    @property(ToggleComponent)
+    toggle: ToggleComponent | null = null;
+    onLoad(){
        this.toggle.node.on('toggle', this.callback, this);
-    },
-
-    callback: function (toggle) {
-       // 回调的参数是 toggle 组件
-       // do whatever you want with toggle
     }
-});
+
+    callback(toggle: ToggleComponnet){
+        // 回调的参数是 toggle 组件，注意这种方式注册的事件，无法传递 customEventData
+    }
+}
 ```
 
 ---

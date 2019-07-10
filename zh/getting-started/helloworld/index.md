@@ -61,60 +61,53 @@
 <img src="index/property.png"/>
 
 ## 添加脚本
-- 新建脚本 
+- 新建脚本
   <br/>在资源管理器面板<font color=#A52A2A>点击鼠标右键</font>，选择<font color=#A52A2A>新建</font>-><font color=#A52A2A>JavaScript</font>。</br>
   <img src="index/script.png"/>
 
-- 生命周期函数
-   - onLoad 
+- 生命周期函数（按以下顺序调用）
+   - onLoad
      <br/>脚本初始化时调用</br>
-   - start 
-     <br/>组件第一次激活时调用</br>
-   - update 
-     <br/>每一帧渲染前更新物体调用</br>
-   - lateUpdate 
-     <br/>在所有组件的 update 都执行完之后调用</br>
-   - onDestroy 
-     <br/>组件的 enabled 属性从 false 变为 true 时调用</br>
-   - onEnable 
+   - onEnable
      <br/>组件的 enabled 属性从 true 变为 false 时调用</br>
-   - onDisable 
+   - start
+     <br/>组件第一次激活时调用</br>
+   - update
+     <br/>每一帧渲染前更新物体调用</br>
+   - lateUpdate
+     <br/>在所有组件的 update 都执行完之后调用</br>
+   - onDisable
+     <br/>组件的 enabled 属性从 false 变为 true 时调用</br>
+   - onDestroy
      <br/>组件或者所在节点销毁时调用</br>
+
 <br/>
 - 添加代码
     <br/>添加onLoad()函数，并输出Hello world</br>
 
-        cc.Class({
-        extends: cc.Component,
+```ts
+import { _decorator, Component } from "cc";
+const { ccclass, property } = _decorator;
 
-        properties: {
-        // foo: {
-            //     // ATTRIBUTES:
-            //     default: null,        // The default value will be used only when the component attaching
-            //                           // to a node for the first time
-            //     type: cc.SpriteFrame, // optional, default is typeof default
-            //     serializable: true,   // optional, default is true
-            // },
-            // bar: {
-            //     get () {
-            //         return this._bar;
-            //     },
-            //     set (value) {
-            //         this._bar = value;
-            //     }
-            // },
-        },
+@ccclass("normal")
+export class normal extends Component {
+    /* class member could be defined like this */
+    // dummy = '';
 
-        // LIFE-CYCLE CALLBACKS:
-        onLoad() {
-            // 输出Hello world
-            console.info('Hello world');
-        },
+    /* use `property` decorator if your want the member to be serializable */
+    // @property
+    // serializableDummy = 0;
 
-        // start() {},
+    start () {
+        // Your initialization goes here.
+        console.info('Hello world');
+    }
 
-        // update(dt) {},
-        });
+    // update (deltaTime) {
+    //     // Your update function goes here.
+    // }
+}
+```
 
 
 - 为物体绑定脚本
