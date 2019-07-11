@@ -28,14 +28,14 @@ if (rigidBody.isSleeping) {
 
 ### 通过力
 
-刚体组件提供了`applyForce`接口，签名为：`applyForce (force: Vec3, position?: Vec3)`。
+刚体组件提供了`applyForce`接口，签名为：`applyForce (force: Vec3, relativePoint?: Vec3)`。
 根据牛顿第二定律`F = m * a`，对刚体某点上施加力，这样就有了加速度，随着时间变化，速度会随加速度变化，就会使得刚体运动起来。
 
 代码示例：`rigidBody.applyForce(new Vec3(200, 0, 0));`
 
 ### 通过冲量
 
-刚体组件提供了`applyImpulse`接口，签名为：`applyImpulse (impulse: Vec3, position?: Vec3)`。
+刚体组件提供了`applyImpulse`接口，签名为：`applyImpulse (impulse: Vec3, relativePoint?: Vec3)`。
 根据动量守恒的方程式 `F * Δt = m * Δv`，对刚体某点施加冲量，随着时间增加，但物体的质量是恒定的，速度就会产生变化，刚体就会运动起来。
 
 代码示例：`rigidBody.applyImpulse(new Vec3(5, 0, 0));`
@@ -78,6 +78,6 @@ rigidBody.setAngularVelocity(new Vec3(5, 0, 0)); // 改变旋转速度
 
 **注：将因子某分量值设置为 0，可以固定某个轴向的移动或旋转，如果要完全固定旋转，请用 fixedRotation**。
 
-### [**继续下一篇** 物理事件](physics-event.md)
+---
 
-### [**或者回到** 物理使用](./../physics-use.md)
+继续前往 [物理事件](physics-event.md) 说明文档。

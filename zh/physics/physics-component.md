@@ -49,6 +49,6 @@ Cocos Creator 3D 目前为用户提供了碰撞器和刚体组件。
 
 **注： Builtin 中此组件暂时无效**。
 
-### [**继续下一篇**物理使用](physics-use.md)
+---
 
-### [**或者回到**物理简介](physics.md)
+继续前往 [物理使用](physics-use.md) 说明文档。
