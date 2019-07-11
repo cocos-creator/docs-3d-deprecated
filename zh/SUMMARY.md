@@ -152,6 +152,7 @@
 - [精灵帧资源](asset-workflow/sprite-frame.md)
 - [图像资源的自动剪裁](ui-system/components/engine/trim.md)
 - [字体资源](asset-workflow/font.md)
+- [纹理贴图资源](asset-workflow/texture.md)
 - [天空盒图片资源](concepts/scene/skybox.md#修改天空盒的环境贴图)
 - [动画资源](asset-workflow/anim.md)
 - [材质资源](asset-workflow/material.md)
