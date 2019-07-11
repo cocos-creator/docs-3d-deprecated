@@ -9,7 +9,7 @@
 - 新手入门
   - [安装和启动](getting-started/index.md)
   - [快速上手：制作第一个游戏](getting-started/index.md)
-- 引擎模块
+- 引擎手册
   - [场景](concepts/scene/index.md)
   - [材质](material-system/overview.md)
   - [声音](audio-system/overview.md)
@@ -17,14 +17,30 @@
   - [动画](engine/animation/index.md)
   - [物理](physics/physics.md)
   - [UI](ui-system/components/engine/index.md)
+  - [事件机制](engine/event/index.md)
   - [脚本指南](scripting/index.md)
 - 编辑器手册
   - [快速入门](getting-started/index.md)
   - [面板介绍](editor/index.md)
   - [组件](concepts/scene/index.md)
+  - [项目预览调试](editor/preview/index.md)
   - [粒子编辑器](particle-system/editor/index.md)
   - [动画系统](editor/animation/index.md)
   - [构建发布](editor/publish/index.md)
+- 资源手册
+  - [关于资源](asset/index.md)
+  - [资源工作流](asset/asset-workflow.md)
+  - [获取和加载资源](asset/load-assets.md)
+  - [分包加载](asset/subpackage.md)
+  - [场景资源](asset/scene.md)
+  - [图像资源](asset/image.md)
+  - [预制资源](asset/prefab.md)
+  - [脚本资源](asset/script.md)
+  - [字体资源](asset/font.md)
+  - [声音资源](asset/audio.md)
+  - [材质资源](asset/material.md)
+  - [模型资源](asset/mesh.md)
+  - [动画资源](asset/anim.md)
 
 ## 演示和范例项目
 
