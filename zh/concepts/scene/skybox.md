@@ -2,7 +2,7 @@
 
 游戏中的天空盒是一个包裹整个场景的立方体，天空盒可以很好的渲染整个环境的气氛，并表达整个场景的环境，在基于 PBR 的工作流中天空盒也是非常重要的部分。
 
- Cocos Creator 3D 中天空盒，如下图所示：
+ Cocos Creator 3D 中的天空盒，如下图所示：
 ![skybox](skybox/Skybox.jpg)
 
 ## 开启天空盒
@@ -29,11 +29,11 @@
 
 ## Skybox 面板
 
-![开启 skybox](skybox/SkyboxDetail.jpg)
+![ skybox 面板](skybox/SkyboxDetail.jpg)
 
 以下介绍了面板的所有属性：
 
-属性 | 解释（其它参考盒）
+属性 | 解释
 ---|---
 **enabled** | 是否开启 Skybox
 **envmap** | 环境贴图，类型为 TextureCube
@@ -54,7 +54,3 @@ CubeMap （立方体贴图）是天空盒的一种环境贴图资源，它由立
 3. 最后，将完成的 CubeMap 资源拖入到 Skybox 的 Envmap 属性框中，这样就完成了 CubeMap 的应用。
 
 **注： CubeMap 中未设置贴图的面将用默认的资源进行填充**。
-
-<!-- ---
-
-继续前往 [环境光](ambient.md) 说明文档。 -->
