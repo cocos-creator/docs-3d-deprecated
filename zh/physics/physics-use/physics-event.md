@@ -66,6 +66,6 @@ private onCollision (event: ICollisionEvent) {
 - 触发事件由触发器生成，碰撞事件由碰撞器生成。
 - 触发事件可以由一个触发器和另一个触发器或者另一个碰撞器产生，而碰撞事件需要由两个碰撞器产生。
 
-### [**继续下一篇** 分组和掩码](physics-group-mask.md)
+---
 
-### [**或者回到** 物理使用](./../physics-use.md)
+继续前往 [分组和掩码](physics-group-mask.md) 说明文档。
