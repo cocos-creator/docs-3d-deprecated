@@ -149,8 +149,8 @@
 - [分包加载](asset/subpackage.md)
 - [场景资源](asset/scene.md)
 - [图像资源](asset/image.md)
-   - [精灵帧资源](asset/sprite-frame.md)
    - [纹理贴图资源](asset-workflow/texture.md)
+   - [精灵帧资源](asset/sprite-frame.md)
    - [立方体贴图资源](concepts/scene/skybox.md#cubemap)
    - [图像资源的自动裁剪](ui-system/components/engine/trim.md)
 - [预制资源](asset/prefab.md)
@@ -160,4 +160,3 @@
 - [材质资源](asset/material.md)
 - [模型资源](asset/mesh.md)
 - [动画资源](asset/anim.md)
-
