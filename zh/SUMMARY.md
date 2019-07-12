@@ -101,6 +101,7 @@
       - [RichTextComponent 参考](ui-system/components/editor/richtext.md)
     - [UI 基础组件](ui-system/components/editor/base-component.md)
       - [CanvasComponent 参考](ui-system/components/editor/canvas.md)
+      - [UIReorderComponent 参考](ui-system/components/editor/ui-reorder-component.md)
       - [UITransformComponent 参考](ui-system/components/editor/ui-transform.md)
       - [WidgetComponent 参考](ui-system/components/editor/widget.md)
       - [ButtonComponent 参考](ui-system/components/editor/button.md)
