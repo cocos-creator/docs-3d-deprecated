@@ -21,11 +21,11 @@
 
 ## 构建参数
 
- - `--path`：指定项目路径
+ - `--project`：指定项目路径
  - `--build`：指定构建项目使用的参数
 在 `--build`  后如果没有指定参数，则会使用 Cocos Creator 3D 中构建面板当前的平台、模板等设置来作为默认参数。如果指定了其他参数设置，则会使用指定的参数来覆盖默认参数。可选择的参数有：
-- `configPath` - 参数文件路径。如果定义了这个字段，那么构建时将会按照 `json` 文件格式来加载这个数据，并作为构建参数
-- `excludedModules` - engine 中需要排除的模块，模块可以从 [这里](https://github.com/cocos-creator/engine/blob/master/modules.json) 查找到
+- `configPath` - 参数文件路径。如果定义了这个字段，那么构建时将会按照 `json` 文件格式来加载这个数据，并作为构建参数。这个参数可以自己修改也可以直接从构建面板导出。
+- `includedModules` - 有需要打包部分模块而不是全部模块的，可以传递此参数。具体模块可以从 [这里](https://github.com/cocos-creator/engine/blob/3d-v1.0.0/scripts/module-division/division-config.json) 查找到，注意传递的是模块 entry 字段组成的数组。
 - `title` - 项目名
 - `platform` - 构建的平台 [web-mobile、web-desktop、wechatgame、wechatgame-subcontext]
 - `buildPath` - 构建目录
