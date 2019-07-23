@@ -535,8 +535,10 @@ export class GameManager extends Component {
         this.checkResult(moveIndex);
     }
     ```
+
 ## 最终代码
 PlayerController.ts
+
 ```ts
 import { _decorator, Component, Vec3, vmath, systemEvent, SystemEvent, EventMouse, AnimationComponent } from "cc";
 const { ccclass, property } = _decorator;
@@ -631,6 +633,7 @@ export class PlayerController extends Component {
 ```
 
 GameManager.ts
+
 ```ts
 import { _decorator, Component, Prefab, instantiate, Node, LabelComponent, CCInteger} from "cc";
 import { PlayerController } from "./PlayerController";
