@@ -59,10 +59,10 @@
 - [事件机制](engine/event/index.md)
 - [脚本指南](scripting/index.md)
   - [脚本创建](scripting/setup.md)
-  - [语言支持与运行环境](scripting/basic.md)
+  - [语言支持](scripting/language-support.md)
+  - [脚本基础](scripting/basic.md)
   - [ccclass](scripting/ccclass.md)
   - [组件](scripting/component.md)
-  - [事件](scripting/event.md)
 
 ## 编辑器手册
 
