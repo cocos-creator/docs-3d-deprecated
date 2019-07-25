@@ -113,6 +113,8 @@
       - [ToggleComponent 组件参考](ui-system/components/editor/toggle.md)
       - [ToggleContainerComponent 组件参考](ui-system/components/editor/toggleContainer.md)
       - [SliderComponent 组件参考](ui-system/components/editor/slider.md)
+      - [PageViewComponent 组件参考](ui-system/components/editor/pageview.md)
+      - [PageViewIndicatorComponent 组件参考](ui-system/components/editor/pageviewindicator.md)
 
 - [项目预览调试](editor/preview/index.md)
   - [浏览器预览](editor/preview/browser.md)
