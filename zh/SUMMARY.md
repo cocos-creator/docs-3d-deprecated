@@ -63,6 +63,7 @@
   - [脚本基础](scripting/basic.md)
   - [ccclass](scripting/ccclass.md)
   - [组件](scripting/component.md)
+  - [单元测试](scripting/unit-test.md)
 
 ## 编辑器手册
 
