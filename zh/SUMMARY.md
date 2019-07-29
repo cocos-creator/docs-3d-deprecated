@@ -1,7 +1,9 @@
 # Summary
 
 ## 新手入门
-[介绍](introduction.md)
+
+[介绍](index.md)
+
 - [启动](getting-started/index.md)
   - [Dashboard](getting-started/dashboard/index.md)
   - [Hello world!](getting-started/helloworld/index.md)
@@ -9,24 +11,42 @@
 - [注意事项](getting-started/attention/index.md)
 
 ## 引擎手册
-- [场景](concepts/scene/index.md)
+
+- [功能地图](module-map/index.md)
+  - [图形渲染](module-map/graphics.md)
+    - [材质](material-system/overview.md)
+    - [光照](module-map/light.md)
+    - [粒子系统](particle-system/overview.md)
+  - [UI系统](ui-system/components/engine/index.md)
+  - [动画系统](engine/animation/index.md)
+  - [音频](audio-system/overview.md)
+  - [物理模拟](physics/physics.md)
+  - [脚本指南及事件系统](scripting/index.md)
+  - [组件](editor/components/index.md)
+  - [资源](asset/index.md)
+  - [场景及环境设置](concepts/scene/index.md)
+
+- [场景及环境](concepts/scene/index.md)
   - [坐标系](concepts/scene/coord.md)
   - [场景结构](concepts/scene/scene.md)
   - [节点](concepts/scene/node.md)
-  - [相机](concepts/scene/camera.md)
-  - [光源](concepts/scene/light.md)
-    - [基于物理的光照](concepts/scene/light/pbr-lighting.md)
-    - [主方向光](concepts/scene/light/dir-light.md)
-    - [球面光](concepts/scene/light/sphere-light.md)
-    - [聚光灯](concepts/scene/light/spot-light.md)
+  - [天空盒](concepts/scene/skybox.md)
+
+- [光照](concepts/scene/light.md)
+  - [基于物理的光照](concepts/scene/light/pbr-lighting.md)
+  - [主方向光](concepts/scene/light/dir-light.md)
+  - [球面光](concepts/scene/light/sphere-light.md)
+  - [聚光灯](concepts/scene/light/spot-light.md)
   - [阴影](concepts/scene/shadow.md)
   - [环境光](concepts/scene/ambient.md)
-  - [天空盒](concepts/scene/skybox.md)
+
 - [材质](material-system/overview.md)
   - [YAML 101](material-system/yaml-101.md)
   - [Effect](material-system/effect-syntax.md)
   - [Pass](material-system/pass-parameter-list.md)
+
 - [声音](audio-system/overview.md)
+
 - [粒子](particle-system/overview.md)
   - [粒子系统模块](particle-system/module.md)
   - [主模块(ParticleSystemComponent)](particle-system/main-module.md)
@@ -40,14 +60,18 @@
   - [贴图动画模块(TextureAnimationModule)](particle-system/texture-animation-module.md)
   - [渲染模块(Renderer)](particle-system/renderer.md)
   - [拖尾模块(TrailModule)](particle-system/trail-module.md)
+
 - [动画](engine/animation/index.md)
   - [动画组件](engine/animation/animation-component.md)
   - [动画剪辑](engine/animation/animation-clip.md)
   - [骨骼动画](engine/animation/skeletal-animation.md)
+
 - [物理](physics/physics.md)
   - [物理选项](physics/physics-item.md)
+  - [物理系统](physics/physics-system.md)
   - [物理组件](physics/physics-component.md)
   - [物理使用](physics/physics-use.md)
+
 - [UI](ui-system/components/engine/index.md)
   - [渲染排序规则](ui-system/components/engine/priority.md)
   - [多分辨率适配方案](ui-system/components/engine/multi-resolution.md)
@@ -56,26 +80,6 @@
   - [自动布局容器](ui-system/components/engine/auto-layout.md)
   - [制作动态生成内容的列表](ui-system/components/engine/list-with-data.md)
   - [制作可任意拉伸的 UI 图像](ui-system/components/engine/sliced-sprite.md)
-- [事件机制](engine/event/index.md)
-- [脚本指南](scripting/index.md)
-  - [脚本创建](scripting/setup.md)
-  - [语言支持](scripting/language-support.md)
-  - [脚本基础](scripting/basic.md)
-  - [ccclass](scripting/ccclass.md)
-  - [组件](scripting/component.md)
-  - [单元测试](scripting/unit-test.md)
-
-## 编辑器手册
-
-- [面板介绍](editor/index.md)
-  - [场景编辑器](editor/scene/index.md)
-  - [层级管理器](editor/hierarchy/index.md)
-  - [资源管理器](editor/assets/index.md)
-  - [属性检查器](editor/inspector/index.md)
-  - [控制台](editor/console/index.md)
-  - [动画编辑器](editor/animation/index.md)
-  - [偏好设置](editor/preferences/index.md)
-  - [项目设置](editor/project/index.md)
 
 - [组件](editor/components/index.md)
   - [AudioSourceComponent](audio-system/overview.md)
@@ -117,6 +121,45 @@
       - [PageViewComponent 组件参考](ui-system/components/editor/pageview.md)
       - [PageViewIndicatorComponent 组件参考](ui-system/components/editor/pageviewindicator.md)
 
+- [脚本指南及事件机制](scripting/index.md)
+  - [脚本创建](scripting/setup.md)
+  - [语言支持](scripting/language-support.md)
+  - [脚本基础](scripting/basic.md)
+  - [ccclass](scripting/ccclass.md)
+  - [组件](scripting/component.md)
+  - [单元测试](scripting/unit-test.md)
+  - [事件机制](engine/event/index.md)
+
+- [资源手册](asset/index.md)
+  - [资源工作流](asset/asset-workflow.md)
+  - [获取和加载资源](asset/load-assets.md)
+  - [分包加载](asset/subpackage.md)
+  - [场景资源](asset/scene.md)
+  - [图像资源](asset/image.md)
+    - [纹理贴图资源](asset-workflow/texture.md)
+    - [精灵帧资源](asset/sprite-frame.md)
+    - [立方体贴图资源](concepts/scene/skybox.md#cubemap)
+    - [图像资源的自动裁剪](ui-system/components/engine/trim.md)
+  - [预制资源](asset/prefab.md)
+  - [脚本资源](asset/script.md)
+  - [字体资源](asset/font.md)
+  - [声音资源](asset/audio.md)
+  - [材质资源](asset/material.md)
+  - [模型资源](asset/mesh.md)
+  - [动画资源](asset/anim.md)
+
+## 编辑器手册
+
+- [面板介绍](editor/index.md)
+  - [场景编辑器](editor/scene/index.md)
+  - [层级管理器](editor/hierarchy/index.md)
+  - [资源管理器](editor/assets/index.md)
+  - [属性检查器](editor/inspector/index.md)
+  - [控制台](editor/console/index.md)
+  - [动画编辑器](editor/animation/index.md)
+  - [偏好设置](editor/preferences/index.md)
+  - [项目设置](editor/project/index.md)
+
 - [项目预览调试](editor/preview/index.md)
   - [浏览器预览](editor/preview/browser.md)
   - [预览流程简介与常见错误处理](preview-guid.md)
@@ -144,23 +187,3 @@
   - [命令行发布项目](editor/publish/publish-in-command-line.md)
   - [定制项目的构建模版](editor/publish/custom-project-build-template.md)
   - [构建流程简介与常见错误处理](editor/publish/build-guide.md)
-
-## 资源手册
-
-- [关于资源](asset/index.md)
-- [资源工作流](asset/asset-workflow.md)
-- [获取和加载资源](asset/load-assets.md)
-- [分包加载](asset/subpackage.md)
-- [场景资源](asset/scene.md)
-- [图像资源](asset/image.md)
-   - [纹理贴图资源](asset-workflow/texture.md)
-   - [精灵帧资源](asset/sprite-frame.md)
-   - [立方体贴图资源](concepts/scene/skybox.md#cubemap)
-   - [图像资源的自动裁剪](ui-system/components/engine/trim.md)
-- [预制资源](asset/prefab.md)
-- [脚本资源](asset/script.md)
-- [字体资源](asset/font.md)
-- [声音资源](asset/audio.md)
-- [材质资源](asset/material.md)
-- [模型资源](asset/mesh.md)
-- [动画资源](asset/anim.md)

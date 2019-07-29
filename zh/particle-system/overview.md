@@ -31,3 +31,7 @@ Cocos Creator 3D粒子系统以模块来组织功能，包含了以下模块：
    ![](particle-system/new_ParticleSystemComponent.png)
    - 也可以通过左侧的层级管理器“右键->创建->特效->粒子系统”来添加一个粒子系统组件，如下图：
    ![](particle-system/new_ParticleSystemComponent_node.png)
+
+---
+
+前往 [粒子系统模块](module.md) 说明文档。

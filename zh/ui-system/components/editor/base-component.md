@@ -12,3 +12,5 @@
 - [ToggleComponent 组件介绍](toggle.md)
 - [ToggleGroupComponent 组件介绍](toggleContainer.md)
 - [SliderComponent 组件介绍](slider.md)
+- [PageViewComponent 组件参考](pageview.md)
+- [PageViewIndicatorComponent 组件参考](pageviewindicator.md)
