@@ -9,8 +9,7 @@
 - [坐标系](coord.md)
 - [场景结构](scene.md)
 - [节点](node.md)
-- [相机](camera.md)
-- [光源](light.md)
+- [天空盒](skybox.md)
 
 ---
 

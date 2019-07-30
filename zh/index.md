@@ -6,19 +6,36 @@
 
 ## 总导读
 
+- 使用功能地图快速了解引擎功能
+  - [功能地图](module-map/index.md)
+    - [图形渲染](module-map/graphics.md)
+      - [材质](material-system/overview.md)
+      - [光照](module-map/light.md)
+      - [粒子系统](particle-system/overview.md)
+    - [UI系统](ui-system/components/engine/index.md)
+    - [动画系统](engine/animation/index.md)
+    - [音频](audio-system/overview.md)
+    - [物理模拟](physics/physics.md)
+    - [脚本指南及事件系统](scripting/index.md)
+    - [组件](editor/components/index.md)
+    - [资源](asset/index.md)
+    - [场景及环境设置](concepts/scene/index.md)
+
 - 新手入门
   - [安装和启动](getting-started/index.md)
   - [快速上手：制作第一个游戏](getting-started/index.md)
 - 引擎手册
-  - [场景](concepts/scene/index.md)
+  - [场景及环境](concepts/scene/index.md)
+  - [光照](concepts/scene/light.md)
   - [材质](material-system/overview.md)
   - [声音](audio-system/overview.md)
   - [粒子](particle-system/overview.md)
   - [动画](engine/animation/index.md)
   - [物理](physics/physics.md)
   - [UI](ui-system/components/engine/index.md)
-  - [事件机制](engine/event/index.md)
-  - [脚本指南](scripting/index.md)
+  - [组件](editor/components/index.md)
+  - [脚本指南及事件机制](scripting/index.md)
+  - [资源手册](asset/index.md)
 - 编辑器手册
   - [快速入门](getting-started/index.md)
   - [面板介绍](editor/index.md)
@@ -27,20 +44,6 @@
   - [粒子编辑器](particle-system/editor/index.md)
   - [动画系统](editor/animation/index.md)
   - [构建发布](editor/publish/index.md)
-- 资源手册
-  - [关于资源](asset/index.md)
-  - [资源工作流](asset/asset-workflow.md)
-  - [获取和加载资源](asset/load-assets.md)
-  - [分包加载](asset/subpackage.md)
-  - [场景资源](asset/scene.md)
-  - [图像资源](asset/image.md)
-  - [预制资源](asset/prefab.md)
-  - [脚本资源](asset/script.md)
-  - [字体资源](asset/font.md)
-  - [声音资源](asset/audio.md)
-  - [材质资源](asset/material.md)
-  - [模型资源](asset/mesh.md)
-  - [动画资源](asset/anim.md)
 
 ## 演示和范例项目
 
