@@ -128,6 +128,7 @@
   - [ccclass](scripting/ccclass.md)
   - [组件](scripting/component.md)
   - [单元测试](scripting/unit-test.md)
+  - [废弃API](scripting/deprecated.md)
   - [事件机制](engine/event/index.md)
 
 - [资源手册](asset/index.md)
