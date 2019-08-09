@@ -19,6 +19,7 @@
     - [粒子系统](particle-system/overview.md)
   - [UI系统](ui-system/components/engine/index.md)
   - [动画系统](engine/animation/index.md)
+  - [缓动系统](tween/index.md)
   - [音频](audio-system/overview.md)
   - [物理模拟](physics/physics.md)
   - [脚本指南及事件系统](scripting/index.md)
