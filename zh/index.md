@@ -31,6 +31,7 @@
   - [声音](audio-system/overview.md)
   - [粒子](particle-system/overview.md)
   - [动画](engine/animation/index.md)
+  - [缓动](tween/index.md)
   - [物理](physics/physics.md)
   - [UI](ui-system/components/engine/index.md)
   - [组件](editor/components/index.md)
