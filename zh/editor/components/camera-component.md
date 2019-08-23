@@ -29,4 +29,9 @@
 | Rect | 相机的视口大小 |
 | Visibility | 相机的可见性。用于控制不同模型在同一相机中的可见性。 |
 
+## 相机分组渲染
+
+相机的分组渲染功能通过相机组件([CameraComponent](../../editor/components/camera-component.md)) 的 Visibility 属性配合 模型组件([ModelComponent](../../engine/renderable/model-component.md)) 的 Visibility 属性共同决定。用户可通过代码设置 Visibility 的值来完成分组渲染，需要注意的是，Visibility 的值是 **按位比较** 的，用户可通过 **位运算** 操作 Visibility 的 **前 20 位** 来完成分组。<br>
+我们默认提供的摄像机和模型都为不分组全部渲染，用户没有特殊需求的情况下不需更改此值。
+
 ---
