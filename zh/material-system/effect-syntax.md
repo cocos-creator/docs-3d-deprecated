@@ -5,7 +5,7 @@
 这两部分内容上相互补充, 共同构成了一个完整的渲染流程描述.
 
 ## 语法框架
-以 builtin-skybox.effect 为例, 这个 Effect 文件的内容大致是这样:
+以 skybox.effect 为例, 这个 Effect 文件的内容大致是这样:
 
 ![effect](effect.png)
 
