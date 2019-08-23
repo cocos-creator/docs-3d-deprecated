@@ -44,6 +44,7 @@
   - [项目预览调试](editor/preview/index.md)
   - [粒子编辑器](particle-system/editor/index.md)
   - [动画系统](editor/animation/index.md)
+  - [地形系统](editor/terrain/index.md)
   - [构建发布](editor/publish/index.md)
 
 ## 演示和范例项目
