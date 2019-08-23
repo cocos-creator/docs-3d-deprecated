@@ -8,38 +8,36 @@ EffectAsset 是由用户书写的着色流程描述文件, 详细结构及书写
 这里主要介绍引擎读取 EffectAsset 资源的流程:
 
 在编辑器导入 EffectAsset 时, 会对用户书写的内容做一次预处理, 替换 GL 字符串为管线内常量, 提取 shader 信息, 转换 shader 版本等.<br>
-还以 builtin-skybox.effect 为例, 预处理输出的 EffectAsset 结构大致是这样的:
+还以 skybox.effect 为例, 预处理输出的 EffectAsset 结构大致是这样的:
 ```json
-  {
-    "name": "builtin-skybox",
-    "techniques": [
-      {"passes":[{"rasterizerState":{"cullMode":0}, "program":"builtin-skybox|sky-vs:vert|sky-fs:frag", "priority":245, "depthStencilState":{"depthTest":true, "depthWrite":false}, "properties":{"cubeMap":{"value":"default-cube", "type":31}}}]}
-    ],
-    "shaders": [
-      {
-        "name": "builtin-skybox|sky-vs:vert|sky-fs:frag",
-        "hash": 4212366729,
-        "glsl3": {
-          "vert": "// glsl 300 es vert source, omitted here for brevity",
-          "frag": "// glsl 300 es frag source, omitted here for brevity"
-        },
-        "glsl1": {
-          "vert": "// glsl 100 vert source, omitted here for brevity",
-          "frag": "// glsl 100 frag source, omitted here for brevity"
-        },
-        "builtins": {"globals":{"blocks":["CCGlobal"], "samplers":[]}, "locals":{"blocks":[], "samplers":[]}},
-        "defines": [
-          {"name":"CC_USE_HDR", "type":"boolean", "defines":[]},
-          {"name":"USE_RGBE_CUBEMAP", "type":"boolean", "defines":[]}
-        ],
-        "blocks": [],
-        "samplers": [
-          {"name":"cubeMap", "type":31, "count":1, "defines":[], "binding":0}
-        ],
-        "dependencies": {}
-      }
-    ]
-  },
+{
+  "name": "pipeline/skybox",
+  "techniques": [
+    {"passes":[{"rasterizerState":{"cullMode":0}, "program":"pipeline/skybox|sky-vs:vert|sky-fs:frag", "priority":245, "depthStencilState":{"depthTest":true, "depthWrite":false}}]}
+  ],
+  "shaders": [
+    {
+      "name": "pipeline/skybox|sky-vs:vert|sky-fs:frag",
+      "hash": 1154395944,
+      "glsl3": {
+        "vert": "// glsl 300 es vert source, omitted here for brevity",
+        "frag": "// glsl 300 es frag source, omitted here for brevity",
+      },
+      "glsl1": {
+        "vert": "// glsl 100 vert source, omitted here for brevity",
+        "frag": "// glsl 100 frag source, omitted here for brevity",
+      },
+      "builtins": {"globals":{"blocks":[{"name":"CCGlobal", "defines":[]}], "samplers":[{"name":"cc_environment", "defines":[]}]}, "locals":{"blocks":[], "samplers":[]}},
+      "defines": [
+        {"name":"CC_USE_HDR", "type":"boolean", "defines":[]},
+        {"name":"USE_RGBE_CUBEMAP", "type":"boolean", "defines":[]}
+      ],
+      "blocks": [],
+      "samplers": [],
+      "dependencies": {}
+    }
+  ]
+}
 ```
 接着这个生成的 EffectAsset 正常参与标准(反)序列化流程.<br>
 另外在反序列化时, 其中包含的 shaders 会被直接注册到 ProgramLib, 供运行时使用.
@@ -54,7 +52,7 @@ Material 资源可以看成是 EffectAsset 在场景中的资源实例, 它本�
 ```ts
 const mat = new cc.Material();
 mat.initialize({
-  effectName: 'builtin-skybox',
+  effectName: 'pipeline/skybox',
   defines: { USE_RGBE_CUBEMAP: true }
 });
 ```
