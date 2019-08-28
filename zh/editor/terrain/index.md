@@ -19,11 +19,11 @@ Cocos Creator 3D中的地形编辑主要包括三大功能：管理（Manage）�
 ![terrain component](./images/terrain-component.png)
 
 ### 管理（Manage）
-用于调整地形的各种参数。
+用于调整地形的各种参数。Tile是地形的最小单位，Tile组成地形块（Block），目前一个Block由32x32个Tile组成，一个地形由至少1个Block组成。
 
 参数| 描述
 ---|---
-TileSize | 地形Tile的大小
+TileSize | 地形Tile的大小，目前一个地形块由32 x 32个Tile组成，所以一个地形块的大小是32 x TileSize。
 BlockCount | 地形块在两个维度上的数量
 WeightMapSize | 权重图大小
 LightMapSize | 光照贴图大小
@@ -54,6 +54,11 @@ BrushStrength | 画刷的力度
 2. 选中某个Layer后可以编辑DetailMap和TileSize
    
    ![edit layer](./images/layer-edit.png)
+
+    参数| 描述
+    ---|---
+    DetailMap | 当前Layer的纹理
+    TileSize | 纹理的平铺大小，值越小会在同样大小的区域内进行更多次的平铺
    
 #### 画刷类型
 目前只支持圆形画刷
