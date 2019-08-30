@@ -43,7 +43,7 @@ export class test extends Component {
 }
 ```
 
-你也可以为 `getComponent` 传入一个类名。对用户定义的组件而言，类名就是脚本的文件名，并且**区分大小写**。例如 "SinRotate.js" 里声明的组件，类名就是 "SinRotate"。
+你也可以为 `getComponent` 传入一个类名。对用户定义的组件而言，类名就是脚本的文件名，并且**区分大小写**。例如 "SinRotate.ts" 里声明的组件，类名就是 "SinRotate"。
 
 ```ts
     var rotate = this.getComponent("SinRotate");
@@ -85,7 +85,7 @@ export class test extends Component {
 
 ### 利用属性检查器设置节点
 
-最直接的方式就是在 **属性检查器** 中设置你需要的对象。以节点为例，这只需要在脚本中声明一个 type 为 `cc.Node` 的属性：
+最直接的方式就是在 **属性检查器** 中设置你需要的对象。以节点为例，这只需要在脚本中声明一个 type 为 `Node` 的属性：
 
 ```ts
 // Cannon.ts
@@ -102,7 +102,7 @@ export class Cannon extends Component {
 
 ```
 
-这段代码在 `properties` 里面声明了一个 `player` 属性，默认值为 null，并且指定它的对象类型为 `cc.Node`。这就相当于在其它语言里声明了 `public cc.Node player = null;`。脚本编译之后，这个组件在 **属性检查器** 中看起来是这样的：
+这段代码在 `properties` 里面声明了一个 `player` 属性，默认值为 null，并且指定它的对象类型为 `Node`。这就相当于在其它语言里声明了 `public Node player = null;`。脚本编译之后，这个组件在 **属性检查器** 中看起来是这样的：
 
 ![player-in-inspector-null](access-node-component/player-in-inspector-null.png)
 
@@ -134,28 +134,22 @@ export class Cannon extends Component {
 
 在上面的例子中，如果你将属性的 type 声明为 Player 组件，当你拖动节点 "Player Node" 到 **属性检查器**，player 属性就会被设置为这个节点里面的 Player 组件。这样你就不需要再自己调用 `getComponent` 啦。
 
-```js
-// Cannon.js
+```ts
+// Cannon.ts
 
-var Player = require("Player");
+import { _decorator, Component } from "cc";
+const { ccclass, property } = _decorator;
+import { Player } from "Player";
 
-cc.Class({
-    extends: cc.Component,
-    properties: {
-        // 声明 player 属性，这次直接是组件类型
-        player: {
-            default: null,
-            type: Player
-        }
-    },
+@ccclass("Cannon")
+export class Cannon extends Component {
+    @property({type:Player})
+    private player = null;
 
-    start: function () {
-        var playerComp = this.player;
-        this.checkPlayer(playerComp);
-    },
-
-    // ...
-});
+    start(){
+        var PlayerComp = this.player;
+    }
+}
 ```
 
 你还可以将属性的默认值由 `null` 改为数组`[]`，这样你就能在 **属性检查器** 中同时设置多个对象。<br>

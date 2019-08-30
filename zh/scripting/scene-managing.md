@@ -13,6 +13,7 @@ cc.director.loadScene("MyScene");
 `cc.game.addPersistRootNode(myNode);`
 
 上面的接口会将 `myNode` 变为常驻节点，这样挂在上面的组件都可以在场景之间持续作用，我们可以用这样的方法来储存玩家信息，或下一个场景初始化时需要的各种数据。
+需要注意的是，目标节点必须为位于层级的根节点，否则设置无效。
 
 如果要取消一个节点的常驻属性：
 
@@ -54,15 +55,6 @@ cc.director.loadScene("table");
 ```
 
 就算预加载还没完成，你也可以直接调用 `cc.director.loadScene`，预加载完成后场景就会启动。
-
-**注意** 使用预加载场景资源配合 `runScene` 的方式进行预加载场景的方法已被废除：
-
-```ts
-// 请不要再使用下面的方法预加载场景!
-cc.loader.loadRes('MyScene.fire', function(err, res) {
-    cc.director.runScene(res.scene); 
-});
-```
 
 
 ---
