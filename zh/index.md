@@ -22,8 +22,11 @@
     - [场景及环境设置](concepts/scene/index.md)
 
 - 新手入门
-  - [安装和启动](getting-started/index.md)
-  - [快速上手：制作第一个游戏](getting-started/index.md)
+  - [新手上路](getting-started/index.md)
+  - [Dashboard](getting-started/dashboard/index.md)
+  - [Hello world!](getting-started/helloworld/index.md)
+  - [快速上手：制作第一个游戏](getting-started/first-game/index.md)
+  - [注意事项](getting-started/attention/index.md)
 - 引擎手册
   - [场景及环境](concepts/scene/index.md)
   - [光照](concepts/scene/light.md)
@@ -40,7 +43,6 @@
 - 编辑器手册
   - [快速入门](getting-started/index.md)
   - [面板介绍](editor/index.md)
-  - [组件](concepts/scene/index.md)
   - [项目预览调试](editor/preview/index.md)
   - [粒子编辑器](particle-system/editor/index.md)
   - [动画系统](editor/animation/index.md)
@@ -49,8 +51,9 @@
 
 ## 演示和范例项目
 
-- [范例集合](https://github.com/cocos-creator/example-3d)：从基本组件的使用到渲染效果的展示，这个项目里包括了多个侧重功能不同的场景提供给用户参考。
-- [一步两步](https://github.com/cocos-creator/tutorial-mind-your-step-3d)：也就是 [快速上手](getting-started/index.md) 文档里分步讲解制作的游戏。
+- [展示范例集合](https://github.com/cocos-creator/example-3d)：从基本组件的使用到渲染效果的展示，这个项目里包括了多个侧重功能不同的场景提供给用户参考。
+- [一步两步](https://github.com/cocos-creator/tutorial-mind-your-step-3d)：也就是 [快速上手](getting-started/first-game/index.md) 文档里分步讲解制作的游戏。
+- [模块展示集合](https://github.com/cocos-creator/test-cases-3d): 引擎各个功能的范例项目，基本涵盖了引擎的大部分功能模块，用户在使用功能时可参考此项目中的用法进行开发。
 - [UI 展示 Demo](https://github.com/cocos-creator/demo-ui/tree/3d)
 
 **注意**，这些项目会不定期跟随版本进行更新。它们在 GitHub 上的默认分支是 master，对应的一般是最新的 Cocos Creator 3D 及 版本。如果仍在使用旧版本的 Cocos Creator 3D，这些项目有可能会打不开，可尝试切换到和旧版本相同命名的分支。
