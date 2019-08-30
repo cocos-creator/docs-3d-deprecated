@@ -95,3 +95,61 @@ class MyClass {
 #### 默认值
 
 选项 `default` 指定了 cc 属性的默认值。
+
+### 构造函数
+
+#### 通过 constructor 定义
+
+CCClass 的构造函数使用 `constructor` 定义，为了保证反序列化能始终正确运行，`constructor` **不允许**定义**构造参数**。
+
+> 开发者如果确实需要使用构造参数，可以通过 `arguments` 获取，但要记得如果这个类会被序列化，必须保证构造参数都缺省的情况下仍然能 new 出对象。
+
+## 判断类型
+
+### 判断实例
+
+需要做类型判断时，可以用 JavaScript 原生的 `instanceof`：
+
+```typescript
+import { _decorator, Component } from "cc";
+const { ccclass, property } = _decorator;
+
+@ccclass("test")
+export class test extends Component {
+    start(){
+       var ntest = new test();
+       console.log(ntest instanceof test);  //true
+       console.log(ntest instanceof Component);  //true
+
+       var component = new Component();
+       console.log(component instanceof test);  //false
+    }
+}
+```
+
+## 成员
+
+### 实例变量
+
+在构造函数中定义的实例变量不能被序列化，也不能在 **属性检查器** 中查看。
+
+```typescript
+import { _decorator, Component, CCInteger } from "cc";
+const { ccclass, property } = _decorator;
+
+@ccclass("test")
+export class test extends Component {
+    //声明实例变量
+    id:number;
+    url:string;
+    constructor() {
+		super();
+        //赋值
+        this.url = "";
+        this.id = 0;
+    }
+}
+```
+
+> 如果是私有的变量，建议在变量名前面添加下划线 `_` 以示区分。
+
