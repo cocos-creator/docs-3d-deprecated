@@ -67,7 +67,7 @@ engine-folder
 - excludes: 引擎模块设置
 - isQQPlay：是否是 QQPlay 平台
 - isWeChatGame：是否是微信小游戏平台
-- isWeChatSubdomain：是否是微信子域 平台
+- isWeChatSubdomain：是否是微信子域平台
 - sourceMaps：是否开启 sourcemap
 - engineMtime：引擎 bin/.cache/dev/__quick_compile__.js 的修改时间
 
