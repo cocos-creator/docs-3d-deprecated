@@ -17,7 +17,7 @@
 
 ```ts
     start(){
-        var node = this.node;
+        let node = this.node;
         node.setPosition(0.0,0.0,0.0);
     }
 ```
@@ -27,7 +27,7 @@
 你会经常需要获得同一个节点上的其它组件，这就要用到 `getComponent` 这个 API，它会帮你查找你要的组件。
 
 ```ts
-import { _decorator, Component, Prefab, ValueType } from "cc";
+import { _decorator, Component } from "cc";
 const { ccclass, property } = _decorator;
 
 @ccclass("test")
@@ -36,7 +36,7 @@ export class test extends Component {
 
     start(){
         this.label = this.getComponent(cc.LabelComponent);
-        var text = this.name + 'started';
+        let text = this.name + 'started';
         // Change the text in Label Component
         this.label.string = text;
     }
@@ -46,21 +46,21 @@ export class test extends Component {
 你也可以为 `getComponent` 传入一个类名。对用户定义的组件而言，类名就是脚本的文件名，并且**区分大小写**。例如 "SinRotate.ts" 里声明的组件，类名就是 "SinRotate"。
 
 ```ts
-    var rotate = this.getComponent("SinRotate");
+    let rotate = this.getComponent("SinRotate");
 ```
 
 在节点上也有一个 `getComponent` 方法，它们的作用是一样的：
 
 ```ts
     start() {
-        console.log( this.node.getComponent(cc.LabelComponent) === this.getComponent(cc.LabelComponent) );  // true
+        console.log( this.node.getComponent(LabelComponent) === this.getComponent(LabelComponent) );  // true
     }
 ```
 
 如果在节点上找不到你要的组件，`getComponent` 将返回 null，如果你尝试访问 null 的值，将会在运行时抛出 "TypeError" 这个错误。因此如果你不确定组件是否存在，请记得判断一下：
 
 ```ts
-import { _decorator, Component, Prefab, ValueType, CCString } from "cc";
+import { _decorator, Component, LabelComponent } from "cc";
 const { ccclass, property } = _decorator;
 
 @ccclass("test")
@@ -68,7 +68,7 @@ export class test extends Component {
     private label: any =null;
 
     start() {
-        this.label = this.getComponent(cc.LabelComponent);
+        this.label = this.getComponent(LabelComponent);
         if (this.label) {
             this.label.string = "Hello";
         }
@@ -147,7 +147,7 @@ export class Cannon extends Component {
     private player = null;
 
     start(){
-        var PlayerComp = this.player;
+        let PlayerComp = this.player;
     }
 }
 ```
@@ -160,7 +160,7 @@ export class Cannon extends Component {
 有时候，游戏场景中会有很多个相同类型的对象，像是炮塔、敌人和特效，它们通常都有一个全局的脚本来统一管理。如果用 **属性检查器** 来一个一个将它们关联到这个脚本上，那工作就会很繁琐。为了更好地统一管理这些对象，我们可以把它们放到一个统一的父物体下，然后通过父物体来获得所有的子物体：
 
 ```ts
-// CannonManager.js
+// CannonManager.ts
 
 import { _decorator, Component, Node } from "cc";
 const { ccclass, property } = _decorator;
@@ -169,7 +169,7 @@ const { ccclass, property } = _decorator;
 export class CannonManager extends Component {
 
     start() {
-        var cannons = this.node.children;
+        let cannons = this.node.children;
         //...
     }
 
@@ -178,7 +178,7 @@ export class CannonManager extends Component {
 
 你还可以使用 `getChildByName`：
 
-```js
+```ts
 this.node.getChildByName("Cannon 01");
 ```
 
@@ -198,62 +198,11 @@ this.backNode = find("Canvas/Menu/Back");
 
 ## 访问已有变量里的值
 
-如果你已经在一个地方保存了节点或组件的引用，你也可以直接访问它们，一般有两种方式：
-
-### <a name="global_variable"></a>通过全局变量访问
-
-> 你应当很谨慎地使用全局变量，当你要用全局变量时，应该很清楚自己在做什么，我们并不推荐滥用全局变量，即使要用也最好保证全局变量只读。
-
-让我们试着定义一个全局对象 `window.Global`，这个对象里面包含了 `backNode` 和 `backLabel` 两个属性。
-
-```js
-// Globals.js, this file can have any name
-
-window.Global = {
-    backNode: null,
-    backLabel: null,
-};
-```
-
-由于所有脚本都强制声明为 "use strict"，因此定义全局变量时的 `window.` 不可省略。<br>
-接着你可以在合适的地方直接访问并初始化 `Global`:
-
-```js
-// Back.js
-
-cc.Class({
-    extends: cc.Component,
-
-    onLoad: function () {
-        Global.backNode = this.node;
-        Global.backLabel = this.getComponent(cc.Label);
-    }
-});
-```
-
-初始化后，你就能在任何地方访问到 `Global` 里的值：
-
-```js
-// AnyScript.js
-
-cc.Class({
-    extends: cc.Component,
-
-    // start 会在 onLoad 之后执行，所以这时 Global 已经初始化过了
-    start: function () {
-        var text = 'Back';
-        Global.backLabel.string = text;
-    }
-});
-```
-
-> 访问全局变量时，如果变量未定义将会抛出异常。<br>
-> 添加全局变量时，请小心不要和系统已有的全局变量重名。<br>
-> 你需要小心确保全局变量使用之前都已初始化和赋值。
+如果你已经在一个地方保存了节点或组件的引用，你也可以直接访问它们
 
 ### 通过模块访问
 
-如果你不想用全局变量，你可以使用 `import` 来实现脚本的跨文件操作，让我们看个示例：
+你可以使用 `import` 来实现脚本的跨文件操作，让我们看个示例：
 
 ```ts
 // Global.ts, now the filename matters
@@ -270,8 +219,8 @@ export class Global extends Component {
 
 每个脚本都能用 `import{ } from` + 文件名(不含路径) 来获取到对方 exports 的对象。
 
-```js
-// Back.js
+```ts
+// Back.ts
 import { _decorator, Component, Node } from "cc";
 const { ccclass, property } = _decorator;
 // this feels more safe since you know where the object comes from
@@ -286,8 +235,8 @@ export class Back extends Component {
 }
 ```
 
-```js
-// AnyScript.js
+```ts
+// AnyScript.ts
 import { _decorator, Component, Node } from "cc";
 const { ccclass, property } = _decorator;
 // this feels more safe since you know where the object comes from
@@ -301,10 +250,6 @@ export class AnyScript extends Component {
     }
 }
 ```
-
-更详细内容，请参考 [模块化](modular-script.md)。
-
-
 ---
 
 继续前往 [常用节点和组件接口](basic-node-api.md)。

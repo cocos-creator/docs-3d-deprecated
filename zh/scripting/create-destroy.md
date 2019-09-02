@@ -25,7 +25,7 @@ export class test extends Component {
 有时我们希望动态的克隆场景中的已有节点，我们可以通过 `instantiate` 方法完成。使用方法如下：
 
 ```typescript
-import { _decorator, Component, Node, SpriteFrame, Mesh, instantiate } from "cc";
+import { _decorator, Component, Node, SpriteFrame, Mesh, instantiate, director } from "cc";
 const { ccclass, property } = _decorator;
 
 @ccclass("test")
@@ -35,7 +35,7 @@ export class test extends Component {
     private target: Node = null;
 
     start(){
-        var scene = cc.director.getScene();
+        var scene = director.getScene();
         var node = instantiate(this.target);
 
         node.parent = scene;
@@ -49,7 +49,7 @@ export class test extends Component {
 和克隆已有节点相似，你可以设置一个预制（Prefab）并通过 `instantiate` 生成节点。使用方法如下：
 
 ```typescript
-import { _decorator, Component, Prefab, instantiate } from "cc";
+import { _decorator, Component, Prefab, instantiate, director } from "cc";
 const { ccclass, property } = _decorator;
 
 @ccclass("test")
@@ -59,7 +59,7 @@ export class test extends Component {
     private target: Prefab = null;
 
     start(){
-        var scene = cc.director.getScene();
+        var scene = director.getScene();
         var node = instantiate(this.target);
 
         node.parent = scene;

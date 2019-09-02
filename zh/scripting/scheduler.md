@@ -1,6 +1,6 @@
 # 使用计时器
 
-在 Cocos Creator 3D中，我们为组件提供了方便的计时器，这个计时器源自于 Cocos2d-x 中的 `cc.Scheduler`，我们将它保留在了 Cocos Creator 3D中并适配了基于组件的使用方式。
+在 Cocos Creator 3D中，我们为组件提供了方便的计时器，这个计时器源自于 Cocos2d-x 中的 `Scheduler`，我们将它保留在了 Cocos Creator 3D中并适配了基于组件的使用方式。
 
 也许有人会认为 `setTimeout` 和 `setInterval` 就足够了，开发者当然可以使用这两个函数，不过我们更推荐使用计时器，因为它更加强大灵活，和组件也结合得更好！
 
@@ -21,11 +21,11 @@
 
     ```ts
     // 以秒为单位的时间间隔
-    var interval = 5;
+    let interval = 5;
     // 重复次数
-    var repeat = 3;
+    let repeat = 3;
     // 开始延时
-    var delay = 10;
+    let delay = 10;
     this.schedule(function() {
         // 这里的 this 指向 component
         this.doSomething();
@@ -75,4 +75,4 @@
 
 除此之外，如果需要每一帧都执行一个函数，请直接在 Component 中添加 `update` 函数，这个函数将默认被每帧调用，这在 [生命周期文档](life-cycle-callbacks.md#update) 中有详细描述。
 
-### 注意：`cc.Node` 不包含计时器相关 API
+### 注意：`Node` 不包含计时器相关 API
