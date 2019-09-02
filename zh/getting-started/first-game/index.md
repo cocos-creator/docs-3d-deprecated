@@ -101,6 +101,9 @@ export class PlayerController extends Component {
 
 我们在脚本中添加对鼠标事件的监听，然后让Player动起来，将PlayerController中代码做如下修改。
 ```ts
+import { _decorator, Component, Vec3, systemEvent, SystemEvent, EventMouse, AnimationComponent } from "cc";
+const { ccclass, property } = _decorator;
+
 @ccclass("PlayerController")
 export class PlayerController extends Component {
     /* class member could be defined like this */
@@ -144,7 +147,7 @@ export class PlayerController extends Component {
         this._curJumpTime = 0;
         this._curJumpSpeed = this._jumpStep / this._jumpTime;
         this.node.getPosition(this._curPos);
-        vmath.vec3.add(this._targetPos, this._curPos, cc.v3(this._jumpStep, 0, 0));
+        Vec3.add(this._targetPos, this._curPos, cc.v3(this._jumpStep, 0, 0));
 
         this._isMoving = true;
     }
@@ -165,7 +168,7 @@ export class PlayerController extends Component {
                 // tween
                 this.node.getPosition(this._curPos);
                 this._deltaPos.x = this._curJumpSpeed * deltaTime;
-                vmath.vec3.add(this._curPos, this._curPos, this._deltaPos);
+                Vec3.add(this._curPos, this._curPos, this._deltaPos);
                 this.node.setPosition(this._curPos);
             }
         }
@@ -594,7 +597,7 @@ export class PlayerController extends Component {
         this._curJumpTime = 0;
         this._curJumpSpeed = this._jumpStep / this._jumpTime;
         this.node.getPosition(this._curPos);
-        vmath.vec3.add(this._targetPos, this._curPos, cc.v3(this._jumpStep, 0, 0));
+        Vec3.add(this._targetPos, this._curPos, cc.v3(this._jumpStep, 0, 0));
 
         this._isMoving = true;
 
@@ -624,7 +627,7 @@ export class PlayerController extends Component {
                 // tween
                 this.node.getPosition(this._curPos);
                 this._deltaPos.x = this._curJumpSpeed * deltaTime;
-                vmath.vec3.add(this._curPos, this._curPos, this._deltaPos);
+                Vec3.add(this._curPos, this._curPos, this._deltaPos);
                 this.node.setPosition(this._curPos);
             }
         }
