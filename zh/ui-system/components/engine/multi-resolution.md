@@ -78,9 +78,7 @@ Cocos Creator 3D 在整体设计上依然沿用了 Cocos Creator 实现一套资
 - **位置**（`Position`）：位置会保持在 `(Width / 2, Height / 2)`，也就是和设计分辨率相同大小的屏幕中心。
 - **锚点**（`Anchor`）：锚点默认为`(0.5, 0.5)`，由于 Canvas 会保持在屏幕中心位置，因此 **Canvas 的子节点会以屏幕中心作为坐标系原点**。
 
----
-
--> [对齐策略](widget-align.md)
+[**上一页：渲染排序规则**](priority.md)       [**下一页：对齐策略**](widget-align.md)
 
 ---
 
