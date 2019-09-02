@@ -4,16 +4,28 @@
 
 [介绍](index.md)
 
-- [新手上路](getting-started/index.md)
+- [启动](getting-started/index.md)
   - [Dashboard](getting-started/dashboard/index.md)
   - [Hello world!](getting-started/helloworld/index.md)
-  - [快速上手：制作第一个游戏](getting-started/first-game/index.md)
-  - [注意事项](getting-started/attention/index.md)
+- [快速上手：制作第一个游戏](getting-started/first-game/index.md)
+- [注意事项](getting-started/attention/index.md)
 
 ## 引擎手册
 
 - [功能地图](module-map/index.md)
   - [图形渲染](module-map/graphics.md)
+    - [材质](material-system/overview.md)
+    - [光照](module-map/light.md)
+    - [粒子系统](particle-system/overview.md)
+  - [UI系统](ui-system/components/engine/index.md)
+  - [动画系统](engine/animation/index.md)
+  - [缓动系统](tween/index.md)
+  - [音频](audio-system/overview.md)
+  - [物理模拟](physics/physics.md)
+  - [脚本指南及事件系统](scripting/index.md)
+  - [组件](editor/components/index.md)
+  - [资源](asset/index.md)
+  - [场景及环境设置](concepts/scene/index.md)
 
 - [场景及环境](concepts/scene/index.md)
   - [坐标系](concepts/scene/coord.md)
@@ -54,8 +66,6 @@
   - [动画组件](engine/animation/animation-component.md)
   - [动画剪辑](engine/animation/animation-clip.md)
   - [骨骼动画](engine/animation/skeletal-animation.md)
-
-- [缓动](tween/index.md)
 
 - [物理](physics/physics.md)
   - [物理选项](physics/physics-item.md)
@@ -117,9 +127,19 @@
   - [语言支持](scripting/language-support.md)
   - [脚本基础](scripting/basic.md)
   - [ccclass](scripting/ccclass.md)
+  - [访问节点和其他组件](scripting/access-node-component.md)
+  - [常用节点和组件接口](scripting/basic-node-api.md)
+  - [生命周期回调](scripting/life-cycle-callbacks.md)
+  - [创建和销毁节点](scripting/create-destroy.md)
+  - [加载和切换场景](scripting/scene-managing.md)
+  - [获取和加载资源](scripting/load-assets.md)
+  - [使用计时器](scripting/scheduler.md)
+  - [脚本执行顺序](scripting/execution-order.md)
   - [组件](scripting/component.md)
   - [单元测试](scripting/unit-test.md)
   - [废弃API](scripting/deprecated.md)
+  - [属性参数参考](scripting/reference/attributes.md)
+  - [CCClass 进阶参考](scripting/ccclass.md)
   - [事件机制](engine/event/index.md)
 
 - [资源手册](asset/index.md)
@@ -132,7 +152,7 @@
     - [精灵帧资源](asset/sprite-frame.md)
     - [立方体贴图资源](concepts/scene/skybox.md#cubemap)
     - [图像资源的自动裁剪](ui-system/components/engine/trim.md)
-  - [预制资源(Prefab)](asset/prefab.md)
+  - [预制资源](asset/prefab.md)
   - [脚本资源](asset/script.md)
   - [字体资源](asset/font.md)
   - [声音资源](asset/audio.md)
@@ -169,8 +189,6 @@
   - [编辑帧动画](editor/animation/sprite-animation.md)
   - [编辑动画曲线](editor/animation/animation-curve.md)
   - [动画事件](editor/animation/animation-event.md)
-
-- [地形系统](editor/terrain/index.md)
 
 - [构建发布](editor/publish/index.md)
   - [熟悉构建发布面板](editor/publish/build-panel.md)

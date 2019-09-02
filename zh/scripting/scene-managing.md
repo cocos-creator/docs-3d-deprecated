@@ -3,21 +3,21 @@
 在 Cocos Creator 3D中，我们使用场景文件名（不包含扩展名）来索引指代场景。并通过以下接口进行加载和切换操作：
 
 ```ts
-cc.director.loadScene("MyScene");
+director.loadScene("MyScene");
 ```
 
 ## 通过常驻节点进行场景资源管理和参数传递
 
 引擎同时只会运行一个场景，当切换场景时，默认会将场景内所有节点和其他实例销毁。如果我们需要用一个组件控制所有场景的加载，或在场景之间传递参数数据，就需要将该组件所在节点标记为「常驻节点」，使它在场景切换时不被自动销毁，常驻内存。我们使用以下接口：
 
-`cc.game.addPersistRootNode(myNode);`
+`game.addPersistRootNode(myNode);`
 
 上面的接口会将 `myNode` 变为常驻节点，这样挂在上面的组件都可以在场景之间持续作用，我们可以用这样的方法来储存玩家信息，或下一个场景初始化时需要的各种数据。
 需要注意的是，目标节点必须为位于层级的根节点，否则设置无效。
 
 如果要取消一个节点的常驻属性：
 
-`cc.game.removePersistRootNode(myNode);`
+`game.removePersistRootNode(myNode);`
 
 需要注意的是上面的 API 并不会立即销毁指定节点，只是将节点还原为可在场景切换时销毁的节点。
 
@@ -31,7 +31,7 @@ cc.director.loadScene("MyScene");
 
 加载场景时，可以附加一个参数用来指定场景加载后的回调函数：
 
-`cc.director.loadScene("MyScene", onSceneLaunched);`
+`director.loadScene("MyScene", onSceneLaunched);`
 
 上一行里 `onSceneLaunched` 就是声明在本脚本中的一个回调函数，在场景加载后可以用来进一步的进行初始化或数据传递的操作。
 
@@ -40,10 +40,10 @@ cc.director.loadScene("MyScene");
 
 ## 预加载场景
 
-`cc.director.loadScene` 会在加载场景之后自动切换运行新场景，有些时候我们需要在后台静默加载新场景，并在加载完成后手动进行切换。那就可以预先使用 `preloadScene` 接口对场景进行预加载：
+`director.loadScene` 会在加载场景之后自动切换运行新场景，有些时候我们需要在后台静默加载新场景，并在加载完成后手动进行切换。那就可以预先使用 `preloadScene` 接口对场景进行预加载：
 
 ```ts
-cc.director.preloadScene("table", function () {
+director.preloadScene("table", function () {
     console.log("Next scene preloaded");
 });
 ```
@@ -51,10 +51,10 @@ cc.director.preloadScene("table", function () {
 之后在合适的时间调用 `loadScene`, 就可以真正切换场景。
 
 ```ts
-cc.director.loadScene("table");
+director.loadScene("table");
 ```
 
-就算预加载还没完成，你也可以直接调用 `cc.director.loadScene`，预加载完成后场景就会启动。
+就算预加载还没完成，你也可以直接调用 `director.loadScene`，预加载完成后场景就会启动。
 
 
 ---

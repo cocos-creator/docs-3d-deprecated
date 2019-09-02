@@ -17,7 +17,7 @@
 
 ```ts
     start(){
-        var node = this.node;
+        let node = this.node;
         node.setPosition(0.0,0.0,0.0);
     }
 ```
@@ -36,7 +36,7 @@ export class test extends Component {
 
     start(){
         this.label = this.getComponent(cc.LabelComponent);
-        var text = this.name + 'started';
+        let text = this.name + 'started';
         // Change the text in Label Component
         this.label.string = text;
     }
@@ -46,14 +46,14 @@ export class test extends Component {
 你也可以为 `getComponent` 传入一个类名。对用户定义的组件而言，类名就是脚本的文件名，并且**区分大小写**。例如 "SinRotate.ts" 里声明的组件，类名就是 "SinRotate"。
 
 ```ts
-    var rotate = this.getComponent("SinRotate");
+    let rotate = this.getComponent("SinRotate");
 ```
 
 在节点上也有一个 `getComponent` 方法，它们的作用是一样的：
 
 ```ts
     start() {
-        console.log( this.node.getComponent(cc.LabelComponent) === this.getComponent(cc.LabelComponent) );  // true
+        console.log( this.node.getComponent(LabelComponent) === this.getComponent(LabelComponent) );  // true
     }
 ```
 
@@ -68,7 +68,7 @@ export class test extends Component {
     private label: any =null;
 
     start() {
-        this.label = this.getComponent(cc.LabelComponent);
+        this.label = this.getComponent(LabelComponent);
         if (this.label) {
             this.label.string = "Hello";
         }
@@ -147,7 +147,7 @@ export class Cannon extends Component {
     private player = null;
 
     start(){
-        var PlayerComp = this.player;
+        let PlayerComp = this.player;
     }
 }
 ```
@@ -169,7 +169,7 @@ const { ccclass, property } = _decorator;
 export class CannonManager extends Component {
 
     start() {
-        var cannons = this.node.children;
+        let cannons = this.node.children;
         //...
     }
 
@@ -178,7 +178,7 @@ export class CannonManager extends Component {
 
 你还可以使用 `getChildByName`：
 
-```js
+```ts
 this.node.getChildByName("Cannon 01");
 ```
 
@@ -270,8 +270,8 @@ export class Global extends Component {
 
 每个脚本都能用 `import{ } from` + 文件名(不含路径) 来获取到对方 exports 的对象。
 
-```js
-// Back.js
+```ts
+// Back.ts
 import { _decorator, Component, Node } from "cc";
 const { ccclass, property } = _decorator;
 // this feels more safe since you know where the object comes from
@@ -286,8 +286,8 @@ export class Back extends Component {
 }
 ```
 
-```js
-// AnyScript.js
+```ts
+// AnyScript.ts
 import { _decorator, Component, Node } from "cc";
 const { ccclass, property } = _decorator;
 // this feels more safe since you know where the object comes from
