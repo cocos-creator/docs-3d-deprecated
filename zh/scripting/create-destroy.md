@@ -12,7 +12,7 @@ const { ccclass, property } = _decorator;
 
 @ccclass("test")
 export class test extends Component {
-    
+
     start(){
         var node =new Node('box');
         node.setPosition(0,0,-10);
@@ -30,7 +30,7 @@ const { ccclass, property } = _decorator;
 
 @ccclass("test")
 export class test extends Component {
-    
+
     @property({type:Node})
     private target: Node = null;
 
@@ -46,7 +46,7 @@ export class test extends Component {
 
 ## 创建预制节点
 
-和克隆已有节点相似，你可以设置一个预制（Prefab）并通过 `instantiate` 生成节点。使用方法如下：
+和克隆已有节点相似，你可以设置一个预制（[Prefab](..\asset\prefab.md)）并通过 `instantiate` 生成节点。使用方法如下：
 
 ```typescript
 import { _decorator, Component, Prefab, instantiate, director } from "cc";
@@ -54,7 +54,7 @@ const { ccclass, property } = _decorator;
 
 @ccclass("test")
 export class test extends Component {
-    
+
     @property({type:Prefab})
     private target: Prefab = null;
 
@@ -80,7 +80,7 @@ const { ccclass, property } = _decorator;
 
 @ccclass("test")
 export class test extends Component {
-    
+
     @property({type:Node})
     private target: Node = null;
 
