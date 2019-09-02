@@ -24,7 +24,7 @@ const { ccclass, property } = _decorator;
 
 @ccclass("test")
 export class test extends Component {
-    
+
     @property({type:SpriteFrame})
     private spriteframe: SpriteFrame = null;
 }
@@ -42,7 +42,7 @@ const { ccclass, property } = _decorator;
 
 @ccclass("test")
 export class test extends Component {
-    
+
     @property({type:Texture2D})
     private texture: Texture2D = null;
 
@@ -86,66 +86,6 @@ export class test extends Component {
 > 如果一份资源仅仅是被 resources 中的其它资源所依赖，而不需要直接被 `CCLoader.loadRes` 调用，那么 **请不要** 放在 resources 文件夹里。否则会增大包体和 settings.ts 的大小，并且项目中无用的资源，将无法在构建的过程中自动剔除。同时在构建过程中，JSON 的自动合并策略也将受到影响，无法尽可能将零碎的 JSON 合并起来。
 
 第二个要注意的是 Creator 3D 的资源动态加载都是 **异步** 的，需要在回调函数中获得载入的资源。这么做是因为 Creator 3D 除了场景关联的资源，没有另外的资源预加载列表，动态加载的资源是真正的动态加载。
-
-### 动态加载 Asset
-
-Creator 3D提供了 `CCLoader.loadRes` 这个 API 来专门加载那些位于 resources 目录下的 Asset。和 `CCLoader.load` 不同的是，loadRes 一次只能加载单个 Asset。调用时，你只要传入相对 resources 的路径即可，并且路径的结尾处 **不能** 包含文件扩展名。
-
-```typescript
-// 加载 Prefab
-CCLoader.loadRes("test assets/prefab", function (err, prefab) {
-    let newNode = instantiate(prefab);
-    director.getScene().addChild(newNode);
-});
-
-// 加载 AnimationClip
-let self = this;
-CCLoader.loadRes("test assets/anim", function (err, clip) {
-    self.node.getComponent(Animation).addClip(clip, "anim");
-});
-```
-
-#### 加载 SpriteFrame
-
-图片设置为 Sprite 后，将会在 **资源管理器** 中生成一个对应的 SpriteFrame。但如果直接加载 `test assets/image`，得到的类型将会是 Texture2D。你必须指定第二个参数为资源的类型，才能加载到图片生成的 SpriteFrame：
-
-```typescript
-// 加载 SpriteFrame
-let self = this;
-CCLoader.loadRes("test assets/image", SpriteFrame, function (err, spriteFrame) {
-    self.node.getComponent(Sprite).spriteFrame = spriteFrame;
-});
-```
-
-> 如果指定了类型参数，就会在路径下查找指定类型的资源。当你在同一个路径下同时包含了多个重名资源（例如同时包含 player.clip 和 player.psd），或者需要获取 “子资源”（例如获取 Texture2D 生成的 SpriteFrame），就需要声明类型。
-
-#### 加载图集中的 SpriteFrame
-
-对从 TexturePacker 等第三方工具导入的图集而言，如果要加载其中的 SpriteFrame，则只能先加载图集，再获取其中的 SpriteFrame。这是一种特殊情况。
-
-```ts
-// 加载 SpriteAtlas（图集），并且获取其中的一个 SpriteFrame
-// 注意 atlas 资源文件（plist）通常会和一个同名的图片文件（png）放在一个目录下, 所以需要在第二个参数指定资源类型
-CCLoader.loadRes("test assets/sheep", SpriteAtlas, function (err, atlas) {
-    let frame = atlas.getSpriteFrame('sheep_down_0');
-    sprite.spriteFrame = frame;
-});
-```
-
-#### 资源释放
-
-`loadRes` 加载进来的单个资源如果需要释放，可以调用 `CCLoader.releaseRes`，`releaseRes` 可以传入和 `loadRes` 相同的路径和类型参数。
-
-```typescript
-CCLoader.releaseRes("test assets/image", SpriteFrame);
-CCLoader.releaseRes("test assets/anim");
-```
-
-此外，你也可以使用 `CCLoader.releaseAsset` 来释放特定的 Asset 实例。
-
-```typescript
-CCLoader.releaseAsset(spriteFrame);
-```
 
 ### 资源批量加载
 
@@ -230,3 +170,5 @@ CCLoader.release(deps);
 以上就是管理资源依赖和释放时需要注意的细节，这部分的功能和 API 设计还没有完全定案，我们还是希望尽力给大家带来尽可能方便的引擎 API，所以后续也会尝试一些其他的办法提升友好度，届时会更新这篇文档。
 
 ---
+
+继续前往 [事件系统](..\engine\event\index.md) 说明文档。

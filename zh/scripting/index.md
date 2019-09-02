@@ -7,8 +7,19 @@ Cocos Creator 3D 脚本用于实现用户定义的（游戏）行为。
 - [语言支持](./language-support.md)
 - [脚本基础](./basic.md)
 - [cc 类](./ccclass.md)
+- [访问节点和其他组件](./access-node-component.md)
+- [常用节点和组件接口](./basic-node-api.md)
+- [生命周期回调](./life-cycle-callbacks.md)
+- [创建和销毁节点](./create-destroy.md)
+- [加载和切换场景](./scene-managing.md)
+- [获取和加载资源](./load-assets.md)
+- [使用计时器](./scheduler.md)
+- [脚本执行顺序](./execution-order.md)
 - [组件](./component.md)
+- [属性参数参考](./reference/attributes.md)
+- [CCClass 进阶参考](./ccclass.md)
 - [单元测试](./unit-test.md)
+- [废弃API](./deprecated.md)
 
 ## 事件机制
 

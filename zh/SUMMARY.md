@@ -125,10 +125,10 @@
   - [使用计时器](scripting/scheduler.md)
   - [脚本执行顺序](scripting/execution-order.md)
   - [组件](scripting/component.md)
-  - [单元测试](scripting/unit-test.md)
-  - [废弃API](scripting/deprecated.md)
   - [属性参数参考](scripting/reference/attributes.md)
   - [CCClass 进阶参考](scripting/ccclass.md)
+  - [单元测试](scripting/unit-test.md)
+  - [废弃API](scripting/deprecated.md)
   - [事件机制](engine/event/index.md)
 
 - [资源手册](asset/index.md)
