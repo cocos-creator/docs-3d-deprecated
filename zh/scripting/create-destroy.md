@@ -7,14 +7,14 @@
 以下是一个简单的例子:
 
 ```typescript
-import { _decorator, Component, Node, SpriteFrame, Mesh } from "cc";
+import { _decorator, Component, Node } from "cc";
 const { ccclass, property } = _decorator;
 
 @ccclass("test")
 export class test extends Component {
 
     start(){
-        var node =new Node('box');
+        let node =new Node('box');
         node.setPosition(0,0,-10);
     }
 }
@@ -25,7 +25,7 @@ export class test extends Component {
 有时我们希望动态的克隆场景中的已有节点，我们可以通过 `instantiate` 方法完成。使用方法如下：
 
 ```typescript
-import { _decorator, Component, Node, SpriteFrame, Mesh, instantiate, director } from "cc";
+import { _decorator, Component, Node,instantiate, director } from "cc";
 const { ccclass, property } = _decorator;
 
 @ccclass("test")
@@ -35,8 +35,8 @@ export class test extends Component {
     private target: Node = null;
 
     start(){
-        var scene = director.getScene();
-        var node = instantiate(this.target);
+        let scene = director.getScene();
+        let node = instantiate(this.target);
 
         node.parent = scene;
         node.setPosition(0, 0,-10);
@@ -59,8 +59,8 @@ export class test extends Component {
     private target: Prefab = null;
 
     start(){
-        var scene = director.getScene();
-        var node = instantiate(this.target);
+        let scene = director.getScene();
+        let node = instantiate(this.target);
 
         node.parent = scene;
         node.setPosition(0,0,0);
@@ -75,7 +75,7 @@ export class test extends Component {
 使用方法如下：
 
 ```typescript
-import { _decorator, Component, Node, SpriteFrame, Mesh } from "cc";
+import { _decorator, Component, Node } from "cc";
 const { ccclass, property } = _decorator;
 
 @ccclass("test")
