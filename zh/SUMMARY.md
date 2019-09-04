@@ -141,6 +141,8 @@
     - [精灵帧资源](asset/sprite-frame.md)
     - [立方体贴图资源](concepts/scene/skybox.md#cubemap)
     - [图像资源的自动裁剪](ui-system/components/engine/trim.md)
+    - [图集资源](asset/atlas.md)
+    - [渲染纹理](asset/render-texture.md)
   - [预制资源](asset/prefab.md)
   - [脚本资源](asset/script.md)
   - [字体资源](asset/font.md)
