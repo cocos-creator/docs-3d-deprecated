@@ -11,8 +11,10 @@ Canvas 组件不仅是 UI 渲染的根节点，同时在游戏制作时还有一
 
 | 属性           | 功能说明                                                 |
 | -------------- | -----------                                            |
-| priority       | 跟其余 Canvas 做排序使用。      |
-
+| RenderMode    | canvas渲染模式，intersperse下可以指定canvas与场景中的camera的渲染顺序，overlay下canvas会在所有场景camera渲染完成后渲染。
+| priority       | 当RenderMode为intersperse时，指定与其它camera的渲染顺序，当RenderMode为overlay时，指定跟其余 Canvas 做排序使用。      |
+| clearFlag     | canvas清理屏幕缓冲区的标记，none不清理，depth_stencil清理深度缓冲，solid_color清理颜色深度缓冲。
+| color     | 清理颜色缓冲区后的颜色。
 ---
 
 ### [**其他基础模块参考**](base-component.md)
