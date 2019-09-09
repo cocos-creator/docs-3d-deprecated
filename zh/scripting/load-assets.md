@@ -19,7 +19,7 @@ Cocos Creator 3D 有一套统一的资源管理机制，在本篇教程，我们
 ```typescript
 //test.ts
 
-import { _decorator, Component, Node, SpriteFrame, Mesh, Prefab } from "cc";
+import { _decorator, Component, Node, SpriteFrame } from "cc";
 const { ccclass, property } = _decorator;
 
 @ccclass("test")
@@ -28,6 +28,7 @@ export class test extends Component {
     @property({type:SpriteFrame})
     private spriteframe: SpriteFrame = null;
 }
+
 ```
 
 ## 如何在属性检查器里设置资源
@@ -36,8 +37,7 @@ export class test extends Component {
 
 ```typescript
 //test.ts
-
-import { _decorator, Component, Node, SpriteFrame, Mesh, Prefab } from "cc";
+import { _decorator, Component, Node, SpriteFrame, Texture2D } from "cc";
 const { ccclass, property } = _decorator;
 
 @ccclass("test")

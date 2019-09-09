@@ -17,25 +17,24 @@ Cocos Creator 3D为组件脚本提供了生命周期的回调函数。用户只�
 组件脚本的初始化阶段，我们提供了 `onLoad` 回调函数。`onLoad` 回调会在节点首次激活时触发，比如所在的场景被载入，或者所在节点被激活的情况下。在 `onLoad` 阶段，保证了你可以获取到场景中的其他节点，以及节点关联的资源数据。onLoad 总是会在任何 start 方法调用前执行，这能用于安排脚本的初始化顺序。通常我们会在 `onLoad` 阶段去做一些初始化相关的操作。例如：
 
 ```ts
-import { _decorator, Component, Node, SpriteFrame } from "cc";
+import { _decorator, Component, Node, SpriteFrame, find } from "cc";
 const { ccclass, property } = _decorator;
 
 @ccclass("test")
 export class test extends Component {
+    @property({type:SpriteFrame})
+    bulletSprite=null;
+    @property({type:Node})
+    gun=null;
 
-    @property(Node)
-    private gun: Node = null;
+    _bulletRect=null;
 
-    @property(cc.SpriteFrame)
-    private bulletSprite: SpriteFrame = null;
-
-    private _bulletRect:any=null;
-
-    onLoad() {
-        this._bulletRect = this.bulletSprite.getRect();
-        this.gun = find('hand/weapon', this.node);
+    onLoad(){
+        this._bulletRect=this.bulletSprite.getRect();
+        this.gun = find('hand/weapon'),this.node;
     }
 }
+
 ```
 
 ## start

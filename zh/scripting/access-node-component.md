@@ -27,7 +27,7 @@
 你会经常需要获得同一个节点上的其它组件，这就要用到 `getComponent` 这个 API，它会帮你查找你要的组件。
 
 ```ts
-import { _decorator, Component } from "cc";
+import { _decorator, Component, LabelComponent } from "cc";
 const { ccclass, property } = _decorator;
 
 @ccclass("test")
@@ -35,7 +35,7 @@ export class test extends Component {
     private label: any = null
 
     start(){
-        this.label = this.getComponent(cc.LabelComponent);
+        this.label = this.getComponent(LabelComponent);
         let text = this.name + 'started';
         // Change the text in Label Component
         this.label.string = text;

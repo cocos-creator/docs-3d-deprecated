@@ -129,7 +129,7 @@ CompA update!
 
 如果以上方法还是不能提供所需的控制粒度，还可以直接设置组件的 executionOrder。executionOrder 会影响组件的生命周期回调的执行优先级。设置方法如下：
 
-```js
+```ts
 //Player.ts
 import { _decorator, Component, Node } from "cc";
 const { ccclass, executionOrder } = _decorator;
@@ -145,7 +145,7 @@ export class Player extends Component {
 
 ```
 
-```js
+```ts
 // Menu.ts
 import { _decorator, Component, Node } from "cc";
 const { ccclass, executionOrder } = _decorator;

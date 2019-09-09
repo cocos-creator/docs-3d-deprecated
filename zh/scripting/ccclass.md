@@ -108,7 +108,7 @@ CCClass 的构造函数使用 `constructor` 定义，为了保证反序列化能
 
 ### 判断实例
 
-需要做类型判断时，可以用 JavaScript 原生的 `instanceof`：
+需要做类型判断时，可以用 TypeScript 原生的 `instanceof`：
 
 ```typescript
 class Sub extends Base {
