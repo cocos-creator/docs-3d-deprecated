@@ -126,6 +126,7 @@
   - [脚本执行顺序](scripting/execution-order.md)
   - [组件](scripting/component.md)
   - [属性参数参考](scripting/reference/attributes.md)
+  - [插件脚本](scripting/plugin-scripts.md)
   - [CCClass 进阶参考](scripting/ccclass.md)
   - [单元测试](scripting/unit-test.md)
   - [废弃API](scripting/deprecated.md)
