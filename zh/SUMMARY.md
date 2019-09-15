@@ -128,7 +128,6 @@
   - [属性参数参考](scripting/reference/attributes.md)
   - [插件脚本](scripting/plugin-scripts.md)
   - [CCClass 进阶参考](scripting/ccclass.md)
-  - [单元测试](scripting/unit-test.md)
   - [废弃API](scripting/deprecated.md)
   - [事件机制](engine/event/index.md)
 
@@ -192,3 +191,7 @@
   - [命令行发布项目](editor/publish/publish-in-command-line.md)
   - [定制项目的构建模版](editor/publish/custom-project-build-template.md)
   - [构建流程简介与常见错误处理](editor/publish/build-guide.md)
+
+- [测试规范]
+  - [测试流程文档](tests/qa-process.md)
+  - [单元测试](tests/unit-test.md)
