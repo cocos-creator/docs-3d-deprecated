@@ -27,6 +27,20 @@
 
 任选一平台，需要在项目设置中设置 Physics 模块为使用 builtin 以及 cannon 分别各构建一次，并测试结果是否正确。
 
+### 粒子测试用例
+
+ - [particle-color](./particle/particle-color.md)
+ - [particle-force](./particle/particle-force.md)
+ - [particle-limit-velocity](./particle/particle-limit-velocity.md)
+ - [particle-main](./particle/particle-main.md)
+ - [particle-renderer](./particle/particle-renderer.md)
+ - [particle-rotation](./particle/particle-rotation.md)
+ - [particle-shape](./particle/particle-shape.md)
+ - [particle-size](./particle/particle-size.md)
+ - [particle-texture-animation](./particle/particle-texture-animation.md)
+ - [particle-trail](./particle/particle-trail.md)
+ - [particle-velocity](./particle/particle-velocity.md)
+
 ## Issue 管理
 
 1. 请将 issue 提交到 3d-tasks 仓库
