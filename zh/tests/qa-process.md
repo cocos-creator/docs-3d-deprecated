@@ -47,6 +47,20 @@ Test Case 运行时需要分几种情况打包测试，以便覆盖各种使用�
   - 构建选项**不勾选** CompressTexture（压缩纹理）
   - 构建选项**不勾选** packAutoAtlas（打包自动图集）
 
+### 粒子测试用例
+
+ - [particle-color](./particle/particle-color.md)
+ - [particle-force](./particle/particle-force.md)
+ - [particle-limit-velocity](./particle/particle-limit-velocity.md)
+ - [particle-main](./particle/particle-main.md)
+ - [particle-renderer](./particle/particle-renderer.md)
+ - [particle-rotation](./particle/particle-rotation.md)
+ - [particle-shape](./particle/particle-shape.md)
+ - [particle-size](./particle/particle-size.md)
+ - [particle-texture-animation](./particle/particle-texture-animation.md)
+ - [particle-trail](./particle/particle-trail.md)
+ - [particle-velocity](./particle/particle-velocity.md)
+
 ## Issue 管理
 
 1. 请将 issue 提交到 3d-tasks 仓库
