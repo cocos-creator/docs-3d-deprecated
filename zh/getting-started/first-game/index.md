@@ -539,11 +539,104 @@ export class GameManager extends Component {
     }
     ```
 
+
+
+## 光照和阴影
+有光的地方就会有影子，光和影构成明暗交错的3D世界。接下来我们为角色加上简单的影子。
+### 开启阴影
+1. 在 **层级管理器** 中点击最顶部的 `Scene` 节点，将planarShadows选项中的Enabled打钩，并修改Distance和Normal参数
+
+    ![planar shadows](./images/planarShadows.png)
+
+2. 点击Player节点下的Body节点，将 `cc.ModelComponent` 下的ShadowCastingMode设置为ON。
+    ![model shadow](./images/model-shadow.png)
+
+此时在场景编辑器中会看到一个阴影面片，预览会发现看不到这个阴影，因为它在模型的正后方，被胶囊体盖住了。
+
+![player shadow](./images/player-shadow-scene.png)
+
+### 调整光照
+新建场景时默认会添加一个 `DirctionalLight` ，由这个平行光计算阴影，所以为了让阴影换个位置显示，我们可以调整这个平行光的方向。
+在 **层级管理器** 中点击选中 `Main Light` 节点，调整Rotation参数为（-10，17，0）。
+
+![main light](./images/main-light.png)
+
+预览可以看到影子效果：
+
+![player shadow preview](./images/player-shadow-preview.png)
+
+## 添加主角模型
+做为一个官方教程，用胶囊体当主角显的有点寒碜，所以我们花（低）重（预）金（算）制作了一个Cocos主角。
+
+### 导入模型资源
+从原始资源导入模型、材质、动画等资源不是本篇基础教程的重点，所以这边直接使用已经导入工程的资源。
+将[项目工程](https://github.com/cocos-creator/tutorial-mind-your-step-3d)中assets目录下的cocos文件夹拷贝到你自己工程的assets目录下。
+
+### 添加到场景中
+在cocos文件中已经包含了一个名为Cocos的Prefab，将它拖到场景中Player下的Body节点中。
+
+![add cocos prefab](./images/add-cocos-prefab.png)
+
+此时会发现模型有些暗，可以加个聚光灯，以突出它锃光瓦亮的脑门。
+
+![add cocos light](./images/cocos-add-light.png)
+
+### 添加跳跃动画
+现在预览可以看到主角初始会有一个待机动画，但是跳跃时还是用这个待机动画会显得很不协调，所以我们在跳跃过程中换成跳跃的动画。
+在 `PlayerController` 类中添加一个引用模型动画的变量：
+
+```ts
+    @property({type: SkeletalAnimationComponent})
+    public CocosAnim: SkeletalAnimationComponent = null;
+```
+然后在`Inspector`中要将Cocos节点拖入这个变量里。
+在jumpByStep函数中播放跳跃动画
+
+```ts
+    jumpByStep(step: number) {
+        if (this._isMoving) {
+            return;
+        }
+        this._startJump = true;
+        this._jumpStep = step;
+        this._curJumpTime = 0;
+        this._curJumpSpeed = this._jumpStep / this._jumpTime;
+        this.node.getPosition(this._curPos);
+        Vec3.add(this._targetPos, this._curPos, cc.v3(this._jumpStep, 0, 0));
+
+        this._isMoving = true;
+
+        this.CocosAnim.getState('cocos_anim_jump').speed = 3.5; //跳跃动画时间比较长，这里加速播放
+        this.CocosAnim.play('cocos_anim_jump'); //播放跳跃动画
+        if (step === 1) {
+            //this.BodyAnim.play('oneStep');
+        } else if (step === 2) {
+            this.BodyAnim.play('twoStep');
+        }
+
+        this._curMoveIndex += step;
+    }
+```
+
+在onOnceJumpEnd函数中让主角变为待机状态，播放待机动画。
+
+```ts
+    onOnceJumpEnd() {
+        this._isMoving = false;
+        this.CocosAnim.play('cocos_anim_idle');
+        this.node.emit('JumpEnd', this._curMoveIndex);
+    }
+```
+
+预览效果：
+
+![cocos play](./images/cocos-play.gif)
+
 ## 最终代码
 PlayerController.ts
 
 ```ts
-import { _decorator, Component, Vec3, vmath, systemEvent, SystemEvent, EventMouse, AnimationComponent } from "cc";
+import { _decorator, Component, Vec3, systemEvent, SystemEvent, EventMouse, AnimationComponent, SkeletalAnimationComponent } from "cc";
 const { ccclass, property } = _decorator;
 
 @ccclass("PlayerController")
@@ -551,12 +644,14 @@ export class PlayerController extends Component {
 
     @property({type: AnimationComponent})
     public BodyAnim: AnimationComponent = null;
+    @property({type: SkeletalAnimationComponent})
+    public CocosAnim: SkeletalAnimationComponent = null;
 
     // for fake tween
     private _startJump: boolean = false;
     private _jumpStep: number = 0;
     private _curJumpTime: number = 0;
-    private _jumpTime: number = 0.1;
+    private _jumpTime: number = 0.3;
     private _curJumpSpeed: number = 0;
     private _curPos: Vec3 = cc.v3();
     private _deltaPos: Vec3 = cc.v3(0, 0, 0);
@@ -601,8 +696,10 @@ export class PlayerController extends Component {
 
         this._isMoving = true;
 
+        this.CocosAnim.getState('cocos_anim_jump').speed = 3.5; //跳跃动画时间比较长，这里加速播放
+        this.CocosAnim.play('cocos_anim_jump'); //播放跳跃动画
         if (step === 1) {
-            this.BodyAnim.play('oneStep');
+            //this.BodyAnim.play('oneStep');
         } else if (step === 2) {
             this.BodyAnim.play('twoStep');
         }
@@ -612,6 +709,7 @@ export class PlayerController extends Component {
 
     onOnceJumpEnd() {
         this._isMoving = false;
+        this.CocosAnim.play('cocos_anim_idle');
         this.node.emit('JumpEnd', this._curMoveIndex);
     }
 
@@ -702,7 +800,7 @@ export class GameManager extends Component {
 
     generateRoad() {
 
-        this.node.removeAllChildren(true);
+        this.node.removeAllChildren();
 
         this._road = [];
         // startPos
@@ -760,33 +858,6 @@ export class GameManager extends Component {
     // }
 }
 ```
-
-## 光照和阴影
-有光的地方就会有影子，光和影使得3D世界更加的立体。接下来我们为角色加上简单的影子。
-### 开启阴影
-1. 在 **层级管理器** 中点击最顶部的 `Scene` 节点，将planarShadows选项中的Enabled打钩，并修改Distance和Normal参数
-
-    ![planar shadows](./images/planarShadows.png)
-
-2. 点击Player节点下的Body节点，将 `cc.ModelComponent` 下的ShadowCastingMode设置为ON。
-    ![model shadow](./images/model-shadow.png)
-
-此时在场景编辑器中会看到一个阴影面片，预览会发现看不到这个阴影，因为它在模型的正后方，被胶囊体盖住了。
-
-![player shadow](./images/player-shadow-scene.png)
-
-### 调整光照
-新建场景时默认会添加一个 `DirctionalLight` ，由这个平行光计算阴影，所以为了让阴影换个位置显示，我们可以调整这个平行光的方向。
-在 **层级管理器** 中点击选中 `Main Light` 节点，调整Rotation参数为（-10，17，0）。
-
-![main light](./images/main-light.png)
-
-预览可以看到影子效果：
-
-![player shadow preview](./images/player-shadow-preview.png)
-
-
-
 
 ## 总结
 恭喜您完成了用 Cocos Creator 3D 制作的第一个游戏！在 [这里](https://github.com/cocos-creator/tutorial-mind-your-step-3d) 可以下载完整的工程，希望这篇快速入门教程能帮助您了解 Cocos Creator 3D 游戏开发流程中的基本概念和工作流程。如果您对编写和学习脚本编程不感兴趣，也可以直接从完成版的项目工程中把写好的脚本复制过来使用。
