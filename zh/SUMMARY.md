@@ -126,10 +126,11 @@
   - [脚本执行顺序](scripting/execution-order.md)
   - [组件](scripting/component.md)
   - [属性参数参考](scripting/reference/attributes.md)
-  - [插件脚本](scripting/plugin-scripts.md)
   - [CCClass 进阶参考](scripting/ccclass.md)
-  - [废弃API](scripting/deprecated.md)
   - [事件机制](engine/event/index.md)
+  - [插件脚本](scripting/plugin-scripts.md)
+  - [添加 Log](scripting/log.md)
+  - [废弃 API](scripting/deprecated.md)
 
 - [资源手册](asset/index.md)
   - [资源工作流](asset/asset-workflow.md)
