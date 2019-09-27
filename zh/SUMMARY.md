@@ -31,8 +31,8 @@
 
 - [材质](material-system/overview.md)
   - [YAML 101](material-system/yaml-101.md)
-  - [Effect](material-system/effect-syntax.md)
-  - [Pass](material-system/pass-parameter-list.md)
+  - [Effect Syntax](material-system/effect-syntax.md)
+  - [Pass Params](material-system/pass-parameter-list.md)
 
 - [声音](audio-system/overview.md)
 
