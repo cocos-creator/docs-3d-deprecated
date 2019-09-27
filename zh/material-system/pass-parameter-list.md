@@ -5,7 +5,7 @@
 
 | Name                                        | Options                                                                         |
 |:-------------------------------------------:|:-------------------------------------------------------------------------------:|
-| switch                                      | ***undefined**, could be any valid macro name that's not defined in the shader  |
+| switch                                      | **\*undefined**, could be any valid macro name that's not defined in the shader |
 | priority                                    | **default**(128), could be any number between max(255) and min(0)               |
 | stage                                       | **default**, could be the name of any registered stage in your runtime pipeline |
 | customization                               | **[]**, could be the name of any registered runtime customization               |
@@ -41,9 +41,9 @@
 | depthStencilState.<br>stencilZFailOpBack    | **keep**, zero, replace, incr, incr_wrap, decr, decr_wrap, invert               |
 | depthStencilState.<br>stencilPassOpBack     | **keep**, zero, replace, incr, incr_wrap, decr, decr_wrap, invert               |
 | depthStencilState.<br>stencilRefBack        | **1** or **[0, 0, 0, 1]**                                                       |
-| depthStencilState.<br>stencilReadMask       | **convenient setter for both front/back stencil read mask,<br>always use this for web platforms* |
-| depthStencilState.<br>stencilWriteMask      | **convenient setter for both front/back stencil write mask,<br>always use this for web platforms* |
-| depthStencilState.<br>stencilRef            | **convenient setter for both front/back stencil ref,<br>always use this for web platforms* |
+| depthStencilState.<br>stencilReadMask       | *\*convenient setter for both front/back stencil read mask,<br>always use this for web platforms* |
+| depthStencilState.<br>stencilWriteMask      | *\*convenient setter for both front/back stencil write mask,<br>always use this for web platforms* |
+| depthStencilState.<br>stencilRef            | *\*convenient setter for both front/back stencil ref,<br>always use this for web platforms* |
 
 ## Switch
 指定这个 pass 的执行依赖于哪个 define，它不应与使用到的 shader 中定义的任何 define 重名。
@@ -58,14 +58,27 @@
 ## Customization
 指定当这个 pass 被应用到场景模型上后执行的自定义回调函数，用于实现显示相关的特殊逻辑需求，可在脚本中通过 cc.customizationManager.register 注册。
 
-## Property
-properties 存储着这个 Pass 哪些 uniform 需要在 Inspector 上显示,<br>
+## Properties
+properties 存储着这个 Pass 有哪些可定制的参数需要在 Inspector 上显示，<br>
+这些参数可以是 shader 中的某个 uniform 的完整映射，也可以是具体某个分量的映射 (使用 target 参数)：
+```yaml
+albedo: { value: [1, 1, 1, 1] } # uniform vec4 albedo
+roughness: { value: 0.8, target: pbrParams.g } # uniform vec4 pbrParams
+offset: { value: [0, 0], target: tilingOffset.zw } # uniform vec4 tilingOffset
+# say there is another uniform, vec4 emissive, that doesn't appear here
+# so it will be assigned a default value of [0, 0, 0, 0] and will not appear in the inspector
+```
+运行时可以这样使用：
+```js
+// as long as it is a real uniform
+// it doesn't matter whether it is specified in the property list or not
+mat.setProperty('emissive', cc.Color.GREY); // this works
+mat.setProperty('albedo', cc.Color.RED); // direct set uniform
+mat.setProperty('roughness', 0.2); // set certain component
+const h = mat.passes[0].getHandle('offset'); // or just take the handle,
+mat.passes[0].setUniform(h, new Vec2(0.5, 0.5)); // and use Pass.setUniform interface instead
+```
 未指定的 uniform 将由引擎在运行时根据自动分析出的数据类型给予[默认初值](#default-values)。
-
-同样地，任何字段如为默认值也都可以省掉。
-
-effect 资源导入器会自动从 shader 中读取 uniform 的类型等相关信息。<br>
-另外，各 uniform 会根据 `inspector` 属性调整在编辑器内的显示，如使用 color picker，或设置 tooltip 等，具体见 [可配置列表](#property-param-list)。<br>
 
 为方便声明各 property 子属性，可以直接在 properties 内声明 `__metadata__` 项，所有 property 都会继承它声明的内容，如：
 ```yaml
@@ -77,11 +90,62 @@ properties:
 ```
 这样 uniform a 和 b 已声明的各项参数都不受影响，但全部不会显示在 inspector 上（visible 为 false），而 uniform c 还会正常显示。
 
+## 数据迁移升级：formerlySerializedAs
+当指定了 inspector.deprecated 时，工程内所有材质资源内的对应属性数据，在下一次编辑保存这个材质时会被自动剔除掉。<br>
+当指定了 inspector.formerlySerializedAs 时，在 effect 导入成功后会 **立即更新工程内所有** 依赖于此 effect 的材质资源，<br>
+尝试寻找所有指定旧参数数据，复制或重组到新属性名下。<br>
+这个过程不会删除旧数据，但是会将旧属性标为 deprecated。<br>
+如果一个材质资源内既有旧数据，又有新数据，则不会做任何迁移（强制更新模式除外）。
+
+对于一个现有 effect，修改它的某个属性为：
+```yaml
+width: { value: 1, inspector: { formerlySerializedAs: shapeParam.x } }
+```
+对于一个依赖于这个 effect，并持有这样的属性的材质：
+```json
+{
+  "shapeParam": {
+    "__type__": "cc.Vec4",
+    "x": 3,
+    "y": 1,
+    "z": 0,
+    "w": 0
+  }
+}
+```
+在 effect 重新导入后，这些数据会被立即转换成：
+```json
+{
+  "shapeParam": {
+    "__type__": "cc.Vec4",
+    "x": 3,
+    "y": 1,
+    "z": 0,
+    "w": 0
+  },
+  "width": 3
+}
+```
+在编辑器内重新编辑并保存这个材质资源后会变成（假设 effect 和 property 数据本身并没有改变）：
+```json
+{
+  "width": 3
+}
+```
+但如果某个材质在迁移升级前就已经存着 width 数据，则不会对其做任何修改，除非指定为强制更新模式：
+```yaml
+width: { value: 1, inspector: { formerlySerializedAs: shapeParam.x! } }
+```
+这会强制更新所有材质的属性，无论这个操作是否会覆盖数据。<br>
+注意强制更新操作会在编辑器的每次资源事件中都执行（几乎对应每一次鼠标点击，相对高频），<br>
+因此只是一个快速测试和调试的手段，一定不要将处于强制更新模式的 effect 提交版本控制。
+
 ## Property Param List
+同样地，任何可配置字段如与默认值相同都可以省掉。
 | Param                     | Options                              |
 |:-------------------------:|:------------------------------------:|
-| type                      | float, vec2, vec3, vec4, sampler2D, samplerCube, ***extracted from shader** |
-| value                     | **see the following section*         |
+| target                    | **undefined**, (any valid uniform components, no random swizzle) |
+| value                     | *\*see the next section*             |
 | sampler.<br>minFilter     | none, point, **linear**, anisotropic |
 | sampler.<br>magFilter     | none, point, **linear**, anisotropic |
 | sampler.<br>mipFilter     | **none**, point, linear, anisotropic |
@@ -92,12 +156,15 @@ properties:
 | sampler.<br>cmpFunc       | **never**, less, equal, less_equal, greater, not_equal, greater_equal, always |
 | sampler.<br>borderColor   | **[0, 0, 0, 0]**                     |
 | sampler.<br>minLOD        | **0**                                |
-| sampler.<br>maxLOD        | **0**, **remember to override this when enabling mip filter* |
+| sampler.<br>maxLOD        | **0**, *\*remember to override this when enabling mip filter* |
 | sampler.<br>mipLODBias    | **0**                                |
-| inspector.<br>displayName | (any string), ***property name**     |
+| inspector.<br>displayName | (any string), **\*property name**    |
 | inspector.<br>type        | **vector**, color                    |
 | inspector.<br>visible     | **true**, false                      |
-| inspector.<br>tooltip     | (any string), ***property name**     |
+| inspector.<br>tooltip     | (any string), **\*property name**    |
+| inspector.<br>range       | **undefined**, [ min, max, [step] ]  |
+| inspector.<br>deprecated  | true, **false**                      |
+| inspector.<br>formerlySerializedAs | **undefined**, (any valid uniform components, random swizzle allowed) |
 
 ## Default Values
 | Type        | Default Value / Options                  |
