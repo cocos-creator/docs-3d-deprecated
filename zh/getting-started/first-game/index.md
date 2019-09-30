@@ -4,7 +4,7 @@ Cocos Creator 3D编辑器的强大之处就是可以让开发者快速的制作�
 
 下面我们将跟随教程制作一款名叫 **一步两步** 的魔性小游戏。这款游戏考验玩家的反应能力，根据路况选择是要跳一步还是跳两步，“一步两步，一步两步，一步一步似爪牙似魔鬼的步伐”。
 
-可以在 [这里](https://gameu3d.github.io/MindYourStep_Tutorial/index.html) 体验一下游戏的完成形态。
+可以在 [这里](https://gameall3d.github.io/MindYourStep_Tutorial/index.html) 体验一下游戏的完成形态。
 
 ## 新建项目
 如果您还不了解如何获取和启动 Cocos Creator 3D，请阅读 [安装和启动](../install/index.md) 一节。
