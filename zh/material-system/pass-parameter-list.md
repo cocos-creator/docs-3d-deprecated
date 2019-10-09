@@ -25,25 +25,15 @@
 | blendState.targets[i].<br>blendAlphaEq      | **add**, sub, rev_sub                                                           |
 | blendState.targets[i].<br>blendColorMask    | **all**, none, r, g, b, a, rg, rb, ra, gb, ga, ba, rgb, rga, rba, gba           |
 | blendState.<br>blendColor                   | **0** or **[0, 0, 0, 0]**                                                       |
-| depthStencilState.<br>stencilTestFront      | true, **false**                                                                 |
-| depthStencilState.<br>stencilFuncFront      | never, less, equal, less_equal, greater, not_equal, greater_equal, **always**   |
-| depthStencilState.<br>stencilReadMaskFront  | **0xffffffff** or **[1, 1, 1, 1]**                                              |
-| depthStencilState.<br>stencilWriteMaskFront | **0xffffffff** or **[1, 1, 1, 1]**                                              |
-| depthStencilState.<br>stencilFailOpFront    | **keep**, zero, replace, incr, incr_wrap, decr, decr_wrap, invert               |
-| depthStencilState.<br>stencilZFailOpFront   | **keep**, zero, replace, incr, incr_wrap, decr, decr_wrap, invert               |
-| depthStencilState.<br>stencilPassOpFront    | **keep**, zero, replace, incr, incr_wrap, decr, decr_wrap, invert               |
-| depthStencilState.<br>stencilRefFront       | **1** or **[0, 0, 0, 1]**                                                       |
-| depthStencilState.<br>stencilTestBack       | true, **false**                                                                 |
-| depthStencilState.<br>stencilFuncBack       | never, less, equal, less_equal, greater, not_equal, greater_equal, **always**   |
-| depthStencilState.<br>stencilReadMaskBack   | **0xffffffff** or **[1, 1, 1, 1]**                                              |
-| depthStencilState.<br>stencilWriteMaskBack  | **0xffffffff** or **[1, 1, 1, 1]**                                              |
-| depthStencilState.<br>stencilFailOpBack     | **keep**, zero, replace, incr, incr_wrap, decr, decr_wrap, invert               |
-| depthStencilState.<br>stencilZFailOpBack    | **keep**, zero, replace, incr, incr_wrap, decr, decr_wrap, invert               |
-| depthStencilState.<br>stencilPassOpBack     | **keep**, zero, replace, incr, incr_wrap, decr, decr_wrap, invert               |
-| depthStencilState.<br>stencilRefBack        | **1** or **[0, 0, 0, 1]**                                                       |
-| depthStencilState.<br>stencilReadMask       | *\*convenient setter for both front/back stencil read mask,<br>always use this for web platforms* |
-| depthStencilState.<br>stencilWriteMask      | *\*convenient setter for both front/back stencil write mask,<br>always use this for web platforms* |
-| depthStencilState.<br>stencilRef            | *\*convenient setter for both front/back stencil ref,<br>always use this for web platforms* |
+| depthStencilState.<br>stencilTest           | true, **false**                                                                 |
+| depthStencilState.<br>stencilFunc           | never, less, equal, less_equal, greater, not_equal, greater_equal, **always**   |
+| depthStencilState.<br>stencilReadMask       | **0xffffffff** or **[1, 1, 1, 1]**                                              |
+| depthStencilState.<br>stencilWriteMask      | **0xffffffff** or **[1, 1, 1, 1]**                                              |
+| depthStencilState.<br>stencilFailOp         | **keep**, zero, replace, incr, incr_wrap, decr, decr_wrap, invert               |
+| depthStencilState.<br>stencilZFailOp        | **keep**, zero, replace, incr, incr_wrap, decr, decr_wrap, invert               |
+| depthStencilState.<br>stencilPassOp         | **keep**, zero, replace, incr, incr_wrap, decr, decr_wrap, invert               |
+| depthStencilState.<br>stencilRef            | **1** or **[0, 0, 0, 1]**                                                       |
+| depthStencilState.<br>stencil\*Front/Back   | *\*set above stencil properties for specific side*                              |
 
 ## Switch
 指定这个 pass 的执行依赖于哪个 define，它不应与使用到的 shader 中定义的任何 define 重名。
