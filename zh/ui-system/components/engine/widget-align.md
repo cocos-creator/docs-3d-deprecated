@@ -83,8 +83,6 @@ Widget 组件一般用于场景在目标设备上初始化时定位每个元素�
 
 通过 **Widget** 组件开启一个或多个对齐参考后，节点的位置（position）和尺寸（width，height）属性可能会被限制，不能通过 API 或动画系统自由修改。如果需要在运行时修改对齐节点的位置或尺寸，请参考[Widget 组件参考：对节点位置、尺寸的限制](../editor/widget.md#--4)相关内容。
 
-[**上一页：多分辨率适配方案**](multi-resolution.md)       [**下一页：文字排版**](label-layout.md)
-
 ---
 
 #### [UI 结构介绍](index.md)
