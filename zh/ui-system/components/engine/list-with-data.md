@@ -148,8 +148,6 @@ export class ItemTemplate extends Component {
 
 注意前面步骤中添加 **Layout** 组件并不是必须的，**Layout** 能够帮助您自动排列列表中的节点元素，但您也可以用脚本程序来控制节点的排列。我们通常还会配合 **ScrollView** 滚动视图组件一起使用，以便在有限的空间内展示大量内容。可以配合[自动布局](auto-layout.md)和[滚动视图](../editor/scrollview.md)一起学习。
 
-[**上一页：自动布局容器**](auto-layout.md)       [**下一页：制作可任意拉伸的 UI 图像**](sliced-sprite.md)
-
 ---
 
 #### [UI 结构介绍](index.md)
