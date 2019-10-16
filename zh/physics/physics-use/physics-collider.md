@@ -1,6 +1,6 @@
 # ColliderComponent
 
-## 获取 Collider 组件
+## 获取碰撞体组件
 
 Cocos Creator 3D 目前支持两种语言进行开发，分别为 JavaScript 和 TypeScript。
 

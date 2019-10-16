@@ -69,7 +69,7 @@
    - onLoad
      <br/>脚本初始化时调用</br>
    - onEnable
-     <br/>组件的 enabled 属性从 true 变为 false 时调用</br>
+     <br/>组件的 enabled 属性从 false 变为 true 时调用</br>
    - start
      <br/>组件第一次激活时调用</br>
    - update
@@ -77,7 +77,7 @@
    - lateUpdate
      <br/>在所有组件的 update 都执行完之后调用</br>
    - onDisable
-     <br/>组件的 enabled 属性从 false 变为 true 时调用</br>
+     <br/>组件的 enabled 属性从 true 变为 false 时调用</br>
    - onDestroy
      <br/>组件或者所在节点销毁时调用</br>
 
