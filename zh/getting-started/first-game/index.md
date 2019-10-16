@@ -9,7 +9,7 @@ Cocos Creator 3D编辑器的强大之处就是可以让开发者快速的制作�
 ## 新建项目
 如果您还不了解如何获取和启动 Cocos Creator 3D，请阅读 [安装和启动](../install/index.md) 一节。
 
-1. 首先启动 Cocos Creator 3D，然后新建一个名为 **MindYourStep** 的项目，如果不知道如果创建项目，请阅读 [Hello World!](../helloworld/index.md)。
+1. 首先启动 Cocos Creator 3D，然后新建一个名为 **MindYourStep** 的项目，如果不知道如何创建项目，请阅读 [Hello World!](../helloworld/index.md)。
 
 2. 新建项目后会看到如下的编辑器界面：
 
