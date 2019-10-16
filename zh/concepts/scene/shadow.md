@@ -15,7 +15,7 @@ Cococs Creator 3D 目前支持高性价比的 Planar Shadow ，后面会提供�
 ![planar shadow 所处位置](shadow/planarShadows.jpg)
 
 2. 将需要显示阴影的模型组件中的 ShadowCastingMode 设置为 ON 。
-![ShadowCastingModes 属性](shadow/shadowCastingModel.jpg)
+![ShadowCastingModes 属性](shadow/shadowCastingMode.jpg)
 
 **注：Planar Shadow 只会投射在阴影面上，调节方向光角度可以调节阴影的投射**。
 
