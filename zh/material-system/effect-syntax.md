@@ -1,8 +1,8 @@
 # Effect 语法
 
 如果希望在引擎中实现自定义的着色效果, 需要书写自定义 Effect.<br>
-一个 Effect 文件大体可以分为两部分的内容, 一份 YAML 格式的流程控制清单, 和相关的 (类)GLSL 语法的 shader 片段.<br>
-这两部分内容上相互补充, 共同构成了一个完整的渲染流程描述.
+Cocos Effect 是一种基于 YAML 和 GLSL 的单源码嵌入式领域特定语言 (single-source embedded domain-specific language)，<br>
+YAML 部分声明流程控制清单, GLSL 部分声明实际的 shader 片段，这两部分内容上相互补充, 共同构成了一个完整的渲染流程描述。
 
 ## 语法框架
 以 skybox.effect 为例, 这个 Effect 文件的内容大致是这样:
@@ -20,9 +20,9 @@ vert 和 frag 声明了当前 pass 使用的 shader, 格式为 `片段名:入口
 其他可配置 GL 参数及默认值见 [完整列表](pass-parameter-list.md).
 
 ## Shader 片段
-Shader 片段在语法上是标准 GLSL 300 es 语法的一个超集, 在资源加载时有相应的编译流程.
+Shader 片段在语法上基于 GLSL 300 ES, 在资源加载时有相应的预处理编译流程.
 
-这一节会介绍所有的扩展语法, 更多实际使用示例, 可参考编辑器内提供的 builtin effect.
+这一节会介绍所有的 “领域特定” 扩展语法, 更多实际使用示例, 可参考编辑器内提供的 builtin effect.
 
 在标准 GLSL 语法上, 我们引入了一些非常自然的 C 风格语法扩展:
 
