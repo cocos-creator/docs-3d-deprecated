@@ -61,7 +61,7 @@
   - [物理选项](physics/physics-item.md)
   - [物理系统](physics/physics-system.md)
   - [物理组件](physics/physics-component.md)
-  - [物理使用](physics/physics-use.md)  
+  - [物理使用](physics/physics-use.md)
   - [使用碰撞体](physics/physics-use/physics-collider.md)
   - [使用刚体](physics/physics-use/physics-rigidbody.md)
   - [物理事件](physics/physics-use/physics-event.md)
@@ -69,6 +69,7 @@
 
 - [UI](ui-system/components/engine/index.md)
   - [渲染排序规则](ui-system/components/engine/priority.md)
+  - [UI合批说明](ui-system/components/engine/ui-batch.md)
   - [多分辨率适配方案](ui-system/components/engine/multi-resolution.md)
   - [对齐策略](ui-system/components/engine/widget-align.md)
   - [文字排版](ui-system/components/engine/label-layout.md)
@@ -115,6 +116,7 @@
       - [SliderComponent 组件参考](ui-system/components/editor/slider.md)
       - [PageViewComponent 组件参考](ui-system/components/editor/pageview.md)
       - [PageViewIndicatorComponent 组件参考](ui-system/components/editor/pageviewindicator.md)
+      - [UIModelComponetn 组件参考](ui-system/components/editor/ui-model.md)
 
 - [脚本指南及事件机制](scripting/index.md)
   - [脚本创建](scripting/setup.md)
