@@ -1,7 +1,7 @@
 
 ## cc 类
 
-将装饰器 [ccclass]() 应用在类上时，此类称为 cc 类。
+将装饰器 [ccclass](#ccclass) 应用在类上时，此类称为 cc 类。
 cc 类注入了额外的信息以控制 Cocos Creator 3D 对该类对象的序列化、编辑器对该类对象的展示等。
 
 ### ccclass
@@ -23,7 +23,7 @@ cc 类的各种特性是通过 `ccclass(name)` 的 cc 类选项参数来指定�
 
 ## cc 属性
 
-当装饰器 [property]() 应用在 cc 类的属性或访问器上时，此属性称为 cc 属性。
+当装饰器 [property](#property) 应用在 cc 类的属性或访问器上时，此属性称为 cc 属性。
 与 cc 类类似，cc 属性注入了额外的信息以控制 Cocos Creator 3D 对该属性的序列化、编辑器对该属性的展示等。
 
 ### property
@@ -61,8 +61,9 @@ cc 属性的各种特性是通过 `property()` 的 cc 属性选项参数来指�
 - 否则，属性的 cc 类型是**未定义**的。
 
 关于 cc 类型如何影响 cc 属性以及对未定义 cc 类型的属性的处理，见：
-- [编辑器和属性类型]()
-- [序列化]()
+
+- [属性类型](###属性参数)
+- [序列化参数](####serializable参数)
 
 下列代码演示了不同 cc 类型 的 cc 属性的声明：
 
@@ -112,7 +113,7 @@ CCClass 的构造函数使用 `constructor` 定义，为了保证反序列化能
 
 ```typescript
 class Sub extends Base {
-       
+
 }
 let sub = new Sub();
 console.log(sub instanceof Sub);  //true
@@ -171,7 +172,7 @@ obj.print();
 class Sprite{
     static count=0;
     static getBounds(){
-        
+
     }
 }
 ```
@@ -179,12 +180,12 @@ class Sprite{
 静态成员会被子类继承，继承时会将父类的静态变量**浅拷贝**给子类，因此：
 
 ```typescript
-class Object{ 
+class Object{
     static count= 11;
     static range: { w: 100, h: 100 }
 }
 class Sprite extends Object{
-    
+
 }
 console.log(Sprite.count);    // 结果是 11，因为 count 继承自 Object 类
 
@@ -278,7 +279,7 @@ class Sprite {
 
 ### 属性参数
 
-#### <a name="default"></a>default 参数
+#### default参数
 
 `default` 用于声明属性的默认值，声明了默认值的属性会被 CCClass 实现为成员变量。默认值只有在**第一次创建**对象的时候才会用到，也就是说修改默认值时，并不会改变已添加到场景里的组件的当前值。
 
@@ -295,7 +296,7 @@ class Sprite {
     ```
 4. 空数组 `[]` 或空对象 `{}`
 
-#### <a name="visible"></a>visible 参数
+#### visible参数
 
 默认情况下，是否显示在 **属性检查器** 取决于属性名是否以下划线 `_` 开头。如果以下划线开头，则默认不显示在 **属性检查器**，否则默认显示。
 
@@ -313,7 +314,7 @@ class Sprite {
     private num = 0;
 ```
 
-#### <a name="serializable"></a>serializable 参数
+#### serializable参数
 
 指定了 `default` 默认值的属性默认情况下都会被序列化，序列化后就会将编辑器中设置好的值保存到场景等资源文件中，并且在加载场景时自动还原之前设置好的值。如果不想序列化，可以设置`serializable: false`。
 
@@ -322,7 +323,7 @@ class Sprite {
     private num = 0;
 ```
 
-#### <a name="type"></a>type 参数
+#### type参数
 
 当 `default` 不能提供足够详细的类型信息时，为了能在 **属性检查器** 显示正确的输入控件，就要用 `type` 显式声明具体的类型：
 
@@ -357,7 +358,7 @@ class Sprite {
     }
     ```
 
-#### <a name="override"></a>override 参数
+#### override参数
 
 所有属性都将被子类继承，如果子类要覆盖父类同名属性，需要显式设置 override 参数，否则会有重名警告：
 
@@ -372,7 +373,7 @@ private get name(){
 }
 ```
 
-更多参数内容请查阅 [属性参数](attributes.md)。
+更多参数内容请查阅 [属性参数](./reference/attributes.md)。
 
 ## GetSet 方法
 
@@ -462,7 +463,6 @@ set(value){
 }
 
 ```
-    
+
 > 如果没有和 get 一起定义，则 set 自身不能附带任何参数。<br>
 > 和 get 一样，设定了 set 以后，这个属性就不能被序列化，也不能指定默认值。
-

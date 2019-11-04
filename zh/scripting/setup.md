@@ -37,7 +37,7 @@ export class NewScript extends Component {
 
 通过双击脚本资源，可以直接打开脚本编辑器进行编辑。当编辑完脚本并保存，Cocos Creator 3D 会自动检测到脚本的改动，并迅速编译。
 
-在代码编写之前，请先阅读 [脚本语言支持](basic.md) 了解更多关于脚本的内容。
+在代码编写之前，请先阅读 [脚本基础](basic.md) 了解更多关于脚本的内容。
 
 ## 添加脚本到场景节点中
 
@@ -57,4 +57,4 @@ export class NewScript extends Component {
 
 ---
 
-继续前往 [脚本语言支持](basic.md)。
+继续前往 [脚本基础](basic.md)。

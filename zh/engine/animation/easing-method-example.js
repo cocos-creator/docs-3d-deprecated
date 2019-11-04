@@ -36,7 +36,7 @@
 
             const image = tr.appendChild(document.createElement('td')).
                 appendChild(document.createElement('img'));
-            image.src = "https://forum.cocos.com/images/logo.png";
+            image.src = "https://forum.cocos.org/images/logo.png";
 
             const slider = tr.appendChild(document.createElement('td')).
                 appendChild(document.createElement('input'));
@@ -57,7 +57,7 @@
         let duration = 3000;
         setInterval(() => {
             const timePast = Date.now() - firstTime;
-            const ratio = (timePast % duration) / duration; 
+            const ratio = (timePast % duration) / duration;
             for (const showcase of showcases) {
                 const mappedRatio = showcase.fx(ratio);
                 showcase.image.style.opacity = (1.0- mappedRatio);

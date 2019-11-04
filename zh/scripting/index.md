@@ -4,8 +4,8 @@
 Cocos Creator 3D 脚本用于实现用户定义的（游戏）行为。
 
 - [脚本创建](./setup.md)
-- [语言支持](./language-support.md)
 - [脚本基础](./basic.md)
+- [语言支持](./language-support.md)
 - [cc 类](./ccclass.md)
 - [访问节点和其他组件](./access-node-component.md)
 - [常用节点和组件接口](./basic-node-api.md)
