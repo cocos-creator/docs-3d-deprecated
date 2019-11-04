@@ -1,6 +1,8 @@
 # Canvas（画布）组件参考
 
-**Canvas（画布）** 组件能够随时获得设备屏幕的实际分辨率并对场景中所有渲染元素进行适当的缩放。场景中的 Canvas 可以有多个，所有 UI 元素都必须在 Canvas 及其子节点下才能被渲染，Canvas 的设计分辨率和适配方案统一通过项目配置获取。在 Canvas 内部会自带一个相机，默认照射 z 轴方向是从 0 - 1000，所以针对 UI 上的 z 轴设计必须在这个范围内才能正常显示。
+**Canvas（画布）** 组件能够随时获得设备屏幕的实际分辨率并对场景中所有渲染元素进行适当的缩放。场景中的 Canvas 可以有多个，所有 UI 元素都必须在 Canvas 及其子节点下才能被渲染，Canvas 的设计分辨率和适配方案统一通过项目配置获取。在 Canvas 内部会自带一个相机，默认照射 z 轴方向是从 -1000 - 998，所以针对 UI 上的 z 轴设计必须在这个范围内才能正常显示（不取临界值）。
+
+在过去的设计里 Canvas 是最后渲染的，意味着他可以遮盖 3D 的所有内容渲染，但这远远不能满足项目开发需求（例如：一个 2D 地图配合 3D 角色的功能）。因此，我们加入了 RenderMode 属性，用户可以在原有基础上决定是否切换 UI 的相机的行为为 3D 相机和 UI 相机的排序渲染。当然，这个功能是要配合 ClearFlag 来调控。
 
 Canvas 组件不仅是 UI 渲染的根节点，同时在游戏制作时还有一个很重要的功能在多分辨率适配方案，具体请参考[多分辨率适配方案](../engine/multi-resolution.md)。
 
@@ -11,10 +13,15 @@ Canvas 组件不仅是 UI 渲染的根节点，同时在游戏制作时还有一
 
 | 属性           | 功能说明                                                 |
 | -------------- | -----------                                            |
-| RenderMode    | Canvas 渲染模式，***intersperse*** 下可以指定 Canvas 与场景中的相机的渲染顺序，***overlay*** 下 Canvas 会在所有场景相机渲染完成后渲染。注意：启用 ***intersperse*** 模式，如果 3D 场景的相机内容显示上要在 Canvas 前面，相机的 clearFlags 也要为 none。
-| priority       | 当 RenderMode 为 ***intersperse*** 时，指定与其它相机的渲染顺序，当 RenderMode 为 ***overlay*** 时，指定跟其余 Canvas 做排序使用。
-| clearFlag     | Canvas 清理屏幕缓冲区的标记，none 不清理，depth_stencil 清理深度缓冲，solid_color 清理颜色深度缓冲。
-| color     | 清理颜色缓冲区后的颜色。
+| RenderMode    | Canvas 渲染模式，***Intersperse*** 下可以指定 Canvas 与场景中的相机的渲染顺序，***Overlay*** 下 Canvas 会在所有场景相机渲染完成后渲染。注意：启用 ***Intersperse*** 模式，如果 3D 场景的相机内容显示上要在 Canvas 前面，相机的 ClearFlags 也要为 None。
+| Priority       | 当 RenderMode 为 ***Intersperse*** 时，指定与其它相机的渲染顺序，当 RenderMode 为 ***Overlay*** 时，指定跟其余 Canvas 做排序使用。
+| ClearFlag     | Canvas 清理屏幕缓冲区的标记，None 不清理，Depth_Stencil 清理深度缓冲，Solid_Color 清理颜色深度缓冲。
+| Color     | 清理颜色缓冲区后的颜色。
+
+## 注意事项
+
+当相机的 Priority 设置为 InterSperse 模式的时候，是可以与 3D 相机进行排序渲染的。如果是作为背景来使用的话，它的 ClearFlag 建议调整为 Solid_Color，清除之前绘制的内容，如果这个时候希望 3D 相机在它之后渲染的话，3D 相机的 ClearFlag 建议使用 Depth_Stencil。
+
 ---
 
 ### [**其他基础模块参考**](base-component.md)
