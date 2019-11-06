@@ -23,7 +23,7 @@
 ## 测试用例
 
 1. [测试例](https://github.com/cocos-creator/test-cases-3d)
-2. [范例集合](https://github.com/cocos-creator/example-3)
+2. [范例集合](https://github.com/cocos-creator/example-3d)
 3. [一步两步](https://github.com/cocos-creator/tutorial-mind-your-step-3d)
 4. [UI Demo](https://github.com/cocos-creator/demo-ui/tree/3d)
 5. [Demo Ball](https://github.com/cocos-creator/demo-ball)
