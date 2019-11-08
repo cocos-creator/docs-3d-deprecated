@@ -28,7 +28,7 @@
 4. [UI Demo](https://github.com/cocos-creator/demo-ui/tree/3d)
 5. [Demo Ball](https://github.com/cocos-creator/demo-ball)
 
-test-case 场景测试说明，可以参考[文档](./test-case-docs.md)。
+test-case 场景测试说明，可以参考 [文档](./test-case-docs.md)。
 
 ## 测试流程细节
 
@@ -53,7 +53,7 @@ Test Case 运行时需要分几种情况打包测试，以便覆盖各种使用�
 
 ### 其他平台测试项细节
 1. [web 平台测试细则](./publish/web-build-docs.md)
-2. [微信平台测试细则](./publish.wechat-build-docs.md)
+2. [微信平台测试细则](./publish/wechat-build-docs.md)
 
 ### 粒子测试用例
 
