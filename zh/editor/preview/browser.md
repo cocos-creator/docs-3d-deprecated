@@ -51,6 +51,12 @@ project-folder
 
 要学习使用开发者工具进行调试，请阅读 [极客学院的 Chrome Dev Tools 使用指南](http://wiki.jikexueyuan.com/project/chrome-devtools/overview.html)，或其他浏览器的开发者工具帮助。
 
+## 浏览器兼容性
+
+Cocos Creator 3D 开发过程中测试的桌面浏览器包括： Chrome，Firefox（火狐），
+其他浏览器只要内核版本够高也可以正常使用，对部分浏览器来说请勿开启 IE6 兼容模式。
+
+移动设备上测试的浏览器包括：Safari (iOS)，Chrome，QQ 浏览器，UC 浏览器，微信内置 Webview。
 <hr>
 
 继续了解 [预览流程简介与常见错误处理](preview-guid.md)
