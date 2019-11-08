@@ -20,7 +20,7 @@ Canvas 组件不仅是 UI 渲染的根节点，同时在游戏制作时还有一
 
 ## 注意事项
 
-当相机的 Priority 设置为 InterSperse 模式的时候，是可以与 3D 相机进行排序渲染的。如果是作为背景来使用的话，它的 ClearFlag 建议调整为 Solid_Color，清除之前绘制的内容，如果这个时候希望 3D 相机在它之后渲染的话，3D 相机的 ClearFlag 建议使用 Depth_Stencil。
+ClearFlag 的选择，**一个场景里必须有一个相机做 Solid_Color**。因为 UI 在一个场景中出现与 3d 相机的共同渲染，所以不论是 UI 还是 3D 相机都有可能出现改相机 ClearFlag 的行为，当一个场景没有一个相机去执行 Solid_Color 会导致渲染过程中的花屏等现象，因此特此说明一下，如何保证一个场景里必须有一个相机做 Solid_Color。如果你的场景里只有一个 2d 或者 3d 相机的话，模式选择 Solid_Color；如果出现 2d 背景、3d 场景、2d UI 的情况，2d 背景 Solid_Color、3d 场景（Depth_Stencil）、2d UI（有模型 Depth_Stencil 避免模型闪屏，无模型 None / Depth_Stencil 皆可）。
 
 ---
 
