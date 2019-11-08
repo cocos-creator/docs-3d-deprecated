@@ -4,7 +4,7 @@
 
 ![animation cover](index/main.gif)
 
-**注意**：Cocos Creator 3D 自带的动画编辑器适用于制作一些不太复杂的、需要与逻辑进行联动的动画，例如 UI 动画。如果要制作复杂的特效、角色动画、嵌套动画，可以考虑改用 Spine 或者 DragonBones 进行制作。
+**注意**：Cocos Creator 3D 自带的动画编辑器适用于制作一些不太复杂的、需要与逻辑进行联动的动画，例如 UI 动画。
 
 - [关于 Animation](animation.md)
 - [熟悉动画编辑器](animation-editor.md)
