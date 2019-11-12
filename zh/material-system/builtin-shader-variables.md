@@ -2,14 +2,14 @@
 
 所有内置可使用的 shader 变量在被调用之前都必须引入包含该变量的头文件，所有的头文件都被包含在 chunks 目录下。接下来说明一下每一个头文件所包含变量的说明。
 
-1.cc-local.inc
+1.cc-local.chunk
 
 | 变量名        | 类型        | 变量说明                |
 | -------------- | -------------- | ----------- |
 | cc_matWorld | highp mat4 | 本地空间转世界空间。      |
 | cc_matWorldIT | highp mat4 | 本地空间转世界空间逆转置。   |
 
-2.cc-global.inc
+2.cc-global.chunk
 
 | 变量名        | 类型           | 变量说明                |
 | --------------| -------------- | ----------- |
@@ -30,13 +30,13 @@
 | cc_ambientSky | vec4 | xyz：天空颜色 w：亮度。   |
 | cc_ambientGround | vec4 | xyz：地面反射光颜色。   |
 
-3.cc-environment.inc
+3.cc-environment.chunk
 
 | 变量名        | 类型           | 变量说明                |
 | --------------| -------------- | ----------- |
 | cc_environment  | samplerCube | 环境贴图。      |
 
-4.cc-forward-light.inc
+4.cc-forward-light.chunk
 
 | 变量名        | 类型           | 变量说明                |
 | --------------| -------------- | ----------- |
@@ -48,7 +48,7 @@
 | cc_spotLitDir[MAX_LIGHTS] | vec4 | xyz：聚光方向。   |
 | cc_spotLitColor[MAX_LIGHTS] | vec4 | xyz：聚光颜色 w：聚光强度。   |
 
-5.cc-shadow.inc
+5.cc-shadow.chunk
 
 | 变量名        | 类型           | 变量说明                |
 | --------------| -------------- | ----------- |

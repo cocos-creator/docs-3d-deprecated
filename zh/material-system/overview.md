@@ -8,36 +8,51 @@ EffectAsset 是由用户书写的着色流程描述文件, 详细结构及书写
 这里主要介绍引擎读取 EffectAsset 资源的流程:
 
 在编辑器导入 EffectAsset 时, 会对用户书写的内容做一次预处理, 替换 GL 字符串为管线内常量, 提取 shader 信息, 转换 shader 版本等.<br>
-还以 skybox.effect 为例, 预处理输出的 EffectAsset 结构大致是这样的:
+还以 builtin-unlit.effect 为例, 编译输出的 EffectAsset 结构大致是这样的:
 ```json
 {
-  "name": "pipeline/skybox",
-  "techniques": [
-    {"passes":[{"rasterizerState":{"cullMode":0}, "program":"pipeline/skybox|sky-vs:vert|sky-fs:frag", "priority":245, "depthStencilState":{"depthTest":true, "depthWrite":false}}]}
-  ],
-  "shaders": [
-    {
-      "name": "pipeline/skybox|sky-vs:vert|sky-fs:frag",
-      "hash": 1154395944,
-      "glsl3": {
-        "vert": "// glsl 300 es vert source, omitted here for brevity",
-        "frag": "// glsl 300 es frag source, omitted here for brevity",
-      },
-      "glsl1": {
-        "vert": "// glsl 100 vert source, omitted here for brevity",
-        "frag": "// glsl 100 frag source, omitted here for brevity",
-      },
-      "builtins": {"globals":{"blocks":[{"name":"CCGlobal", "defines":[]}], "samplers":[{"name":"cc_environment", "defines":[]}]}, "locals":{"blocks":[], "samplers":[]}},
-      "defines": [
-        {"name":"CC_USE_HDR", "type":"boolean", "defines":[]},
-        {"name":"USE_RGBE_CUBEMAP", "type":"boolean", "defines":[]}
-      ],
-      "blocks": [],
-      "samplers": [],
-      "dependencies": {}
-    }
-  ]
-}
+    "name": "builtin-unlit",
+    "techniques": [
+      {"name":"opaque", "passes":[{"program":"builtin-unlit|unlit-vs:vert|unlit-fs:frag", "properties":{"mainTexture":{"value":"grey", "type":28}, "tilingOffset":{"value":[1, 1, 0, 0], "type":16}, "mainColor":{"value":[1, 1, 1, 1], "type":16}, "colorScale":{"value":[1, 1, 1], "type":15, "handleInfo":["colorScaleAndCutoff", 0, 15]}, "alphaThreshold":{"value":[0.5], "type":13, "handleInfo":["colorScaleAndCutoff", 3, 13]}, "color":{"type":16, "handleInfo":["mainColor", 0, 16]}, "colorScaleAndCutoff":{"type":16, "value":[1, 1, 1, 0.5]}}}]}
+    ],
+    "shaders": [
+      {
+        "name": "builtin-unlit|unlit-vs:vert|unlit-fs:frag",
+        "hash": 3485766545,
+        "glsl3": {
+          "vert": "// glsl 300 es vert source, omitted here for brevity",
+          "frag": "// glsl 300 es frag source, omitted here for brevity",
+        },
+        "glsl1": {
+          "vert": "// glsl 100 vert source, omitted here for brevity",
+          "frag": "// glsl 100 frag source, omitted here for brevity",
+        },
+        "builtins": {"globals":{"blocks":[{"name":"CCGlobal", "defines":[]}], "samplers":[]}, "locals":{"blocks":[{"name":"CCLocalBatched", "defines":["CC_USE_BATCHING"]}, {"name":"CCLocal", "defines":[]}, {"name":"CCSkinningTexture", "defines":["CC_USE_SKINNING"]}, {"name":"CCSkinningAnimation", "defines":["CC_USE_SKINNING"]}], "samplers":[{"name":"cc_jointsTexture", "defines":["CC_USE_SKINNING"]}]}},
+        "defines": [
+          {"name":"CC_USE_BATCHING", "type":"boolean"},
+          {"name":"CC_USE_SKINNING", "type":"number", "range":[0, 2]},
+          {"name":"USE_VERTEX_COLOR", "type":"boolean"},
+          {"name":"USE_TEXTURE", "type":"boolean"},
+          {"name":"FLIP_UV", "type":"boolean"},
+          {"name":"CC_USE_HDR", "type":"boolean"},
+          {"name":"USE_ALPHA_TEST", "type":"boolean"},
+          {"name":"ALPHA_TEST_CHANNEL", "type":"string", "options":["a", "r", "g", "b"]}
+        ],
+        "blocks": [
+          {"name": "TexCoords", "defines": ["USE_TEXTURE"], "binding": 0, "members": [
+            {"name":"tilingOffset", "type":16, "count":1}
+          ]},
+          {"name": "Constant", "defines": [], "binding": 1, "members": [
+            {"name":"mainColor", "type":16, "count":1},
+            {"name":"colorScaleAndCutoff", "type":16, "count":1}
+          ]}
+        ],
+        "samplers": [
+          {"name":"mainTexture", "type":28, "count":1, "defines":["USE_TEXTURE"], "binding":30}
+        ]
+      }
+    ]
+  }
 ```
 接着这个生成的 EffectAsset 正常参与标准(反)序列化流程.<br>
 另外在反序列化时, 其中包含的 shaders 会被直接注册到 ProgramLib, 供运行时使用.
@@ -116,17 +131,22 @@ pass.setUniform(hColor, color);
 
 | Property | Info |
 |:--------:|:----:|
-| tilingOffset | 模型 UV 的平铺和偏移量，xy 对应平铺，zw 对应偏移 |
-| albedo | 漫反射颜色，指定模型的主要基色 |
-| albedoMap | 漫反射贴图，如果有指定，这项会和漫反射颜色相乘 |
-| albedoScale | xyz 对应模型的漫反射权重，用于控制漫反射颜色对于最终颜色的影响权重；<br>w 通道为 alpha test 的测试阈值 |
+| tilingOffset | 模型 UV 的平铺和偏移量，<br>xy 对应平铺，zw 对应偏移 |
+| albedo/mainColor | 漫反射颜色，指定模型的主要基色 |
+| albedoMap/mainTexture | 漫反射贴图，如果有指定，这项会和漫反射颜色相乘 |
+| albedoScale | 模型的漫反射强度，<br>用于控制漫反射颜色对于最终颜色的影响权重 |
+| alphaThreshold | 启用 alpha test 后的测试阈值，<br>输出 alpha 值低于此值的像素会被 discard 掉 |
 | normalMap | 法线贴图，用于增加表面细节 |
-| pbrParams | PBR 材质参数常量：粗糙度、金属度和 AO；<br>每种属性具体对应的通道由 XX_CHANNEL 宏定义决定 |
-| pbrMap | PBR 材质参数贴图：粗糙度、金属度和 AO；如果有指定，这项会替代材质参数常量；<br>每种属性具体对应的通道由 XX_CHANNEL 宏定义决定 |
-| pbrScale | PBR 材质参数的权重：粗糙度、金属度和 AO；<br>每个分量具体对应的通道由 XX_CHANNEL 宏定义决定；但 w 通道固定为 normal map 的强度 |
-| emissive | 自发光颜色，不参与光照计算模型直接发散出的颜色 |
-| emissiveMap | 自发光贴图，如果有指定，这项会和自发光颜色相乘，<br>因此需要把自发光颜色（默认是黑色）调高才会有效果 |
-| emissiveScale | 自发光权重，用于控制自发光颜色的强度 |
+| normalStrenth | 法线贴图强度，控制凹凸质感的强弱 |
+| pbrMap | PBR 材质参数贴图：环境遮挡、粗糙度和金属度<br>采样结果会和常数项相乘<br>每种属性具体的来源通道由 XX_CHANNEL 宏定义决定 |
+| metallicOcclusionMap | 独立的粗糙度和金属度贴图<br>采样结果会和常数项相乘<br>每种属性具体的来源通道由 XX_CHANNEL 宏定义决定 |
+| metallicOcclusionMap | 独立的环境遮挡贴图<br>采样结果会和常数项相乘<br>每种属性具体的来源通道由 XX_CHANNEL 宏定义决定 |
+| occlusion | 环境遮挡常数 |
+| roughness | 粗糙度常数 |
+| metallic | 金属度常数 |
+| emissive | 自发光颜色<br>独立于光照计算的，模型本身直接发散出的颜色 |
+| emissiveMap | 自发光贴图<br>如果有指定，这项会和自发光颜色相乘，<br>因此需要把自发光颜色（默认是黑色）调高才会有效果 |
+| emissiveScale | 自发光强度<br>用于控制自发光颜色对于最终颜色的影响权重 |
 
 相对应的，还有控制这些参数的宏定义：
 
@@ -135,7 +155,10 @@ pass.setUniform(hColor, color);
 | ROUGHNESS_CHANNEL | 指定粗糙度的数据来源通道，默认为 r 通道 |
 | METALLIC_CHANNEL | 指定金属度的数据来源通道，默认为 g 通道 |
 | AO_CHANNEL | 指定 AO 的数据来源通道，默认为 b 通道 |
-| USE_ALPHA_TEST | 是否开启透明测试（镂空效果）？<br>将通过比较漫反射颜色与漫反射权重的 a 通道，决定模型的哪部分将不会被绘制 |
+| ALBEDO_UV | 指定采样漫反射贴图使用的 uv，默认为第一套 |
+| EMISSIVE_UV | 指定采样自发光贴图使用的 uv，默认为第一套 |
+| ALPHA_TEST_CHANNEL | 指定透明测试的测试通道 |
+| USE_ALPHA_TEST | 是否开启透明测试（镂空效果）？ |
 | USE_ALBEDO_MAP | 是否使用漫反射贴图？ |
 | USE_NORMAL_MAP | 是否使用法线贴图？ |
 | USE_PBR_MAP | 是否使用 PBR 材质参数贴图？ |
