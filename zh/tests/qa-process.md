@@ -24,9 +24,14 @@
 
 1. [测试例](https://github.com/cocos-creator/test-cases-3d)
 2. [范例集合](https://github.com/cocos-creator/example-3d)
-3. [一步两步](https://github.com/cocos-creator/tutorial-mind-your-step-3d)
-4. [UI Demo](https://github.com/cocos-creator/demo-ui/tree/3d)
-5. [Demo Ball](https://github.com/cocos-creator/demo-ball)
+3. [物理小车](https://github.com/cocos-creator/example-3d/tree/master/simple-car-game)
+4. [下落球球](https://github.com/cocos-creator/example-3d/tree/master/falling-ball)
+5. [滚动小球](https://github.com/cocos-creator/example-3d/tree/master/roll-a-ball)
+6. [吞噬黑洞](https://github.com/cocos-creator/example-3d/tree/master/simple-hole)
+7. [Simple-FPS](https://github.com/cocos-creator/example-3d/tree/master/simple-fps)
+8. [一步两步](https://github.com/cocos-creator/tutorial-mind-your-step-3d)
+9. [UI Demo](https://github.com/cocos-creator/demo-ui/tree/3d)
+10. [Demo Ball](https://github.com/cocos-creator/demo-ball)
 
 test-case 场景测试说明，可以参考 [文档](./test-case-docs.md)。
 
