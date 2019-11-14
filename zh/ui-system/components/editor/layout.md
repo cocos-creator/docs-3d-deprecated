@@ -22,7 +22,7 @@ Layout 是一种容器组件，容器能够开启自动布局功能，自动按�
 
 | 属性                 | 功能说明                                                                                                                                           |
 | --------------       | -----------                                                                                                                                        |
-| Type                 | 布局类型，支持 NONE, HORIZONTAL，VERTICAL 和 GRID。请参考详[自动布局](../editor/auto-layout.md)。                                                                                                |
+| Type                 | 布局类型，支持 NONE, HORIZONTAL，VERTICAL 和 GRID。请参考详[自动布局](../engine/auto-layout.md)。                                                                                                |
 | ResizeMode           | 缩放模式，支持 NONE，CHILDREN 和 CONTAINER。                                                                                                        |
 | PaddingLeft          | 排版时，子物体相对于容器左边框的距离。                                                                                                            |
 | PaddingRight         | 排版时，子物体相对于容器右边框的距离。                                                                                                            |
