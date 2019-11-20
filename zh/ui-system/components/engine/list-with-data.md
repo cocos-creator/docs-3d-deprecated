@@ -40,7 +40,7 @@ export class ItemList extends Component {
 
     onLoad() {
         for (var i = 0; i < this.items.length; ++i) {
-            var item = cc.instantiate(this.itemPrefab);
+            var item = instantiate(this.itemPrefab);
             var data = this.items[i];
             this.node.addChild(item);
             item.getComponent('ItemTemplate').init(data);
@@ -49,7 +49,7 @@ export class ItemList extends Component {
 }
 ```
 
-上面脚本的前半部分我们声明了一个叫做 `Item` 的数据类，用来存放我们展示物品需要的各种数据。注意这个类并没有继承 `cc.Component`，因此他不是一个组件，但可以被组件使用。关于声明自定义类的更多内容，请查阅[自定义 Class](../scripting/class.md)文档。
+上面脚本的前半部分我们声明了一个叫做 `Item` 的数据类，用来存放我们展示物品需要的各种数据。注意这个类并没有继承 `Component`，因此他不是一个组件，但可以被组件使用。关于声明自定义类的更多内容，请查阅[自定义 Class](../scripting/class.md)文档。
 
 下半部分是正常的组件声明方式，这个组件中只有一个 `items` 属性，上面的声明方式将会给我们一个由 `Item` 类组成的数组，我们可以在 **属性检查器** 中为每个 `Item` 元素设置数据。
 
@@ -119,7 +119,7 @@ export class ItemTemplate extends Component {
 
     onLoad () {
         for (var i = 0; i < this.items.length; ++i) {
-            var item = cc.instantiate(this.itemPrefab);
+            var item = instantiate(this.itemPrefab);
             var data = this.items[i];
             this.node.addChild(item);
             item.getComponent('ItemTemplate').init(data);

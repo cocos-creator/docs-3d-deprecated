@@ -60,16 +60,16 @@ PageView 组件必须有指定的 content 节点才能起作用，content 中的
 
 ### 方法一
 
-这种方法添加的事件回调和使用编辑器添加的事件回调是一样的，都是通过代码添加。首先需要构造一个 `cc.Component.EventHandler` 对象，然后设置好对应的 `target`、`component`、`handler` 和 `customEventData` 参数。
+这种方法添加的事件回调和使用编辑器添加的事件回调是一样的，都是通过代码添加。首先需要构造一个 `EventHandler` 对象，然后设置好对应的 `target`、`component`、`handler` 和 `customEventData` 参数。
 
 ```ts
-import { _decorator, Component, Event, Node, PageViewComponent } from "cc";
+import { _decorator, Component, Event, Node, PageViewComponent, EventHandler } from "cc";
 const { ccclass, property } = _decorator;
 
 @ccclass("example")
 export class example extends Component {
     onLoad(){
-        const pageChangedEventHandler = new cc.Component.EventHandler();
+        const pageChangedEventHandler = new EventHandler();
         pageChangedEventHandler.target = this.node; //这个 node 节点是你的事件处理代码组件所属的节点
         pageChangedEventHandler.component = 'example';//这个是代码文件名
         pageChangedEventHandler.handler = 'callback';

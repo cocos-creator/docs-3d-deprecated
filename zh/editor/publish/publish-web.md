@@ -28,7 +28,7 @@ Cocos Creator 3D 开发过程中测试的桌面浏览器包括： Chrome，Firef
 
 ## Retina 设置
 
-可以在脚本中通过 `cc.view.enableRetina(true)` 设置是否使用高分辨率，构建到 Web 平台时默认会开启 Retina 显示。
+可以在脚本中通过 `view.enableRetina(true)` 设置是否使用高分辨率，构建到 Web 平台时默认会开启 Retina 显示。
 
 ## 发布到 Web 服务器
 

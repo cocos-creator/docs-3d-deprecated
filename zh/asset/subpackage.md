@@ -31,12 +31,12 @@ Cocos Creator 3D 的分包是以文件夹为单位来配置的，当我们选中
 
 ## 加载子包
 
-引擎提供了一个统一的 api `cc.loader.downloader.loadSubpackage` 来加载子包文件里面的资源（包含代码和其他资源）。`loadSubpackage` 需要传入一个子包的名字，这个名字即是之前用户在项目中配置的子包名字，默认为子包文件夹的名字。
+引擎提供了一个统一的 api `loader.downloader.loadSubpackage` 来加载子包文件里面的资源（包含代码和其他资源）。`loadSubpackage` 需要传入一个子包的名字，这个名字即是之前用户在项目中配置的子包名字，默认为子包文件夹的名字。
 
 当子包加载完成后，会触发回调，如果加载失败的话，会返回一个错误信息。
 
 ```typescript
-cc.loader.downloader.loadSubpackage('01_graphics', (err: any) => {
+loader.downloader.loadSubpackage('01_graphics', (err: any) => {
     if (err) {
         return console.error(err);
     }
