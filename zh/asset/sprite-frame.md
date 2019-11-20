@@ -20,7 +20,7 @@ Cocos Creator 3D SpriteFrame 是 UI 渲染基础图形的容器，其中包含 T
 ```typescript
 const self = this;
 const url = 'test_assets/test_altas/content';
-cc.loader.loadRes(url, (err, imageAsset) => {
+loader.loadRes(url, ImageAsset,(err: any, imageAsset) => {
   const sprite = this.getComponent(SpriteComponent);
   const spriteFrame = new SpriteFrame();
   (spriteFrame.texture as Texture2D).image = imageAsset;
@@ -32,7 +32,7 @@ cc.loader.loadRes(url, (err, imageAsset) => {
 ```typescript
 const self = this;
 const url = 'test_assets/test_altas/content/spriteFrame';
-cc.loader.loadRes(url, (err, spriteFrame) => {
+loader.loadRes(url, SpriteFrame,(err: any , spriteFrame) => {
   const sprite = this.getComponent(SpriteComponent);
   sprite.spriteFrame = spriteFrame;
 });

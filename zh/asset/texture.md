@@ -40,7 +40,7 @@ Texture2D 是纹理资源的一种，通常用于 3D 模型的渲染，如模型
 
 ### 使用 Texture2D
 
-Texture2D 是使用范围非常广泛的资源，在属性面板上任何标记为 cc.Texture2D 类型的属性，都可以拖入 Texture2D 类型的资源。
+Texture2D 是使用范围非常广泛的资源，在属性面板上任何标记为 Texture2D 类型的属性，都可以拖入 Texture2D 类型的资源。
 
 使用场景主要为编辑器环境与动态获取使用
 

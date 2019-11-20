@@ -46,16 +46,16 @@ EditBox 是一种文本输入组件，该组件让你可以轻松获取用户输
 
 ### 方法一
 
-这种方法添加的事件回调和使用编辑器添加的事件回调是一样的，都是通过代码添加。首先需要构造一个 `cc.Component.EventHandler` 对象，然后设置好对应的 `target`、`component`、`handler` 和 `customEventData` 参数。
+这种方法添加的事件回调和使用编辑器添加的事件回调是一样的，都是通过代码添加。首先需要构造一个 `EventHandler` 对象，然后设置好对应的 `target`、`component`、`handler` 和 `customEventData` 参数。
 
 ```ts
-import { _decorator, Component, EditBoxComponent } from "cc";
+import { _decorator, Component, EditBoxComponent, EventHandler } from "cc";
 const { ccclass, property } = _decorator;
 
 @ccclass("example")
 export class example extends Component {
     onLoad() {
-        const editboxEventHandler = new cc.Component.EventHandler();
+        const editboxEventHandler = new EventHandler();
         editboxEventHandler.target = this.node; // 这个 node 节点是你的事件处理代码组件所属的节点
         editboxEventHandler.component = 'example';
         editboxEventHandler.handler = 'onEditDidBegan';
@@ -89,6 +89,7 @@ export class example extends Component {
         // 这里 editbox 是一个 cc.EditBox 对象
         // 这里的 customEventData 参数就等于你之前设置的 "foobar"
     }
+}
 ```
 
 ### 方法二

@@ -50,7 +50,7 @@ Material 资源可以看成是 EffectAsset 在场景中的资源实例, 它本�
 * states: 管线状态重载列表, 对渲染管线状态 (深度模板透明混合等) 有哪些重载? (默认与 effect 声明一致)
 
 ```ts
-const mat = new cc.Material();
+const mat = new Material();
 mat.initialize({
   effectName: 'pipeline/skybox',
   defines: { USE_RGBE_CUBEMAP: true }
@@ -67,7 +67,7 @@ console.log(mat.getProperty('cubeMap') === someCubeMap); // true
 
 Material 通过挂载到 RenderableComponent 上与场景连接, 所有需要设定材质的 Component (ModelComponent, SkinningModelComponent等) 都继承自它.
 ```ts
-const comp = someNode.getComponent(cc.ModelComponent);
+const comp = someNode.getComponent(ModelComponent);
 comp.material = mat;
 comp.setMaterial(mat, 0); // 与上一行作用相同
 ```
@@ -78,7 +78,7 @@ comp.setMaterial(mat, 1); // 赋给第二个 submodel
 
 同一个 Material 也可挂载到任意多个 RenderableComponent 上, 一般在编辑器中通过拖拽的方式即可自动赋值. 而当场景中的某个模型的 Material 需要特化的设置, 会在从 RenderableComponent 获取 Material 时自动做拷贝实例化, 从而实现独立的定制.
 ```ts
-const comp2 = someNode2.getComponent(cc.ModelComponent);
+const comp2 = someNode2.getComponent(ModelComponent);
 const mat2 = comp2.material; // 拷贝实例化, 接下来对 `mat2` 的修改只会影响 `comp2` 的模型
 ```
 
@@ -93,7 +93,7 @@ mat2.initialize({
 特别地, 如果只是希望修改 defines 或 states, 我们提供更高效的直接设置接口, 只需提供相对当前值的重载即可:
 ```ts
 mat.recompileShaders({ USE_RGBE_CUBEMAP: false });
-mat.overridePipelineStates({ rasterizerState: { cullMode: cc.GFXCullMode.NONE } });
+mat.overridePipelineStates({ rasterizerState: { cullMode: GFXCullMode.NONE } });
 ```
 
 每帧动态更新 uniform 值是非常常见的需求, 在类似这种需要更高效接口的情景下, 可以手动调用对应 pass 的接口:
@@ -101,10 +101,10 @@ mat.overridePipelineStates({ rasterizerState: { cullMode: cc.GFXCullMode.NONE } 
 // 初始化时保存以下变量
 const pass = mat2.passes[0];
 const hColor = pass.getHandle('albedo');
-const color = cc.color('#dadada');
+const color = new Color('#dadada');
 
 // 每帧更新时：
-color.a = Math.sin(cc.director.getTotalFrames() * 0.01) * 127 + 127;
+color.a = Math.sin(director.getTotalFrames() * 0.01) * 127 + 127;
 pass.setUniform(hColor, color);
 ```
 

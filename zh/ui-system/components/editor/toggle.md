@@ -13,8 +13,8 @@ Toggle 是一个 CheckBox，当它和 ToggleGroup 一起使用的时候，可以
 | 属性           | 功能说明     |
 | -------------- | -----------   |
 | isChecked      | 布尔类型，如果这个设置为 true，则 check mark 组件会处于 enabled 状态，否则处于 disabled 状态。
-| checkMark      | cc.SpriteComponent 类型，Toggle 处于选中状态时显示的图片  |
-| toggleGroup    | cc.ToggleContainerComponent 类型， Toggle 所属的 ToggleGroup，这个属性是可选的。如果这个属性为 null，则 Toggle 是一个 CheckBox，否则，Toggle 是一个 RadioButton。 |
+| checkMark      | SpriteComponent 类型，Toggle 处于选中状态时显示的图片  |
+| toggleGroup    | ToggleContainerComponent 类型， Toggle 所属的 ToggleGroup，这个属性是可选的。如果这个属性为 null，则 Toggle 是一个 CheckBox，否则，Toggle 是一个 RadioButton。 |
 | Check Events   | 列表类型，默认为空，用户添加的每一个事件由节点引用，组件名称和一个响应函数组成。详情见下方的 **Toggle 事件** 部分  |
 
 **注意**：因为 Toggle 继承自 Button，所以关于 Toggle 的 Button 相关属性的详细说明和用法请参考 [Button 组件](button.md)。
@@ -37,16 +37,16 @@ Toggle 组件的节点树一般为：
 
 ### 方法一
 
-这种方法添加的事件回调和使用编辑器添加的事件回调是一样的，都是通过代码添加。首先需要构造一个 `cc.Component.EventHandler` 对象，然后设置好对应的 `target`、`component`、`handler` 和 `customEventData` 参数。
+这种方法添加的事件回调和使用编辑器添加的事件回调是一样的，都是通过代码添加。首先需要构造一个 `EventHandler` 对象，然后设置好对应的 `target`、`component`、`handler` 和 `customEventData` 参数。
 
 ```ts
-import { _decorator, Component, Event, Node, ToggleComponent } from "cc";
+import { _decorator, Component, Event, Node, ToggleComponent, EventHandler } from "cc";
 const { ccclass, property } = _decorator;
 
 @ccclass("example")
 export class example extends Component {
     onLoad(){
-        const checkEventHandler = new cc.Component.EventHandler();
+        const checkEventHandler = new EventHandler();
         checkEventHandler.target = this.node; //这个 node 节点是你的事件处理代码组件所属的节点
         checkEventHandler.component = 'example';//这个是代码文件名
         checkEventHandler.handler = 'callback';

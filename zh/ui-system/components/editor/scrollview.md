@@ -52,16 +52,16 @@ ScrollView 组件必须有指定的 content 节点才能起作用，通过指定
 
 ### 方法一
 
-这种方法添加的事件回调和使用编辑器添加的事件回调是一样的，都是通过代码添加。首先需要构造一个 `cc.Component.EventHandler` 对象，然后设置好对应的 `target`、`component`、`handler` 和 `customEventData` 参数。
+这种方法添加的事件回调和使用编辑器添加的事件回调是一样的，都是通过代码添加。首先需要构造一个 `EventHandler` 对象，然后设置好对应的 `target`、`component`、`handler` 和 `customEventData` 参数。
 
 ```ts
-import { _decorator, Component, ScrollViewComponent } from "cc";
+import { _decorator, Component, ScrollViewComponent, EventHandler } from "cc";
 const { ccclass, property } = _decorator;
 
 @ccclass("example")
 export class example extends Component {
     onLoad() {
-        const scrollViewEventHandler = new cc.Component.EventHandler();
+        const scrollViewEventHandler = new EventHandler();
         scrollViewEventHandler.target = this.node; // 这个 node 节点是你的事件处理代码组件所属的节点
         scrollViewEventHandler.component = 'example';// 这个是代码文件名
         scrollViewEventHandler.handler = 'callback';
@@ -73,7 +73,7 @@ export class example extends Component {
 
     callback(scrollview, eventType, customEventData){
         // 这里 scrollview 是一个 Scrollview 组件对象实例
-        // 这里的 eventType === cc.ScrollViewComponent.EventType enum 里面的值
+        // 这里的 eventType === ScrollViewComponent.EventType enum 里面的值
         // 这里的 customEventData 参数就等于你之前设置的 'foobar'
     }
 }
