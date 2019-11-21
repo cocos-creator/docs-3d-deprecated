@@ -61,6 +61,8 @@ private onCollision (event: ICollisionEvent) {
 
 **注：ColliderComponent 是所有碰撞组件的父类**。
 
+**注：目前碰撞事件以物理元素为单位，所有该元素上的碰撞器组件都会接受到碰撞事件**。
+
 两者的区别
 
 - 触发事件由触发器生成，碰撞事件由碰撞器生成。
