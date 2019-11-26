@@ -14,7 +14,7 @@ Label 组件用来显示一段文字，文字可以是系统字体，TrueType �
 | -------------- | ----------- |
 | Color | 图片颜色
 | SharedMaterial | 用户自定义材质，没有设置则用内置材质
-| Priority | 渲染排序优先级。详情参考[渲染排序规则](../engine/priority.md)
+| Priority | 渲染排序优先级。详情参考[渲染排序规则](../engine/priority.md)。注意：该功能在 1.0.2 上移除，可在 UITransformComopnent 上设置。
 | String | 文本内容字符串。
 | Horizontal Align | 文本的水平对齐方式。可选值有 LEFT，CENTER 和 RIGHT。
 | Vertical Align | 文本的垂直对齐方式。可选值有 TOP，CENTER 和 BOTTOM。

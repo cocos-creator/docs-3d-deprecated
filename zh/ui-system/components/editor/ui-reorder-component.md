@@ -6,7 +6,7 @@
 
 | 属性 |   功能说明
 | -------------- | ----------- |
-| Priority | 渲染排序优先级。详情参考[渲染排序规则](../engine/priority.md)
+| Priority | 渲染排序优先级。详情参考[渲染排序规则](../engine/priority.md)。注意：该组件即将在 1.0.2 上移除，可在 UITransformComopnent 上设置。
 
 ---
 

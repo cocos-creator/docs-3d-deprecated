@@ -15,7 +15,7 @@ Sprite（精灵）是 2D 游戏中最常见的显示图像的方式，在节点�
 | -------------- | ----------- |
 | Color | 图片颜色
 | SharedMaterial | 用户自定义材质，没有设置则用内置材质
-| Priority | 渲染排序优先级。详情参考[渲染排序规则](../engine/priority.md)
+| Priority | 渲染排序优先级。详情参考[渲染排序规则](../engine/priority.md)。注意：该功能在 1.0.2 上移除，可在 UITransformComopnent 上设置。
 | Atlas | Sprite 显示图片资源所属的图集（参考：![Atlas](../../../asset/atlas.md)）。
 | Sprite Frame | 渲染 Sprite 使用的 [SpriteFrame 图片资源](../../../workflow/resources/ui/sprite-frame.md)。（Sprite Frame 后面的 **编辑** 按钮用于编辑图像资源的九宫格切分，详情请参考 [使用 Sprite 编辑器制作九宫格图像](../engine/sliced-sprite.md)）
 | Type | 渲染模式，包括普通（Simple）、九宫格（Sliced）、平铺（Tiled）、填充（Filled）和网格（Mesh）渲染五种模式
