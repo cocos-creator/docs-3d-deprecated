@@ -63,6 +63,7 @@
   - [物理组件](physics/physics-component.md)
   - [物理使用](physics/physics-use.md)
   - [使用碰撞体](physics/physics-collider.md)
+  - [物理材质](physics/physics-material.md)
   - [使用刚体](physics/physics-rigidbody.md)
   - [物理事件](physics/physics-event.md)
   - [分组和掩码](physics/physics-group-mask.md)
