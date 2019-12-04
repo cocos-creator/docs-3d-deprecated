@@ -9,7 +9,8 @@
 | priority                                    | **default**(128), could be any number between max(255) and min(0)               |
 | stage                                       | **default**, could be the name of any registered stage in your runtime pipeline |
 | customization                               | **[]**, could be the name of any registered runtime customization               |
-| property                                    | *see the following section                                                      |
+| properties                                  | *see the following section                                                      |
+| migrations                                  | *see the following section                                                      |
 | primitive                                   | point_list, line_list, line_strip, line_loop,<br>**triangle_list**, triangle_strip, triangle_fan,<br>line_list_adjacency, line_strip_adjacency,<br>triangle_list_adjacency, triangle_strip_adjacency,<br>triangle_patch_adjacency, quad_patch_list, iso_line_list |
 | dynamics                                    | **[]**, an array containing any of the following:<br>viewport, scissor, line_width, depth_bias, blend_constants,<br>depth_bounds, stencil_write_mask, stencil_compare_mask |
 | rasterizerState.<br>cullMode                | front, **back**, none                                                           |
@@ -36,7 +37,7 @@
 | depthStencilState.<br>stencil\*Front/Back   | *\*set above stencil properties for specific side*                              |
 
 ## Switch
-指定这个 pass 的执行依赖于哪个 define，它不应与使用到的 shader 中定义的任何 define 重名。
+指定这个 pass 的执行依赖于哪个 define，它不应与使用到的 shader 中定义的任何 define 重名。<br>
 这个字段默认是不存在的，意味着这个 pass 是无条件执行的。
 
 ## Priority
@@ -63,7 +64,7 @@ offset: { value: [0, 0], target: tilingOffset.zw } # uniform vec4 tilingOffset
 // as long as it is a real uniform
 // it doesn't matter whether it is specified in the property list or not
 mat.setProperty('emissive', cc.Color.GREY); // this works
-mat.setProperty('albedo', cc.Color.RED); // direct set uniform
+mat.setProperty('albedo', cc.Color.RED); // directly set uniform
 mat.setProperty('roughness', 0.2); // set certain component
 const h = mat.passes[0].getHandle('offset'); // or just take the handle,
 mat.passes[0].setUniform(h, new Vec2(0.5, 0.5)); // and use Pass.setUniform interface instead
@@ -73,58 +74,72 @@ mat.passes[0].setUniform(h, new Vec2(0.5, 0.5)); // and use Pass.setUniform inte
 为方便声明各 property 子属性，可以直接在 properties 内声明 `__metadata__` 项，所有 property 都会继承它声明的内容，如：
 ```yaml
 properties:
-  __metadata__: { inspector: { visible: false } }
+  __metadata__: { editor: { visible: false } }
   a: { value: [1, 1, 0, 0] }
-  b: { inspector: { type: color } }
-  c: { inspector: { visible: true } }
+  b: { editor: { type: color } }
+  c: { editor: { visible: true } }
 ```
 这样 uniform a 和 b 已声明的各项参数都不受影响，但全部不会显示在 inspector 上（visible 为 false），而 uniform c 还会正常显示。
 
-## 数据迁移升级：formerlySerializedAs
-当指定了 inspector.deprecated 时，工程内所有材质资源内的对应属性数据，在下一次编辑保存这个材质时会被自动剔除掉。<br>
-当指定了 inspector.formerlySerializedAs 时，在 effect 导入成功后会 **立即更新工程内所有** 依赖于此 effect 的材质资源，<br>
-尝试寻找所有指定旧参数数据，复制或重组到新属性名下。<br>
-这个过程不会删除旧数据，但是会将旧属性标为 deprecated。<br>
+## Migrations
+一般来说使用材质资源时希望底层的 effect 接口能始终向前兼容，但依然有时面对新的需求最好的解决方案是含有一定 breaking change 的，<br>
+这时为了保持项目中已有的材质资源数据不受影响，或至少能够更平滑的升级，可以使用 effect 的迁移系统，<br>
+在 effect 导入成功后会 **立即更新工程内所有** 依赖于此 effect 的材质资源，<br>
+对每个材质资源，尝试寻找所有指定旧参数数据（包括 property 和宏定义两类），复制或重组到新属性名下。<br>
+这个过程不会自动删除旧数据，但是会将旧属性的 editor.deprecated 标为 true（如果新数据在 inspector 上可见的话）。<br>
 如果一个材质资源内既有旧数据，又有新数据，则不会做任何迁移（强制更新模式除外）。
 
-对于一个现有 effect，修改它的某个属性为：
+对于一个现有 effect，声明如下迁移字段：
 ```yaml
-width: { value: 1, inspector: { formerlySerializedAs: shapeParam.x } }
+migrations:
+  # macros: # macros follows the same rule as properties, without the component-wise features
+  #   USE_MIAN_TEXTURE: { formerlySerializedAs: USE_MAIN_TEXTURE }
+  properties:
+    newFloat: { formerlySerializedAs: oldVec4.w }
 ```
-对于一个依赖于这个 effect，并持有这样的属性的材质：
+对于一个依赖于这个 effect，并在对应 pass 持有这样的属性的材质：
 ```json
 {
-  "shapeParam": {
+  "oldVec4": {
     "__type__": "cc.Vec4",
-    "x": 3,
+    "x": 1,
     "y": 1,
-    "z": 0,
-    "w": 0
+    "z": 1,
+    "w": 0.5
   }
 }
 ```
 在 effect 重新导入后，这些数据会被立即转换成：
 ```json
 {
-  "shapeParam": {
+  "oldVec4": {
     "__type__": "cc.Vec4",
-    "x": 3,
+    "x": 1,
     "y": 1,
-    "z": 0,
-    "w": 0
+    "z": 1,
+    "w": 0.5
   },
-  "width": 3
+  "newFloat": 0.5
 }
 ```
 在编辑器内重新编辑并保存这个材质资源后会变成（假设 effect 和 property 数据本身并没有改变）：
 ```json
 {
-  "width": 3
+  "newFloat": 0.5
 }
 ```
-但如果某个材质在迁移升级前就已经存着 width 数据，则不会对其做任何修改，除非指定为强制更新模式：
+注意这里的通道指令只是简单的取 `w` 分量，事实上还可以做任意的 shuffle：
 ```yaml
-width: { value: 1, inspector: { formerlySerializedAs: shapeParam.x! } }
+    newColor: { formerlySerializedAs: someOldColor.yxx }
+```
+甚至基于某个宏定义：
+```yaml
+    occlusion: { formerlySerializedAs: pbrParams.<OCCLUSION_CHANNEL|z> }
+```
+这里声明了新的 occlusion 属性会从旧的 `pbrParams` 中获取，而具体的分量取决于 OCCLUSION_CHANNEL 宏定义，且如材质资源中未定义此宏，默认取 `z` 通道。<br>
+但如果某个材质在迁移升级前就已经存着 `newFloat` 字段的数据，则不会对其做任何修改，除非指定为强制更新模式：
+```yaml
+    newFloat: { formerlySerializedAs: oldVec4.w! }
 ```
 这会强制更新所有材质的属性，无论这个操作是否会覆盖数据。<br>
 注意强制更新操作会在编辑器的每次资源事件中都执行（几乎对应每一次鼠标点击，相对高频），<br>
@@ -148,13 +163,12 @@ width: { value: 1, inspector: { formerlySerializedAs: shapeParam.x! } }
 | sampler.<br>minLOD        | **0**                                |
 | sampler.<br>maxLOD        | **0**, *\*remember to override this when enabling mip filter* |
 | sampler.<br>mipLODBias    | **0**                                |
-| inspector.<br>displayName | (any string), **\*property name**    |
-| inspector.<br>type        | **vector**, color                    |
-| inspector.<br>visible     | **true**, false                      |
-| inspector.<br>tooltip     | (any string), **\*property name**    |
-| inspector.<br>range       | **undefined**, [ min, max, [step] ]  |
-| inspector.<br>deprecated  | true, **false**                      |
-| inspector.<br>formerlySerializedAs | **undefined**, (any valid uniform components, random swizzle allowed) |
+| editor.<br>displayName    | (any string), **\*property name**    |
+| editor.<br>type           | **vector**, color                    |
+| editor.<br>visible        | **true**, false                      |
+| editor.<br>tooltip        | (any string), **\*property name**    |
+| editor.<br>range          | **undefined**, [ min, max, [step] ]  |
+| editor.<br>deprecated     | true, **false**, *\*for any material using this effect,<br> delete the existing data for this property after next saving* |
 
 ## Default Values
 | Type        | Default Value / Options                  |
