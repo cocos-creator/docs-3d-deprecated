@@ -14,6 +14,11 @@
 - 微信小游戏平台
   - Android
   - iOS
+- 支付宝小游戏平台
+  - Android
+  - iOS
+- OPPO小游戏平台
+  - OPPO手机
 
 ## 编辑器测试项
 1. [命令行测试文档](./publish.md)
@@ -21,6 +26,8 @@
 其他部分，参考内部编辑器测试文档
 
 ## 测试用例
+
+**测试前请更新所有测试例**
 
 1. [测试例](https://github.com/cocos-creator/test-cases-3d)
 2. [范例集合](https://github.com/cocos-creator/example-3d)
