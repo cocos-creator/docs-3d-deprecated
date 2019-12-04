@@ -118,6 +118,8 @@
       - [PageViewComponent 组件参考](ui-system/components/editor/pageview.md)
       - [PageViewIndicatorComponent 组件参考](ui-system/components/editor/pageviewindicator.md)
       - [UIModelComponetn 组件参考](ui-system/components/editor/ui-model.md)
+      - [UIStaticComponent 组件参考](ui-system/components/editor/ui-static.md)
+      - [UICoordinateTracker 组件参考](ui-system/components/editor/ui-coordinate-tracker.md)
 
 - [脚本指南及事件机制](scripting/index.md)
   - [脚本创建](scripting/setup.md)
