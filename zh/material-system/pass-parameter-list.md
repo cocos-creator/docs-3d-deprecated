@@ -147,6 +147,7 @@ migrations:
 
 ## Property Param List
 同样地，任何可配置字段如与默认值相同都可以省掉。
+
 | Param                     | Options                              |
 |:-------------------------:|:------------------------------------:|
 | target                    | **undefined**, (any valid uniform components, no random swizzle) |
@@ -163,6 +164,7 @@ migrations:
 | sampler.<br>minLOD        | **0**                                |
 | sampler.<br>maxLOD        | **0**, *\*remember to override this when enabling mip filter* |
 | sampler.<br>mipLODBias    | **0**                                |
+| editor                    | *\*see the next section*             |
 | editor.<br>displayName    | (any string), **\*property name**    |
 | editor.<br>type           | **vector**, color                    |
 | editor.<br>visible        | **true**, false                      |
