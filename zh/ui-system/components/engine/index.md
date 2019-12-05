@@ -41,3 +41,4 @@ UI 是游戏开发的必要交互部分，一般游戏上的按钮、文字、�
 - [自动布局容器](auto-layout.md)
 - [制作动态生成内容的列表](list-with-data.md)
 - [制作可任意拉伸的 UI 图像](sliced-sprite.md)
+- [UI 静态合批组件](../editor/ui-batch.md)
