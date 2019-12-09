@@ -20,7 +20,7 @@ Cocos Creator 3D 目前支持两种语言进行开发，分别为 JavaScript 和
 
 ## 碰撞器和触发器
 
-Collider 组件具有 isTrigger 属性，当 isTrigger 为 true 时，表示为碰撞器，反之为触发器。
+Collider 组件具有 isTrigger 属性，当 isTrigger 为 true 时，表示为触发器，反之为碰撞器。
 
 **注：关于碰撞器和触发器的区别将在 [物理事件](physics-event.md) 中介绍**。
 
