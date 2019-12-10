@@ -93,3 +93,4 @@ Test Case 运行时需要分几种情况打包测试，以便覆盖各种使用�
 2. 指派责任人
 3. 设置 Milestone 为当前 Sprint
 4. 添加 QA-open 标签
+5. 如果在测试过程中出现反复 re-opened 的问题，请在该 issue 上添加 regression 标签
