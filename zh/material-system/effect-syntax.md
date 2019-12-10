@@ -5,6 +5,8 @@ Cocos Effect 是一种基于 YAML 和 GLSL 的单源码嵌入式领域特定语�
 YAML 部分声明流程控制清单, GLSL 部分声明实际的 shader 片段，这两部分内容上相互补充, 共同构成了一个完整的渲染流程描述。<br>
 我们推荐使用 VSCode，搜索安装 Cocos Effect 插件，来方便地编辑任何 effect 文件。
 
+注意，这篇文档的目标受众是项目组中的 TA 或图形向的程序，如果你是有具体定制 shader 需求的美术，请联系项目 TA 或程序，把这篇文档丢给他~！
+
 ## 语法框架
 以 builtin-unlit.effect 为例, 这个 Effect 文件的内容大致是这样:
 
