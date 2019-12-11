@@ -9,61 +9,181 @@
 在内部，动画曲线存储了一系列时间点，每个时间点都对应着一个（曲线）值，称为一帧，或关键帧。
 当动画系统运作时，动画组件根据当前动画状态计算出指定时间点应有的（结果）值并赋值给对象，完成属性变化；这一计算过程称为采样。
 
-下图是一条示例曲线，它包含 6 个关键帧：
-
-<canvas id="curve-example-canvas" width="400" height="300"></canvas>
-<script src="./curve-example.js">
-</script>
-<script>
-drawCurve(document.getElementById("curve-example-canvas"), 6, {xAxisText: "帧时间（秒）", yAxisText: "曲线值"});
-</script>
-
 以下代码片段演示了如何程序化地创建动画剪辑。
 ```ts
-import { AnimationClip, color, v3 } from "cc";
+import { AnimationClip, animation, js } from "cc";
 const animationClip = new AnimationClip();
 animationClip.duration = 1.0; // 整个动画剪辑的周期。任何帧时间都不应该大于此属性。
-const headCurveKeys = [ 0.3, 0.6, 0.9 ];
-const headCurveValues = [ v3(0.0), v3(0.5), v3(0.0) ];
-const bodyCurveKeys = [ 0.0, 0.2, 0.4, 0.6, 0.8, 1.0 ];
-const bodyCurveValues = [ color(0), color(51), color(102), color(153), color(204), color(255) ];
-animationClip.keys = [ headCurveKeys, bodyCurveKeys ]; // 该动画剪辑所有曲线共享的帧时间
-animationClip.curveDatas = {
-    "/Head": {
-        "position": { // `Head` 子结点的 `position` 属性的曲线
-            keys: 0, // 引用的帧时间，它是 `Animation.keys` 的索引，对于此处来说，即引用 `headCurveKeys`
-            values: headCurveValues,
-        },
+animationClip.keys = [ [ 0.3, 0.6, 0.9 ] ]; // 该动画剪辑所有曲线共享的帧时间
+animationClip.curves = [{ // 组件上的属性曲线
+    modifiers: [ // 目标是当前结点的
+        // "Body" 子结点的
+        new animation.HierarchyPath('Body'),
+        // `MyComponent`的
+        new animation.ComponentPath(js.getClassName(MyComponent)),
+        // `value` 属性
+        'value',
+    ],
+    data: {
+        keys: 0, // 索引至 `AnimationClip.keys`, 即 [ 0.3, 0.6, 0.9]
+        values: [ 0.0, 0.5, 1.0 ],
     },
-    "/Body": {
-        comps: {
-            "cc.Sprite": { // `Body` 子结点上，`SpriteComponent` 组件的 `color` 属性的曲线
-                keys: 1, // 即 `bodyCruveKeys`
-                values: bodyCurveValues,
-            },
-        },
-    },
-};
+}];
 ```
 
-以上创建的动画剪辑包含两条曲线：
-- 一条曲线控制子结点 `Head` 的位置变化，包含 3 帧，使得 `Head` 的 x 坐标由 0 变化为 0.5 再变化为 0。
-- 另一条曲线控制子结点 `Body` 上 `SpriteComponent` 组件的颜色变化，包含 6 帧，
-使得 `Body` 上的 `SpriteComponent` 组件的颜色从黑逐渐变化为白。
+上述动画剪辑包含了一条曲线以控制 "Body" 子结点的 `MyComponent` 组件的 `value` 属性，曲线有三帧，使得 `value` 属性在 0.3 秒时变为 0.5，在0.6 秒时变为 0.5，在 0.9 秒时变为 1.0。
 
 注意，曲线的帧时间是以引用方式索引到 `AnimationClip.keys` 数组中的。
 如此一来，多条曲线可以共享帧时间。这将带来额外的性能优化。
 
 ### 目标对象
 
-动画曲线的目标可以是任意 Cocos Creator 3D 结点以及其上附加的组件。
-曲线记录了目标结点的相对路径，
-运行时，由动画组件根据此路径动态确定目标对象。
-例如，若曲线的路径为 `/Spline/Leg` ，而动画剪辑的所在结点<sup id="a1">[1](#f1)</sup>为 `Human`，
-则在运行时，曲线的目标结点为 `Human` 结点的 `Spline` 子结点的 `Leg` 子结点；
-而当曲线的路径为 `/` 或空字符串时，曲线的目标结点即为 `Human` 结点本身。
+动画曲线的目标可以是任意 JavaScript 对象。
+`modifiers` 字段指定了在 _运行时_ 如何从当前结点对象寻址到目标对象。
 
-动画曲线的这种动态绑定特性使得动画剪辑可以复用到多个对象上。
+`modifiers` 是一个数组，
+它的每一个元素表达了如何从上一级的对象寻址到另一个对象，
+最后一个元素寻址到的对象就作为曲线的目标对象。
+这种行为就好像文件系统的路径，因此每个元素都被称为“目标路径”。
+
+当目标路径是`string` / `number` 时，
+表示寻址到上一级对象的属性，其本身就指定了属性名。
+否则，目标路径必须是实现接口 `animation.TargetPath` 的对象。
+
+Cocos Creator 3D 内置了以下几个实现自接口 `animation.TargetPath` 的类：
+- `animation.HierarchyPath` 将上一级的对象视为结点，并寻址到它的某个子结点；
+- `animation.ComponentPath` 将上一级的对象视为结点，并寻址到它的某个组件。
+
+目标路径可以任意组合，只要它们具有正确的含义：
+```ts
+// 目标对象是
+modifiers: [
+    // "nested_1" 子结点的 "nested_2" 子结点的 "nested_3" 子结点的
+    new animation.HierarchyPath('nested_1/nested_2/nested_3'),
+    // `BlahBlahComponent` 组件的
+    new animation.ComponentPath(js.getClassName(BlahBlahComponent)),
+    // `names` 属性的
+    'names',
+    // 第一个元素
+    0,
+]
+```
+
+当你的目标对象不是一个属性，而是必须从一个方法返回时，自定义目标路径就很有用：
+```ts
+class BlahBlahComponent extends Component {
+    public getName(index: number) { return _names[index]; }
+    private _names: string[] = [];
+}
+
+// 目标对象是
+modifiers: [
+    // "nested_1" 子结点的 "nested_2" 子结点的 "nested_3" 子结点的
+    new animation.HierarchyPath('nested_1/nested_2/nested_3'),
+    // `BlahBlahComponent` 组件的
+    new animation.ComponentPath(js.getClassName(BlahBlahComponent)),
+    // 第一个 "name"
+    {
+        get: (target: BlahBlahComponent) => target.getName(0),
+    },
+]
+```
+如果希望你的自定义目标路径是可序列化的，将它们声明为类：
+```ts
+@ccclass
+class MyPath implements animation.TargetPath {
+    @property
+    public index = 0;
+    constructor(index: number) { this.index = index; }
+    get (target: BlahBlahComponent) {
+        return target.getName(this.index);
+    }
+}
+
+// 目标对象是
+modifiers: [
+    // "nested_1" 子结点的 "nested_2" 子结点的 "nested_3" 子结点的
+    new animation.HierarchyPath('nested_1/nested_2/nested_3'),
+    // `BlahBlahComponent` 组件的
+    new animation.ComponentPath(js.getClassName(BlahBlahComponent)),
+    // 第一个 "name"
+    new MyPath(0),
+]
+```
+
+目标对象的寻址是在运行时完成的，这种特性使得动画剪辑可以复用到多个对象上。
+
+### 赋值
+
+当采样出值后，默认情况下将使用赋值操作符 `=` 将值设置给目标对象。
+
+然而有时候，你并不能用赋值操作符来完成设置。
+例如，当你想设置材质对象的 Uniform 时，你就无法通过赋值操作符来完成。
+因为材质对象仅提供了 `setUniform(uniformName, value)` 方法来改变 uniform。
+
+对于这种情况，曲线字段 `valueAdapter` 提供了一种机制使你自定义如何
+将值设置到目标对象。
+
+示例如下：
+```ts
+class BlahBlahComponent {
+    public setUniform(index: number, value: number) { /* */ }
+}
+
+{ // 曲线
+    valueAdapter: {
+        // 在实例化曲线时调用
+        forTarget(target: BlahBlahComponent) {
+            // 在这里做一些有用的事
+            return {
+                // 在每一次设置目标对象的值时调用
+                set(value: number) {
+                    target.setUniform(0, value);
+                }
+            };
+        }
+    },
+};
+```
+
+如果希望你的“自定义赋值”是可序列化的，将它们声明为类：
+```ts
+@ccclass
+class MyValueProxy implements animation.ValueProxyFactory {
+    @property
+    public index: number = 0;
+    constructor(index: number) { this.index = index; }
+    // 在实例化曲线时调用
+    public forTarget(target: BlahBlahComponent) {
+        // 在这里做一些有用的事
+        return {
+            // 在每一次设置目标对象的值时调用
+            set(value: number) {
+                target.setUniform(0, value);
+            }
+        };
+    }
+}
+```
+
+`animation.UniformProxyFactory` 就是这样一种“自定义赋值”的类，
+它实现了设置材质的 uniform 值：
+```ts
+{ // 目标对象是
+    modifiers: [
+        // `ModelComponent` 组件的
+        new animation.ComponentPath(js.getClassName(ModelComponent)),
+        // `sharedMaterials` 属性的
+        'sharedMaterials',
+        // 第一个材质
+        0,
+    ],
+    valueAdapter: new animation.UniformProxyFactory(
+        0, // Pass 索引
+        'albedo', // Uniform 名称
+    ),
+};
+```
 
 ### 采样
 
