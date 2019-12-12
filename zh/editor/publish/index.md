@@ -7,6 +7,7 @@
 - [发布到 web 平台](publish-web.md)
 - [发布到微信小游戏](publish-wechatgame.md)
   - [接入微信小游戏的开放数据域](publish-wechatgame-subcontext.md)
+  - [启用微信小游戏引擎插件](wechatgame-plugin.md)
 - [发布到 OPPO 小游戏](oppo-mini-game.md)
 - [发布到华为小游戏](huawei-mini-game.md)
 - [发布到 vivo 小游戏](vivo-mini-game.md)
