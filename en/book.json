@@ -51,8 +51,13 @@
         ],
         "version": [
             {
-                "name": "1.0",
-                "links": []
+                "name": "1.1",
+                "links": [
+                    {
+                        "name": "1.0",
+                        "link": "https://docs.cocos.com/creator3d/manual/en"
+                    }
+                ]
             }
         ]
     }
