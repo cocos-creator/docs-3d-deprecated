@@ -159,6 +159,7 @@
   - [材质资源](asset/material.md)
   - [模型资源](asset/mesh.md)
   - [动画资源](asset/anim.md)
+- [向Cocos提交代码](submit-pr/submit-pr.md)
 
 ## 编辑器手册
 
@@ -171,6 +172,7 @@
   - [动画编辑器](editor/animation/index.md)
   - [偏好设置](editor/preferences/index.md)
   - [项目设置](editor/project/index.md)
+  - [引擎定制工作流程](editor/engine-customization/engine-customization.md)
 
 - [项目预览调试](editor/preview/index.md)
   - [浏览器预览](editor/preview/browser.md)
