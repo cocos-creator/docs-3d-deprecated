@@ -1,6 +1,14 @@
 # 缓动系统
 
-为了更友好和高效的开发，并且保持 Cocos Creator 2D 缓动系统的使用体验，Cocos Creator 3D 在 tween.js 的基础上封装了一层类似于 Cocos Creator 2D 的缓动系统的 API 使用方式，并且未来将兼容 [tween.js](https://github.com/cocos-creator/tween.js) 的使用方式（目前暂未开放）。
+为了全面兼容和保持 Cocos Creator 2D 缓动系统的使用体验，在 V1.1 版本 Cocos Creator 3D 移植了所有的 Cocos Creator 2D 功能实现。
+
+**注：action 已经被废弃了，请使用 Tween**;
+**注：在 V1.1 版本开始将不再依赖 tween.js，如果使用了 tween.js 的相关特性，请注意及时适配**；
+
+与此前 tween.js 不同的地方主要是可选属性，为以下内容：
+
+- easing 的值定义变动了（这里做了兼容性处理）
+- 除了 easing，其它属性都暂不支持（这里做了检查，控制台会有相应的警告）
 
 ## 简单示例
 
@@ -13,46 +21,40 @@ export class tweentest extends Component {
     private _pos: Vec3 = new Vec3(0, 0, 0);
 
     start () {
-        Vec3.copy(this._pos, this.node.position);
+        /** 缓动 _pos */
         tweenUtil(this._pos)
-            .to(3, new Vec3(10, 10, 10), { easing: 'Bounce-InOut' })
-            .to(3, new Vec3(0, 0, 0), { easing: 'Elastic-Out' })
+            .to(3, new Vec3(10, 10, 10), { easing: 'bounceInOut' })
+            .to(3, new Vec3(0, 0, 0), { easing: 'elasticOut' })
             .union()
-            .repeat(1)
+            .repeat(2) // 执行 2 次
             .start();
-    }
 
-    update (deltaTime: number) {
-        this.node.position = this._pos;
+        /** 缓动 Node，这里将缓动 Node 的 position 属性 */
+        tweenUtil(this.node)
+            .to(3, { position: new Vec3(10, 10, 10) }, { easing: 'bounceInOut' })
+            .to(3, { position: new Vec3(0, 0, 0) }, { easing: 'elasticOut' })
+            .union()
+            .repeat(2) // 执行 2 次
+            .start();
     }
 }
 ```
 
 ## 注意事项
 
-### API 差异
+### repeat 语义
 
-由于底层的实现不同，以及 3D 与 2D 的差异较大，所以目前 API 上存在以下区别：
+此前 repeat 的语义为重复几次，但现在为了全面保持 Creator 2D 的设计，所以现在 repeat 为执行几次，即 repeat(1) 代表执行一次。
 
-- tween 方法改名为了 tweenUtil。
-- repeat 方法语义为重复几次，即repeat(1) 代表重复一次，执行两次，在 2D 中语义为执行次数，即执行一次。
-- repeat 方法多次调用为重写，在 2D 中是累加。
-- repeat 方法中暂不支持插入缓动，后面会考虑支持。
-- 暂不支持对单个属性进行 easing 、progress 等
-- easing 的可选值有变化，并且形式与 2D 的不同。
-- progress 用 easing 代替，可以输入自定义函数到 easing 参数。
-- 部分 API 暂不支持：clone 、 removeSelf 、 reverseTime 、 sequnence 、 target 、 then 。
-- 部分 API 尚不稳定，行为与 2D 可能有所出入。
-
-### 特殊机制产生的差异
-
-Cocos Creator 3D 中 Node 的 dirty 机制
+### 一些限制
 
 为了降低更新 Node Transform 信息的频率，Node 内部维护了一个 dirty 状态，只有在调用了可能会改变 Node Transform 信息的接口，才会将 dirty 置为需要更新的状态。
 
-但是目前的接口存在一定的局限性，例如：通过 `this.node.position` 获取到的 `position` 是一个通用的 Vec3，当执行`this.node.position.x = 1`这段代码的时候，只执行 Node position 的 getter，并没有执行postion 的 setter，由于 dirty 并没有更新，就会导致渲染时使用的节点的 Transform 信息没有更新。
+但是目前的接口存在一定的限制，例如：通过 `this.node.position` 获取到的 `position` 是一个通用的 Vec3。
 
-目前，我们也不支持这样的调用，而是鼓励使用 setPostion 这样的接口，或者通过 position 的 setter，即以下代码方式：
+当执行`this.node.position.x = 1`这段代码的时候，只执行 Node position 的 getter，并没有执行 postion 的 setter，由于 dirty 并没有更新，就会导致渲染时使用的节点的 Transform 信息没有更新。
+
+目前，我们也不支持这样的调用，而是鼓励使用 setPostion 或 position 的 setter，即以下代码方式：
 
 ```
 let _pos = new Vec3(0, 1, 0);
@@ -60,5 +62,34 @@ this.node.position = _pos;      // 这里将通过 position 的 setter
 this.node.setPosition(_pos);    // 这里将通过接口 setPosition
 ```
 
-因此，缓动系统目前暂不支持直接为 Node Transform 相关的数据进行插值，后续变化请留意更新公告。
-**注：简单示例中介绍了如何通过缓动系统改变 Node 的 Transform**。
+### 正确的缓动方式
+
+在新的 Tween 模块中可以对具有 getter 和 setter 的属性进行缓动，例如简单示例中 node 的 position 属性，这样在缓动的过程中，会进行相应的接口进行设置，从而保证 dirty 正常更新。
+
+**注：切换场景时注意停止相应的缓动**；
+
+## Tween 接口介绍
+
+| 接口              | 解释                                        |
+| ----------------- | ------------------------------------------- |
+| **to**            | 添加一个对属性进行**绝对值**计算的间隔动作  |
+| **by**            | 添加一个对属性进行**相对值**计算的间隔动作  |
+| **set**           | 添加一个**直接设置目标属性**的瞬时动作      |
+| **delay**         | 添加一个**延迟时间**的瞬时动作              |
+| **call**          | 添加一个**调用回调**的瞬时动作              |
+| **target**        | 添加一个**直接设置缓动目标**的瞬时动作      |
+| **union**         | **将上下文的缓动动作打包成一个**            |
+| **then**          | **插入一个 Tween 到缓动队列中**             |
+| **repeat**        | **执行几次**（此前为重复几次，请及时适配）  |
+| **repeatForever** | **一直重复执行**                            |
+| **sequence**      | **添加一个顺序执行的缓动**                  |
+| **parallel**      | **添加一个同时进行的缓动**                  |
+| **start**         | **启动缓动**                                |
+| **stop**          | **停止缓动**                                |
+| **clone**         | **克隆缓动**                                |
+| **show**          | **启用节点链上的渲染，缓动目标需要为 Node** |
+| **hide**          | **禁用节点链上的渲染，缓动目标需要为 Node** |
+| **removeSelf**    | **将节点移出场景树，缓动目标需要为 Node**   |
+
+**更多使用示例，请参考 [test-case-3d](https://github.com/cocos-creator/test-cases-3d)中的示例**。
+**更多详细介绍，请参考 Creator 的[使用缓动系统](https://docs.cocos.com/creator/manual/zh/scripting/tween.html)**。
