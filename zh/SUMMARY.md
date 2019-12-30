@@ -175,6 +175,7 @@
   - [动画编辑器](editor/animation/index.md)
   - [偏好设置](editor/preferences/index.md)
   - [项目设置](editor/project/index.md)
+  - [引擎定制工作流程](editor/engine-customization/engine-customization.md)
 
 - [项目预览调试](editor/preview/index.md)
   - [浏览器预览](editor/preview/browser.md)
