@@ -38,6 +38,7 @@
   - [物理](physics/physics.md)
   - [UI](ui-system/components/engine/index.md)
   - [组件](editor/components/index.md)
+  - [可定制的渲染管线](render-pipeline/overview.md)
   - [脚本指南及事件机制](scripting/index.md)
   - [资源手册](asset/index.md)
 - 编辑器手册

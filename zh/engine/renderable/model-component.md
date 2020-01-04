@@ -28,3 +28,10 @@
 
 <b id="f1">[1]</b> 注意目前使用 uniform 上传合批后的世界变换矩阵，考虑到 WebGL 标准的 uniform 数量限制，目前一批最多绘制 10 个模型，所以对大量同材质的模型，开启合批后 drawcall 数量预期最多会减少 10 倍。 [↩](#a1)<br>
 <b id="f2">[2]</b> 关于合批与性能的话题业界一直有不少探讨，可以参考比如 [这里](http://www.ce.u-sys.org/Veranstaltungen/Interaktive%20Computergraphik%20(Stamminger)/papers/BatchBatchBatch.pdf) 的 slide [↩](#a2)<br>
+
+## 静态合批
+目前静态合批方案仅支持运行时静态合批，通过调用BatchingUtility.batchStaticModel(staticModelRoot: Node, batchedRoot: Node)可进行静态合批。该函数接收一个节点，然后将该节点下的所有ModelComponent里的mesh合并成一个mesh，并将其挂到另一个节点下。在合批后，将无法改变原有的ModelComponent的transform，但可以改变合批后的根节点的transform。只有满足以下条件的结点才能进行静态合批：
+
+- 子节点中只能包含ModelComponent
+- 子节点下的ModelComponent的mesh的结构必须一致
+- 子节点下的ModelComponent的材质必须相同
