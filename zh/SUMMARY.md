@@ -118,9 +118,10 @@
       - [SliderComponent 组件参考](ui-system/components/editor/slider.md)
       - [PageViewComponent 组件参考](ui-system/components/editor/pageview.md)
       - [PageViewIndicatorComponent 组件参考](ui-system/components/editor/pageviewindicator.md)
-      - [UIModelComponetn 组件参考](ui-system/components/editor/ui-model.md)
+      - [UIModelComponent 组件参考](ui-system/components/editor/ui-model.md)
       - [UIStaticComponent 组件参考](ui-system/components/editor/ui-static.md)
       - [UICoordinateTracker 组件参考](ui-system/components/editor/ui-coordinate-tracker.md)
+      - [UIOpacity 组件参考](ui-system/components/editor/ui-opacity.md)
 
 - [脚本指南及事件机制](scripting/index.md)
   - [脚本创建](scripting/setup.md)
@@ -175,6 +176,7 @@
   - [动画编辑器](editor/animation/index.md)
   - [偏好设置](editor/preferences/index.md)
   - [项目设置](editor/project/index.md)
+  - [引擎定制工作流程](editor/engine-customization/engine-customization.md)
 
 - [项目预览调试](editor/preview/index.md)
   - [浏览器预览](editor/preview/browser.md)

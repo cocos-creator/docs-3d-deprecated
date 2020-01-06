@@ -12,13 +12,11 @@ Mask 用于规定子节点可渲染的范围，带有 Mask 组件的节点会使
 
 | 属性  |   功能说明           |
 | -------------- | ----------- |
-| Type           | 遮罩类型。包括 **RECT**、**ELLIPSE** <!--、**IMAGE_STENCIL** 三种-->类型。|
-| Segements      | 椭圆遮罩的曲线细分数，只在遮罩类型设为 **ELLIPSE** 时生效 |
-<!-- | Inverted       | 布尔值，反向遮罩 -->
-<!-- | Alpha Threshold| Alpha 阈值，该属性为浮点类型，仅在 Type 设为 **IMAGE_STENCIL** 时才生效。<br>只有当模板像素的 alpha 值大于该值时，才会绘制内容。<br>该属性的取值范围是 0 ~ 1，1 表示完全禁用。 -->
-<!-- | Sprite Frame   | 遮罩所需要的贴图，只在遮罩类型设为 **IMAGE_STENCIL** 时生效 -->
+| Type           | 遮罩类型。包括 **RECT**、**ELLIPSE**、**GRAPHICS_STENCIL** <!--、**IMAGE_STENCIL** 三种-->类型。|
+| Segments      | 椭圆遮罩的曲线细分数，只在遮罩类型设为 **ELLIPSE** 时生效 |
+| Inverted       | 反向遮罩
 
-**注意**：节点添加了 Mask 组件之后，所有在该节点下的子节点，在渲染的时候都会受 Mask 影响。
+**注意**：节点添加了 Mask 组件之后，所有在该节点下的子节点，在渲染的时候都会受 Mask 影响，**GRAPHICS_STENCIL** 类型在这里没有做任何引擎需要的事，只是放开了对 graphics 操控，用户可以使用这个 graphics 来绘制自定义图形。
 
 ---
 
