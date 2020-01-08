@@ -21,9 +21,7 @@
   - OPPO手机
 
 ## 编辑器测试项
-1. [命令行测试文档](./publish.md)
-
-其他部分，参考内部编辑器测试文档
+参考内部编辑器测试文档
 
 ## 测试用例
 
@@ -63,9 +61,11 @@ Test Case 运行时需要分几种情况打包测试，以便覆盖各种使用�
   - 构建选项**不勾选** CompressTexture（压缩纹理）
   - 构建选项**不勾选** packAutoAtlas（打包自动图集）
 
-### 其他平台测试项细节
+### 其他测试项细节
 1. [web 平台测试细则](./publish/web-build-docs.md)
 2. [微信平台测试细则](./publish/wechat-build-docs.md)
+3. [命令行构建测试文档](./publish/publish-in-command.md)
+4. [平台自定义模板支持测试](./publish/user-template.md)
 
 ### 粒子测试用例
 
