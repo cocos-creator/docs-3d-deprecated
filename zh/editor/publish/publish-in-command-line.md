@@ -19,6 +19,8 @@
   CocosCreator3D/CocosCreator3D.exe --project projectPath --build "platform=web-desktop;debug=true"
   ```
 
+目前命令行构建除了必填项外，如果不传递一律使用默认值来构建，具体参数默认值请参考下方描述以及平台的参数介绍。
+
 ## 构建参数
 
  - `--project`：必填，指定项目路径
@@ -26,24 +28,33 @@
 在 `--build`  后如果没有指定参数，则会使用 Cocos Creator 3D 中构建面板当前的平台、模板等设置来作为默认参数。如果指定了其他参数设置，则会使用指定的参数来覆盖默认参数。可选择的参数有：
 - `configPath` - 参数文件路径。如果定义了这个字段，那么构建时将会按照 `json` 文件格式来加载这个数据，并作为构建参数。这个参数可以自己修改也可以直接从构建面板导出。
 - `includedModules` - 定制引擎的打包模块，有需要打包部分模块而不是全部模块的，可以传递此参数。具体模块可以从 [这里](https://github.com/cocos-creator/engine/blob/3d-v1.0.0/scripts/module-division/division-config.json) 查找到，注意传递的是模块 entry 字段组成的数组。
-- `title` - 项目名
-- `platform` - 必填，构建的平台 [web-mobile、web-desktop、wechatgame、wechatgame-subcontext]
-- `buildPath` - 构建目录
-- `startScene` - 主场景的 uuid 值（参与构建的场景将使用上一次的编辑器中的构建设置）
-- `debug` - 是否为 debug 模式
-- `previewWidth` - web desktop 窗口宽度
-- `previewHeight` - web desktop 窗口高度
-- `sourceMaps` - 是否需要加入 source maps
-- `webOrientation` - web mobile 平台（不含微信小游戏）下的旋转选项 [landscape、portrait、auto]
-- `inlineSpriteFrames` - 是否内联所有 SpriteFrame
-- `mergeStartScene` - 是否合并初始场景依赖的所有 JSON
-- `optimizeHotUpdate` - 是否将图集中的全部 SpriteFrame 合并到同一个包中
-- `template` - native 平台下的模板选项 [default、link]
-- `embedWebDebugger` - 是否在 web 平台下插入 vConsole 调试插件
-- `md5Cache` - 是否开启 md5 缓存
-- `wechatgame` - 微信小游戏发布选项
-  - `appid`- 发布微信小游戏时需要的 id
-  - `orientation` - 微信小游戏屏幕方向 [landscape、portrait]
+- `taskName` - 构建任务名，最终打出包的文件夹地址
+- `name` - 游戏名称
+- `platform` - 必填，构建的平台
+- `buildPath` - 构建的工作区，默认为 build 目录下
+- `startScene` - 主场景的 uuid 值（参与构建的场景将使用上一次的编辑器中的构建设置），未指定时将使用参与构建场景的第一个
+- `scenes` - 参与构建的场景信息，未指定时默认为全部场景
+- `debug` - 是否为 debug 模式，默认关闭
+<!-- - `inlineSpriteFrames` - 是否内联所有 SpriteFrame -->
+- `mergeStartScene` - 是否合并初始场景依赖的所有 JSON，默认关闭
+- `packAutoAtlas` - 是否开启自动图集，默认关闭
+- `compressTexture` - 是否开启压缩纹理，默认关闭
+- `replaceSplashScreen` - 是否替换插屏插屏，默认关闭
+- `md5Cache` - 是否开启 md5 缓存, 默认关闭
+
+自 v1.0.3 起，构建的各个平台提取为独立的插件来注入插件，因而构建各个平台的构建参数位置也不同，各个平台的参数将会放置在 `packages.平台名称.key` 内，例如：为 wechatgame 指定构建参数，配置大体如下：
+```
+{
+    taskName: 'wechatgame',
+    packages: {
+        wechatgame: {
+            appid: '*****',
+        }
+    }
+}
+```
+
+之后在构建插件支持对外开放，其他插件的配置参数也通过同样的方式注入到构建中。具体各个平台的参数字段还请参照各个平台各自的文档，最好是通过构建面板的 `导出` 功能来获取配置参数，更加方便快捷。目前依旧兼容旧版本的参数来构建，但是将会在之后移除该兼容处理，请尽快升级配置参数。
 
 ## 在 Jenkins 上部署
 
