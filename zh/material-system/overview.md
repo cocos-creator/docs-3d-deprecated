@@ -139,8 +139,8 @@ pass.setUniform(hColor, color);
 | normalMap | 法线贴图，用于增加表面细节 |
 | normalStrenth | 法线贴图强度，控制凹凸质感的强弱 |
 | pbrMap | PBR 材质参数贴图：环境遮挡、粗糙度和金属度<br>采样结果会和常数项相乘<br>每种属性具体的来源通道由 XX_CHANNEL 宏定义决定 |
-| metallicOcclusionMap | 独立的粗糙度和金属度贴图<br>采样结果会和常数项相乘<br>每种属性具体的来源通道由 XX_CHANNEL 宏定义决定 |
-| metallicOcclusionMap | 独立的环境遮挡贴图<br>采样结果会和常数项相乘<br>每种属性具体的来源通道由 XX_CHANNEL 宏定义决定 |
+| metallicRoughnessMap | 独立的粗糙度和金属度贴图<br>采样结果会和常数项相乘<br>每种属性具体的来源通道由 XX_CHANNEL 宏定义决定 |
+| occlusionMap | 独立的环境遮挡贴图<br>采样结果会和常数项相乘<br>每种属性具体的来源通道由 XX_CHANNEL 宏定义决定 |
 | occlusion | 环境遮挡常数 |
 | roughness | 粗糙度常数 |
 | metallic | 金属度常数 |
