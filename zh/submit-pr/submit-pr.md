@@ -6,6 +6,8 @@
 在你开发游戏的过程中，当发现了引擎、文档或者范例不够完善的地方，如果仅仅是向官方团队提出建议，官方团队可能会因为人力资源的紧张而无法及时跟进。在此我们欢迎所有用户主动向我们提交 PR，帮助 Cocos 越做越好。引擎有 Bug？提 PR！范例难看？提 PR！API 注释不清晰？提 PR！文档有错别字？提 PR！想要把你的宝贵修改贡献给游戏社区？提 PR！以下几个是目前官方比较常用的开源仓库，这些仓库都可以提交 PR。
 
 JavaScript 引擎：<https://github.com/cocos-creator/engine><br>
+Cocos2d-x-lite 引擎：<https://github.com/cocos-creator/cocos2d-x-lite><br>
+jsb-adapter：<https://github.com/cocos-creator-packages/jsb-adapter>
 
 下面让我们来看一下，如何从零开始在 GitHub 上向 Cocos 提交代码。
 
@@ -23,53 +25,25 @@ JavaScript 引擎：<https://github.com/cocos-creator/engine><br>
 
 未安装过则 [下载 Git](https://git-scm.com/download/) 并安装。安装过程中的所有选项保留默认就可以了，一直点 next，直到安装完成。
 
-### 安装 Git 客户端 —— Sourcetree
+### 安装 Git 客户端 —— GitKraken
 
-Sourcetree 是比较常用的 Git 客户端工具。如果不使用 Sourcetree 的话，Git 操作全部要通过命令行操作完成，比较麻烦。下面以 Windows 版本为例进行演示。
+GitKraken 是比较常用的 Git 客户端工具。如果不使用 GitKraken 的话，Git 操作全部要通过命令行操作完成，比较麻烦。下面以 Windows 版本为例进行演示。
 
-1、下载 [Sourcetree](https://www.sourcetreeapp.com/) 并解压缩，进行安装。
+1、下载 [GitKraken](https://www.gitkraken.com/) 并解压缩，进行安装。
 
-![sourcetree install](submit-pr/sourcetree_install.png)
-
-2、登录 Atlassian 帐号。Atlassian 支持使用 Google 帐号登录，所以如果你有 Google 帐号或者之前注册过 Atlassian 帐号，则单击 **使用已有账号** 登录就可以了。否则单击 **转到我的 Atlassian** 进行注册（需要使用 VPN 注册）。
-
-![sourcetree1](submit-pr/sourcetree1.png)
-
-3、配置账号，这一步可以点击 **跳过初始设置** 跳过设置，后面再进行账号配置。
-
-![sourcetree2](submit-pr/sourcetree2.png)
-
-4、加载 SSH 密钥。单击 **否**。
-
-![ssh key](submit-pr/ssh_key.png)
-
-5、提示框提示：“Sourcetree：未找到 Mercurial”。Mercurial 也是一种版本控制软件，Sourcetree 同时支持 Git 和 Mercurial。选择 **我不想使用 Mercurial**。
-
-![mercurial](submit-pr/mercurial.png)
+![GitKraken install](submit-pr/sourcetree_install.png)
 
 安装完成后界面如下图所示：
 
-![sourcetree install complete](submit-pr/sourcetree_install_complete.png)
-
-### Sourcetree 配置 GitHub 账号
-
-1、打开 Sourcetree，点击菜单栏的 **工具 -> 选项**，在 **一般** 中进行配置，如下图所示：
-
-![sourcetree_configuration](submit-pr/sourcetree_configuration.png)
-
-配置完成后点击 **确定**。
-
-2、点击 **工具 -> 选项**，在 **验证** 中配置托管账户。点击 **刷新 OAuth 令牌**（默认已登录 GitHub 账号），等待显示 **认证成功** 后点击 **确定**。如下图所示：
-
-![sourcetree_verify](submit-pr/sourcetree_verify.png)
+![GitKraken install complete](submit-pr/sourcetree_install_complete.png)
 
 ## Fork 项目
 
-以手册文档的代码仓库 [creator-docs](https://github.com/cocos-creator/creator-docs) 为例。( Creator 3D 手册文档的代码仓库为 [docs-3d](https://github.com/cocos-creator/docs-3d) )进入手册文档仓库页面，点击右上角的 Fork 按钮，如下图所示：
+以手册文档的代码仓库 [docs-3d](https://github.com/cocos-creator/docs-3d) 为例。进入手册文档仓库页面，点击右上角的 Fork 按钮，如下图所示：
 
 ![fork](submit-pr/fork.png)
 
-Fork 完成后，会自动跳转到你的 GitHub 仓库页面，可以看到已经生成了 creator-docs 项目副本，如下图所示：
+Fork 完成后，会自动跳转到你的 GitHub 仓库页面，可以看到已经生成了 docs-3d 项目副本，如下图所示：
 
 ![repository](submit-pr/repository.png)
 
@@ -79,11 +53,11 @@ Fork 完成后，会自动跳转到你的 GitHub 仓库页面，可以看到已�
 
 ![copy](submit-pr/copy.png)
 
-2、切换到 Sourcetree 后点击上方的 **Clone** 按钮，跳转到 Clone 页面，粘贴刚才复制的 **远程仓库项目地址**，然后填入相关配置。如果想让本地的文件夹名称和项目名称一样，那么在本地存储路径后添加 `/creator-docs`。配置完成后点击 **克隆**。
+2、切换到 GitKraken 后点击上方的 **Clone** 按钮，跳转到 Clone 页面，粘贴刚才复制的 **远程仓库项目地址**，然后填入相关配置。如果想让本地的文件夹名称和项目名称一样，那么在本地存储路径后添加 `/docs-3d`。配置完成后点击 **克隆**。
 
 ![clone repository](submit-pr/clone_repository.png)
 
-克隆完成后就会在本地自动创建 creator-docs 文件夹并且在 Sourcetree 上自动打开项目。
+克隆完成后就会在本地自动创建 docs-3d 文件夹并且在 GitKraken 上自动打开项目。
 
 ![clone finish](submit-pr/clone_finish.png)
 
@@ -103,7 +77,7 @@ Fork 完成后，会自动跳转到你的 GitHub 仓库页面，可以看到已�
 - **next** 分支： 用于 2.0 分支
 - **master/develop** 分支：当前最新版本所用分支
 
-2、打开本地 creator-doc 项目进行修改，修改完成后查看仓库详情，如下图所示：
+2、打开本地 docs-3d 项目进行修改，修改完成后查看仓库详情，如下图所示：
 
 ![modification](submit-pr/modification.png)
 
@@ -115,7 +89,7 @@ Fork 完成后，会自动跳转到你的 GitHub 仓库页面，可以看到已�
 
 ![push](submit-pr/push.png)
 
-5、完成之后，到 GitHub 自己的 creator-docs 远程仓库查看（可以从 **右上方的头像 -> Your profile -> Repositories -> creator-docs** 进入你的远程仓库），可以看到已经有本次的提交信息了。然后点击 **New pull request**。
+5、完成之后，到 GitHub 自己的 docs-3d 远程仓库查看（可以从 **右上方的头像 -> Your profile -> Repositories -> creator-docs** 进入你的远程仓库），可以看到已经有本次的提交信息了。然后点击 **New pull request**。
 
 ![push finish](submit-pr/push_finish.png)
 
@@ -123,7 +97,7 @@ Fork 完成后，会自动跳转到你的 GitHub 仓库页面，可以看到已�
 
 ![pull request](submit-pr/pull_request.png)
 
-7、创建完成后在官方仓库 creator-docs 的 pull requests 页面中可以看到创建了一个新的 PR。官方人员会收到提醒并将 PR 指派给相关人员进行 review 和合并。
+7、创建完成后在官方仓库 docs-3d 的 pull requests 页面中可以看到创建了一个新的 PR。官方人员会收到提醒并将 PR 指派给相关人员进行 review 和合并。
 
 ![pr](submit-pr/pr.png)
 
@@ -143,7 +117,7 @@ Fork 完成后，会自动跳转到你的 GitHub 仓库页面，可以看到已�
 
 ![](submit-pr/setting_add.png)
 
-2、复制官方仓库 [creator docs](https://github.com/cocos-creator/creator-docs) 的 HTTPS 地址，跟上个步骤复制你的仓库项目的 HTTPS 地址操作步骤一致，然后填入。完成后点击 **确定**。如下图所示：
+2、复制官方仓库 [docs-3d](https://github.com/cocos-creator/docs-3d) 的 HTTPS 地址，跟上个步骤复制你的仓库项目的 HTTPS 地址操作步骤一致，然后填入。完成后点击 **确定**。如下图所示：
 
 ![add upstream](submit-pr/add-upstream.png)
 
@@ -177,7 +151,7 @@ Fork 完成后，会自动跳转到你的 GitHub 仓库页面，可以看到已�
 
 填写完成后点击 **Submit new issue** 提交 issue，就完成了。
 
-2、或者也可以进入官方仓库 [creator-docs](https://github.com/cocos-creator/creator-docs) ( Creator 3D 手册文档的代码仓库为 [docs-3d](https://github.com/cocos-creator/docs-3d) )，选择 **Issue -> New issue** 进入提交 issue 界面，填写内容并提交。
+2、或者也可以进入官方仓库 [docs-3d](https://github.com/cocos-creator/creator-docs)，选择 **Issue -> New issue** 进入提交 issue 界面，填写内容并提交。
 
 本次提交 pr 和提交 issue 的教程到这里就结束了，若有不理解或者有误的地方请根据上述步骤向我们反馈。<br>
 有些人可能会问，为什么要这么麻烦的提交问题。其实，正确的提交问题可以节省很多的沟通成本，而且有些问题可能在初步排查的时候就可以解决了，或者会发现只是由于自己粗心大意导致的。而官方节省下来的人力就可以更好的去服务于 Creator 3D ，让 Creator 3D 能更好地为游戏开发者服务。
