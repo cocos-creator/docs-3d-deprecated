@@ -88,7 +88,7 @@ Cocos Creator 3D 从 v1.0.2 版本开始正式支持将游戏发布到 OPPO 小�
 
 ![](./oppo-mini-game/rpk_games.jpg)
 
-四、分包 rpk
+<!-- 四、分包 rpk
 
 分包加载，即把游戏内容按一定规则拆分成几个包，在首次启动的时候只下载必要的包，这个必要的包称为 **主包**，开发者可以在主包内触发下载其他子包，这样可以有效降低首次启动的消耗时间。若要使用该功能需要在 Creator 3D 中设置 [分包配置](../../asset/subpackage.md)，设置完成后构建时就会自动分包。
 
@@ -98,7 +98,7 @@ Cocos Creator 3D 从 v1.0.2 版本开始正式支持将游戏发布到 OPPO 小�
 
 ![](./oppo-mini-game/run_subpackage.jpg)
 
-**注意**：分包 rpk 需要拷贝到 Android 设备的 **/sdcard/subPkg/** 目录，未分包的 rpk 需要拷贝到 Android 设备的 **/sdcard/games/** 目录，两者不可混用。
+**注意**：分包 rpk 需要拷贝到 Android 设备的 **/sdcard/subPkg/** 目录，未分包的 rpk 需要拷贝到 Android 设备的 **/sdcard/games/** 目录，两者不可混用。 -->
 
 ## 相关参考链接
 
