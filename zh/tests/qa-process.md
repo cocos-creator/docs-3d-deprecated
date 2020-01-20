@@ -11,6 +11,11 @@
   - iOS Safari
   - Android Chrome & QQ 浏览器
   - Mac OS X & Windows Chrome
+- 原生平台
+  - Windows
+  - Android
+  - iOS
+  - Mac
 - 微信小游戏平台
   - Android
   - iOS
@@ -19,6 +24,8 @@
   - iOS
 - OPPO小游戏平台
   - OPPO手机
+- 小米小游戏平台
+  - 小米手机
 
 ## 编辑器测试项
 参考内部编辑器测试文档
@@ -44,22 +51,36 @@ test-case 场景测试说明，可以参考 [文档](./test-case-docs.md)。
 
 Test Case 运行时需要分几种情况打包测试，以便覆盖各种使用场景：
 
-- 测试组合一
-  - 项目设置中选择物理模块为 Builtin
-  - 渲染模块勾选 WebGL 2
-  - 构建选项勾选 MD5 Cache（MD5 缓存）
-  - 构建选项勾选 Merge all JSON that the Start Scene used（合并初始场景 JSON 资源）
-  - 构建选项**不勾选** Debug（调试模式）
-  - 构建选项勾选 CompressTexture（压缩纹理）
-  - 构建选项勾选 packAutoAtlas（打包自动图集）
-- 测试组合二
-  - 项目设置中选择物理模块为 Cannon
-  - 渲染模块**不勾选** WebGL 2
-  - 构建选项**不勾选** MD5 Cache（MD5 缓存）
-  - 构建选项**不勾选** Merge all JSON that the Start Scene used（合并初始场景 JSON 资源）
-  - 构建选项勾选 Debug（调试模式）
-  - 构建选项**不勾选** CompressTexture（压缩纹理）
-  - 构建选项**不勾选** packAutoAtlas（打包自动图集）
+- 测试组合一（发布模式）：
+  - 首场景使用 testlist
+  - 物理模块选择 Builtin
+  - 渲染模块选择 WebGL2
+  - 构建选项勾选 MD5
+  - 构建选项勾选 Merge all JSON that the start Scene used
+  - 构建选项**不勾选** Debug
+  - 构建选项勾选 CompressedTexture
+  - 构建选项勾选 packAutoAtlas
+  - 构建选项勾选 Polyfills - 异步函数（如果有）
+- 测试组合二（调试模式）：
+  - 首场景使用 testlist
+  - 物理模块选择 Cannon
+  - 渲染模块选择 WebGL2
+  - 构建选项**不勾选** MD5
+  - 构建选项**不勾选** Merge all JSON that the start Scene used
+  - 构建选项勾选 Debug
+  - 构建选项**不勾选** CompressedTexture
+  - 构建选项**不勾选** packAutoAtlas
+  - 构建选项勾选 Polyfills - 异步函数（如果有）
+- 测试组合三（混合模式 & Ammo）：
+  - 首场景使用 testlist
+  - 物理模块选择 Ammo
+  - 渲染模块选择 WebGL1
+  - 构建选项**不勾选** MD5
+  - 构建选项勾选 Merge all JSON that the start Scene used
+  - 构建选项勾选 Debug
+  - 构建选项**不勾选** CompressedTexture
+  - 构建选项勾选 packAutoAtlas
+  - 构建选项勾选 Polyfills - 异步函数（如果有）
 
 ### 其他测试项细节
 1. [web 平台测试细则](./publish/web-build-docs.md)
