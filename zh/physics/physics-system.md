@@ -15,11 +15,13 @@
 ---|---
 **enable** |  是否开启物理系统，默认为 true
 **allowSleep** |  是否允许物理系统自动休眠，默认为 true
+**useFixdTime** |  物理模拟是否使用固定的时间进行模拟（步数将固定为 1），默认为 true
 **maxSubStep** |  物理每帧模拟的最大子步数，默认为 2
 **deltaTime** |  物理每步模拟消耗的时间，注意不是每帧，默认为 1 / 60
 **gravity** |  物理世界的重力值，默认为 (0, -10, 0)
+**defaultMaterial** |  获取默认物理材质（只读）
 
-目前可以用此方式获取到物理系统实例： `PhysicsSystem.ins`
+目前可以用此方式获取到物理系统实例： `PhysicsSystem.instance`
 
 **注：Builtin 中不支持以上物理模拟相关的属性**。
 

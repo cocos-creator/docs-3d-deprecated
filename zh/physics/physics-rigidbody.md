@@ -33,10 +33,15 @@ if (rigidBody.isSleeping) {
 
 代码示例：`rigidBody.applyForce(new Vec3(200, 0, 0));`
 
+### 通过扭转力
+
+刚体组件提供了`applyTorque`接口，签名为：`applyTorque (torque: Vec3)`。
+通过此接口可以施加扭矩到刚体上，因为只影响旋转轴，所以不再需要指定一个点。
+
 ### 通过冲量
 
 刚体组件提供了`applyImpulse`接口，签名为：`applyImpulse (impulse: Vec3, relativePoint?: Vec3)`。
-根据动量守恒的方程式 `F * Δt = m * Δv`，对刚体某点施加冲量，随着时间增加，但物体的质量是恒定的，速度就会产生变化，刚体就会运动起来。
+根据动量守恒的方程式 `F * Δt = m * Δv`，对刚体某点施加冲量，由于物体的质量是恒定的，速度就会立马变化，刚体就会运动起来。
 
 代码示例：`rigidBody.applyImpulse(new Vec3(5, 0, 0));`
 
