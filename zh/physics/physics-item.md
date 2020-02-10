@@ -24,6 +24,12 @@ Builtin 是仅有碰撞检测系统的物理模块，相对于其它的物理引
 
 [Cannon.js](https://github.com/cocos-creator/cannon.js) 是一个开源的物理引擎，它使用 js 语言开发并实现了比较全面的物理功能，如果您的项目需要更多复杂的物理功能，哪么您可以考虑使用 [Cannon.js](https://github.com/cocos-creator/cannon.js) ，再通过使用 Cocos Creator 3D 提供的 RigidBodyComponent 便可以快速上手。
 
+## 物理引擎 : Ammo
+
+[Ammo.js](https://github.com/cocos-creator/ammo.js) 是 [Bullet](https://github.com/bulletphysics/bullet3) 物理引擎的 asm.js / wasm 版本（目前仅提供了 asm.js 版本），由 [Emscripten](https://github.com/emscripten-core/emscripten) 工具编译而来，目前 Cocos Creator 3D 将使用的 Bullet 版本更新到了 2.87 版本。Bullet 具有完善的物理功能，未来我们也将在此投入更多工作。
+
+需要注意的时，尽管我们对导出的接口进行了筛检，但是目前导出的 js 包体仍然具有 1 MB 的大小。
+
 ## 不使用物理
 
 若不需要用到任何物理相关的组件和接口，可以将黄色框内的勾选取消，这样在发布时将有更小的包体。
