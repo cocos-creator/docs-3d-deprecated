@@ -73,6 +73,8 @@ mat.initialize({
 ```
 有了这些信息后, Material 就可以被正确初始化(标志是生成渲染使用的 Pass 对象数组), 用于具体模型的渲染了.
 
+另外注意，**如果要在蒙皮模型 (Skinning Model) 上使用自定义材质，一定记得开启材质的 USE_SKINNING 宏定义开关。**
+
 根据所使用 EffectAsset 的信息, 可以进一步设置每个 Pass 的 uniform 参数等.
 ```ts
 mat.setProperty('cubeMap', someCubeMap);
