@@ -10,7 +10,7 @@ The general structure of the system is as follows:
 `EffectAsset` is an shading procedure description file, written by both engine and game developers.<br>
 It contains the mathematical calculations and algorithms for calculating the color of each pixel rendered.<br>
 When the [builtin effects](#builtins) are not the best fit for your need,<br>
-writing your own effect will give you all the capabilities to customize the rendering process.<br>
+writing your own effect can give you all the capabilities to customize the rendering process.<br>
 Detailed syntax instructions can be found [here](effect-syntax.md).
 
 After an effect file is created, the in-editor effect compiler automatically steps in to compile it.<br>
