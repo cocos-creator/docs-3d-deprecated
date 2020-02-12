@@ -1,15 +1,16 @@
-# 打包发布原生平台
+# 发布到原生平台
 
-Cocos Creator 3D 自 v1.0.3 起开始支持原生平台，点击菜单栏的 **项目 -> 构建发布**，打开构建发布面板，参照文档配置完项目信息后即可打包。
+Cocos Creator 3D 自 v1.0.3 起正式支持原生平台，点击菜单栏的 **项目 -> 构建发布** 选项，打开构建发布面板，参照文档配置完项目信息后即可打包。
 
-支持的原生平台包括 Android、iOS、Mac、Windows 四个，其中iOS、Mac 和 Windows 的选项只能在相应的操作系统中才会出现，目前原生平台是集合在一起打包的，只需要打包一次即可获取到所有支持原生平台的项目包。
+支持的原生平台包括 Android、iOS、Mac、Windows 四个，其中 iOS、Mac 和 Windows 的选项只能在相应的操作系统中才会出现，目前原生平台是集合在一起打包的，打包一次即可生成所有原生平台的项目包。
 
 ## 环境配置
-与其他平台不同的是，原生平台的打包需要配置一些必要的环境才能正常打包，详情请参考 [原生环境配置](setup-native-development.md)
+
+发布原生平台需要配置一些必要的环境，详情请参考 [原生环境配置](setup-native-development.md)
 
 ## 构建选项
+
 一些通用的构建配置选项，请参照 [通用构建参数介绍](build-options.md)。
-由于目前构建机制上的调整，不同平台的处理均以插件的形式注入，在选择完原生平台后，将会看到除了原生具体平台的选项外还有 `native` 的选项，native 相关选项配置后将会影响到所有的原始具体平台。
 
 ![native platform](publish-native/native_platform.jpg)
 
@@ -29,7 +30,13 @@ string url;
 jsval_to_string(cx, returnParam, &url);
 ```
 
-### 选择源码模板（template）
+### Native 选项
+
+由于目前构建机制上的调整，不同平台的处理均以插件的形式注入，在选择完原生平台后，将会看到除了原生具体平台的选项外还有 `native` 的选项，native 相关选项配置后将会影响到所有的原生平台。
+![Native 选项](publish-native/native_options.jpg)
+
+#### 选择源码模板（template）
+
 在 native 的树形控件内，对应的 **模板/template** 下拉菜单中有两种可用的引擎模板，我们可以从中选择一种：
 
 - default，使用默认的 cocos2d-x 源码版引擎构建项目
@@ -44,26 +51,23 @@ jsval_to_string(cx, returnParam, &url);
 
     目前 Cocos Creator 3D 安装目录下已经包含了自带的 cocos2d-x 源码引擎，在安装目录下的 resources/3d/cocos2d-x-lite 文件夹内可以查看到。
 
+#### Polyfills
+
+项目内如果使用到一些高版本的脚本语法时比如 `async \ await`，需要勾选此项。
+
 ### Android 平台选项
+
+![Android 平台选项](publish-native/android_options.png)
 
 #### 设置包名（Package Name）
 
-（也称作 Package Name 或 Bundle ID），通常以产品网站 url 倒序排列，如 `com.mycompany.myproduct`。
+（也称作 Package Name 或 Bundle Identifier），通常以产品网站 url 倒序排列，如 `com.mycompany.myproduct`。
 
 **注意**：包名中只能包含数字、字母和下划线，此外包名最后一部分必须以字母开头，不能以下划线或数字开头。
 
-#### Orientation 屏幕方向
-- landscapeRight: 屏幕向右橫置
-- landscapeLeft: 屏幕向左橫置
-- portrait: 屏幕直立
-- upsideDown: 屏幕直立，上下顛倒
-
-#### 生成 App Bundle (Google Play)
-勾选该项即可将游戏打包成 App Bundle 格式用于上传到 Google Play 商店。具体请参考 [官方文档](https://developer.android.com/guide/app-bundle/)（需要使用 VPN）
-
 #### Target API Level
 
-设置编译 Android 平台所需的 Target API Level，如未配置点击旁边的 `Set Android SDK` 按钮即可快速跳转到配置页，具体配置请参考[原生环境配置](setup-native-development.md)
+设置编译 Android 平台所需的 Target API Level。点击旁边的 `Set Android SDK` 按钮即可快速跳转到配置页，具体配置请参考 [原生环境配置](setup-native-development.md)
 
 #### APP ABI
 
@@ -81,24 +85,52 @@ jsval_to_string(cx, returnParam, &url);
 
 Android 要求所有 APK 必须先使用证书进行数字签署，然后才能安装。Cocos Creator 3D 提供了默认的密钥库，勾选 **使用调试密钥库** 就是使用默认密钥库，若用户需要自定义密钥库可去掉 **使用调试密钥库** 勾选。具体请参考 [官方文档](https://developer.android.com/studio/publish/app-signing?hl=zh-cn)（需要使用 VPN）
 
-### Mac 平台
+#### Orientation 屏幕方向
+
+- portrait: 屏幕直立
+- upsideDown: 屏幕直立，上下顛倒
+- landscapeLeft: 屏幕向左橫置
+- landscapeRight: 屏幕向右橫置
+
+#### 生成 App Bundle (Google Play)
+
+勾选该项即可将游戏打包成 App Bundle 格式用于上传到 Google Play 商店。具体请参考 [官方文档](https://developer.android.com/guide/app-bundle/)（需要使用 VPN）
+
+### Mac 平台选项
+
+![Mac 平台选项](publish-native/mac_options.png)
 
 #### Bundle Identifier 包名
+
 参见 Android Package Name 选项介绍
 
+#### iOS 平台选项
 
-#### IOS 平台
+![iOS 平台选项](publish-native/iOS_options.png)
 
 #### Bundle Identifier 包名
+
 参见 Android Package Name 选项介绍
 
 #### Orientation 屏幕方向
+
 参见 Android Orientation 选项介绍
 
 ## 构建原生工程
 
 选择发布平台，设置了初始场景以及对应平台配置项后，就可以开始构建了，点击右下角的 `构建` 按钮，开始构建流程。
+
 构建结束后，我们得到的是一个标准的 cocos2d-x 工程，和使用 Cocos Console 新建的工程有同样的结构。目前编辑器尚未集成编译功能，需要手动在相应平台的 IDE 中打开构建好的原生工程，进行进一步的预览、调试和发布。
+
+具体的手动编译方式：
+
+- iOS 平台：使用 Xcode 打开构建目录下的 native\frameworks\runtime-src\proj.ios_mac\.xcodeproj 文件，在 Xcode 面板 General -> Signing 中设置签名，在 Xcode 左上方选择连接的设备后点击编译按钮进行编译运行。
+
+- Android 平台：过 Android Studio 打开工程，如版本升级根据提示下载缺失的工具即可，再进行编译运行。
+
+- Mac 平台：使用 Xcode 打开构建目录下的 native\frameworks\runtime-src\proj.ios_mac 文件夹后即可预览编译。
+
+- Windows 平台：使用 Visual Studio （推荐使用2017）打开构建目录下的 native\frameworks\runtime-src\proj.win32 文件夹内的 .sln 文件或者直接双击该文件，编译运行。注意，在安装 Visual Studio 时，请注意需要勾选安装 Windows 8.1 版本 SDK。
 
 ## 使用原生工程
 
