@@ -2,7 +2,7 @@
 
 为了全面兼容和保持 Cocos Creator 2D 缓动系统的使用体验，在 V1.1 版本 Cocos Creator 3D 移植了所有的 Cocos Creator 2D 功能实现。
 
-**注：action 已经被废弃了，请使用 Tween**;
+**注：action 已经被废弃了，请使用 tween**;
 **注：在 V1.1 版本开始将不再依赖 tween.js，如果使用了 tween.js 的相关特性，请注意及时适配**；
 
 与此前 tween.js 不同的地方主要是可选属性，为以下内容：
@@ -22,7 +22,7 @@ export class tweentest extends Component {
 
     start () {
         /** 缓动 _pos */
-        tweenUtil(this._pos)
+        tween(this._pos)
             .to(3, new Vec3(10, 10, 10), { easing: 'bounceInOut' })
             .to(3, new Vec3(0, 0, 0), { easing: 'elasticOut' })
             .union()
@@ -30,7 +30,7 @@ export class tweentest extends Component {
             .start();
 
         /** 缓动 Node，这里将缓动 Node 的 position 属性 */
-        tweenUtil(this.node)
+        tween(this.node)
             .to(3, { position: new Vec3(10, 10, 10) }, { easing: 'bounceInOut' })
             .to(3, { position: new Vec3(0, 0, 0) }, { easing: 'elasticOut' })
             .union()
