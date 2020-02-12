@@ -1,16 +1,19 @@
 # Material System Overview
 
 The material system plays an essential role in any game engine infrastructure:<br>
-it controls the way everything is drawn on screen, and many more.<br>
+it controls the way everything is drawn on screen and much more.<br>
 The general structure of the system is as follows:
 
 [![Assets](material.png "Click to view diagram source")](material.dot)
 
 ## EffectAsset
 `EffectAsset` is an shading procedure description file, written by both engine and game developers.<br>
-Detailed syntax instructions can be found in [here](effect-syntax.md).<br>
+It contains the mathematical calculations and algorithms for calculating the color of each pixel rendered.<br>
+When the [builtin effects](#builtins) are not the best fit for your need,<br>
+writing your own effect will give you all the capabilities to customize the rendering process.<br>
+Detailed syntax instructions can be found [here](effect-syntax.md).
 
-Right after an effect file is created, the in-editor effect compiler comes to do its job.<br>
+After an effect file is created, the in-editor effect compiler automatically steps in to compile it.<br>
 Also using `builtin-unlit.effect` as an example, the compiler output for this file will look like this:
 ```json
 {
@@ -35,12 +38,12 @@ Also using `builtin-unlit.effect` as an example, the compiler output for this fi
         "frag": "// glsl 100 frag source, omitted here for brevity",
       },
       "attributes": [
-        {"tags":["USE_BATCHING"], "name":"a_dyn_batch_id", "type":13, "count":1, "defines":["USE_BATCHING"], "location":1},
+        {"name":"a_dyn_batch_id", "type":13, "count":1, "defines":["USE_BATCHING"], "location":1},
         {"name":"a_position", "type":15, "count":1, "defines":[], "location":0},
         {"name":"a_weights", "type":16, "count":1, "defines":["USE_SKINNING"], "location":2},
         {"name":"a_joints", "type":16, "count":1, "defines":["USE_SKINNING"], "location":3},
-        {"tags":["USE_VERTEX_COLOR"], "name":"a_color", "type":16, "count":1, "defines":["USE_VERTEX_COLOR"], "location":4},
-        {"tags":["USE_TEXTURE"], "name":"a_texCoord", "type":14, "count":1, "defines":["USE_TEXTURE"], "location":5}
+        {"name":"a_color", "type":16, "count":1, "defines":["USE_VERTEX_COLOR"], "location":4},
+        {"name":"a_texCoord", "type":14, "count":1, "defines":["USE_TEXTURE"], "location":5}
       ],
       "varyings": [
         {"name":"v_color", "type":16, "count":1, "defines":["USE_VERTEX_COLOR"], "location":0},
@@ -75,13 +78,14 @@ Also using `builtin-unlit.effect` as an example, the compiler output for this fi
   ]
 }
 ```
-There is a lot to unpack here, but for the most part the details won't be of any concern to game deverlopers, and the key insight is this:
+There is a lot to unpack here, but for the most part the details won't be of any concern to game deverlopers, but the key insight you need to remember is:
 
 All the necessary info for runtime shading procedure setup on any target platform (and even editor support) is here in advance to guarantee portability and performance, and we will trim out all the redundant info at build-time to make sure maximized space efficiency.
 
 ## Material
-`Material` is the actual instance that used to draw every specific models.<br>
-Essential parameters for setting up an `Material` are:
+`Material` define how a surface should be rendered, by including references to textures it uses, tiling information, color tints and more.<br>
+The available options for a `Material` depend on which `EffectAsset` it is using.<br>
+Essential parameters for setting up an `Material` object are:
 * `effectAsset` or `effectName`: effect reference: which `EffectAsset` will be used? (must specify)
 * technique: inside the `EffectAsset`, which technique will be used? (default to 0)
 * defines: what value the shader macros have? (for shader variants) (default all to 0, or in-shader specified default value)
@@ -94,40 +98,44 @@ mat.initialize({
   defines: { USE_RGBE_CUBEMAP: true }
 });
 ```
-With all these information, the `Material` is properly initialized, and ready to use in any Renderable Component.
+With this information, the `Material` is properly initialized, and ready to use in any Renderable Component.
 
-Note，**if the material is intended to be used on any kind of `SkinningModel`, be sure to enable the `USE_SKINNING` shader macro.**
+Note: **if the material is intended to be used on any kind of `SkinningModel`, be sure to enable the `USE_SKINNING` shader macro.**
 
 Knowing which `EffectAsset` is currently using, we can specify all the shader properties:
 ```ts
 mat.setProperty('cubeMap', someCubeMap);
 console.log(mat.getProperty('cubeMap') === someCubeMap); // true
 ```
-These properties are assigned inside the material, which is just an asset on itself, and have't connected to the any model.
+These properties are assigned inside the material, which is just an asset on itself, and have't connected to any model.
 
-To make the material taking effect on some specific model, it needs to be attached to a `RenderableComponent`.<br>
-Any component that accepting a material parameter (ModelComponent, SkinningModelComponent, etc.) is inherited from it.
+To apply the material on a specific model, it needs to be attached to a `RenderableComponent`.<br>
+Any component that accepts a material parameter (ModelComponent, SkinningModelComponent, etc.) is inherited from it.
 ```ts
 const comp = someNode.getComponent(ModelComponent);
 comp.material = mat;
 comp.setMaterial(mat, 0); // same as last line
 ```
-According to the number of submodels, `RenderableComponent` may reference multiple `Material`s:
+According to the number of sub-models, `RenderableComponent` may reference multiple `Material`s:
 ```ts
-comp.setMaterial(mat, 1); // assign to second submodel
+comp.setMaterial(someOtherMaterial, 1); // assign to second sub-model
 ```
 
-The same `Material` can be attached to multiple `RenderableComponent` too, we omit that here.<br>
-But when one of the material-sharing models needs to customize some property,<br>
-you need to get a copied instance of the material asset, aka. `MaterialInstance`, from the `RenderableComponent`, by calling:
+The same `Material` can be attached to multiple `RenderableComponent` too:<br>
 ```ts
 const comp2 = someNode2.getComponent(ModelComponent);
+comp2.material = mat; // the same material above
+```
+
+When one of the material-sharing models needs to customize some property,<br>
+you need to get a copied instance of the material asset, aka. `MaterialInstance`, from the `RenderableComponent`, by calling:
+```ts
 const mat2 = comp2.material; // copy constructor, now `mat2` is an `MaterialInstance`, and every change made to `mat2` only affect the `comp2` instance
 ```
 The biggest difference between `Material` asset and `MaterialInstance` is,<br>
 `MaterialInstance` is definitively attached to one `RenderableComponent` at the beginning of its life cyle, while `Material` has no such limit.
 
-For a already initialized material, if you need to re-initialize, just re-invoke the `initialize` function, to rebuild everything.
+For an already initialized material, if you need to re-initialize it, just re-invoke the `initialize` function, to rebuild everything.
 ```ts
 mat.initialize({
   effectName: 'builtin-standard',
