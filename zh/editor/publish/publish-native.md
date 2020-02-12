@@ -59,7 +59,7 @@ jsval_to_string(cx, returnParam, &url);
 - upsideDown: 屏幕直立，上下顛倒
 
 #### 生成 App Bundle (Google Play)
-勾选该项即可将游戏打包成 App Bundle 格式用于上传到 Google Play 商店。具体请参考 官方文档（需要使用 VPN）
+勾选该项即可将游戏打包成 App Bundle 格式用于上传到 Google Play 商店。具体请参考 [官方文档](https://developer.android.com/guide/app-bundle/)（需要使用 VPN）
 
 #### Target API Level
 
