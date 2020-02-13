@@ -75,11 +75,11 @@ jsval_to_string(cx, returnParam, &url);
 
 **注意**：
 
-    - 当你选择一个 ABI 构建完成之后，在不 Clean 的情况下，构建另外一个 ABI，此时两个 ABI 的 so 都会被打包到 apk 中，这个是 Android Studio 默认的行为。若用 Android Studio 导入工程，选择一个 ABI 构建完成之后，先执行一下 **Build  -> Clean Project** 再构建另外一个 ABI，此时只有后面那个 ABI 会被打包到 apk 中。
+- 当你选择一个 ABI 构建完成之后，在不 Clean 的情况下，构建另外一个 ABI，此时两个 ABI 的 so 都会被打包到 apk 中，这个是 Android Studio 默认的行为。若用 Android Studio 导入工程，选择一个 ABI 构建完成之后，先执行一下 **Build  -> Clean Project** 再构建另外一个 ABI，此时只有后面那个 ABI 会被打包到 apk 中。
 
-    - 项目工程用 Android Studio 导入后，是一个独立的存在，不依赖于构建面板。如果需要修改 ABI，直接修改 **gradle.properties** 中的 **PROP_APP_ABI** 属性即可。
+- 项目工程用 Android Studio 导入后，是一个独立的存在，不依赖于构建面板。如果需要修改 ABI，直接修改 **gradle.properties** 中的 **PROP_APP_ABI** 属性即可。
 
-![modify abi](publish-native/modify_abi.png)
+    ![modify abi](publish-native/modify_abi.png)
 
 #### 密钥库
 
@@ -116,7 +116,7 @@ Android 要求所有 APK 必须先使用证书进行数字签署，然后才能�
 
 参见 Android Orientation 选项介绍
 
-## 构建原生工程
+## 构建编译原生工程
 
 选择发布平台，设置了初始场景以及对应平台配置项后，就可以开始构建了，点击右下角的 `构建` 按钮，开始构建流程。
 
