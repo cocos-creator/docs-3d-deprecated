@@ -124,13 +124,13 @@ Android 要求所有 APK 必须先使用证书进行数字签署，然后才能�
 
 ![native projects](publish-native/native_projects.png)
 
-图中红框所示的就是不同原生平台的工程，接下来您只要使用原生平台对应的 IDE （如 Xcode、Android Studio、Visual Studio）打开这些工程，就可以进行进一步的编译、预览、发布操作了。关于原生平台 IDE 的使用请搜索相关信息，这里就不再赘述了。下面简单介绍一下各个平台的手动编译方式：
+图中红框所示的就是不同原生平台的工程，接下来您只要使用原生平台对应的 IDE （如 Xcode、Android Studio、Visual Studio）打开这些工程，就可以进行进一步的编译、预览、发布操作了。下面简单介绍一下各个平台的手动编译方式：
 
 - iOS 平台：使用 Xcode 打开构建目录下的 native\frameworks\runtime-src\proj.ios_mac\.xcodeproj 文件，在 Xcode 面板 General -> Signing 中设置签名，在 Xcode 左上方选择连接的设备后点击编译按钮进行编译运行。
 
 - Android 平台：过 Android Studio 打开工程，如版本升级根据提示下载缺失的工具即可，再进行编译运行。
 
-- Mac 平台：使用 Xcode 打开构建目录下的 native\frameworks\runtime-src\proj.ios_mac 文件夹后即可预览编译。
+- Mac 平台：使用 Xcode 打开构建目录下的 native\frameworks\runtime-src\proj.ios_mac 文件夹后即可编译预览。
 
 - Windows 平台：使用 Visual Studio （推荐使用2017）打开构建目录下的 native\frameworks\runtime-src\proj.win32 文件夹内的 .sln 文件或者直接双击该文件，编译运行。在安装 Visual Studio 时，请注意需要勾选安装 Windows 8.1 版本 SDK。
 
