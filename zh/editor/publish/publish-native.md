@@ -104,7 +104,7 @@ Android 要求所有 APK 必须先使用证书进行数字签署，然后才能�
 
 参见 Android Package Name 选项介绍
 
-#### iOS 平台选项
+### iOS 平台选项
 
 ![iOS 平台选项](publish-native/ios_options.png)
 
@@ -130,7 +130,7 @@ Android 要求所有 APK 必须先使用证书进行数字签署，然后才能�
 
 - Mac 平台：使用 Xcode 打开构建目录下的 native\frameworks\runtime-src\proj.ios_mac 文件夹后即可预览编译。
 
-- Windows 平台：使用 Visual Studio （推荐使用2017）打开构建目录下的 native\frameworks\runtime-src\proj.win32 文件夹内的 .sln 文件或者直接双击该文件，编译运行。注意，在安装 Visual Studio 时，请注意需要勾选安装 Windows 8.1 版本 SDK。
+- Windows 平台：使用 Visual Studio （推荐使用2017）打开构建目录下的 native\frameworks\runtime-src\proj.win32 文件夹内的 .sln 文件或者直接双击该文件，编译运行。在安装 Visual Studio 时，请注意需要勾选安装 Windows 8.1 版本 SDK。
 
 ## 使用原生工程
 
