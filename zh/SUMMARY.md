@@ -33,7 +33,7 @@
   - [YAML 101](material-system/yaml-101.md)
   - [Effect Syntax](material-system/effect-syntax.md)
   - [Pass Params](material-system/pass-parameter-list.md)
-  - [Builtin Shader Variables](material-system/builtin-shader-variables.md)
+  - [Builtin Shader Uniforms](material-system/builtin-shader-uniforms.md)
 
 - [声音](audio-system/overview.md)
 

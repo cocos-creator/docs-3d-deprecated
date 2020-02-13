@@ -149,6 +149,7 @@ CCGetWorldMatrix(matWorld);
 mat4 matWorld, matWorldIT;
 CCGetWorldMatrixFull(matWorld, matWorldIT);
 ```
+关于更多 shader 内置 uniform，可以参考 [完整列表](builtin-shader-uniforms.md)。
 
 ### Fragment Ouput<sup id="a1">[1](#f1)</sup>
 为对接引擎渲染管线，我们提供了 `CCFragOutput` 工具函数，对所有无光照 shader，可直接在 fs 返回时类似这样写：
