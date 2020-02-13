@@ -6,7 +6,7 @@ Cocos Creator 3D 自 v1.0.3 起正式支持原生平台，点击菜单栏的 **�
 
 ## 环境配置
 
-发布原生平台需要配置一些必要的环境，详情请参考 [原生环境配置](setup-native-development.md)
+发布原生平台需要配置一些必要的环境，详情请参考 [原生环境配置]。(setup-native-development.md)
 
 ## 构建选项
 
@@ -94,7 +94,7 @@ Android 要求所有 APK 必须先使用证书进行数字签署，然后才能�
 
 #### 生成 App Bundle (Google Play)
 
-勾选该项即可将游戏打包成 App Bundle 格式用于上传到 Google Play 商店。具体请参考 [官方文档](https://developer.android.com/guide/app-bundle/)（需要使用 VPN）
+勾选该项即可将游戏打包成 App Bundle 格式用于上传到 Google Play 商店。具体请参考 [官方文档](https://developer.android.com/guide/app-bundle/)（需要使用 VPN）。
 
 ### Mac 平台选项
 
@@ -120,11 +120,11 @@ Android 要求所有 APK 必须先使用证书进行数字签署，然后才能�
 
 选择发布平台，设置了初始场景以及对应平台配置项后，就可以开始构建了，点击右下角的 `构建` 按钮，开始构建流程。
 
-构建结束后，我们得到的是一个标准的 cocos2d-x 工程，和使用 Cocos Console 新建的工程有同样的结构。点击发布路径旁边的 **打开** 按钮，就会在操作系统的文件管理器中打开构建发布路径，例如 `build/native`，展开目录至下图所示，里面就包含了所有原生构建工程。目前编辑器尚未集成编译功能，需要手动在相应平台的 IDE 中打开构建好的原生工程，进行进一步的预览、调试和发布。
+构建结束后，我们得到的是一个标准的 cocos2d-x 工程，和使用 Cocos Console 新建的工程有同样的结构。点击发布路径旁边的 **打开** 按钮，就会在操作系统的文件管理器中打开构建发布路径，例如 `build/native`，展开目录至下图所示，里面就包含了所有原生构建工程。目前编辑器尚未集成编译功能，需要手动在相应平台的 IDE （如 Xcode、Android Studio、Visual Studio）中打开构建好的原生工程，进行进一步的预览、调试和发布。
 
 ![native projects](publish-native/native_projects.png)
 
-图中红框所示的就是不同原生平台的工程，接下来您只要使用原生平台对应的 IDE （如 Xcode、Android Studio、Visual Studio）打开这些工程，就可以进行进一步的编译、预览、发布操作了。下面简单介绍一下各个平台的手动编译方式：
+图中红框所示的就是不同原生平台的工程，下面简单介绍一下各个平台的手动编译方式：
 
 - iOS 平台：使用 Xcode 打开构建目录下的 native\frameworks\runtime-src\proj.ios_mac\.xcodeproj 文件，在 Xcode 面板 General -> Signing 中设置签名，在 Xcode 左上方选择连接的设备后点击编译按钮进行编译运行。
 
