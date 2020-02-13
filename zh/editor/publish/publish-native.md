@@ -6,7 +6,7 @@ Cocos Creator 3D 自 v1.0.3 起正式支持原生平台，点击菜单栏的 **�
 
 ## 环境配置
 
-发布原生平台需要配置一些必要的环境，详情请参考 [原生环境配置]。(setup-native-development.md)
+发布原生平台需要配置一些必要的环境，详情请参考 [原生环境配置](setup-native-development.md)。
 
 ## 构建选项
 
@@ -53,7 +53,7 @@ jsval_to_string(cx, returnParam, &url);
 
 #### Polyfills
 
-项目内如果使用到一些高版本的脚本语法时比如 `async \ await`，需要勾选此项。
+这里是脚本系统支持的一些新特性的 polyfills 选项，勾选后生成的项目会带上对应的 polyfills 也就是会增大包体，开发者可以根据实际需求选择需要的 polyfills, 这组选项暂时只有异步函数，后续将会开放更多功能。
 
 ### Android 平台选项
 
