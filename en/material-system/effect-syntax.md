@@ -7,8 +7,7 @@ Together they form a complete specification for the rendering process.
 
 We recommend editing effect files using Visual Studio Code with the official `Cocos Effect` plugin from the marketplace.
 
-Note: This document is targeted at technical artists or graphic designers,<br>
-if you are a design artist who needs specific shader customizations, please contact your technical artist or programmer for support.
+> Note: This document is targeted at technical artists or graphic designers, if you are a design artist who needs specific shader customizations, please contact your technical artist or programmer for support.
 
 ## Framework Syntax
 Using `builtin-unlit.effect` as an example, it looks something like this:
@@ -34,7 +33,7 @@ so we made a quick intro to the most commonly used syntaxes and language feature
 The shader entries are the only required fields, namely `vert` and `frag`, in the format of `shaderChunkName:entryFunctionName`.<br>
 Normally the `main` function shouldn't be specified in shader, for version-specific wrappers will be inserted at compile-time,<br>
 assigning the return value of the specified function to the ouput of current shader stage. (gl_Position or the final output color).<br>
-You can find the complete parameter list [here](pass-parameter-list.md).
+You can find all the optional parameter list [here](pass-parameter-list.md).
 
 ## Shader Chunks
 Syntactically shader chunks are a superset of GLSL, all the extended features will be processed immediately at resource compile-time.<br>
@@ -99,7 +98,8 @@ Declarations for the above case are：
 ```
 The first line declares a macro named `LAYERS`, with possible range of [4, 5];<br>
 The second line declares a macro named `METALLIC_SOURCE`, with four possible options: 'r', 'g', 'b', 'a'.<br>
-Note every tag accepts a single parameter, in the syntax of YAML.
+
+> Note: every tag accepts a single parameter, in the syntax of YAML.
 
 ### Functional Macros
 Due to lack of native support in WebGL platform, functional macros are provided as an effect compile-time feature, all references will be expanded in the output shader.<br>
@@ -191,7 +191,8 @@ vec4 frag () {
 }
 ```
 Under the framework writing your own surface shader or even shading algorithm becomes staightforward;<br>
-Note: the `CCFragOutput` function should not be overriden, unless using custom render pipelines.
+
+> Note: the `CCFragOutput` function should not be overriden, unless using custom render pipelines.
 
 ### WebGL 1 fallback Support
 The effect compiler provides fallback conversion from GLSL 300 ES to GLSL 100 automatically, for WebGL 1.0 only support GLSL 100 syntax. this should be transparent to developers for the most time.<br>
@@ -255,5 +256,5 @@ This means lots of wasted space, and some driver implementation might not comple
 
 <b id="f1">[1]</b> Shaders for systems with procedurally generated mesh, like particles, sprites, post-effects, etc. may handle things a bit differently [↩](#a1)<br>
 <b id="f2">[2]</b> [OpenGL 4.5, Section 7.6.2.2, page 137](http://www.opengl.org/registry/doc/glspec45.core.pdf#page=159) [↩](#a2)<br>
-<b id="f3">[3]</b> Note in the example code, UBO `IncorrectUBOOrder` has a total size 32. Actually this is still a platform-dependent data, due to what it seems like an oversight in the GLSL specification. More discussions can be found [here](https://bugs.chromium.org/p/chromium/issues/detail?id=988988) [↩](#a3)<br>
+<b id="f3">[3]</b> In the example code, UBO `IncorrectUBOOrder` has a total size 32. Actually this is still a platform-dependent data, due to what it seems like an oversight in the GLSL specification. More discussions can be found [here](https://bugs.chromium.org/p/chromium/issues/detail?id=988988) [↩](#a3)<br>
 <b id="f4">[4]</b> [Interface Block - OpenGL Wiki](https://www.khronos.org/opengl/wiki/Interface_Block_(GLSL)#Memory_layout) [↩](#a4)

@@ -28,10 +28,10 @@ YAML 是一门面向数据序列化的，对人类书写十分友好的语言，
 对于不熟悉这门语言的开发者可能会有一点门槛，我们在 [这里](yaml-101.md) 快速总结了一下最常用的一些语法和语言特性，有需要可以参考。
 
 ## Pass 中可配置的参数
-vert 和 frag 声明了当前 pass 使用的 shader, 格式为 `片段名:入口函数名`<br>
-这个名字可以是本文件中声明的 shader 片段名, 也可以是引擎提供的标准头文件.
-片段中不应出现 main 函数入口, 在 effect 编译期会插入 wrapper，将指定入口函数的返回值赋值给当前 shader 的输出 (gl_Position 或最终的输出颜色).<br>
-其他可配置 GL 参数及默认值见 [完整列表](pass-parameter-list.md).
+每个 Pass 只有两个必填参数：vert 和 frag 声明了当前 pass 使用的 shader, 格式为 `片段名:入口函数名`<br>
+这个名字可以是本文件中声明的 shader 片段名, 也可以是引擎提供的标准头文件。
+片段中不应出现 main 函数入口, 在 effect 编译期会插入 wrapper，将指定入口函数的返回值赋值给当前 shader 的输出（gl_Position 或最终的输出颜色）。<br>
+所有其他其他可选参数及默认值见 [完整列表](pass-parameter-list.md)。
 
 ## Shader 片段
 Shader 片段在语法上基于 GLSL 300 ES，在资源加载时有相应的预处理编译流程。
