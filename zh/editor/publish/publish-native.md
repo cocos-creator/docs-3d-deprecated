@@ -10,7 +10,7 @@ Cocos Creator 3D 自 v1.0.3 起正式支持原生平台，点击菜单栏的 **�
 
 ## 构建选项
 
-一些通用的构建配置选项，请参照 [通用构建参数介绍](build-options.md)。
+一些通用构建参数的配置，请参照 [通用构建参数介绍](build-options.md)。
 
 ![native platform](publish-native/native_platform.jpg)
 
