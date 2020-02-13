@@ -2,7 +2,7 @@
 
 Cocos Creator 3D 自 v1.0.3 起正式支持原生平台，点击菜单栏的 **项目 -> 构建发布** 选项，打开构建发布面板，参照文档配置完项目信息后即可打包。
 
-支持的原生平台包括 Android、iOS、Mac、Windows 四个，其中 iOS、Mac 和 Windows 的选项只能在相应的操作系统中才会出现，目前原生平台是集合在一起打包的，打包一次即可生成所有原生平台的项目包。
+支持的原生平台包括 Android、iOS、Mac、Windows 四个，其中 iOS、Mac 和 Windows 的选项只能在相应的操作系统中才会出现，目前原生平台是集合在一起打包的，可以在同一界面上配置各个原生平台的参数选项，打包一次即可生成所有原生平台的项目包。
 
 ## 环境配置
 
@@ -33,11 +33,12 @@ jsval_to_string(cx, returnParam, &url);
 ### Native 选项
 
 由于目前构建机制上的调整，不同平台的处理均以插件的形式注入，在选择完原生平台后，将会看到除了原生具体平台的选项外还有 `native` 的选项，native 相关选项配置后将会影响到所有的原生平台。
+
 ![Native 选项](publish-native/native_options.jpg)
 
-#### 选择源码模板（template）
+#### 选择源码模板（Template）
 
-在 native 的树形控件内，对应的 **模板/template** 下拉菜单中有两种可用的引擎模板，我们可以从中选择一种：
+在 native 选项的 **模板 (Template)** 下拉菜单中有两种可用的引擎模板，我们可以从中选择一种：
 
 - default，使用默认的 cocos2d-x 源码版引擎构建项目
 - link，与 default 模板不同的是，link 模板不会拷贝 cocos2d-x 源码到构建目录下，而是使用共享的 cocos2d-x 源码。这样可以有效减少构建目录占用空间，以及对 cocos2d-x 源码的修改可以得到共享。
@@ -45,11 +46,10 @@ jsval_to_string(cx, returnParam, &url);
 关于源码引擎的概念，可以参照下文：
 
     cocos2d-x 引擎中包括源码引擎。他们适用的范围是：
-
     - 源码引擎初次构建和编译某个工程时需要很长的时间编译 C++ 代码，视电脑配置而定，这个时间可能在 5~20 分钟。对于同一个项目，已经编译过一次之后，下次再编译需要的时间会大大缩短。
     - 源码引擎构建出的工程，使用原生开发环境编译和运行（如 Android Studio、Xcode 等 IDE），是可以进行调试和错误捕获的。
 
-    目前 Cocos Creator 3D 安装目录下已经包含了自带的 cocos2d-x 源码引擎，在安装目录下的 resources/3d/cocos2d-x-lite 文件夹内可以查看到。
+目前 Cocos Creator 3D 安装目录下已经包含了自带的 cocos2d-x 源码引擎，在安装目录下的 resources/3d/cocos2d-x-lite 文件夹内可以查看到。
 
 #### Polyfills
 
@@ -106,7 +106,7 @@ Android 要求所有 APK 必须先使用证书进行数字签署，然后才能�
 
 #### iOS 平台选项
 
-![iOS 平台选项](publish-native/iOS_options.png)
+![iOS 平台选项](publish-native/ios_options.png)
 
 #### Bundle Identifier 包名
 
