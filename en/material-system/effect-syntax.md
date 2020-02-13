@@ -5,13 +5,13 @@ Cocos Effect is a single-source embedded domain-specific language, based on YAML
 The YAML part declares the general framework, while GLSL part specifies the actual shader.<br>
 Together they form a complete specification for the rendering process.
 
-We recommend editing effect files using Visual Studio Code with the official `Cocos Effect` plugin from marketplace.
+We recommend editing effect files using Visual Studio Code with the official `Cocos Effect` plugin from the marketplace.
 
-Note: This document is targeted at Technical Artists or Graphics Developers,<br>
-if you are design artists who need specific shader customization needs, please contact your TA or programmer for support and give them this doc.
+Note: This document is targeted at technical artists or graphic designers,<br>
+if you are a design artist who needs specific shader customizations, please contact your technical artist or programmer for support.
 
 ## Framework Syntax
-Using `builtin-unlit.effect` as an example, it contains some thing like this:
+Using `builtin-unlit.effect` as an example, it looks something like this:
 
 ![effect](effect.png)
 
@@ -23,11 +23,11 @@ const mat = new cc.Material();
 mat.initialize({ effectName: 'builtin-standard' }); // now `mat` is a valid standard material
 ```
 And the names are automatically generated based on its file path (relative to the `assets/effects` folder in your project) and file name(extension excluded). <br>
-The builtin effects are located directly inside the `assets/effects` folder in the internal database, so the effect names doesn't contain a path.<br>
+The builtin effects are located directly inside the `assets/effects` folder in the internal database, so the effect names don't contain a path.<br>
 
 ## About YAML
-YAML is a human-readable data-serialization language, with flexible minimal syntax, which is an ideal choice for easy configuration.<br>
-But the syntax maybe somewhat, unique, at first for those who are unfamiliar with the language,<br>
+YAML is a human-readable data-serialization language, with a flexible, minimal syntax and easily configurable, which makes it an ideal choice.<br>
+But the syntax maybe somewhat unique, at first for those who are unfamiliar with the language,<br>
 so we made a quick intro to the most commonly used syntaxes and language features [here](yaml-101.md) for your reference.
 
 ## Configurable Pass Parameters
@@ -65,16 +65,16 @@ Relevant details:
 
 ### Pre-processing Macros
 Currently the effect system tends to take advantage of the language built-in pre-processing macros to create shader variants.<br>
-The effect compiler will collect the macros appeared in shaders, and declarations will be inserted accordingly at runtime.<br>
+The effect compiler will collect the macros that appear in shaders, and declarations will be inserted accordingly at runtime.<br>
 So for the most part you can use them without thinking about the effect compiler,<br>
 while material inspector will automatically integrate both macros and shader properties into a natual editting interface.<br>
 Relevant details:
-* To type check as many branches as possible at effect compile-time, the strategy currently taken is to set all macros to `1` (or its given default value) first, then send it down the type check backend; so make sure this combination works (or if not, maybe you need numerical macros, specified in the next section);
+* To type check as many branches as possible at effect compile-time, the strategy currently taken is to set all macros to `1` (or its given default value) before doing the actual check; so make sure this combination works (or if not, maybe you need numerical macros, specified in the next section);
 * All the macros that are not enabled at runtime will be explicitly given a value of 0, so please avoid using `#ifdef` or `#if defined` (**except the GLSL built-in macros, like extension indicators with `GL_` prefix**), for they would alway be true；
-* Hash value will be calculated for each macro combination at runtime. For a single shader, the process is the most efficient when there are less than 2^32 combinations (a standard integer range), that means 32 boolean macros switches (or less if there are numerical macros). So please try to keep in this range to maintain optimal performance;
+* Hash values will be calculated for each macro combination at runtime. For a single shader, the process is the most efficient when there are less than 2^32 combinations (a standard integer range), that means 32 boolean macros switches (or less if there are numerical macros). So please try to keep in this range to maintain optimal performance;
 
 ### Macro Tags
-Although the effect compiler will try to be smart and collect every pre-processing branches, sometimes there are more complicated cases:
+Although the effect compiler will try to be smart and collect all pre-processing branches, sometimes there are more complicated cases:
 ```glsl
 // macro defined within certain numerical 'range'
 #if LAYERS == 4
@@ -191,11 +191,11 @@ vec4 frag () {
 }
 ```
 Under the framework writing your own surface shader or even shading algorithm becomes staightforward;<br>
-Note that the `CCFragOutput` function should not be overriden, unless using custom render pipelines.
+Note: the `CCFragOutput` function should not be overriden, unless using custom render pipelines.
 
 ### WebGL 1 fallback Support
 The effect compiler provides fallback conversion from GLSL 300 ES to GLSL 100 automatically, for WebGL 1.0 only support GLSL 100 syntax. this should be transparent to developers for the most time.<br>
-But currently the automatic conversion only supports some basic usage, and if some post-100 features or extensions were used, (texelFetch, textureGrad, etc.)<br>
+Currently the automatic conversion only supports some basic usage, and if some post-100 features or extensions were used, (texelFetch, textureGrad, etc.)<br>
 you have to do your own porting using the language built-in \_\_VERSION__ macro:
 ```glsl
 vec4 fragTextureLod (samplerCube tex, vec3 coord, float lod) {
@@ -218,11 +218,11 @@ First the conclusion, the final rules are, every non-sampler uniform should be s
 * for array typed members, size of each element should be no less than a vec4;
 * any member ordering that introduces a padding will be rejected;
 
-These rules will be checked rigorously at effect compile-time, and throws detailed,implicit padding related compile error.
+These rules will be checked rigorously at effect compile-time and throws detailed, implicit padding related compile error.
 
-This might sounds overly-strict at first, but for good reasons:<br>
-Firstly, UBO is a much better basic unit to efficiently reuse data, so discrete declaration is no longer an option;<br>
-Secondly, to this day, many platforms, including WebGL 2.0 only support one platform-independent memory layout, namely std140, and it has many restrictions<sup id="a2">[2](#f2)</sup>:
+This might sound overly-strict at first, but it's for a few good reasons:<br>
+First, UBO is a much better basic unit to efficiently reuse data, so discrete declaration is no longer an option;<br>
+Second, currently many platforms, including WebGL 2.0 only support one platform-independent memory layout, namely **std140**, and it has many restrictions<sup id="a2">[2](#f2)</sup>:
 * All vec3 members will be aligned to vec4：
 ```glsl
 uniform ControversialType {
@@ -249,9 +249,9 @@ uniform CorrectUBOOrder {
 }; // total of 16 bytes
 ```
 
-This means lots of wasted space, and some driver implementation might not completely comform to the standard<sup id="a4">[4](#f4)</sup>, hence all the strict checking procedure to help clear some pretty insidious bugs.<br>
+This means lots of wasted space, and some driver implementation might not completely conform to the standard<sup id="a4">[4](#f4)</sup>, hence all the strict checking procedure help to clear some pretty insidious bugs.<br>
 
-Note that the actual uniform type can differ from the public interfaces the effect exposes to artists and runtime properties. Through [property target](pass-parameter-list.md#Properties) system, every single channel can be manipulated independently, without restriction of the original uniform.
+> Note: the actual uniform type can differ from the public interfaces the effect exposes to artists and runtime properties. Through [property target](pass-parameter-list.md#Properties) system, every single channel can be manipulated independently, without restriction of the original uniform.
 
 <b id="f1">[1]</b> Shaders for systems with procedurally generated mesh, like particles, sprites, post-effects, etc. may handle things a bit differently [↩](#a1)<br>
 <b id="f2">[2]</b> [OpenGL 4.5, Section 7.6.2.2, page 137](http://www.opengl.org/registry/doc/glspec45.core.pdf#page=159) [↩](#a2)<br>

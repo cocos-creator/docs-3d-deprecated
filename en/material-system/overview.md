@@ -7,7 +7,7 @@ The general structure of the system is as follows:
 [![Assets](material.png "Click to view diagram source")](material.dot)
 
 ## EffectAsset
-`EffectAsset` is an shading procedure description file, written by both engine and game developers.<br>
+`EffectAsset` is a shading procedure description file, written by both engine and game developers.<br>
 It contains the mathematical calculations and algorithms for calculating the color of each pixel rendered.<br>
 When the [builtin effects](#builtins) are not the best fit for your need,<br>
 writing your own effect can give you all the capabilities to customize the rendering process.<br>
@@ -83,9 +83,9 @@ There is a lot to unpack here, but for the most part the details won't be of any
 All the necessary info for runtime shading procedure setup on any target platform (and even editor support) is here in advance to guarantee portability and performance, and we will trim out all the redundant info at build-time to make sure maximized space efficiency.
 
 ## Material
-`Material` define how a surface should be rendered, by including references to textures it uses, tiling information, color tints and more.<br>
+`Material` defines how a surface should be rendered, by including references to textures it uses, tiling information, color tints and more.<br>
 The available options for a `Material` depend on which `EffectAsset` it is using.<br>
-Essential parameters for setting up an `Material` object are:
+Essential parameters for setting up a `Material` object are:
 * `effectAsset` or `effectName`: effect reference: which `EffectAsset` will be used? (must specify)
 * technique: inside the `EffectAsset`, which technique will be used? (default to 0)
 * defines: what value the shader macros have? (for shader variants) (default all to 0, or in-shader specified default value)
@@ -100,14 +100,14 @@ mat.initialize({
 ```
 With this information, the `Material` is properly initialized, and ready to use in any Renderable Component.
 
-Note: **if the material is intended to be used on any kind of `SkinningModel`, be sure to enable the `USE_SKINNING` shader macro.**
+> Note: **if the material is intended to be used on any type of `SkinningModel`,<br>be sure to enable the `USE_SKINNING` shader macro.**
 
 Knowing which `EffectAsset` is currently using, we can specify all the shader properties:
 ```ts
 mat.setProperty('cubeMap', someCubeMap);
 console.log(mat.getProperty('cubeMap') === someCubeMap); // true
 ```
-These properties are assigned inside the material, which is just an asset on itself, and have't connected to any model.
+These properties are assigned inside the material, which is just an asset by itself, and hasn't connected to any model.
 
 To apply the material on a specific model, it needs to be attached to a `RenderableComponent`.<br>
 Any component that accepts a material parameter (ModelComponent, SkinningModelComponent, etc.) is inherited from it.
