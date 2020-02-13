@@ -67,7 +67,7 @@ jsval_to_string(cx, returnParam, &url);
 
 #### Target API Level
 
-设置编译 Android 平台所需的 Target API Level。点击旁边的 `Set Android SDK` 按钮即可快速跳转到配置页，具体配置请参考 [原生环境配置](setup-native-development.md)
+设置编译 Android 平台所需的 Target API Level。点击旁边的 `Set Android SDK` 按钮即可快速跳转到配置页，具体配置请参考 [原生环境配置](setup-native-development.md)。
 
 #### APP ABI
 
@@ -102,7 +102,7 @@ Android 要求所有 APK 必须先使用证书进行数字签署，然后才能�
 
 #### Bundle Identifier 包名
 
-参见 Android Package Name 选项介绍
+参见 Android Package Name 选项介绍。
 
 ### iOS 平台选项
 
@@ -110,11 +110,11 @@ Android 要求所有 APK 必须先使用证书进行数字签署，然后才能�
 
 #### Bundle Identifier 包名
 
-参见 Android Package Name 选项介绍
+参见 Android Package Name 选项介绍。
 
 #### Orientation 屏幕方向
 
-参见 Android Orientation 选项介绍
+参见 Android Orientation 选项介绍。
 
 ## 构建编译原生工程
 
