@@ -19,7 +19,7 @@ designHeight | 必填 | 960 | 游戏视图分辨率高度
 - | - | - | -
 polyfills | 选填 | { asyncFunctions: true } | 自 v1.0.3 版本起，构建支持一些新特性的 polyfills ，主要是在打包脚本时会做对应处理，开发者可以根据实际需求选择需要的 polyfills, 这组选项暂时只有`异步函数`，后续将会开放更多功能。
 embedWebDebugger | 选填 | false | 是否使用 vConsole, vConsole 类似 DevTools 的迷你版，用于辅助调试。
-orientation | 必填 | 'auto' | 设备方向，可选值为` 'auto' | 'landscape' | 'portrait'`.
+orientation | 必填 | 'auto' | 设备方向，可选值为` 'auto'、'landscape'、'portrait'`.
 
 ### 预览 URL
 自 v1.0.3 版本起，构建支持同时预览多个 web 项目，因而构建的预览 URL 不再是统一的而是每个构建任务都会有一个单独的预览 URL 互不干扰。点击 URL 即可自动打开浏览器进行预览。具体的预览 URL 拼接规则为 `${偏好设置里预览的 IP 地址}:${编辑器预览端口号}/${构建平台}/${构建任务名}/index.html`；
