@@ -33,7 +33,7 @@
   - [YAML 101](material-system/yaml-101.md)
   - [Effect Syntax](material-system/effect-syntax.md)
   - [Pass Params](material-system/pass-parameter-list.md)
-  - [Builtin Shader Variables](material-system/builtin-shader-variables.md)
+  - [Builtin Shader Uniforms](material-system/builtin-shader-uniforms.md)
 
 - [声音](audio-system/overview.md)
 
@@ -216,7 +216,3 @@
   - [命令行发布项目](editor/publish/publish-in-command-line.md)
   - [定制项目的构建模版](editor/publish/custom-project-build-template.md)
   - [构建流程简介与常见错误处理](editor/publish/build-guide.md)
-
-- [测试规范](tests/index.md)
-  - [测试流程文档](tests/qa-process.md)
-  - [单元测试](tests/unit-test.md)

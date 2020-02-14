@@ -8,8 +8,8 @@
 [**物理材质**](physics-material.md) | 介绍了 Cocos Creator 3D 中的物理材质资源
 [**刚体组件**](physics-rigidbody.md) | 介绍了 RigidBody 组件的一些代码使用示例
 [**物理事件**](physics-event.md) | 介绍了 Cocos Creator 3D 中的物理事件
-[**分组掩码**](physics-group-mask.md) | 介绍了物理中分组和掩码的使用
-[**射线检测**](physics-raycast.md) | 介绍了对物理碰撞盒的射线检测功能 (目前结合了 render-scene 的射线检测接口介绍)
+[**分组掩码**](physics-group-mask.md) | 介绍了物理过滤检测中分组和掩码的使用
+[**射线检测**](physics-raycast.md) | 介绍了对物理碰撞盒的射线检测功能
 ---
 
 继续前往 [Collider 组件](physics-collider.md) 说明文档。

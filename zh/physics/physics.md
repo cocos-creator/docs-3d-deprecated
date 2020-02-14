@@ -1,6 +1,6 @@
 # 物理简介
 
-Cocos Creator 3D 目前支持轻量的碰撞检测系统 Builtin 和具有物理模拟的物理引擎 Cannon.js （后续还会接入更为强大的 Ammo.js），并为用户提供了高效的组件化工作流程和便捷的使用方法。
+Cocos Creator 3D 目前支持轻量的碰撞检测系统 Builtin 和具有物理模拟的物理引擎 Cannon.js ，以及功能完善强大的 Bullet 的 js / wasm 版本 Ammo.js，并为用户提供了高效的组件化工作流程和便捷的使用方法。
 
 ## 物理世界和元素
 
