@@ -1,14 +1,14 @@
 # Summary
 
-## 新手入门
+## Beginners Guide
 
-[介绍](index.md)
+[Introduction](index.md)
 
-- [启动](getting-started/index.md)
+- [Getting Started](getting-started/index.md)
   - [Dashboard](getting-started/dashboard/index.md)
   - [Hello world!](getting-started/helloworld/index.md)
-  - [快速上手：制作第一个游戏](getting-started/first-game/index.md)
-  - [注意事项](getting-started/attention/index.md)
+  - [Quick Start: First Game](getting-started/first-game/index.md)
+  - [Caution!](getting-started/attention/index.md)
 
 ## 引擎手册
 
