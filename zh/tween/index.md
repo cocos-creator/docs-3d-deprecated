@@ -2,13 +2,14 @@
 
 为了全面兼容和保持 Cocos Creator 2D 缓动系统的使用体验，在 V1.1 版本 Cocos Creator 3D 移植了所有的 Cocos Creator 2D 功能实现。
 
-**注：action 已经被废弃了，请使用 tween**;
-**注：在 V1.1 版本开始将不再依赖 tween.js，如果使用了 tween.js 的相关特性，请注意及时适配**；
+**注：`action` 已经被废弃了，请使用 `tween`**;
+**注：在 V1.0.3 版本开始将不再依赖 `tween.js`，如果使用了 `tween.js` 的相关特性，请注意及时适配**；
+**注：在 V1.0.4 版本开始，`to` 和 `by` 的可选属性中增加 `onStart，onUpdate，onComplete` 回调**;
 
 与此前 tween.js 不同的地方主要是可选属性，为以下内容：
 
-- easing 的值定义变动了（这里做了兼容性处理）
-- 除了 easing，其它属性都暂不支持（这里做了检查，控制台会有相应的警告）
+- `easing` 的值定义变动了（这里做了兼容性处理）
+- 除了 `easing，onStart，onUpdate，onComplete`，其它属性暂不支持（这里做了检查，控制台会有相应的警告）
 
 ## 简单示例
 
@@ -44,7 +45,7 @@ export class tweentest extends Component {
 
 ### repeat 语义
 
-此前 repeat 的语义为重复几次，但现在为了全面保持 Creator 2D 的设计，所以现在 repeat 为执行几次，即 repeat(1) 代表执行一次。
+此前 `repeat` 的语义为重复几次，但现在为了全面保持 Creator 2D 的设计，所以现在 `repeat` 为执行几次，即 `repeat(1)` 代表执行一次。
 
 ### 一些限制
 
@@ -54,7 +55,7 @@ export class tweentest extends Component {
 
 当执行`this.node.position.x = 1`这段代码的时候，只执行 Node position 的 getter，并没有执行 postion 的 setter，由于 dirty 并没有更新，就会导致渲染时使用的节点的 Transform 信息没有更新。
 
-目前，我们也不支持这样的调用，而是鼓励使用 setPostion 或 position 的 setter，即以下代码方式：
+目前，我们也不支持这样的调用，而是鼓励使用 `setPostion` 或 `position` 的 setter，即以下代码方式：
 
 ```
 let _pos = new Vec3(0, 1, 0);
@@ -90,6 +91,24 @@ this.node.setPosition(_pos);    // 这里将通过接口 setPosition
 | **show**          | **启用节点链上的渲染，缓动目标需要为 Node** |
 | **hide**          | **禁用节点链上的渲染，缓动目标需要为 Node** |
 | **removeSelf**    | **将节点移出场景树，缓动目标需要为 Node**   |
+
+### to 和 by 的可选属性
+
+定义如下:
+
+```
+interface ITweenOption {
+    easing?: TweenEasing | ((k: number) => number);
+    progress?: (start: number, end: number, current: number, ratio: number) => number;
+    onStart?: Function;
+    onUpdate?: Function;
+    onComplete?: Function;
+}
+```
+
+与 creator 2d 不同的是新增了`onStart，onUpdate，onComplete`等属性，这些属性是回调函数，调用时会传入缓动的目标。
+
+另外，`onUpdate`调用时还会多传入一个目前缓动的进行值，范围为`(0-1]`。
 
 **更多使用示例，请参考 [test-case-3d](https://github.com/cocos-creator/test-cases-3d)中的示例**。
 **更多详细介绍，请参考 Creator 的[使用缓动系统](https://docs.cocos.com/creator/manual/zh/scripting/tween.html)**。
