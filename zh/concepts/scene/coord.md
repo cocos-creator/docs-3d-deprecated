@@ -2,7 +2,7 @@
 
 ## 世界坐标系
 
-Cocos Creator 3D 的世界坐标系，采用笛卡尔右手坐标系，原点在左下角，x 向右，y 向上，z 向外。
+Cocos Creator 3D 的世界坐标系，采用笛卡尔右手坐标系，原点在左下角，x 向右，y 向上，z 向外，同时我们使用-z轴为正前方朝向。
 
 ![right hand](coord/right_hand.png)
 
