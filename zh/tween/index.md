@@ -100,15 +100,19 @@ this.node.setPosition(_pos);    // 这里将通过接口 setPosition
 interface ITweenOption {
     easing?: TweenEasing | ((k: number) => number);
     progress?: (start: number, end: number, current: number, ratio: number) => number;
-    onStart?: (target?: object) => {};
-    onUpdate?: (target?: object, ratio?: number) => {};
-    onComplete?: (target?: object) => {};
+    onStart?: (target: object) => {};
+    onUpdate?: (target: object, ratio: number) => {};
+    onComplete?: (target: object) => {};
 }
 ```
 
 与 creator 2d 不同的是新增了`onStart，onUpdate，onComplete`等属性，这些属性是回调函数，调用时会传入缓动的目标。
 
 另外，`onUpdate`调用时还会多传入一个目前缓动的进行值，范围为`(0-1]`。
+
+## 自动销毁
+
+从 v1.0.4 版本开始，当缓动目标为 `Node` 时，将会监听其销毁事件进行缓动的自动销毁，调用 `target` 方法也会自动更新监听。
 
 **更多使用示例，请参考 [test-case-3d](https://github.com/cocos-creator/test-cases-3d)中的示例**。
 **更多详细介绍，请参考 Creator 的[使用缓动系统](https://docs.cocos.com/creator/manual/zh/scripting/tween.html)**。
