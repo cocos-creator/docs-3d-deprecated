@@ -6,7 +6,7 @@
 ## 创建
 创建需要两个步骤:
 
-1. 在 `Hierarchy(层级管理器)` 中点击鼠标右键，在弹出菜单中点击`Create(创建)`->`Terrain(地形)`来创建地形节点。
+1. 在 `Hierarchy(层级管理器)` 中点击鼠标右键，在弹出菜单中点击`Create(创建)`->`Terrain(地形)`来创建地形节点(地形节点可移动,但不支持旋转与缩放)。
    
    ![create terrain](./images/create-terrain.png)
 
@@ -55,7 +55,7 @@ BrushStrength | 画刷的力度
 用于描绘地形的纹理
 
 #### Layer编辑
-1. 点击+/-可以进行Layer的添加和删除。
+1. 点击+/-可以进行Layer的添加和删除(最多支持4层layer)。
 
    ![add layer](./images/layer-plus-minus.png)
 
