@@ -49,6 +49,7 @@
   - [动画系统](editor/animation/index.md)
   - [地形系统](editor/terrain/index.md)
   - [构建发布](editor/publish/index.md)
+  - [从第三方工具导出模型资源](asset/dcc-export-mesh.md)
 
 ## 演示和范例项目
 
