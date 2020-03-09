@@ -110,6 +110,23 @@ interface ITweenOption {
 
 另外，`onUpdate`调用时还会多传入一个目前缓动的进行值，范围为`(0-1]`。
 
+#### 可选回调 `onUpdate` 的使用范例
+
+以下代码缓动一个位置，然后在 `onUpdate` 中将其设置到多个对象上，这样就像是缓动的合批。
+
+```
+import { Node, tween, Vec3 } from "cc";
+const nodeArray: Node[] = []; // 此处替换成你的节点数组
+const tweenTagertVec3 = new Vec3();
+tween(tweenTagertVec3)
+    .by(1, new Vec3(1, 1, 1), {
+        'onUpdate': (target: Vec3, ratio: number) => {
+            for (let i = 0; i < nodeArray.length; i++)
+                nodeArray[i].worldPosition = target;
+        }
+    });
+```
+
 ## 自动销毁
 
 从 v1.0.4 版本开始，当缓动目标为 `Node` 时，将会监听其销毁事件进行缓动的自动销毁，调用 `target` 方法也会自动更新监听。
