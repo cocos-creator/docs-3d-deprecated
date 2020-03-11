@@ -1,14 +1,14 @@
 # Summary
 
-## 新手入门
+## Beginners Guide
 
-[介绍](index.md)
+[Introduction](index.md)
 
-- [启动](getting-started/index.md)
+- [Getting Started](getting-started/index.md)
   - [Dashboard](getting-started/dashboard/index.md)
   - [Hello world!](getting-started/helloworld/index.md)
-  - [快速上手：制作第一个游戏](getting-started/first-game/index.md)
-  - [注意事项](getting-started/attention/index.md)
+  - [Quick Start: First Game](getting-started/first-game/index.md)
+  - [Caution!](getting-started/attention/index.md)
 
 ## 引擎手册
 
@@ -16,18 +16,18 @@
   - [图形渲染](module-map/graphics.md)
 
 - [场景及环境](concepts/scene/index.md)
-  - [坐标系](concepts/scene/coord.md)
+  - [Coordinate system](concepts/scene/coord.md)
   - [场景结构](concepts/scene/scene.md)
   - [节点](concepts/scene/node.md)
   - [天空盒](concepts/scene/skybox.md)
 
-- [光照](concepts/scene/light.md)
-  - [基于物理的光照](concepts/scene/light/pbr-lighting.md)
-  - [主方向光](concepts/scene/light/dir-light.md)
-  - [球面光](concepts/scene/light/sphere-light.md)
-  - [聚光灯](concepts/scene/light/spot-light.md)
-  - [阴影](concepts/scene/shadow.md)
-  - [环境光](concepts/scene/ambient.md)
+- [Lighting](concepts/scene/light.md)
+  - [Physically based lighting](concepts/scene/light/pbr-lighting.md)
+  - [Directional lighting](concepts/scene/light/dir-light.md)
+  - [Spherical lighting](concepts/scene/light/sphere-light.md)
+  - [Spot lighting](concepts/scene/light/spot-light.md)
+  - [Shadows](concepts/scene/shadow.md)
+  - [Ambient lighting](concepts/scene/ambient.md)
 
 - [材质](material-system/overview.md)
   - [YAML 101](material-system/yaml-101.md)
