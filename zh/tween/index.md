@@ -110,9 +110,9 @@ interface ITweenOption {
 
 另外，`onUpdate`调用时还会多传入一个目前缓动的进行值，范围为`(0-1]`。
 
-#### 可选回调 `onUpdate` 的使用范例
+#### 回调的使用范例
 
-以下代码缓动一个位置，然后在 `onUpdate` 中将其设置到多个对象上，这样就像是缓动的合批。
+以 onUpdate 为例，以下代码缓动一个位置，然后在 `onUpdate` 中将其设置到多个对象上，这样就像是缓动的合批。
 
 ```
 import { Node, tween, Vec3 } from "cc";
