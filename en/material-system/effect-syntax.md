@@ -149,7 +149,7 @@ vec4 vert () {
 This will acquire position, normal and tangent data, all after vertex skinning.<br>
 Other vertex data (uv, color, etc.) can be declared directly.
 
-To support dynamic batching, use `CCGetWorldMatrix`:
+To support dynamic instancing & batching, use `CCGetWorldMatrix`:
 ```glsl
 #include <cc-local-batch>
 
@@ -194,6 +194,31 @@ vec4 frag () {
 Under the framework writing your own surface shader or even shading algorithm becomes staightforward;<br>
 
 > Note: the `CCFragOutput` function should not be overriden, unless using custom render pipelines.
+
+### Custom Instancing Attribute
+Dynamic instancing is a very flexible batching framework, whcih allows user-defined instanced properties on top of the built-in ones.<br>
+Here's how you can define them in shader:
+
+All the related code need to be wrapped inside the agreed upon macro, `USE_INSTANCING`:
+```glsl
+#if USE_INSTANCING // when instancing is enabled
+  #pragma format(RGBA8) // normalized unsigned byte
+  in vec4 a_instanced_color;
+#endif
+```
+Relevant details:
+* the actual data format can be specified using compiler hint `format` tag, which accepts a single parameter<br>
+  in the form of `GFXFormat` enum name. 32-bytes float type will be assumed if the tag is omitted.
+* All instanced properties are input attributes of the vertex shader, so if some property is needed in fragment shader, you need to pass it as varyings;
+* Make sure the code works for all branches, regardless of the actual state of `USE_INSTANCING`;
+
+The instanced property value will be initialized to all zeros by default.<br>
+Use the `setInstancedAttribute` on `ModelComponent` to assign new values:
+```ts
+const comp = node.getComponent(ModelComponent);
+comp.setInstancedAttribute('a_instanced_color', [100, 150, 200, 255]); // should match the specified format
+```
+> Note: The instanced properties will be reset to all zeros whenever creating a new PSO (the most common case is when assigning a new material).
 
 ### WebGL 1 fallback Support
 The effect compiler provides fallback conversion from GLSL 300 ES to GLSL 100 automatically, for WebGL 1.0 only support GLSL 100 syntax. this should be transparent to developers for the most time.<br>
