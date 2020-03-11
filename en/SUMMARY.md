@@ -16,7 +16,7 @@
   - [图形渲染](module-map/graphics.md)
 
 - [场景及环境](concepts/scene/index.md)
-  - [坐标系](concepts/scene/coord.md)
+  - [Coordinate system](concepts/scene/coord.md)
   - [场景结构](concepts/scene/scene.md)
   - [节点](concepts/scene/node.md)
   - [天空盒](concepts/scene/skybox.md)
