@@ -10,15 +10,15 @@
   - [Quick Start: First Game](getting-started/first-game/index.md)
   - [Caution!](getting-started/attention/index.md)
 
-## 引擎手册
+## Engine Manual
 
 - [功能地图](module-map/index.md)
   - [图形渲染](module-map/graphics.md)
 
-- [场景及环境](concepts/scene/index.md)
+- [Scene and Environment](concepts/scene/index.md)
   - [Coordinate system](concepts/scene/coord.md)
-  - [场景结构](concepts/scene/scene.md)
-  - [节点](concepts/scene/node.md)
+  - [Scene](concepts/scene/scene.md)
+  - [Node](concepts/scene/node.md)
   - [天空盒](concepts/scene/skybox.md)
 
 - [Lighting](concepts/scene/light.md)
