@@ -19,7 +19,7 @@
   - [Coordinate system](concepts/scene/coord.md)
   - [Scene](concepts/scene/scene.md)
   - [Node](concepts/scene/node.md)
-  - [天空盒](concepts/scene/skybox.md)
+  - [Skybox](concepts/scene/skybox.md)
 
 - [Lighting](concepts/scene/light.md)
   - [Physically based lighting](concepts/scene/light/pbr-lighting.md)
