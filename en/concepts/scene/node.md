@@ -6,7 +6,7 @@ __Nodes__ are the basic building blocks of a scene. __Nodes__ are organized in a
 
 __Nodes__ have the following characteristics:
   - __Nodes__ contain a set of basic information (*displacement*, *rotation*, *scaling*), and __Nodes__ are organized together through a set of relative transformation relationships.
-  - The update order between __Nodes__ is updated step by step. The update of child nodes depends on the parent node, and the child nodes change with the parent node.
+  - The update order between __Nodes__ is updated step by step. The update of __child nodes__ depends on the __parent node__, and the __child nodes__ change with the __parent node__. The **parent/child** relationship is very important.
   - Components can be added to __Nodes__ to associate multiple components with __Nodes__
 
 In short, __Nodes__ are the basic means of organizing the structure of any game. We can classify multiple elements through __Nodes__, and perform hierarchical operations on __Nodes__, or perform batch operations on a group of __Nodes__, such as: *transform*, *delete*, or hiding and showing them as needed, etc.
