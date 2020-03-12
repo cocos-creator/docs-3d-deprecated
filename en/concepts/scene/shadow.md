@@ -15,7 +15,7 @@ It only takes two steps to enable a __Planar Shadow__ in __Cococs Creator 3D__:
   ![location of planar shadow](shadow/planarShadows.jpg)
 
   2. Set *ShadowCastingMode* to *ON* in the model that needs to display shadows.
- ![ShadowCastingModes property](shadow/shadowCastingMode.jpg)
+  ![ShadowCastingModes property](shadow/shadowCastingMode.jpg)
 
   > **__Note:__ __Planar Shadow__ will only be cast on the shadow surface. Adjusting the directional light angle can adjust the shadow projection**.
 
