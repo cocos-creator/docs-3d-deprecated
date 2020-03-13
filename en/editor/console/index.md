@@ -25,4 +25,4 @@ All the **console**'s functionality is on a toolbar at the top, listed from left
 
 ## Other settings
 
-Other settings for the **console** are available in Preferences. Read about advanced settings in the [preferences](../preferences/index.md) documentation.
+Other settings for the **console** are available in Preferences. Read about advanced settings in the **[Preferences](../preferences/index.md)** documentation.
