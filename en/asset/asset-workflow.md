@@ -5,7 +5,7 @@
 There are three ways to **import assets**:
 
    - Create a new file through the **Explorer** panel in __Cocos Creator 3D__. Use the **Create button** to start the importing process.
-   - By copying files, in the **file manager of the operating system**, to the project resource folder, and then open the editor or activate the editor window to automatically refresh the resource list of the **Explorer**  panel to finish importing assets.
+   - By copying files, in the **file manager of the operating system**, to the project resource folder, and then open the editor or activate the editor window to automatically refresh the asset list of the **Explorer**  panel to finish importing assets.
    - Drag and drop resource files from the **file manager of the operating system** to a folder location on the **Explorer** panel. This will trigger an import of the selected assets.
  
 ## Syncing Assets
@@ -28,7 +28,7 @@ It is not recommended to operate the resource file directly in the __file manage
 
 ## Assets in Library
 
-After the resource is imported, new data will be generated and stored in the project's **Library** folder. The structure and assets of the files in **Library** are engine-oriented and the format required for the final game, that is, __machine-friendly__, but __not human-friendly__.
+After the asset is imported, new data will be generated and stored in the project's **Library** folder. The structure and assets of the files in **Library** are engine-oriented and the format required for the final game, that is, __machine-friendly__, but __not human-friendly__.
 
 When a library is lost or damaged, just delete the entire library folder and open the project, and the resource library will be rebuilt.
 
