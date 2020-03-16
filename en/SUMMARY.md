@@ -143,8 +143,8 @@
   - [添加 Log](scripting/log.md)
   - [废弃 API](scripting/deprecated.md)
 
-- [资源手册](asset/index.md)
-  - [资源工作流](asset/asset-workflow.md)
+- [Asset Manual](asset/index.md)
+  - [Asset workflow](asset/asset-workflow.md)
   - [获取和加载资源](asset/load-assets.md)
   - [分包加载](asset/subpackage.md)
   - [场景资源](asset/scene.md)
@@ -163,7 +163,7 @@
   - [声音资源](asset/audio.md)
   - [材质资源](asset/material.md)
   - [模型资源](asset/mesh.md)
-  - [动画资源](asset/anim.md)
+  - [Animation resources](asset/anim.md)
 
 ## 编辑器手册
 
