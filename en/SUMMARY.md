@@ -154,7 +154,7 @@
     - [立方体贴图资源](concepts/scene/skybox.md#cubemap)
     - [图像资源的自动裁剪](ui-system/components/engine/trim.md)
     - [压缩纹理](asset/compress-texture.md)
-    - [图集资源](asset/atlas.md)
+    - [Atlas](asset/atlas.md)
     - [自动图集资源](asset/auto-atlas.md)
     - [渲染纹理](asset/render-texture.md)
   - [预制资源](asset/prefab.md)
