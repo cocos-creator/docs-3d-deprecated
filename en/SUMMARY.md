@@ -153,7 +153,7 @@
     - [精灵帧资源](asset/sprite-frame.md)
     - [立方体贴图资源](concepts/scene/skybox.md#cubemap)
     - [图像资源的自动裁剪](ui-system/components/engine/trim.md)
-    - [压缩纹理](asset/compress-texture.md)
+    - [Compressed textures](asset/compress-texture.md)
     - [Atlas](asset/atlas.md)
     - [Auto Atlas](asset/auto-atlas.md)
     - [渲染纹理](asset/render-texture.md)
