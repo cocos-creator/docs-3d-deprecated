@@ -155,7 +155,7 @@
     - [图像资源的自动裁剪](ui-system/components/engine/trim.md)
     - [压缩纹理](asset/compress-texture.md)
     - [Atlas](asset/atlas.md)
-    - [自动图集资源](asset/auto-atlas.md)
+    - [Auto Atlas](asset/auto-atlas.md)
     - [渲染纹理](asset/render-texture.md)
   - [预制资源](asset/prefab.md)
   - [脚本资源](asset/script.md)
