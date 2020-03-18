@@ -160,7 +160,7 @@
   - [预制资源](asset/prefab.md)
   - [脚本资源](asset/script.md)
   - [字体资源](asset/font.md)
-  - [声音资源](asset/audio.md)
+  - [Audio](asset/audio.md)
   - [材质资源](asset/material.md)
   - [模型资源](asset/mesh.md)
   - [Animation resources](asset/anim.md)
