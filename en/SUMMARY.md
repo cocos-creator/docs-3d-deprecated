@@ -159,7 +159,7 @@
     - [渲染纹理](asset/render-texture.md)
   - [预制资源](asset/prefab.md)
   - [脚本资源](asset/script.md)
-  - [字体资源](asset/font.md)
+  - [Fonts](asset/font.md)
   - [Audio](asset/audio.md)
   - [材质资源](asset/material.md)
   - [模型资源](asset/mesh.md)
