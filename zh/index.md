@@ -27,6 +27,15 @@
   - [Hello world!](getting-started/helloworld/index.md)
   - [快速上手：制作第一个游戏](getting-started/first-game/index.md)
   - [注意事项](getting-started/attention/index.md)
+- 编辑器手册
+  - [快速入门](getting-started/index.md)
+  - [面板介绍](editor/index.md)
+  - [项目预览调试](editor/preview/index.md)
+  - [粒子编辑器](particle-system/editor/index.md)
+  - [动画系统](editor/animation/index.md)
+  - [地形系统](editor/terrain/index.md)
+  - [构建发布](editor/publish/index.md)
+  - [从第三方工具导出模型资源](asset/dcc-export-mesh.md)
 - 引擎手册
   - [场景及环境](concepts/scene/index.md)
   - [光照](concepts/scene/light.md)
@@ -41,15 +50,6 @@
   - [可定制的渲染管线](render-pipeline/overview.md)
   - [脚本指南及事件机制](scripting/index.md)
   - [资源手册](asset/index.md)
-- 编辑器手册
-  - [快速入门](getting-started/index.md)
-  - [面板介绍](editor/index.md)
-  - [项目预览调试](editor/preview/index.md)
-  - [粒子编辑器](particle-system/editor/index.md)
-  - [动画系统](editor/animation/index.md)
-  - [地形系统](editor/terrain/index.md)
-  - [构建发布](editor/publish/index.md)
-  - [从第三方工具导出模型资源](asset/dcc-export-mesh.md)
 
 ## 演示和范例项目
 
