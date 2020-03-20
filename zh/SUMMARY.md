@@ -164,6 +164,7 @@
   - [材质资源](asset/material.md)
   - [模型资源](asset/mesh.md)
   - [动画资源](asset/anim.md)
+- [向Cocos提交代码](submit-pr/submit-pr.md)
 
 ## 编辑器手册
 
