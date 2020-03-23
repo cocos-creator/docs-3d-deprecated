@@ -78,7 +78,7 @@ Also using `builtin-unlit.effect` as an example, the compiler output for this fi
   ]
 }
 ```
-There is a lot to unpack here, but for the most part the details won't be of any concern to game deverlopers, but the key insight you need to remember is:
+There is a lot to unpack here, but for the most part the details won't be of any concern to game deverlopers, and the key insight you need to remember is:
 
 All the necessary info for runtime shading procedure setup on any target platform (and even editor support) is here in advance to guarantee portability and performance. Redundant info will be trimmed at build-time to ensure minimum space consumption.
 
@@ -99,8 +99,6 @@ mat.initialize({
 });
 ```
 With this information, the `Material` is properly initialized, and ready to use in any Renderable Component.
-
-> Note: **if the material is intended to be used on any type of `SkinningModel`, be sure to enable the `USE_SKINNING` shader macro.**
 
 Knowing which `EffectAsset` is currently using, we can specify all the shader properties:
 ```ts
