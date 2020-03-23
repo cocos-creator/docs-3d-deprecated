@@ -191,7 +191,7 @@ vec4 frag () {
 #endif
 ```
 几点注意：
-* 这里可以使用编译器提示 `format` 指定此属性的具体数据格式，参数为引擎 `GFXFormat` 的任意枚举名，如未声明则默认为 32 位 float 类型；
+* 这里可以使用编译器提示 `format` 指定此属性的具体数据格式，参数为引擎 `GFXFormat` 的任意枚举名<sup id="a2">[2](#f2)</sup>，如未声明则默认为 32 位 float 类型；
 * 所有 instanced 属性都是 VS 的输入 attribute，所以如果需要在 FS 中使用，需要在 VS 中自行传递；
 * 记得确保代码在所有分支都能正常执行，无论 `USE_INSTANCING` 启用与否；
 
@@ -229,7 +229,7 @@ comp.setInstancedAttribute('a_instanced_color', [100, 150, 200, 255]); // should
 
 这可能听起来有些过分严格，但背后有非常务实的考量：<br>
 首先，UBO 是渲染管线内要做到高效数据复用的唯一基本单位，离散声明已不是一个选项；<br>
-其次，WebGL2 的 UBO 只支持 std140 布局，它遵守一套比较原始的 padding 规则：<sup id="a2">[2](#f2)</sup>
+其次，WebGL2 的 UBO 只支持 std140 布局，它遵守一套比较原始的 padding 规则：<sup id="a3">[3](#f3)</sup>
 * 所有 vec3 成员都会补齐至 vec4：
 ```glsl
 uniform ControversialType {
@@ -242,7 +242,7 @@ uniform ProblematicArrays {
   float f4_1[4]; // offset 0, stride 16, length 64 [IMPLICIT PADDING!]
 }; // total of 64 bytes
 ```
-* 所有成员在 UBO 内的实际偏移都会按自身所占字节数对齐<sup id="a3">[3](#f3)</sup>：
+* 所有成员在 UBO 内的实际偏移都会按自身所占字节数对齐<sup id="a4">[4](#f4)</sup>：
 ```glsl
 uniform IncorrectUBOOrder {
   float f1_1; // offset 0, length 4 (aligned to 4 bytes)
@@ -256,11 +256,12 @@ uniform CorrectUBOOrder {
 }; // total of 16 bytes
 ```
 
-这意味着大量的空间浪费，且某些设备的驱动实现也并不完全符合此标准<sup id="a4">[4](#f4)</sup>，因此我们目前选择限制这部分功能的使用，以帮助排除一部分非常隐晦的运行时问题。<br>
+这意味着大量的空间浪费，且某些设备的驱动实现也并不完全符合此标准<sup id="a5">[5](#f5)</sup>，因此我们目前选择限制这部分功能的使用，以帮助排除一部分非常隐晦的运行时问题。<br>
 
 > 注意：再次提醒，uniform 的类型与 inspector 的显示和运行时参数赋值时的程序接口可以不直接对应，通过 [property target](pass-parameter-list.md#Properties) 机制，可以独立编辑任意 uniform 具体的分量。
 
 <b id="f1">[1]</b> 不包含粒子、sprite、后效等不基于 mesh 执行渲染的 shader [↩](#a1)<br>
-<b id="f2">[2]</b> [OpenGL 4.5, Section 7.6.2.2, page 137](http://www.opengl.org/registry/doc/glspec45.core.pdf#page=159) [↩](#a2)<br>
-<b id="f3">[3]</b> 注意在示例代码中，UBO IncorrectUBOOrder 的总长度为 32 字节，实际上这个数据到今天也依然是平台相关的，看起来是由于 GLSL 标准的疏忽，更多相关讨论可以参考[这里](https://bugs.chromium.org/p/chromium/issues/detail?id=988988) [↩](#a3)<br>
-<b id="f4">[4]</b> [Interface Block - OpenGL Wiki](https://www.khronos.org/opengl/wiki/Interface_Block_(GLSL)#Memory_layout) [↩](#a4)
+<b id="f2">[2]</b> 注意 WebGL 1.0 平台下不支持整型 attributes，如项目需要发布到此平台，应使用默认浮点类型 [↩](#a2)<br>
+<b id="f3">[3]</b> [OpenGL 4.5, Section 7.6.2.2, page 137](http://www.opengl.org/registry/doc/glspec45.core.pdf#page=159) [↩](#a3)<br>
+<b id="f4">[4]</b> 注意在示例代码中，UBO IncorrectUBOOrder 的总长度为 32 字节，实际上这个数据到今天也依然是平台相关的，看起来是由于 GLSL 标准的疏忽，更多相关讨论可以参考[这里](https://bugs.chromium.org/p/chromium/issues/detail?id=988988) [↩](#a4)<br>
+<b id="f5">[5]</b> [Interface Block - OpenGL Wiki](https://www.khronos.org/opengl/wiki/Interface_Block_(GLSL)#Memory_layout) [↩](#a5)

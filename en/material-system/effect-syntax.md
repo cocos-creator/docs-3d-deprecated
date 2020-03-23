@@ -208,7 +208,7 @@ All the related code need to be wrapped inside the agreed upon macro, `USE_INSTA
 ```
 Relevant details:
 * the actual data format can be specified using compiler hint `format` tag, which accepts a single parameter<br>
-  in the form of `GFXFormat` enum name. 32-bytes float type will be assumed if the tag is omitted.
+  in the form of `GFXFormat` enum name<sup id="a2">[2](#f2)</sup>. 32-bytes float type will be assumed if the tag is omitted.
 * All instanced properties are input attributes of the vertex shader, so if some property is needed in fragment shader, you need to pass it as varyings;
 * Make sure the code works for all branches, regardless of the actual state of `USE_INSTANCING`;
 
@@ -249,7 +249,7 @@ These rules will be checked rigorously at effect compile-time and throws detaile
 
 This might sound overly-strict at first, but it's for a few good reasons:<br>
 First, UBO is a much better basic unit to efficiently reuse data, so discrete declaration is no longer an option;<br>
-Second, currently many platforms, including WebGL 2.0 only support one platform-independent memory layout, namely **std140**, and it has many restrictions<sup id="a2">[2](#f2)</sup>:
+Second, currently many platforms, including WebGL 2.0 only support one platform-independent memory layout, namely **std140**, and it has many restrictions<sup id="a3">[3](#f3)</sup>:
 * All vec3 members will be aligned to vec4：
 ```glsl
 uniform ControversialType {
@@ -262,7 +262,7 @@ uniform ProblematicArrays {
   float f4_1[4]; // offset 0, stride 16, length 64 [IMPLICIT PADDING!]
 }; // total of 64 bytes
 ```
-* All UBO members are aligned to the size of itself<sup id="a3">[3](#f3)</sup>:
+* All UBO members are aligned to the size of itself<sup id="a4">[4](#f4)</sup>:
 ```glsl
 uniform IncorrectUBOOrder {
   float f1_1; // offset 0, length 4 (aligned to 4 bytes)
@@ -276,11 +276,12 @@ uniform CorrectUBOOrder {
 }; // total of 16 bytes
 ```
 
-This means lots of wasted space, and some driver implementation might not completely conform to the standard<sup id="a4">[4](#f4)</sup>, hence all the strict checking procedure help to clear some pretty insidious bugs.<br>
+This means lots of wasted space, and some driver implementation might not completely conform to the standard<sup id="a5">[5](#f5)</sup>, hence all the strict checking procedure help to clear some pretty insidious bugs.<br>
 
 > Note: the actual uniform type can differ from the public interfaces the effect exposes to artists and runtime properties. Through [property target](pass-parameter-list.md#Properties) system, every single channel can be manipulated independently, without restriction of the original uniform.
 
 <b id="f1">[1]</b> Shaders for systems with procedurally generated mesh, like particles, sprites, post-effects, etc. may handle things a bit differently [↩](#a1)<br>
-<b id="f2">[2]</b> [OpenGL 4.5, Section 7.6.2.2, page 137](http://www.opengl.org/registry/doc/glspec45.core.pdf#page=159) [↩](#a2)<br>
-<b id="f3">[3]</b> In the example code, UBO `IncorrectUBOOrder` has a total size 32. Actually this is still a platform-dependent data, due to what it seems like an oversight in the GLSL specification. More discussions can be found [here](https://bugs.chromium.org/p/chromium/issues/detail?id=988988) [↩](#a3)<br>
-<b id="f4">[4]</b> [Interface Block - OpenGL Wiki](https://www.khronos.org/opengl/wiki/Interface_Block_(GLSL)#Memory_layout) [↩](#a4)
+<b id="f2">[2]</b> Integer-typed attribute is not supported on WebGL 1.0 platform, so use the default float type if targeting this platform [↩](#a2)<br>
+<b id="f3">[3]</b> [OpenGL 4.5, Section 7.6.2.2, page 137](http://www.opengl.org/registry/doc/glspec45.core.pdf#page=159) [↩](#a3)<br>
+<b id="f4">[4]</b> In the example code, UBO `IncorrectUBOOrder` has a total size 32. Actually this is still a platform-dependent data, due to what it seems like an oversight in the GLSL specification. More discussions can be found [here](https://bugs.chromium.org/p/chromium/issues/detail?id=988988) [↩](#a4)<br>
+<b id="f5">[5]</b> [Interface Block - OpenGL Wiki](https://www.khronos.org/opengl/wiki/Interface_Block_(GLSL)#Memory_layout) [↩](#a5)
