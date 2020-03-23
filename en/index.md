@@ -5,6 +5,7 @@ Welcome to the __Cocos Creator 3D__ user manual! This manual includes detailed i
 > **Note**: Please select the corresponding manual version in the upper right corner according to the __Cocos Creator 3D__ version you are using.
 
 ## General guide
+
 Use the feature map to quickly understand engine features
 
 - [Function Map](module-map/index.md)
@@ -27,7 +28,14 @@ Use the feature map to quickly understand engine features
   - [Hello world!](Getting-started/helloworld/index.md)
   - [Quick start: making your first game](getting-started/first-game/index.md)
   - [Caution](getting-started/attention/index.md)
-
+- Editor manual
+  - [Quick Start](getting-started/index.md)
+  - [Panel Introduction](editor/index.md)
+  - [Project Preview Debugging](editor/preview/index.md)
+  - [Particle Editor](particle-system/editor/index.md)
+  - [Animation System](editor/animation/index.md)
+  - [Terrain System](editor/terrain/index.md)
+  - [Build release](editor/publish/index.md)
 - Engine Manual
   - [Scenes and Environment](concepts/scene/index.md)
   - [Lighting](concepts/scene/light.md)
@@ -41,15 +49,6 @@ Use the feature map to quickly understand engine features
   - [Components](editor/components/index.md)
   - [Scripting Guide and Event Mechanism](scripting/index.md)
   - [Resource Manual](asset/index.md)
-
-- Editor manual
-  - [Quick Start](getting-started/index.md)
-  - [Panel Introduction](editor/index.md)
-  - [Project Preview Debugging](editor/preview/index.md)
-  - [Particle Editor](particle-system/editor/index.md)
-  - [Animation System](editor/animation/index.md)
-  - [Terrain System](editor/terrain/index.md)
-  - [Build release](editor/publish/index.md)
 
 ## Demo and example projects
 
