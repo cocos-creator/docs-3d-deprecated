@@ -83,7 +83,7 @@ jsval_to_string(cx, returnParam, &url);
 
 #### 密钥库
 
-Android 要求所有 APK 必须先使用证书进行数字签署，然后才能安装。Cocos Creator 3D 提供了默认的密钥库，勾选 **使用调试密钥库** 就是使用默认密钥库，若用户需要自定义密钥库可去掉 **使用调试密钥库** 勾选。具体请参考 [官方文档](https://developer.android.com/studio/publish/app-signing?hl=zh-cn)（需要使用 VPN）
+Android 要求所有 APK 必须先使用证书进行数字签署，然后才能安装。Cocos Creator 3D 提供了默认的密钥库，勾选 **使用调试密钥库** 就是使用默认密钥库，若用户需要自定义密钥库可去掉 **使用调试密钥库** 勾选。具体请参考 [官方文档](https://developer.android.google.cn/studio/publish/app-signing?hl=zh-cn)
 
 #### Orientation 屏幕方向
 
@@ -94,7 +94,7 @@ Android 要求所有 APK 必须先使用证书进行数字签署，然后才能�
 
 #### 生成 App Bundle (Google Play)
 
-勾选该项即可将游戏打包成 App Bundle 格式用于上传到 Google Play 商店。具体请参考 [官方文档](https://developer.android.com/guide/app-bundle/)（需要使用 VPN）。
+勾选该项即可将游戏打包成 App Bundle 格式用于上传到 Google Play 商店。具体请参考 [官方文档](https://developer.android.google.cn/guide/app-bundle/) 。
 
 ### Mac 平台选项
 
