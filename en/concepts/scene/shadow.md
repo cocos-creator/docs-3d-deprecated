@@ -7,7 +7,7 @@ Here is an example of a shadow from __Cocos Creator 3D__:
 
 ## Turning on shadows
 
-__Cococs Creator 3D__ currently supports the cost-effective __Planar Shadow__. More __Shadow__ types will be available later. 
+__Cococs Creator 3D__ currently supports the highly efficient __Planar Shadow__. More __Shadow__ types will be available later. 
 
 It only takes two steps to enable a __Planar Shadow__ in __Cococs Creator 3D__:
 
