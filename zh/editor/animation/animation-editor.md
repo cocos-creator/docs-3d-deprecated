@@ -95,7 +95,7 @@ clip 动画数据中索引节点的方式是以挂载 Animation 组件的节点�
 
     ![](./animation-editor/scale-canvas.gif)
 
-#### 拖动更改动画编辑器布局
+#### c. 拖动更改动画编辑器布局
 节点列表与时间之间的分界线，以及属性列表与时间轴之间的分界线都是可以用于拖拽更改布局的，通过拖拽可以自由的调整成适合编辑的布局效果。
 
     ![](./animation-editor/layout.gif)
