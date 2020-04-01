@@ -19,4 +19,4 @@ Web audio API, DOM audio, WeChat mini game audio are currently supported, althou
 We've tried to minimize this difference in the engine, but there's still some incongruity in the engine:
   * The DOM audio mode on iOS platform does not support adjusting the volume, and all volume related attributes will not be valid. Calling `playOneShot` multiple times causes the audio in play to stops and then replay the same audio.
   * Only Web Audio mode supports multiple playback of the same audio. In other modes, to avoid repeated creation,the playing
-  * At present, most platforms have complied with the latest [auto play police](https://www.chromium.org/audio-video/autoplay), Even if `playOnAwake` is set, it will only start playing when the user input is first received.
+  * At present, most platforms have complied with the latest [auto play policy](https://www.chromium.org/audio-video/autoplay), Even if `playOnAwake` is set, it will only start playing when the user input is first received.
