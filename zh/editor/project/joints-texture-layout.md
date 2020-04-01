@@ -6,5 +6,30 @@
 
 > 注意：骨骼贴图布局设置面板提供的，本质上是运行时的“内存分配指导规则”。对于指定的骨骼和动画资源，会保证按照指定规则分配，但如果运行时用到了并未指定规则的资源，还是会回到全局复用的自动分配模式上去。
 
-下面我们以 xxx 为例，展示设置流程。
-(这最好找一个动画比较多的资源，然后先展示啥也不设置直接开 instancing，效果不对的样子，再到面板里来设置，这样才能把重要性和存在意义完全说明白。)
+下面我们以 Cocos宇航员模型 为例，展示设置流程。
+
+1. 我们先都设置规则，因为只有一个骨骼和动画，所以这些动画就自动的尽可能的打在一张贴图上，我们会看到动画的表现是正常的。后面几步将展示如果将同一个骨骼的动画放到不同的贴图上会发生什么。
+
+    ![normal](./index/instancing_normal.gif)
+
+2. 首先我们通过菜单 `Panel->Animation->Joint Texture Layout`  打开骨骼贴图布局设置面板。
+   
+   ![panel](./index/joint-texture-layout-new.png)
+
+   - 点击①中的加号，可以增加一个Texture，一个Texture由多个Skeleton组成。
+   - 点击②中的加号，可以增加一个Skeleton，一个Skeleton由一个cc.Skeleton和一至多个cc.Animation组成。
+   - 点击③中的加号，可以增加一个cc.Animation。
+
+3. 将idle动画和attack动画放到不同的Texture中。
+   
+   ![texture0](./index/joint-texture-0.png)
+
+   ![texture1](./index/joint-texture-1.png)
+
+4. 此时我让前面的模型播放attack动作，后面的模型保持idle动作。
+   
+   ![normal](./index/instancing_wrong.gif)
+
+    可以看到此时的gpu instancing效果不对，因为当我点击播放attack动作时，两个模型将会使用包含attack动作的那张贴图，两个动画在贴图中索引的起始位置正好相同，但idle的动画时长比attack大，所以用idle的时长去播放attack动画就会出现播放完就消失的问题。
+   
+因此在使用GPU Instancing时注意好贴图的的布局，尽量让同一个模型要同时播放的动作在一张贴图里。
