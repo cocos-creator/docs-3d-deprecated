@@ -8,11 +8,11 @@
 
 下面我们以 Cocos宇航员模型 为例，展示设置流程。
 
-1. 我们先都设置规则，因为只有一个骨骼和动画，所以这些动画就自动的尽可能的打在一张贴图上，我们会看到动画的表现是正常的。后面几步将展示如果将同一个骨骼的动画放到不同的贴图上会发生什么。
+1. 首先我们不设置规则，因为只有一个骨骼和动画，所以这些动画就自动的尽可能的打在一张贴图上，我们会看到动画的表现是正常的。后面几步将展示如果将同一个骨骼的动画放到不同的贴图上会发生什么。
 
     ![normal](./index/instancing_normal.gif)
 
-2. 首先我们通过菜单 `Panel->Animation->Joint Texture Layout`  打开骨骼贴图布局设置面板。
+2. 我们通过菜单 `Panel->Animation->Joint Texture Layout`  打开骨骼贴图布局设置面板。
    
    ![panel](./index/joint-texture-layout-new.png)
 
@@ -26,7 +26,7 @@
 
    ![texture1](./index/joint-texture-1.png)
 
-4. 此时我让前面的模型播放attack动作，后面的模型保持idle动作。
+4. 此时让前面的模型播放attack动作，后面的模型保持idle动作。
    
    ![normal](./index/instancing_wrong.gif)
 
