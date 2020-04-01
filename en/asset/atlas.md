@@ -1,19 +1,19 @@
-# Atlas resources
+# Atlas assets
 
-__Atlas__, also called a __Sprite Sheet__, is a common art resource in game development. __Atlas__ is a resource for merging multiple pictures into a large picture through a special tool, and indexing through a file such as a **.plist**. __Atlas__ resources available for __Cocos Creator 3D__ consist of a **.plist** and at least one **.png** file, although usually many **.png** files make up an __Atlas__. The following is an image file used in an __Atlas__:
+__Atlas__, also called a __Sprite Sheet__, is a common art asset in game development. __Atlas__ is a asset for merging multiple pictures into a large picture through a special tool, and indexing through a file such as a **.plist**. __Atlas__ assets available for __Cocos Creator 3D__ consist of a **.plist** and at least one **.png** file, although usually many **.png** files make up an __Atlas__. The following is an image file used in an __Atlas__:
 
 ![atlas sheep](atlas/sheep_atlas.png)
 
-## Why use atlas resources
+## Why use atlas assets
 
-In a game, using an __Atlas__ composed of multiple pictures as art resources has the following advantages:
+In a game, using an __Atlas__ composed of multiple pictures as art assets has the following advantages:
 
   - The blank area around each picture will be removed when synthesizing the __Atlas__, plus various optimization algorithms can be implemented as a whole. After synthesizing the __Atlas__, the game package and memory consumption can be greatly reduced.
   - When multiple __Sprites__ are rendering pictures from the same atlas, these __Sprites__ can be processed using the same rendering batch, which greatly reduces the CPU's computing time and improves operating efficiency.
 
 For a more comprehensive explanation, you can watch a teaching video: [__What is a Sprite Sheet__](https://www.codeandweb.com/what-is-a-sprite-sheet) from __CodeAndWeb__.
 
-## Atlas Resources
+## Atlas Assets
 
 To generate an __Atlas__, you should first prepare a set of original pictures. Example:
 
@@ -32,17 +32,17 @@ Users of the __TexturePacker__ software need to pay attention to a few items:
   - Use version __4.x__ only. Version __3.x__ is not supported.
   - __TexturePacker__'s packing result, does not match __Cocos Creator__'s nine-grid algorithm. Therefore, in __Cocos Creator 3D v1.0.4__, please prohibit rotation when generating a composite image to obtain the correct effect.
 
-## Importing Atlas Resources
+## Importing Atlas Assets
 
-Drag the **.plist** and the **.png** files shown above into the **Explorer** panel at the same time. You can generate __Atlas__ resources that can be used in the editor and scripts.
+Drag the **.plist** and the **.png** files shown above into the **Explorer** panel at the same time. You can generate __Atlas__ assets that can be used in the editor and scripts.
 
 ### Atlas and SpriteFrame
 
-In the [Image Resource Document](../ui-system/components/editor/sprite.md), the relationship between __Texture__ and __SpriteFrame__ was introduced. After importing the __Atlas__, we can see that the __Atlas__ is of type __Atlas__ and can be expanded by clicking the triangle icon on the left. After expanding, we can see that the __Atlas__ contains many sub-resources of type __SpriteFrame__. Resources are pictures that can be used and referenced individually.
+In the [Image Resource Document](../ui-system/components/editor/sprite.md), the relationship between __Texture__ and __SpriteFrame__ was introduced. After importing the __Atlas__, we can see that the __Atlas__ is of type __Atlas__ and can be expanded by clicking the triangle icon on the left. After expanding, we can see that the __Atlas__ contains many sub-assets of type __SpriteFrame__. Assets are pictures that can be used and referenced individually.
 
 ![sprite frame](atlas/spriteframes.png)
 
-The use of the __Sprite Frame__ is the same as that described in the image resource. Please refer to the related documents.
+The use of the __Sprite Frame__ is the same as that described in the image asset. Please refer to the related documents.
 
 <!-- ## 碎图转图集
 

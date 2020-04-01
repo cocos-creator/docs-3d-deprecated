@@ -1,14 +1,14 @@
 # Fontss
 
-There are three types of font resources available to games made with __Cocos Creator__: __system fonts__, __dynamic fonts__, and __bitmap fonts__.
+There are three types of font assets available to games made with __Cocos Creator__: __system fonts__, __dynamic fonts__, and __bitmap fonts__.
 
-The __system font__ renders text by calling the __system font__ that comes with the game running platform, and does not require the user to add any related resources to the project. To use __system fonts__, use the **Use System Font** property in [LabelComponent](../ui-system/components/editor/label.md).
+The __system font__ renders text by calling the __system font__ that comes with the game running platform, and does not require the user to add any related assets to the project. To use __system fonts__, use the **Use System Font** property in [LabelComponent](../ui-system/components/editor/label.md).
 
-## Importing font resources
+## Importing font assets
 
 ### Dynamic fonts
 
-__Cocos Creator__ currently supports dynamic fonts in **True Type** format. Simply drag a font file with an extension of `.ttf` into the **Explorer** panel, and you can import the font resource.
+__Cocos Creator__ currently supports dynamic fonts in **True Type** format. Simply drag a font file with an extension of `.ttf` into the **Explorer** panel, and you can import the font asset.
 
 ### Bitmap fonts
 
@@ -24,11 +24,11 @@ The imported fonts are displayed in the **Explorer** panel, as follows:
 
 ![imported font asset](font/imported.png)
 
-> **Note**: inorder to improve the efficiency of resource management, it is recommended that the imported `.fnt` and `.png` files be stored in separate directories and not mixed with other resources.
+> **Note**: inorder to improve the efficiency of asset management, it is recommended that the imported `.fnt` and `.png` files be stored in separate directories and not mixed with other assets.
 
-## Using font resources
+## Using font assets
 
-The font resource needs to be rendered through the `Label` component. Here is how to create a `Node` with a `Label` component in the scene.
+The font asset needs to be rendered through the `Label` component. Here is how to create a `Node` with a `Label` component in the scene.
 
 ### Creating a Label (Font) Node Using the Menu
 
@@ -40,19 +40,19 @@ You can also complete the creation through `Node --> Create Render Node --> Labe
 
 ![from main menu](font/create_label_main_menu.png)
 
-### Associated Font Resources
+### Associated Font Assets
 
-The font components created using the above method use the __system font__ as the associated resource, by default. If you want to use a __TTF__ or __bitmap fonts__ in the project, you can drag your font resources to the created `Label` component.
+The font components created using the above method use the __system font__ as the associated asset, by default. If you want to use a __TTF__ or __bitmap fonts__ in the project, you can drag your font assets to the created `Label` component.
 
 ![assign font file](font/assign_font_file.png)
 
-At this time, the font used in a scene will be immediately rendered using the font resource specified. You can also freely switch the `Font` property of the same `Label` component to use __TTF__ or __bitmap fonts__ according to the needs of the project. When switching font files, other properties of the `Label` component are not affected.
+At this time, the font used in a scene will be immediately rendered using the font asset specified. You can also freely switch the `Font` property of the same `Label` component to use __TTF__ or __bitmap fonts__ according to the needs of the project. When switching font files, other properties of the `Label` component are not affected.
 
 If you want to restore the use of __system fonts__, you can click the property check box of __Use System Font__ to clear the font file specified in the __Font__ property.
 
 ### Dragging and droping to create a Label node
 
-Another quick way to create font nodes using specified resources is to directly __drag and drop__ font files, either __TTF__ or __bitmap fonts__, from the **Explorer** panel into the **Level Manager**. The only difference from the menu created above is that text nodes created using drag and drop will automatically use the dragged font resource to set the `Font` property of the **Label** component.
+Another quick way to create font nodes using specified assets is to directly __drag and drop__ font files, either __TTF__ or __bitmap fonts__, from the **Explorer** panel into the **Level Manager**. The only difference from the menu created above is that text nodes created using drag and drop will automatically use the dragged font asset to set the `Font` property of the **Label** component.
 
 <!-- ## 位图字体合并渲染
 
