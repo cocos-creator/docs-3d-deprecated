@@ -22,7 +22,7 @@ The role of **sub-packaing** will only be reflected after the project is built. 
 
 **For example**: Configure the **cases/01_graphics** folder in the example project as a **sub-package**, then after the project is built, the **01_graphics** folder will be generated in **sub-packages** under the release package directory.
 
-![package](./sub-package/package.jpg)
+![package](./subpackage/package.jpg)
 
 When building and publishing, all the **code** and **assets** in the **cases/01_graphics** sub-package folder will be processed as follows:
 
@@ -51,11 +51,11 @@ If the loading is successful, the script in the **sub-package** will be executed
 
 In the construction of the WeChat Mini-Game platform, the configuration of the **sub-packages** will also be automatically generated in accordance with the rules in the **game.json** configuration file. This file is located in the distribution package directory.
 
-![profile](./sub-package/profile.png)
+![profile](./subpackage/profile.png)
 
 > **Note**: WeChat Mini-Games require a specific version to support the sub-packaging functions. WeChat 6.6.7 client, 2.1.0 and above basic libraries are supported, please update to the latest client version. For developer tools please use version 1.02.1806120 and above. After updating the developer tools, don't forget to modify the **Details -> Project Settings -> debug base library** in the developer tools to 2.1.0 and above:
 
-![subpackage2](./sub-package/subpackage2.png)
+![subpackage2](./subpackage/subpackage2.png)
 
 ### Restrictions on the size of the sub-package loading package
 

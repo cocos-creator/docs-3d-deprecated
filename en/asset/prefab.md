@@ -24,9 +24,9 @@ In the __Hierarchy Manager__, select the __Prefab Node__, and notice there are s
 
 __First__, revert to __normal node__. __Prefab Nodes__ can become ordinary __Nodes__, that is, completely separated from the relationship between assets. This function is available in the top-level menu ,`Edit`.
 
-__Second__, associate the __Node__ to another __Prefab asset__. As a way for __Nodes__ to re-associate assets, you need to __first__ select a __Prefab asset__ in the __Resource Manager__, and then select a __Prefab Node__ in the __Level Manager__ to re-associate it. This function is available in the top-level menu, `Edit`.
+__Second__, associate the __Node__ to another __Prefab asset__. As a way for __Nodes__ to re-associate assets, you need to __first__ select a __Prefab asset__ in the __Asset Manager__, and then select a __Prefab Node__ in the __Level Manager__ to re-associate it. This function is available in the top-level menu, __Edit__.
 
-__Third__, locating assets is convenient to quickly locate __Prefab assets__ in the __Resource Manager__. When there are many assets, the efficiency is higher.
+__Third__, locating assets is convenient to quickly locate __Prefab assets__ in the __Asset Manager__. When there are many assets, the efficiency is higher.
 
 __Fourth__, you can deserialize a __Node__ object again from the asset and replace the existing node. This operation does not change the *uuid* of the existing __Node__. It is usually used when the __Node__ is synchronized with the __Asset__.
 

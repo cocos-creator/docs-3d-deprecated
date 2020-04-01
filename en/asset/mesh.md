@@ -1,6 +1,6 @@
 # Model assets
 
-__Currently__, model files in __FBX__ and __glTF__ formats. For how to export these two model files from third-party tools, you can refer to the [__DCC Export Mesh](./dcc-export-mesh.md) documentation.
+__Currently__, model files in __FBX__ and __glTF__ formats. For how to export these two model files from third-party tools, you can refer to the [__DCC Export Mesh__](./dcc-export-mesh.md) documentation.
 
 ## Model importing
 
