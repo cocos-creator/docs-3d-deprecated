@@ -17,6 +17,7 @@
 - [发布到小米快游戏](publish-xiaomi-quick-game.md)
 - [发布到 Cocos Play](publish-cocos-play.md)
 - [发布到支付宝小游戏](publish-alipay-mini-game.md)
+- [发布到百度小游戏](publish-baidu-mini-game.md)
 - [命令行发布项目](publish-in-command-line.md)
 - [定制项目的构建模版](custom-project-build-template.md)
 - [构建流程简介与常见错误处理](build-guide.md)
