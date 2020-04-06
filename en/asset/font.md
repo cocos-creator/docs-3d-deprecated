@@ -24,7 +24,7 @@ The imported fonts are displayed in the **Assets Panel**, as follows:
 
 ![imported font asset](font/imported.png)
 
-> **Note**: inorder to improve the efficiency of asset management, it is recommended that the imported `.fnt` and `.png` files be stored in separate directories and not mixed with other assets.
+> **Note**: in order to improve the efficiency of asset management, it is recommended that the imported `.fnt` and `.png` files be stored in separate directories and not mixed with other assets.
 
 ## Using font assets
 
