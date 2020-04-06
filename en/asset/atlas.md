@@ -1,6 +1,6 @@
 # Atlas assets
 
-__Atlas__, also called a __Sprite Sheet__, is a common art asset in game development. __Atlas__ is a asset for merging multiple pictures into a large picture through a special tool, and indexing through a file such as a **.plist**. __Atlas__ assets available for __Cocos Creator 3D__ consist of a **.plist** and at least one **.png** file, although usually many **.png** files make up an __Atlas__. The following is an image file used in an __Atlas__:
+__Atlas__, also called a __Sprite Sheet__, is a common art asset in game development. __Atlas__ is an asset for merging multiple pictures into a large picture through a special tool, and indexing through a file such as a **.plist**. __Atlas__ assets available for __Cocos Creator 3D__ consist of a **.plist** and at least one **.png** file, although usually many **.png** files make up an __Atlas__. The following is an image file used in an __Atlas__:
 
 ![atlas sheep](atlas/sheep_atlas.png)
 
@@ -30,7 +30,7 @@ When using these software packages to generate an __Atlas__, please select a **.
 
 Users of the __TexturePacker__ software need to pay attention to a few items:
   - Use version __4.x__ only. Version __3.x__ is not supported.
-  - __TexturePacker__'s packing result, does not match __Cocos Creator__'s nine-grid algorithm. Therefore, in __Cocos Creator 3D v1.0.4__, please prohibit rotation when generating a composite image to obtain the correct effect.
+  - __TexturePacker__'s packing result, does not match __Cocos Creator__'s nine-grid algorithm. Therefore, in __Cocos Creator 3D v1.0.4__, please prohibit rotation when generating a composite image to obtain the correct effect. This should be fixed in __Cocos Creator 3D v1.1__.
 
 ## Importing Atlas Assets
 
