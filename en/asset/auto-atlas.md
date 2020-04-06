@@ -4,7 +4,7 @@
 
 ## Creating Auto Atlas Assets
 
-__Right-click__ in the **Assets Panel**, select **New-> Auto Atlas Configuration** in the menu. Selecting this option will create a new asset similar to **AutoAtlas.pac**.
+__Right-click__ in the **Assets Panel**, select **New -> Auto Atlas Configuration** in the menu. Selecting this option will create a new asset similar to **AutoAtlas.pac**.
 
 ![create auto atlas](auto-atlas/create-auto-atlas.jpg)
 
@@ -12,7 +12,7 @@ __Right-click__ in the **Assets Panel**, select **New-> Auto Atlas Configuration
 
 ## Configuring Auto Atlas Assets
 
-After selecting an **Auto Atlas Resource** in the __Explorer__ panel, the **Attributes Inspector** panel will display all of the configurable items for the **Auto Atlas Resource**.
+After selecting an **Auto Atlas Resource** in the __Assets Panel__, the **Attributes Inspector** panel will display all of the configurable items for the **Auto Atlas Resource**.
 
 | Properties | Functional Description
 | -------------- | ----------- |

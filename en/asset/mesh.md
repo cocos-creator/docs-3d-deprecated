@@ -4,7 +4,7 @@ __Currently__, model files in __FBX__ and __glTF__ formats. For how to export th
 
 ## Model importing
 
-After importing into the editor, from the outside, the corresponding model asset file can be obtained in the __Explorer__ panel. It's directory structure is as follows: 
+After importing into the editor, from the outside, the corresponding model asset file can be obtained in the __Assets Panel__. It's directory structure is as follows: 
 
   - The structure of a model file without animations is as follows:
 
@@ -24,8 +24,8 @@ The various __file types__ are described:
 
 ## Using Models
 
-After importing a __model__ file, drag the __root node__ of the __model__ file directly from the __Explorer__ panel to the __node__ you want to place in the __Hierarchy Manager__ to complete the node creation. At this point the model is successfully created in the scene . <br>
-Alternatively, you can expand the node of the __model__ file, select the `.prefab` file under the model file node, and drag it from the __Explorer__ panel into the `Level Manager` to complete the creation.
+After importing a __model__ file, drag the __root node__ of the __model__ file directly from the __Assets Panel__ to the __node__ you want to place in the __Hierarchy Manager__ to complete the node creation. At this point the model is successfully created in the scene . <br>
+Alternatively, you can expand the node of the __model__ file, select the `.prefab` file under the model file node, and drag it from the __Assets Panel__ into the `Level Manager` to complete the creation.
 
 ![](mesh/mesh_use.gif)
 

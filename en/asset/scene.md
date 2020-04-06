@@ -8,15 +8,15 @@ There are __three__ ways to create a __Scene__:
 
 In order to have a good directory structure in your project, it is strongly recommend that you use **Method 1** to create a __Scene__.
 
-__Method 1__: Select the folder where you want to create the __Scene__ file in the __Explorer__. On the folder __Right click --> New --> Scene file__, and then type the desired __Scene__ name.
+__Method 1__: Select the folder where you want to create the __Scene__ file in the __Assets__. On the folder __Right click --> New --> Scene file__, and then type the desired __Scene__ name.
 
 ![](scene/new_scene_1.png)
 
-__Method 2__: Click the __Create__ menu in the __Explorer__ to create a new __Scene__.
+__Method 2__: Click the __Create__ menu in the __Assets__ to create a new __Scene__.
 
 ![](scene/new_scene_2.png)
 
-__Method 3__: Select __File --> New Scene__, a new __Scene__ will appear directly in the __level manager__, but a new __Scene__ will not appear in the __Explorer__. You need to save it in the root of the asset folder. A `New Scene.scene` __Scene__ file appears in the directory.
+__Method 3__: Select __File --> New Scene__, a new __Scene__ will appear directly in the __level manager__, but a new __Scene__ will not appear in the __Assets__. You need to save it in the root of the asset folder. A `New Scene.scene` __Scene__ file appears in the directory.
 
 ![](scene/new_scene_3.png)
 
@@ -26,11 +26,11 @@ While creating __Scenes__, you can quickly save __Scenes__ with the shortcut key
 
 ## Switching Scenes
 
-In the __Explorer__, __double-click__ the __Scene__ you want to open. When needing to switch __Scenes__ in the game, you can use the `director.loadScene()` API to implement dynamic scene loading and switching in the game. For further details, please see the API documentation.
+In the __Assets__, __double-click__ the __Scene__ you want to open. When needing to switch __Scenes__ in the game, you can use the `director.loadScene()` API to implement dynamic scene loading and switching in the game. For further details, please see the API documentation.
 
 ## Scene Asset Properties
 
-Since the __Scene__ is an __Asset__ a property can be set in the __Explorer__ to load assets asynchronously.
+Since the __Scene__ is an __Asset__ a property can be set in the __Assets__ to load assets asynchronously.
 
 ![](scene/scene_set.png)
 

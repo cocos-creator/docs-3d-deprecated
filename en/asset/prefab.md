@@ -4,13 +4,13 @@ It is necessary to use __Prefabs__ for __Nodes__ that will be repeatedly generat
 
 ## Creating a Prefab
 
-After editing the __Node__ in the __Scene__, drag the __Nodes__ directly from the __Hierarchy Manager__ to the __Explorer Panel__ to complete the creation of the __Prefab__. After the creation is complete, the original __Node__ will automatically become a __Prefab Node__, showing in __green__.
+After editing the __Node__ in the __Scene__, drag the __Nodes__ directly from the __Hierarchy Manager__ to the __Assets Panel__ to complete the creation of the __Prefab__. After the creation is complete, the original __Node__ will automatically become a __Prefab Node__, showing in __green__.
 
 ![](prefab/create-prefab.gif)
 
 ## Using Prefabs
 
-Drag a __Node__ from the __Explorer Panel__ to the __Hierarchy Manager__ or the __Scene Panel__ to create a __Prefab Node__ in the __Scene__.
+Drag a __Node__ from the __Assets Panel__ to the __Hierarchy Manager__ or the __Scene Panel__ to create a __Prefab Node__ in the __Scene__.
 
 In the __Scene__, the __Prefab Node__ objects data source comes from the deserialization of the __Prefab__ assets. They are completely independent of each other, multiples can coexist, and there is no data association with the __Prefab__ assets. __Assets__ and __Nodes__ are changed separately unless the `Restore from assets` or` Update to assets` (described below) is used. Otherwise, they will not affect each other.
 
@@ -38,7 +38,7 @@ __Prefab Nodes__ in the __Property Inspector__ render __green__ to indicate norm
 
 ## Entering prefab editing mode
 
-__Double-click__ the __Prefab Asset__ in the __Explorer Panel__ to switch from __Scene__ editing mode to __Prefab editing__ mode. You can edit the __Prefab Assets__ in the __Editor__. After editing, click __Save Prefab__ in the __Scene editor__ to save the edited __Prefab Assets__. __Next__, click __Close__ to return to the __Scene__ editing mode.
+__Double-click__ the __Prefab Asset__ in the __Assets Panel__ to switch from __Scene__ editing mode to __Prefab editing__ mode. You can edit the __Prefab Assets__ in the __Editor__. After editing, click __Save Prefab__ in the __Scene editor__ to save the edited __Prefab Assets__. __Next__, click __Close__ to return to the __Scene__ editing mode.
 
 ![](prefab/edit-prefab.gif)
 
