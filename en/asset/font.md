@@ -52,7 +52,7 @@ If you want to restore the use of __system fonts__, you can click the property c
 
 ### Dragging and droping to create a Label node
 
-Another quick way to create font nodes using specified assets is to directly __drag and drop__ font files, either __TTF__ or __bitmap fonts__, from the **Assets Panel** into the **Level Manager**. The only difference from the menu created above is that text nodes created using drag and drop will automatically use the dragged font asset to set the `Font` property of the **Label** component.
+Another quick way to create font nodes using specified assets is to directly __drag and drop__ font files, either __TTF__ or __bitmap fonts__, from the **Assets Panel** into the __Hierarchy Panel__. The only difference from the menu created above is that text nodes created using drag and drop will automatically use the dragged font asset to set the `Font` property of the **Label** component.
 
 <!-- ## 位图字体合并渲染
 

@@ -24,7 +24,7 @@ In the __Hierarchy Manager__, select the __Prefab Node__, and notice there are s
 
 __First__, revert to __normal node__. __Prefab Nodes__ can become ordinary __Nodes__, that is, completely separated from the relationship between assets. This function is available in the top-level menu ,`Edit`.
 
-__Second__, associate the __Node__ to another __Prefab asset__. As a way for __Nodes__ to re-associate assets, you need to __first__ select a __Prefab asset__ in the __Asset Manager__, and then select a __Prefab Node__ in the __Level Manager__ to re-associate it. This function is available in the top-level menu, __Edit__.
+__Second__, associate the __Node__ to another __Prefab asset__. As a way for __Nodes__ to re-associate assets, you need to __first__ select a __Prefab asset__ in the __Asset Manager__, and then select a __Prefab Node__ in the __Hierarchy Panel__ to re-associate it. This function is available in the top-level menu, __Edit__.
 
 __Third__, locating assets is convenient to quickly locate __Prefab assets__ in the __Asset Manager__. When there are many assets, the efficiency is higher.
 

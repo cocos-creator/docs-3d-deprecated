@@ -16,7 +16,7 @@ __Method 2__: Click the __Create__ menu in the __Assets__ to create a new __Scen
 
 ![](scene/new_scene_2.png)
 
-__Method 3__: Select __File --> New Scene__, a new __Scene__ will appear directly in the __level manager__, but a new __Scene__ will not appear in the __Assets__. You need to save it in the root of the asset folder. A `New Scene.scene` __Scene__ file appears in the directory.
+__Method 3__: Select __File --> New Scene__, a new __Scene__ will appear directly in the __Hierarchy Panel__, but a new __Scene__ will not appear in the __Assets__. You need to save it in the root of the asset folder. A `New Scene.scene` __Scene__ file appears in the directory.
 
 ![](scene/new_scene_3.png)
 
