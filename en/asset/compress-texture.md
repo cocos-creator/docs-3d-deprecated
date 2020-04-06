@@ -13,9 +13,9 @@ __Cocos Creator 3D__ supports importing images in multiple formats (see the tabl
 | WEBP | Native Supported for Android 4.0+<br>Other versions can use [this library](https://github.com/alexey-pelykh/webp-android-backport) | can use [this library](https://github.com/carsonmcdonald/WebP-iOS-example) | Not Supported | [partially supported](https://caniuse.com/#feat=webp) |
 | PVR | Not Supported | Supported | Supported iOS devices | Supported iOS devices |
 | ETC1 | Supported | Not Supported | Supported Android devices | Supported Android devices |
-| ETC2 | Only supported assets, the engine part needs to implement it by referring to pr: <https://github.com/cocos-creator/cocos2d-x-lite/pull/1685> |
+| ETC2 | Supported with __WebGL2__ or __WebGL__ extension if available |
 
-By default, __Cocos Creator 3D__ outputs the original image during construction. If you need to compress an image during construction, you can select this image in the **Assets Panel** and then manage it in the **Attribute Editor** to edit the texture format of the image.
+By default, __Cocos Creator 3D__ outputs the original image during construction. If you need to compress an image during the build process, you can select this image in the **Assets Panel** and then manage it in the **Attribute Editor** to edit the texture format of the image.
 
 ![compress-texture](compress-texture/compress-texture.png)
 
@@ -29,7 +29,7 @@ When __Cocos Creator 3D__ builds the image, it will find whether the current ima
 
 If the configuration of the compressed texture is found, the image will be compressed according to the found configuration. Multiple texture formats can be specified on one platform, and each texture format is compressed to generate an image of the specified format when it is constructed.
 
-These generated images will not all be loaded into the engine, the engine will choose to load the appropriate image according to the configuration in `macro.SUPPORT_TEXTURE_FORMATS`. `macro.SUPPORT_TEXTURE_FORMATS` enumerates all the image formats supported by the current platform. When the engine loads the images, it will find, from the generated images in this list, **the format with the highest priority** (that is, the order is higher) to load.
+These generated images will not all be loaded into the engine during runtime, the engine will choose to load the appropriate image according to the configuration in `macro.SUPPORT_TEXTURE_FORMATS`. `macro.SUPPORT_TEXTURE_FORMATS` enumerates all the image formats supported by the current platform. When the engine loads the images, it will find, from the generated images in this list, **the format with the highest priority** (that is, the order is higher) to load.
 
 The user can customize the supported image assets for a platform and the priority of the loading order, by modifying `macro.SUPPORT_TEXTURE_FORMATS`.
 
