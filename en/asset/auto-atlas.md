@@ -27,7 +27,7 @@ After selecting an **Auto Atlas Resource** in the __Assets Panel__, the **Attrib
 | Expand the edge | Expand a pixel outer frame outside the border of the broken image, and copy the adjacent broken image pixels to the outer frame. This feature is also called "Extrude". |
 | Does not include unreferenced assets | In preview, this option will not take effect, this option will take effect after building |
 
-After the configuration is complete, you can click the **Preview** button to preview the packaged results. The related results generated according to the current automatic atlas configuration will be displayed in the area below the **Properties Inspector**. Please note that after each configuration, you need to re-click **Preview** to regenerate the preview image.
+After the configuration is complete, you can click the **Preview** button to preview the packaged results. The related results generated according to the current automatic atlas configuration will be displayed in the area below the **Properties Inspector**. Please note that after each configuration, you can re-click **Preview** to update the preview image. (Generating a preview is not required).
 
 The results are divided into:
    - __Packed Textures:__ Display the packaged atlas pictures and picture-related information. If there are multiple pictures to be generated, they will be listed below in the **Attributes Inspector**.
