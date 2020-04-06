@@ -3,7 +3,7 @@
 __Cocos Creator 3D__ uses the same asset management mechanism as __Cocos Creator__. In this section, we will introduce:
 
   - Declaration of asset attributes
-  - How to set assets in the **Property inspector**
+  - How to set assets in the **Property Inspector**
   - Loading assets dynamically
   - Loading remote assets and device assets
   - Dependence and releasing assets
@@ -49,7 +49,7 @@ export class NewScript extends Component {
 }
 ```
 
-After adding it to a node, it looks like this in the **Property inspector**:
+After adding it to a node, it looks like this in the **Property Inspector**:
 
 ![asset-in-properties-null](load-assets/asset-in-inspector-null.jpg)
 
