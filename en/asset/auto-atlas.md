@@ -4,7 +4,7 @@
 
 ## Creating Auto Atlas Assets
 
-__Right-click__ in the **Explorer** panel, select **New-> Auto Atlas Configuration** in the menu. Selecting this option will create a new asset similar to **AutoAtlas.pac**.
+__Right-click__ in the **Assets Panel**, select **New-> Auto Atlas Configuration** in the menu. Selecting this option will create a new asset similar to **AutoAtlas.pac**.
 
 ![create auto atlas](auto-atlas/create-auto-atlas.jpg)
 

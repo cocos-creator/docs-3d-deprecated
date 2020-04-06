@@ -8,7 +8,7 @@ The __system font__ renders text by calling the __system font__ that comes with 
 
 ### Dynamic fonts
 
-__Cocos Creator__ currently supports dynamic fonts in **True Type** format. Simply drag a font file with an extension of `.ttf` into the **Explorer** panel, and you can import the font asset.
+__Cocos Creator__ currently supports dynamic fonts in **True Type** format. Simply drag a font file with an extension of `.ttf` into the **Assets Panel**, and you can import the font asset.
 
 ### Bitmap fonts
 
@@ -18,9 +18,9 @@ The bitmap font is composed of a font file in `.fnt` format and a `.png` image. 
   - [Hiero](https://github.com/libgdx/libgdx/wiki/Hiero)
   - [BMFont (Windows)](http://www.angelcode.com/products/bmfont/)
 
-When importing bitmap fonts, be sure to drag both the `.fnt` file and the `.png` file into the **Explorer** panel at the same time.
+When importing bitmap fonts, be sure to drag both the `.fnt` file and the `.png` file into the **Assets Panel** at the same time.
 
-The imported fonts are displayed in the **Explorer** panel, as follows:
+The imported fonts are displayed in the **Assets Panel**, as follows:
 
 ![imported font asset](font/imported.png)
 
@@ -52,7 +52,7 @@ If you want to restore the use of __system fonts__, you can click the property c
 
 ### Dragging and droping to create a Label node
 
-Another quick way to create font nodes using specified assets is to directly __drag and drop__ font files, either __TTF__ or __bitmap fonts__, from the **Explorer** panel into the **Level Manager**. The only difference from the menu created above is that text nodes created using drag and drop will automatically use the dragged font asset to set the `Font` property of the **Label** component.
+Another quick way to create font nodes using specified assets is to directly __drag and drop__ font files, either __TTF__ or __bitmap fonts__, from the **Assets Panel** into the **Level Manager**. The only difference from the menu created above is that text nodes created using drag and drop will automatically use the dragged font asset to set the `Font` property of the **Label** component.
 
 <!-- ## 位图字体合并渲染
 

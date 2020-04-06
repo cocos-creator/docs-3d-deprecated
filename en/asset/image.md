@@ -4,7 +4,7 @@ __Image__ assets are often called __textures__ or __Images__. __Image__ assets a
 
 ## Importing image assets
 
-After importing images into __Cocos Creator 3D__, they can be seen in **Explorer** panel.
+After importing images into __Cocos Creator 3D__, they can be seen in **Assets Panel**.
 
 ![](texture/imported.png)
 

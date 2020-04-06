@@ -4,11 +4,11 @@ __Sprite Frame__ is a container for __UI rendering__ and basic graphics, which c
 
 ## Importing Sprite Frame Assets
 
-Use the __default asset import__ method to import image assets into the project and can then be seen in the **Explorer**.
+Use the __default asset import__ method to import image assets into the project and can then be seen in the **Assets Panel**.
 
 ![imported texture](sprite-frame/imported_texture.png)
 
-Image assets will use thumbnails of their own pictures as icons in **Explorer**. When the image sub-asset is selected in the **Explorer**, a thumbnail of the image is displayed below the **Property inspector**.
+Image assets will use thumbnails of their own pictures as icons in the **Assets Panel**. When the image sub-asset is selected in the **Assets Panel**, a thumbnail of the image is displayed below the **Property Inspector**.
 
 ## Using a Sprite Frame
 

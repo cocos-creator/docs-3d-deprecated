@@ -15,7 +15,7 @@ __Cocos Creator 3D__ supports importing images in multiple formats (see the tabl
 | ETC1 | Supported | Not Supported | Supported Android devices | Supported Android devices |
 | ETC2 | Only supported assets, the engine part needs to implement it by referring to pr: <https://github.com/cocos-creator/cocos2d-x-lite/pull/1685> |
 
-By default, __Cocos Creator 3D__ outputs the original image during construction. If you need to compress an image during construction, you can select this image in the **Explorer** panel and then manage it in the **Attribute Editor** to edit the texture format of the image.
+By default, __Cocos Creator 3D__ outputs the original image during construction. If you need to compress an image during construction, you can select this image in the **Assets Panel** and then manage it in the **Attribute Editor** to edit the texture format of the image.
 
 ![compress-texture](compress-texture/compress-texture.png)
 
