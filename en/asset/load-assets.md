@@ -1,4 +1,4 @@
-# Obtaining and loading assets
+# Obtaining and Loading assets
 
 __Cocos Creator 3D__ uses the same asset management mechanism as __Cocos Creator__. In this section, we will introduce:
 
@@ -76,15 +76,15 @@ Although it is intuitive to set assets in the **Attributes Inspector**, the asse
 
 There are two points to note when loading assets dynamically. 
 
-__First__, is that all assets that need to be dynamically loaded through a script must be placed in the `assets` folder or its subfolders. `assets` need to be created manually in the `assets` folder and must be located in the root directory of `assets/`, like this:
+__First__, is that all assets that need to be dynamically loaded through a script must be placed in the `resources` folder or its subfolders. __Assets__ need to be created manually in the `resources` folder and must be located in the root directory of `resources/`, like this:
 
 ![asset-in-properties-null](load-assets/assets-file-tree.jpg)
 
-> **Note:** The assets in the folder can refer to other assets outside the folder, and can also be referenced by external scenes or assets. When the project is built, except for the scenes that have been checked in the **Build** panel, all assets in the `assets` folder, together with the assets outside the `assets` folder that they are dependent on, will be deleted.
+> **Note:** The assets in the folder can refer to other assets outside the folder, and can also be referenced by external scenes or assets. When the project is built, except for the scenes that have been checked in the Build panel, all assets in the `resources` folder, together with the assets outside the `resources` folder that are dependent by necessary assets, other assets will be deleted.
 
 > **Note:** If an asset is only dependent on other assets in assets and does not need to be called directly by `loader.loadRes`, then ** Please do not put it in the assets folder. Otherwise, the size of the package body and settings.js will be increased, and the useless assets in the project will not be automatically removed during the build process. At the same time, during the construction process, JSON's automatic merge strategy will also be affected, and it is not possible to merge fragmented JSON as much as possible.
 
-__Second__, __Cocos Creator 3D__ is more asynchronous than __Cocos Creator__ when assets are dynamically loaded. You need to get the loaded assets in the callback function. This is done because there is no other asset preload list except the assets associated with the scene, and dynamically loaded assets that are truly dynamically loaded.
+__Second__, The load process of __Cocos Creator 3D__ is always asynchronous. You need to get the loaded assets in the callback function. This is done because there is no other asset preload list except the assets associated with the scene, and dynamically loaded assets that are truly dynamically loaded.
 
 ### Loading Asset Dynamically
 
