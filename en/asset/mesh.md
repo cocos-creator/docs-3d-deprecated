@@ -47,7 +47,7 @@ When the model asset file is selected in the __Asset Explorer__ (.fbx or .gltf),
 
 The above image is all the animation asset information under the current model, and the editing area of ​​the specific frame number information of the currently selected animation. You can change the animation name or perform simple animation cropping here. To do so:
 
-  - Click the `+` button in the red box on the image to add an animation file. The new file added by default copies a complete clip data. You can input the number of frames in the `Start`` End` input box to crop the animation. (Drag and drop animation is not currently supported)
+  - Click the `+` button in the red box on the image to add an animation clip asset. The new file added by default copies a complete clip data. You can input the number of frames in the `Start` `End` input box to crop the animation. (Drag and drop animation is not currently supported)
 
   - Click the `-` button in the red box on the image to delete the currently selected animation file
 
@@ -61,7 +61,7 @@ The above image is all the animation asset information under the current model, 
 
 ## About glTF
 
-Currently, the glTF 2.0 specification is supported, but temporarily does not support the following features:
+Currently, the glTF 2.0 specification is supported, but the following features are unavailable until __Cocos Creator 3D v1.1__:
 
   - sparse accessor
   - morph target
