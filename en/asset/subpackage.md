@@ -1,6 +1,6 @@
 # Sub-package loading
 
-As a game becomes more complex, it can get larger in size. This leaves the developer needing to balance out the package size. __Cocos Creator 3D__ supports **Sub-package loading**, which supports both the loading  __code__ and **assets**. __Sub-package loading__ currently only supports various __small game platforms__, such as __WeChat Mini Games__.
+As a game becomes more complex, it can get larger in size. This leaves the developer needing to balance out the package size. __Cocos Creator 3D__ supports **Sub-package loading**, which supports both the loading  __code__ and **assets**. __Sub-package loading__ currently only supports various __instant game platforms__, such as __WeChat Mini Games__.
 
 __Sub-package loading__, is the splitting the game content into several packages according to certain rules. Only the necessary packages are downloaded when first started. This necessary package is called the **main package**. The __main package__ can trigger the download of other __sub-packages__, which can effectively reduce the time taken for the first startup.
 
@@ -49,11 +49,11 @@ If the loading is successful, the script in the **sub-package** will be executed
 
 ## WeChat Mini-Games
 
-In the construction of the WeChat Mini-Game platform, the configuration of the **sub-packages** will also be automatically generated in accordance with the rules in the **game.json** configuration file. This file is located in the distribution package directory.
+In the construction of the __WeChat Mini-Game__ platform, the configuration of the **sub-packages** will also be automatically generated in accordance with the rules in the **game.json** configuration file. This file is located in the distribution package directory.
 
 ![profile](./subpackage/profile.png)
 
-> **Note**: WeChat Mini-Games require a specific version to support the sub-packaging functions. WeChat 6.6.7 client, 2.1.0 and above basic libraries are supported, please update to the latest client version. For developer tools please use version 1.02.1806120 and above. After updating the developer tools, don't forget to modify the **Details -> Project Settings -> debug base library** in the developer tools to 2.1.0 and above:
+> **Note**: __WeChat Mini-Games__ require a specific version to support the sub-packaging functions. WeChat 6.6.7 client, 2.1.0 and above basic libraries are supported, please update to the latest client version. For developer tools please use version 1.02.1806120 and above. After updating the developer tools, don't forget to modify the **Details -> Project Settings -> debug base library** in the developer tools to 2.1.0 and above:
 
 ![subpackage2](./subpackage/subpackage2.png)
 
