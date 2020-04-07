@@ -2,7 +2,7 @@
 
 **Texture mapping** assets are assets used for procedural sampling, such as **textures on models** and the **UI on Sprites**. When the UI or model are rendered, the corresponding texture is sampled, then filled on the model grid, plus a series of processing such as lighting to render the entire scene.
 
-__Texture assets__ can be converted from __ImageAsset__. Some common image formats, including,  `.png`, `.jpeg`, etc. can be used in __ImageAsset__.
+___Texture assets__ can be generated from __ImageAsset__. Some common image formats, including,  `.png`, `.jpeg`, etc. can be used in __ImageAsset__.
 
 ## Texture2D
 
