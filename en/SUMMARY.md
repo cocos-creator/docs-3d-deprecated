@@ -62,16 +62,16 @@
   - [定制项目的构建模版](editor/publish/custom-project-build-template.md)
   - [构建流程简介与常见错误处理](editor/publish/build-guide.md)
 
-## 引擎手册
+## Engine Manual
 
 - [功能地图](module-map/index.md)
   - [图形渲染](module-map/graphics.md)
 
-- [场景及环境](concepts/scene/index.md)
+- [Scene and Environment](concepts/scene/index.md)
   - [Coordinate system](concepts/scene/coord.md)
-  - [场景结构](concepts/scene/scene.md)
-  - [节点](concepts/scene/node.md)
-  - [天空盒](concepts/scene/skybox.md)
+  - [Scene](concepts/scene/scene.md)
+  - [Node](concepts/scene/node.md)
+  - [Skybox](concepts/scene/skybox.md)
 
 - [Lighting](concepts/scene/light.md)
   - [Physically based lighting](concepts/scene/light/pbr-lighting.md)

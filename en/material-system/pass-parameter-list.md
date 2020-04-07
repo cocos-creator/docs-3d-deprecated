@@ -7,7 +7,6 @@ Default value is in bold, all parameters are case-insensitive.
 | switch                                      | **\*undefined**, could be any valid macro name that's not defined in the shader |
 | priority                                    | **default**(128), could be any number between max(255) and min(0)               |
 | stage                                       | **default**, could be the name of any registered stage in your runtime pipeline |
-| customization                               | **[]**, could be the name of any registered runtime customization               |
 | properties                                  | *see the following section                                                      |
 | migrations                                  | *see the following section                                                      |
 | primitive                                   | point_list, line_list, line_strip, line_loop,<br>**triangle_list**, triangle_strip, triangle_fan,<br>line_list_adjacency, line_strip_adjacency,<br>triangle_list_adjacency, triangle_strip_adjacency,<br>triangle_patch_adjacency, quad_patch_list, iso_line_list |
@@ -46,10 +45,6 @@ default is (128), min is (0), max is (255), arithmetic operations between these 
 
 ## Stage
 Specifies which render stage the current pass belongs to.
-
-## Customization
-Specifies the callback functions when the material is attached to/detached from model.
-Callbacks can be registered by `cc.customizationManager.register`.
 
 ## Properties
 Specifies the public interfaces exposed to material instector and runtime API.<br>
