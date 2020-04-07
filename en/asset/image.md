@@ -1,6 +1,6 @@
 # Images
 
-__Image__ assets are often called __textures__ or __Images__. __Image__ assets are generally created using image processing software (such as __Photoshop__, __Paint__ on Windows, etc) and output into file formats that __Cocos Creator 3D__ can use, currently including `.jpg` and `.png`.
+__Image__ assets are generally created using image processing software (such as __Photoshop__, __Paint__ on Windows, etc) and output into file formats that __Cocos Creator 3D__ can use, currently including `.jpg` and `.png`.
 
 ## Importing image assets
 
