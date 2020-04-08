@@ -1,31 +1,35 @@
-# 图像资源的自动剪裁
+# Auto Trim for SpriteFrame
 
-导入图像资源后生成的 SpriteFrame 会进行自动剪裁，去除原始图片周围的透明像素区域。这样我们在使用 SpriteFrame 渲染 Sprite 时，将会获得有效图像更精确的大小。
+Once a texture is imported, the SpriteFrame asset generated with the texture will be trimmed automatically. Any fully transparent pixels around the image will be cropped. This will help us get the exact node size we need for Sprites.
 
 ![trim inspector](trim/trim_inspector.png)
 
-## Sprite 组件剪裁相关设置详解
+## Trim Related Properties in Sprite Component
 
-和图片裁剪相关的 **Sprite** 组件设置有以下两个：
+There are two properties related to trim setting in **Sprite** component:
 
-- `Trim` 勾选后将在渲染 Sprite 图像时去除图像周围的透明像素，我们将看到刚好能把图像包裹住的约束框。取消勾选，Sprite 节点的约束框会包括透明像素的部分。
-- `Size Mode` 用来将节点的尺寸设置为原图或原图裁剪透明像素后的大小，通常用于在序列帧动画中保证图像显示为正确的尺寸。有以下几种选择：
-  - `TRIMMED` 选择这个选项，会将节点的尺寸（size）设置为原始图片裁剪掉透明像素后的大小。
-  - `RAW` 选择这个，会将节点尺寸设置为原始图片包括透明像素的大小。
-  - `CUSTOM` 自定义尺寸，用户在使用 **矩形变换工具** 拖拽改变节点的尺寸，或通过修改 `Size` 属性，或在脚本中修改 `width` 或 `height` 后，都会自动将 `Size Mode` 设为 `CUSTOM`。表示用户将自己决定节点的尺寸，而不需要考虑原始图片的大小。
+- `Trim` If checked, the node's bounding box will not include transparent pixels around the image. Instead the bounding box will be an exact fit to trimmed image. If unchecked the bounding box will be showing original texture including transparent pixels.
 
-下图中展示了两种常见组合的渲染效果：
+- `Size Mode` Use the options in this property to set node's size to the original texture size or trimmed image size. Options are:
+
+  - `TRIMMED` Select this option will set the `size` of the node to use trimmed image size of the current SpriteFrame used by Sprite component.
+
+  - `RAW` Select this option will set the size of the node to use the original texture size, including transparent pixels.
+
+  - `CUSTOM` This option make sure the size of the node will not be changed along with SpriteFrame, and should be managed by yourself. If you use the **Rect Transform Tool** to drag and change the `size` of the node, or modify the `size` property in **Inspector** panel, or modify the `width` or `height` in the script, the `Size Mode` property will be automatically set to `CUSTOM`.
+
+The following picture shows the comparison of two size modes:
 
 ![trim compare](trim/trim-compare.png)
 
-## 自带位置信息的序列帧动画
+## Sprite Animation with offset
 
-有很多动画师在绘制序列帧动画时，会使用一张较大的画布，然后将角色在动画中的运动直接通过角色在画布上的位置变化表现出来。在使用这种素材时，我们需要将 **Sprite 组件** 的 `Trim` 设为 `false`，将 `Size Mode` 设为 `RAW`。这样动画在播放每个序列帧时，都将使用原始图片的尺寸，并保留图像周围透明像素的信息，这样才能正确显示绘制在动画中的角色位移。
+There are a lot of animator prefer to draw the moving motion in texture, commonly seen in attack animations. Usually animator will use a large texture and put character on different positions on the texture for different animation frames. In this case, we need to set the **Sprite** component's `Trim` property to `false`, and set the `Size Mode` to `RAW`. In this way, the animation will use the original texture size when playing each sequence frame, and retain the information of transparent pixels around the image. So that the character's position drawn in the texture can be displayed correctly.
 
-而 `Trim` 设为 `true`，则是在位移完全由角色位置属性控制的动画中，更推荐使用的方式。
+When `Trim` property is set to `true`, it is more suitable for animation where the displacement is completely controlled by the character's `position` property.
 
-## TexturePacker 设置
+## TexturePacker Setting
 
-在制作序列帧动画时，我们通常会使用 ![TexturePacker](https://www.codeandweb.com/texturepacker) 这样的工具将序列帧打包成图集，并在导入后通过图集资源下的 `SpriteFrame` 来使用。在 TexturePacker 中输出图集资源时，Sprites 分类下的 **Trim mode** 请选择 `Trim`，一定不要选择 `Crop, flush position`，否则透明像素剪裁信息会丢失，您在使用图集里的资源时也就无法获得原始图片未剪裁的尺寸和偏移信息了。目前建议用户使用 **4.x** 以上版本进行打包，以防止低版本导出数据不一致造成的导入失败。
+We recommend users to use sprite sheet tools such as [TexturePacker](https://www.codeandweb.com/texturepacker) for generating sprite animation texture assets. In TexturePacker before you publish your sprite sheet, please make sure you choose `Trim` in **Trim Mode** setting of Sprites section. Please do not use `Crop, flush position`, or the trim information will be lost and you can't get back originial texture offset anymore. It is currently recommended to use version **4.x** or higher for packaging to prevent the import failure caused by inconsistent export data in the lower version.
 
 ![trim texturepacker](trim/trim-texturepacker.png)

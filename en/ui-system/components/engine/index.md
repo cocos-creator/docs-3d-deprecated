@@ -10,7 +10,7 @@ The UI rendering process as follows:
 
 ![render](render.png)
 
-# Get Started with UI
+## Get Started with UI
 
 The UI is a necessary interaction part of game development. The buttons, labels, backgrounds and so on in the game are usually made through the UI. When you start making a UI, the first thing you need to confirm is the size of the display area (Design resolution) of the current design, which can be set in the **Project -> Project Setting -> General** panel of the menu bar:
 
@@ -37,9 +37,9 @@ In general game development, the necessary UI elements are usually Sprite, Label
 
 When our interface is finished, you may find out how the display effects of iPhone7 and iPhoneX are different. This is actually a problem with the device resolution we mentioned above. When you design at the design resolution and publish at the device resolution, because the design resolution of different mobile phones may be different, the problem of pixel deviation may occur. Therefore, you also need to do screen adaptation.
 
-As you can see on the **Project -> Project Setting -> General -> Default Canvas setting** page of the menu bar, there are two other options, **Fit Width** and **Fit Height**. According to the screen adaptation rules provided by Cocos Creator 3D, and combined with the Widget component, you can easily adapt to different devices. Please refer to the [Multi-Resolution Adaptation](multi-resolution.md) for details.
+As you can see on the **Project -> Project Setting -> General -> Default canvas setting** page of the menu bar, there are two other options, **Fit Width** and **Fit Height**. According to the screen adaptation rules provided by Cocos Creator 3D, and combined with the Widget component, you can easily adapt to different devices. Please refer to the [Multi-Resolution Adaptation](multi-resolution.md) for details.
 
-# UI Rules Introduction
+## UI Rules Introduction
 
 - [Rendering Order](priority.md)
 - [Multi-Resolution Adaption](multi-resolution.md)

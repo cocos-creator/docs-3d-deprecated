@@ -55,10 +55,10 @@ If there is no strict requirement for the content that may be cropped down on th
 
 ### Canvas component doesn't provide a fit mode that can respectively zoom in/out of the x axis and the y axis, which will distort the image
 
-In the Cocos engine, there is a fit mode called `ExactFit`, which doesn't have black borders, or cut down the image within the scale of design resolution. But the price is the zooming in/out ratio of the scene image to the direction of the x/y axis  is different, which will distort the image.
+In the Cocos engine, there is a fit mode called `ExactFit`, which doesn't have black borders, or cut down the image within the scale of design resolution. But the price is the zooming in/out ratio of the scene image to the direction of the x/y axis is different, which will distort the image.
 
 ### Design resolution can only be configured in the project settings
 
-The current design mode does not include a multi-resolution adaptation method, so the design resolution of multiple Canvas in the project still uses the same set of design resolution and adaptation scheme, and you can configure it in **Project -> Project Setting -> General -> Default Canvas setting**.
+The current design mode does not include a multi-resolution adaptation method, so the design resolution of multiple Canvas in the project still uses the same set of design resolution and adaptation scheme, and you can configure it in **Project -> Project Setting -> General -> Default canvas setting**.
 
 ![resolution-config](multi-resolution/resolution_config.png)

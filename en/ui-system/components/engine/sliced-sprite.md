@@ -1,41 +1,34 @@
-# 制作可任意拉伸的 UI 图像
+# Use a Sliced Sprite to make a UI image
 
-UI 系统核心的设计原则就是能够自动适应各种不同的设备屏幕尺寸，因此我们在制作 UI 时需要正确设置每个控件元素的尺寸（size），并且让每个控件元素的尺寸能够根据设备屏幕的尺寸进行自动的拉伸适配。为了实现这一点，就需要使用九宫格格式的图像来渲染这些元素。这样即使使用很小的原始图片也能生成覆盖整个屏幕的背景图像，一方面节约游戏包体空间，另一方面能够灵活适配不同的排版需要。
+The core design principle of the UI system is to automatically adapt to different device screen sizes. When developing the UI, we need to correctly set the each node's `size`, and which can be automatically stretched and adapted according to the screen size of the device. To achieve this, we usually use 9-sliced format images to render these nodes. In this way, even if small original images can be used to generate background images that can cover the entire screen. On the one hand, the game package is reduced, and on the other hand, it can be flexibly adapted to different layout requirements.
 
 ![compare](sliced-sprite/compare.png)
 
-上图右边为原始贴图大小的显示，左边是选择 Sliced 模式并放大 `size` 属性后的显示效果。
+The right side of the picture above displays the texture of original size. The left side displays the effect of choosing Sliced mode and enlarging the `size` property.
 
-## 编辑图像资源的九宫格切分
+## Setting up your SpriteFrame for 9-slicing
 
-要使用可以无限放大的九宫格图像效果，我们需要先对图像资源进行九宫格切分。有两种方式可以打开 **Sprite 编辑器**来编辑图像资源：
+To use a 9-sliced image effect that can be infinitely enlarged, we need to cut the image resource into a 9-slicing at first. First open the **Sprite Editor**, select the image resource in **Assets**, then click the **Edit** button on the bottom of **Inspector**. If the height of your window is not large enough, you might need to scroll **Inspector** downward to see the button at the bottom.
 
-- 在 **资源管理器** 中选中图像资源，然后点击 **属性检查器** 最下面的**编辑**按钮。如果您的窗口高度不够，可能需要向下滚动 **属性检查器** 才能看到下面的按钮。
-- 在 **场景编辑器** 中选中想要九宫格化的图像节点，然后在 **属性检查器** 的 Sprite 组件里，找到并按下`Sprite Frame`属性右侧的**编辑**按钮。
+After opening **Sprite Editor**, you will see there is a green line around the image, which indicates the position of the current 9-sliced split line. Drag the mouse to the split line, you will see the shape of the cursor change, then you can press down and drag the mouse to modify the position of the split line.
 
-打开 **Sprite 编辑器** 以后，可以看到图像周围有一圈绿色的线条，表示当前九宫格分割线的位置。将鼠标移动到分割线上，可以看到光标形状改变了，这时候就可以按下并拖拽鼠标来更改分割线的位置。
-
-我们分别拖动上下左右四条分割线，将图像切分成九宫格，九个区域在 Sprite 尺寸（`size`）变化时会应用不同的缩放策略，见下图：
+We click and drag the four split lines at the top, bottom, and sides respectively and cut the image into a 9-slicing. The nine areas will apply different zooming in/out strategies when the Sprite size changes, which is as illustrated below:
 
 ![sliced](sliced-sprite/editing.png)
 
-而下图中描述了不同区域缩放时的示意（图片来自[Yannick Loriot的博客](http://yannickloriot.com/2011/12/create-buttons-in-cocos2d-by-using-cccontrolbutton/)）：
+And the following picture illustrates the state of zooming in/out in different areas (the picture comes from [Yannick Loriot's Blog](http://yannickloriot.com/2011/12/create-buttons-in-cocos2d-by-using-cccontrolbutton/)):
 
 ![scaling](sliced-sprite/scaling.png)
 
-完成切分后别忘记点击 **Sprite 编辑器** 右上角的绿色对勾来保存对资源的修改。
+After cutting, don't forget to click the green check mark on the upper right corner of **Sprite Editor** to save modifications to the resource.
 
-## 设置 Sprite 组件使用 Sliced 模式
+## Set the Sprite component to use Sliced mode
 
-准备好九宫格切分的资源后，就可以修改 Sprite 的显示模式并通过修改`size`来制作可任意指定尺寸的 UI 元素了。
+After you have prepared the 9-sliced resources, you can modify the draw mode of the Sprite and modify the `size` to make a UI element that can specify any size.
 
-1. 首先选中场景中的 Sprite 节点，将 Sprite 的 `Type` 属性设为 `Sliced`。
-2. 然后通过[矩形变换工具](../../../editor/scene/index.md)拖拽控制点使节点的 `size` 属性变大。您也可以直接在 **属性检查器** 中输入数值来修改 `size` 属性。如果图像资源是用九宫格的形式生产的，那么不管 Sprite 如何放大，都不会产生模糊或变形。
+1. First, select the Sprite node in the **Scene / Hierarchy**, set the `Type` property of the Sprite as `Sliced` in the **Inspector**.
+2. Then drag the control point with the [Rect Transform Tool](../../../editor/scene/index.md) to enlarge the `size` property of the node. You can also modify the `size` property value directly in the **Inspector**. Because the image resource has been set to 9-slicing, no matter how much the Sprite zooms in, there will be no vagueness or distortion.
 
-## 注意事项
+## Precautions
 
-在使用**矩形变换工具**或直接修改 Sliced Sprite 的`size`属性时，注意`size`属性值不能为负数，否则不能以 Sliced 模式正常显示。
-
----
-
-#### [UI 结构介绍](index.md)
+When using tools or directly modifying the size attribute of Sliced ​​Sprite, note that the `size` property value cannot be negative, otherwise it cannot be displayed normally in Sliced ​​mode.

@@ -8,7 +8,7 @@ Next, we categorize different alignment workflows according to the categories of
 
 For elements with relatively small areas like a pause menu, in-game gold coins, etc., normally, aligning them by the borders of the screen would be enough. Only a few simple steps are needed:
 
-1. Set these elements as subnodes of the Canvas node in **Hierarchy**
+1. Set these elements as child nodes of the Canvas node in **Hierarchy**
 2. Add the Widget component to element nodes
 3. To align something with the bottom left corner of the screen for example, check the `Left` and `Bottom` tick boxes in the Widget component.
 4. Then set up the distance between the node and the borders of the screen. In the picture below, the left margin is set as 40px, the bottom margin is set as 30px.
