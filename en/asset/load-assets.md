@@ -76,13 +76,15 @@ Although it is intuitive to set assets in the **Attributes Inspector**, the asse
 
 There are two points to note when loading assets dynamically. 
 
-__First__, is that all assets that need to be dynamically loaded through a script must be placed in the `resources` folder or its subfolders. __Assets__ need to be created manually in the `resources` folder and must be located in the root directory of `resources/`, like this:
+__First__, the `resources` folder needs to be created manually inside the `assets` folder and must be located in the __root directory__, like this:
 
-![asset-in-properties-null](load-assets/assets-file-tree.jpg)
+![](load-assets/resources-file-tree.jpg)
+
+All assets that need to be dynamically loaded through a script must be placed in the `resources` folder or its subfolders. 
 
 > **Note:** The assets in the folder can refer to other assets outside the folder, and can also be referenced by external scenes or assets. When the project is built, except for the scenes that have been checked in the Build panel, all assets in the `resources` folder, together with the assets outside the `resources` folder that are dependent by necessary assets, other assets will be deleted.
 
-> **Note:** If an asset is only dependent on other assets in assets and does not need to be called directly by `loader.loadRes`, then ** Please do not put it in the assets folder. Otherwise, the size of the package body and settings.js will be increased, and the useless assets in the project will not be automatically removed during the build process. At the same time, during the construction process, JSON's automatic merge strategy will also be affected, and it is not possible to merge fragmented JSON as much as possible.
+> **Note:** If an asset is only depended on by other assets and does not need to be loaded directly by `loader.loadRes`, then **please** do not put it in the `resources` folder. Doing so, the size of the **package body** and `settings.js` will be increased, and the useless assets in the `resources` folder will not be automatically removed during the build process. At the same time, during the build process, JSON's automatic merge strategy will also be affected, and it is not possible to merge fragmented JSON as much as possible.
 
 __Second__, The load process of __Cocos Creator 3D__ is always asynchronous. You need to get the loaded assets in the callback function. This is done because there is no other asset preload list except the assets associated with the scene, and dynamically loaded assets that are truly dynamically loaded.
 
