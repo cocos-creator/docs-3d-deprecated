@@ -192,7 +192,7 @@
   - [获取和加载资源](scripting/load-assets.md)
   - [使用计时器](scripting/scheduler.md)
   - [组件](scripting/component.md)
-  - [组件顺序](scripting/execution-order(component).md)
+  - [组件顺序](scripting/execution-order-component.md)
   - [事件机制](engine/event/index.md)
   - [插件脚本](scripting/plugin-scripts.md)
   - [添加 Log](scripting/log.md)
