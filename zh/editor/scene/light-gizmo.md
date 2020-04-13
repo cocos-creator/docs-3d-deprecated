@@ -6,7 +6,7 @@
 ![directional light gizmo](images/directional-light-gizmo.png)
 
 ## 球面光（Sphere Light)
-球面光Gizmo显示了光源的颜色以及光源范围，同时可以使用方块控制点来编辑光源的范围。
+`球面光Gizmo` 显示了光源的颜色以及光源范围，同时可以使用方块控制点来编辑光源的范围。
 
 ![sphere light gizmo](images/sphere-light-gizmo.png)
 
