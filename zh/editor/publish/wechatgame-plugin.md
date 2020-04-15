@@ -36,4 +36,5 @@ Q：启用引擎插件后，在微信开发工具中提示 “插件未授权使
 A：如果出现插件未授权使用，需要点击添加插件，选择 `CocosCreator3D` 插件后关闭即可。
 
 ## 参考链接
+
 - 更多技术细节，请参考 [微信小游戏引擎插件官方说明](https://developers.weixin.qq.com/minigame/dev/guide/base-ability/game-engine-plugin.html)
