@@ -19,7 +19,7 @@ Creator 3D 支持的 JavaScript 语言规范为 ECMAScript 2015。
 
 - [异步函数](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Statements/async_function)
 
-特别地，Creator 3D 目前支持 “Legacy” 装饰器提案，其用于和含义见 [babel-plugin-proposal-decorators](https://babeljs.io/docs/en/babel-plugin-proposal-decorators)。
+特别地，Creator 3D 目前支持 “Legacy” 装饰器提案，其用法和含义见 [babel-plugin-proposal-decorators](https://babeljs.io/docs/en/babel-plugin-proposal-decorators)。
 由于该 [提案](https://github.com/tc39/proposal-decorators) 仍处于 阶段2，
 引擎暴露的所有装饰器相关功能接口都在以下划线开头的 [`_decorator` 命名空间](about:blank)下。
 
@@ -37,7 +37,7 @@ globalThis.blahBlah // 任何环境下 globalThis 一定存在
 
 ```js
 typeof window // 可能是 'undefined'
-typeof global // 在非浏览器环境下可能是 'undefined'
+typeof global // 在浏览器环境下可能是 'undefined'
 ```
 
 再如，Creator 3D 未提供 CommonJS 的模块系统，因此以下代码片段将带来问题：

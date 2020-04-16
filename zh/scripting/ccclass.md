@@ -38,7 +38,7 @@ cc 属性的各种特性是通过 `property()` 的 cc 属性选项参数来指�
 
 - 构造函数。
 构造函数所指定的类型就直接作为属性的 cc 类型。
-注意，当 Javascript 构造函数 `Number`、`String`、`Boolean`
+注意，当 Javascript 内置构造函数 `Number`、`String`、`Boolean`
 用作 cc 类型时将给出警告，并且将
 分别视为 cc 类型 `CCFloat`、`CCString`、`CCBoolean`。
 
@@ -60,31 +60,45 @@ cc 属性的各种特性是通过 `property()` 的 cc 属性选项参数来指�
 - 否则，若值是对象类型，则相当于使用对象的构造函数指定了 cc 类型；
 - 否则，属性的 cc 类型是**未定义**的。
 
+一般地，仅需要在以下情况中需要显式地声明 cc 类型：
+- 当需要将属性显示为整数时；
+- 当属性的实际值可能是多个类型时。
+
 关于 cc 类型如何影响 cc 属性以及对未定义 cc 类型的属性的处理，见：
 
 - [属性类型](#属性参数)
 - [序列化参数](#serializable参数)
 
+为了方便，额外提供了以下装饰器以快速声明 cc 类型：
+
+|  	| 等价于 	|
+|----------	|----------------------	|
+| @type(t) 	| @property(t) 	|
+| @integer 	| @property(CCInteger) 	|
+| @float 	| @property(CCFloat) 	|
+| @string 	| @property(CCString) 	|
+| @boolean 	| @property(CCBoolean) 	|
+
 下列代码演示了不同 cc 类型 的 cc 属性的声明：
 
 ```ts
 import { _decorator, CCInteger, Node } from "cc";
-const { ccclass, property } = _decorator;
+const { ccclass, property, integer, float, boolean, string, type } = _decorator;
 @ccclass
 class MyClass {
-    @property(CCInteger) // 声明属性 _id 的 cc 类型为 Cocos 整数
+    @integer // 声明属性 _id 的 cc 类型为 Cocos 整数
     private _id = 0;
 
-    @property(Node) // 声明属性 _targetNode 的 cc 类型为 Node
+    @type(Node) // 声明属性 _targetNode 的 cc 类型为 Node
     private _targetNode: Node | null = null;
 
-    @property([Node]) // 声明属性 _children 的 cc 类型为 Node 数组
+    @type([Node]) // 声明属性 _children 的 cc 类型为 Node 数组
     private _children: Node[] = [];
 
     @property
     private _count = 0; // 未声明 cc 类型，从初始化式的求值结果推断为 Cocos 浮点数
 
-    @property(String) // 警告：不应该使用构造函数 String
+    @type(String) // 警告：不应该使用构造函数 String
                       // 等价于 CCString
     private _name: string = '';
 

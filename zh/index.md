@@ -63,6 +63,6 @@
 - [模块展示集合](https://github.com/cocos-creator/test-cases-3d): 引擎各个功能的范例项目，基本涵盖了引擎的大部分功能模块，用户在使用功能时可参考此项目中的用法进行开发
 - [UI 展示 Demo](https://github.com/cocos-creator/demo-ui/tree/3d)：各类 UI 组件组合使用的演示 Demo
 - [弹弹乐 3D](https://github.com/cocos-creator/demo-ball)：用户可通过此项目制作弹弹球游戏。
-- [快上车 3D](https://github.com/cocos-creator/tutorial-taxi-game)：基于物理的游戏制作 demo，用户可通过此项目制作快上车游戏。视频教程请戳：[这里](https://www.bilibili.com/video/BV1AE411j7L9)
+- [快上车 3D](https://github.com/cocos-creator/tutorial-taxi-game)：基于物理的游戏制作 demo，用户可通过此项目制作快上车游戏。视频教程请戳：[这里](https://space.bilibili.com/491120849/channel/detail?cid=116585)。
 
 **注意**，这些项目会不定期跟随版本进行更新。它们在 GitHub 上的默认分支是 master，对应的一般是最新的 Cocos Creator 3D 及 版本。如果仍在使用旧版本的 Cocos Creator 3D，这些项目有可能会打不开，可尝试切换到和旧版本相同命名的分支。

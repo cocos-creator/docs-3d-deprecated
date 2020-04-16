@@ -90,7 +90,7 @@ Let's drag all those nodes onto the property fields of `ItemTemplate` component.
 
 ![item binding](list-with-data/item-binding.png)
 
-**Note**: We will assign the value of `id` property directly through the data without binding the node.
+**Note**: We will assign value for `id` property through script, no data binding needed.
 
 ### Update template display with script
 
@@ -110,7 +110,7 @@ init(data: Item) {
 
 ## Instantiate template with data
 
-Let's go back to `ItemList.js` script, and add reference to our Prefab and the logic to dynamically generate the list.
+Let's go back to `ItemList.js` script, and add reference to our Prefab and then instantiate it with data.
 
 ```ts
 //...
@@ -127,7 +127,7 @@ onLoad () {
 }
 ```
 
-In the `onLoad` callback method, we traverse each data stored in `items` in turn, instantiate `itemPrefab` to generate a new node and add it to the node where `ItemList.js` is. Then call the `init` method in `ItemTemplate.js` to update the performance of each node.
+In the `onLoad` callback method, we traverse each data stored in `items` in turn, instantiate `itemPrefab` to generate a new node and add it to the node where `ItemList.js` is. Then call the `init` method in `ItemTemplate.js` to update its display.
 
 Now we can add a **Layout** component to the node that holds `ItemList.js` through **Add Component -> Add UI Component -> Layout** under the **Inspector** panel, and set the following properties:
 
