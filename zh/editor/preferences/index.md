@@ -16,10 +16,10 @@
 
 - **数值调节钮步长**：在属性检查器里，所有数值属性输入框的旁边都有一组上下箭头，可以用于步进输入的数值：
 
-![step button](https://docs.cocos.com/creator/manual/zh/getting-started/basics/editor-panels/preferences/step-button.png)
+    ![step button](https://docs.cocos.com/creator/manual/zh/getting-started/basics/editor-panels/preferences/step-button.png)
 
-当鼠标悬浮在数值属性的名称附近时，光标会变成 ![mouse cursor](https://docs.cocos.com/creator/manual/zh/getting-started/basics/editor-panels/preferences/mouse-cursor.jpg) 这样的形状，然后左右拖动鼠标，也可以按照一定的步进幅度连续增加或减小数值。
-以上两种修改数值的方式，默认的步长都是 0.1，而设置里 `数值调节钮步长` 这里设置的就是每次点击步进按钮或拖拽鼠标时数值变化的步长幅度。举例来说，如果您在脚本中使用的数字以整数为主，就可以把这个步长设置为 1，可以更方便的进行调节。
+    当鼠标悬浮在数值属性的名称附近时，光标会变成 ![mouse cursor](https://docs.cocos.com/creator/manual/zh/getting-started/basics/editor-panels/preferences/mouse-cursor.jpg) 这样的形状，然后左右拖动鼠标，也可以按照一定的步进幅度连续增加或减小数值。
+    以上两种修改数值的方式，默认的步长都是 0.1，而设置里 `数值调节钮步长` 这里设置的就是每次点击步进按钮或拖拽鼠标时数值变化的步长幅度。举例来说，如果您在脚本中使用的数字以整数为主，就可以把这个步长设置为 1，可以更方便的进行调节。
 
 ## 原生开发环境
 
@@ -43,7 +43,7 @@
 
 ![edit](./index/edit.jpg)
 
-- **外部脚本编辑器**：可以选用任意外部文本编辑工具的可执行文件，作为在资源管理器里双击脚本文件时的打开方式。您可以点击 浏览 按钮选择偏好的文本编辑器的可执行文件，也可以点击 移除 按钮来切换脚本编辑器。不推荐使用内置脚本编辑器。
+- **外部脚本编辑器**：可以选用任意外部文本编辑工具的可执行文件，作为在资源管理器里双击脚本文件时的打开方式。
 
 - **外部图片编辑器**：和上面的选项类似，这里用来设置在资源管理器中双击图片文件时，默认打开图片用的应用程序路径。
 
