@@ -1,10 +1,10 @@
 # 精灵帧资源（SpriteFrame）
 
-Cocos Creator 3D SpriteFrame 是 UI 渲染基础图形的容器，其中包含 Texture2D 资源或 RenderTexture 资源。在资源面板里，默认管理一个 Texture2D 资源。
+Cocos Creator 3D SpriteFrame 是 UI 渲染基础图形的容器。其本身管理图像的裁剪和九宫格信息，默认持有一个与其同级的 Texture2D 资源引用。
 
 ## 导入精灵帧资源
 
-使用默认的资源导入方式就可以将图像资源导入到项目中，之后我们就可以在 **资源管理器** 中看到如下图所示的图像资源。
+使用默认的资源导入方式就可以将图像资源导入到项目中，将图像资源的类型选择为 **sprite-frame** 之后我们就可以在 **资源管理器** 中看到如下图所示的图像资源。
 
 ![imported texture](sprite-frame/imported_texture.png)
 
@@ -14,7 +14,7 @@ Cocos Creator 3D SpriteFrame 是 UI 渲染基础图形的容器，其中包含 T
 
 ** 1. 容器内包含对象是贴图的使用方式 **
 
-在编辑器中，拖拽 SpriteFrame 资源到该 **Sprite** 组件的 `Sprite Frame` 属性栏中，来切换该 Sprite 显示的图像。在运行时，以上图中的 gold 图片为例，整个 SpriteFrame 资源氛围 `content`（图像源资源 ImageAsset）与其子资源 `spriteFrame`（精灵帧资源 SpriteFrame）。在游戏包内（也就是已经放在 resources 目录下）的资源可以通过
+在编辑器中，拖拽 SpriteFrame 资源到该 **Sprite** 组件的 `Sprite Frame` 属性栏中，来切换该 Sprite 显示的图像。在运行时，以上图中的 content 图片为例，整个资源分为 `content`（图像源资源 ImageAsset）及其子资源 `spriteFrame`（精灵帧资源 SpriteFrame）和子资源 `texture`（贴图资源 Texture）。在游戏包内（也就是已经放在 resources 目录下）的资源可以通过
 
 方法一（加载 ImageAsset）：
 ```typescript
@@ -23,7 +23,7 @@ const url = 'test_assets/test_altas/content';
 loader.loadRes(url, ImageAsset,(err: any, imageAsset) => {
   const sprite = this.getComponent(SpriteComponent);
   const spriteFrame = new SpriteFrame();
-  (spriteFrame.texture as Texture2D).image = imageAsset;
+  spriteFrame.texture = imageAsset._texture;
   sprite.spriteFrame = spriteFrame;
 });
 ```
@@ -47,9 +47,10 @@ RenderTexture 是一个渲染纹理，它可以将摄像机上的内容直接渲
 ```typescript
 const cameraComp = this.getComponent(CameraComponent);
 const renderTexture = new RenderTexture();
-rendetTex.reset({
-   width: 512,
-   height: 512,
+const size = view.getVisibleSize();
+renderTexture.reset({
+   width: size.width,
+   height: size.height,
    colorFormat: RenderTexture.PixelFormat.RGBA8888,
    depthStencilFormat: RenderTexture.DepthStencilFormat.DEPTH_24_STENCIL_8
 });

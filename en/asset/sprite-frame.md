@@ -1,10 +1,10 @@
 # Sprite Frame Assets
 
-__Sprite Frame__ is a container for __UI rendering__ and basic graphics, which can contain __Texture2D__ assets or __RenderTexture__ assets. In the __Assets Panel__, a __Texture2D__ asset is managed by default.
+__Sprite Frame__ is a container for __UI rendering__ and basic graphics, which manages the clipping and tiling data on top of a __Texture2D__ asset (by holding a reference to it).
 
 ## Importing Sprite Frame Assets
 
-Use the __default asset import__ method to import image assets into the project and can then be seen in the **Assets Panel**.
+Use the __default asset import__ method to import image assets into the project, then set the type of image as __sprite-frame__ and can then be seen in the **Assets Panel**.
 
 ![imported texture](sprite-frame/imported_texture.png)
 
@@ -14,7 +14,7 @@ Image assets will use thumbnails of their own pictures as icons in the **Assets 
 
 **1. The object contained in the container is using textures**
 
-In the editor, drag the __SpriteFrame__ asset to the __Sprite Frame__ property of the **Sprite** component to switch the image displayed by the __Sprite__. (The entire __SpriteFrame__ asset (`content`) and its sub-asset (` spriteFrame`)).
+In the editor, drag the __SpriteFrame__ asset to the __Sprite Frame__ property of the **Sprite** component to switch the image displayed by the __Sprite__. At runtime, taking the content picture in the above picture as an example, The entire resource is divided into image asset (`content`) ,its sub-asset (` spriteFrame`) and sub-asset (`texture`). The resources in the game package can be obtained by the following methods:
 
 __Method 1__: (load __ImageAsset__):
 
@@ -24,7 +24,7 @@ const url = 'test_assets/test_altas/content';
 loader.loadRes(url, ImageAsset,(err: any, imageAsset) => {
   const sprite = this.getComponent(SpriteComponent);
   const spriteFrame = new SpriteFrame();
-  (spriteFrame.texture as Texture2D).image = imageAsset;
+  spriteFrame.texture = imageAsset._texture;
   sprite.spriteFrame = spriteFrame;
 });
 ```
@@ -48,9 +48,10 @@ __RenderTexture__ is a rendering texture that renders content from the camera di
 ```typescript
 const cameraComp = this.getComponent(CameraComponent);
 const renderTexture = new RenderTexture();
-rendetTex.reset({
-   width: 512,
-   height: 512,
+const size = view.getVisibleSize();
+renderTexture.reset({
+   width: size.width,
+   height: size.height,
    colorFormat: RenderTexture.PixelFormat.RGBA8888,
    depthStencilFormat: RenderTexture.DepthStencilFormat.DEPTH_24_STENCIL_8
 });
