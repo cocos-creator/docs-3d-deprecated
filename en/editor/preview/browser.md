@@ -51,7 +51,7 @@ There are the following ways to debug the preview page on the mobile phone:
 
 ## Custom Preview Template
 
-We can add custom preview template to change the preview result,just put your template in **`preview-template`** folder in the project dictionary.Editor also use template to render to `index.html`. If there is a file named `index.ejs` in this dictionary,editor will use it as the template that render to `index.html`.Your can click the menu in editor **`Project ——> Generate Preview Template`** to get the latest template use in editor.
+We can add custom preview template to change the preview result,just put your template in **`preview-template`** folder in the project dictionary.Editor also use template to render to `index.html`. If there is a file named `index.ejs` in this dictionary,editor will use it as the template that render to `index.html`.Your can click the menu in editor **`Project ——> Generate Preview Template`** to get the latest template used in editor.
 
 ```
 project-folder
@@ -65,7 +65,7 @@ project-folder
 
 ### Examples of Use
 
-The code of this example is stored in the [test-case-3d](https://github.com/cocos-creator/test-cases-3d).
+Code of this example is stored in the [test-case-3d](https://github.com/cocos-creator/test-cases-3d).
 
 1. **Get lasted preview template**
 
