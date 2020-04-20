@@ -93,7 +93,7 @@ markAsWarning(math, 'math', [
 
 ## 使用注意
 
-- 操作目标都是对象，如果想要修改类的成员函数，owenr 和 target 都应该为 ***.prototype 。
+- 操作目标都是对象，如果想要修改类的成员函数，owenr 和 target 都应该为 **.prototype**。
 
 - replaceProperty 不输入 newName 或 newTarget ，表示和 name 或 target 一致。
 
