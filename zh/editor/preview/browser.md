@@ -23,11 +23,11 @@
 ![refresh](index/refresh.jpg)
 
 如果在编辑器内对场景做了修改，想要刷新预览效果，直接在浏览器里面刷新或者点击编辑器的刷新按钮即可。不同在于，编辑器的刷新按钮，将会刷新所有的预览页面。如果想要让预览页面自动刷新，保存场景即可。保存场景自动刷新的设置在 `项目设置 -> 项目预览` 里可以修改。
-![start-scenel](index/auto-refresh.png)
+![start-scene](index/auto-refresh.png)
 
 ## 预览场景
 
-预览场景默认是当前打开场景，如果需要调整可以在 `项目设置 -> 项目预览` 里修改预览的初始场景（注意 : 需要勾选 local 菜单，和取消选中 Use Global，详情请参考[项目设置](../project/index.md)）。
+预览场景默认是当前打开场景，如果需要调整可以在 `项目设置 -> 项目预览` 里修改预览的初始场景（详情请参考[项目设置](../project/index.md)）。
 
 ![start-scenel](index/start-scene.png)
 
@@ -64,7 +64,7 @@ project-folder
 
 以下示例可以在 [test-case-3d](https://github.com/cocos-creator/test-cases-3d) 仓库内查看
 
-1. 点击菜单 `项目 -> 生成预览模板` ，生成预览模板，console 内将会打印出预览模板生成的地址。
+1. 点击菜单 `项目 -> 生成预览模板` ，生成预览模板，console 面板内将会打印出预览模板生成的地址。
 
 2. 添加需要使用的脚本如 test.js，其中 `<%- include(cocosTemplate, {}) %>` 中包含的是默认的启动游戏逻辑，添加的脚本可以根据需要在游戏逻辑启动前、后来决定放置的位置，下面示例中 test.js 在游戏启动后加载。
 
