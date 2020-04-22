@@ -5,6 +5,7 @@
 ![物理引擎选项](img/physics-module.jpg)
 
 **注：默认为`cannon.js`物理引擎**。
+
 **注：开发过程中物理引擎可随意切换**。
 
 ## 碰撞检测:`builtin`
