@@ -1,5 +1,5 @@
 # Light Gizmo
-For more information about the light of Cocos Creator 3D, you can check the [Light Introduction](../../concepts/scene/light.md) section.
+For more information about the light of Cocos Creator 3D, you can read the [Light Introduction](../../concepts/scene/light.md) documentation.
 ## Directional Light
 `Directional Light Gizmo` show the direction of the directional light.
 

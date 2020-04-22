@@ -24,7 +24,7 @@ In 2D view, you can move and rotate view of **Scene Editor** by following operat
 
 
 ### Coordinate system and grid
-grid in the scene are important reference information for us to place the scene elements. For information of the relationship between coordinate system and node attributes like position, please read [Transform](../../concepts/scene/coord.md) section.
+Grid in the scene is important reference information for us to place the scene elements. For information of the relationship between coordinate system and node attributes like position, please read [Transform](../../concepts/scene/coord.md) section.
 
 ## Select a node
 The node will be selected if you left click the mouse on the node in **Scene Editor**. You can use transform tools (like position, rotation) to do some node operations only if you have selected it.
@@ -37,8 +37,3 @@ The main function of **Scene Editor** is to edit and arrange the visible element
 - [Light Gizmo](./light-gizmo.md)
 - [Collider Gizmo](./collider-gizmo.md)
 - [ParticleSystem Gizmo](./particle-system-gizmo.md)
-
-
-
-
-

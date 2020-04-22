@@ -14,8 +14,8 @@ Gizmo refers to a controller that can interactive with mouse and appears in cert
 ![position gizmo](images/position-gizmo.png)
 
 When the move transform tool is active：
-- Press red,green,blue arrow and drag mouse, then the node will be moved on the x,y,z axis.
-- Press red,green,blue plane and drag mouse, then the node will be moved freely on y-z,x-z,x-y plane.
+- Press **red, green, blue** arrow and drag mouse, then the node will be moved on the **x, y, z** axis.
+- Press **red, green, blue** plane and drag mouse, then the node will be moved freely on **y-z, x-z, x-y** plane.
 
 ## Rotate transform tool
 Click the second button on the tool bar located at the main window's top left corner or press the keyboard shortcut **E** in scene editor and you can activate **Rotate transform tool**.
@@ -27,7 +27,7 @@ The gizmo of rotate transform tool is made up of three orthogonal circles(an arr
 ![rotation gizmo](images/rotation-gizmo.png)
 
 When the move transform tool is active:
-- Press red,green,blue circle and drag mouse, then the node will be rotated on the x,y,z axis.
+- Press **red, green, blue** circle and drag mouse, then the node will be rotated on the **x, y, z** axis.
 
 ## Scale transform tool
 Click the third button on the tool bar located at main window's top left corner or press the keyboard shortcut **R** in the scene editor and you can activate **scale transform tool**.
@@ -39,8 +39,8 @@ The gizmo of scale transform tool is made up of red,green,blue cube align the th
 ![scale gizmo](images/scale-gizmo.png)
 
 When the scale transform tool is active:
-- Press red,green,blue cube and drag mouse, then the node will be scaled on the x,y,z axis.
-- Press gray cube and drag mouse，then the node will be scaled on all the x,y,z axis at the same time.
+- Press **red, green, blue** cube and drag mouse, then the node will be scaled on the **x, y, z** axis.
+- Press **gray** cube and drag mouse，then the node will be scaled on all the **x, y, z** axis at the same time.
 
 ## Rect transform tool
 Click the fourth button on the tool bar located at the main window's top left corner or press the keyboard shortcut **T** in scene editor and you can activate **rect transform tool**.
