@@ -1,6 +1,6 @@
 # Preferences
 
-The personalized settings of the editor are provided in **Preferences** window. You can click the menu `Cocos Creator 3D-> Preferences` to open the **Preferences** window.
+The personalized settings of the editor are provided in the **Preferences** window. You can click the menu `Cocos Creator 3D-> Preferences` to open the **Preferences** window.
 
 Preferences is divided into the following pages:
 
@@ -16,9 +16,9 @@ General page are mainly configured for some basic data related to the editor.
 
 - **Spin step**: In the Properties, all numeric property has a set of UP and DOWN arrows next to the input box, values that can be used to step Input:
 
-    ![step button](https://docs.cocos.com/creator/manual/zh/getting-started/basics/editor-panels/preferences/step-button.png)
+    ![step button](https://docs.cocos.com/creator/manual/en/getting-started/basics/editor-panels/preferences/step-button.png)
 
-    When hovering close to the value of the property name, the cursor will turn into ![mouse cursor](https://docs.cocos.com/creator/manual/zh/getting-started/basics/editor-panels/preferences/mouse-cursor.jpg) such a shape, then Drag the mouse, can also according to a continuous increase or decrease the value of step amplitude.
+    When hovering close to the value of the property name, the cursor will turn into ![mouse cursor](https://docs.cocos.com/creator/manual/en/getting-started/basics/editor-panels/preferences/mouse-cursor.jpg) such a shape, then Drag the mouse, can also according to a continuous increase or decrease the value of step amplitude.
 
     The above two ways to modify the value，the default step is **0.1**, spin step says each time you click the step button or drag the mouse to change the step amplitude. For example, if you mainly use numbers to integers in the script, you can take the step size is set to **1**, can be adjusted more easily.
 
@@ -50,7 +50,7 @@ This category is used to set the default open mode for resources.
 
 ## Extension
 
-The plugin allows to directly register configuration items into preferences.The configuration items registered in the preferences will be displayed here.For details, please refer to the documentation of each plug-in.
+The plugin allows directly registering configuration items into preferences. The configuration items registered in the preferences will be displayed here. For details, please refer to the documentation of each plug-in.
 
 ## Laboratory
 
@@ -78,4 +78,4 @@ For this feature, if you have more awesome suggestions, welcome to tell us in th
 
 ### Turn on terrain
 
-More details can refer to [Terrain system](../terrain/index.md).
+For more details can refer to [Terrain system](../terrain/index.md).
