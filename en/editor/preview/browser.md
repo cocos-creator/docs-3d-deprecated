@@ -7,7 +7,7 @@
 
 We can click the **Preview** button on top of editor window to see the game in action. After click, editor will launch the game in your default browser. We recommend [Chrome](http://google.com/chrome) as the browser of the choice, since the DevTools of Chrome is most advanced in web debugging and inspecting.
 
-There are a bunch of control in Preview page:
+There are a number of control in **Preview** page:
 
 - On the left are viewport size presets to simulate how your game look on mobile devices.
 - **Rotate** button to toggle between landscape and portrait view.
@@ -47,7 +47,7 @@ There are the following ways to debug the preview page on the mobile phone:
 
 ![preview-url](index/preview-url.jpg)
 
-**Notes**: Make sure the mobile phone and the computer is **on the same network segment**.Since there will be multiple networks on the computer, if the IP address of the preview URL in the editor is incorrectly, you can modify it in `Preferences-> General Settings-> Select Local Preview Address`. Please refer to the description of [preference settings](../preference/index.md) for details.
+> **Notes**: Make sure the mobile phone and the computer is **on the same network segment**.Since there will be multiple networks on the computer, if the IP address of the preview URL in the editor is incorrectly, you can modify it in `Preferences-> General Settings-> Select Local Preview Address`. Please refer to the description of [preference settings](../preference/index.md) for details.
 
 ## Custom Preview Template
 
@@ -61,7 +61,7 @@ project-folder
         |--index.ejs
 ```
 
-**Notes**: There are some preview menu items and preview debugging tools in the preview template, We recommended you keep all the content and **just add what you need** or modified code carefully to avoid some unexpected errors.. In addition, if `index.html` and `index.ejs` coexist, **`index.html` will replace `index.ejs`** as the render-template for preview page .
+> **Notes**: There are some preview menu items and preview debugging tools in the preview template, We recommended you keep all the content and **just add what you need** or modified code carefully to avoid some unexpected errors.. In addition, if `index.html` and `index.ejs` coexist, **`index.html` will replace `index.ejs`** as the render-template for preview page .
 
 ### Examples of Use
 
@@ -77,7 +77,7 @@ Code of this example is stored in the [test-case-3d](https://github.com/cocos-cr
 
 3. **Modify `index.ejs`**
 
-    Open index.ejs and modify as follows:
+    Open `index.ejs` and modify as follows:
 
 ```html
 <html>
