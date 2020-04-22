@@ -1,4 +1,4 @@
-# RigidBodyComponent
+# 刚体组件
 
 ## 获取刚体组件
 
