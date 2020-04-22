@@ -4,14 +4,16 @@ Cocos Creator 3D 的物理事件有触发事件和碰撞事件。
 
 ## 触发器和碰撞器
 
-当碰撞时，触发器不会产生物理行为，而碰撞器会产生物理行为。因此触发器是只进行碰撞检测的`Collider`，犹如幽灵一样，而碰撞器是既进行碰撞检测，又进行物理模拟的`Collider`。
+当碰撞时，触发器不会产生物理行为，而碰撞器会产生物理行为。
+
+因此触发器是只进行碰撞检测的`Collider`，**犹如幽灵一般**。而碰撞器是既进行碰撞检测，又进行物理模拟的`Collider`。
 
 两者的区别
 
 - 触发器不会与其它触发器或者碰撞器做更精细的检测。
 - 碰撞器与碰撞器会做更精细的检测，并会产生碰撞数据，如碰撞点、法线等。
 
-**注：设置一个`Collider`组件为触发器，可以通过设置`Collider`组件的`isTrigger`属性**。
+**注：`isTrigger`属性决定`Collider`组件是否为触发器**。
 
 ## 触发事件和碰撞事件
 
@@ -21,8 +23,8 @@ Cocos Creator 3D 的物理事件有触发事件和碰撞事件。
 
 监听触发事件，需要通过注册事件来添加相应的回调：
 
-1. 通过 `this.getComponent(ColliderComponent)` 获取到 `ColliderComponent`
-2. 通过 `ColliderComponent` 的 `on` 或者 `once` 方法注册相应事件的回调
+1. 通过`this.getComponent(ColliderComponent)`获取到`ColliderComponent`
+2. 通过`ColliderComponent`的`on`或者`once`方法注册相应事件的回调
 
 代码示例：
 

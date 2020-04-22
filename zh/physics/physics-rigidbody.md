@@ -2,16 +2,15 @@
 
 ## 获取刚体组件
 
-与`ColliderComponent`中获取组件的方式类似，以下为`TypeScript`的代码示例：
-`const rigidBody = this.getComponent(RigidBodyComponent);`
+`TypeScript`的代码示例：`const rigidBody = this.getComponent(RigidBodyComponent);`
 
 ## 刚体类型
 
 刚体一般分为三种类型，`static`,`dynamic`,`kinematic`.
 
-- **static**，表示静态刚体，具体为质量为`0`的，或者只有碰撞组件的物理元素。
-- **dynamic**，表示动力学刚体，能够**受到力的作用**，具体为质量大于`0`并且`isKineMatic`为`false`的。
-- **kinematic**，表示运动学刚体，由用户来控制该刚体的运动，具体为质量大于`0`并且`isKineMatic`为`true`的。
+- **static**，表示静态刚体，犹如质量巨大无比的石头，具体为质量为`0`的，或者只有碰撞组件的物理元素。
+- **dynamic**，表示动力学刚体，能够**受到力的作用**，具体为质量大于`0`并且`isKinematic`为`false`的。
+- **kinematic**，表示运动学刚体，由用户来控制该刚体的运动，具体为质量大于`0`并且`isKinematic`为`true`的。
 
 ## 休眠和唤醒刚体
 
@@ -44,7 +43,7 @@ if (rigidBody.isSleeping) {
 ### 通过施加扭转力
 
 刚体组件提供了`applyTorque`接口，签名为：`applyTorque (torque: Vec3)`。
-通过此接口可以施加扭矩到刚体上，因为只影响旋转轴，所以不再需要指定一个点。
+通过此接口可以施加扭矩到刚体上，因为只影响旋转轴，所以不再需要指定作用点。
 
 ### 通过施加冲量
 

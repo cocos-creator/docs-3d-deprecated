@@ -59,4 +59,4 @@ collider.material.restitution = 0.1;
 
 ---
 
-继续前往 [Rigidbody 组件](physics-rigidbody.md) 说明文档。
+继续前往 [刚体组件](physics-rigidbody.md) 说明文档。

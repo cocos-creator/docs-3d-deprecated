@@ -6,15 +6,15 @@ Cocos Creator 3D 目前支持两种语言进行开发，分别为`JavaScript`和
 
 **注：`TypeScript`具有良好的语法分析和类型提示，推荐使用**。
 
-以获取`BoxColliderComponent`为例，在`JavaScript`中可以用以下方式获取相应的`Collider`组件：
+以获取`BoxColliderComponent`为例，在`JavaScript`中获取`Collider`组件：
 
 1. `this.getComponent('cc.BoxColliderComponent')`
 2. `this.getComponent(cc.BoxColliderComponent)`
 
-在 TypeScript 中可以用以下方式获取相应的Collider组件：
+在`TypeScript`中获取`Collider`组件：
 
 1. 上述`JavaScript`使用的方式
-2. **`this.getComponent(BoxColliderComponent)`** (**推荐使用，提示导入时，注意导入位置为“ cc ”**)
+2. **`this.getComponent(BoxColliderComponent)`** (**推荐使用，提示导入时，注意导入位置为`cc`**)
 
 **注：若无智能导入提示，请检查工作目录是不是在工程的顶层，以及是否使用较新的`VSCode`编辑器**。
 
@@ -30,7 +30,7 @@ Cocos Creator 3D 目前支持两种语言进行开发，分别为`JavaScript`和
 
 ### 元素如何构成
 
-在[**物理简介**](physics.md)中，介绍了一个物理元素是由`Collider`和`RigidBody`组件相互组合而成的，其中指出了一个元素只能有一个或零个`RigidBody`组件，并且可以有多个`Collider`组件。
+在[**物理简介**](physics.md)中，介绍了一个物理元素是由`Collider`和`RigidBody`组件相互组合而成的，其中指出了物理元素只能有一个或零个`RigidBody`组件，并且可以有多个`Collider`组件。
 
 单个节点是很容易看出是否有物理元素的，但如果我们以节点链为单位，这样将会很难看出物理元素是由哪些节点以及哪些组件组成的。
 
@@ -42,12 +42,12 @@ Cocos Creator 3D 目前支持两种语言进行开发，分别为`JavaScript`和
 
 这两个思路各有利弊：
 
-- 思路 1 不够直观，多个形状只能往一个节点上加，显示形状需要增加子节点模型。
-- 思路 1 调整参数时，需要调整两个地方，分别为子节点的位置信息和父节点上对应`Collider`组件的数据信息。
-- 思路 2 增加了节点耦合，节点更新时，需要更新相应的依赖节点。
-- 思路 2 在节点链被破坏时，需要维护内容更多，节点链在反复被破坏时需要处理复杂的逻辑。
+- 思路一不够直观，多个形状只能往一个节点上加，显示形状需要增加子节点模型。
+- 思路一调整参数时，需要调整两个地方，分别为子节点的位置信息和父节点上对应`Collider`组件的数据信息。
+- 思路二增加了节点耦合，节点更新时，需要更新相应的依赖节点。
+- 思路二在节点链被破坏时，需要维护内容更多，节点链在反复被破坏时需要处理复杂的逻辑。
 
-**注：Cocos Creator 3D 的物理目前使用的是思路 1，后续可能会进行调整，请留意版本更新公告**。
+**注：Cocos Creator 3D 的物理目前使用的是思路一，后续可能会进行调整，请留意版本更新公告**。
 
 ### `Collider`的`attachedRigidbody`属性
 
@@ -62,7 +62,7 @@ Cocos Creator 3D 目前支持两种语言进行开发，分别为`JavaScript`和
 
 目前`Collider`组件提供了两个属性去访问和设置，分别为`material`和`sharedMaterial`，它们的区别主要如下：
 
-1. 设置`sharedMaterial`或者`material`是一样的效果，在没有调用设置接口之前是共享状态，当发现设置的与当前引用不是同一实例时，后面获取`material`将不会生成新的材质实例，此时是非共享状态。
+1. 设置`sharedMaterial`或者`material`是一样的效果，在没有调用这些接口之前是共享状态，当发现设置的与当前引用不是同一实例时，后面获取`material`将不会生成新的材质实例，此时是非共享状态。
 
 2. 在共享状态前提下，获取`material`将会生成新的材质实例，以确保只有当前碰撞体引用了该材质，这样修改时不会影响到其他的碰撞体，之后就是非共享状态了。
 
