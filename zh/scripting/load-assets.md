@@ -115,6 +115,15 @@ loader.loadRes("test assets/image/spriteFrame", SpriteFrame ,(err: any, spriteFr
 });
 ```
 
+```typescript
+// 加载 texture
+loader.loadRes("test assets/image/texture", Texture2D ,(err: any, texture: Texture2D) => {
+    const spriteFrame = new SpriteFrame();
+    spriteFrame.texture = texture;
+    this.node.getComponent(SpriteComponent).spriteFrame = spriteFrame;
+});
+```
+
 > 如果指定了类型参数，就会在路径下查找指定类型的资源。当你需要获取 “子资源”（例如获取 ImageAsset 的子资源 SpriteFrame），就需要指定子资源的路径。
 
 #### 加载图集中的 SpriteFrame
@@ -204,7 +213,7 @@ loader.load({url: remoteUrl, type: 'png'}, function () {
 
 **接下来要介绍问题的另一个核心：JavaScript 中无法跟踪对象引用。**
 
-在 JavaScript 这种脚本语言中，由于其弱类型特性，以及为了代码的便利，往往是不包含内存管理功能的，所有对象的内存都由垃圾回收机制来管理。这就导致 TS 层逻辑永远不知道一个对象会在什么时候被释放，这意味着引擎无法通过类似引用计数的机制来管理外部对象对资源的引用，也无法严谨得统计资源是否不再被需要了。基于以上的原因，目前 loader 的设计实际上是依赖于用户根据游戏逻辑管理资源，用户可以决定在某一时刻不再需要某些资源以及它依赖的资源，立即将它们在 loader 中的缓存释放。也可以选择在释放依赖资源的时候，防止部分共享资源被释放。下面是一个简单的示例：
+在 JavaScript 这种脚本语言中，由于其弱类型特性，以及为了代码的便利，往往是不包含内存管理功能的，所有对象的内存都由垃圾回收机制来管理。这就导致 JS 层逻辑永远不知道一个对象会在什么时候被释放，这意味着引擎无法通过类似引用计数的机制来管理外部对象对资源的引用，也无法严谨得统计资源是否不再被需要了。基于以上的原因，目前 loader 的设计实际上是依赖于用户根据游戏逻辑管理资源，用户可以决定在某一时刻不再需要某些资源以及它依赖的资源，立即将它们在 loader 中的缓存释放。也可以选择在释放依赖资源的时候，防止部分共享资源被释放。下面是一个简单的示例：
 
 ```typescript
 // 直接释放某个贴图

@@ -119,6 +119,15 @@ loader.loadRes("test assets/image/spriteFrame", SpriteFrame ,(err: any, spriteFr
 });
 ```
 
+```typescript
+// load a texture
+loader.loadRes("test assets/image/texture", Texture2D ,(err: any, texture: Texture2D) => {
+    const spriteFrame = new SpriteFrame();
+    spriteFrame.texture = texture;
+    this.node.getComponent(SpriteComponent).spriteFrame = spriteFrame;
+});
+```
+
 > If a __type__ parameter is specified, an asset of the specified type will be found under the path. When you need to get a "sub-asset" (such as getting the sub-asset __SpriteFrame__ of __ImageAsset__), you need to specify the path of the sub-asset.
 
 #### Loading a SpriteFrame from Atlas

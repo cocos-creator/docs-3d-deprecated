@@ -14,7 +14,7 @@ Cocos Creator 3D SpriteFrame 是 UI 渲染基础图形的容器。其本身管�
 
 ** 1. 容器内包含对象是贴图的使用方式 **
 
-在编辑器中，拖拽 SpriteFrame 资源到该 **Sprite** 组件的 `Sprite Frame` 属性栏中，来切换该 Sprite 显示的图像。在运行时，以上图中的 content 图片为例，整个资源分为 `content`（图像源资源 ImageAsset）及其子资源 `spriteFrame`（精灵帧资源 SpriteFrame）和子资源 `texture`（贴图资源 Texture）。在游戏包内（也就是已经放在 resources 目录下）的资源可以通过
+在编辑器中，拖拽 SpriteFrame 资源到该 **Sprite** 组件的 `Sprite Frame` 属性栏中，来切换该 Sprite 显示的图像。在运行时，以上图中的 content 图片为例，整个资源分为 `content`（图像源资源 ImageAsset）及其子资源 `spriteFrame`（精灵帧资源 SpriteFrame）和子资源 `texture`（贴图资源 Texture2D）。在游戏包内（也就是已经放在 resources 目录下）的资源可以通过
 
 方法一（加载 ImageAsset）：
 ```typescript
@@ -23,7 +23,9 @@ const url = 'test_assets/test_altas/content';
 loader.loadRes(url, ImageAsset,(err: any, imageAsset) => {
   const sprite = this.getComponent(SpriteComponent);
   const spriteFrame = new SpriteFrame();
-  spriteFrame.texture = imageAsset._texture;
+  const tex = new Texture2D();
+  tex.image = imageAsset;
+  spriteFrame.texture = tex;
   sprite.spriteFrame = spriteFrame;
 });
 ```
@@ -39,6 +41,7 @@ loader.loadRes(url, SpriteFrame,(err: any , spriteFrame) => {
 ```
 
 在服务器上的资源只能加载到图像源 ImageAsset，具体方法请参考: [资源加载](./load-assets.md)。
+我们会在之后的版本中提供将 ImageAsset 包装为 SpriteFrame 的方法，以方便用户更简便的使用图像资源。
 
 ** 2. 容器内包含对象是 RenderTexture 的使用方式 **
 
