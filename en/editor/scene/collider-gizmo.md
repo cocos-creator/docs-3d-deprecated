@@ -7,7 +7,7 @@ For more information about the collider of Cocos Creator 3D, you can read the [P
 ![box collider gizmo](images/box-collider-gizmo.png)
 
 ## Sphere Collider
-`Sphere Collider Gizmo` show the size of sphere, you can edit the radius of sphere by dragging the control quad.
+`Sphere Collider Gizmo` shows the size of sphere, you can edit the radius of sphere by dragging the control quad.
 
 ![sphere collider gizmo](images/sphere-collider-gizmo.png)
 
