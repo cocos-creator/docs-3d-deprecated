@@ -10,7 +10,7 @@ Cocos Creator 3D 从 v1.0.2 版本开始正式支持将游戏发布到华为快�
 
 ## 发布流程
 
-一、使用 Cocos Creator 3D 打开需要发布的项目工程，在 **构建发布** 面板的 **发布平台** 中选择 **Huawei Mini Game**。
+一、使用 Cocos Creator 3D 打开需要发布的项目工程，在 **构建发布** 面板的 **发布平台** 中选择 **华为快游戏**。
 
 ![](./huawei-mini-game/build_options.jpg)
 

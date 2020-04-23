@@ -67,7 +67,7 @@
       开发者可以根据自己的需要看是否勾选该项。然后点击 **构建**。
 
   3. 构建完成后，点击 **发布路径** 后面的 **打开** 按钮，将发布路径下的 **res** 目录上传到小包模式服务器。例如：默认发布路径是 build，构建任务名为 vivo-mini-game, 则需要上传 /build/vivo-mini-game/res 目录。
-  **注意**：如果是命令行编译小包模式，记得备份 **build/vivo-pack-tools/res** 目录，然后删除 **build/vivo-pack-tools/res** 目录，再进行命令行编译（npm run build）。
+  **注意**：如果是命令行编译小包模式，记得备份 **build/vivo-mini-game/res** 目录，然后删除 **build/vivo-mini-game/res** 目录，再进行命令行编译（npm run build）。
   2、
   此时，构建出来的 rpk 将不再包含 res 目录，res 目录里的资源将通过网络请求从填写的 **小包模式服务器路径** 上下载。
 
@@ -94,7 +94,7 @@
 
       **注意**：openssl 工具在 linux 或 Mac 环境下可在终端直接打开，而在 Windows 环境下则需要安装 openssl 工具并且配置系统环境变量。
 
-二、**构建发布** 面板的相关参数设置完成后，点击 **构建**。构建完成后点击 **发布路径** 后面的 **打开** 按钮来打开构建发布包，可以看到在默认发布路径 build 目录下生成了与构建任务名称相同的目录例如 `vivo-mini-game`，该目录就是导出的 vivo 小游戏工程原始目录，如果你是第一次打包 vivo 小游戏，你同时还会看到每个项目的 build 下面都会生成一个 `vivo-pack-tools` 的文件夹，该文件夹内存放了 vivo 的本地打包工具，每次构建会将项目里的信息生成到这里构建出 rpk 后再拷贝会源目录，如果想要自行编译项目需要在该目录下进行。
+二、**构建发布** 面板的相关参数设置完成后，点击 **构建**。构建完成后点击 **发布路径** 后面的 **打开** 按钮来打开构建发布包，可以看到在默认发布路径 build 目录下生成了与构建任务名称相同的目录例如 `vivo-mini-game`，该目录就是导出的 vivo 小游戏工程原始目录，但并不是编译目录。打开编辑器安装目录下的 `resources/tools/vivo-pack-tools` 的文件夹，该文件夹内存放了 vivo 的本地打包工具，每次构建会将项目里的信息生成到这里构建出 rpk 后再拷贝会源目录，如果想要自行编译项目需要在该目录下进行。
 
 ![](./vivo-mini-game/package.png)
 
@@ -127,8 +127,8 @@
     利用 vivo 小游戏打包工具命令生成网址和二维码
 
     ```bash
-    # 先把命令行指定到 qgame 目录下
-    cd E:\workspace\YourProject\build\qgame
+    # 先把命令行指定到编辑器安装目录下的 resources/tools/vivo-pack-tools 目录下
+    cd ${CocosCreator3D}/resources/tools/vivo-pack-tools
     # 生成网址和二维码
     npm run server
     ```
@@ -137,9 +137,9 @@
 
     最后点击 **扫码安装** 按钮，将第一步中生成的网址拷贝到浏览器，然后直接扫描网页上的二维码即可打开 rpk。
 
-<!-- ## 分包加载
+## 分包加载
 
-vivo 小游戏的分包加载，用法与微信小游戏类似。详情请参考 [分包加载](../../asset/subpackage.md)。 -->
+vivo 小游戏的分包加载，用法与微信小游戏类似。详情请参考 [分包加载](../../asset/subpackage.md)。
 
 ## 参考链接
 
