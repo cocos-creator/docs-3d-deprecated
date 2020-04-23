@@ -4,7 +4,7 @@ Label 组件用来显示一段文字，文字可以是系统字体，TrueType �
 
 ![label-property](./label/label-property.png)
 
-点击 **属性检查器** 下面的 **添加组件** 按钮，然后从 **UI** 中选择 **Label**，即可添加 Label 组件到节点上。
+点击 **属性检查器** 下面的 **添加组件** 按钮，然后从 **UI/Render** 中选择 **Label**，即可添加 Label 组件到节点上。
 
 <!-- 文字的脚本接口请参考 [Label API](https://docs.cocos.com/creator/2.1/api/zh/classes/Label.html)。 -->
 
@@ -14,7 +14,6 @@ Label 组件用来显示一段文字，文字可以是系统字体，TrueType �
 | -------------- | ----------- |
 | Color | 图片颜色
 | SharedMaterial | 用户自定义材质，没有设置则用内置材质
-| Priority | 渲染排序优先级。详情参考[渲染排序规则](../engine/priority.md)。注意：该功能在 1.0.2 上移除，可在 UITransformComopnent 上设置。
 | String | 文本内容字符串。
 | Horizontal Align | 文本的水平对齐方式。可选值有 LEFT，CENTER 和 RIGHT。
 | Vertical Align | 文本的垂直对齐方式。可选值有 TOP，CENTER 和 BOTTOM。
