@@ -19,7 +19,7 @@ Cocos Creator 3D SpriteFrame 是 UI 渲染基础图形的容器。其本身管�
 方法一（加载 ImageAsset）：
 ```typescript
 const self = this;
-const url = 'test_assets/test_altas/content';
+const url = 'test_assets/test_atlas/content';
 loader.loadRes(url, ImageAsset,(err: any, imageAsset) => {
   const sprite = this.getComponent(SpriteComponent);
   const spriteFrame = new SpriteFrame();
@@ -32,12 +32,22 @@ loader.loadRes(url, ImageAsset,(err: any, imageAsset) => {
 
 方法二（加载 SpriteFrame）：
 ```typescript
-const self = this;
-const url = 'test_assets/test_altas/content/spriteFrame';
+const url = 'test_assets/test_atlas/content/spriteFrame';
 loader.loadRes(url, SpriteFrame,(err: any , spriteFrame) => {
   const sprite = this.getComponent(SpriteComponent);
   sprite.spriteFrame = spriteFrame;
 });
+```
+
+方法三（canvas 绘制内容 UI 上显示）：
+```typescript
+const sprite = this.getComponent(SpriteComponent);
+const img = new ImageAsset(canvas);
+const tex = new Texture2D();
+tex.image = img;
+const sp = new SpriteFrame();
+sp.texture = tex;
+sprite.spriteFrame = sp;
 ```
 
 在服务器上的资源只能加载到图像源 ImageAsset，具体方法请参考: [资源加载](./load-assets.md)。
