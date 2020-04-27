@@ -4,9 +4,9 @@
 
 ## 真机调试
 
-如果游戏只有在真机上才能运行，或者模拟器重现不了问题，那就必须用真机对打包后的游戏进行调试。调试步骤如下：
+如果游戏只有在真机上才能运行，那就必须用真机对打包后的游戏进行调试。调试步骤如下：
 
-- 确保 Android/iOS 设备与 Windows 或者 Mac 在同一个局域网中。注意在调试过程中请勿使用 VPN ，否则可能导致无法正常调试。
+- 确保 Android/iOS 设备与 Windows 或者 Mac 在同一个局域网中。注意在调试过程中请勿开启代理，否则可能导致无法正常调试。
 - 在 Creator 3D 的 **构建发布** 面板选择 Android/iOS 平台、Debug 模式，构建编译运行工程（iOS 平台建议通过 Xcode 连接真机进行编译运行）。
 - 用 Chrome 浏览器打开地址：`chrome-devtools://devtools/bundled/js_app.html?v8only=true&ws={IP}:6086/00010002-0003-4004-8005-000600070008` 即可进行调试。其中 `{IP}` 为 Android/iOS 设备的本地 IP。
 
@@ -16,7 +16,7 @@
 
 在 Windows 平台及 Mac 平台下调试游戏，步骤与真机调试类似，将工程用 IDE 编译运行之后，此时便可进行调试。步骤如下：
 
-- 用 IDE 将打包好的工程编译并运行（Windows 平台请使用 Visual Studio ， Mac 平台请使用 Xcode）
+- 用 IDE 将打包好的工程编译并运行（Windows 平台请使用 Visual Studio， Mac 平台请使用 Xcode）
 - 在游戏运行时打开 Chrome 浏览器，输入地址：`chrome-devtools://devtools/bundled/js_app.html?v8only=true&ws=127.0.0.1:6086/00010002-0003-4004-8005-000600070008` 即可进行调试。
 
    ![](debug-jsb/v8-win32-debug.png)

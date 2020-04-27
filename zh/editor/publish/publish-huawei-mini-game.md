@@ -4,7 +4,7 @@ Cocos Creator 3D 从 v1.0.2 版本开始正式支持将游戏发布到华为快�
 
 ## 环境配置
 
-- 下载 [华为快应用加载器](https://obs.cn-north-2.myhwclouds.com/hms-ds-wf/sdk/HwFastAPPEngine_Loader.1213_tool.zip)，并安装到 Android 设备上（建议 Android Phone 6.0 或以上版本）
+- 下载 [华为快应用加载器](https://developer.huawei.com/consumer/cn/doc/development/quickApp-Guides/quickapp-installtool)，并安装到 Android 设备上（建议 Android Phone 6.0 或以上版本）
 
 - PC 端全局安装 [nodejs-8.1.4](https://nodejs.org/zh-cn/download/) 或以上版本
 
@@ -52,16 +52,17 @@ Cocos Creator 3D 从 v1.0.2 版本开始正式支持将游戏发布到华为快�
 
 - **小包模式和小包模式服务器路径**
 
-  该项为选填项。快游戏的包内体积包含代码和资源不能超过 10M，资源可以通过网络请求加载。**小包模式** 就是帮助用户将脚本文件保留在快游戏包内，其他资源则上传到远程服务器，根据需要从远程服务器下载。而远程资源的下载、缓存和版本管理，Creator 已经帮用户做好了。用户需要做的是以下两个步骤：
+  该项为选填项。快游戏的包内体积包含代码和资源不能超过 10M，资源可以通过网络请求加载。**小包模式** 就是帮助用户将脚本文件保留在快游戏包内，其他资源则上传到远程服务器，根据需要从远程服务器下载。而远程资源的下载、缓存和版本管理，Creator 3D 已经帮用户做好了。用户需要做的是以下两个步骤：
 
   1、构建时，勾选 **小包模式**，填写 **小包模式服务器路径**。然后点击 **构建**。
 
-  2、构建完成后，点击 **发布路径** 后面的 **打开** 按钮，将发布路径下的 **huawei/res** 目录上传到小包模式服务器。例如：默认发布路径是 build，则需要上传 build/huawei/res 目录。
+  2、构建完成后，点击 **发布路径** 后面的 **打开** 按钮，将发布路径下的 **res** 目录上传到小包模式服务器。例如：默认发布路径是 build，构建任务名是 `huawei-quick-game`，则需要上传 `build/huawei-quick-game/res` 目录。
 
   此时，构建出来的 rpk 将不再包含 res 目录，res 目录里的资源将通过网络请求从填写的 **小包模式服务器地址** 上下载。
 
 - **分包**
-  v1.0.4 起添加该选项，默认值为 true，用于控制分包功能的开启。
+
+  v1.0.4 起添加该选项，默认开启，用于控制分包功能的开启。
 
 - **密钥库**
 
@@ -83,7 +84,7 @@ Cocos Creator 3D 从 v1.0.2 版本开始正式支持将游戏发布到华为快�
       openssl req -newkey rsa:2048 -nodes -keyout private.pem -x509 -days 3650 -out certificate.pem
       ```
 
-      >**注意**：openssl 工具在 linux 或 Mac 环境下可在终端直接打开。而在 Windows 环境下则需要安装 openssl 工具并且配置系统环境变量，配置完成后需重启 Creator。
+      >**注意**：openssl 工具在 linux 或 Mac 环境下可在终端直接打开。而在 Windows 环境下则需要安装 openssl 工具并且配置系统环境变量，配置完成后需重启 Creator 3D。
 
 二、**构建发布**
 
@@ -92,9 +93,8 @@ Cocos Creator 3D 从 v1.0.2 版本开始正式支持将游戏发布到华为快�
   ![](./huawei-mini-game/rpk.png)
 
 三、**将打包出来的 rpk 运行到手机上**。
-目前仅支持手动拷贝到手机上运行
 
-  - 将构建生成的 rpk 包（位于快游戏工程 huawei 目录下的 dist 目录中）拷贝到手机 sdcard 目录下。然后在手机上打开 **华为快应用加载器** 后，点击手机的返回键会弹出一个列表，选择第一个选项 **本地安装**，选择路径为放置 rpk 的路径，即可将 rpk 运行到手机上。
+目前仅支持手动拷贝到手机上运行。将构建生成的 rpk 包拷贝到手机 sdcard 目录下。然后在手机上打开 **华为快应用加载器** 后，点击手机的返回键会弹出一个列表，选择第一个选项 **本地安装**，选择路径为放置 rpk 的路径，即可将 rpk 运行到手机上。
 
 四、分包 rpk
 
@@ -102,10 +102,8 @@ Cocos Creator 3D 从 v1.0.2 版本开始正式支持将游戏发布到华为快�
 
 构建完成后，生成的子包和主包会合并成一个 rpk，生成目录在 **/build/huawei-mini-game/dist** 目录下。
 
-**注意**：目前华为不支持同时下载多个分包，有多个分包的需要依次下载。
-
-    注意：华为不支持同时下载多个分包，需要下载多个分包时请按顺序下载，等待下一个分包下载完成后再下一个分包。
+**注意**：目前华为不支持同时下载多个分包，需要下载多个分包时请按顺序下载，等待下一个分包下载完成后再下一个分包。
 
 ## 相关参考链接
 
-[华为快游戏开发文档](https://developer.huawei.com/consumer/cn/service/hms/catalog/fastgame.html?page=fastapp_fastgame_introduction)
+[华为快游戏开发文档](https://developer.huawei.com/consumer/cn/doc/development/quickApp-Guides/quickgame-develop-runtime-game)

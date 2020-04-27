@@ -8,7 +8,6 @@
 - [了解通用构建参数](build-options.md)
 - [发布到 web 平台](publish-web.md)
 - [发布到微信小游戏](publish-wechatgame.md)
-  - [接入微信小游戏的开放数据域](publish-wechatgame-subcontext.md)
   - [启用微信小游戏引擎插件](wechatgame-plugin.md)
 - [发布到原生平台](publish-native.md)
   - [安装配置原生环境](setup-native-development.md)

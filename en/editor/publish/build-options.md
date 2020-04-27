@@ -1,0 +1,70 @@
+# General Build Options
+
+## General Options in Build Panel
+
+### Build Path
+
+You can designate a release path for the game by inputting a path in the **Build Path** input field or choosing one via the **...** browsing button. The following cross-platform release will create resources or projects in child folders of this release path.
+
+The default release path is in the `build` under the project folder. If you use version control systems like `git` and `svn`, you can ignore the `build` folder in version control.
+
+### Debug
+
+In release mode, the `uuid` of the resource, the built engine script and the project script will be compressed and confused, and the json of the same resource will be subpackaged to reduce the number of resource loads. When debugging a project, it is recommended to check the **Debug** for easy positioning of the problem.
+
+### Replace Splash screen
+
+Mouse over this option and a **Edit** button will appear, click the button and the panel will open. The first time you use this feature you need to fill out a questionnaire before opening the Replace Splash screen panel. There will be some project-based information in the questionnaire, and we hope to gather more information on games developed using Cocos Creator 3D, as well as more support programs in the future that developers will hopefully be able to fill out truthfully.
+
+![](build-options/splash-setting.jpg)
+
+### Included Scenes
+
+During the build process, the resources and scripts in the `resources` are all packaged, while the other resources are packaged on demand based on the usage of the scenes involved in the build. Thus, scenes that do not need to be published are suggested to be unchecked, reducing the volume of the package after build.
+
+### Start Scene
+
+The first scene after entering the game can be selected directly in the **Start Scene**. You can also find the corresponding scene in the **Included Scenes** involved in the build, move the mouse to the scene, a `move up icon` button will appear after the scene, then click the button.
+
+### Source Maps
+
+The build will compress engine files and project scripts by default, if you want to generate `sourcemap`, you need to check this box.
+
+### Compress Texture
+
+Some compression options can be added to `spriteFrame` type image resources in the editor. Once enabled, the corresponding image resources are generated based on these compression options during build. If disabled, the compression texture will not take effect at build time even if configured. Please refer to the [Compress Texture](../../asset/compress-texture.md) for details.
+
+### packAutoAtlas
+
+The **Auto Atlas** is the editor's built-in texture merge. If this is disabled, even if you configure the packAutoAtlas, it will not take effect at build time. Please refer to the [Auto Atlas](../../asset/auto-atlas.md) for details.
+
+<!-- ### 内联所有 SpriteFrame
+自动合并资源时，将所有 SpriteFrame 与被依赖的资源合并到同一个包中。建议网页平台开启，启用后会略微增大总包体，多消耗一点点网络流量，但是能显著减少网络请求数量。建议原生平台关闭，因为会增大热更新时的体积。 -->
+
+### Merge all JSON that the Start Scene depends on
+
+When merging assets automatically, all `JSON` files that the Start Scene depends on are merged into the package that contains the Start Scene. This option is disabled by default. When enabled, it will not increase the overall game size, but if these `JSON` is also used by other scenes, then CPU overhead may increase slightly when they are loaded again.
+
+### MD5 Cache
+
+Append MD5 hash to the exported assets for resolving CDN or browser cache issue.
+
+After being enabled, if any resource fails to load, it is because the renamed new file can not be found. It is usually because some third party resources was not loaded by `cc.loader`. If this happens, you can convert the url before loading, to fix the loading problem.
+
+```js
+url = cc.loader.md5Pipe.transformURL(url);
+```
+
+## Other option configurations involved in the build.
+
+### Engine Modules
+
+Click **Project -> Project Setting -> Modules** in the menu bar to open the **Modules** panel, which is mainly used to reduce the size of the packaged package by eliminating some engine modules that are not needed in the project. Engine modules may change with the version upgrades, and specific module information is subject to the version-specific editor.
+
+**Note: Please reconfirm the module information after each version upgrade before building and releasing it.**
+
+![](build-options/engine-excludes.jpg)
+
+### Canvas
+
+Click **Project -> Project Setting -> General -> Default canvas setting** in the menu bar to set the **Canvas**, which is mainly used to set multiple resolutions. If there is no `Canvas` component in the project, this option can be ignored. Please refer to the [Multi-Resolution Adaption](../../ui-system/components/engine/multi-resolution.md) for details.

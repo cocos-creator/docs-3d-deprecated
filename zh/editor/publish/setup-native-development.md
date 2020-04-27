@@ -8,7 +8,7 @@
 
 如果您没有发布到 Android 平台的计划，或您的操作系统上已经有完整的 Android 开发环境，可以跳过这个部分。
 
-### 下载 Java SDK （JDK）
+### 下载 Java SDK（JDK）
 
 编译 Android 工程需要本地电脑上有完整的 Java SDK 工具，请到以下地址下载：
 
@@ -28,13 +28,11 @@ java -version
 
 ### 下载安装 Android Studio
 
-从 v1.10 开始，我们不再支持 Eclipse 的 ANT 构建，需要使用 Android Studio 作为安卓平台的构建工具，并在 Android Studio 里下载所需的 SDK 和 NDK 包。首先请 [安装 Android Studio](http://www.android-studio.org/)。
+Cocos Creator 3D 不支持 Eclipse 的 ANT 构建，需要使用 Android Studio 作为安卓平台的构建工具，并在 Android Studio 里下载所需的 SDK 和 NDK 包。首先请 [安装 Android Studio](http://www.android-studio.org/)。
 
 ### 下载发布 Android 平台所需的 SDK 和 NDK
 
-安装 Android Studio 完成后，参考官方文档，打开 SDK Manager：
-
-[SDK Manager 使用说明（需要使用 VPN）](https://developer.android.com/studio/intro/update.html#sdk-manager)
+安装 Android Studio 完成后，参考官方文档，打开 SDK Manager：[SDK Manager 使用说明](https://developer.android.google.cn/studio/intro/update.html#sdk-manager)。
 
 1. 在 SDK Platforms 分页栏，勾选你希望安装的 API Level，也就是支持安卓系统的版本，推荐选择主流 API Level 23（6.0）、API Level 26（8.0）和 API Level 28（9.0）等。
 2. 在 SDK Tools 分页栏，首先勾选右下角的 **Show Package Details**，显示分版本的工具选择。
@@ -51,7 +49,10 @@ java -version
 Cocos2d-x 自带的编译工具 Cocos Console 需要以下运行环境：
 
 - Python 2.7.5+，[下载页](https://www.python.org/downloads/)，注意不要下载 Python 3.x 版本。
-- Windows 下需要安装 Visual Studio 2017 社区版，[下载页](https://www.visualstudio.com/downloads/download-visual-studio-vs)
+- Windows 下需要安装 [Visual Studio 2017 社区版](https://www.visualstudio.com/downloads/download-visual-studio-vs)。在安装 Visual Studio 时，请勾选 **使用 C++ 的桌面开发** 和 **使用 C++ 的游戏开发** 两个模块。
+
+  **注意**：在 **使用 C++ 的游戏开发** 模块中有一个 **Cocos** 选项，请勿勾选。
+
 - Mac 下需要安装 Xcode 和命令行工具，[下载页](https://developer.apple.com/xcode/download/)
 
 ## 配置原生发布环境路径
@@ -73,29 +74,15 @@ Cocos2d-x 自带的编译工具 Cocos Console 需要以下运行环境：
 
 由于在公测版中收到了很多原生打包的问题反馈，这里补充一些可能的问题原因。
 
-1. 检查 Xcode 和 Visual Studio
-
-    打包 Mac 版本和 iOS 版本需要 Xcode 支持，打包 Windows 版本需要安装 Visual Studio。在安装 Visual Studio 时，请勾选 **使用 C++ 的桌面开发** 和 **使用 C++ 的游戏开发** 两个模块。
-
-    **注意**：在 **使用 C++ 的游戏开发** 模块中有一个 **Cocos** 选项，请勿勾选安装。
-
-2. 包名问题
+1. 包名问题
 
     检查构建发布面板中的包名，包含空格，`-` 等都是非法的包名。
 
-3. Android 6.0 SDK 的支持问题
-
-    Android 6.0 SDK 去除了 Cocos2d-x 依赖的 HttpClient 库，所以会导致 Cocos Creator 3D v1.5 以前的版本编译失败。旧版本用户的解决方案是：
-
-    - 找到 Android SDK 目录下的 HttpClient 库：`platforms/android-23/optional/org.apache.http.legacy.jar`。
-    - 如果使用源码引擎模版，需要拷贝到原生编译目录下的 `jsb/frameworks/cocos2d-x/cocos/platform/android/java/libs/` 目录下。如果使用预编译库引擎模版，需要拷贝到原生编译目录下的 `jsb/frameworks/runtime-src/proj.android/jars/` 目录下。
-    - 重新编译。
-
-4. Android 编译成功，但运行时提示 `dlopen failed: cannot locate symbol "xxxx" referenced by "libcocos2djs.so"...`
+2. Android 编译成功，但运行时提示 `dlopen failed: cannot locate symbol "xxxx" referenced by "libcocos2djs.so"...`
 
     请检查 NDK 和 Android SDK 的架构和版本是否和测试用的 Android 系统相对应，另外可以尝试使用本文所用的 NDK 和 Android SDK 版本来测试。
 
-最后，如果依然打包失败，可以尝试创建一个标准的 Cocos2d-x 工程，并尝试编译，如果 Cocos2d-x 工程可以编译，而 Cocos Creator 3D 无法打包，请将 bug 通过 [论坛](https://forum.cocos.org/c/Creator) 反馈给我们。
+最后，如果依然打包失败，可以尝试创建一个标准的 Cocos2d-x 工程，并尝试编译，如果 Cocos2d-x 工程可以编译，而 Cocos Creator 3D 无法打包，请将 bug 通过 [论坛](https://forum.cocos.org/c/3D) 反馈给我们。
 
 ---
 
