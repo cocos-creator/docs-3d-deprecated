@@ -71,7 +71,7 @@ Cocos2d-x 自带的编译工具 Cocos Console 需要以下运行环境：
 
 ## 注意事项
 
-由于在公测版中收到了很多原生打包的问题反馈，这里补充一些可能的问题原因。
+在之前的版中收到了很多原生打包的问题反馈，这里补充一些可能的问题原因。
 
 1. 检查 Xcode 和 Visual Studio
 
@@ -81,17 +81,9 @@ Cocos2d-x 自带的编译工具 Cocos Console 需要以下运行环境：
 
 2. 包名问题
 
-    检查构建发布面板中的包名，包含空格，`-` 等都是非法的包名。
+    检查构建发布面板中的包名，包名中只能包含数字、字母和下划线，此外包名最后一部分必须以字母开头，不能以下划线或数字开头。
 
-3. Android 6.0 SDK 的支持问题
-
-    Android 6.0 SDK 去除了 Cocos2d-x 依赖的 HttpClient 库，所以会导致 Cocos Creator 3D v1.5 以前的版本编译失败。旧版本用户的解决方案是：
-
-    - 找到 Android SDK 目录下的 HttpClient 库：`platforms/android-23/optional/org.apache.http.legacy.jar`。
-    - 如果使用源码引擎模版，需要拷贝到原生编译目录下的 `jsb/frameworks/cocos2d-x/cocos/platform/android/java/libs/` 目录下。如果使用预编译库引擎模版，需要拷贝到原生编译目录下的 `jsb/frameworks/runtime-src/proj.android/jars/` 目录下。
-    - 重新编译。
-
-4. Android 编译成功，但运行时提示 `dlopen failed: cannot locate symbol "xxxx" referenced by "libcocos2djs.so"...`
+3. Android 编译成功，但运行时提示 `dlopen failed: cannot locate symbol "xxxx" referenced by "libcocos2djs.so"...`
 
     请检查 NDK 和 Android SDK 的架构和版本是否和测试用的 Android 系统相对应，另外可以尝试使用本文所用的 NDK 和 Android SDK 版本来测试。
 
