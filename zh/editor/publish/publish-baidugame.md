@@ -68,7 +68,7 @@ Cocos Creator 3D从 v1.0.3 版本开始正式支持将游戏发布到百度小�
  - 所有包的总大小不超过 **8MB**
  - 单个分包/主包大小不超过 **4MB**
 
-具体的分包加载机制可参考 [分包加载](../scripting/subpackage.md)。
+具体的分包加载机制可参考 [分包加载](../../asset/subpackage.md)。
 
 ## 平台 SDK 接入
 
