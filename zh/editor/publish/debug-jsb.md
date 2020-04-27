@@ -59,7 +59,7 @@ cocos2d::log(".lldbinit ---- \n%s\n", se::ScriptEngine::getInstance()->getCurren
 会对 **所有项目** 生效, 其他项目不存在相应符号, 导致报错. 
 
 ###  Xcode 在断点中编辑 `action` (只对具体的断点触发)
-<img width="658" alt="Screen Shot 2020-04-24 at 3 02 37 PM" src="https://user-images.githubusercontent.com/40414978/80184156-a5709500-863c-11ea-8683-11afc8279896.png">
+
 ![](debug-jsb/xcode-brk-point-action.png)
 
 可以在 `Debugger Command` 中输入命令
