@@ -54,14 +54,18 @@ cocos2d::log(".lldbinit ---- \n%s\n", se::ScriptEngine::getInstance()->getCurren
 [查看 `target stop-hook` 的用法](https://lldb.llvm.org/use/map.html#examining-variables)
 
 
-#### 这种方法也有明显的缺陷:
-会对**所有项目**生效, 其他项目不存在相应符号, 导致报错. 
+#### 这种方法也有明显的缺陷
+
+会对 **所有项目** 生效, 其他项目不存在相应符号, 导致报错. 
 
 ###  Xcode 在断点中编辑 `action` (只对具体的断点触发)
 <img width="658" alt="Screen Shot 2020-04-24 at 3 02 37 PM" src="https://user-images.githubusercontent.com/40414978/80184156-a5709500-863c-11ea-8683-11afc8279896.png">
 ![](debug-jsb/xcode-brk-point-action.png)
 
-
+可以在 `Debugger Command` 中输入命令
+```lldb
+expr --  cocos2d::log(".lldbinit ---- \n%s\n", se::ScriptEngine::getInstance()->getCurrentStackTrace().c_str())
+```
 
 [查看 `expr` 的用法](https://lldb.llvm.org/use/map.html#evaluating-expressions)
 
@@ -72,11 +76,19 @@ cocos2d::log(".lldbinit ---- \n%s\n", se::ScriptEngine::getInstance()->getCurren
 
 ![](debug-jsb/xcode-brk-point-lldb.png)
 
+同上, 也可以输入
+
+```lldb
+expr --  cocos2d::log(".lldbinit ---- \n%s\n", se::ScriptEngine::getInstance()->getCurrentStackTrace().c_str())
+```
+查看调用栈. 
+
 ### 在 Android Studio 配置 `lldb`
 在 `Run/Debug Configuration/ Debugger` 界面进行类似的配置
+
 ![](debug-jsb/as-brk-point-action.png)
 
-Android Studio 也提供了和 Xcode 类似的 lldb console.
+Android Studio 也提供了和 Xcode 类似的 `lldb console`.
 
 ## 其它平台调试
 
