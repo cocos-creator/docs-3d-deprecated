@@ -23,11 +23,11 @@
                 "links": [
                     {
                         "name": "Manual",
-                        "link": "https://docs.cocos.com/creator3d/manual/en"
+                        "link": "https://docs.cocos.com/creator3d/1.0/manual/en"
                     },
                     {
                         "name": "API Ref",
-                        "link": "https://docs.cocos.com/creator3d/api/en"
+                        "link": "https://docs.cocos.com/creator3d/1.0/api/en"
                     }
                 ]
             },
