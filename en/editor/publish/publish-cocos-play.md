@@ -65,7 +65,7 @@ Open the previously installed Self-test Tools, then click the **Configure Game**
 | lodeType        | Game load type, which is how the game starts. Includes both **File** and **Url**. Please refer to the **Start Game** section below. |
 | path            | Game load address, needs to be used with `lodeType`. Please refer to the **Start Game** section below.   |
 
-### Start Game
+## Start Game
 
 There are two ways to start the game through the Self-test Tools.
 
