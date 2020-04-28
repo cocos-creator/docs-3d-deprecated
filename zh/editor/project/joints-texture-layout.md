@@ -65,3 +65,5 @@
 我们可以继续增加更多场景中的实例数量，可以看到 drawcall 数量并不会改变，只有 instance 数量的增加：
 
 ![Bulk](./index/instancing_bulk.gif)
+
+欢迎实际上手试试！这个测试场景是 [展示例仓库](https://github.com/cocos-creator/example-3d) 内 show-cases 项目的 instanced-skinning 场景。
