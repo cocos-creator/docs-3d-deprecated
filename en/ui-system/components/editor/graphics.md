@@ -15,6 +15,7 @@ Select a node in the **Hierarchy** panel, then click the **Add Component** butto
 | [LineJoin](graphics/lineJoin.md)       | LineJoin determines how two connecting segments (of lines, arcs or curves) with non-zero lengths in a shape are joined together. |
 | [MiterLimit](graphics/miterLimit.md)   | Sets or returns the maximum miter length.  |
 | [StrokeColor](graphics/strokeColor.md) | Stroke color. Sets or returns the color used for the stroke. |
+<!-- [LineWidth](graphics/lineWidth.md): Current line width. -->
 
 ## Graphics API
 

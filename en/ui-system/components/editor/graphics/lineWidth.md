@@ -1,12 +1,12 @@
 # lineWidth
 
-`lineWidth()` 方法添加一个新点，然后创建从该点到画布中最后指定点的线条。
+Use `lineWidth()` method to add a new point, and then create a line from that point to the last specified point in the canvas.
 
-| 参数 |   描述
+| Parameter | Description
 | -------------- | ----------- |
-|number | 当前线条的宽度，以像素计。
+| number | The width of the current line, in pixels |
 
-## 实例
+## Example
 
 ```javascript
 var ctx = node.getComponent(cc.GraphicsComponent);
@@ -19,4 +19,4 @@ ctx.stroke();
 
 <hr>
 
-返回 [Graphics 组件参考](../graphics.md)
+Return to [Graphics Component Reference](../graphics.md).

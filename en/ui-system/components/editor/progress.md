@@ -1,7 +1,6 @@
 # ProgressBar Component Reference
 
-ProgressBar is usually used to show the progress of a certain operation in the game. Add the ProgressBar component to a node and associate a
-Bar Sprite to this component. Then the Bar Sprite can be controlled to show progress in the scene.
+ProgressBar is usually used to show the progress of a certain operation in the game. Add the ProgressBar component to a node and associate a Bar Sprite to this component. Then the Bar Sprite can be controlled to show progress in the scene.
 
 ![add-progressbar](progress/add-progressbar.png)
 

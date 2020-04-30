@@ -21,7 +21,7 @@ Click the **Add Component** button at the bottom of the **Inspector** panel and 
 | Properties           | Function Explanation      |
 | --------------       | -----------   |
 | Type                 | Layout type, including NONE, HORIZONTAL, VERTICAL and GRID. See [Auto Layout](../engine/auto-layout.md) for details. |
-| ResizeMode           | Resize mode, including NONE，CHILDREN and CONTAINER. |
+| ResizeMode           | Resize mode, including NONE, CHILDREN and CONTAINER. |
 | PaddingLeft          | The left padding between the sub-object and the container frame in the layout. |
 | PaddingRight         | The right padding between the sub-object and the container frame in the layout. |
 | PaddingTop           | The top padding between the sub-object and the container frame in the layout. |

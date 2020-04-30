@@ -24,11 +24,11 @@
                 "links": [
                     {
                         "name": "手册文档",
-                        "link": "https://docs.cocos.com/creator3d/1.0/manual/zh"
+                        "link": "https://docs.cocos.com/creator3d/manual/zh"
                     },
                     {
                         "name": "API 参考",
-                        "link": "https://docs.cocos.com/creator3d/1.0/api/zh"
+                        "link": "https://docs.cocos.com/creator3d/api/zh"
                     }
                 ]
             },

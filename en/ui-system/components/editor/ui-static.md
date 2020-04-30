@@ -4,7 +4,7 @@ The UIStaticBatch component is used to improve UI rendering performance. The scr
 
 ## Detailed Explanation
 
-The following points need to be noted when using this component：
+The following points need to be noted when using this component:
 
 - Do not trigger static batches frequently, as the original stored IA data will be emptied and re-collected, resulting in some performance and memory loss.
 - Not applicable for child node tree which contains Mask, Graphics and Model.

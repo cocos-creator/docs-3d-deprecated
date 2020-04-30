@@ -34,7 +34,7 @@ It will check the start tag name, but the end tag name restrict is loose, it onl
 
 Here is an example of the `size` and `color` tag:
 
-`<color=green>Hello</color>，<size=50>Creator3D</>`
+`<color=green>Hello</color>, <size=50>Creator3D</>`
 
 ### Supported tags
 
@@ -72,7 +72,7 @@ Use BBCode to set the colors separately inside RichText.
 **Note**: The two cannot be mixed. If mixed, the color set in the **second** way will prevail at runtime.
 -->
 
-## Detailed explanation
+## Detailed Explanation
 
 The RichText component is implemented in the Javascript layer and uses the Label node as the rendering part. All the layout logic goes also in Javascript layer. This means if you create a very complex RichText which will end up with many label node created under the hook. And all these label node are using system font for rendering.
 

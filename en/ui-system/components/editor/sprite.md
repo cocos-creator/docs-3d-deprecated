@@ -10,8 +10,9 @@ You can add a Sprite component to the node by clicking the **Add Component** but
 
 | Properties | Function Explanation
 | -------------- | ----------- |
-| Type | Rendering mode, currently includes `Simple`, `Sliced`, `Tiled`, `Filled` and `Mesh` five rendering modes.
+| Type | Rendering mode, currently includes `Simple`, `Sliced`, `Tiled`, `Filled` four rendering modes.
 | Color | Image color.
+| Grayscale | If enabled, Sprite will render in grayscale mode.
 | Size Mode | Specify the size of the Sprite.<br>`Trimmed` automatically fit to the size of the sprite cropped<br>`Raw` automatic fit for sprite original size.<br>`Custom` use the node preset size. When the developer manually modifies `Size` properties, `Size Mode` will be automatically set to `Custom`.
 | Atlas | [Auto Atlas](../../../asset/atlas.md) which the Sprite display image resource belongs to.
 | Sprite Frame | [Sprite Frame Assets](../../../asset/sprite-frame.md) which is used to render the Sprite. (The **Edit** button behind Sprite Frame is used to edit the 9-sliced cutting of the image resource, please refer to [Use a Sliced Sprite to make a UI image](../engine/sliced-sprite.md).

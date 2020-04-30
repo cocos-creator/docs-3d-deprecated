@@ -1,6 +1,6 @@
 # LabelOutline 组件参考
 
-LabelOutline 组件将为所在节点上的 Label 组件添加描边效果，不支持 BMFont 字体。
+LabelOutline 组件会为所在节点的 Label 添加描边效果，不支持 BMFont 字体。
 
 ![](label/labeloutline.png)
 

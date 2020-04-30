@@ -86,7 +86,7 @@ export class example extends Component {
 
 ### Method two
 
-通过 `pageView.node.on('page-turning', ...)` 的方式来添加。
+By `pageView.node.on('page-turning', ...)` way to add.
 
 ```ts
 // Suppose we add event handling callbacks to the onLoad method of a component and perform event handling in the callback function:

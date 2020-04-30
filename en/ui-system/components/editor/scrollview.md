@@ -85,7 +85,7 @@ export class example extends Component {
 
 ### Method two
 
-By `scrollview.node.on('scroll-to-top', ...)` way to add
+By `scrollview.node.on('scroll-to-top', ...)` way to add.
 
 ```js
 // Suppose we add an event handler callback to the onLoad method of a component and handle the event in the callback function:

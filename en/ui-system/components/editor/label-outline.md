@@ -1,6 +1,6 @@
 # LabelOutline Component Reference
 
-The LabelOutline component will add a outline effect to the Label component on the node, which can not be used for BMFonts.
+The LabelOutline component will add a outline effect to the Label of the node, which can not be used for BMFonts.
 
 ![](label/labeloutline.png)
 

@@ -1,6 +1,6 @@
 # ScrollBar Component Reference
 
-ScrollBar allows the user to scroll a image by dragging a sliding block. It's a bit similar to the **Slider** component, but it is mostly used for scrolling while Slider is used to set values.
+The ScrollBar allows the user to scroll a image by dragging a sliding block. It's a bit similar to the **Slider** component, but it is mostly used for scrolling while Slider is used to set values.
 
 ![scrollbar.png](scroll/scrollbar.png)
 
@@ -17,6 +17,6 @@ Click the **Add Component** button at the bottom of the **Inspector** panel and 
 
 ## Detailed Explanation
 
-ScrollBar normally is used together with `ScrollView` instead of being used alone. Also, ScrollBar needs to assign a `Sprite` component, i.e. `Handle` in the Inspector panel.
+The ScrollBar normally is used together with `ScrollView` instead of being used alone. Also, ScrollBar needs to assign a `Sprite` component, i.e. `Handle` in the Inspector panel.
 
 Normally we will also designate a background image to ScrollBar. This can be used to indicate the length or width of the whole ScrollBar.

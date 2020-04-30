@@ -73,5 +73,5 @@ This is because the alignment set by the widget is processed at the end of each 
 
 To make sure you can update node's position or size during runtime:
 
-1. set **Align Mode** property of Widget to `ONCE`, so it will only align during onEnable process.
+1. Set **Align Mode** property of Widget to `ONCE`, so it will only align during onEnable process.
 2. Use Widget's API to update node's position and size, for example updating Widget's `top`, `bottom`, `left`, `right` instead of node's `x`, `y`, `width`, `height`.
