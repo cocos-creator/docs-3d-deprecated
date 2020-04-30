@@ -20,10 +20,10 @@ ScrollView 是一种带滚动功能的容器，它提供一种方式可以在有
 | Inertia              | 滚动的时候是否有加速度。                                                                            |
 | Brake                | 浮点数，滚动之后的减速系数。取值范围是 0-1，如果是 1 则立马停止滚动，如果是 0，则会一直滚动到 content 的边界。  |
 | Elastic              | 布尔值，是否回弹。                                                                                 |
-| Bounce Duration      | 浮点数，回弹所需要的时间。取值范围是 0-10。                                                            |
-| Horizontal ScrollBar | 它是一个节点引用，用来创建一个滚动条来显示 content 在水平方向上的位置。                                    |
-| Vertical ScrollBar   | 它是一个节点引用，用来创建一个滚动条来显示 content 在垂直方向上的位置                                      |
-| ScrollView Events    | 列表类型，默认为空，用户添加的每一个事件由节点引用，组件名称和一个响应函数组成。详情见下方的 ScrollView 事件     |
+| BounceDuration      | 浮点数，回弹所需要的时间。取值范围是 0-10。                                                            |
+| HorizontalScrollBar | 它是一个节点引用，用来创建一个滚动条来显示 content 在水平方向上的位置。                                    |
+| VerticalScrollBar   | 它是一个节点引用，用来创建一个滚动条来显示 content 在垂直方向上的位置                                      |
+| ScrollEvents    | 列表类型，默认为空，用户添加的每一个事件由节点引用，组件名称和一个响应函数组成。详情见下方的 ScrollView 事件     |
 | CancelInnerEvents    | 如果这个属性被设置为 true，那么滚动行为会取消子节点上注册的触摸事件，默认被设置为 true。                      |
 
 ### ScrollView 事件
@@ -108,6 +108,6 @@ export class example extends Component {
 
 ---
 
-### [**其他基础模块参考**](base-component.md)
+- [其他基础模块参考](base-component.md)
 
-### [**渲染模块参考**](render-component.md)
+- [渲染模块参考](render-component.md)

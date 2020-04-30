@@ -1,7 +1,6 @@
 # ProgressBar 组件参考
 
-ProgressBar（进度条）经常被用于在游戏中显示某个操作的进度，在节点上添加 ProgressBar 组件，然后给该组件关联一个
-Bar Sprite 就可以在场景中控制 Bar Sprite 来显示进度了。
+ProgressBar（进度条）经常被用于在游戏中显示某个操作的进度，在节点上添加 ProgressBar 组件，然后给该组件关联一个 Bar Sprite 就可以在场景中控制 Bar Sprite 来显示进度了。
 
 ![add-progressbar](progress/add-progressbar.png)
 
@@ -15,7 +14,7 @@ Bar Sprite 就可以在场景中控制 Bar Sprite 来显示进度了。
 | -------------- | ----------- |
 | Bar Sprite | 进度条渲染所需要的 Sprite 组件，可以通过拖拽一个带有 **Sprite** 组件的节点到该属性上来建立关联。
 | Mode | 支持 **HORIZONTAL**（水平）、**VERTICAL**（垂直）和 **FILLED**（填充）三种模式，可以通过配合 **reverse** 属性来改变起始方向。
-| Total Length | 当进度条为 100%时 Bar Sprite 的总长度/总宽度。在 **FILLED** 模式下 **Total Length** 表示取 Bar Sprite 总显示范围的百分比，取值范围从 0 ~ 1。
+| Total Length | 当进度条为 100% 时 Bar Sprite 的总长度/总宽度。在 **FILLED** 模式下 **Total Length** 表示取 Bar Sprite 总显示范围的百分比，取值范围从 0 ~ 1。
 |Progress | 浮点，取值范围是 0~1，不允许输入之外的数值。
 |Reverse | 布尔值，默认的填充方向是从左至右/从下到上，开启后变成从右到左/从上到下。
 
@@ -29,6 +28,6 @@ Bar Sprite 可以是自身节点，子节点，或者任何一个带有 **Sprite
 
 ---
 
-### [**其他基础模块参考**](base-component.md)
+- [其他基础模块参考](base-component.md)
 
-### [**渲染模块参考**](render-component.md)
+- [渲染模块参考](render-component.md)
