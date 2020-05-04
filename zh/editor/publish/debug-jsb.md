@@ -2,7 +2,7 @@
 
 游戏发布到原生平台后，由于运行环境不同，可能会出现在浏览器预览时无法重现的 Bug，这时我们就必须直接在原生平台下进行调试。Cocos Creator 3D 可以很方便地对原生平台中的 JavaScript 进行远程调试。
 
-## 真机调试
+## iOS 和 Android 真机调试
 
 如果游戏只有在真机上才能运行，或者模拟器重现不了问题，那就必须用真机对打包后的游戏进行调试。调试步骤如下：
 
@@ -90,6 +90,6 @@ expr --  cocos2d::log(".lldbinit ---- \n%s\n", se::ScriptEngine::getInstance()->
 
 Android Studio 也提供了和 Xcode 类似的 `lldb console`.
 
-## 其它平台调试
+## 进阶调试指南
 
 如果需要在 Release 模式下调试，或者需要调试定制后的原生引擎，可参考更详细的 [JSB 2.0 使用指南：远程调试与 Profile](https://docs.cocos.com/creator/manual/zh/advanced-topics/JSB2.0-learning.html)。
