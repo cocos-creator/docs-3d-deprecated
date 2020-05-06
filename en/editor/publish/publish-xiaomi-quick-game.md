@@ -1,12 +1,12 @@
-# Publish to Xiaomi Quick Games
+# Publishing to Xiaomi Quick Games
 
-Starting with v1.0.3, Cocos Creator 3D officially supports the release of games to the Xiaomi Quick Games.
+Starting with v1.0.3, Cocos Creator 3D officially supports the release of games to the **Xiaomi Quick Games**.
 
 ## Environment Configuration
 
 - Install [Node.js](https://nodejs.org/en/download/) 8.1.4 or above, globally:
 
-- Make sure the npm version that Node.js comes with is **5.2.0** minimum. Upgrade the npm command as follows.
+- Make sure the **npm** version that **Node.js** comes with is **5.2.0** minimum. Upgrade the **npm** command as follows:
 
   ```bash
   # View the npm version
@@ -23,41 +23,28 @@ Starting with v1.0.3, Cocos Creator 3D officially supports the release of games 
 
     ![](./publish-xiaomi-quick-game/build.jpg)
 
-    Click on the **xiaomi-quick-game** below to expand the parameter configuration of Xiaomi Quick Game.
+    Click on the **xiaomi-quick-game** below to expand the parameter configuration of **Xiaomi Quick Game**.
 
     ![](./publish-xiaomi-quick-game/xiaomi_options.jpg)
 
 The specific filling rules for the relevant parameter configuration are as follows:
 
-- **App Package Name**
-
-  The format of the **App Package Name** is `com.yourcompany.projectname`. This option is required and will be filled in according to the developer's needs. 
+- **App Package Name**: the format of the **App Package Name** is `com.yourcompany.projectname`. This option is required and will be filled in according to the developer's needs. 
   
-  **Note**: Starting from the platform version number **1062**, Xiaomi Quick Game needs to use the official App Package Name, otherwise the error of "Data loading exception, please click retry" will be reported during debugging. You can refer to the [Xiaomi Quick Game App Package Name Application](https://forum.cocos.org/t/topic/81887) for details.
+  > **Note**: Starting from the platform version number **1062**, Xiaomi Quick Game needs to use the official **App Package Name**, otherwise the error of `Data loading exception, please click retry` will be reported during debugging. You can refer to the [Xiaomi Quick Game App Package Name Application](https://forum.cocos.org/t/topic/81887) documentation for details.
 
-- **Desktop Icon**
+- **Desktop Icon**: is required. Click the **search icon** button at the back of the input box to select the icon you want. When building, the Desktop Icon will be built into the Xiaomi Quick Game project. It is suggested to use a `PNG` image for the **Desktop Icon**.
 
-  **Desktop Icon** is required. Click the **search icon** button at the back of the input box to select the icon you want. When building, the Desktop Icon will be built into the Xiaomi Quick Game project. Desktop Icon suggest using PNG pictures.
+- **App Version Name**: is required. **App Version Name** is the real version, such as: **1.0.0**.
 
-- **App Version Name**
+- **App Version Number**: is required. **App Version Number** is different from the **App Version Name**, and the **App Version Number** is mainly used to distinguish the version update. Each time when you submit audit, the **App Version Number** is at least 1 higher than the value of the last submitted audit. It must not be equal to or less than the value of the last submitted audit, and it is recommended that the **App Version Number** be recursively incremented by 1 each time when the audit is submitted.<br>
+  > **Note**: The **App Version Number** must be a positive integer.
 
-  This item is required. **App Version Name** is the real version, such as: 1.0.0.
+- **Supported Minimum Platform Version Number**: is required. According to the requirements of Xiaomi Quick Games, this value must be greater than or equal to **1050** at present.
 
-- **App Version Number**
+- **Build Sub Package**: is supported from v1.0.4 onwards and is enabled by default. For details, please refer to **Subpackage rpk** at the end of this document.
 
-  This item is required. **App Version Number** is different from the **App Version Name**, and the **App Version Number** is mainly used to distinguish the version update. Each time when you submit audit, the App version number is at least 1 higher than the value of the last submitted audit. It must not be equal to or less than the value of the last submitted audit, and it is recommended that the **App Version Number** be recursively incremented by 1 each time when the audit is submitted. **Note**: The **App Version Number** must be a positive integer.
-
-- **Supported Minimum Platform Version Number**
-
-  This item is required. According to the requirements of Xiaomi Quick Games, this value must be greater than or equal to **1050** at present.
-
-- **Build Sub Package**
-
-  This option is supported from v1.0.4 onwards and is enabled by default. For details, please refer to **Subpackage rpk** at the end of this document.
-
-- **Small Packet Mode**
-
-  This item is optional. The in-package volume of the quick-game contains code and resources that cannot exceed 10M, and resources can be loaded via network requests. **Small Packet Mode** is to help developers keep the script files in the quick game package, other resources are uploaded to the remote server, and downloaded from the remote server as needed. And the download, cache and version management of remote resources, Cocos Creator 3D has already helped the developer. What the developer needs to do is the following steps:
+- **Small Packet Mode**: is optional. The in-package volume of the quick-game contains code and resources that cannot exceed 10M, and resources can be loaded via network requests. **Small Packet Mode** is to help developers keep the script files in the quick game package, other resources are uploaded to the remote server, and downloaded from the remote server as needed. And the download, cache and version management of remote resources, Cocos Creator 3D has already helped the developer. What the developer needs to do is the following steps:
 
   1. When building, check the **Small Packet Mode** and fill in the **Small Packet Mode Server Path**.
 
@@ -67,15 +54,13 @@ The specific filling rules for the relevant parameter configuration are as follo
   
       Developers can choose whether to check this item according to their needs. Then click on **Build**.
 
-  3. After the build is complete, click the **Open** button after the **Build Path** to upload the `res` directory under the release path to the small packet mode server. For example, if the default release path is `build`, the Build Task Name is `xiaomi-quick-game`, you need to upload the `/build/xiaomi-quick-game/res` directory.
+  3. After the build is complete, click the **Open** button after the **Build Path** to upload the `res` directory under the release path to the small packet mode server. For example, if the default release path is `build`, the **Build Task Name** is `xiaomi-quick-game`, you need to upload the `/build/xiaomi-quick-game/res` directory.
 
-      **Note**: If you are using the command line to compile small packet mode, remember to backup the `build/xiaomi-pack-tools/res` directory, then delete the `build/xiaomi-pack-tools/res` directory, and then perform command line compilation (npm run build).
+      > **Note**: If you are using the command line to compile small packet mode, remember to backup the `build/xiaomi-pack-tools/res` directory, then delete the `build/xiaomi-pack-tools/res` directory, and then perform command line compilation (`npm run build`).
 
   At this point, the `res` directory will no longer be included in the built-up rpk, and the resources in the `res` directory will be downloaded from the filled **Small Packet Mode Server Path** through the network request.
 
-- **Keystore**
-
-  When you check the **Keystore**, the default is to build the rpk package with a certificate that comes with Creator 3D, which is used only for **debugging**. **Note**: When the rpk package is to be used to submit an audit, do not check the **Keystore** to build it.
+- **Keystore**: when you check the **Keystore**, the default is to build the rpk package with a certificate that comes with Cocos Creator 3D, which is used only for **debugging**. **Note**: When the rpk package is to be used to submit an audit, do not check the **Keystore** to build it.
   
   If you don't check the **Keystore**, you need to configure the signature files **certificate.pem path** and **private.pem path**, where you build a rpk package that you can **publish directly**. The developer can configure two signature files by using the **search icon** button to the right of the input box.<br>
   **Note**: These two signature files are not recommended to be placed in the `build/xiaomi-quick-game` directory of the release package, otherwise the build directory will be emptied each time when it is built, resulting in file loss.
@@ -95,11 +80,11 @@ The specific filling rules for the relevant parameter configuration are as follo
       openssl req -newkey rsa:2048 -nodes -keyout private.pem   -x509 -days 3650 -out certificate.pem
       ```
 
-      **Note**: **openssl** can be opened directly in the terminal in Linux or Mac environment, and in the Windows environment you need to install `openssl` and configure system environment variables. Restart Creator 3D after the configuration is complete.
+      > **Note**: **openssl** can be used directly in the terminal in Linux or Mac environment, and in the Windows environment you need to install `openssl` and configure system environment variables. Restart Creator 3D after the configuration is complete.
 
 **2. Build**
 
-After the relevant parameters of the **Build** panel are set, click **Build**. When the build is complete, click the **folder icon** button below the corresponding build task to open the build release path, you can see that a directory with the same name as the Build Task Name (e.g `xiaomi-quick-game`) is generated in the default release path `build` directory, which is the exported Xiaomi Quick Game project directory and **rpk**, **rpk** package are in the `/build/xiaomi-quick-game/dist` directory.
+After the relevant parameters of the **Build** panel are set, click **Build**. When the build is complete, click the **folder icon** button below the corresponding build task to open the build release path, you can see that a directory with the same name as the **Build Task Name** (e.g `xiaomi-quick-game`) is generated in the default release path `build` directory, which is the exported Xiaomi Quick Game project directory and **rpk**, **rpk** package are in the `/build/xiaomi-quick-game/dist` directory.
 
   ![](./publish-xiaomi-quick-game/rpk.png)
 
@@ -109,7 +94,7 @@ There are three ways to run rpk on your phone:
 
 - **Method One**
 
-    Click the **Run** button at the bottom right of the xiaomi-quick-game build task in the **Build** panel and wait for the QR Code interface to be generated:
+    Click the **Run** button at the bottom right of the `xiaomi-quick-game` build task in the **Build** panel and wait for the QR Code interface to be generated:
 
     ![](./publish-xiaomi-quick-game/run.jpg)
 
@@ -128,7 +113,7 @@ There are three ways to run rpk on your phone:
 
 ## Debugging
 
-The debugging must be based on the physical device and must follow the strict "run the game first and start the debugging function" sequence. After starting the game, leave Xiaomi device in the interface where the game is open to run. Then use the USB cable to connect your computer to the Xiaomi device, and the Xiaomi device needs to enable Developer options and USB Debugging.
+The debugging must be based on the physical device and must follow the strict **run the game first and start the debugging function** sequence. After starting the game, leave Xiaomi device in the interface where the game is open to run. Then use the USB cable to connect your computer to the Xiaomi device, and the Xiaomi device needs to enable Developer options and USB Debugging.
 
 Debugging can currently be initiated from the command line.
 
@@ -153,6 +138,6 @@ Subpackage loading, that is, splitting the game content into several packages ac
 
 When the build is complete, an `.rpk` file is generated in the `/build/xiaomi-quick-game/dist` directory.
 
-## Related Reference Links
+## Reference documentation
 
-- [Xiaomi Quick Game Related Reference Links](https://forum.cocos.org/t/topic/81887)
+- [Xiaomi Quick Game Reference documentation](https://forum.cocos.org/t/topic/81887)

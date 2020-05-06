@@ -1,14 +1,14 @@
-# Debug JavaScript on Native Platform
+# Debuging JavaScript on Native Platforms
 
-After the game is released to the native platform, because the runtime environment is different, there may be some bugs that cannot be reproduced in the browser preview, then we must debug it directly in the native platform. Cocos Creator 3D makes it easy to debug JavaScript remotely in the native platforms.
+After a game is released on the native platform, because the runtime environment is different, there may be some bugs that cannot be reproduced in the browser preview. This means we must debug it directly on the native platform. Cocos Creator 3D makes it easy to debug JavaScript remotely in the native platforms.
 
 ## Debug on Android / iOS
 
-If the game can only run on the physical device, then the packaged game must be debugged on the physical device. Debugging steps are as follows:
+If a game can only run on a physical device, then the packaged game must be debugged on a physical device. Debugging steps are as follows:
 
 - Make sure that the Android / iOS device is on the same LAN as Windows or Mac.
 
-- Select the Android / iOS platform and Debug mode in the **Build** panel of Creator 3D to build, compile and run project (The iOS platform recommends connecting to the physical device via Xcode for compile and run).
+- Select the **Android / iOS** platform and **Debug** mode in the **Build** panel of Cocos Creator 3D to build, compile and run a project (The iOS platform recommends connecting to the physical device via Xcode to compile and run).
 
 - Open address with Chrome browser: `chrome-devtools://devtools/bundled/js_app.html?v8only=true&ws={IP}:6086/00010002-0003-4004-8005-000600070008`, where `{IP}` is the local IP of the Android/iOS device, then you can debug it.
 
@@ -26,4 +26,4 @@ The steps for debugging a game on the Windows / Mac platform are similar to the 
 
 ## Other Platform Debugging
 
-If you need to debug in Release mode, or if you need to debug a custom native engine, please refer to the [JSB 2.0 Use Guide: Remote Debugging and Profile](https://docs.cocos.com/creator/manual/zh/advanced-topics/JSB2.0-learning.html) document.
+If you need to debug in Release mode, or if you need to debug a custom native engine, please refer to the [JSB 2.0 Use Guide: Remote Debugging and Profile](https://docs.cocos.com/creator/manual/zh/advanced-topics/JSB2.0-learning.html) documentation.

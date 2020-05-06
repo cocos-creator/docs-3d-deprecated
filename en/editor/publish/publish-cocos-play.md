@@ -1,6 +1,6 @@
-# Publish to Cocos Play
+# Publishing to Cocos Play
 
-Starting with v1.0.3, Cocos Creator 3D officially supports the release of games to the Cocos Play.
+Starting with v1.0.3, Cocos Creator 3D officially supports the release of games to the **Cocos Play**.
 
 ## Publish Cocos Play with Cocos Creator 3D
 
@@ -10,7 +10,7 @@ Starting with v1.0.3, Cocos Creator 3D officially supports the release of games 
 
 ### Build
 
-1. Use **Cocos Creator 3D** to open the project that needs to be released. Select **Cocos Play** in the **Platform** dropdown of the **Build** panel, and then click **Build**.
+1. Use **Cocos Creator 3D** to open a project. Select **Cocos Play** in the **Platform** dropdown of the **Build** panel, and then click **Build**.
 
     ![](publish-cocos-play/build.png)
 
@@ -40,16 +40,16 @@ The specific filling rules for the relevant parameter configuration are as follo
     packFirstScreenRes: false,
     ```
 
-2. After the build is completed, click the **folder icon** button below the cocos-play build task to open the `build` release path. If the Build Task Name is `cocos-play`, you can see that a `cocos-play` folder is generated in the `build` directory. This folder is the exported Cocos Play game project and **cpk**, the **cpk** package is in the `build/cocos-play` directory.
+2. After the build is completed, click the **folder icon** button below the cocos-play build task to open the `build` release path. If the **Build Task Name** is `cocos-play`, you can see that a `cocos-play` folder is generated in the `build` directory. This folder is the exported **Cocos Play** game project and **cpk**, the **cpk** package is in the `build/cocos-play` directory.
 
     ![](publish-cocos-play/package.png)
 
 ### Access testing
 
-Developers must use the Cocos Play Self-test Tools to test access without problems before submitting to the platform for review. The size of the package is not required for the self-test, but if it is to be submitted for review, the package size cannot exceed 10M.<br>
-The Self-test Tools can launch the game and provide features such as game login, payment, etc. By reading the game configuration parameters, you can determine the type of game to start and how the game will start. For details, please refer to [Self-test Tools Documentation](https://gamebox.gitbook.io/project/you-xi-jie-ru-wen-dang/ji-shu-dui-jie/zi-ce-gong-ju).
+Developers must use the Cocos Play **Self-test Tools** to test access without problems before submitting to the platform for review. The size of the package is not required for the self-test, but if it is to be submitted for review, the package size cannot exceed 10M.<br>
+The **Self-test Tools** can launch the game and provide features such as game login, payment, etc. By reading the game configuration parameters, you can determine the type of game to start and how the game will start. For details, please refer to [Self-test Tools Documentation](https://gamebox.gitbook.io/project/you-xi-jie-ru-wen-dang/ji-shu-dui-jie/zi-ce-gong-ju).
 
-Open the previously installed Self-test Tools, then click the **Configure Game** button at the top left of the Self-test Tools to enter the game configuration page. Configure parameters as required and click **Save**.
+Open the previously installed **Self-test Tools**, then click the **Configure Game** button at the top left of the **Self-test Tools** to enter the game configuration page. Configure parameters as required and click **Save**.
 
 ![](publish-cocos-play/configuration.png)
 
@@ -57,17 +57,17 @@ Open the previously installed Self-test Tools, then click the **Configure Game**
 
 | Parameters      | Function Explanation  |
 | --------------  |  -----------          |
-| gameId          | Game ID, which can be obtained from the background. |
-| gameKey         | Game key, which can be obtained from the background. |
-| gameSecret      | Game secret key, which can be obtained from the background. |
-| gameType        | Game type, including **Versus** and **non-Versus**. You can see how to use it in the **Start Game** section below. |
-| gameMode        | Game mode, please select **Runtime**.    |
-| lodeType        | Game load type, which is how the game starts. Includes both **File** and **Url**. Please refer to the **Start Game** section below. |
-| path            | Game load address, needs to be used with `lodeType`. Please refer to the **Start Game** section below.   |
+| **gameId**          | Game ID, which can be obtained from the background. |
+| **gameKey**         | Game key, which can be obtained from the background. |
+| **gameSecret**      | Game secret key, which can be obtained from the background. |
+| **gameType**        | Game type, including **Versus** and **non-Versus**. You can see how to use it in the **Start Game** section below. |
+| **gameMode**        | Game mode, please select **Runtime**.    |
+| **lodeType**        | Game load type, which is how the game starts. Includes both **File** and **Url**. Please refer to the **Start Game** section below. |
+| **path**            | Game load address, needs to be used with `lodeType`. Please refer to the **Start Game** section below.   |
 
 ## Start Game
 
-There are two ways to start the game through the Self-test Tools.
+There are two ways to start the game through the **Self-test Tools**.
 
 1. Load the game package as a file from the specified location (The game lodeType is **File**).
 
@@ -83,7 +83,7 @@ There are two ways to start the game through the Self-test Tools.
     - Fill in **path**, such as: <http://192.168.0.1:8080/game.cpk>.
     - Click on **Save** after the configuration is complete, then click on **Start Game** to open the game.
 
-## Reference link
+## Reference documentation
 
 - [Cocos Play Center](https://gamebox.cocos.com/)
 - [Cocos Play Documentation Center](https://gamebox.gitbook.io/project/)

@@ -1,6 +1,6 @@
-# Publish from Command Line
+# Publishing from the Command Line
 
-Publish project in command line can help us build auto publish step, we can modify command line parameters to reach different goals.
+Publish a project from the command line can help us build an auto-publish routine that allows modifying command line parameters to achieve different goals.
 
 ## Command Reference
 
@@ -29,9 +29,10 @@ Currently, when using the command line to build, except for the required build o
 
   If no parameters are specified after `--build`, then the parameters used in the **Build** panel, such as platforms, templates, and so on, will be used as default parameters. If additional parameter settings are specified, the default parameters will be overwritten with the specified parameters. The available parameters are:
 
-    - `configPath`: Parameter file path. If define `configPath`, then Creator 3D will load this file as a build parameter in the `json` file format. This parameter can be modified by yourself or exported directly from the **Build** panel.
+    - `configPath`: Parameter file path. If define `configPath`, then Cocos Creator 3D will load this file as a build parameter in the `json` file format. This parameter can be modified by yourself or exported directly from the **Build** panel.
     
-    - `includedModules`: Package modules for custom engines. Only the required modules are packaged. Note that the pass is an array of module `entry` fields, see [here](https://github.com/cocos-creator/engine/blob/3d-v1.0.0/scripts/module-division/division-config.json).
+    - `includedModules`: Package modules for custom engines. Only the required modules are packaged.
+      > **Note**: The pass is an array of module `entry` fields, see [the documentation](https://github.com/cocos-creator/engine/blob/3d-v1.0.0/scripts/module-division/division-config.json) for details.
     - `taskName`: Build task name, the name of the release folder generated after the build.
     - `name`: Game name
     - `platform`: Required, the platform needs to be built.
@@ -60,8 +61,8 @@ Starting from **v1.0.3**, each platform's build will be embedded in the **Build*
 
 After the build plugin system is opened to the public, the configuration parameters of other plugins are embedded in the **Build** panel in the same way. Please refer to the documentation of each platform for the specific parameter fields of each platform, it is better to use the **Export** function of the **Build** panel to get the configuration parameters. Currently it is still compatible with the old version of the parameters to build, but the compatibility process will be gradually removed later, so please upgrade the configuration parameters as soon as possible.
 
-## Publish on Jenkins
+## Publishing using Jenkins
 
-Cocos Creator 3D also need GUI environment when running in command line. If your Jenkins can not run CocosCreator 3D in command line, a solution is running Jenkins on the agent mode, so it can visit the WindowServer. Details: <https://stackoverflow.com/questions/13966595/build-unity-project-with-jenkins-failed>.
+Cocos Creator 3D still needs the GUI environment when running from the command line. If the Jenkins server can not run Cocos Creator 3D from the command line, a solution is running Jenkins in agent mode, so it can interact with the operating systems window server. For more details please review this Stack Overflow post: <https://stackoverflow.com/questions/13966595/build-unity-project-with-jenkins-failed>.
 
-If your Jenkins can not compile under Windows, specify a local user for the Jenkins service in the Windows **Control Panel -> Administrative Tools -> Services**, and then restart the computer. You don't need to set up a master-slave mode separately.
+If the Jenkins can not compile under Windows, specify a local user for the Jenkins service in the Windows **Control Panel -> Administrative Tools -> Services**, and then restart the computer. You don't need to set up a master-slave mode separately.

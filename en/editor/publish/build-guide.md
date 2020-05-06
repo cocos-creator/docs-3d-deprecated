@@ -1,6 +1,6 @@
-# Build Process and FAQ
+# Build Process with FAQ
 
-The build process is mainly divided into two parts, **General Build Process** and **Platform Adaptation Process**. Adaptive processing logic for each platform will be embedded in the **Build** panel as a separate plugin. The build plugin system is then open and developers can dynamically embed some build parameters into the panel for use.
+The build process is mainly divided into two parts, the **General Build Process** and the **Platform Adaptation Process**. The adaptation processing logic for each platform will be embedded in the **Build** panel as a separate plugin. The build plugin system is then open and developers can dynamically embed some build parameters into the panel for use.
 
 ## General build Process
 
@@ -14,21 +14,23 @@ The general build process for Cocos Creator 3D consists of the following:
 
 ### Initialization of build parameters
 
-This step is mainly to initialize the initial `options` passed to the build to the internal `options` of the build, do some parameter formatting and initialize the resource data of the build resource database, load the latest resource information and classify it.
+This step mainly initializes the initial `options` passed to the build to the internal `options` of the build, does some parameter formatting, initializes the resource data of the build resource database, loads the latest resource information, and classifies it.
 
 ### Collation of build data
 
 The editor will first summarize the scene currently involved in the build and all resources in the `resources` directory. Each resource is packaged through the engine's deserialization to find the dependent resource and recursion to pack the resources. The entire project's scripting environment is configured before being deserialized, that is, all non-plugin project scripts are loaded. Because whether the script loads correctly or not directly affects the deserialization, failure to load because the script is not written legally will directly result in build failure. If the dependent resource is lost in the deserialization process, a warning is issued, but the build continues nonetheless. The warning here does not mean that the problem does not need to be resolved, and if the resource loss is not resolved, it is difficult to guarantee that the problem will not occur after the build.
 
-This step will also sort out the resource types based on the build's internal division, such as scenes, scripts, texture compression tasks, JSON grouping information, etc., and weed out resource information that is not used. **Note**: All user scripts are loaded before this step is performed.
+This step will also sort out the resource types based on the build's internal division, such as scenes, scripts, texture compression tasks, JSON grouping information, etc., and weed out resource information that is not used. 
+
+> Note: All user scripts are loaded before this step is performed.
 
 ### Write the built resource to the file system
 
 After performing the first two steps, then we need to generate the used resources into the file system. After build, all serialized files are placed in the `res/import` directory generated after the build, and the source files of all resources are placed in the `res/raw-assets` directory. This can be divided into the following steps:
 
-1. **Build scripts**: The scripts in the editor are divided into **plugin script** and **non-plugin script**.
+1. **Build scripts**: The scripts in the editor are divided into **plugin scripts** and **non-plugin scripts**.
 
-    - The plugin script will copy the source file to the `build/src` directory generated after the build based on the original directory structure, so the plugin script does not support any script that needs to be compiled, such as **TS** or **JS written in ES6**. The resource information of the plugin script is written to the `jsList` array in `settings`.
+    - The plugin script will copy the source file to the `build/src` directory, which is generated after the build based on the original directory structure. The plugin script does not support any script that needs to be compiled, such as **TS** or **JS written in ES6**. The resource information of the plugin script is written to the `jsList` array in `settings`.
 
     - The non-plugin script will package the source files into `project.js` (`project.dev.js` in debug mode) in the corresponding `src` directory. Checking the `sourceMap` option will generate a corresponding `map` file, and the `debug` option will determine whether the script is compressed or not.
 
@@ -36,7 +38,7 @@ After performing the first two steps, then we need to generate the used resource
 
 3. **Compress Texture**: Compress the texture resources according to the organized texture compression tasks and write them to the folder generated after build. If the **Compress Texture** option in the **Build** panel is not checked during the build, no processing is done.
 
-4. **Build engine**: Follow the settings in the menu bar **Project -> Project Setting -> Modules** to discard the unused engine modules, and package them into the `src/cocos3d.js` file. Checking the `sourceMap` option will generate a corresponding `map` file, and the `debug` option will determine whether the script is compressed or not.
+4. **Build engine**: Follow the settings in the menu bar **Project -> Project Setting -> Modules** to discard the unused engine modules, and package them into the `src/cocos3d.js` file. Checking the sourceMap option will generate a corresponding `map` file. Checking the **debug** option will determine whether the script is compressed or not.
 
     The main steps in building the engine are as follows:
 
@@ -46,7 +48,7 @@ After performing the first two steps, then we need to generate the used resource
 
     - If compilation is required, perform the task of packaging the engine according to the engine interface. Copy the compiled `js` file and save the engine's modification time.
 
-    When compiling the engine, you can [view the log information](./build-panel.md):
+    When compiling the engine, you can view the output log information. Please refer to the [log information](./build-panel.md) documentation for the detail log viewing method.
 
     ![build-engine](./build-guide/build-engine.jpg)
 
@@ -77,7 +79,7 @@ After performing the first two steps, then we need to generate the used resource
 
 7. **MD5 Cache**: Add the MD5 suffix to all the resources in the `res` folder and organize the data to record in `settings`.
 
-8. **Generate `main.js` template file**: Configure some project settings into the `main.js` folder according to the developer options and generate them in the build output directory.
+8. **Generate `main.js` template file**: Configure project settings into the `main.js` folder according to the the developers specified options. Generate them in the build output directory.
 
 ### Organizing the data of `settings`
 
@@ -116,7 +118,7 @@ The structure here only lists the settings structure under the common process, a
 
 ### Compression and writing of `settings uuid`
 
-During the resource packaging process, the `uuid` of the resources involved in the build of the resource is continuously collected, and then organized into `setting.js`. `setting.js` will be written to the `build/src` directory generated after the build, and the `uuid` in the file will be compressed or not, depending on whether it is in debug mode or not. Organize all used `uuid` and store the `uuid` that appear more than twice in the `uuids` array, and replace them with indexes. All `assetType` that appear more than twice are also stored in the `assetTypes` array, and replace them with indexes.
+During the resource packaging process, the `uuid` of all resources involved in the build are continuously collected and then organized into `setting.js`. `setting.js` will be written to the `build/src` directory, which isgenerated after the build. The `uuid` in the file will be compressed or not, depending on whether it is in debug mode or not. Organize all used `uuid` and store the `uuid` that appear more than twice in the `uuids` array, and replaced with indexes. All `assetType` that appear more than twice are also stored in the `assetTypes` array, and replaced with indexes.
 
 #### Build resources
 
@@ -179,8 +181,8 @@ The Auto Atlas prints the `uuid` information of the original small image and the
 ### Engine compilation failed.
 
 If it's a custom engine compilation failure, check your modified code, or custom engine path.<br>
-If it is an engine compilation failure, please send a question to the [Forum](https://discuss.cocos2d-x.org/) with the Creator 3D version, the build options configuration, the build log file in the Build panel, and a demo that reproduces the problem.
+If it is an engine compilation failure, please send a question to the [Forum](https://discuss.cocos2d-x.org/) with the Cocos Creator 3D version, the build options configuration, the build log file in the Build panel, and a demo that reproduces the problem.
 
 ### Other errors
 
-If you encounter other errors that cannot be resolved by yourself, please send a question to the [Forum](https://discuss.cocos2d-x.org/) with the Creator 3D version, the build options configuration, the build log file in the Build panel, and a demo that reproduces the problem.
+If you encounter other errors that cannot be resolved by yourself, please send a question to the [Forum](https://discuss.cocos2d-x.org/) with the Cocos Creator 3D version, the build options configuration, the build log file in the Build panel, and a demo that reproduces the problem.

@@ -1,20 +1,20 @@
-# Publish to WeChat Mini Games
+# Publishing to WeChat Mini Games
 
-The runtime environment of the WeChat Mini Game is an extension of the WeChat Mini Program, providing a WebGL interface encapsulation based on the mini program environment, greatly improving rendering capabilities and performance. However, since these interfaces are encapsulated by the WeChat team, they are not equivalent to the browser environment.
+The runtime environment of the **WeChat Mini Game** is an extension of the **WeChat Mini Program**, providing a WebGL interface encapsulation based on the mini program environment, greatly improving rendering capabilities and performance. However, since these interfaces are encapsulated by the WeChat team, they are not equivalent to the browser environment.
 
-As the engine side, in order to make the developers' workload as easy as possible, our main tasks for developers include the following:
+On the engine side, in order to make the developers' workload as easy as possible, our main tasks for developers include the following:
 
 - The engine framework adapts to the WeChat Mini Game API, pure game logic level, developers do not need any additional modifications.
-- The Cocos Creator 3D editor provides a fast packaging process, released directly as a **WeChat Mini Game**, and automatically evokes the WeChat DevTools.
+- The Cocos Creator 3D editor provides a fast packaging process, released directly as a **WeChat Mini Game**, and automatically evokes the **WeChat DevTools**.
 - Automatically load remote resources, cache resources, and cache resource version control.
 
-In addition, the game submission, review and release process of the WeChat Mini Game is no different from the WeChat Mini Program. Please refer to the [WeChat Mini Game Developer Document](https://developers.weixin.qq.com/minigame/en/dev/guide/).
+In addition, the game submission, review and release process of the **WeChat Mini Game** is no different from the **WeChat Mini Program**. Please refer to the [WeChat Mini Game Developer Documentation](https://developers.weixin.qq.com/minigame/en/dev/guide/).
 
-## Publish WeChat Mini Games with Cocos Creator 3D
+## Publishing WeChat Mini Games with Cocos Creator 3D
 
-1. Download WeChat DevTools on [WeChat Official Document](https://developers.weixin.qq.com/miniprogram/en/dev/devtools/download.html)
+1. Download **WeChat DevTools** on [WeChat Official Document](https://developers.weixin.qq.com/miniprogram/en/dev/devtools/download.html)
 
-2. Set the WeChatGame App Path in **Cocos Creator 3D -> Preferences -> [Native Develop](../../editor/preferences/index.md)**.
+2. Set the **WeChatGame App Path** in **Cocos Creator 3D -> Preferences -> [Native Develop](../../editor/preferences/index.md)**.
 
     ![](./publish-wechatgame/preference.png)
 
@@ -22,19 +22,19 @@ In addition, the game submission, review and release process of the WeChat Mini 
 
     ![](./publish-wechatgame/appid.jpeg)
 
-4. Select the **WeChat Game** in the **Platform** of the **Build** panel, fill in the mini game appid, and then click **Build**
+4. Select the **WeChat Game** in the **Platform** of the **Build** panel, fill in the `mini game appid`, and then click **Build**
 
     ![](./publish-wechatgame/build.png)
 
-5. Click **Play** to open the WeChat DevTools
+5. Click **Play** to open the **WeChat DevTools**
 
     ![](./publish-wechatgame/tool.jpeg)
 
-    **Note**: The WeChat DevTools, if it has not been run on a Mac before, will show an error called `Please ensure that the IDE has been properly installed`. You need to manually open the WeChat DevTools once before you can click the **Run** call directly in the Cocos Creator 3D.
+    **Note**: The **WeChat DevTools**, if it has not been run on a Mac before, will show an error that states: `Please ensure that the IDE has been properly installed`. You need to manually open the **WeChat DevTools** once, before you can click **Run**.
 
 6. Preview deployment
 
-    Following this process, a `wechatgame` folder will be generated in the project's **build** directory (the name of the folder is based on the Build Task Name), which already contains the configuration files `game.json` and `project.config.json` of the WeChat Mini Games environment.
+    Following this process, a `wechatgame` folder will be generated in the project's **build** directory (the name of the folder is based on the **Build Task Name**), which already contains the configuration files `game.json` and `project.config.json` of the WeChat Mini Games environment.
 
     ![](./publish-wechatgame/package.jpg)
 
@@ -42,11 +42,11 @@ In addition, the game submission, review and release process of the WeChat Mini 
 
 Options | Optional or not | Default | Explanation
 - | - | - | -
-appid | Required | `wx6ac3f5090a6b99c5` | The appid of the WeChat Mini Games, it will be written to `project.config.json` file.
-Remote server address | Optional | Empty | The remote server address. Resources will then be obtained from this address. 
-Open data context root | Optional | Empty | If an Open Data Context exists, use this root to specify the relative path of the Open Data Context folder in the build directory so that the directory is not overwritten or modified during the build.
-Orientation | Required | `landscape` | Device orientation, it will be written to `game.json` file.
-Build Sub Package | Optional | Enabled | Whether to enable the Subpackage function.
+**appid** | Required | `wx6ac3f5090a6b99c5` | The appid of the WeChat Mini Games, it will be written to `project.config.json` file.
+**Remote server address** | Optional | Empty | The remote server address. Resources will then be obtained from this address. 
+**Open data context root** | Optional | Empty | If an Open Data Context exists, use this root to specify the relative path of the Open Data Context folder in the build directory so that the directory is not overwritten or modified during the build.
+**Orientation** | Required | `landscape` | Device orientation, it will be written to `game.json` file.
+**Build Sub Package** | Optional | Enabled | Whether to enable the Subpackage function.
 
 ## Resource Management for WeChat Mini Game Environment
 
@@ -71,7 +71,7 @@ In the **WeChat Mini Game** environment, we provide a `wxDownloader` object, and
 5. Local cache storage has space limitation, if total space of cache exceeds the limit, there will be no more caching without disturbing game process.
 
 It should be noted that once the cache space is full, all the resources that need to be downloaded cannot be saved, only the temporary files for save download resources can be used, and WeChat will automatically clean up all temporary files after the mini game is exited. So the next time you run the mini game again, those resources are downloaded again and the process keeps looping.  
-In addition, the problem of file saving failure due to cache space exceeding the limit does not occur on the WeChat DevTools, because the WeChat DevTools does not limit the cache size, so testing the cache needs to be done in a real WeChat environment.
+In addition, the problem of file saving failure due to cache space exceeding the limit does not occur on the **WeChat DevTools**, because the **WeChat DevTools** does not limit the cache size, so testing the cache needs to be done in a real WeChat environment.
 
 At the same time, when the **MD5 Cache** feature of the engine is enabled, the URL of the file will change as the content of the file changes, so that when a new version of the game is released, the resources of the old version will naturally become invalid in the cache, and only the new resources can be requested from the server, which achieves the effect of version control.
 
@@ -85,11 +85,11 @@ Specifically, developers need to do:
 
     ![](./publish-wechatgame/detail.jpeg)
 
-**Note**: If the cache resource exceeds the WeChat environment limit, you need to manually clear the resource. And you can use `wx.downloader.cleanAllAssets()` and `wx.downloader.cleanOldAssets()` to clear the cache in WeChat Mini Games. The former clears all the cache resources in the cache directory, please use it carefully. While the latter clears cache resources that are currently unused in the cache directory in the application.
+> **Note**: If the cache resource exceeds the WeChat environment limit, you need to manually clear the resource. And you can use `wx.downloader.cleanAllAssets()` and `wx.downloader.cleanOldAssets()` to clear the cache in **WeChat Mini Games**. The former clears all the cache resources in the cache directory, please use it carefully. While the latter clears cache resources that are currently unused in the cache directory in the application.
 
 ## WeChat Mini Game Subpackage Loading
 
-WeChat Mini Game how to achieve subpackage loading, please refer to [Subpackage Loading](../../asset/subpackage.md).
+To achieve subpackage loading with **WeChat Mini Game**, please refer to [Subpackage Loading](../../asset/subpackage.md) documentation.
 
 ## Platform SDK Access
 
@@ -111,7 +111,7 @@ In addition, our adaptation of WeChat Mini Games has not been completely complet
 
 If you need it, you can currently use it by calling the WeChat's API directly.
 
-## Reading
+## Reference documentation
 
 - [WeChat Mini Game Developer Document](https://developers.weixin.qq.com/minigame/en/dev/guide/)
 - [WeChat Public Platform](https://mp.weixin.qq.com/?lang=en_US)

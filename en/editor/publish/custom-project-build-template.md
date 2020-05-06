@@ -2,7 +2,7 @@
 
 ## Custom Project Build Template
 
-Cocos Creator 3D supports custom build templates for each project, just add a `build-templates` folder to the project path, divide the sub-folder according to the `platform` path. Then all the files in this folder will be automatically copied to the build generated project according to the corresponding folder structure after the build. At present, all platforms except the native platform support this function, the specific platform name can be referred to the following **custom build template platform support table**.
+Cocos Creator 3D supports custom build templates for each project. Add a `build-templates` folder to the project path, divide the sub-folder according to the `platform` path. Then all the files in this folder will be automatically copied to the build generated project according to the corresponding folder structure after the build. Currently, all platforms except the native platform support this function, the specific platform name can be referred to the following **custom build template platform support table**.
 
 Folder Structure: 
 
@@ -15,13 +15,13 @@ project-folder
             |--index.html
 ```
 
-If current platform is `web-mobile`, then `build-templates/web-mobile/index.html` will be copied to `build/web-mobile/index.html`.
+If the current platform is `web-mobile`, then `build-templates/web-mobile/index.html` will be copied to `build/web-mobile/index.html`.
 
 In addition to this, build templates can be customized in the following ways.
 
 ### ejs type
 
-Since the content of the package is not guaranteed to be exactly the same in every version, according to the previous usage, when the build template within the editor is updated, the developer also needs to update the build template within his project. So now add a new way to use the template, click on **Project -> Create preview template** in the main menu, and a `.ejs` template file will be generated for the corresponding platform.
+Since the content of the package is not guaranteed to be exactly the same in every version, when the build template within the editor is updated, the developer also needs to update the build template within their project. Now add a new way to use the template, click on **Project -> Create preview template** in the main menu, and an `.ejs` template file will be generated for the corresponding platform.
 
 ```
 project-folder
@@ -34,11 +34,11 @@ project-folder
 
 Parameters are imported into these templates during the build, and content that is frequently changed during the build is placed in sub-templates of that template. You only need to modify what you want to use, so that the build templates within the project can be updated less frequently.
 
-**Note**: The copy template occurs after the rendered template. For example, if both `index.ejs` and `index.html` exist in this directory, the final packaged package will be the `index.html` file instead of the `index.ejs` rendered file.
+> **Note**: The copy template occurs after the rendered template. For example, if both `index.ejs` and `index.html` exist in this directory, the final packaged package will be the `index.html` file instead of the `index.ejs` rendered file.
 
 ### json type
 
-Many mini games have configuration files like `game.json`, when these `json` files are in the corresponding directory of the build template, they will not be directly overwritten during the build, but data fusion will occur.
+Many mini games have configuration files like `game.json`, when these `json` files are in the corresponding directory of the build template, they are not directly copied and overwritten during the build, but are fused with data.
 
 ### Custom build template platform supports tables
 

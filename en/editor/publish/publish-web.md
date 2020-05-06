@@ -1,31 +1,31 @@
-# Publish to Web
+# Publishing to the Web
 
-Open main menu's **Project -> Build** to open the Build panel.
+Open main menu's **Project -> Build** to open the **Build** panel.
 
 Cocos Creator 3D provides page templates for two kinds of Web platforms. From the pop up menu of **Platform**, you can choose **Web Mobile** or **Web Desktop**. The major difference is that in **Web Mobile**, the image will cover the whole browser window by default, while in **Web Desktop**, you are allowed to designate the resolution of image, which doesn't change when you zoom on the browser window.
 
 ## Build Options
 
-For some common build options of platforms, please refer to [General Build Options](build-options.md).
+For some common build options of platforms, please refer to [General Build Options](build-options.md) documentation.
 
 ### Web Desktop
 
 Options | Optional or not | Default | Explanation
 :--: | :--: | - | -
-Polyfills | Optional | { asyncFunctions: true } | Since v1.0.3, the Build supports some new feature of `polyfills`, mainly when the script is packaged, and the corresponding processing will be done. developer can choose `polyfills` according to their needs. This option currently only has `Async Functions`, and more functions will be opened in the future.
-Preview Resolution | Required | 1280 * 960| Resolution width and height of the game view
+**Polyfills** | Optional | { asyncFunctions: true } | Since v1.0.3, the Build supports some new feature of `polyfills`, mainly when the script is packaged, and the corresponding processing will be done. developer can choose `polyfills` according to their needs. This option currently only has `Async Functions`, and more functions will be opened in the future.
+**Preview Resolution** | Required | 1280 * 960| Resolution width and height of the game view
 
 ### Web Mobile
 
 Options | Optional or not | Default | Explanation
 :--: | :--: | - | -
-Orientation | Required | Auto | Device orientation, including `Auto`, `Landscape`, `Portrait`.
-Polyfills | Optional | Async Functions | Since v1.0.3, the Build supports some new feature of `polyfills`, mainly when the script is packaged, and the corresponding processing will be done. developer can choose `polyfills` according to their needs. This option currently only has `Async Functions`, and more functions will be opened in the future.
-VConsole | Optional | false | Whether to use vConsole. vConsole is similar to the mini version of DevTools and is used to aid debugging.
+**Orientation** | Required | Auto | Device orientation, including `Auto`, `Landscape`, `Portrait`.
+**Polyfills** | Optional | Async Functions | Since v1.0.3, the Build supports some new feature of `polyfills`, mainly when the script is packaged, and the corresponding processing will be done. developer can choose `polyfills` according to their needs. This option currently only has `Async Functions`, and more functions will be opened in the future.
+**VConsole** | Optional | false | Whether to use vConsole. vConsole is similar to the mini version of DevTools and is used to aid debugging.
 
 ### Preview URL
 
-Since v1.0.3, multiple Web projects can be previewed at the same time, so the Preview URL in the **Build** panel is no longer unified, but each build task will have a separate preview URL, which does not interfere with each other. Click the URL to automatically open the browser to preview. The specific preview URL stitching rule is `${The Preview IP in Preferences}:${Editor preview port number}/${Build platform}/${Build task name}/index.html`.
+Since v1.0.3, multiple Web projects can be previewed at the same time, so the **Preview URL** in the **Build** panel is no longer unified, but each build task will have a separate preview URL, which does not interfere with each other. Click the URL to automatically open the browser to preview. The specific preview URL stitching rule is `${The Preview IP in Preferences}:${Editor preview port number}/${Build platform}/${Build task name}/index.html`.
 
 ![](publish-web/preview-url.jpg)
 
@@ -41,9 +41,9 @@ The image above shows the preview of Web Mobile, you can see that the game view 
 
 ### Browser Compatibility
 
-The desktop browsers tested during the Cocos Creator 3D development process include: Chrome, Firefox, Safari (Mac), QQ browser, 360 browser. Other browsers as long as the kernel version is high enough to work properly, for some browsers do not open IE6 compatibility mode.
+The desktop browsers tested during the Cocos Creator 3D development process include: **Chrome**, **Firefox**, **Safari (Mac)**, **QQ browser**, **360 browser**. Other browsers as long as the kernel version is high enough to work properly, for some browsers do not open IE6 compatibility mode.
 
-Browsers tested on mobile devices include: Safari (iOS), Chrome, QQ browser, UC browser and WeChat built-in WebView.
+Browsers tested on mobile devices include: **Safari (iOS)**, **Chrome**, **QQ browser**, **UC browser** and **WeChat built-in WebView**.
 
 ## Retina Setting
 

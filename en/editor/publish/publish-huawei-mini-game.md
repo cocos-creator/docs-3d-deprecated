@@ -1,6 +1,6 @@
-# Publish to Huawei Quick Games
+# Publishing to Huawei Quick Games
 
-Starting with v1.0.2, Cocos Creator 3D officially supports the release of games to the Huawei Quick Games.
+Starting with v1.0.2, Cocos Creator 3D officially supports the release of games to the **Huawei Quick Games**.
 
 ## Environment Configuration
 
@@ -14,7 +14,7 @@ Starting with v1.0.2, Cocos Creator 3D officially supports the release of games 
 
     ![](./huawei-mini-game/build_options.jpg)
 
-    Click on the **huawei-mini-game** below to expand the parameter configuration of Huawei Quick Game.
+    Click on the **huawei-mini-game** below to expand the parameter configuration of **Huawei Quick Game**.
 
     ![](./huawei-mini-game/huawei_options.jpg)
 
@@ -26,7 +26,7 @@ The specific filling rules for the relevant parameter configuration are as follo
 
 - **Desktop Icon**
 
-  **Desktop Icon** is required. Click the **search icon** button at the back of the input box to select the icon you want. When building, the Desktop Icon will be built into the Huawei Quick Game project. Desktop Icon suggest using PNG pictures.
+  **Desktop Icon** is required. Click the **search icon** button at the back of the input box to select the icon you want. When building, the **Desktop Icon** will be built into the **Huawei Quick Game** project. It is suggested that the **Desktop Icon** is a `.png` image.
 
 - **Game Version Name**
 
@@ -34,7 +34,8 @@ The specific filling rules for the relevant parameter configuration are as follo
 
 - **Game Version Number**
 
-  This item is required. **Game Version Number** is different from the **Game Version Name**, and the **Game Version Number** is mainly used to distinguish the version update. Each time when you submit audit, the game version number is at least 1 higher than the value of the last submitted audit. It must not be equal to or less than the value of the last submitted audit, and it is recommended that the **Game Version Number** be recursively incremented by 1 each time when the audit is submitted. **Note**: The **Game Version Number** must be a positive integer.
+  This item is required. **Game Version Number** is different from the **Game Version Name**, and the **Game Version Number** is mainly used to distinguish the version update. Each time when you submit audit, the game version number is at least 1 higher than the value of the last submitted audit. It must not be equal to or less than the value of the last submitted audit, and it is recommended that the **Game Version Number** be recursively incremented by 1 each time when the audit is submitted.<br>
+  > **Note**: The **Game Version Number** must be a positive integer.
 
 - **Supported Minimum Platform Version Number**
 
@@ -42,7 +43,9 @@ The specific filling rules for the relevant parameter configuration are as follo
 
 - **Custom manifest file path (optional)**
 
-  This is an optional item, which is the expansion function of Huawei Quick Game. When you use it, you need to select a json file, and the data type in the file is required to be in json format. Note: The json data is not available when the key value are `package`, `appType`, `name`, `versionName`, `versionCode`, `icon`, `minPlatformVersion`, `config`, `display`, otherwise it will be overwritten by data such as **Game Package Name**, **Game Name**, **Desktop Icon**, **Game Version Name**, **Game Version Number** during the build.
+  This is an optional item, which is the expansion function of Huawei Quick Game. When used, you need to select a `json` file, and the data type in the file is required to be in `json` format.
+
+  > Note: The json data is not available when the key value are `package`, `appType`, `name`, `versionName`, `versionCode`, `icon`, `minPlatformVersion`, `config`, `display`, otherwise it will be overwritten by data such as **Game Package Name**, **Game Name**, **Desktop Icon**, **Game Version Name**, **Game Version Number** during the build.
 
 - **Build Sub Package**
 
@@ -60,15 +63,17 @@ The specific filling rules for the relevant parameter configuration are as follo
   
       Developers can choose whether to check this item according to their needs. Then click on **Build**.
 
-  3. After the build is complete, click the **Open** button after the **Build Path** to upload the `res` directory under the release path to the small packet mode server. For example, if the default release path is `build`, the Build Task Name is `huawei-mini-game`, you need to upload the `/build/huawei-mini-game/res` directory.
+  3. After the build is complete, click the **Open** button after the **Build Path** to upload the `res` directory under the release path to the small packet mode server. For example, if the default release path is `build`, the **Build Task Name** is `huawei-mini-game`, you need to upload the `/build/huawei-mini-game/res` directory.
 
-  At this point, the `res` directory will no longer be included in the built-up rpk, and the resources in the `res` directory will be downloaded from the filled **Small Packet Mode Server Path** through the network request.
+  At this point, the `res` directory will no longer be included in the built-up **rpk**, and the resources in the `res` directory will be downloaded from the filled **Small Packet Mode Server Path** through the network request.
 
 - **Keystore**
 
-  When you check the **Keystore**, the default is to build the rpk package with a certificate that comes with Creator 3D, which is used only for **debugging**. **Note**: When the rpk package is to be used to submit an audit, do not check the **Keystore** to build it.
+  When you check the **Keystore**, the default is to build the **rpk** package with a certificate that comes with Creator 3D. This certificate is used only for **debugging**.
   
-  If you don't check the **Keystore**, you need to configure the signature files **certificate.pem path** and **private.pem path**, where you build a rpk package that you can **publish directly**. The user can configure two signature files by using the **search icon** button to the right of the input box.
+  > **Note**: When the **rpk** package is to be used to submit an audit, do not check the **Keystore** to build it.
+  
+  If you don't check the **Keystore**, you need to configure the signature files **certificate.pem path** and **private.pem path**, where you build a **rpk** package that you can **publish directly**. The user can configure two signature files by using the **search icon** button to the right of the input box.
 
   There are two ways to generate a signature files:
 
@@ -83,28 +88,28 @@ The specific filling rules for the relevant parameter configuration are as follo
       openssl req -newkey rsa:2048 -nodes -keyout private.pem   -x509 -days 3650 -out certificate.pem
       ```
 
-      **Note**: **openssl** can be opened directly in the terminal in Linux or Mac environment, and in the Windows environment you need to install `openssl` and configure system environment variables. Restart Creator 3D after the configuration is complete.
+      > **Note**: **openssl** can be used directly in the terminal in Linux or Mac environment, and in the Windows environment you need to install `openssl` and configure system environment variables. Restart Cocos Creator 3D after the configuration is complete.
 
 **2. Build**
 
-After the relevant parameters of the **Build** panel are set, click **Build**. When the build is complete, click the **folder icon** button below the corresponding build task to open the build release path, you can see that a directory with the same name as the Build Task Name is generated in the default release path `build` directory, which is the exported Huawei Quick Game project directory and **rpk**, **rpk** package are in the `dist` directory.
+After the relevant parameters of the **Build** panel are set, click **Build**. When the build is complete, click the **folder icon** button below the corresponding build task to open the build release path, you can see that a directory with the same name as the **Build Task Name** is generated in the default release path `build` directory, which is the exported Huawei Quick Game project directory and **rpk**, **rpk** package are in the `dist` directory.
 
 ![](./huawei-mini-game/rpk.png)
 
 **3. Run the built rpk to the phone**
 
-Copy the rpk package generated by the build to the **sdcard** directory of the Android device. Open the **Huawei Quick APP Loader** that has been installed before, clicking the back button on the Android device will bring up a list, select the **Local Install**, select the path of place rpk, and then you can run the rpk on the Android device.
+Copy the **rpk** package generated by the build to the **sdcard** directory of the Android device. Open the **Huawei Quick APP Loader** that has been installed before, clicking the back button on the Android device will bring up a list, select the **Local Install**, select the path of place **rpk**, and then you can run the **rpk** on the Android device.
 
 **4. Subpackage rpk**
 
-Subpackage rpk can be used according to your needs. 
+Subpackage **rpk** can be used according to your needs. 
 
-Subpackage loading, that is, splitting the game content into several packages according to certain rules, only downloading the necessary packages when starting up for the first time. This necessary package is called **main package**. And the developer can trigger in the main package to download other sub-packages, which can effectively reduce the time spent on the first boot. To use this function, you need to set [Subpackage Configuration](../../asset/subpackage.md) in Cocos Creator 3D, and the package will be automatically subpackaged when the setting is completed.
+Subpackage loading, that is, splitting the game content into several packages according to certain rules, only downloading the necessary packages when starting up for the first time. This necessary package is called **main package**. And the developer can trigger in the main package to download other sub-packages, which can effectively reduce the time spent on the first boot. To use this function, you need to set the [Subpackage Configuration](../../asset/subpackage.md) in Cocos Creator 3D, and the package will be automatically subpackaged when the setting is completed.
 
-After the build is complete, the generated subpackages and main package are merged into one rpk, which is in the `/build/huawei-mini-game/dist` directory.
+After the build is complete, the generated subpackages and main package are merged into one **rpk**, which is in the `/build/huawei-mini-game/dist` directory.
 
-**Note**: At present, Huawei Quick Game does not support downloading multiple subpackages at the same time, please download them in order if you need to download multiple subpackages.
+> **Note**: Currently, Huawei Quick Game does not support downloading multiple subpackages at the same time, please download them in order if you need to download multiple subpackages.
 
-## Related Reference Links
+## Reference documentation
 
 [Huawei Quick Game development documentation](https://developer.huawei.com/consumer/en/doc/development/quickApp-Guides/quickgame-develop-runtime-game)

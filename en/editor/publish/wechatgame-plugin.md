@@ -1,6 +1,6 @@
 # WeChat Mini Games Engine Plugin Instructions
 
-The Game Engine Plugin is a new feature added to WeChat v7.0.7, which has the official version of the Cocos Creator 3D engine built in. If the plugin is enabled in the first game the player experiences, all games that also have the plugin enabled do not need to download the Cocos Creator 3D engine again, just use the same version of the engine directly from the public plugin library, or incremental update the engine.
+The **Game Engine Plugin** is a new feature added to **WeChat v7.0.7**, which has the official version of the Cocos Creator 3D engine built in. If the plugin is enabled in the first game the player experiences, all games that also have the plugin enabled do not need to download the Cocos Creator 3D engine again, just use the same version of the engine directly from the public plugin library, or incremental update the engine.
 
 For example, when a player has played an A game developed using Cocos Creator 3D v1.0.2, and the A game already enabled this plugin. Then he played the B Game, also developed by v1.0.2, and would not have needed to redownload the Cocos Creator 3D engine if the B game had also enabled this plugin. Even if the B Game is developed using Cocos Creator 3D v1.0.3, WeChat only needs to incremental update the difference between the two engine versions. This will drastically reduce the download counts of mini games, and improve the startup speed of mini games by 0.5-2s for a better user experience.
 
@@ -30,6 +30,6 @@ A: The default appid in the **Build** panel is a common test id, and according t
 Q: When the engine plugin is enabled, prompt "Unauthorized plugin, `Add plugin`" in the WeChat DevTools?<br/>
 A: Click the `Add plugin` in the prompt, then select add CocosCreator3D plugin and recompile. If prompt "There are no plugins to add" when you add the plugin, you can select the **Clear Cache -> Clear All** option in the WeChat DevTools and try again.
 
-## Related Reference Links
+## Reference documentation
 
-- [WeChat Mini Games Engine Plugin Development Document](https://developers.weixin.qq.com/minigame/dev/guide/base-ability/game-engine-plugin.html)
+- [WeChat Mini Games Engine Plugin Development Documentation](https://developers.weixin.qq.com/minigame/dev/guide/base-ability/game-engine-plugin.html)
