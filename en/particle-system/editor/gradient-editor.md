@@ -5,7 +5,7 @@ The gradient editor can set the color of a certain property in the particle syst
 
 The gradient editor can perform the following operations:
 
-- Mode can choose two modes, **Blend** mode will be interpolated according to the two adjacent key frames at the current time to get the color of the current frame, **Fixed** mode will directly use the color of the previous key frame at the current time.
+- Mode has two possible choices: Blend mode will be interpolated according to the two adjacent keyframes at the current time to get the color of the current frame. Fixed mode will directly use the color of the previous keyframe at the current time.
 - Click an empty space above the ribbon to insert an alpha key frame, click an empty space below the ribbon to insert an rgb key frame.
 - Drag the key frame to move left and right to adjust the key frame position, and drag the key frame to move up and down to delete the key frame.
 - The corresponding rgb or alpha value can be edited in the Color / Alpha edit box.

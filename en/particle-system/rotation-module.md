@@ -1,4 +1,4 @@
-## RotationOvertimeModule
+## Rotation Overtime Module
 ![](particle-system/rotation_module.png)
 
 Attribute | Role

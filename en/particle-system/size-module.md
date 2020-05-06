@@ -1,4 +1,4 @@
-## SizeOvertimeModule
+## Size Overtime Module
 ![](particle-system/size_module.png)
 
 Attribute | Role

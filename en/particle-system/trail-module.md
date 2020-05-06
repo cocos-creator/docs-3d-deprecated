@@ -1,4 +1,4 @@
-## TrailModule
+## Trail Module
 ![](particle-system/trail_module.png)
 
 Attribute | Role

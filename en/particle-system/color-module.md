@@ -1,4 +1,4 @@
-## ColorOvertimeModule
+## Color Overtime Module
 ![](particle-system/color_module.png)
 
 Properties | Features

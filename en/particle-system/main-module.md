@@ -1,4 +1,4 @@
-## ParticleSystemComponent
+## Particle System Component
 ![](particle-system/main.png)
 
 Properties | Features

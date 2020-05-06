@@ -1,4 +1,4 @@
-## TextureAnimationModule
+## Texture Animation Module
 ![](particle-system/texture_animation.png)
 
 Attribute | Role

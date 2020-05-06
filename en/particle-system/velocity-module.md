@@ -1,4 +1,4 @@
-## VelocityOvertimeModule
+## Velocity Overtime Module
 ![](particle-system/velocity_module.png)
 
 Attribute | Role

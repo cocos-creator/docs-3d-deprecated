@@ -1,4 +1,4 @@
-# LineComponent
+# Line Component
 
 The Line component is used to render a line segment connected by a given point in a 3D scene. The line segment rendered by the Line component is wide and always faces the camera, which is similar to the billboard component.
 
