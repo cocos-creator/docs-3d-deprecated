@@ -35,7 +35,7 @@ const myModule = require("path-to-module");
 const mySet = new Set();
 ```
 对于 Cocos Creator 3D 来说是合法的，但 IDE 可能会报告错误：
-因为`compilerOptions.target` 设置为了 `es5`：ECMAScript 2015 才引入 `Set`。
+因为`compilerOptions.target` 设置为了 `es5`：ES6 才引入 `Set`。
 
 ----
 

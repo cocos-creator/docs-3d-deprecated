@@ -5,9 +5,9 @@
 
 #### 语言特性
 
-Creator 3D 支持的 JavaScript 语言规范为 ECMAScript 2015。
+Creator 3D 支持的 JavaScript 语言规范为 ES6。
 
-此外，以下几项更新于 ECMAScript 2015 规范的语言特性或提案仍旧在支持之列：
+此外，以下几项更新于 ES6 规范的语言特性或提案仍旧在支持之列：
 
 - [类字段](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Classes/Class_elements)
 - [Promise 对象](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Promise)
