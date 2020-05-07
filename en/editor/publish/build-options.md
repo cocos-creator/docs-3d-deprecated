@@ -20,7 +20,7 @@ Mouse over this option and an **Edit** button will appear. Click this button and
 
 ### Included Scenes
 
-During the build process, the resources and scripts in the `resources` are all packaged, while the other resources are packaged on demand based on the usage of the scenes involved in the build. Thus, scenes that do not need to be published are suggested to be unchecked, reducing the volume of the package after build.
+There are usually multiple game scenes in the project, this option allows you to choose the scenes you want to package. During the build process, all assets that depended on these selected scene assets in deep will be packaged. Just select the game scenes that are actually needed can reduce the size of game package after build. For more information about assets packaging, please refer to the [Build Process with FAQ](./build-guide) documentation.
 
 ### Start Scene
 
@@ -30,7 +30,7 @@ The first scene after entering the game can be set directly in the **Start Scene
 
 The build will compress engine files and project scripts by default, if you want to generate a `sourcemap`, you need to check this box.
 
-A source map is a file that maps from the transformed source to the original source, enabling the browser to reconstruct the original source and present the reconstructed original in the debugger. For more details on source maps, please refer to the [Source Maps](https://developer.mozilla.org/en-US/docs/Tools/Debugger/How_to/Use_a_source_map) documentation.
+A `source map` is a file that maps from the transformed source to the original source, enabling the browser to reconstruct the original source and present the reconstructed original in the debugger. For more details on `source maps`, please refer to the [Source Maps](https://developer.mozilla.org/en-US/docs/Tools/Debugger/How_to/Use_a_source_map) documentation.
 
 ### Compress Texture
 

@@ -18,7 +18,7 @@ This step mainly initializes the initial `options` passed to the build to the in
 
 ### Collation of build data
 
-The editor will first summarize the scene currently involved in the build and all resources in the `resources` directory. Each resource is packaged through the engine's deserialization to find the dependent resource and recursion to pack the resources. The entire project's scripting environment is configured before being deserialized, that is, all non-plugin project scripts are loaded. Because whether the script loads correctly or not directly affects the deserialization, failure to load because the script is not written legally will directly result in build failure. If the dependent resource is lost in the deserialization process, a warning is issued, but the build continues nonetheless. The warning here does not mean that the problem does not need to be resolved, and if the resource loss is not resolved, it is difficult to guarantee that the problem will not occur after the build.
+The editor will first summarize the scene currently involved in the build and all resources in the `resources` directory. Each resource is packaged through the engine's deserialization process to find the dependent resource and recursion to pack the resources. The entire project's scripting environment is configured before being deserialized, that is, all non-plugin project scripts are loaded. Because whether the script loads correctly or not directly affects the deserialization, failure to load because the script is not written legally will directly result in build failure. If the dependent resource is lost in the deserialization process, a warning is issued, but the build continues nonetheless. The warning here does not mean that the problem does not need to be resolved, and if the resource loss is not resolved, it is difficult to guarantee that the problem will not occur after the build.
 
 This step will also sort out the resource types based on the build's internal division, such as scenes, scripts, texture compression tasks, JSON grouping information, etc., and weed out resource information that is not used. 
 
@@ -26,7 +26,7 @@ This step will also sort out the resource types based on the build's internal di
 
 ### Write the built resource to the file system
 
-After performing the first two steps, then we need to generate the used resources into the file system. After build, all serialized files are placed in the `res/import` directory generated after the build, and the source files of all resources are placed in the `res/raw-assets` directory. This can be divided into the following steps:
+After performing the previous steps, then we need to generate the used resources into the file system. After building, the serialized JSON files of all resources are placed in the `res/import` directory. The original files of all resources are placed in the `res/raw-assets` directory. The build process can be broken down into the following phases:
 
 1. **Build scripts**: The scripts in the editor are divided into **plugin scripts** and **non-plugin scripts**.
 
@@ -34,7 +34,7 @@ After performing the first two steps, then we need to generate the used resource
 
     - The non-plugin script will package the source files into `project.js` (`project.dev.js` in debug mode) in the corresponding `src` directory. Checking the `sourceMap` option will generate a corresponding `map` file, and the `debug` option will determine whether the script is compressed or not.
 
-2. **Auto Atlas**: Query the auto atlas information within the resource, discard unused resources, and generate atlas resources. This step will  modify the json grouping information, asset resource grouping information and add texture compression task. If the **packAutoAtlas** option in the **Build** panel is not checked during the build, no processing is done.
+2. **Auto Atlas**: Query all **Auto Altas** assets in the project, and then pack **SpriteFrame** assets within **Auto Altas** into a big **Sprite Atlas** assets, serialize assets to **JSON** according to the configuration of **Auto Atlas** assets. This step will  modify the json grouping information, asset resource grouping information and add texture compression task. If the **packAutoAtlas** option in the **Build** panel is not checked during the build, no processing is done.
 
 3. **Compress Texture**: Compress the texture resources according to the organized texture compression tasks and write them to the folder generated after build. If the **Compress Texture** option in the **Build** panel is not checked during the build, no processing is done.
 
@@ -120,9 +120,9 @@ The structure here only lists the settings structure under the common process, a
 
 During the resource packaging process, the `uuid` of all resources involved in the build are continuously collected and then organized into `setting.js`. `setting.js` will be written to the `build/src` directory, which isgenerated after the build. The `uuid` in the file will be compressed or not, depending on whether it is in debug mode or not. Organize all used `uuid` and store the `uuid` that appear more than twice in the `uuids` array, and replaced with indexes. All `assetType` that appear more than twice are also stored in the `assetTypes` array, and replaced with indexes.
 
-#### Build resources
+#### Build assets
 
-The packaging of resources in this step does not include scripts, because scripts are packaged as special files. The editor will first summarize the scene currently involved in the build and all resources in the `resources` directory. Each resource is packaged through the engine's deserialization to find the dependent resource and recursion to pack the resources. The entire project's scripting environment is configured before being deserialized, that is, all non-plugin project scripts are loaded. Because whether the script loads correctly or not directly affects the deserialization, failure to load because the script is not written legally will directly result in build failure. If the dependent resource is lost in the deserialization process, a warning is issued, but the build continues nonetheless. The warning here does not mean that the problem does not need to be resolved, and if the resource loss is not resolved, it is difficult to guarantee that the problem will not occur after the build.
+At this stage, the editor will arrage the **scenes assets that selected in Build panel and all assets in the resources directory. All assets will be deserialized by engine to find out the dependent assets in deep**. Before deserialization, editor will load all the scripts（expect plugin scripts) in the project, if the script is written illegally and fails to load, it will make this build task stop immediately. If any dependent asset is missing during the deserialization process, a warning info will be print, but editor will continue to build. When warning info is printed, we recommend you to read and try to resolve it, otherwise it may cause some unexpect errors after build. During the packaging process, the assets will be re-compressed and serialized after deserialization to reduce the package size. Also, all serialized files will be sorted into deferent **JSON** groups to reduce the size of game package.
 
 Resources that perform deserialization during the packing process will recompress the serialization to reduce the package size after packing. The serialized files of the texture resources are all packaged into a single `json` file, and the other serialized files are subpackaged according to the build options configuration.
 

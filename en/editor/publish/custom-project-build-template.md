@@ -38,7 +38,7 @@ Parameters are imported into these templates during the build, and content that 
 
 ### json type
 
-Many mini games have configuration files like `game.json`, when these `json` files are in the corresponding directory of the build template, they are not directly copied and overwritten during the build, but are fused with data.
+Many mini games have their own configuration `JSON` files, like `game.json` to WeChat Mini Games. Files in the build templates folder will just copy in **default**, but this configuration JSON will be merged instead of overwrite. Of course, it doesn't mean that all `JSON` file will be merged, you can check it in the tables below.
 
 ### Custom build template platform supports tables
 
