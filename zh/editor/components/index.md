@@ -13,9 +13,7 @@ Cocos Creator 3D 中包括以下功能组件：
 - [BillboardComponent](../../particle-system/billboard-component.md)
 - [LineComponent](../../particle-system/line-component.md)
 - [ParticleSystemComponent](../../particle-system/main-module.md)
-- [BoxColliderComponent](../../physics/physics-component.md#盒碰撞器组件（boxcollidercomponent）)
-- [SphereColliderComponent](../../physics/physics-component.md#球碰撞器组件（spherecollidercomponent）)
-- [RigidBodyComponent](../../physics/physics-component.md#刚体组件)
+- [物理组件](../../physics/physics-component.md)
 - [UI组件](../../ui-system/components/editor/index.md)
 
 ---

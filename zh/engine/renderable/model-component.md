@@ -11,8 +11,7 @@
 
 ## 模型分组渲染
 
-分组渲染功能是通过相机组件([CameraComponent](../../editor/components/camera-component.md)) 的 Visibility 属性配合 模型组件([ModelComponent](../../engine/renderable/model-component.md)) 的 Visibility 属性共同决定。用户可通过代码设置 Visibility 的值来完成分组渲染，需要注意的是，Visibility 的值是 **按位比较** 的，用户可通过 **位运算** 操作 Visibility 的 **前 20 位** 来完成分组。<br>
-我们默认提供的摄像机和模型都为不分组全部渲染，用户没有特殊需求的情况下不需更改此值。
+分组渲染功能是通过相机组件([CameraComponent](../../editor/components/camera-component.md)) 的 Visibility 属性配合节点的 Layer 属性共同决定。用户可通过代码设置 Visibility 的值来完成分组渲染。所有节点默认都属于 DEFAULT 层，在所有相机都可见。
 
 ## 静态合批
 
@@ -56,4 +55,4 @@
 ---
 
 <b id="f1">[1]</b> 注意目前使用 uniform 上传合批后的世界变换矩阵，考虑到 WebGL 标准的 uniform 数量限制，目前一批最多绘制 10 个模型，所以对大量同材质的模型，开启合批后 drawcall 数量预期最多会减少 10 倍。 [↩](#a1)<br>
-<b id="f2">[2]</b> 关于合批与性能的话题业界一直有不少探讨，可以参考比如 [这里](http://www.ce.u-sys.org/Veranstaltungen/Interaktive%20Computergraphik%20(Stamminger)/papers/BatchBatchBatch.pdf) 的 slide [↩](#a2)<br>
+<b id="f2">[2]</b> 关于合批与性能的话题业界一直有不少探讨，可以参考比如 [这里](https://www.nvidia.com/docs/IO/8228/BatchBatchBatch.pdf) 的 slide [↩](#a2)<br>

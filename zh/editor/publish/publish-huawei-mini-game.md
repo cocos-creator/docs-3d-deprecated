@@ -10,7 +10,7 @@ Cocos Creator 3D 从 v1.0.2 版本开始正式支持将游戏发布到华为快�
 
 ## 发布流程
 
-一、使用 Cocos Creator 3D 打开需要发布的项目工程，在 **构建发布** 面板的 **发布平台** 中选择 **Huawei Mini Game**。
+一、使用 Cocos Creator 3D 打开需要发布的项目工程，在 **构建发布** 面板的 **发布平台** 中选择 **华为快游戏**。
 
 ![](./huawei-mini-game/build_options.jpg)
 
@@ -83,7 +83,7 @@ Cocos Creator 3D 从 v1.0.2 版本开始正式支持将游戏发布到华为快�
       openssl req -newkey rsa:2048 -nodes -keyout private.pem -x509 -days 3650 -out certificate.pem
       ```
 
-      >**注意**：openssl 工具在 linux 或 Mac 环境下可在终端直接打开。而在 Windows 环境下则需要安装 openssl 工具并且配置系统环境变量，配置完成后需重启 Creator。
+      >**注意**：openssl 工具在 linux 或 Mac 环境下可在终端直接打开。而在 Windows 环境下则需要安装 openssl 工具并且配置系统环境变量，配置完成后需重启 Creator 3D。
 
 二、**构建发布**
 
