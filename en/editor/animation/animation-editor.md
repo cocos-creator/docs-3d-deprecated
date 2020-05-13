@@ -80,7 +80,7 @@ It mainly displays the specific key frame settings on each attribute track, and 
 
 __Click__ the clip option in the lower left corner of the __Animation Editor__ and select the clip to be edited:
 
-    ![](./animation-editor/switch-clip.jpg)
+![](./animation-editor/switch-clip.jpg)
 
 ### Change the keyframe display area
 
@@ -101,7 +101,7 @@ If you want to see the key frame on the right side of the __Animation Editor__ t
 #### c. Drag to change the layout of the animation editor
 The dividing line between the node list and the time, and the dividing line between the __Attribute List__ and the time axis can be used to drag and change the layout, and can be freely adjusted to the layout effect suitable for editing by dragging.
 
-    ![](./animation-editor/layout.gif)
+  ![](./animation-editor/layout.gif)
 
 ### Change the currently selected time
 
