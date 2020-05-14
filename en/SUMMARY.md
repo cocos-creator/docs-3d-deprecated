@@ -176,7 +176,6 @@
       - [UICoordinateTracker Reference](ui-system/components/editor/ui-coordinate-tracker.md)
       - [UIOpacity Reference](ui-system/components/editor/ui-opacity.md)
       - [BlockInputEvents Reference](ui-system/components/editor/block-input-enents.md)
-      - [WebView 组件参考](ui-system/components/editor/webview.md)
 
 - [脚本指南及事件机制](scripting/index.md)
   - [脚本创建](scripting/setup.md)
