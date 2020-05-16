@@ -36,7 +36,7 @@ To add a __key frame__:
 
 - After selecting the corresponding node and the corresponding attribute track, the editor control for the corresponding attribute will appear in the middle of the __animation editor__, and the __key frame__ can be marked by modification.
 
-    ![]/(./animation-clip/add-keyframe_4.gif)
+    ![](./animation-clip/add-keyframe_4.gif)
 
 - After adding the __property track__, modify the property directly in the corresponding position of the __Property Inspector__ or perform scene operations to automatically generate __key frames__.
 
