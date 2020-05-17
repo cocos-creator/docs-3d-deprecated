@@ -135,7 +135,7 @@ loader.loadRes("test assets/image/texture", Texture2D ,(err: any, texture: Textu
 // 注意 atlas 资源文件（plist）通常会和一个同名的图片文件（png）放在一个目录下, 所以需要在第二个参数指定资源类型,且加载时请加载后缀为 .plist 的文件,且需要后缀名
 loader.loadRes("test assets/atlas.plist", SpriteAtlas, (err: any, atlas: SpriteAtlas) => {
     const frame = atlas.getSpriteFrame('sheep_run_0');
-    this.node.getComponent(SpriteComponent)..spriteFrame = frame;
+    this.node.getComponent(SpriteComponent).spriteFrame = frame;
 });
 ```
 
