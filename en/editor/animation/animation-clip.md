@@ -2,10 +2,10 @@
 
 After the __animation clip__ is attached to the __Node__, click __Enter Animation Edit Mode__ to enter the __animation editing mode__, and then you can create some __animation frame data__ in the __animation clip__.
 
-__First__, it is important to understand about __animation properties__. __Animation properties__ include a __Node's__ own *position*, *rotation* and *other properties*, as well as the __custom properties__ in a __Component__.
-The __component__ contains the __component's__ __name__ before the property, such as `cc.SpriteComponent.spriteFrame`. The corresponding blue prism on the attribute track is the __key frame__.
+__First__, it is important to understand about __animation properties__. __Animation properties__ include a __Node's__ own *position*, *rotation* and *other properties*, as well as the __properties__ in a __Component__.
+The __component__ contains the __component's__ __name__ and other properties, such as `cc.SpriteComponent.spriteFrame`. The corresponding blue prism on the property track is the __key frame__.
 
-__Animation components__ can animate the __node__ and __component__ attributes on the __node__ and __child nodes__, including __attributes__ in __user-defined scripts__. This means that various animation requirements can be flexibly implemented. The specific animation implementation depends on different animation needs and different steps. For an example case, please refer to the [official example-3d](https://github.com/cocos-creator/example-3d). This repository mainly introduces some common editing operations and facilitates rapid editing to achieve these effects.
+__Animation components__ can animate the __node__ and __component__ properties on the __node__ and __child nodes__, including __Properties__ in __user-defined scripts__. This means that various animation requirements can be flexibly implemented. The specific animation implementation depends on different animation needs and different steps. For an example case, please refer to the [official example-3d](https://github.com/cocos-creator/example-3d). This repository mainly introduces some common editing operations and facilitates rapid editing to achieve these effects.
 
 ## Common Key Frame Operations
 
@@ -22,38 +22,38 @@ After clicking the __key frame__, the __key frame__ will be selected. At this ti
 
 To add a __key frame__:
 
-- __Right-click__ on the corresponding attribute track position and select __Add Key Frame__. The current number of __key frame__ frames will also appear on the right-click menu.
+- __Right-click__ on the corresponding property track position and select __Add Key Frame__. The current number of __key frame__ frames will also appear on the right-click menu.
 
     ![](./animation-clip/add-keyframe_1.gif)
 
-- **Select the corresponding node and the corresponding attribute**, move the time control line to the position where the __key frame__ needs to be added, and press the __I__ (inset) key
+- **Select the corresponding node and the corresponding property**, move the time cursor to the position where the __key frame__ needs to be added, and press the __I__ (inset) key
 
     ![](./animation-clip/add-keyframe_2.gif)
 
-- Move the time control line to the position where the __key frame__ needs to be added. In the corresponding attribute list item, click ![](./animation-clip/add-key-button.png).
+- Move the time cursor to the position where the __key frame__ needs to be added. In the corresponding property list item, click ![](./animation-clip/add-key-button.png).
 
     ![](./animation-clip/add-keyframe_3.gif)
 
-- After selecting the corresponding node and the corresponding attribute track, the editor control for the corresponding attribute will appear in the middle of the __animation editor__, and the __key frame__ can be marked by modification.
+- After selecting the corresponding node and the corresponding property track, the editor control for the corresponding property will appear in the middle of the __animation editor__, and the __key frame__ can be marked by modification.
 
     ![](./animation-clip/add-keyframe_4.gif)
 
-- After adding the __property track__, modify the property directly in the corresponding position of the __Property Inspector__ or perform scene operations to automatically generate __key frames__.
+- After adding the __property track__, move the time cursor to desired position of the __Property Inspector__ or perform scene operations to automatically generate __key frames__.
 
 ### Removing key frames
 
-- **Select the __key frames__ you want to delete and press __delete / Cmd + backspace__.
+- **Select the __key frames__ you want to delete and press __delete/Cmd + backspace__ on MacOS and __delete/Ctrl + backspace__ on Windows.
 - At the position of the __key frame__ to be deleted **right-click**, select __Remove Key Frame__.
-- Drag the __time control line__ to the position where the __key frame__ needs to be removed and **double-click** the __key frame__, in the corresponding attribute list item, click ![Remove key frame button](./animation-clip/del-key-button.png)
+- Drag the __time cursor__ to the position where the __key frame__ needs to be removed and **double-click** the __key frame__, in the corresponding property list item, click ![Remove key frame button](./animation-clip/del-key-button.png)
 
     ![Remove key frames](./animation-clip/remove-keyframes.gif)
 
 ### Modifying key frame data
-On the __timeline__ **double-click** the __key frame__ that needs to be modified. The __time control line__ will move to that position. You can also directly drag the __time control line__ to the corresponding position, and modify the corresponding attributes directly in the **Property Inspector**. Make sure the __animation editor__ is in __edit mode__. For example, there are three attribute tracks in the attribute list: *position*, *x*, and *y*. After the __key frame__ is selected, you can modify the *position*, *x*, and *y* attributes in the **Property Inspector**.
+On the __timeline__ **double-click** the __key frame__ that needs to be modified. The __time cursor__ will move to that position. You can also directly drag the __time cursor__ to the corresponding position, and modify the corresponding properties directly in the **Property Inspector**. Make sure the __animation editor__ is in __edit mode__. For example, there are three property tracks in the property list: *position*, *scale*, and *rotation*. After the __key frame__ is selected, you can modify the *position*, *scale*, and *rotation* properties in the **Property Inspector**.
 
 ![](./animation-clip/edit-keyframe_1.gif)
 
-In __animation editing mode__, move the __time control__ line to a position where there are no __key frames__ on the timeline, and then modify the corresponding attributes in the __Property Inspector__, and a frame will also be inserted automatically.
+In __animation editing mode__, move the __time control__ line to a position where there are no __key frames__ on the timeline, and then modify the corresponding properties in the __Property Inspector__, and a frame will also be inserted automatically.
 
 ### Moving a key frame
 
@@ -83,27 +83,27 @@ After selecting multiple __key frames__, adjust the number of interval __key fra
 
 > **Tips**: when copying and pasting a single __key frame__ within a short distance, it is recommended to use __alt + mouse dragging__; for long distance and __multiple key frames__, it is recommended to use the __shortcut key__ to *copy*, and the __right mouse__ button to *paste*.
 
-## Common operations of attribute track data
+## Common operations of property track data
 
-An __animation clip__ may contain multiple nodes, and multiple __animation attributes__ are bound to each node. The data in each attribute is the actual __key frame__. The __key frame__ operation in the attribute has been mentioned above. This section mainly introduces some operations for the entire attribute track:
+An __animation clip__ may contain multiple nodes, and multiple __animation properties__ are bound to each node. The data in each property is the actual __key frame__. The __key frame__ operation in the property has been mentioned above. This section mainly introduces some operations for the entire property track:
 
-- **Add an attribute track**: click the `+` small button next to the __attribute list__, after the pop-up attribute menu pops up, click on the attribute that needs to be added. Example:
+- **Add an property track**: click the `+` small button next to the __property list__, after the pop-up property menu pops up, click on the property that needs to be added. Example:
 
     ![](./animation-clip/add-property.gif)
 
-- **Remove attribute track**: right-click the attribute list item and select __Remove attribute track__. Example:
+- **Remove property track**: right-click the property list item and select __Remove property track__. Example:
 
     ![](./animation-clip/clear-property.gif)
 
-- **Clear track data**: right-click the attribute list item and select __Clear attribute track__. Example:
+- **Clear track data**: right-click the property list item and select __Clear property track__. Example:
 
     ![](./animation-clip/remove-property.gif)
 
-- **Copy and paste track data**: right-click the attribute list item, select **copy track data** or press __Ctrl + C__, then click the same type of track as the copied track, right-click will see the paste option, click or press __Ctrl + V__ to paste. Example:
+- **Copy and paste track data**: right-click the property list item, select **copy track data** or press __Ctrl + C__, then click the same type of track as the copied track, right-click will see the paste option, click or press __Ctrl + V__ to paste. Example:
 
     ![](./animation-clip/copy-property.gif)
 
-## Common operations of node data
+## Common operations of node panel
 
 The __animation clip__ defines the position of the data by the name of the node, ignoring the root node itself, and the remaining child nodes find their corresponding data through the **relative path** index of the root node.
 
@@ -117,11 +117,11 @@ The __animation clip__ defines the position of the data by the name of the node,
 
     !(./animation-clip/moving_node.gif)
 
-    > **Note**: by default, node data migration will overwrite the data on the original node
+    > **Note**: by default, node data migration will overwrite the data on the target node
 
 ## Modify a clip's common properties
 
-**sample**: define the frame rate of the current animation data per second, the default is __60__, this parameter will affect the number of frames between every two integer seconds scale on the time axis (that is, how many divisions within two seconds).
+**sample**: define the frame rate of the current animation data per second, the default is __60__, this parameter will affect the number of frames between every two integer seconds scale on the time axis (that is, how many divisions within one seconds).
 
 **speed**: the current playback speed of the animation, the default is __1__.
 
