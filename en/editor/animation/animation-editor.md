@@ -9,8 +9,8 @@ The __Animation Editor__ can be divided into 6 main parts.
 2. [Timeline and Events](###b.TimelineandEvents)
 3. [Node List](###NodeList)
 4. [Keyframe preview in node](###Keyframepreviewinnode)
-5. [Attribute List](###attributelist)
-6. [Attribute track keyframe preview](###Attributetrackkeyframepreview)
+5. [Property List](###Propertylist)
+6. [Property track keyframe preview](###Propertytrackkeyframepreview)
 
 ### Toolbar
 The __Toolbar__ is responsible for displaying some commonly used functions that are triggered by buttons.
@@ -64,15 +64,15 @@ The nodes here and the nodes of the __Hierarchy Manager__ are mapped one by one.
 Since the __node list__ of the __Animation Editor__ is merged with the data in the clip. There may be more node information than the original node, but this part of the extra nodes is the lost node, which cannot be edited and used. The interface, which will be displayed as __yellow__ is also grayed out at the key frame track. At this time, you can transfer the lost node to other nodes through the migration data in the right-click menu.
 
 ### Keyframe preview within the node
-This is mainly to display a preview of all frames on each node. Here, you can delete the key frame by __right-clicking__ the key frame position menu, and you can also move the key frame position. __Clicking__ the key frames of different nodes at the same time will select the corresponding node. __Double-click__ the key frame to move the time control line to this position. Without the selected attribute, `Ctrl/Cmd + Shift + Left/Right` can Move the time control line up/down to the next key frame position.
+This is mainly to display a preview of all frames on each node. Here, you can delete the key frame by __right-clicking__ the key frame position menu, and you can also move the key frame position. __Clicking__ the key frames of different nodes at the same time will select the corresponding node. __Double-click__ the key frame to move the time control line to this position. Without the selected property, `Ctrl/Cmd + Shift + Left/Right` can Move the time control line up/down to the next key frame position.
 
 ### Property list
-Mainly displays the attribute list of the currently selected node participating in the animation. Each attribute display item has a key frame icon, corresponding to the current attribute track and the key frame status of the current time control line position. __Click__ to __add/remove__ the corresponding key frame . The __right-click__ menu can remove the current track or clear data. __Click__ on the plus button at the top to add an attribute track for the currently selected node.
+Mainly displays the property list of the currently selected node participating in the animation. Each property display item has a key frame icon, corresponding to the current property track and the key frame status of the current time control line position. __Click__ to __add/remove__ the corresponding key frame . The __right-click__ menu can remove the current track or clear data. __Click__ on the plus button at the top to add an property track for the currently selected node.
 
-Like the node, the attribute track may also be lost. The attribute recorded in the animation clip does not exist on the current node. This attribute is the attribute lost under the current node. The missing attributes are also displayed in yellow. In this case, you can add the relevant attributes to the corresponding node or directly remove the missing attribute track after exiting the editing mode.
+Like the node, the property track may also be lost. The property recorded in the animation clip does not exist on the current node. This property is the property lost under the current node. The missing __Properties__ are also displayed in yellow. In this case, you can add the relevant __Properties__ to the corresponding node or directly remove the missing property track after exiting the editing mode.
 
 ### Property track keyframe preview
-It mainly displays the specific key frame settings on each attribute track, and is also the main area for key frame editing. You can __right-click__ directly on the track to add key frames, or you can drag the time control line to the corresponding position and press enter to add. At the same time, it also supports frame selection and key frame selection to *move*, *copy*, *paste* and *other* operations in this area.
+It mainly displays the specific key frame settings on each property track, and is also the main area for key frame editing. You can __right-click__ directly on the track to add key frames, or you can drag the time control line to the corresponding position and press enter to add. At the same time, it also supports frame selection and key frame selection to *move*, *copy*, *paste* and *other* operations in this area.
 
 ## Basic Operation Guide
 
@@ -99,7 +99,7 @@ If you want to see the key frame on the right side of the __Animation Editor__ t
     ![](./animation-editor/scale-canvas.gif)
 
 #### c. Drag to change the layout of the animation editor
-The dividing line between the node list and the time, and the dividing line between the __Attribute List__ and the time axis can be used to drag and change the layout, and can be freely adjusted to the layout effect suitable for editing by dragging.
+The dividing line between the node list and the time, and the dividing line between the __Property List__ and the time axis can be used to drag and change the layout, and can be freely adjusted to the layout effect suitable for editing by dragging.
 
   ![](./animation-editor/layout.gif)
 
@@ -132,11 +132,11 @@ Function | Shortcut key | Description
 *Delete the currently selected keyframe* | Delete/Cmd + Backspace |-
 *Play/Pause Animation* | Alt + P |-
 *Stop animation* | Alt + S | Current time will become 0
-*Add key frame* | I | After selecting the attribute track, the key frame will be added at the position of the time control line, if it is not selected, it will be ignored
-*Skip to the previous key frame* | Ctrl/Cmd + Shift + Left (←) | Move to the nearest key frame to the left of the time control line (select the attribute track or select the node)
-*Skip to the next key frame* | Ctrl/Cmd + Shift + Right (→) | Move to the nearest key frame on the right of the time control line (selected on the attribute track or selected node)
+*Add key frame* | I | After selecting the property track, the key frame will be added at the position of the time control line, if it is not selected, it will be ignored
+*Skip to the previous key frame* | Ctrl/Cmd + Shift + Left (←) | Move to the nearest key frame to the left of the time control line (select the property track or select the node)
+*Skip to the next key frame* | Ctrl/Cmd + Shift + Right (→) | Move to the nearest key frame on the right of the time control line (selected on the property track or selected node)
 *Select multiple keyframes* | Ctrl | Hold down Ctrl and click on keyframes to select multiple keyframes
-*Select all keyframes of the track* | Ctrl/Cmd + A | Select all keyframes of the selected attribute track
+*Select all keyframes of the track* | Ctrl/Cmd + A | Select all keyframes of the selected property track
 *Copy to generate key frame* | Alt | After selecting the key frame, press Alt and hold and drag the selected key frame to copy the corresponding key frame to the new moving position
 *Copy selected key frame* | Ctrl/Cmd + C |-
 *Paste the key frame of the last copy* | Ctrl/Cmd + V |-
