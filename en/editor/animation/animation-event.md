@@ -30,7 +30,7 @@ To delete a frame function at the corresponding time position separately, you ca
 
 ## Editing a specified event trigger function
 
-__Double-click__ the __event frame__ just added to open the __Event Editor__. In the editor, we can manually enter the name of the function that needs to be triggered. When the function is triggered, the corresponding method will be matched in each component of the animation root node.
+__Double-click__ the __event frame__ just added to open the __Event Editor__. In the editor, we can manually enter the name of the function that needs to be triggered. When the event is triggered, animation system will execute all corresponding method with the same name in each component of the __animation root node__.
 
 If you need to add the incoming parameters, __click__ `+` or `-` next to __Params__. Currently, only __three__ types of parameters are supported: *Boolean*, *String*, and *Number*.
 
