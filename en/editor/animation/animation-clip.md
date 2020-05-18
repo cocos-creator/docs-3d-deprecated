@@ -16,7 +16,7 @@ In the process of __producing animations__, there are often some __manipulation 
 After clicking the __key frame__, the __key frame__ will be selected. At this time, the __key frame__ changes from *blue* to *white*. Currently, there are the following ways to select the __key frame__:
   - Right-click a __key frame__ to select it, press __Ctrl and right-click__ to select multiple __key frames__.
   - Drag the frame directly in the __key frame__ area to select the __key frame__.
-  - After selecting the property **track**, press __Ctrl/Cmd+A__ to select all __key frame__ tracks.
+  - Press down the mouse in the empty area of the __key frame__ panel and drag to form a selection area to select all __key frames__ inside.
 
 ### Add key frame
 
@@ -42,13 +42,14 @@ To add a __key frame__:
 
 ### Removing key frames
 
-- **Select the __key frames__ you want to delete and press __delete/Cmd + backspace__ on MacOS and __delete/Ctrl + backspace__ on Windows.
+- **Select** the __key frames__ you want to delete and press __delete/Cmd + backspace__ on MacOS and __delete/Ctrl + backspace__ on Windows.
 - At the position of the __key frame__ to be deleted **right-click**, select __Remove Key Frame__.
 - Drag the __time cursor__ to the position where the __key frame__ needs to be removed and **double-click** the __key frame__, in the corresponding property list item, click ![Remove key frame button](./animation-clip/del-key-button.png)
 
     ![Remove key frames](./animation-clip/remove-keyframes.gif)
 
 ### Modifying key frame data
+
 On the __timeline__ **double-click** the __key frame__ that needs to be modified. The __time cursor__ will move to that position. You can also directly drag the __time cursor__ to the corresponding position, and modify the corresponding properties directly in the **Property Inspector**. Make sure the __animation editor__ is in __edit mode__. For example, there are three property tracks in the property list: *position*, *scale*, and *rotation*. After the __key frame__ is selected, you can modify the *position*, *scale*, and *rotation* properties in the **Property Inspector**.
 
 ![](./animation-clip/edit-keyframe_1.gif)
@@ -129,12 +130,12 @@ The __animation clip__ defines the position of the data by the name of the node,
 
 **real time**: the actual duration of the animation from the beginning to the end of the animation, corresponding to the number in the parenthesis in the lower right corner of the editor.
 
-**wrap mode**: **Loop mode**, please refer to [Cycle Mode](./../../engine/animation-clip.md#CycleMode) for specific configuration effects.
+**wrap mode**: **Loop mode**, please refer to the [Cycle Mode](./../../engine/animation-clip.md#CycleMode) documentation for specific configuration effects.
 
 Changes to properties take effect after the focus leaves the control.
 
-For more about the design of animation sequences and the content of scripting animations, you can refer to [Animation Clip](./../../engine/animation/animation-clip.md).
+For more about the design of animation sequences and the content of scripting animations, you can refer to the [Animation Clip](./../../engine/animation/animation-clip.md) documentation.
 
 ---
 
-Continue to the [Make Frame Animation](sprite-animation.md) documentation.
+Continue to the [Making a Frame Animation](sprite-animation.md) documentation.
