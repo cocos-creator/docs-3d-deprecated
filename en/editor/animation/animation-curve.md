@@ -1,11 +1,11 @@
 # Editing Animation Curves
 
 We have created a basic animation in previous sections of this documentation.
-However, sometimes we need to implement __easing effects__, such as __EaseInOut__ between __two frames__. How is this achieved in the animation editor?
+However, sometimes we need to implement __easing effects__, such as __EaseInOut__ between two __key frames__. How is this achieved in the animation editor?
 
-__First__, __two unequal frames__ need to be created on a track, such as two frames on position, from __0,0__ to __100,100__.
+__First__, __two unequal key frames__ need to be created on a track, such as __two key frames__ on position, from __0,0__ to __100,100__.
 
-__Next__, a connecting line will appear between the two frames (the blue line segment connecting the __key frames__). __Double-click__ the connecting line to open the __Curve Editor__.
+__Next__, a connecting line will appear between the __two key frames__ (the blue line segment connecting the __key frames__). __Double-click__ the connecting line to open the __Curve Editor__.
 
 ![time curve](animation-curve/main.png)
 
