@@ -49,7 +49,7 @@ Click the button ![Time button](animation-editor/menu_time_button.png) You can c
 
 ![time & frame](animation-editor/time&frame.png)
 
-#### Event key frame
+#### Key frame events
 __Right-click__ on the __timeline position__ or __click__ the __timeline button__ to __add__ event __key frames__. __Click__ the event __key frame mail menu to align for removal, copy and other operations. At the same time, after selection, it also supports a series of copy and paste, delete shortcut keys.
 
 ### Node list
@@ -67,7 +67,7 @@ Since the __node list__ of the __Animation Editor__ is merged with the data in t
 This is mainly to display a preview of all frames on each node. Here, you can delete the key frame by __right-clicking__ the key frame position menu, and you can also move the key frame position. __Clicking__ the key frames of different nodes at the same time will select the corresponding node. __Double-click__ the key frame to move the time control line to this position. Without the selected attribute, `Ctrl/Cmd + Shift + Left/Right` can Move the time control line up/down to the next key frame position.
 
 ### Property list
-Mainly displays the attribute list of the currently selected node participating in the animation. Each attribute display item has a key frame icon icon, corresponding to the current attribute track and the key frame status of the current time control line position. __Click__ to __add/remove__ the corresponding key frame . The __right-click__ menu can remove the current track or clear data. __Click__ on the plus button at the top to add an attribute track for the currently selected node.
+Mainly displays the attribute list of the currently selected node participating in the animation. Each attribute display item has a key frame icon, corresponding to the current attribute track and the key frame status of the current time control line position. __Click__ to __add/remove__ the corresponding key frame . The __right-click__ menu can remove the current track or clear data. __Click__ on the plus button at the top to add an attribute track for the currently selected node.
 
 Like the node, the attribute track may also be lost. The attribute recorded in the animation clip does not exist on the current node. This attribute is the attribute lost under the current node. The missing attributes are also displayed in yellow. In this case, you can add the relevant attributes to the corresponding node or directly remove the missing attribute track after exiting the editing mode.
 
@@ -90,7 +90,7 @@ What should I do if I feel that the range displayed by the animation editor is t
 
  - You can _zoom in_ or *zoom out* the display scale of the time axis by scrolling the mouse wheel in areas *b*, *d*, and *f* in the figure.
 
-#### Mobile display area
+#### Navigate the display area
 
 If you want to see the key frame on the right side of the __Animation Editor__ that is hidden beyond the editor or the key frame on the left side, you need to move the display area:
 
