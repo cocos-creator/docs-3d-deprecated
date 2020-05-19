@@ -1,6 +1,6 @@
 # Explorer
 
- The **Asset Manager** panel is an important tool used to access and manage project assets. When starting a game, **importing assets** is usually a necessary step. You can use the __Hello World__ template project as a starting point when creating a new project. After you create and open a new project, various types of assets are visible in the **Explorer** panel.
+The **Asset Manager** panel is an important tool used to access and manage project assets. When starting to make a game, **importing assets** is usually a necessary step. You can use the __Hello World__ template project as a starting point when creating a new project. After you create and open a new project, various types of assets are visible in the **Explorer** panel.
 
   ![Panel Overview](img/thumb.gif)
 
@@ -8,10 +8,10 @@
 
 The **Explorer** panel is the main panel. It has a *heads-up menu area*, *a central tree list area*, and a *bottom information display area*.
 
-- The functions of the *heads-up menu area* are: *New asset button*, *Sort by button*, *Search type button*, *Search box*, *Fold all or expand button*, and *Refresh list button*
+- The functions of the *heads-up menu area* are: *New asset button*, *Sort by button*, *Search type button*, *Search box*, *Fold or expand all button*, and *Refresh list button*
 - The *central tree list area* mainly reflects the hierarchical relationship of assets. The root node is the asset root folder corresponding to the file manager of the operating system. The editor calls an __asset database__ *(DB for short)*, and is located in the project folder. It belongs to the project asset; __Internal DB__ comes with the editor and provides some built-in necessary assets. It is a **read-only** asset. It cannot be *added*, *deleted*, *modified*, but **can** be *directly referenced* or *copied*.
 - The *bottom display area* is the URL of the asset after the asset is selected, such as `db://assets`
-- The right-click menu of the panel is also an important function. The contents of the right-click menu in different locations are different, and the unavailable menus are grayed out.
+- The __right-click__ menu of the panel is also an important function. The contents of the __right-click__ menu in different locations are different, and the unavailable menus are grayed out.
 - The shortcut of the panel currently supports the operation of assets:
 
     - **Copy**: Ctrl or Cmd + C
@@ -82,7 +82,7 @@ The **Search box** changes the instant search. You can select the asset in the s
 
 ## Collapsing assets
 
-The **Fold all or expand button**  is an easy way to retract the view range and find assets easily. The parent node in the tree supports shortcut keys. First select the asset, and then perform keyboard operations:
+The **Fold or expand all button**  is an easy way to retract the view range and find assets easily. The parent node in the tree supports shortcut keys. First select the asset, and then perform keyboard operations:
 
 - __Folder folding__: __left arrow__ or __backspace__
 - __Expand the folder__: __right arrow__ or __Eenter/return__ key
