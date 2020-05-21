@@ -7,7 +7,7 @@ RichText 组件用来显示一段带有不同样式效果的文字，你可以�
 
 ![richtext](richtext/richtext.png)
 
-点击 **属性检查器** 下面的`添加组件`按钮，然后从`添加渲染组件`中选择 `RichText`，即可添加 RichText 组件到节点上。
+点击 **属性检查器** 下面的`添加组件`按钮，然后选择 **UI/Render/RichText** 即可添加 RichText 组件到节点上。
 
 <!-- 富文本的脚本接口请参考 [RichText API](../../../api/zh/classes/RichText.html)。 -->
 
@@ -49,7 +49,6 @@ RichText 组件用来显示一段带有不同样式效果的文字，你可以�
 |param|当点击事件触发时，可以在回调函数的第二个参数获取该数值| `<on click="handler" param="test"> click me! </on>`|依赖 click 事件|
 |br|插入一个空行| `<br/>`| 注意：`<br></br>` 和 `<br>` 都是不支持的。
 |img| 给富文本添加图文混排功能，img 的 src 属性必须是 ImageAtlas  图集里面的一个有效的 spriteframe 名称 |`<img src='emoji1' click='handler' />` | 注意: 只有 `<img src='foo' click='bar' />` 这种写法是有效的。如果你指定一张很大的图片，那么该图片创建出来的精灵会被等比缩放，缩放的值等于富文本的行高除以精灵的高度。
-
 
 标签与标签是支持嵌套的，且嵌套规则跟 HTML 是一样的。比如下面的嵌套标签设置一个文本的渲染大小为 30，且颜色为绿色。
 
