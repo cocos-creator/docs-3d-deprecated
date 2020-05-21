@@ -4,7 +4,7 @@ Using Sprite is the most common way to display images in 2D/3D games. By adding 
 
 ![add sprite](sprite/sprite-component.png)
 
-You can add a Sprite component to the node by clicking the **Add Component** button below the **Inspector** panel and selecting **UI -> Render -> Sprite**.
+You can add a Sprite component to the node by clicking the __Add Component__ button below the __Inspector__ panel and selecting __UI -> Render -> Sprite__.
 
 ## Sprite Properties
 
@@ -15,16 +15,16 @@ You can add a Sprite component to the node by clicking the **Add Component** but
 | Grayscale | If enabled, Sprite will render in grayscale mode.
 | Size Mode | Specify the size of the Sprite.<br>`Trimmed` automatically fit to the size of the sprite cropped<br>`Raw` automatic fit for sprite original size.<br>`Custom` use the node preset size. When the developer manually modifies `Size` properties, `Size Mode` will be automatically set to `Custom`.
 | Atlas | [Auto Atlas](../../../asset/atlas.md) which the Sprite display image resource belongs to.
-| Sprite Frame | [Sprite Frame Assets](../../../asset/sprite-frame.md) which is used to render the Sprite. (The **Edit** button behind Sprite Frame is used to edit the 9-sliced cutting of the image resource, please refer to [Use a Sliced Sprite to make a UI image](../engine/sliced-sprite.md).
+| Sprite Frame | [Sprite Frame Assets](../../../asset/sprite-frame.md) which is used to render the Sprite. (The __Edit__ button behind Sprite Frame is used to edit the 9-sliced cutting of the image resource, please refer to [Use a Sliced Sprite to make a UI image](../engine/sliced-sprite.md).
 | Trim | Whether the transparent pixel area is included in the node bounding box. Please refer to [Auto Trim for SpriteFrame](../engine/trim.md).
 | Src Blend Factor | The source image blend mode.
 | Dst Blend Factor | The destination image blend mode. Together with the above properties, you can mix the foreground and background Sprite in different ways to render, and the effect preview can refer to [glBlendFunc Tool](http://www.andersriggelsen.dk/glblendfunc.php).
 
-After adding the Sprite component, drag the SpriteFrame type resource from the **Assets** to the `Sprite Frame` property reference. Then, the resource image can be displayed through the Sprite component.
+After adding the Sprite component, drag the SpriteFrame type resource from the __Assets__ to the `Sprite Frame` property reference. Then, the resource image can be displayed through the Sprite component.
 
 If this SpriteFrame resource is contained within an Atlas resource, then the `Atlas` property of the Sprite will be set up along with it.
 
-**To dynamically replace SpriteFrame, you need to dynamically load the image resource before you replace it, please refer to [Acquire and load asset: how to dynamically load](../../../asset/load-assets.md).**
+__To dynamically replace SpriteFrame, you need to dynamically load the image resource before you replace it, please refer to [Acquire and load asset: how to dynamically load](../../../asset/load-assets.md).__
 
 ## Rendering mode
 

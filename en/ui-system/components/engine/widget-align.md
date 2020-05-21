@@ -1,6 +1,6 @@
 # Alignment Strategy
 
-To achieve a perfect multi-resolution fit effect, presenting UI elements according to the positions stipulated in the design resolution is not enough. When the width and height of the screen change, UI elements must be able to intelligently sense the positions of the borders of the screen to make sure that they are presenting themselves in the visible area of the screen and being distributed in suitable positions. We can do this with the **Widget** component.
+To achieve a perfect multi-resolution fit effect, presenting UI elements according to the positions stipulated in the design resolution is not enough. When the width and height of the screen change, UI elements must be able to intelligently sense the positions of the borders of the screen to make sure that they are presenting themselves in the visible area of the screen and being distributed in suitable positions. We can do this with the __Widget__ component.
 
 Next, we categorize different alignment workflows according to the categories of elements that need to be aligned:
 
@@ -8,7 +8,7 @@ Next, we categorize different alignment workflows according to the categories of
 
 For elements with relatively small areas like a pause menu, in-game gold coins, etc., normally, aligning them by the borders of the screen would be enough. Only a few simple steps are needed:
 
-1. Set these elements as child nodes of the Canvas node in **Hierarchy**
+1. Set these elements as child nodes of the Canvas node in __Hierarchy__
 2. Add the Widget component to element nodes
 3. To align something with the bottom left corner of the screen for example, check the `Left` and `Bottom` tick boxes in the Widget component.
 4. Then set up the distance between the node and the borders of the screen. In the picture below, the left margin is set as 40px, the bottom margin is set as 30px.
@@ -17,7 +17,7 @@ For elements with relatively small areas like a pause menu, in-game gold coins, 
 
 After setting up the Widget component like this, no matter what the actual screen resolution is, this node element will remain at the bottom left corner of the screen. The distance between the left side of the node's bounding box and left border of the screen remains at 40px. The distance between the bottom of the node's bounding box and the bottom of the screen remains at 30px.
 
-**Note**: The alignment distance provided by the Widget component refers to the border of the bounding box that is located in the same direction as the child node and parent node. For example, `Left` is ticked on in the above example to align the element with the left border, then the distance between the left border of the child node's bounding box and the left border of the parent node's (i.e., Canvas node, whose bounding box is constantly the same size as the screen) bounding box is the set value 40px.
+__Note__: The alignment distance provided by the Widget component refers to the border of the bounding box that is located in the same direction as the child node and parent node. For example, `Left` is ticked on in the above example to align the element with the left border, then the distance between the left border of the child node's bounding box and the left border of the parent node's (i.e., Canvas node, whose bounding box is constantly the same size as the screen) bounding box is the set value 40px.
 
 ## Nest Alignment Elements
 
@@ -85,4 +85,4 @@ For scene with many UI elements, ensuring that the `alignOnce` option of the Wid
 
 ## Limitation on the position and size of node
 
-When the Widget component enables one or more alignment settings, the `position`, `width` and `height` properties of the node may be restricted and cannot be freely modified through the API or **Animation** panel. If you need to modify the position or size of the alignment node at runtime, please refer to the [Widget Component: Limitation on node position control](../editor/widget.md#limitation-on-node-position-control) for details.
+When the Widget component enables one or more alignment settings, the `position`, `width` and `height` properties of the node may be restricted and cannot be freely modified through the API or __Animation__ panel. If you need to modify the position or size of the alignment node at runtime, please refer to the [Widget Component: Limitation on node position control](../editor/widget.md#limitation-on-node-position-control) for details.

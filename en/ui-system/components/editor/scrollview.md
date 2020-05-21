@@ -1,12 +1,12 @@
 # ScrollView Component Reference
 
-ScrollView is a container with a scroll function. It provides a way to browse more contents within a limited display area. Generally, ScrollView will be used along with the **Mask** component and the **ScrollBar** component can also be added to show the location of the browsing content.
+ScrollView is a container with a scroll function. It provides a way to browse more contents within a limited display area. Generally, ScrollView will be used along with the __Mask__ component and the __ScrollBar__ component can also be added to show the location of the browsing content.
 
 ![scrollview-content](scroll/scrollview-content.png)
 
 ![scrollview-inspector](scroll/scrollview-inspector.png)
 
-Click the **Add Component** button at the bottom of the **Inspector** panel and select **UI/ScrollView** to add the ScrollView component to the node.
+Click the __Add Component__ button at the bottom of the __Inspector__ panel and select __UI/ScrollView__ to add the ScrollView component to the node.
 
 ## ScrollView Properties
 
@@ -20,7 +20,7 @@ Click the **Add Component** button at the bottom of the **Inspector** panel and 
 | Horizontal           | Boolean value, whether horizontal scroll is allowed or not |
 | HorizontalScrollBar | A reference node for creating a scroll bar showing the horizontal position of the content      |
 | Inertia              | Is there an accelerating velocity when scrolling   |
-| ScrollEvents    | Default list type is null. Each event added by the user is composed of the node reference, component name and a response function. Please see the **ScrollView Event** section below for details     |
+| ScrollEvents    | Default list type is null. Each event added by the user is composed of the node reference, component name and a response function. Please see the __ScrollView Event__ section below for details     |
 | Vertical             | Boolean value, whether vertical scroll is allowed or not |
 | VerticalScrollBar   | A reference node for creating a scroll bar showing vertical position of the contents  |
 
@@ -28,7 +28,7 @@ Click the **Add Component** button at the bottom of the **Inspector** panel and 
 
 ![scrollview-event](scroll/scrollview-event.png)
 
-For event structure you can refer to [this document](./button.md).
+For event structure you can refer to the [Button](./button.md) documentation.
 
 The ScrollView event callback will have two parameters, the first one is the ScrollView itself and the second one is the event type of ScrollView.
 
@@ -36,7 +36,7 @@ The ScrollView event callback will have two parameters, the first one is the Scr
 
 ScrollBar is optional. You can choose to set either a Horizontal ScrollBar or Vertical ScrollBar or of course set them both.
 
-To build a connection, you can drag a node with the ScrollBar component in the **Hierarchy** over to the corresponding field in ScrollView.
+To build a connection, you can drag a node with the ScrollBar component in the __Hierarchy__ over to the corresponding field in ScrollView.
 
 ## Detailed Explanation
 

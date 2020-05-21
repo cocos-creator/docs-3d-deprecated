@@ -6,14 +6,14 @@ Slider is a slider component, For the production of UI components such as volume
 
 ![slider-inspector](slider/slider-inspector.png)
 
-Click the **Add Component** button at the bottom of the **Inspector** panel and select **UI/Slider** to add the Slider component to the node.
+Click the __Add Component__ button at the bottom of the __Inspector__ panel and select __UI/Slider__ to add the Slider component to the node.
 
 ## Slider Properties
 
 | Properties     | Function Explanation |
 | -------------- | -----------          |
 | Handle         | Slider button part that allows the Slider's value to be adjusted by sliding the button  |
-| Direction      | The direction of the slider, including **Horizontal** and **Vertical** |
+| Direction      | The direction of the slider, including __Horizontal__ and __Vertical__ |
 | Progress       | Current progress value, the value range is 0 ~ 1  |
 | SlideEvents    | Slider component event callback function  |
 
@@ -21,7 +21,7 @@ Click the **Add Component** button at the bottom of the **Inspector** panel and 
 
 ![slider-event](slider/slider-event.png)
 
-For event structure you can refer to [this document](./button.md).
+For event structure you can refer to the [Button](./button.md) documentation.
 
 The Slider event callback has two parameters, the first one is the Slider itself and the second is the `customEventData`.
 

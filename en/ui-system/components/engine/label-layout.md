@@ -1,6 +1,6 @@
 # Label Layout
 
-The **Label** component is one of the key rendering components. You need to learn about how to set up label layout in order to have a perfect display when the UI system adapts to various resolutions and sets up alignment.
+The __Label__ component is one of the key rendering components. You need to learn about how to set up label layout in order to have a perfect display when the UI system adapts to various resolutions and sets up alignment.
 
 ## Alignment of labels in the bounding box
 
@@ -26,7 +26,7 @@ In the figure above, the horizontal alignment position is set to `Right`, and th
 - When inputting labels in the `String` property, manually input `\r` or `\n`
 - Open the `Enable Wrap Text` property, which will be introduced in detail later
 
-**Relation of label size and line height**:
+__Relation of label size and line height__:
 
 - If the values of `Font Size` and `Line Height` are the same, labels will occupy the height of the most part of one line.
 
@@ -42,9 +42,9 @@ In the figure above, the horizontal alignment position is set to `Right`, and th
 
 ## Overflow
 
-The **Overflow** property determines the array of labels in the bounding box when the content of labels is increased. There are four modes: **NONE**, **CLAMP**, **SHRINK**, and **RESIZE_HEIGHT**. Only in the latter three modes can the size of the bounding box be adjusted through the **Rectangle Transform Tool** in the upper left corner of the editor or modifying the **Size** size in the **Inspector** panel or add the **Widget** component.
+The __Overflow__ property determines the array of labels in the bounding box when the content of labels is increased. There are four modes: __NONE__, __CLAMP__, __SHRINK__, and __RESIZE_HEIGHT__. Only in the latter three modes can the size of the bounding box be adjusted through the __Rectangle Transform Tool__ in the upper left corner of the editor or modifying the __Size__ size in the __Inspector__ panel or add the __Widget__ component.
 
-**NONE** mode will automatically fix the size of the bounding box according to the text size, line height, etc.
+__NONE__ mode will automatically fix the size of the bounding box according to the text size, line height, etc.
 
 ### Clamp
 
@@ -70,7 +70,7 @@ Resize height mode will make sure the bounding box of the labels fits the height
 
 The `Enable Wrap Text` property of the Label component can switch the auto wrap switch of labels. When `Enable Wrap Text` is opened, labels will automatically wrap acccording to the width of the bounding box without manual input of `\r` or `\n` when inputting labels.
 
-**Note**: The `Enable Wrap Text` property is only available in the **CLAMP** and **SHRINK** modes of the label layout mode. In **RESIZE_HEIGHT** mode, the `Enable Wrap Text` property is compulsorily opened.
+__Note__: The `Enable Wrap Text` property is only available in the __CLAMP__ and __SHRINK__ modes of the label layout mode. In __RESIZE_HEIGHT__ mode, the `Enable Wrap Text` property is compulsorily opened.
 
 ### Auto Wrap in Clamp Mode
 
@@ -108,7 +108,7 @@ For example, if you want the bounding box to extend downward, you need to set th
 
 ## Widget
 
-Add a **Widget** component to the node with the Label component, then you can make various layouts for label nodes relative to their parent nodes.
+Add a __Widget__ component to the node with the Label component, then you can make various layouts for label nodes relative to their parent nodes.
 
 ![](label-layout/widget.png)
 

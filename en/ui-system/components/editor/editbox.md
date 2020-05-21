@@ -1,47 +1,47 @@
 # EditBox Component Reference
 
-EditBox is a text input component, you can use this component to get user input easily.
+__EditBox__ is a text input component, you can use this component to get user input easily.
 
 ![editbox](editbox/editbox.png)
 
-Click the **Add Component** button at the bottom of the **Inspector** panel and select **UI/EditBox** to add the EditBox component to the node.
+Click the __Add Component__ button at the bottom of the __Inspector__ panel and select __UI/EditBox__ to add the __EditBox__ component to the node.
 
 ## EditBox Properties
 
 | Properties   | Function Explanation |
 | --------------      | -----------   |
-| BackgroundImage      | The Sprite component attached to the node for EditBox's background |
-| FontColor            | The input text color of EditBox |
-| FontSize             | The input text size of EditBox |
-| InputFlag            | Specify the input flag: password or capitalize word. (Only supports Android platform) |
-| InputMode            | Specify the input mode: multiline or single line |
-| LineHeight           | The input text line height of EditBox |
-| MaxLength            | The maximize input characters of EditBox  |
-| Placeholder          | The text content of EditBox placeholder |
-| PlaceholderFontColor | The text font color of EditBox placeholder |
-| PlaceholderFontSize  | The text font size of EditBox placeholder  |
-| PlaceholderLabel     | The Label component attached to the node for EditBox's placeholder text label |
-| ReturnType           | The keyboard return type of EditBox. This is useful for keyboard of mobile device |
-| String               | The initial input text of EditBox, which displays the text of the placeholder if not set |
-| TabIndex             | Set the `tabIndex` of the DOM input element, only useful on Web |
-| TextLabel            | The Label component attached to the node for EditBox's input text label |
+| __BackgroundImage__      | The Sprite component attached to the node for EditBox's background |
+| __FontColor__            | The input text color of EditBox |
+| __FontSize__             | The input text size of EditBox |
+| __InputFlag__            | Specify the input flag: password or capitalize word. (Only supports Android platform) |
+| __InputMode__            | Specify the input mode: multiline or single line |
+| __LineHeight__           | The input text line height of EditBox |
+| __MaxLength__            | The maximize input characters of EditBox  |
+| __Placeholder__          | The text content of EditBox placeholder |
+| __PlaceholderFontColor__ | The text font color of EditBox placeholder |
+| __PlaceholderFontSize__  | The text font size of EditBox placeholder  |
+| __PlaceholderLabel__     | The Label component attached to the node for EditBox's placeholder text label |
+| __ReturnType__           | The keyboard return type of EditBox. This is useful for keyboard of mobile device |
+| __String__               | The initial input text of EditBox, which displays the text of the placeholder if not set |
+| __TabIndex__             | Set the `tabIndex` of the DOM input element, only useful on the Web |
+| __TextLabel__            | The Label component attached to the node for EditBox's input text label |
 
-## EditBox Event
+## EditBox Events
 
 ![editbox-event](editbox/editbox-event.png)
 
-For event structure you can refer to [this document](./button.md).
+For event structure you can refer to the [Button](./button.md) documentation.
 
-- **Editing Did Began**: This event will be triggered when the user clicks on EditBox.
-- **Editing Did Ended**: This event will be triggered when the EditBox loses focus.  
-  - When in single line input mode, it's triggered after user presses **Enter** key or clicks the area outside of EditBox.  
-  - When in multiline input mode, it's triggered only after user clicks the area outside of EditBox.
-- **Text Changed**: This event will be triggered when the content in EditBox is changed each time.
+- __Editing Did Began__: This event will be triggered when the user __clicks__ on the __EditBox__.
+- __Editing Did Ended__: This event will be triggered when the __EditBox loses focus__.  
+  - When in __single line input mode__, it's triggered after user presses __Enter__ key or __clicks__ the area __outside__ of __EditBox__.  
+  - When in __multiline input mode__, it's triggered only after user __clicks__ the area __outside__ of __EditBox__.
+- __Text Changed__: This event will be triggered when the __content__ in __EditBox__ is __changed each time__.
 
 ## Detailed Explanation
 
-- If you want to input password, you need set **Input Flag** to `PASSWORD` and the **Input Mode** mustn't be `ANY`, usually we use **Single Line**.
-- If you want to enable multiline input support, you can set the **Input Mode** to `Any`.
+- If you want to input password, you need set __Input Flag__ to `PASSWORD` and the __Input Mode__ mustn't be `ANY`, usually we use __Single Line__.
+- If you want to enable multiline input support, you can set the __Input Mode__ to `Any`.
 - The background image of EditBox support 9-slicing, you could customize the border as you did in Sprite component.
 
 ## Add a callback through the script code

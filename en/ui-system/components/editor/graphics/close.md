@@ -1,6 +1,6 @@
-# close
+# Close
 
-Use `close()` to create a path from current point to beginning point.
+The `close()` method is used to create a path from a current point to a beginning point.
 
 ## Example
 
@@ -17,4 +17,4 @@ ctx.stroke();
 
 <hr>
 
-Return to [Graphics Component Reference](../graphics.md).
+Return to the [Graphics Component Reference](../graphics.md) documentation.

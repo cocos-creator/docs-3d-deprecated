@@ -1,14 +1,14 @@
 # LabelOutline Component Reference
 
-The LabelOutline component will add a outline effect to the Label of the node, which can not be used for BMFonts.
+The __LabelOutline__ component will add an outline effect to the __Label__ component on the node. __LabelOutline__ cannot be used for __BMFonts__.
 
 ![](label/labeloutline.png)
 
-Select a node in the **Hierarchy** panel, then click the **Add Component** button at the bottom of the **Inspector** panel and select **LabelOutline** from **UI**. Then you can add the LabelOutline component to the node.
+Select a node in the __Hierarchy__ panel, then click the __Add Component__ button at the bottom of the __Inspector__ panel and select __LabelOutline__ from __UI__. Then you can add the LabelOutline component to the node.
 
 ## LabelOutline Properties
 
 | Properties | Function Explanation |
 | -------------- | ----------- |
-| Color | The outline color |
-| Width | The outline width |
+| *Color* | The outline color |
+| *Width* | The outline width |

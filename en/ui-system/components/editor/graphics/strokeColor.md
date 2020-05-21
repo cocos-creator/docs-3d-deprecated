@@ -1,6 +1,6 @@
-# StrokeColor
+# Stroke Color
 
-The `strokeColor` property sets or returns the color used for the stroke.
+The `strokeColor` method sets or returns the color used for the stroke.
 
 ## Example
 
@@ -16,4 +16,4 @@ ctx.stroke();
 
 <hr>
 
-Return to [Graphics Component Reference](../graphics.md).
+Return to the [Graphics Component Reference](../graphics.md) documentation.

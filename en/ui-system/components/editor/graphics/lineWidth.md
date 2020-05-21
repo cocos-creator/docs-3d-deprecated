@@ -1,10 +1,10 @@
-# lineWidth
+# Line Width
 
-Use `lineWidth()` method to add a new point, and then create a line from that point to the last specified point in the canvas.
+The `lineWidth()` method adds a new point, and then creates a line from that point to the last specified point in the canvas.
 
 | Parameter | Description
 | -------------- | ----------- |
-| number | The width of the current line, in pixels |
+| *number* | The width of the current line, in pixels. |
 
 ## Example
 
@@ -19,4 +19,4 @@ ctx.stroke();
 
 <hr>
 
-Return to [Graphics Component Reference](../graphics.md).
+Return to the [Graphics Component Reference](../graphics.md) documentation.

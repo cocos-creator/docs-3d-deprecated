@@ -1,12 +1,12 @@
-# lineJoin
+# Line Join
 
-The `lineJoin` property sets or returns the style of the line end cap.
+The `lineJoin()` method sets or returns the style of the line end cap.
 
 | Parameter | Description |
 | -------------- | ----------- |
-| cc.GraphicsComponent.LineJoin.BEVEL | Creates a bevel |
-| cc.GraphicsComponent.LineJoin.ROUND | Create a fillet |
-| cc.GraphicsComponent.LineJoin.MITER | Default. Create sharp corners |
+| *cc.GraphicsComponent.LineJoin.BEVEL* | Creates a bevel |
+| *cc.GraphicsComponent.LineJoin.ROUND* | Create a fillet |
+| *cc.GraphicsComponent.LineJoin.MITER* | Default. Create sharp corners |
 
 ## Example
 
@@ -23,4 +23,4 @@ ctx.stroke();
 
 <hr>
 
-Return to [Graphics Component Reference](../graphics.md).
+Return to the [Graphics Component Reference](../graphics.md) documentation.

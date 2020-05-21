@@ -4,20 +4,20 @@ ToggleContainer is not a visiable UI component that can be used to modify the be
 
 ![toggle-container](toggle/toggle-container.png)
 
-**Note**: All the first layer child node containing the Toggle component will auto be added to the container.
+__Note__: All the first layer child node containing the Toggle component will auto be added to the container.
 
-Click the **Add Component** button at the bottom of the **Inspector** panel and select **UI/ToggleContainer** to add the ToggleContainer component to the node.
+Click the __Add Component__ button at the bottom of the __Inspector__ panel and select __UI/ToggleContainer__ to add the ToggleContainer component to the node.
 
 ## ToggleContainer Properties
 
 | Properties |   Functions Explanation |
 | -------------- | ----------- |
 | AllowSwitchOff | If it is enabled, then the toggle button can be checked and unchecked repeatedly when it is clicked. If it is disabled, it will make sure there is always only one toggle could be checked and the already checked toggle can't be unchecked |
-| CheckEvents | List type, default is null. Each event added by the user is composed of the node reference, component name and a response function. Please see the **ToggleContainer Event** section below for details |
+| CheckEvents | List type, default is null. Each event added by the user is composed of the node reference, component name and a response function. Please see the __ToggleContainer Event__ section below for details |
 
 ## ToggleContainer Event
 
-For event structure you can refer to [this document](./button.md).
+For event structure you can refer to the [Button](./button.md) documentation.
 
 The ToggleContainer event callback has two parameters, the first one is the ToggleContainer itself and the second is the `customEventData`.
 

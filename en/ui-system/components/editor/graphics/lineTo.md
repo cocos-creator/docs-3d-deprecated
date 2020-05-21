@@ -1,11 +1,11 @@
-# lineTo
+# Line To
 
-Use `lineTo()` method to add a new point, and then create a line from that point to the last specified point in the canvas.
+The `lineTo()` method is used to add a new point, and then create a line from that point to the last specified point in the canvas.
 
 | Parameter | Description |
-| -------------- | ----------- |
-| x | The x coordinate of the target location of the path. |
-| y | The y coordinate of the target position of the path. |
+| --------- | ----------- |
+| *x* | The x coordinate of the target location of the path. |
+| *y* | The y coordinate of the target position of the path. |
 
 ## Example
 
@@ -21,4 +21,4 @@ ctx.stroke();
 
 <hr>
 
-Return to [Graphics Component Reference](../graphics.md)
+Return to the [Graphics Component Reference](../graphics.md) documentation.

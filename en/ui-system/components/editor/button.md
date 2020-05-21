@@ -1,25 +1,25 @@
 # Button Component Reference
 
-The Button component responds to a click from the user. When the user clicks a Button, its status will change. In addition, users can assign a custom behavior to buttons' click event.
+The __Button__ component responds to a click from the user. When the user clicks a __Button__, its status will change. In addition, users can assign a custom behavior to buttons' __click event__.
 
 ![button.png](./button/button.png)
 
 ![button-color](./button/button-color.png)
 
-Click the **Add Component** button at the bottom of the **Inspector** panel and select **UI/Button** to add the Button component to the node.
+Click the __Add Component__ button at the bottom of the __Inspector__ panel and select __UI/Button__ to add the __Button__ component to the node.
 
 ## Button Properties
 
 | Properties   | Function Explanation |
 | ------------ | -------------------- |
-| Target       | Specify the Button background node. When the Button status changes, the `Color` or `Sprite` property of the node will be modified. |
-| Interactable | Boolean type, if set to `false` then the Button component enters the forbidden state. |
-| Transition   | Enumeration type, including **NONE**, **COLOR**, **SPRITE** and **SCALE**. Each type corresponds to a different Transition setting. Please see the **Button Transition** section below for details. |
-| ClickEvents  | List type, default is null. Each event added by the user is composed of the node reference, component name and a response function. Please see the **Button Event** section below for details. |
+| __Target__       | Specify the __Button__ background node. When the __Button__ status changes, the `Color` or `Sprite` property of the node will be modified. |
+| __Interactable__ | Boolean type, if set to `false` then the __Button__ component enters the forbidden state. |
+| __Transition__   | Enumeration type, including __NONE__, __COLOR__, __SPRITE__ and __SCALE__. Each type corresponds to a different Transition setting. Please see the __Button Transition__ section below for details. |
+| __ClickEvents__  | List type, default is null. Each event added by the user is composed of the node reference, component name and a response function. Please see the __Button Event__ section below for details. |
 
 ## Button Transition
 
-Button Transition is used to indicate the status of the Button when clicked by the user. Currently the types available are **NONE**, **COLOR**, **SPRITE** and **SCALE**.
+__Button Transition__ is used to indicate the status of the __Button__ when clicked by the user. Currently the types available are __NONE__, __COLOR__, __SPRITE__ and __SCALE__.
 
 ![transition](button/transition.png)
 
@@ -29,11 +29,11 @@ Button Transition is used to indicate the status of the Button when clicked by t
 
 | Properties | Function Explanation |
 | ---------- | -------------------- |
-| Normal     | Color of Button under Normal status.    |
-| Pressed    | Color of Button under Pressed status.   |
-| Hover      | Color of Button under Hover status.     |
-| Disabled   | Color of Button under Disabled status.  |
-| Duration   | Time interval needed for Button status switching. |
+| __Normal__     | Color of Button under Normal status.    |
+| __Pressed__    | Color of Button under Pressed status.   |
+| __Hover__      | Color of Button under Hover status.     |
+| __Disabled__   | Color of Button under Disabled status.  |
+| __Duration__   | Time interval needed for Button status switching. |
 
 ### Sprite Transition
 
@@ -41,10 +41,10 @@ Button Transition is used to indicate the status of the Button when clicked by t
 
 | Properties     | Function Explanation |
 | -------------- | -------------------- |
-| Normal         | SpriteFrame of Button under Normal status.   |
-| Pressed        | SpriteFrame of Button under Pressed status.  |
-| Hover          | SpriteFrame of Button under Hover status.    |
-| Disabled       | SpriteFrame of Button under Disabled status. |
+| __Normal__     | SpriteFrame of Button under Normal status.   |
+| __Pressed__    | SpriteFrame of Button under Pressed status.  |
+| __Hover__      | SpriteFrame of Button under Hover status.    |
+| __Disabled__   | SpriteFrame of Button under Disabled status. |
 
 ### Scale Transition
 
@@ -52,25 +52,25 @@ Button Transition is used to indicate the status of the Button when clicked by t
 
 | Properties     | Function Explanation            |
 | -------------- | -----------    |
-| Duration       | Time interval needed for Button status switching. |
-| ZoomScale      | When the user clicks the button, the button will zoom to a scale. The final scale of the button equals to the button's original `scale * zoomScale`, and the zoomScale can be a negative value.|
+| __Duration__   | Time interval needed for Button status switching. |
+| __ZoomScale__  | When the user clicks the button, the button will zoom to a scale. The final scale of the button equals to the button's original `scale * zoomScale`, and the zoomScale can be a negative value.|
 
-## Button Click Event
+## Button Click Events
 
-The Button can additionally add a click event to respond to the player's click action. There are two ways to do this.
+The __Button__ can additionally add a __click event__ to respond to the player's __click action__. There are two ways to achieve this.
 
-### Add a callback through the Properties
+### Add a callback using the Properties
 
 ![button-event](button/button-event.png)
 
 | Property        | Function Explanation                              |
 | --------------  | -----------                                       |
-| Target          | Node with the script component.                   |
-| Component       | Script component name.                            |
-| Handler         | Assign a callback function which will be triggered when the user clicks the Button. |
-| CustomEventData | A user-defined string value passed as the last event argument of the event callback. |
+| __Target__          | Node with the script component.                   |
+| __Component__       | Script component name.                            |
+| __Handler__         | Assign a callback function which will be triggered when the user clicks the Button. |
+| __CustomEventData__ | A user-defined string value passed as the last event argument of the event callback. |
 
-### Add a callback through the script
+### Add a callback using the script
 
 There are two ways to add a callback through the script.
 

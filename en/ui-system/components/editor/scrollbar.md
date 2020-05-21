@@ -1,17 +1,17 @@
 # ScrollBar Component Reference
 
-The ScrollBar allows the user to scroll a image by dragging a sliding block. It's a bit similar to the **Slider** component, but it is mostly used for scrolling while Slider is used to set values.
+The ScrollBar allows the user to scroll a image by dragging a sliding block. It's a bit similar to the __Slider__ component, but it is mostly used for scrolling while Slider is used to set values.
 
 ![scrollbar.png](scroll/scrollbar.png)
 
-Click the **Add Component** button at the bottom of the **Inspector** panel and select **UI/ScrollBar** to add the ScrollBar component to the node.
+Click the __Add Component__ button at the bottom of the __Inspector__ panel and select __UI/ScrollBar__ to add the ScrollBar component to the node.
 
 ## ScrollBar Properties
 
 | Properties | Function Explanation |
 | -------------- | ----------- |
 | AutoHide Time | Auto hide time, need to set `Enable Auto Hide` along with it |
-| Direction | Scroll direction, including **HORIZONTAL** and **VERTICAL**
+| Direction | Scroll direction, including __HORIZONTAL__ and __VERTICAL__
 | EnableAutoHide | Enable or disable auto hide. If this property is enabled, it will automatically disappear for `Auto Hide Time` times after the ScrollBar is displayed |
 | Handle | ScrollBar foreground picture. Its length/width will be calculated according to the content size of ScrollView and the dimensions of the actual display area |
 

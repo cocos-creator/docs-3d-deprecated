@@ -4,7 +4,7 @@ Widget is a frequently used UI layout component. It can automatically align the 
 
 ![default](widget/widget-default.png)
 
-Click the **Add Component** button at the bottom of the **Inspector** panel and select **UI/Widget** to add the Widget component to the node.
+Click the __Add Component__ button at the bottom of the __Inspector__ panel and select __UI/Widget__ to add the Widget component to the node.
 
 ## Widget Properties
 
@@ -17,7 +17,7 @@ Right   | Right border alignment | Once selected, an input field will appear to 
 HorizontalCenter | Horizontal center alignment |
 VerticalCenter   | Vertical center alignment |
 Target  | Align the target | Specifies an alignment target that can only be one of the parent nodes of the current node. The default value is null, and when null, indicates the current parent.<br>If the parent node is the entire scene, it will be aligned to the visible area of the screen (`visibleRect`), and can be used to dock UI elements to the edge of the screen. |
-Align Mode | Specifies the alignment mode of the Widget, which determines when the widget should refresh at runtime | Normally set to **ALWAYS**, only to be initialized and realigned whenever the window size changes.<br>Set to **ONCE**, will only make alignment when the component is enabled.<br>Set to **ON_WINDOW_RESIZE**, will update Widget's alignment every time when the window changes. |
+Align Mode | Specifies the alignment mode of the Widget, which determines when the widget should refresh at runtime | Normally set to __ALWAYS__, only to be initialized and realigned whenever the window size changes.<br>Set to __ONCE__, will only make alignment when the component is enabled.<br>Set to __ON_WINDOW_RESIZE__, will update Widget's alignment every time when the window changes. |
 
 ## Border alignment
 
@@ -51,7 +51,7 @@ The percentage will take the width or height of the parent node as a benchmark.
 
 If you align the left and right side at the same time, or align the top and bottom at the same time, then the size will be stretched in the corresponding direction.
 
-Let us look at a demonstration. Place two rectangular Sprites in the Scene and take the bigger one as the dialog box background and the smaller one as the button on the dialog box. Take the button node as the child node of the dialog box and set the button into **Sliced** mode so that you can observe the stretch effect.
+Let us look at a demonstration. Place two rectangular Sprites in the Scene and take the bigger one as the dialog box background and the smaller one as the button on the dialog box. Take the button node as the child node of the dialog box and set the button into __Sliced__ mode so that you can observe the stretch effect.
 
 ### Horizontal stretch, left and right margin 10%:
 
@@ -67,11 +67,11 @@ Let us look at a demonstration. Place two rectangular Sprites in the Scene and t
 
 ## Limitation on node position control
 
-If **Align Mode** property is set to `ALWAYS`, the Widget will set the alignment for the current node every frame at runtime according to the alignment policy you set. The `position` and `size` (`width`, `height`) properties of the node where the component is located may be restricted and cannot be freely modified via the API or animation system.
+If __Align Mode__ property is set to `ALWAYS`, the Widget will set the alignment for the current node every frame at runtime according to the alignment policy you set. The `position` and `size` (`width`, `height`) properties of the node where the component is located may be restricted and cannot be freely modified via the API or animation system.
 
 This is because the alignment set by the widget is processed at the end of each frame, so if you set the previously set alignment related properties in the Widget component, those settings will eventually be reset by the widget component's own settings.
 
 To make sure you can update node's position or size during runtime:
 
-1. Set **Align Mode** property of Widget to `ONCE`, so it will only align during onEnable process.
+1. Set __Align Mode__ property of Widget to `ONCE`, so it will only align during onEnable process.
 2. Use Widget's API to update node's position and size, for example updating Widget's `top`, `bottom`, `left`, `right` instead of node's `x`, `y`, `width`, `height`.

@@ -1,6 +1,6 @@
-# fillColor
+# Fill Color
 
-The `fillColor` property sets or returns the color used for the fill.
+The `fillColor()` method sets or returns the color used for the fill.
 
 ## Example
 
@@ -15,4 +15,4 @@ ctx.stroke();
 
 <hr>
 
-Return to [Graphics Component Reference](../graphics.md).
+Return to the [Graphics Component Reference](../graphics.md) documentation.

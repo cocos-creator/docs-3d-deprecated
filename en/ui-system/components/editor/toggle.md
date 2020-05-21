@@ -4,7 +4,7 @@ The Toggle component is a CheckBox, when it used together with a ToggleGroup, it
 
 ![toggle1](toggle/toggle.png)
 
-Click the **Add Component** button at the bottom of the **Inspector** panel and select **UI/Toggle** to add the Toggle component to the node.
+Click the __Add Component__ button at the bottom of the __Inspector__ panel and select __UI/Toggle__ to add the Toggle component to the node.
 
 ## Toggle Properties
 
@@ -13,13 +13,13 @@ Click the **Add Component** button at the bottom of the **Inspector** panel and 
 | IsChecked      | Boolean type. When set to true, enable the check mark component |
 | CheckMark      | SpriteComponent type. The image displayed when Toggle is selected |
 | ToggleGroup    | ToggleContainerComponent type. The ToggleGroup which the toggle belongs to. When it is null, the Toggle is a CheckBox. Otherwise, the Toggle is a RadioButton  |
-| CheckEvents    | List type, default is null. Each event added by the user is composed of the node reference, component name and a response function. Please see the **Toggle Event** section below for details |
+| CheckEvents    | List type, default is null. Each event added by the user is composed of the node reference, component name and a response function. Please see the __Toggle Event__ section below for details |
 
-**Note**: Because Toggle is inherited from Button, so the properties exists in Button also apply to Toggle, please refer to the [Button Component](button.md) for details.
+__Note__: Because Toggle is inherited from Button, so the properties exists in Button also apply to Toggle, please refer to the [Button Component](button.md) for details.
 
 ## Toggle Event
 
-For event structure you can refer to [this document](./button.md).
+For event structure you can refer to the [Button](./button.md) documentation.
 
 The Toggle event callback has two parameters, the first one is the Toggle itself and the second is the `customEventData`.
 
@@ -29,7 +29,7 @@ The generic node hierarchy of Toggle is as below:
 
 ![toggle-node-tree](toggle/toggle-node-tree.png)
 
-**Note**: The checkMark node needs to be placed on the upper level of the background node in the **Scene**.
+__Note__: The checkMark node needs to be placed on the upper level of the background node in the __Scene__.
 
 ## Add a callback through the script code
 

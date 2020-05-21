@@ -4,18 +4,18 @@ RichText component could be used for displaying a string with multiple styles. Y
 
 The currently supported tags are: `color`, `size`, `outline`, `b`, `i`, `u`, `br`, `img` and `on`, these tags could also be nested with each other.
 
-For more information about BBCode, please refer to the **BBCode format** section below.
+For more information about BBCode, please refer to the __BBCode format__ section below.
 
 ![richtext](richtext/richtext.png)
 
-Click the **Add Component** button at the bottom of the **Inspector** panel and select **RichText** from **UI -> Render** to add the RichText component to the node.
+Click the __Add Component__ button at the bottom of the __Inspector__ panel and select __RichText__ from __UI -> Render__ to add the RichText component to the node.
 
 ## RichText Properties
 
 | Properties       | Function Explanation  |
 | --------------   | -----------   |
 | Font             | Custom TTF font of RichText, all the label segment will use the same custom TTF font.  |
-| FontSize         | Font size, in points (**Note**: This field does not affect the font size set in BBCode.) |
+| FontSize         | Font size, in points (__Note__: This field does not affect the font size set in BBCode.) |
 | HandleTouchEvent | Once checked, the RichText will block all input events (mouse and touch) within the bounding box of the node, preventing the input from penetrating into the underlying node. |
 | Horizontal Align | Horizontal alignment   |
 | ImageAtlas      | The image atlas for the img tag. For each `src` value in the `img` tag, there should be a valid `spriteFrame` in the imageAtlas. |
@@ -38,7 +38,7 @@ Here is an example of the `size` and `color` tag:
 
 ### Supported tags
 
-**Note**: All tag names should be lowercase and the attribute assignment should use `=` sign.
+__Note__: All tag names should be lowercase and the attribute assignment should use `=` sign.
 
 | Name | Description | Example | Note |
 | -------|------- | -----|------ |
@@ -65,11 +65,11 @@ is equal to:
 
 <!--
 There are two ways to set the color of RichText:
-1. Selected the node and set the overall color of RichText in **RichTextComponent -> String** of the **Inspector**.
+1. Selected the node and set the overall color of RichText in __RichTextComponent -> String__ of the __Inspector__.
 2. Use BBCode to set colors on the inside of RichText separately.
 Use BBCode to set the colors separately inside RichText.
 
-**Note**: The two cannot be mixed. If mixed, the color set in the **second** way will prevail at runtime.
+__Note__: The two cannot be mixed. If mixed, the color set in the __second__ way will prevail at runtime.
 -->
 
 ## Detailed Explanation

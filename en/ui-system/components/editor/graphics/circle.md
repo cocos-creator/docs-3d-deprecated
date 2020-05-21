@@ -1,12 +1,12 @@
-# circle
+# Circles
 
-Use `circle()` method to create a circle.
+The `circle()` method is used to create a circle.
 
 | Parameter | Description |
 | -------------- | ----------- |
-| cx | The x coordinate of the center of the circle. |
-| cy | The y coordinate of the center of the circle. |
-| r | Radius of the circle. |
+| *cx* | The x coordinate of the center of the circle. |
+| *cy* | The y coordinate of the center of the circle. |
+| *r* | Radius of the circle. |
 
 ## Example
 
@@ -20,4 +20,4 @@ ctx.stroke();
 
 <hr>
 
-Return to [Graphics Component Reference](../graphics.md).
+Return to the [Graphics Component Reference](../graphics.md) documentation.
