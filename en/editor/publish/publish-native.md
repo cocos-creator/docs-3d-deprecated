@@ -10,11 +10,11 @@ Please refer to the [Setup Native Development Environment](setup-native-developm
 
 ## Build Options
 
-For some common build options of platforms, please refer to the [General Build Options](build-options.md) documentation for details.
+For some general build options of platforms, please refer to the [General Build Options](build-options.md) documentation for details.
 
 ![native platform](publish-native/native_platform.jpg)
 
-The following are specific build options for individual platforms and considerations for common build options.
+The following are specific build options for individual platforms and considerations for general build options.
 
 ### MD5 Cache
 

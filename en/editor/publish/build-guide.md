@@ -7,7 +7,7 @@ The build process is mainly divided into two parts, the **General Build Process*
 The general build process for Cocos Creator 3D consists of the following:
 
 1. Initialization of build parameters
-2. Collation of build data
+2. Prepare build data
 3. Write the built resource to the file system
 4. Organizing the data of `settings`
 5. Compression and writing of `settings uuid`
@@ -16,7 +16,7 @@ The general build process for Cocos Creator 3D consists of the following:
 
 This step mainly initializes the initial `options` passed to the build to the internal `options` of the build, does some parameter formatting, initializes the resource data of the build resource database, loads the latest resource information, and classifies it.
 
-### Collation of build data
+### Prepare build data
 
 The editor will first summarize the scene currently involved in the build and all resources in the `resources` directory. Each resource is packaged through the engine's deserialization process to find the dependent resource and recursion to pack the resources. The entire project's scripting environment is configured before being deserialized, that is, all non-plugin project scripts are loaded. Because whether the script loads correctly or not directly affects the deserialization, failure to load because the script is not written legally will directly result in build failure. If the dependent resource is lost in the deserialization process, a warning is issued, but the build continues nonetheless. The warning here does not mean that the problem does not need to be resolved, and if the resource loss is not resolved, it is difficult to guarantee that the problem will not occur after the build.
 
@@ -114,7 +114,7 @@ About the structure of settings:
 }
 ```
 
-The structure here only lists the settings structure under the common process, and actually adds configurations as needed when packaging for different platforms.
+The structure here only lists the settings structure under the general build process, and actually adds configurations as needed when packaging for different platforms.
 
 ### Compression and writing of `settings uuid`
 

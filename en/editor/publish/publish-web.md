@@ -6,7 +6,7 @@ Cocos Creator 3D provides page templates for two kinds of Web platforms. From th
 
 ## Build Options
 
-For some common build options of platforms, please refer to [General Build Options](build-options.md) documentation.
+For some general build options of platforms, please refer to [General Build Options](build-options.md) documentation.
 
 ### Web Desktop
 
