@@ -32,7 +32,7 @@
 参数| 描述
 ---|---
 TileSize | 地形Tile的大小，目前一个地形块由32 x 32个Tile组成，所以一个地形块的边长是32 x TileSize。
-BlockCount | 地形块在两个维度上的数量
+BlockCount | 地形块在两个维度上的数量(注意:该值调整过大会造成顶点数过多造成卡顿)
 WeightMapSize | 权重图大小
 LightMapSize | 光照贴图大小
 
