@@ -30,4 +30,5 @@
 - [声音资源](audio.md)
 - [材质资源](material.md)
 - [模型资源](mesh.md)
+   - [从第三方工具导出模型资源](dcc-export-mesh.md)
 - [动画资源](anim.md)

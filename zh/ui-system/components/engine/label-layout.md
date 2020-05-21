@@ -4,7 +4,7 @@
 
 ## 文字在约束框中对齐
 
-和其他渲染组件一样，Label 组件的排版也是基于节点尺寸（`Size`），也就是约束框（Bounding Box）所规定的范围。约束框可参考 [场景编辑器](../../../editor/scene/index.md)。
+和其他渲染组件一样，Label 组件的排版也是基于 [UITransform](../editor/ui-transform.md) 组件所拥有的尺寸信息（`contentSize`），也就是约束框（Bounding Box）所规定的范围。
 
 ![](label-layout/label_in_boundingbox.png)
 
@@ -13,36 +13,38 @@
 - `Horizontal Align`（水平对齐）：文字在约束框中水平方向的对齐准线，可以从 Left、Right、Center 三种位置中选择。
 - `Vertical Align`（垂直对齐）：文字在约束框中垂直方向的对齐准线，可以从 Top、Bottom、Center 三种位置中选择。
 
-![](label-layout/horizontal-vertical-align.png)
+  ![](label-layout/horizontal-vertical-align.png)
 
 上图中水平方向对齐位置设置为 `Right`，垂直方向的对齐位置设为了 `Bottom`，可以看到文字出现在约束框的底部且靠右对齐。开发者可以将以上两个属性修改为其他组合，文字会根据设置出现在蓝色约束框内相应的位置。
 
-<!-- ## 文字尺寸和行高
+## 文字尺寸和行高
 
-`Font Size`（文字尺寸）决定了文字的显示大小，单位是 Point （也称作“磅”），是大多数图像制作和文字处理软件中通用的字体大小单位。对于动态字体来说，`Font Size` 可以无损放大，但位图字体在将 `Font Size` 设置为超过字体标定的字号大小时，显示会变得越来越模糊。
+`Font Size`（文字尺寸）决定了文字的显示大小，单位是 Point（也称作“磅”），是大多数图像制作和文字处理软件中通用的字体大小单位。对于动态字体来说，`Font Size` 可以无损放大，但位图字体在将 `Font Size` 设置为超过字体标定的字号大小时，显示会变得越来越模糊。
 
 `Line Height`（行高）决定了文字在多行显示时每行文字占据的空间高度，单位同样是 Point。多行文字显示可以通过两种方式实现：
 
 - 在 `String` 属性中输入文字时，手动输入回车或换行符
 - 开启 `Enable Wrap Text`（换行）属性，下文会详细介绍
 
-文字尺寸和行高的关系：
+**文字尺寸和行高的关系**：
 
 - 如果 `Font Size` 和 `Line Height` 设为相同数值，文字正好占据一行大部分的空间高度。
 
-![](label-layout/font_equal_line_height.png)
+  ![](label-layout/font_equal_line_height.png)
 
 - 如果 `Font Size` 小于 `Line Height`，多行文字之间间隔会加大
 
-![](label-layout/font_smaller.png)
+  ![](label-layout/font_smaller.png)
 
 - 如果 `Font Size` 大于 `Line Height`，多行文字之间间隔会缩小，甚至出现文字相互重叠的情况。
 
-![](label-layout/font_bigger.png) -->
+  ![](label-layout/font_bigger.png)
 
 ## 排版模式（Overflow）
 
-**Overflow（排版模式）** 属性，决定了文字内容增加时，如何在约束框的范围内排布。共有 NONE、CLAMP、SHRINK、RESIZE_HEIGHT 四种模式，而只有在后面三种模式下才能通过编辑器左上角的 **矩形变换工具** 或者修改 **属性检查器** 中的 **Size** 大小或者添加 **Widget 组件** 来调整约束框的大小。
+**Overflow（排版模式）** 属性，决定了文字内容增加时，如何在约束框的范围内排布。共有 **NONE**、**CLAMP**、**SHRINK**、**RESIZE_HEIGHT** 四种模式，而只有在 **后三种模式** 下才能通过编辑器左上角的 **矩形变换工具**（也可以是按键盘按键 **T**）或者修改 **属性检查器** 中的 **Size** 大小或者添加 **Widget 组件** 来调整约束框的大小。
+
+**NONE** 模式会自动根据文字尺寸、行高等固定约束框尺寸。
 
 ### 截断（Clamp）
 
@@ -56,19 +58,19 @@
 
 自动缩小模式下，如果文字按照原定尺寸渲染会超出约束框时，会自动缩小文字尺寸以显示全部文字。
 
-**注意：** 自动缩小模式不会放大文字来适应约束框。
+**注意**：自动缩小模式不会放大文字来适应约束框。
 
 ### 自动适应高度（Resize Height）
 
 ![](label-layout/resize-height.png)
 
-自动适应高度模式会保证文字的约束框贴合文字的高度，不管文字有多少行。这个模式非常适合显示内容量不固定的大段文字，配合 [ScrollView 组件](../components/scrollview.md)可以在任意 UI 区域中显示无限量的文字内容。
+自动适应高度模式会保证文字的约束框贴合文字的高度，不管文字有多少行。这个模式非常适合显示内容量不固定的大段文字，配合 [ScrollView 组件](../components/scrollview.md) 可以在任意 UI 区域中显示无限量的文字内容。
 
 ## 自动换行（Enable Wrap Text）
 
 Label 组件中的 `Enable Wrap Text`（自动换行）属性，可以切换文字的自动换行开关。在自动换行开启的状态下，不需要在输入文字时手动输入回车或换行符，文字也会根据约束框的宽度自动换行。
 
-**注意：** 自动换行属性只有在文字排版模式的 **截断（Clamp）** 和 **自动缩小（Shrink）** 这两种模式下才有。自动适应高度（Resize Height）模式下，自动换行属性是强制开启的。
+**注意**：自动换行属性只有在文字排版模式的 **截断（Clamp）** 和 **自动缩小（Shrink）** 这两种模式下才有。**自动适应高度（Resize Height）** 模式下，自动换行属性是强制开启的。
 
 ### 截断（Clamp）模式自动换行
 
@@ -99,6 +101,7 @@ Label 组件中的 `Enable Wrap Text`（自动换行）属性，可以切换文�
 例如，如果希望文字约束框向下扩展，需要将锚点（`Anchor`）的 `y` 属性设为 `1`。如下图所示：
 
 ![](label-layout/anchor1.png)
+
 ![](label-layout/anchor2.png)
 
 ## 文字配合对齐挂件（Widget）
@@ -113,7 +116,7 @@ Label 组件中的 `Enable Wrap Text`（自动换行）属性，可以切换文�
 
 ## 查看组件参考
 
-关于 Label 组件的属性，也可以查阅 [Label 组件参考](../editor/label.md)文档。
+关于 Label 组件的属性，也可以查阅 [Label 组件参考](../editor/label.md) 文档。
 
 ---
 

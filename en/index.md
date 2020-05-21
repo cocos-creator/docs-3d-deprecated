@@ -1,66 +1,65 @@
 # Cocos Creator 3D User Manual
 
-We will complete the English User Manual soon.
+Welcome to the __Cocos Creator 3D__ user manual! This manual includes detailed instructions, a workflow for users, and a step-by-step tutorial for beginners. This manual canan help you quickly learn how to develop cross-platform games with __Cocos Creator 3D__.
 
-欢迎使用 Cocos Creator 3D 用户手册！本手册包括详尽的使用说明、面向不同职能用户的工作流程和 step by step 的新手教程。能够帮您快速掌握使用 Cocos Creator 3D 开发跨平台游戏的方法。
+> **Note**: Please select the corresponding manual version in the upper right corner according to the __Cocos Creator 3D__ version you are using.
 
-**注意**：请在右上角根据您使用的 Cocos Creator 3D 版本选择相应的手册版本。
+## General guide
 
-## 总导读
+Use the feature map to quickly understand engine features
 
-- 使用功能地图快速了解引擎功能
-  - [功能地图](module-map/index.md)
-    - [图形渲染](module-map/graphics.md)
-      - [材质](material-system/overview.md)
-      - [光照](module-map/light.md)
-      - [粒子系统](particle-system/overview.md)
-    - [UI系统](ui-system/components/engine/index.md)
-    - [动画系统](engine/animation/index.md)
-    - [音频](audio-system/overview.md)
-    - [物理模拟](physics/physics.md)
-    - [脚本指南及事件系统](scripting/index.md)
-    - [组件](editor/components/index.md)
-    - [资源](asset/index.md)
-    - [场景及环境设置](concepts/scene/index.md)
+- [Function Map](module-map/index.md)
+  - [Graphics rendering](module-map/graphics.md)
+    - [Material](material-system/overview.md)
+    - [Lighting](module-map/light.md)
+    - [Particle System](particle-system/overview.md)
+  - [UI system](ui-system/components/engine/index.md)
+  - [Animation System](engine/animation/index.md)
+  - [Audio](audio-system/overview.md)
+  - [Physical Simulation](physics/physics.md)
+  - [Scripting Guide and Event System](scripting/index.md)
+  - [Components](editor/components/index.md)
+  - [Resources](asset/index.md)
+  - [Scene and Environment Settings](concepts/scene/index.md)
 
-- 新手入门
-  - [新手上路](getting-started/index.md)
+- Beginner's guide
+  - [Novice](getting-started/index.md)
   - [Dashboard](getting-started/dashboard/index.md)
-  - [Hello world!](getting-started/helloworld/index.md)
-  - [快速上手：制作第一个游戏](getting-started/first-game/index.md)
-  - [注意事项](getting-started/attention/index.md)
-- 引擎手册
-  - [场景及环境](concepts/scene/index.md)
-  - [光照](concepts/scene/light.md)
-  - [材质](material-system/overview.md)
-  - [声音](audio-system/overview.md)
-  - [粒子](particle-system/overview.md)
-  - [动画](engine/animation/index.md)
-  - [缓动](tween/index.md)
-  - [物理](physics/physics.md)
+  - [Hello world!](Getting-started/helloworld/index.md)
+  - [Quick start: making your first game](getting-started/first-game/index.md)
+  - [Caution](getting-started/attention/index.md)
+- Editor manual
+  - [Quick Start](getting-started/index.md)
+  - [Panel Introduction](editor/index.md)
+  - [Project Preview Debugging](editor/preview/index.md)
+  - [Particle Editor](particle-system/editor/index.md)
+  - [Animation System](editor/animation/index.md)
+  - [Terrain System](editor/terrain/index.md)
+  - [Build release](editor/publish/index.md)
+- Engine Manual
+  - [Scenes and Environment](concepts/scene/index.md)
+  - [Lighting](concepts/scene/light.md)
+  - [Material](material-system/overview.md)
+  - [Sound](audio-system/overview.md)
+  - [Particle](particle-system/overview.md)
+  - [Animation](engine/animation/index.md)
+  - [Easy](tween/index.md)
+  - [Physics](physics/physics.md)
   - [UI](ui-system/components/engine/index.md)
-  - [组件](editor/components/index.md)
-  - [脚本指南及事件机制](scripting/index.md)
-  - [资源手册](asset/index.md)
-- 编辑器手册
-  - [快速入门](getting-started/index.md)
-  - [面板介绍](editor/index.md)
-  - [项目预览调试](editor/preview/index.md)
-  - [粒子编辑器](particle-system/editor/index.md)
-  - [动画系统](editor/animation/index.md)
-  - [地形系统](editor/terrain/index.md)
-  - [构建发布](editor/publish/index.md)
+  - [Components](editor/components/index.md)
+  - [Scripting Guide and Event Mechanism](scripting/index.md)
+  - [Resource Manual](asset/index.md)
 
-## 演示和范例项目
+## Demo and example projects
 
-- [展示范例集合](https://github.com/cocos-creator/example-3d)：从基本组件的使用到渲染效果的展示，这个项目里包括了多个侧重功能不同的场景及多个游戏 Demo 供用户参考
-- [一步两步](https://github.com/cocos-creator/tutorial-mind-your-step-3d)：也就是 [快速上手](getting-started/first-game/index.md) 文档里分步讲解制作的游戏
-- [物理小车](https://github.com/cocos-creator/example-3d/tree/master/simple-car-game): 赛车游戏演示 Demo, 基于物理系统，包含了赛车游戏的基本玩法
-- [下落球球](https://github.com/cocos-creator/example-3d/tree/master/falling-ball)： 下落球游戏演示 Demo, 基于物理系统，完成了下落球游戏的基本玩法
-- [滚动小球](https://github.com/cocos-creator/example-3d/tree/master/roll-a-ball)：基于物理的物体运动演示 Demo, 通过对物体施加力使物体移动
-- [吞噬黑洞](https://github.com/cocos-creator/example-3d/tree/master/simple-hole)：吞噬游戏演示 Demo
-- [Simple-FPS](https://github.com/cocos-creator/example-3d/tree/master/simple-fps)：简单 FPS 游戏演示 Demo, 用户可通过此案例学习完成一个简单的 FPS 游戏
-- [模块展示集合](https://github.com/cocos-creator/test-cases-3d): 引擎各个功能的范例项目，基本涵盖了引擎的大部分功能模块，用户在使用功能时可参考此项目中的用法进行开发
-- [UI 展示 Demo](https://github.com/cocos-creator/demo-ui/tree/3d)：各类 UI 组件组合使用的演示 Demo
+- [Show example collection](https://github.com/cocos-creator/example-3d): From the use of basic components to the display of rendering effects, this project includes multiple scenarios with different functions and multiple Game Demo for user reference
+- [One step and two steps](https://github.com/cocos-creator/tutorial-mind-your-step-3d): This is the [Quick Start](getting-started/first-game/index.md) document Step-by-step explanation of the game
+- [Physics car](https://github.com/cocos-creator/example-3d/tree/master/simple-car-game): Demo of racing games Demo, based on the physics system, contains the basic gameplay of racing games
+- [Falling ball](https://github.com/cocos-creator/example-3d/tree/master/falling-ball): Demo of falling ball game Demo, based on the physics system, completed the basic gameplay of falling ball game
+- [Rolling Ball](https://github.com/cocos-creator/example-3d/tree/master/roll-a-ball): Demo of physics-based object movement Demo, which moves the object by applying force to the object
+- [Engulfing Black Hole](https://github.com/cocos-creator/example-3d/tree/master/simple-hole): Devouring Game Demo Demo
+- [Simple-FPS](https://github.com/cocos-creator/example-3d/tree/master/simple-fps): Simple FPS game demo, users can use this case study to complete a simple FPS game
+- [Module display collection](https://github.com/cocos-creator/test-cases-3d): The example project of each function of the engine, which basically covers most of the function modules of the engine. Users can refer to it when using the functions Development in this project
+- [UI Show Demo](https://github.com/cocos-creator/demo-ui/tree/3d): Demo of various UI components combined use Demo
 
-**注意**，这些项目会不定期跟随版本进行更新。它们在 GitHub 上的默认分支是 master，对应的一般是最新的 Cocos Creator 3D 及 版本。如果仍在使用旧版本的 Cocos Creator 3D，这些项目有可能会打不开，可尝试切换到和旧版本相同命名的分支。
+> **Note**: these items will be updated with the version from time to time. Their default branch on GitHub is master, which generally corresponds to the latest __Cocos Creator 3D__ and version. If you are still using an older version of __Cocos Creator 3D__, these projects may not open, try to switch to the same named branch as the old version.

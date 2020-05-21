@@ -1,16 +1,18 @@
 # 发布到 COCOS PLAY (即刻玩)
+
 Cocos Creator 3D 从 **v1.0.3** 版本开始正式支持将游戏发布到 Cocos Play 小游戏。
 
 ## 参数选项说明
-参数名 | 可选 | 默认值 | 说明
-- | - | - | -
-appid | 必填 | 'wx6ac3f5090a6b99c5' | 微信小程序 appid，填写后将会写入在 `project.config.json` 内。
-tinyPackageMode | 选填 | false | 是否开启小包模式，开启后打包的 `cpk` 文件将不包含全部的 `res` 资源
-tinyPackageServer | 选填 | ' ' | 远程服务器地址，填写后获取资源将会从该路径上获取，仅在小包模式开启时有效
-packFirstScreenRes | 选填 | ' ' | 首屏游戏资源打包到游戏包，将保留首屏资源到 `cpk` 文件内
-deviceOrientation | 必填 | 'portrait' | 设备方向， 可选值为 `'landscape' | 'portrait'`。
+
+| 参数名 | 可选 | 默认值 | 说明 |
+| - | - | - | - |
+|tinyPackageMode | 选填 | false | 是否开启小包模式，开启后打包的 `cpk` 文件将不包含全部的 `res` 资源|
+|tinyPackageServer | 选填 | ' ' | 远程服务器地址，填写后获取资源将会从该路径上获取，仅在小包模式开启时有效|
+|packFirstScreenRes | 选填 | ' ' | 首屏游戏资源打包到游戏包，将保留首屏资源到 `cpk` 文件内|
+| deviceOrientation | 必填 | 'portrait' | 设备方向， 可选值为 `'landscape' , 'portrait'`。|
 
 ### 小包模式相关配置
+
 该项为选填项，默认不勾选。小游戏的包内体积包含代码和资源不能超过 10M，在资源量比较多的情况下需要通过网络请求加载。**小包模式** 就是帮助用户将一些 `res` 资源从 `cpk` 包中剔除，剩余的 `res` 可以上传到服务器，根据需要从远程服务器下载。
 
 小包模式下还添加了一个 `首屏游戏资源打包到游戏包` 的选项，在小包模式下，如果首屏资源过多，下载和加载资源时间比较久，可能会导致首次进入游戏时出现短暂黑屏。如果在构建时勾选了 **首屏游戏资源打包到游戏包**，可以缩短首次进入游戏黑屏的时间。不过需要注意的是：`res/import` 资源暂不支持分割资源下载，整个 `import` 目录也会打包到首包。如果勾选了该选项，在构建后需要将发布路径下的 **cocos-play/res** 目录上传到小包模式服务器。例如：默认发布路径是 build，则需要上传 build/cocos-play/res 目录。
@@ -36,6 +38,7 @@ packFirstScreenRes: false,
 ## 测试运行
 
 ### 自测环境配置
+
 - 下载 [游戏自测工具](https://gamebox.gitbook.io/project/you-xi-jie-ru-wen-dang/zi-yuan-xia-zai/zi-ce-gong-ju) 并安装到 Android 设备（建议 Android Phone 6.0 或以上版本）。
 
 - 打开之前已经安装完成的游戏自测工具，自测工具可以启动游戏并提供游戏登录、支付等功能。通过读取游戏配置参数，确定启动的游戏类型，以及游戏启动方式。开发者必须使用自测工具测试接入没有问题之后，才可以打包提交到平台审核。自测时没有要求包的大小，但如果是要提交审核的话，包的大小不能超过 10M。具体可参考 [自测工具](https://gamebox.gitbook.io/project/you-xi-jie-ru-wen-dang/ji-shu-dui-jie/zi-ce-gong-ju)。

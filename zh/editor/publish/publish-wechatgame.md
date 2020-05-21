@@ -49,6 +49,9 @@ appid | 必填 | 'wx6ac3f5090a6b99c5' | 微信小程序 appid，填写后将会�
 remoteServerAddress | 选填 | ' ' | 远程服务器地址，填写后获取资源将会从该路径上获取
 subContext | 选填 | ' ' | 子域文件夹，相对于构建最终包体的路径，将会在构建之后拷贝到结果内
 orientation | 必填 | 'landscape' | 设备方向，填写后将会写入在 `game.json` 内。
+分包 | 可选 | true | 是否开启分包功能
+
+平台相关的配置选项都是根据平台的支持来的，这里只提供了部分数据的界面修改，具体参数请参考[微信小游戏配置文档](https://developers.weixin.qq.com/minigame/dev/reference/configuration/app.html#%E9%85%8D%E7%BD%AE%E9%A1%B9)。
 
 ## 小游戏环境的资源管理
 

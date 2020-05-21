@@ -5,7 +5,7 @@ Cocos Effect 是一种基于 YAML 和 GLSL 的单源码嵌入式领域特定语�
 YAML 部分声明流程控制清单, GLSL 部分声明实际的 shader 片段，这两部分内容上相互补充, 共同构成了一个完整的渲染流程描述。<br>
 我们推荐使用 VSCode，搜索安装 Cocos Effect 插件，来方便地编辑任何 effect 文件。
 
-注意，这篇文档的目标受众是项目组中的 TA 或图形向的程序，如果你是有具体定制 shader 需求的美术，请联系项目 TA 或程序，把这篇文档丢给他~！
+> 注意：这篇文档的目标受众是项目组中的 TA 或图形向的程序，如果你是有具体定制 shader 需求的美术，请联系项目 TA 或程序，把这篇文档丢给他~！
 
 ## 语法框架
 以 builtin-unlit.effect 为例, 这个 Effect 文件的内容大致是这样:
@@ -28,10 +28,10 @@ YAML 是一门面向数据序列化的，对人类书写十分友好的语言，
 对于不熟悉这门语言的开发者可能会有一点门槛，我们在 [这里](yaml-101.md) 快速总结了一下最常用的一些语法和语言特性，有需要可以参考。
 
 ## Pass 中可配置的参数
-vert 和 frag 声明了当前 pass 使用的 shader, 格式为 `片段名:入口函数名`<br>
-这个名字可以是本文件中声明的 shader 片段名, 也可以是引擎提供的标准头文件.
-片段中不应出现 main 函数入口, 在 effect 编译期会插入 wrapper，将指定入口函数的返回值赋值给当前 shader 的输出 (gl_Position 或最终的输出颜色).<br>
-其他可配置 GL 参数及默认值见 [完整列表](pass-parameter-list.md).
+每个 Pass 只有两个必填参数：vert 和 frag 声明了当前 pass 使用的 shader, 格式为 `片段名:入口函数名`<br>
+这个名字可以是本文件中声明的 shader 片段名, 也可以是引擎提供的标准头文件。
+片段中不应出现 main 函数入口, 在 effect 编译期会插入 wrapper，将指定入口函数的返回值赋值给当前 shader 的输出（gl_Position 或最终的输出颜色）。<br>
+所有其他其他可选参数及默认值见 [完整列表](pass-parameter-list.md)。
 
 ## Shader 片段
 Shader 片段在语法上基于 GLSL 300 ES，在资源加载时有相应的预处理编译流程。
@@ -90,8 +90,9 @@ float metallic = texture(pbrMap, uv).METALLIC_SOURCE;
 #pragma define METALLIC_SOURCE options([r, g, b, a])
 ```
 一个是名为 LAYERS 的宏定义，它在运行时可能的取值范围为 [4, 5]；<br>
-另一个是名为 METALLIC_SOURCE 的宏定义，它在运行时可能的取值为 'r', 'g', 'b', 'a' 四种。<br>
-注意语法中每个 tag 只有一个参数，这个参数可以直接用 YAML 语法去指定。
+另一个是名为 METALLIC_SOURCE 的宏定义，它在运行时可能的取值为 'r', 'g', 'b', 'a' 四种。
+
+> 注意：语法中每个 tag 只有一个参数，这个参数可以直接用 YAML 语法去指定。
 
 ### Functional Macros
 由于 WebGL1 不原生支持，我们将函数式宏定义提供为 effect 编译期的功能，输出的 shader 中就已经将此类宏定义展开。<br>
@@ -140,7 +141,7 @@ vec4 vert () {
 注意引用头文件后，不要在 shader 内重复声明这些 attributes（a_position 等）。<br>
 对于其他顶点数据（如 uv 等）还是正常声明 attributes 直接使用。
 
-另外如果需要对接引擎动态合批流程，需要包含 `cc-local-batch` 头文件，通过 `CCGetWorldMatrix` 工具函数获取世界矩阵：
+另外如果需要对接引擎动态合批和 instancing 流程，需要包含 `cc-local-batch` 头文件，通过 `CCGetWorldMatrix` 工具函数获取世界矩阵：
 ```glsl
 // unlit version (when normal is not needed)
 mat4 matWorld;
@@ -149,6 +150,7 @@ CCGetWorldMatrix(matWorld);
 mat4 matWorld, matWorldIT;
 CCGetWorldMatrixFull(matWorld, matWorldIT);
 ```
+关于更多 shader 内置 uniform，可以参考 [完整列表](builtin-shader-uniforms.md)。
 
 ### Fragment Ouput<sup id="a1">[1](#f1)</sup>
 为对接引擎渲染管线，我们提供了 `CCFragOutput` 工具函数，对所有无光照 shader，可直接在 fs 返回时类似这样写：
@@ -174,8 +176,31 @@ vec4 frag () {
   return CCFragOutput(color);
 }
 ```
-在此框架下可方便地实现自己的 surface 输入，或其他 shading 算法；<br>
-注意 `CCFragOutput` 函数一般还是不需要自己实现，它只起与渲染管线对接的作用，且对于这种含有光照计算的输出，因计算结果已经在 HDR 范围，应包含 `output-standard` 而非 `output` 头文件。
+在此框架下可方便地实现自己的 surface 输入，或其他 shading 算法；
+
+> 注意：`CCFragOutput` 函数一般还是不需要自己实现，它只起与渲染管线对接的作用，且对于这种含有光照计算的输出，因计算结果已经在 HDR 范围，应包含 `output-standard` 而非 `output` 头文件。
+
+### 自定义 Instanced 属性
+通过 instancing 动态合批的功能十分灵活，在默认的流程上，用户可以加入更多 instanced 属性，这里介绍如何在 shader 中引入新的属性：
+
+所有相关处理代码都需要依赖统一的宏定义 `USE_INSTANCING`：
+```glsl
+#if USE_INSTANCING // when instancing is enabled
+  #pragma format(RGBA8) // normalized unsigned byte
+  in vec4 a_instanced_color;
+#endif
+```
+几点注意：
+* 这里可以使用编译器提示 `format` 指定此属性的具体数据格式，参数为引擎 `GFXFormat` 的任意枚举名<sup id="a2">[2](#f2)</sup>，如未声明则默认为 32 位 float 类型；
+* 所有 instanced 属性都是 VS 的输入 attribute，所以如果需要在 FS 中使用，需要在 VS 中自行传递；
+* 记得确保代码在所有分支都能正常执行，无论 `USE_INSTANCING` 启用与否；
+
+在运行时所有属性都会默认初始化为 0，脚本中设置接口为：
+```ts
+const comp = node.getComponent(ModelComponent);
+comp.setInstancedAttribute('a_instanced_color', [100, 150, 200, 255]); // should match the specified format
+```
+> 注意：在每次重建 PSO 时（一般对应更换新材质时）所有属性值都会重置，需要重新设置。
 
 ### WebGL 1 fallback 支持
 由于 WebGL 1 仅支持 GLSL 100 标准语法, 在 effect 编译期会提供 300 es 转 100 的 fallback shader, 用户基本不需关心这层变化。<br>
@@ -204,7 +229,7 @@ vec4 frag () {
 
 这可能听起来有些过分严格，但背后有非常务实的考量：<br>
 首先，UBO 是渲染管线内要做到高效数据复用的唯一基本单位，离散声明已不是一个选项；<br>
-其次，WebGL2 的 UBO 只支持 std140 布局，它遵守一套比较原始的 padding 规则：
+其次，WebGL2 的 UBO 只支持 std140 布局，它遵守一套比较原始的 padding 规则：<sup id="a3">[3](#f3)</sup>
 * 所有 vec3 成员都会补齐至 vec4：
 ```glsl
 uniform ControversialType {
@@ -217,13 +242,13 @@ uniform ProblematicArrays {
   float f4_1[4]; // offset 0, stride 16, length 64 [IMPLICIT PADDING!]
 }; // total of 64 bytes
 ```
-* 所有成员在 UBO 内的实际偏移都会按自身所占字节数对齐（更详细的规则可以直接参考<sup id="a2">[2](#f2)</sup>）：
+* 所有成员在 UBO 内的实际偏移都会按自身所占字节数对齐<sup id="a4">[4](#f4)</sup>：
 ```glsl
 uniform IncorrectUBOOrder {
   float f1_1; // offset 0, length 4 (aligned to 4 bytes)
   vec2 v2; // offset 8, length 8 (aligned to 8 bytes) [IMPLICIT PADDING!]
   float f1_2; // offset 16, length 4 (aligned to 4 bytes)
-}; // total of 20 bytes
+}; // total of 32 bytes*
 uniform CorrectUBOOrder {
   float f1_1; // offset 0, length 4 (aligned to 4 bytes)
   float f1_2; // offset 4, length 4 (aligned to 4 bytes)
@@ -231,10 +256,12 @@ uniform CorrectUBOOrder {
 }; // total of 16 bytes
 ```
 
-这意味着大量的空间浪费，且某些设备的驱动实现也并不完全符合此标准<sup id="a3">[3](#f3)</sup>，因此我们目前选择限制这部分功能的使用，以帮助排除一部分非常隐晦的运行时问题。<br>
+这意味着大量的空间浪费，且某些设备的驱动实现也并不完全符合此标准<sup id="a5">[5](#f5)</sup>，因此我们目前选择限制这部分功能的使用，以帮助排除一部分非常隐晦的运行时问题。<br>
 
-再次提醒，uniform 的类型与 inspector 的显示和运行时参数赋值时的程序接口可以不直接对应，通过 [property target](pass-parameter-list.md#Properties) 机制，可以独立编辑任意 uniform 具体的分量。
+> 注意：再次提醒，uniform 的类型与 inspector 的显示和运行时参数赋值时的程序接口可以不直接对应，通过 [property target](pass-parameter-list.md#Properties) 机制，可以独立编辑任意 uniform 具体的分量。
 
 <b id="f1">[1]</b> 不包含粒子、sprite、后效等不基于 mesh 执行渲染的 shader [↩](#a1)<br>
-<b id="f2">[2]</b> [OpenGL 4.5, Section 7.6.2.2, page 137](http://www.opengl.org/registry/doc/glspec45.core.pdf#page=159) [↩](#a2)<br>
-<b id="f3">[3]</b> [Interface Block - OpenGL Wiki](https://www.khronos.org/opengl/wiki/Interface_Block_(GLSL)#Memory_layout) [↩](#a3)
+<b id="f2">[2]</b> 注意 WebGL 1.0 平台下不支持整型 attributes，如项目需要发布到此平台，应使用默认浮点类型 [↩](#a2)<br>
+<b id="f3">[3]</b> [OpenGL 4.5, Section 7.6.2.2, page 137](http://www.opengl.org/registry/doc/glspec45.core.pdf#page=159) [↩](#a3)<br>
+<b id="f4">[4]</b> 注意在示例代码中，UBO IncorrectUBOOrder 的总长度为 32 字节，实际上这个数据到今天也依然是平台相关的，看起来是由于 GLSL 标准的疏忽，更多相关讨论可以参考[这里](https://bugs.chromium.org/p/chromium/issues/detail?id=988988) [↩](#a4)<br>
+<b id="f5">[5]</b> [Interface Block - OpenGL Wiki](https://www.khronos.org/opengl/wiki/Interface_Block_(GLSL)#Memory_layout) [↩](#a5)

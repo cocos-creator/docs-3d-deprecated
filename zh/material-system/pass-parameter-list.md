@@ -1,14 +1,12 @@
-# Pass 可配置参数
+# Pass 可选配置参数
 
-默认值为加粗项，并可在Effect文件中直接省略。<br>
-所有参数不区分大小写。
+默认值为加粗项，所有参数不区分大小写。
 
 | Name                                        | Options                                                                         |
 |:-------------------------------------------:|:-------------------------------------------------------------------------------:|
 | switch                                      | **\*undefined**, could be any valid macro name that's not defined in the shader |
 | priority                                    | **default**(128), could be any number between max(255) and min(0)               |
 | stage                                       | **default**, could be the name of any registered stage in your runtime pipeline |
-| customization                               | **[]**, could be the name of any registered runtime customization               |
 | properties                                  | *see the following section                                                      |
 | migrations                                  | *see the following section                                                      |
 | primitive                                   | point_list, line_list, line_strip, line_loop,<br>**triangle_list**, triangle_strip, triangle_fan,<br>line_list_adjacency, line_strip_adjacency,<br>triangle_list_adjacency, triangle_strip_adjacency,<br>triangle_patch_adjacency, quad_patch_list, iso_line_list |
@@ -45,9 +43,6 @@
 
 ## Stage
 指定这个 pass 归属于管线的哪个 stage，对 forward 管线，只有 default 一个 stage。
-
-## Customization
-指定当这个 pass 被应用到场景模型上后执行的自定义回调函数，用于实现显示相关的特殊逻辑需求，可在脚本中通过 cc.customizationManager.register 注册。
 
 ## Properties
 properties 存储着这个 Pass 有哪些可定制的参数需要在 Inspector 上显示，<br>

@@ -1,4 +1,4 @@
-# Cocos Creator 3D v1.0 用户手册
+# Cocos Creator 3D 用户手册
 
 欢迎使用 Cocos Creator 3D 用户手册！本手册包括详尽的使用说明、面向不同职能用户的工作流程和 step by step 的新手教程。能够帮您快速掌握使用 Cocos Creator 3D 开发跨平台游戏的方法。
 
@@ -27,6 +27,15 @@
   - [Hello world!](getting-started/helloworld/index.md)
   - [快速上手：制作第一个游戏](getting-started/first-game/index.md)
   - [注意事项](getting-started/attention/index.md)
+- 编辑器手册
+  - [快速入门](getting-started/index.md)
+  - [面板介绍](editor/index.md)
+  - [项目预览调试](editor/preview/index.md)
+  - [粒子编辑器](particle-system/editor/index.md)
+  - [动画系统](editor/animation/index.md)
+  - [地形系统](editor/terrain/index.md)
+  - [构建发布](editor/publish/index.md)
+  - [从第三方工具导出模型资源](asset/dcc-export-mesh.md)
 - 引擎手册
   - [场景及环境](concepts/scene/index.md)
   - [光照](concepts/scene/light.md)
@@ -41,26 +50,20 @@
   - [可定制的渲染管线](render-pipeline/overview.md)
   - [脚本指南及事件机制](scripting/index.md)
   - [资源手册](asset/index.md)
-- 编辑器手册
-  - [快速入门](getting-started/index.md)
-  - [面板介绍](editor/index.md)
-  - [项目预览调试](editor/preview/index.md)
-  - [粒子编辑器](particle-system/editor/index.md)
-  - [动画系统](editor/animation/index.md)
-  - [地形系统](editor/terrain/index.md)
-  - [构建发布](editor/publish/index.md)
 
 ## 演示和范例项目
 
 - [展示范例集合](https://github.com/cocos-creator/example-3d)：从基本组件的使用到渲染效果的展示，这个项目里包括了多个侧重功能不同的场景及多个游戏 Demo 供用户参考
 - [一步两步](https://github.com/cocos-creator/tutorial-mind-your-step-3d)：也就是 [快速上手](getting-started/first-game/index.md) 文档里分步讲解制作的游戏
-- [物理小车](https://github.com/cocos-creator/example-3d/tree/master/simple-car-game): 赛车游戏演示 Demo, 基于物理系统，包含了赛车游戏的基本玩法
-- [下落球球](https://github.com/cocos-creator/example-3d/tree/master/falling-ball)： 下落球游戏演示 Demo, 基于物理系统，完成了下落球游戏的基本玩法
-- [滚动小球](https://github.com/cocos-creator/example-3d/tree/master/roll-a-ball)：基于物理的物体运动演示 Demo, 通过对物体施加力使物体移动
-- [吞噬黑洞](https://github.com/cocos-creator/example-3d/tree/master/simple-hole)：吞噬游戏演示 Demo
+- [物理测试范例](https://github.com/cocos-creator/example-3d/tree/master/physics-3d): 包含了一些物理测试例和一些案例工程，如吞噬黑洞、简化小车、坠落小球等，测试例和案例介绍了一些基础的功能和使用方法，方便您结合文档了解物理功能
 - [Simple-FPS](https://github.com/cocos-creator/example-3d/tree/master/simple-fps)：简单 FPS 游戏演示 Demo, 用户可通过此案例学习完成一个简单的 FPS 游戏
 - [模块展示集合](https://github.com/cocos-creator/test-cases-3d): 引擎各个功能的范例项目，基本涵盖了引擎的大部分功能模块，用户在使用功能时可参考此项目中的用法进行开发
 - [UI 展示 Demo](https://github.com/cocos-creator/demo-ui/tree/3d)：各类 UI 组件组合使用的演示 Demo
-- [弹弹乐 3D](https://github.com/cocos-creator/demo-ball)：基于物理的游戏制作 demo，用户可通过此项目制作弹弹球游戏。
+- [弹弹乐 3D](https://github.com/cocos-creator/demo-ball)：用户可通过此项目制作弹弹球游戏。
+- [快上车 3D](https://github.com/cocos-creator/tutorial-taxi-game)：基于物理的游戏制作 demo，用户可通过此项目制作快上车游戏。
 
 **注意**，这些项目会不定期跟随版本进行更新。它们在 GitHub 上的默认分支是 master，对应的一般是最新的 Cocos Creator 3D 及 版本。如果仍在使用旧版本的 Cocos Creator 3D，这些项目有可能会打不开，可尝试切换到和旧版本相同命名的分支。
+
+## 项目视频教程
+
+### [快上车视频教程](https://space.bilibili.com/491120849/channel/detail?cid=116585)

@@ -4,7 +4,7 @@ Toggle 是一个 CheckBox，当它和 ToggleGroup 一起使用的时候，可以
 
 ![toggle1](toggle/toggle.png)
 
-点击 **属性检查器** 下面的 **添加组件** 按钮，然后从 **添加 UI 组件** 中选择 **Toggle**，即可添加 Toggle 组件到节点上。
+点击 **属性检查器** 下面的 **添加组件** 按钮，然后选择 **UI/Toggle** 即可添加 Toggle 组件到节点上。
 
 <!-- Toggle 的脚本接口请参考 [Toggle API](../../../api/zh/classes/Toggle.html)。 -->
 
