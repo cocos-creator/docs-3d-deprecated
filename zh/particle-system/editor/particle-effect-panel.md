@@ -12,5 +12,5 @@
 ![](img/particle_stop.png)：停止播放粒子
 
 Playback Speed：调整粒子播放速度  
-Playback Time:显示粒子播放时长  
+Playback Time：显示粒子播放时长  
 Particles：显示当前粒子数量

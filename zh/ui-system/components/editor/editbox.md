@@ -4,7 +4,7 @@ EditBox 是一种文本输入组件，该组件让你可以轻松获取用户输
 
 ![editbox](editbox/editbox.png)
 
-点击 **属性检查器** 下面的 **添加组件** 按钮，然后从 **添加 UI 组件** 中选择 **EditBox**，即可添加 EditBox 组件到节点上。
+点击 **属性检查器** 下面的 **添加组件** 按钮，然后从 **UI/EditBox** 即可添加 EditBox 组件到节点上。
 
 <!-- EditBox 的脚本接口请参考 [EditBox API](...api/zh/classes/EditBox.html)。 -->
 
@@ -32,12 +32,10 @@ EditBox 是一种文本输入组件，该组件让你可以轻松获取用户输
 - **Editing Did Began**：该事件在用户点击输入框获取焦点的时候被触发。
 - **Editing Did Ended**：在单行模式下面，一般是在用户按下回车或者点击屏幕输入框以外的地方调用该函数。
 如果是多行输入，一般是在用户点击屏幕输入框以外的地方调用该函数。
-- **Editing Return**：该事件在用户按下回车键的时候被触发, 如果是单行输入框，按回车键还会使输入框失去焦点。
 - **Text Changed**：该事件在用户每一次输入文字变化的时候被触发。
 
 ## 详细说明
 
-- Keyboard Return Type 特指在移动设备上面进行输入的时候，弹出的虚拟键盘上面的回车键样式。
 - 如果需要输入密码，则需要把 Input Flag 设置为 password，同时 Input Mode 必须是 Any 之外的选择，一般选择 Single Line。
 - 如果要输入多行，可以把 Input Mode 设置为 Any。
 - 背景图片支持九宫格缩放

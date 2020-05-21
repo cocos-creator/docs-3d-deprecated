@@ -14,7 +14,6 @@
   - [安装配置原生环境](setup-native-development.md)
   - [原生平台 JavaScript 调试](debug-jsb.md)
 - [发布到 OPPO 小游戏](publish-oppo-mini-game.md)
-- [发布到百度小游戏](publish-baidu-mini-game.md)
 - [发布到华为快游戏](publish-huawei-mini-game.md)
 - [发布到 vivo 小游戏](publish-vivo-mini-game.md)
 - [发布到小米快游戏](publish-xiaomi-quick-game.md)

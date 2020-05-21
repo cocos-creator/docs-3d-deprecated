@@ -6,7 +6,7 @@ ScrollView 是一种带滚动功能的容器，它提供一种方式可以在有
 
 ![scrollview-inspector](scroll/scrollview-inspector.png)
 
-点击 **属性检查器** 下面的 **添加组件** 按钮，然后从 **添加 UI 组件** 中选择 **ScrollView**，即可添加 ScrollView 组件到节点上。
+点击 **属性检查器** 下面的 **添加组件** 按钮，然后选择 **UI/ScrollView** 即可添加 ScrollView 组件到节点上。
 
 <!-- 滚动视图的脚本接口请参考 [ScrollView API](../../../api/zh/classes/ScrollView.html)。 -->
 
@@ -23,7 +23,7 @@ ScrollView 是一种带滚动功能的容器，它提供一种方式可以在有
 | Bounce Duration      | 浮点数，回弹所需要的时间。取值范围是 0-10。                                                            |
 | Horizontal ScrollBar | 它是一个节点引用，用来创建一个滚动条来显示 content 在水平方向上的位置。                                    |
 | Vertical ScrollBar   | 它是一个节点引用，用来创建一个滚动条来显示 content 在垂直方向上的位置                                      |
-| ScrollView Events    | 列表类型，默认为空，用户添加的每一个事件由节点引用，组件名称和一个响应函数组成。详情见下方的 Scrollview 事件     |
+| ScrollView Events    | 列表类型，默认为空，用户添加的每一个事件由节点引用，组件名称和一个响应函数组成。详情见下方的 ScrollView 事件     |
 | CancelInnerEvents    | 如果这个属性被设置为 true，那么滚动行为会取消子节点上注册的触摸事件，默认被设置为 true。                      |
 
 ### ScrollView 事件
@@ -32,7 +32,7 @@ ScrollView 是一种带滚动功能的容器，它提供一种方式可以在有
 
 事件结构参考：[组件事件结构](./button.md#组件事件结构)
 
-Scrollview 的事件回调有两个参数，第一个参数是 ScrollView 本身，第二个参数是 ScrollView 的事件类型。
+ScrollView 的事件回调有两个参数，第一个参数是 ScrollView 本身，第二个参数是 ScrollView 的事件类型。
 
 ### ScrollBar 设置
 
@@ -40,7 +40,7 @@ ScrollBar 是可选的，你可以选择只设置 Horizontal ScrollBar 或者 Ve
 
 ## 详细说明
 
-ScrollView 组件必须有指定的 content 节点才能起作用，通过指定滚动方向和 content 节点在此方向上的长度来计算滚动时的位置信息，Content 节点也可以通过添加 `WidgetComponnet` 设置自动 resize，也可以通过添加 `LayoutComponnet` 来完成子节点布局，但是这两个组件不应该同时添加到一个节点上以避免产生不可预料的后果。
+ScrollView 组件必须有指定的 content 节点才能起作用，通过指定滚动方向和 content 节点在此方向上的长度来计算滚动时的位置信息，Content 节点也可以通过添加 `WidgetComponent` 设置自动 resize，也可以通过添加 `LayoutComponent` 来完成子节点布局，但是这两个组件不应该同时添加到一个节点上以避免产生不可预料的后果。
 
 通常一个 ScrollView 的节点树如下图：
 

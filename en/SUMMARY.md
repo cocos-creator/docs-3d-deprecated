@@ -58,6 +58,7 @@
   - [发布到小米快游戏](editor/publish/publish-xiaomi-quick-game.md)
   - [发布到 Cocos Play](editor/publish/publish-cocos-play.md)
   - [发布到支付宝小游戏](editor/publish/publish-alipay-mini-game.md)
+  - [发布到百度小游戏](editor/publish/publish-baidu-mini-game.md)
   - [命令行发布项目](editor/publish/publish-in-command-line.md)
   - [定制项目的构建模版](editor/publish/custom-project-build-template.md)
   - [构建流程简介与常见错误处理](editor/publish/build-guide.md)
@@ -175,6 +176,7 @@
       - [UIStatic Reference](ui-system/components/editor/ui-static.md)
       - [UICoordinateTracker Reference](ui-system/components/editor/ui-coordinate-tracker.md)
       - [UIOpacity Reference](ui-system/components/editor/ui-opacity.md)
+      - [BlockInputEvents Reference](ui-system/components/editor/block-input-enents.md)
 
 - [脚本指南及事件机制](scripting/index.md)
   - [脚本创建](scripting/setup.md)
