@@ -1,8 +1,8 @@
 # Line Join
 
-The `lineJoin()` method sets or returns the style of the line end cap.
+The `lineJoin` property represents the style of the joint between two line segments.
 
-| Parameter | Description |
+| Possible line join options | Description |
 | -------------- | ----------- |
 | *cc.GraphicsComponent.LineJoin.BEVEL* | Creates a bevel |
 | *cc.GraphicsComponent.LineJoin.ROUND* | Create a fillet |

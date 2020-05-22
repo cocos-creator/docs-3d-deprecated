@@ -1,6 +1,6 @@
 # Widget Component Reference
 
-Widget is a frequently used UI layout component. It can automatically align the current node to any position of the parent node, or constrain the size, to make your game easily adaptable to different resolutions. About the alignment scheme, please see [Widget Alignment](../engine/widget-align.md) for details.
+Widget is a frequently used UI layout component. It can automatically align the current node to any position in the parent node's bounding box, or constrain the size, to make your game easily adaptable to different resolutions. About the alignment scheme, please see [Widget Alignment](../engine/widget-align.md) for details.
 
 ![default](widget/widget-default.png)
 
@@ -16,7 +16,7 @@ Left    | Left border alignment | Once selected, an input field will appear to s
 Right   | Right border alignment | Once selected, an input field will appear to set the distance between the right border of the current node and the right border of the parent object. |
 HorizontalCenter | Horizontal center alignment |
 VerticalCenter   | Vertical center alignment |
-Target  | Align the target | Specifies an alignment target that can only be one of the parent nodes of the current node. The default value is null, and when null, indicates the current parent.<br>If the parent node is the entire scene, it will be aligned to the visible area of the screen (`visibleRect`), and can be used to dock UI elements to the edge of the screen. |
+Target  | Alignment target | Specifies an alignment target that can only be one of the parent nodes of the current node. The default value is null, and when null, indicates the current parent.<br>If the parent node is the entire scene, it will be aligned to the visible area of the screen (`visibleRect`), and can be used to dock UI elements to the edge of the screen. |
 Align Mode | Specifies the alignment mode of the Widget, which determines when the widget should refresh at runtime | Normally set to __ALWAYS__, only to be initialized and realigned whenever the window size changes.<br>Set to __ONCE__, will only make alignment when the component is enabled.<br>Set to __ON_WINDOW_RESIZE__, will update Widget's alignment every time when the window changes. |
 
 ## Border alignment
@@ -51,7 +51,7 @@ The percentage will take the width or height of the parent node as a benchmark.
 
 If you align the left and right side at the same time, or align the top and bottom at the same time, then the size will be stretched in the corresponding direction.
 
-Let us look at a demonstration. Place two rectangular Sprites in the Scene and take the bigger one as the dialog box background and the smaller one as the button on the dialog box. Take the button node as the child node of the dialog box and set the button into __Sliced__ mode so that you can observe the stretch effect.
+Let us look at a demonstration. Place two rectangular Sprites in the Scene and take the bigger one as the dialog box background and the smaller one as the button on the dialog box. Take the button node as the child node of the dialog box and set the button into __SLICED__ mode so that you can observe the stretch effect.
 
 ### Horizontal stretch, left and right margin 10%:
 

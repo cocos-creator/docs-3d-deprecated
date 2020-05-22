@@ -1,6 +1,6 @@
 # Slider Component Reference
 
-Slider is a slider component, For the production of UI components such as volume adjustment.
+Slider is a component for the production of UI components such as volume adjustment.
 
 ![slider-content](slider/slider-content.png)
 
@@ -12,10 +12,10 @@ Click the __Add Component__ button at the bottom of the __Inspector__ panel and 
 
 | Properties     | Function Explanation |
 | -------------- | -----------          |
-| Handle         | Slider button part that allows the Slider's value to be adjusted by sliding the button  |
+| Handle         | The button part of the __Slider__ that allows to adjust value by sliding the button  |
 | Direction      | The direction of the slider, including __Horizontal__ and __Vertical__ |
 | Progress       | Current progress value, the value range is 0 ~ 1  |
-| SlideEvents    | Slider component event callback function  |
+| SlideEvents    | __Slider__ component event callback function  |
 
 ## Slider Event
 
@@ -23,13 +23,13 @@ Click the __Add Component__ button at the bottom of the __Inspector__ panel and 
 
 For event structure you can refer to the [Button](./button.md) documentation.
 
-The Slider event callback has two parameters, the first one is the Slider itself and the second is the `customEventData`.
+The __Slider__ event callback has two parameters, the first one is the Slider itself and the second is the `customEventData`.
 
 ## Detailed Explanation
 
-The Slider is usually used to adjust the value of the UI (for example, volume adjustment), and its main component is a slider button, which is used for user interaction. You can adjust the value of the Slider through this part.
+The __Slider__ is usually used to adjust the value of the UI (for example, volume adjustment), and its main component is a slider button, which is used for user interaction. You can adjust the value of the __Slider__ through this part.
 
-Usually a Slider node tree as shown below:
+Usually a __Slider__ node tree as shown below:
 
 ![slider-hierarchy](slider/slider-hierarchy.png)
 

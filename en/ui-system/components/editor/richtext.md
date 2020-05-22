@@ -2,7 +2,7 @@
 
 RichText component could be used for displaying a string with multiple styles. You could customize the text style of each text segment with a few simple BBCode.
 
-The currently supported tags are: `color`, `size`, `outline`, `b`, `i`, `u`, `br`, `img` and `on`, these tags could also be nested with each other.
+The currently supported tags are: `color`, `size`, `outline`, `b`, `i`, `u`, `br`, `img` and `on`, these tags could also be nested within each other.
 
 For more information about BBCode, please refer to the __BBCode format__ section below.
 
@@ -14,14 +14,14 @@ Click the __Add Component__ button at the bottom of the __Inspector__ panel and 
 
 | Properties       | Function Explanation  |
 | --------------   | -----------   |
-| Font             | Custom TTF font of RichText, all the label segment will use the same custom TTF font.  |
+| Font             | Custom TTF font of __RichText__, all the label segments will use the same custom TTF font.  |
 | FontSize         | Font size, in points (__Note__: This field does not affect the font size set in BBCode.) |
-| HandleTouchEvent | Once checked, the RichText will block all input events (mouse and touch) within the bounding box of the node, preventing the input from penetrating into the underlying node. |
+| HandleTouchEvent | Once checked, the __RichText__ will block all input events (mouse and touch) within the bounding box of the node, preventing the input from penetrating into the underlying node. |
 | Horizontal Align | Horizontal alignment   |
-| ImageAtlas      | The image atlas for the img tag. For each `src` value in the `img` tag, there should be a valid `spriteFrame` in the imageAtlas. |
+| ImageAtlas      | The image atlas for the `img` tag. For each `src` value in the `img` tag, there should be a valid `spriteFrame` in the imageAtlas. |
 | LineHeight      | Line height, in points.    |
-| MaxWidth        | The maximize width of RichText, pass 0 means not limit the maximize width. |
-| String           | Text of the RichText, you could use BBcode in the string. |
+| MaxWidth        | The maximize width of __RichText__, set to 0 means the maximize width is not limited. |
+| String           | Text of the __RichText__, you could use BBcode in the string. |
 
 ## BBCode format
 
@@ -51,7 +51,7 @@ __Note__: All tag names should be lowercase and the attribute assignment should 
 | on | Specify a event callback to a text node, when you click the node, the callback will be triggered. | `<on click="handler"> click me! </on>` | Except for `on` tag, `color` and `size` tags can also add `click` event parameter. eg. `<size=10 click="handler2">click me</size>` |
 | param | When the click event is triggered, the value can be obtained in the second attribute of the callback function. | `<on click="handler" param="test"> click me! </on>` | Depends on the click event. |
 | br | Insert a empty line | `<br/>` | `<br></br>` and `<br>` are both invalid tags. |
-| img | Add image and emoji support to your RichText. The emoji name should be a valid spriteframe name in the ImageAtlas. | `<img src='emoji1' click='handler' />` | Only `<img src='foo' click='bar' />` is a valid img tag. If you specify a large emoji image, it will scale the sprite height to the line height of the RichText together with the sprite width. |
+| img | Add image and emoji support to your __RichText__. The emoji name should be a valid sprite frame name in the ImageAtlas. | `<img src='emoji1' click='handler' />` | Only `<img src='foo' click='bar' />` is a valid img tag. If you specify a large emoji image, it will scale the sprite height to the line height of the __RichText__ together with the sprite width. |
 
 ### Nested Tags
 
@@ -74,6 +74,6 @@ __Note__: The two cannot be mixed. If mixed, the color set in the __second__ way
 
 ## Detailed Explanation
 
-The RichText component is implemented in the Javascript layer and uses the Label node as the rendering part. All the layout logic goes also in Javascript layer. This means if you create a very complex RichText which will end up with many label node created under the hook. And all these label node are using system font for rendering.
+The __RichText__ component is implemented in the Javascript layer and uses the Label node as the rendering part. All the layout logic goes also in Javascript layer. This means if you create a very complex __RichText__, it will end up with many label node created under the hook. And all these label node are using system font for rendering.
 
-So, you should avoid modifying the RichText content frequently in your game's main loop, which can lead to lower performance. Also, try to use the normal Label component instead of the RichText component if you can, and BMFont is the most efficient.
+So, you should avoid modifying the __RichText__ content frequently in your game's main loop, which can lead to lower performance. Also, try to use the normal Label component instead of the __RichText__ component if you can, and BMFont is the most efficient.

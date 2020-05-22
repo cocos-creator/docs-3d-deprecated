@@ -1,6 +1,6 @@
 # UITransform Component Reference
 
-The UITransform component defines the rectangle information on the UI, including the size and anchor position of the rectangle. This component allows developers to modify the size and position of the rectangle at will, generally for rendering, calculation of click events, UI layout, screen adaptation, etc.
+The UITransform component defines the rectangle information on the UI, including the content size and anchor position of the rectangle. This component allows developers to modify the size and position of the rectangle freely, generally for rendering, calculation of click events, UI layout, screen adaptation, etc.
 
 Click the __Add Component__ button at the bottom of the __Inspector__ panel and select __UITransform__ from __UI__ to add the UITransform component to the node.
 

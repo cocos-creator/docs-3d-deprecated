@@ -1,6 +1,6 @@
 # ScrollView Component Reference
 
-ScrollView is a container with a scroll function. It provides a way to browse more contents within a limited display area. Generally, ScrollView will be used along with the __Mask__ component and the __ScrollBar__ component can also be added to show the location of the browsing content.
+__ScrollView__ is a container with a scroll function. It provides a way to browse more contents within a limited display area. Generally, ScrollView will be used along with the __Mask__ component and the __ScrollBar__ component can also be added to show the current offset location within the browsing content.
 
 ![scrollview-content](scroll/scrollview-content.png)
 
@@ -12,17 +12,17 @@ Click the __Add Component__ button at the bottom of the __Inspector__ panel and 
 
 | Properties           | Function Explanation  |
 | --------------       | -----------           |
-| BounceDuration      | Floating point number, the time duration for bounce back. The calue range is 0-10 |
-| Brake                | Floating point number, the deceleration coefficient after scrolling. The value range is 0-1 where if set to 1, then the scroll will stop immediately; if set to 0, then the scroll will continue until the content border |
+| BounceDuration       | Floating point number, the time duration for bounce back. The value range is __0-10__ |
+| Brake                | Floating point number, the deceleration coefficient after scrolling. The value range is __0-1__. If set to 1, then the scrolling will stop immediately, if set to 0, then the scrolling will continue until the content border |
 | CancelInnerEvents    | If it is set to true, then the scroll behavior will cancel the touch events registered on the child node. The default setting is true |
-| Content              | A reference node for creating scrollable content from ScrollView. It could be a node containing a very large image |
-| Elastic              | Boolean value, whether to bounce back or not |
+| Content              | A reference node for the inner content of the __ScrollView__. It could be a node containing a very large image or long texts. |
+| Elastic              | Boolean value, whether to bounce back or not while scroll to the border. |
 | Horizontal           | Boolean value, whether horizontal scroll is allowed or not |
-| HorizontalScrollBar | A reference node for creating a scroll bar showing the horizontal position of the content      |
+| HorizontalScrollBar  | A reference node for creating a scroll bar showing the horizontal position of the content      |
 | Inertia              | Is there an accelerating velocity when scrolling   |
-| ScrollEvents    | Default list type is null. Each event added by the user is composed of the node reference, component name and a response function. Please see the __ScrollView Event__ section below for details     |
+| ScrollEvents         | Default list type is null. Each event added by the user is composed of the node reference, component name and a response function. Please see the __ScrollView Event__ section below for details     |
 | Vertical             | Boolean value, whether vertical scroll is allowed or not |
-| VerticalScrollBar   | A reference node for creating a scroll bar showing vertical position of the contents  |
+| VerticalScrollBar    | A reference node for creating a scroll bar showing vertical position of the contents  |
 
 ### ScrollView Event
 
@@ -34,7 +34,7 @@ The ScrollView event callback will have two parameters, the first one is the Scr
 
 ### ScrollBar Setting
 
-ScrollBar is optional. You can choose to set either a Horizontal ScrollBar or Vertical ScrollBar or of course set them both.
+ScrollBar is optional. You can choose to set either a Horizontal ScrollBar or a Vertical ScrollBar or of course set them both.
 
 To build a connection, you can drag a node with the ScrollBar component in the __Hierarchy__ over to the corresponding field in ScrollView.
 
@@ -42,7 +42,7 @@ To build a connection, you can drag a node with the ScrollBar component in the _
 
 The ScrollView component can only work with the specified content node. It calculates location information during scrolling using both the designated scroll direction and the length of the content node in this direction.
 
-The Content node can also set up the auto resize by adding a `WidgetComponent`, or it can complete child nodes layout by adding a `LayoutComponent`, but these two components should not be added to a node at the same time to avoid unintended consequences.
+The Content node can also set up the auto resize by adding a `WidgetComponent`, or it can arrange the layout of child nodes by adding a `LayoutComponent`, but these two components should not be added to a node at the same time to avoid unintentional consequences.
 
 Normally a ScrollView node tree resembles the following:
 

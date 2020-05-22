@@ -1,6 +1,6 @@
 # Line To
 
-The `lineTo()` method is used to add a new point, and then create a line from that point to the last specified point in the canvas.
+The `lineTo()` method is used to add a new point, and then create a line from the current graphic cursor to that point.
 
 | Parameter | Description |
 | --------- | ----------- |

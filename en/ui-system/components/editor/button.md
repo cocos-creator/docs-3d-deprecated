@@ -19,7 +19,7 @@ Click the __Add Component__ button at the bottom of the __Inspector__ panel and 
 
 ## Button Transition
 
-__Button Transition__ is used to indicate the status of the __Button__ when clicked by the user. Currently the types available are __NONE__, __COLOR__, __SPRITE__ and __SCALE__.
+__Button Transition__ is used to choose the action of the button when clicked by the user. Currently the types available are __NONE__, __COLOR__, __SPRITE__ and __SCALE__.
 
 ![transition](button/transition.png)
 
@@ -67,7 +67,7 @@ The __Button__ can additionally add a __click event__ to respond to the player's
 | --------------  | -----------                                       |
 | __Target__          | Node with the script component.                   |
 | __Component__       | Script component name.                            |
-| __Handler__         | Assign a callback function which will be triggered when the user clicks the Button. |
+| __Handler__         | Assign a callback function from the given component which will be triggered when the user clicks the Button. |
 | __CustomEventData__ | A user-defined string value passed as the last event argument of the event callback. |
 
 ### Add a callback using the script

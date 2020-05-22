@@ -1,6 +1,6 @@
 # Line Width
 
-The `lineWidth()` method adds a new point, and then creates a line from that point to the last specified point in the canvas.
+The `lineWidth` defines the width of drawing line for [`stroke`](./stroke.md) function.
 
 | Parameter | Description
 | -------------- | ----------- |

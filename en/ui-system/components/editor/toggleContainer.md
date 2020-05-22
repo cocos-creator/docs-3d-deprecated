@@ -1,6 +1,6 @@
 # ToggleContainer Component Reference
 
-ToggleContainer is not a visiable UI component that can be used to modify the behavior of a set of Toggle components. Toggles that belong to the same ToggleContainer could only have one of them to be switched on at a time.
+ToggleContainer is not a visible UI component but it can be used to modify the behavior of a set of Toggle components. Toggles that belong to the same ToggleContainer could only have one of them to be switched on at a time.
 
 ![toggle-container](toggle/toggle-container.png)
 

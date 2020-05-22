@@ -1,6 +1,6 @@
 # Common UI Controls
 
-This document describes commonly used controls in the UI system, use the core rendering component, and alignment strategy. These controls will constitute the most interactive part of our game UI.
+This document describes commonly used control components in the UI system, the core rendering components, and alignment and layout strategy components. These controls will constitute the most interactive part of our game UI.
 
 Some commonly used UI controls can be created by adding nodes. In the upper left corner of the __Hierarchy__, select __UI__ in the __+__ create node menu to create a UI node, and the corresponding UI component will be automatically mounted on the node:
 

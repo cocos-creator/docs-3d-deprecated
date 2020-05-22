@@ -1,4 +1,4 @@
-# ArcS
+# Arc
 
 The `arc()` method creates an arc/curve (used to create circles or partial circles).
 
@@ -9,7 +9,7 @@ The `arc()` method creates an arc/curve (used to create circles or partial circl
 | *x* | The x coordinate of the center of the circle. |
 | *y* | The y coordinate of the center of the circle. |
 | *r* | Radius of the circle. |
-| *sAngle* | Starting angle in radians (The arc's three o'clock position is 0 degrees). |
+| *sAngle* | Start angle in radians (The arc's three o'clock position is 0 degrees). |
 | *eAngle* | End angle in radians. |
 | *counterclockwise* | Optional. Specifies whether draw the arc counterclockwise or clockwise. False = clockwise, true = counterclockwise. |
 

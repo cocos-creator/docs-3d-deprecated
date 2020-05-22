@@ -1,6 +1,6 @@
 # Fill Color
 
-The `fillColor()` method sets or returns the color used for the fill.
+The `fillColor` property represents the color used for the [`fill`](./fill.md) function.
 
 ## Example
 

@@ -1,6 +1,6 @@
 # LabelOutline Component Reference
 
-The __LabelOutline__ component will add an outline effect to the __Label__ component on the node. __LabelOutline__ cannot be used for __BMFonts__.
+The __LabelOutline__ component will add an outline effect to the __Label__ component on the node. __LabelOutline__ won't have any effect on __Label__ using __BMFont__.
 
 ![](label/labeloutline.png)
 

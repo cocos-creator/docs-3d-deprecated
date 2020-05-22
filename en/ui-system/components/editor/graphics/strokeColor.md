@@ -1,6 +1,6 @@
 # Stroke Color
 
-The `strokeColor` method sets or returns the color used for the stroke.
+The `strokeColor` defines the color used for the [`stroke`](./stroke.md) function.
 
 ## Example
 

@@ -13,7 +13,7 @@ Click the __Add Component__ button at the bottom of the __Inspector__ panel and 
 | __BackgroundImage__      | The Sprite component attached to the node for EditBox's background |
 | __FontColor__            | The input text color of EditBox |
 | __FontSize__             | The input text size of EditBox |
-| __InputFlag__            | Specify the input flag: password or capitalize word. (Only supports Android platform) |
+| __InputFlag__            | Specify the input flag: password or capitalized word. (Only supports Android platform) |
 | __InputMode__            | Specify the input mode: multiline or single line |
 | __LineHeight__           | The input text line height of EditBox |
 | __MaxLength__            | The maximize input characters of EditBox  |
@@ -42,7 +42,7 @@ For event structure you can refer to the [Button](./button.md) documentation.
 
 - If you want to input password, you need set __Input Flag__ to `PASSWORD` and the __Input Mode__ mustn't be `ANY`, usually we use __Single Line__.
 - If you want to enable multiline input support, you can set the __Input Mode__ to `Any`.
-- The background image of EditBox support 9-slicing, you could customize the border as you did in Sprite component.
+- The background image of EditBox support 9-slicing sprite frame, you could customize the border as you did in Sprite component.
 
 ## Add a callback through the script code
 
@@ -99,7 +99,7 @@ export class example extends Component {
 
 ### Method two
 
-Added by the way of `editbox.node.on('editing-did-began', ...)`.
+Added with **Node**'s event API `editbox.node.on('editing-did-began', ...)`.
 
 ```ts
 // Suppose we add an event handler callback inside a component's onLoad method and event handlers in the callback function.

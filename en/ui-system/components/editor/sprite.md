@@ -1,6 +1,6 @@
 # Sprite Component Reference
 
-Using Sprite is the most common way to display images in 2D/3D games. By adding the Sprite component to a Node, you can display images from project resources in the scene.
+Using Sprite is the most common way to display images in 2D/3D games. By adding the Sprite component to a Node, you can display __SpriteFrame__ assets from project resources.
 
 ![add sprite](sprite/sprite-component.png)
 
@@ -10,15 +10,15 @@ You can add a Sprite component to the node by clicking the __Add Component__ but
 
 | Properties | Function Explanation
 | -------------- | ----------- |
-| Type | Rendering mode, currently includes `Simple`, `Sliced`, `Tiled`, `Filled` four rendering modes.
+| Type | Rendering mode, currently includes `SIMPLE`, `SLICED`, `TILED`, `FILLED` four rendering modes.
 | Color | Image color.
-| Grayscale | If enabled, Sprite will render in grayscale mode.
-| Size Mode | Specify the size of the Sprite.<br>`Trimmed` automatically fit to the size of the sprite cropped<br>`Raw` automatic fit for sprite original size.<br>`Custom` use the node preset size. When the developer manually modifies `Size` properties, `Size Mode` will be automatically set to `Custom`.
+| Grayscale | If enabled, Sprite will be rendered in gray scale mode.
+| Size Mode | Specify the size of the Sprite.<br>`TRIMMED` automatically fit to the size of the sprite cropped<br>`RAW` automatic fit for sprite original size.<br>`CUSTOM` use the node preset size. When the developer manually modifies `Size` properties, `Size Mode` will be automatically set to `Custom`.
 | Atlas | [Auto Atlas](../../../asset/atlas.md) which the Sprite display image resource belongs to.
 | Sprite Frame | [Sprite Frame Assets](../../../asset/sprite-frame.md) which is used to render the Sprite. (The __Edit__ button behind Sprite Frame is used to edit the 9-sliced cutting of the image resource, please refer to [Use a Sliced Sprite to make a UI image](../engine/sliced-sprite.md).
 | Trim | Whether the transparent pixel area is included in the node bounding box. Please refer to [Auto Trim for SpriteFrame](../engine/trim.md).
 | Src Blend Factor | The source image blend mode.
-| Dst Blend Factor | The destination image blend mode. Together with the above properties, you can mix the foreground and background Sprite in different ways to render, and the effect preview can refer to [glBlendFunc Tool](http://www.andersriggelsen.dk/glblendfunc.php).
+| Dst Blend Factor | The destination image blend mode. Together with the above properties, you can mix the foreground Sprite and background in different ways to render, and you can refer to [glBlendFunc Tool](http://www.andersriggelsen.dk/glblendfunc.php) for a effect preview.
 
 After adding the Sprite component, drag the SpriteFrame type resource from the __Assets__ to the `Sprite Frame` property reference. Then, the resource image can be displayed through the Sprite component.
 
@@ -32,7 +32,7 @@ Currently, the Sprite component supports the following rendering modes:
 
 - `Simple mode`: rendering the Sprite according to the original image resource. It is normally used along with `Use Original Size` to guarantee the image shown in the scene is in full accordance with the image designed by the graphic designer.
 
-- `Sliced mode`: the image is cut up into a 9-slicing and according to certain rules is scaled to fit freely set dimensions (`size`). It is usually used in UI elements or to make images that can be enlarged infinitely without influencing the image quality into images cut up into a grid to save game resource space. Please read [Use a Sliced Sprite to make a UI image](../engine/sliced-sprite.md) for details.
+- `Sliced mode`: the image is cut up into a 9-slicing and according to certain rules is scaled to fit freely set dimensions (`size`). It is usually used in UI elements or to make images that can be enlarged infinitely without influencing the image quality. It will cut up the original image into a grid to save game resource space. Please read [Use a Sliced Sprite to make a UI image](../engine/sliced-sprite.md) for details.
 
 - `Tiled mode`: The image will be repeated to fit the size of the Sprite. If the SpriteFrame is [9-sliced](../engine/sliced-sprite.md), the corners will also remain unscaled while the other areas will be repeated.
 
