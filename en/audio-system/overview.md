@@ -10,13 +10,13 @@ Note that although the **audioClip** resource itself also has direct interface i
 
 ## Audio related events
 All **AudioClip** resource objects are one EventTarget：
-* The `started` event is sent when the audio starts to actually play.
-* When the audio playback ends naturally, the `ended` event will be issued.
+  * The `started` event is sent when the audio starts to actually play.
+  * When the audio playback ends naturally, the `ended` event will be issued.
 
 ## Platform differentiation
 
 Web audio API, DOM audio, WeChat mini game audio are currently supported, although the audio interface implementations of each platform are not fully unified at runtime, <br>
 We've tried to minimize this difference in the engine, but there's still some incongruity in the engine:
-* The DOM audio mode on iOS platform does not support adjusting the volume, and all volume related attributes will not be valid. Calling `playOneShot` multiple times causes the audio in play to stops and then replay the same audio.
-* Only Web Audio mode supports multiple playback of the same audio. In other modes, to avoid repeated creation,the playing
-* At present, most platforms have complied with the latest [auto play police](https://www.chromium.org/audio-video/autoplay), Even if `playOnAwake` is set, it will only start playing when the user input is first received.
+  * The DOM audio mode on iOS platform does not support adjusting the volume, and all volume related attributes will not be valid. Calling `playOneShot` multiple times causes the audio in play to stops and then replay the same audio.
+  * Only Web Audio mode supports multiple playback of the same audio. In other modes, to avoid repeated creation,the playing
+  * At present, most platforms have complied with the latest [auto play policy](https://www.chromium.org/audio-video/autoplay), Even if `playOnAwake` is set, it will only start playing when the user input is first received.
