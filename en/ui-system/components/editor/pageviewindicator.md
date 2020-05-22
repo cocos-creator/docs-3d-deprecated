@@ -1,0 +1,20 @@
+# PageviewIndicator Component Reference
+
+The __PageViewIndicator__ component is used to display the current page number of the __PageView__ and the page where the tag is currently located.
+
+![pageviewindicator.png](./pageviewindicator/pageviewindicator.png)
+
+Click the __Add Component__ button at the bottom of the __Inspector__ panel and select __UI/PageViewIndicator__ to add the __PageViewIndicator__ component to the node.
+
+## PageviewIndicator Properties
+
+| Properties | Function Description |
+| ----------- | ----------- |
+| *CellSize*    | The cellsize for each element |
+| *Direction*   | The location direction of __PageViewIndicator__, including __HORIZONTAL__ and __VERTICAL__ |
+| *Spacing*     | The distance between each element |
+| *SpriteFrame* | The spriteFrame for each element |
+
+## Detailed Explanation
+
+__PageviewIndicator__ is not used alone, it needs to be used with `PageView` to create a tag of the number of pages corresponding to the page. When you slide to a page, __PageviewIndicator__ will highlight its corresponding mark.
