@@ -88,7 +88,6 @@ Android 要求所有 APK 必须先使用证书进行数字签署，然后才能�
 #### Orientation 屏幕方向
 
 - portrait: 屏幕直立，home 键在下
-- upsideDown: 屏幕直立，上下顛倒，home 键在下
 - landscapeLeft: 屏幕向左橫置，home 键在屏幕左侧的横屏
 - landscapeRight: 屏幕向右橫置，home 键在屏幕右侧的横屏
 
