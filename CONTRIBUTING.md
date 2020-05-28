@@ -8,10 +8,11 @@
 - to designate important Creator UI elements. Example: __Hierarchy Panel__, __Assets Panel__
 
 ### Using Italics
-
+- list items. Example: *apple*, *orange*, *banana*, and *pear*
 
 ### Using a single backtick
 - designate properties
+- filenames and paths. Example: `myfile.txt` and `/mypath/myfile.txt'
 
 ### Using a triple backtick
 - code blocks
@@ -22,5 +23,12 @@
 - Cocos Creator 3D —> __Cocos Creator 3D__ (let's bold our product name
 - **Note**: —> > **Note**:
 - Related Reference Links —> Reference documentation
+- do not use phrases like: "Now let me explain", "he should do this"
+
+### Technical designations
+- json -> JSON
+- js -> JavaScript
+- ts -> TypeScript
+
  
 
