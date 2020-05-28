@@ -24,6 +24,7 @@
 - **Note**: —> > **Note**:
 - Related Reference Links —> Reference documentation
 - do not use phrases like: "Now let me explain", "he should do this"
+- text like this should be avoided: "If you have never written a program and don’t worry, we will provide all the required code in the tutorial, just copy and paste it to the correct location, and then you can find your programmer partner to solve this part of the work. Let's start creating the script that drives the main character's actions."
 
 ### Technical designations
 - json -> JSON
