@@ -88,8 +88,8 @@ It is necessary for the main character to be affected when the mouse moves. To d
 
 > **Note:** The name of the script in __Cocos Creator 3D__ is the name of the component. This name is case sensitive! If the capitalization of the component name is incorrect, the component cannot be used correctly by the name!
 
-#### 编写脚本代码
-在打开的 PlayerController 脚本里已经有了预先设置好的一些代码块，如下所示：
+#### Writing script code
+There are already some pre-set code blocks in the `PlayerController` script. Example:
 
 ```ts
 import { _decorator, Component } from "cc";
@@ -113,9 +113,11 @@ export class PlayerController extends Component {
     // }
 }
 ```
-这些代码就是编写一个组件（脚本）所需的结构。具有这样结构的脚本就是 Cocos Creator 3D 中的 **组件（Component）**，他们能够挂载到场景中的节点上，提供控制节点的各种功能，更详细的脚本信息可以查看 [脚本](../../scripting/index.md)。
 
-我们在脚本中添加对鼠标事件的监听，然后让Player动起来，将PlayerController中代码做如下修改。
+This code is the structure needed to write a __component__. Scripts with this structure are the **Components in Cocos Creator 3D**. They can be attached to nodes in the __Scene__ and provide various functions for controlling nodes. For detailed information review the [Script]( ../../scripting/index.md) documentation.
+
+We add the monitoring of mouse events in the script, and then let the `Player` move, modify the code in `PlayerController` as follows:
+
 ```ts
 import { _decorator, Component, Vec3, systemEvent, SystemEvent, EventMouse, AnimationComponent, v3 } from "cc";
 const { ccclass, property } = _decorator;
@@ -192,19 +194,19 @@ export class PlayerController extends Component {
 }
 ```
 
-现在我们可以把 `PlayerController` 组件添加到主角节点上。在 **层级管理器** 中选中 `Player` 节点，然后在 **属性检查器** 中点击 **添加组件** 按钮，选择 **添加用户脚本组件 -> PlayerController**，为主角节点添加 `PlayerController` 组件。
+__Next__, attach the `PlayerController` component to the `Player` node. Select the `Player` node in the **Hierarchy Manager**, then click the **Add Component** button in the **Property Inspector**, select **Add User Script Component- > PlayerController** to the `Player` node to add the `PlayerController` component.
 
-   ![add player controller comp](./images/add-player-controller.png)
+  ![add player controller comp](./images/add-player-controller.png)
 
-为了能在运行时看到物体，我们需要将场景中的Camera进行一些参数调整，将位置放到（0，0，13），Color设置为（50，90，255，255）：
+In-order to see the object at runtime, we need to adjust some parameters of the Camera in the scene, set the __position__ to __(0, 0, 13)__, and set the __Color__ to __(50, 90, 255, 255)__:
 
-   ![camera setting](./images/camera-setting.png)
+  ![camera setting](./images/camera-setting.png)
 
-现在点击工具栏中心位置的Play按钮![play button](./images/play.png)，在打开的网页中点击鼠标左键和右键，可以看到如下画面：
+__Now__, click the __Play__ button. Once running, click the left and right mouse buttons on the opened web page, you can see the following screen:
 
-   ![player move](./images/player-move.gif)
+  ![player move](./images/player-move.gif)
 
-更多的预览功能，可以参考 [项目预览调试](../../editor/preview/index.md)
+For additional etails please refer to the [Project Preview Debugging](../../editor/preview/index.md) documentation.
 
 ### 添加角色动画
 从上面运行的结果可以看到单纯对Player进行水平方向的移动是十分呆板的，我们要让Player跳跃起来才比较有感觉，我们可以通过为角色添加垂直方向的动画来达到这个效果。有关 **动画编辑器** 的更多信息，请阅读 [动画编辑器](../../editor/animation/index.md)
