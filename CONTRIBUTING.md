@@ -12,7 +12,7 @@
 
 ### Using a single backtick
 - designate properties
-- filenames and paths. Example: `myfile.txt` and `/mypath/myfile.txt'
+- filenames and paths. Example: `myfile.txt` and `/mypath/myfile.txt`
 
 ### Using a triple backtick
 - code blocks
