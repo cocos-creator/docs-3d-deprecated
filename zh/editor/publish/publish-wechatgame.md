@@ -105,7 +105,7 @@ orientation | 必填 | 'landscape' | 设备方向，填写后将会写入在 `ga
 
 详情请参考 [接入微信小游戏的开放数据域](../publish/publish-wechatgame-subdomain.md)。
 
-## 微信小游戏已知问题：
+## 微信小游戏已知问题
 
 我们对微信小游戏的适配工作还未完全结束，目前仍不支持以下组件：
 

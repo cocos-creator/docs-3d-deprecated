@@ -35,6 +35,7 @@ orientation | 必填 | 'auto' | 设备方向，可选值为` 'auto'、'landscape
 上图所示就是 Web Mobile 模式的预览，可以看到游戏视图会占满整个窗口, 而 Web Desktop 则不会撑满屏幕，如下图。
 
 ![web mobile](publish-web/web-desktop.gif)
+
 ### 浏览器兼容性
 
 Cocos Creator 3D 开发过程中测试的桌面浏览器包括： Chrome，Firefox（火狐），

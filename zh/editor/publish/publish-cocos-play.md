@@ -29,11 +29,11 @@ packFirstScreenRes: false,
 
 一、使用 Cocos Creator 3D 打开需要发布的项目工程，在 **构建发布** 面板的 **发布平台** 中选择 **Cocos Play 小游戏**，参考参数说明配置好选项后，点击构建即可。
 
-![](publish-cocos-play/build.png)
+![](publish-cocos-play/build.jpg)
 
 构建后，点击构建任务的显示文件目录按钮，即可看到对应文件夹内有导出的即刻玩小游戏工程目录和 cpk 文件。cpk 包在 **/build/cocos-play** 目录下。
 
-![](publish-cocos-play/package.png)
+![](publish-cocos-play/package.jpg)
 
 ## 测试运行
 
