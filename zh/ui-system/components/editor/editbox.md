@@ -12,16 +12,21 @@ EditBox 是一种文本输入组件，该组件让你可以轻松获取用户输
 
 | 属性                   | 功能说明                                                                       |
 | --------------         | -----------                                                                  |
-| String                 | 输入框的初始输入内容，如果为空则会显示占位符的文本                                   |
-| Placeholder            | 输入框占位符的文本内容                                                           |
-| Background             | 输入框背景节点上挂载的 Sprite 组件对象                                            |
-| TextLabel              | 输入框输入文本节点上挂载的 Label 组件对象                                          |
-| PlaceholderLabel       | 输入框占位符节点上挂载的 Label 组件对象                                           |
-| Keyboard Return Type   | 指定移动设备上面回车按钮的样式                                                    |
-| Input Flag             | 指定输入标识：可以指定输入方式为密码或者单词首字母大写（仅支持 Android 平台）           |
-| Input Mode             | 指定输入模式: ANY 表示多行输入，其它都是单行输入，移动平台上还可以指定键盘样式。         |
-| MaxLength              | 输入框最大允许输入的字符个数                                                      |
-| TabIndex               | 修改 DOM 输入元素的 tabIndex，这个属性只有在 Web 上面修改有意义。                    |
+| BackgroundImage      | 输入框背景节点上挂载的 Sprite 组件对象  |
+| FontColor            | 输入框文本的颜色 |
+| FontSize             | 输入框文本的字体大小 |
+| InputFlag           | 指定输入标识：可以指定输入方式为密码或者单词首字母大写（仅支持 Android 平台）|
+| InputMode           | 指定输入模式: ANY 表示多行输入，其它都是单行输入，移动平台上还可以指定键盘样式。 |
+| LineHeight           | 输入框文本的行高 |
+| MaxLength            | 输入框最大允许输入的字符个数  |
+| Placeholder          | 输入框占位符的文本内容  |
+| PlaceholderFontColor | 输入框占位符的文本字体颜色  |
+| PlaceholderFontSize  | 输入框占位符的文本字体大小  |
+| PlaceholderLabel     | 输入框占位符节点上挂载的 Label 组件对象  |
+| ReturnType           | 指定移动设备上面回车按钮的样式
+| String               | 输入框的初始输入内容，如果为空则会显示占位符的文本 |
+| TabIndex             | 修改 DOM 输入元素的 tabIndex，这个属性只有在 Web 上面修改有意义。 |
+| TextLabel            | 输入框输入文本节点上挂载的 Label 组件对象  |
 
 ## EditBox 事件
 
@@ -78,7 +83,7 @@ export class example extends Component {
     }
     // 假设这个回调是给 textChanged 事件的
     onTextChanged(text, editbox, customEventData) {
-        // 这里的 text 表示 修改完后的 EditBox 的文本内容
+        // 这里的 text 表示修改完后的 EditBox 的文本内容
         // 这里 editbox 是一个 cc.EditBox 对象
         // 这里的 customEventData 参数就等于你之前设置的 "foobar"
     }
@@ -117,6 +122,6 @@ export class example extends Component {
 
 ---
 
-### [**其他基础模块参考**](base-component.md)
+- [其他基础模块参考](base-component.md)
 
-### [**渲染模块参考**](render-component.md)
+- [渲染模块参考](render-component.md)

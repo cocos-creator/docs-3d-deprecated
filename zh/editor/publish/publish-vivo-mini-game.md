@@ -16,7 +16,8 @@
     ```
 
 - 全局安装 vivo-minigame/cli。确定 npm 源地址后，安装 `vivo-minigame/cli`：
-    ```
+
+    ```bash
     npm install -g @vivo-minigame/cli
     ```
 
@@ -85,7 +86,7 @@
 
     - 通过命令行生成 release 签名
 
-      用户需要通过 openssl 命令等工具生成签名文件 private.pem、certificate.pem。其中在 build/qgame/sign/debug 目录下的证书仅供调试使用。
+      用户需要通过 openssl 命令等工具生成签名文件 private.pem、certificate.pem。
 
       ```bash
       # 通过 openssl 命令工具生成签名文件

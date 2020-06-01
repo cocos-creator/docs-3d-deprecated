@@ -40,16 +40,16 @@ jsval_to_string(cx, returnParam, &url);
 
 在 native 选项的 **模板 (Template)** 下拉菜单中有两种可用的引擎模板，我们可以从中选择一种：
 
-- default，使用默认的 cocos2d-x 源码版引擎构建项目
-- link，与 default 模板不同的是，link 模板不会拷贝 cocos2d-x 源码到构建目录下，而是使用共享的 cocos2d-x 源码。这样可以有效减少构建目录占用空间，以及对 cocos2d-x 源码的修改可以得到共享。
+- default，使用默认的 Cocos2d-x 源码版引擎构建项目
+- link，与 default 模板不同的是，link 模板不会拷贝 Cocos2d-x 源码到构建目录下，而是使用共享的 Cocos2d-x 源码。这样可以有效减少构建目录占用空间，以及对 Cocos2d-x 源码的修改可以得到共享。
 
 关于源码引擎的概念，可以参照下文：
 
-> cocos2d-x 引擎中包括源码引擎。他们适用的范围是：
+> Cocos2d-x 引擎中包括源码引擎。他们适用的范围是：
 > - 源码引擎初次构建和编译某个工程时需要很长的时间编译 C++ 代码，视电脑配置而定，这个时间可能在 5~20 分钟。对于同一个项目，已经编译过一次之后，下次再编译需要的时间会大大缩短。
 > - 源码引擎构建出的工程，使用原生开发环境编译和运行（如 Android Studio、Xcode 等 IDE），是可以进行调试和错误捕获的。
 
-目前 Cocos Creator 3D 安装目录下已经包含了自带的 cocos2d-x 源码引擎，在安装目录下的 resources/3d/cocos2d-x-lite 文件夹内可以查看到。
+目前 Cocos Creator 3D 安装目录下已经包含了自带的 Cocos2d-x 源码引擎，在安装目录下的 resources/3d/cocos2d-x-lite 文件夹内可以查看到。
 
 #### Polyfills
 
@@ -75,7 +75,7 @@ jsval_to_string(cx, returnParam, &url);
 
 **注意**：
 
-- 当你选择一个 ABI 构建完成之后，在不 Clean 的情况下，构建另外一个 ABI，此时两个 ABI 的 so 都会被打包到 apk 中，这个是 Android Studio 默认的行为。若用 Android Studio 导入工程，选择一个 ABI 构建完成之后，先执行一下 **Build  -> Clean Project** 再构建另外一个 ABI，此时只有后面那个 ABI 会被打包到 apk 中。
+- 当你选择一个 ABI 构建完成之后，在不 Clean 的情况下，构建另外一个 ABI，此时两个 ABI 的 so 都会被打包到 apk 中，这个是 Android Studio 默认的行为。若用 Android Studio 导入工程，选择一个 ABI 构建完成之后，先执行一下 **Build -> Clean Project** 再构建另外一个 ABI，此时只有后面那个 ABI 会被打包到 apk 中。
 
 - 项目工程用 Android Studio 导入后，是一个独立的存在，不依赖于构建面板。如果需要修改 ABI，直接修改 **gradle.properties** 中的 **PROP_APP_ABI** 属性即可。
 
@@ -119,19 +119,19 @@ Android 要求所有 APK 必须先使用证书进行数字签署，然后才能�
 
 选择发布平台，设置了初始场景以及对应平台配置项后，就可以开始构建了，点击右下角的 `构建` 按钮，开始构建流程。
 
-构建结束后，我们得到的是一个标准的 cocos2d-x 工程，和使用 Cocos Console 新建的工程有同样的结构。点击发布路径旁边的 **打开** 按钮，就会在操作系统的文件管理器中打开构建发布路径，例如 `build/native`，展开目录至下图所示，里面就包含了所有原生构建工程。目前编辑器尚未集成编译功能，需要手动在相应平台的 IDE （如 Xcode、Android Studio、Visual Studio）中打开构建好的原生工程，进行进一步的预览、调试和发布。
+构建结束后，我们得到的是一个标准的 Cocos2d-x 工程，和使用 Cocos Console 新建的工程有同样的结构。点击发布路径旁边的 **打开** 按钮，就会在操作系统的文件管理器中打开构建发布路径，例如 `build/native`，展开目录至下图所示，里面就包含了所有原生构建工程。目前编辑器尚未集成编译功能，需要手动在相应平台的 IDE （如 Xcode、Android Studio、Visual Studio）中打开构建好的原生工程，进行进一步的预览、调试和发布。
 
 ![native projects](publish-native/native_projects.png)
 
 图中红框所示的就是不同原生平台的工程，下面简单介绍一下各个平台的手动编译方式：
 
-- iOS 平台：使用 Xcode 打开构建目录下的 native\frameworks\runtime-src\proj.ios_mac\.xcodeproj 文件，在 Xcode 面板 General -> Signing 中设置签名，在 Xcode 左上方选择连接的设备后点击编译按钮进行编译运行。
+- iOS 平台：使用 Xcode 打开构建目录下的 `native\frameworks\runtime-src\proj.ios_mac\.xcodeproj` 文件，在 Xcode 面板 `General -> Signing` 中设置签名，在 Xcode 左上方选择连接的设备后点击编译按钮进行编译运行。
 
-- Android 平台：过 Android Studio 打开工程，如版本升级根据提示下载缺失的工具即可，再进行编译运行。
+- Android 平台：使用 Android Studio 打开工程，如版本升级根据提示下载缺失的工具即可，再进行编译运行。
 
-- Mac 平台：使用 Xcode 打开构建目录下的 native\frameworks\runtime-src\proj.ios_mac 文件夹后即可编译预览。
+- Mac 平台：使用 Xcode 打开构建目录下的 `native\frameworks\runtime-src\proj.ios_mac` 文件夹后即可编译运行。
 
-- Windows 平台：使用 Visual Studio （推荐使用2017）打开构建目录下的 native\frameworks\runtime-src\proj.win32 文件夹内的 .sln 文件或者直接双击该文件，编译运行。在安装 Visual Studio 时，请注意需要勾选安装 Windows 8.1 版本 SDK。
+- Windows 平台：使用 Visual Studio（推荐使用 Visual Studio 2017）打开构建目录下的 `native\frameworks\runtime-src\proj.win32\.sln` 文件或者直接双击该文件，即可编译运行。在安装 Visual Studio 时，请注意需要勾选安装 Windows 8.1 版本 SDK。
 
 **注意**：在 MIUI 10 系统上运行 debug 模式构建的工程可能会弹出 “Detected problems with API compatibility” 的提示框，这是 MIUI 10 系统自身引入的问题，使用 release 模式构建即可。
 

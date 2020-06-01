@@ -7,6 +7,56 @@ The __component__ contains the __component's__ __name__ and other properties, su
 
 __Animation components__ can animate the __node__ and __component__ properties on the __node__ and __child nodes__, including __Properties__ in __user-defined scripts__. This means that various animation requirements can be flexibly implemented. The specific animation implementation depends on different animation needs and different steps. For an example case, please refer to the [official example-3d](https://github.com/cocos-creator/example-3d). This repository mainly introduces some common editing operations and facilitates rapid editing to achieve these effects.
 
+## Modify a clip's common properties
+
+**sample**: define the frame rate of the current animation data per second, the default is __60__, this parameter will affect the number of frames between every two integer seconds scale on the time axis (that is, how many divisions within one seconds).
+
+**speed**: the current playback speed of the animation, the default is __1__.
+
+**duration**: when the animation playback speed is __1__, the duration of the animation.
+
+**real time**: the actual duration of the animation from the beginning to the end of the animation, corresponding to the number in the parenthesis in the lower right corner of the editor.
+
+**wrap mode**: **Loop mode**, please refer to the [Cycle Mode](./../../engine/animation-clip.md#CycleMode) documentation for specific configuration effects.
+
+Changes to properties take effect after the focus leaves the control.
+
+## Common operations of node panel
+
+The __animation clip__ defines the position of the data by the name of the node, ignoring the root node itself, and the remaining child nodes find their corresponding data through the **relative path** index of the root node.
+
+- **Clear node data**: right-click the node item of the animation editor, select __Empty Data__, and select __Clear__ after the pop-up window prompts
+
+- **Migrating node data**: sometimes we will rename the node after the animation is completed, which will cause problems with the animation data, as shown below:
+
+    ![](./animation-clip/missing_node.png)
+
+    At this time, we can right-click on __Migrate Data__ on the missing node, and then click on other nodes to migrate the data. If you do not want to migrate after clicking __Migrate Data__, click directly in the timeline area or click __Cancel__ in the pop-up window after clicking other nodes.
+
+    !(./animation-clip/moving_node.gif)
+
+    > **Note**: by default, node data migration will overwrite the data on the target node
+
+## Common operations of property track data
+
+An __animation clip__ may contain multiple nodes, and multiple __animation properties__ are bound to each node. The data in each property is the actual __key frame__. The __key frame__ operation in the property has been mentioned above. This section mainly introduces some operations for the entire property track:
+
+- **Add an property track**: click the `+` small button next to the __property list__, after the pop-up property menu pops up, click on the property that needs to be added. Example:
+
+    ![](./animation-clip/add-property.gif)
+
+- **Remove property track**: right-click the property list item and select __Remove property track__. Example:
+
+    ![](./animation-clip/clear-property.gif)
+
+- **Clear track data**: right-click the property list item and select __Clear property track__. Example:
+
+    ![](./animation-clip/remove-property.gif)
+
+- **Copy and paste track data**: right-click the property list item, select **copy track data** or press __Ctrl + C__, then click the same type of track as the copied track, right-click will see the paste option, click or press __Ctrl + V__ to paste. Example:
+
+    ![](./animation-clip/copy-property.gif)
+
 ## Common Key Frame Operations
 
 In the process of __producing animations__, there are often some __manipulation of key frames__. There are a variety of __key frame__ processing methods in the __animation editor.__. Knowing these methods and techniques can help to edit __animation clips__ faster.
@@ -83,56 +133,6 @@ After selecting multiple __key frames__, adjust the number of interval __key fra
     ![](./animation-clip/copy-key frames.gif)
 
 > **Tips**: when copying and pasting a single __key frame__ within a short distance, it is recommended to use __alt + mouse dragging__; for long distance and __multiple key frames__, it is recommended to use the __shortcut key__ to *copy*, and the __right mouse__ button to *paste*.
-
-## Common operations of property track data
-
-An __animation clip__ may contain multiple nodes, and multiple __animation properties__ are bound to each node. The data in each property is the actual __key frame__. The __key frame__ operation in the property has been mentioned above. This section mainly introduces some operations for the entire property track:
-
-- **Add an property track**: click the `+` small button next to the __property list__, after the pop-up property menu pops up, click on the property that needs to be added. Example:
-
-    ![](./animation-clip/add-property.gif)
-
-- **Remove property track**: right-click the property list item and select __Remove property track__. Example:
-
-    ![](./animation-clip/clear-property.gif)
-
-- **Clear track data**: right-click the property list item and select __Clear property track__. Example:
-
-    ![](./animation-clip/remove-property.gif)
-
-- **Copy and paste track data**: right-click the property list item, select **copy track data** or press __Ctrl + C__, then click the same type of track as the copied track, right-click will see the paste option, click or press __Ctrl + V__ to paste. Example:
-
-    ![](./animation-clip/copy-property.gif)
-
-## Common operations of node panel
-
-The __animation clip__ defines the position of the data by the name of the node, ignoring the root node itself, and the remaining child nodes find their corresponding data through the **relative path** index of the root node.
-
-- **Clear node data**: right-click the node item of the animation editor, select __Empty Data__, and select __Clear__ after the pop-up window prompts
-
-- **Migrating node data**: sometimes we will rename the node after the animation is completed, which will cause problems with the animation data, as shown below:
-
-    ![](./animation-clip/missing_node.png)
-
-    At this time, we can right-click on __Migrate Data__ on the missing node, and then click on other nodes to migrate the data. If you do not want to migrate after clicking __Migrate Data__, click directly in the timeline area or click __Cancel__ in the pop-up window after clicking other nodes.
-
-    !(./animation-clip/moving_node.gif)
-
-    > **Note**: by default, node data migration will overwrite the data on the target node
-
-## Modify a clip's common properties
-
-**sample**: define the frame rate of the current animation data per second, the default is __60__, this parameter will affect the number of frames between every two integer seconds scale on the time axis (that is, how many divisions within one seconds).
-
-**speed**: the current playback speed of the animation, the default is __1__.
-
-**duration**: when the animation playback speed is __1__, the duration of the animation.
-
-**real time**: the actual duration of the animation from the beginning to the end of the animation, corresponding to the number in the parenthesis in the lower right corner of the editor.
-
-**wrap mode**: **Loop mode**, please refer to the [Cycle Mode](./../../engine/animation-clip.md#CycleMode) documentation for specific configuration effects.
-
-Changes to properties take effect after the focus leaves the control.
 
 For more about the design of animation sequences and the content of scripting animations, you can refer to the [Animation Clip](./../../engine/animation/animation-clip.md) documentation.
 

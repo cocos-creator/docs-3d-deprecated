@@ -1,6 +1,6 @@
 # Create a list of dynamically generated content
 
-We can build and edit static UI interfaces with **Scene** panel easily, but in real world game project it's not enough. We'll need dynamically generated UI elements with data, such as character selection, inventory and level selection.
+We can build and edit static UI interfaces with __Scene__ panel easily, but in real world game project it's not enough. We'll need dynamically generated UI elements with data, such as character selection, inventory and level selection.
 
 ## Prepare data
 
@@ -12,7 +12,7 @@ Let's take an inventory interface as example, we need following data structure t
 - Item price
 - ...
 
-We will introduce how to define a data class and generate those data in **Inspector** panel. If you're not familiar with component system of Cocos Creator 3D, please start with [Workflow of script development](../../../scripting/index.md) chapter.
+We will introduce how to define a data class and generate those data in __Inspector__ panel. If you're not familiar with component system of Cocos Creator 3D, please start with [Workflow of script development](../../../scripting/index.md) chapter.
 
 
 ### Custom data class
@@ -52,9 +52,9 @@ export class ItemList extends Component {
 
 We defined an `Item` class at the top of the script for storing and easily updating data needed by item. Please notice this class does not extends `cc.Component`, so it can be defined as a property type for any component. You can learn more details about data class here [Declare class](../../../scripting/ccclass.md).
 
-After the `Item` class definition, we defined a component class. Each script file can only contains one component definition and the component name will be the same as the file name. So the component we define is `ItemList`. In this component we have a list property which type is `Item`. This way we can populate the list with data input in **Inspector** panel.
+After the `Item` class definition, we defined a component class. Each script file can only contains one component definition and the component name will be the same as the file name. So the component we define is `ItemList`. In this component we have a list property which type is `Item`. This way we can populate the list with data input in __Inspector__ panel.
 
-Now let's create an empty node and add `ItemList` component. We can find `Items` property in **Inspector** panel. To populate data, let's give the list a length. Type `3` in the field and you can input data like these:
+Now let's create an empty node and add `ItemList` component. We can find `Items` property in __Inspector__ panel. To populate data, let's give the list a length. Type `3` in the field and you can input data like these:
 
 ![item list](list-with-data/itemlist.png)
 
@@ -90,7 +90,7 @@ Let's drag all those nodes onto the property fields of `ItemTemplate` component.
 
 ![item binding](list-with-data/item-binding.png)
 
-**Note**: We will assign value for `id` property through script, no data binding needed.
+__Note__: We will assign value for `id` property through script, no data binding needed.
 
 ### Update template display with script
 
@@ -129,12 +129,12 @@ onLoad () {
 
 In the `onLoad` callback method, we traverse each data stored in `items` in turn, instantiate `itemPrefab` to generate a new node and add it to the node where `ItemList.js` is. Then call the `init` method in `ItemTemplate.js` to update its display.
 
-Now we can add a **Layout** component to the node that holds `ItemList.js` through **Add Component -> Add UI Component -> Layout** under the **Inspector** panel, and set the following properties:
+Now we can add a __Layout__ component to the node that holds `ItemList.js` through __Add Component -> Add UI Component -> Layout__ under the __Inspector__ panel, and set the following properties:
 
 - `Type`: `HORIZONTAL`
 - `Resize Mode`: `CONTAINER`
 
-Don't forget to drag and drop `item` Prefab to `itemPrefab` property field of `ItemList` component. You can also add a **Sprite** component to the node as the background.
+Don't forget to drag and drop `item` Prefab to `itemPrefab` property field of `ItemList` component. You can also add a __Sprite__ component to the node as the background.
 
 We have completed all the work. Now `itemList` node should look like this:
 
@@ -146,4 +146,4 @@ Running preview of the scene will get the result like this (the acutal look depe
 
 ![result](list-with-data/result.png)
 
-The **Layout** component added in previous step is not necessary. We can use it to help putting multiple items in a container in order but you can also use the script program to do that. You can also add a **ScrollView** component together to display a large amount of content in a limited space. For details of those layout method please read [Auto Layout Container](auto-layout.md) and [ScrollView Component](../editor/scrollview.md).
+The __Layout__ component added in previous step is not necessary. We can use it to help putting multiple items in a container in order but you can also use the script program to do that. You can also add a __ScrollView__ component together to display a large amount of content in a limited space. For details of those layout method please read [Auto Layout Container](auto-layout.md) and [ScrollView Component](../editor/scrollview.md).
