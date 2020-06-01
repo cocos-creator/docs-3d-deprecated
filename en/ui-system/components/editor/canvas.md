@@ -22,11 +22,4 @@ The __Canvas__ component is not only the root of the UI rendering, but also a ve
 
 ## Detailed Explanation
 
-Make sure that the lowest __Canvas__ or __Camera__'s **ClearFlag** property is set to __SOLID_COLOR__ in each scene, otherwise it will cause flicker issue or unwanted artifacts.
-
-To set the __ClearFlag__ property, please refer to the following situations:
-- If there is only one __2D Canvas__ or __3D Camera__ in the scene, then the __ClearFlag__ property is set to `Solid_Color`.
-- If the scene contains 2D background layer, 3D scene layer, 2D UI layer, then:
-  - 2D background layer: __ClearFlag__ property is set to `Solid_Color`.
-  - 3D scene layer: __ClearFlag__ property is set to `Depth_Only`.
-  - 2D UI layer: If the model is included, the __ClearFlag__ property is set to `Depth_Only` to avoid a model splash screen. If there is no model, the __ClearFlag__ property can be set to `Dont_Clear`/`Depth_Only`.
+If you encounter errors in UI rendering, such as **flickering**, **unwanted artifacts** or **other graphical oddness** please refer to the [Engine priority](../engine/priority.md) documentation.

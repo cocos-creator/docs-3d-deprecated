@@ -20,16 +20,7 @@ Canvas 组件不仅是 UI 渲染的根节点，同时在游戏制作时面对多
 
 ## 注意事项
 
-每个场景中必须确保至少要有一个 Canvas 或者 Camera 的 **ClearFlag** 属性设置为 `Solid_Color`，否则会导致渲染过程中出现花屏或闪屏等现象。
-
-具体如何设置 **ClearFlag**，可参考以下几种情况：
-
-- 如果场景中只有一个 2D Canvas 或者 3D Camera，**ClearFlag** 属性设置为 `Solid_Color`。
-- 如果场景中包含 2D 背景层、3D 场景层、2D UI 层，则：
-  - 2D 背景层：**ClearFlag** 属性设置为 `Solid_Color`。
-  - 3D 场景层：**ClearFlag** 属性设置为 `Depth_Only`。
-  - 2D UI 层：若有模型，**ClearFlag** 属性设置为 `Depth_Only` 以避免出现模型闪屏的情况。若没有模型，**ClearFlag** 属性可设置为 `Dont_Clear` / `Depth_Only`。
-
+如果遇到 UI 渲染出错，花屏，闪屏等现象，可以看此处的[注意事项](../engine/priority.md#注意事项)。
 ---
 
 - [其他基础模块参考](base-component.md)
