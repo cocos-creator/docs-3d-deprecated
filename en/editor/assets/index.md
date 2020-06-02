@@ -36,7 +36,7 @@ New asset:
 
 __Right-click__ on the new asset in the menu:
 
-  ![New asset by right-clicking the menu](img/db-context-submenu.png)
+  ![New asset by right-clicking the menu](img/context-menu.png)
 
 
 ## Selecting an asset
@@ -75,6 +75,8 @@ The **Sort by button** in the top menu has __2__ sorting methods: *Sort by name*
 ## Searching for assets
 
 The **Search Type button** in the top menu has __3__ sorting methods: *Search Name*, *Search UUID*, and *Search Type*. Where *Search Type* is the *Import type* of the search asset, not the suffix type of the asset.
+
+  ![Search Resources](img/search-type.png)
 
 The **Search box** changes the instant search. You can select the asset in the search results, after clearing the search content, the selected asset will be relocated within the window to achieve the purpose of locating the asset by searching.
 
