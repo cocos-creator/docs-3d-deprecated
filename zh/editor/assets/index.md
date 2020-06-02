@@ -20,14 +20,14 @@
 
     - 复制：Ctrl or Cmd + C
     - 粘贴：Ctrl or Cmd + V
-    - 拷贝：Ctrl or Cmd + D，Ctrl + 拖动资源
+    - 克隆：Ctrl or Cmd + D，Ctrl + 拖动资源
     - 删除：Delete
     - 上下选择：上下箭头
     - 文件夹的折叠：左箭头
     - 文件夹的展开：右箭头 
     - 多选：Ctrl or Cmd + 点击
     - 多选：Shift + 点击
-    - 重命名： Enter
+    - 重命名： Enter / F2
     - 取消输入：Esc
 
 ## 新建资源
