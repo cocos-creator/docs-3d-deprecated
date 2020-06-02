@@ -42,7 +42,7 @@ When the player runs the game, the game scene will be loaded. After the game sce
   4. Double-click __Main__ to open this __Scene__ in **Scene Editor** and **Hierarchy Manager**.
 
 ## Adding a road
-Our main character needs to run from left to right on a road composed of blocks. Let's make the road by using a built-in cube.
+Our main character needs to run from left to right on a road composed of cubes (blocks). Let's make the road by using a built-in cube.
 
   1. Right click on __Scene Node__ in the **Hierarchy Manager**, then choose __Create --> 3D Object --> Cube__
   
@@ -208,38 +208,46 @@ __Now__, click the __Play__ button. Once running, click the left and right mouse
 
 For additional etails please refer to the [Project Preview Debugging](../../editor/preview/index.md) documentation.
 
-### 添加角色动画
-从上面运行的结果可以看到单纯对Player进行水平方向的移动是十分呆板的，我们要让Player跳跃起来才比较有感觉，我们可以通过为角色添加垂直方向的动画来达到这个效果。有关 **动画编辑器** 的更多信息，请阅读 [动画编辑器](../../editor/animation/index.md)
+### Adding character animations
+So far, the `Player` can be moved in a horizontal direction. This is a start but not god enough. `Player` must become more life-like. We can achieve this effect by adding a vertical animation to the character. 
 
-1. 选中场景中的Body节点，编辑器下方 **控制台** 边上的 **动画编辑器**，添加Animation组件并创建Clip，命名为oneStep。
+> **Note**: Before proceeding, please read the [Animation Editor](../../editor/animation/index.md) documentation.
+
+After reading and understanding about the __Animation Editor__ let's start implementating character animations!
+
+1. Locate the **Animation Editor** on the side of the editor below the **Console**. Select the `Body` node in the __Scene__, to add an __Animation Component__ and create a new __Animation Clip__. Give this new _Animation Clip__ a name of `oneStep`.
 
    ![player move](./images/add-animation.gif)
 
-2. 进入动画编辑模式，添加position属性轨道，并添加三个关键帧，position值分别为（0，0，0）、（0，0.5，0）、（0，0，0）。
+2. Enter __animation editing mode__ in-order to add the __position attribute__. Next, add three __key frames__ with position values ​​of __(0, 0, 0)__, __(0, 0.5, 0)__, __(0, 0, 0)__.
 
    ![add keyframe](./images/add-keyframe.gif)
 
-退出动画编辑模式前前记得要保存动画，否则做的动画就白费了。
+> **Note**: Remember to save the animation before exiting the animation editing mode, otherwise the animation will be lost.
 
-3. 我们还可以通过 **资源管理器** 来创建Clip，下面我们创建一个名为twoStep的Clip并将它添加到Body身上的 `AnimationComponent` 上，这里为了录制方便调整了一下面板布局。
+3. __Animation Clips__ can also be created using the **Explorer** panel. Below we create a __Clip__ named `twoStep` and add it to the __AnimationComponent__ on `Body`.
 
    ![add animation from assets](./images/add-animation-from-assets.gif)
-4. 进入动画编辑模式，选择并编辑twoStep的clip，类似第2步，添加三个position的关键帧，分别为（0，0，0）、（0，1，0）、（0，0，0）。
+
+> **Note**: The panel layout was adjusted for recording convenience.
+
+4. Enter the __animation editing mode__, select and edit the `twoStep` clip. Similar to the second step, add three key frames at positions __(0, 0, 0)__, __(0, 1, 0)__, __(0, 0, 0)__.
 
    ![edit second clip](./images/edit-second-clip.png)
 
-5. 在 `PlayerController组件` 中引用 `动画组件` ，我们需要在代码中根据跳的步数不同来播放不同的动画。
+5. Reference the __AnimationComponent__ in the` PlayerController` Component, as different animations need to be played according to the number of steps `Player` jumped.
 
-   首先需要 在 `PlayerController组件` 中引用Body身上的 `AnimationComponent`。
+   First, reference the __AnimationComponent__ on the `Body` in the `PlayerController` component.
    ```ts
       @property({type: AnimationComponent})
       public BodyAnim: AnimationComponent = null;
    ```
-   然后在 **属性检查器** 中将Body身上的 `AnimationComponent` 拖到这个变量上。
+   Then in the ** Property Inspector **, drag the `AnimationComponent` on Body to this variable.
 
-      ![drag to animComp](./images/drag-to-animComp.gif)
+    ![drag to animComp](./images/drag-to-animComp.gif)
 
-   在跳跃的函数 `jumpByStep` 中加入动画播放的代码：
+    Add the animation playback code to the jump function `jumpByStep`:
+
    ```ts
       if (step === 1) {
          this.BodyAnim.play('oneStep');
@@ -248,25 +256,28 @@ For additional etails please refer to the [Project Preview Debugging](../../edit
       }
    ```
 
-   点击Play按钮,点击鼠标左键、右键，可以看到新的跳跃效果：
+   Click the __Play__ button. When playing click the left and right mouse buttons, you can see the new jump effect in action:
 
       ![preview with jump](./images/preview-with-jump.gif)
 
-## 跑道升级
-为了让游戏有更久的生命力，我们需要一个很长的跑道来让Player在上面一直往右边跑，在场景中复制一堆Cube并编辑位置来组成跑道显然不是一个明智的做法，我们通过脚本完成跑道的自动创建。
+## Upgrade the road
+In-order to make the gameplay longer and more enjoyable, we need a long stretch of road to let the `Player` run all the way to the right. Copying a bunch of cubes in the __Scene__ and editing the position to form the road is not a wise practice. We can complete this by using a script to automatically create the road pieces.
 
-### 游戏管理器（GameManager）
-一般游戏都会有一个管理器，主要负责整个游戏生命周期的管理，可以将跑道的动态创建代码放到这里。在场景中创建一个名为GameManager的节点，然后在 `assets/Scripts` 中创建一个名为GameManager的ts脚本文件，并将它添加到GameManager节点上。
+### A "Game Manager" can help.
+Most games have a __manager__, which is mainly responsible for the management of the entire game life cycle. You can put the dynamic creation code of the road in this same manager. Create a node named `GameManager` in the __Scene__. Next, create a TypesScript file named `GameManager` in `assets/Scripts` and add it to the `GameManager` node.
 
-### 制作Prefab
-对于需要重复生成的节点，我们可以将他保存成 **Prefab（预制）** 资源，作为我们动态生成节点时使用的模板。关于 **Prefab** 的更多信息，请阅读 [预制资源（Prefab）](../../asset/prefab.md)。
-我们将生成跑道的基本元素`正方体（Cube）`制作成Prefab，之后可以把场景中的三个Cube都删除了。
+### Making a Prefab
+For the node that needs to be generated repeatedly, we can save it as a **Prefab (prefabricated)** resource. This means it can be used as a template when we dynamically generate the node.
+
+> **Note**: Before proceeding, please read the [Prefab Resources](../../asset/prefab.md) documentation.
+
+It is necesssary to make the basic element `cube` of the road into a __Prefab__, and then we can delete all three cubes in the __Scene__.
 
    ![create cube prefab](./images/create-cube-prefab.gif)
 
-### 添加自动创建跑道代码
-我们需要一个很长的跑道，理想的方法是能动态增加跑道的长度，这样可以永无止境的跑下去，这里为了方便我们先生成一个固定长度的跑道，跑道长度可以自己定义。跑道上会生成一些坑，跳到坑上就GameOver了。
-将GameManager脚本中代码替换成以下代码：
+### Adding the automatic road creation
+A very long road is needed. The ideal method is to dynamically increase the length of the road, so that the `Player` can run forever. First, generate a fixed-length road with a length that is arbitraty. Replace the code in the `GameManager` script with the following code:
+
 ```ts
 import { _decorator, Component, Prefab, instantiate, Node, CCInteger} from "cc";
 const { ccclass, property } = _decorator;
@@ -330,38 +341,52 @@ export class GameManager extends Component {
     // }
 }
 ```
-在GameManager的inspector面板中可以通过修改roadLength的值来改变跑道的长度。
-预览可以看到现在自动生成了跑道，不过因为Camera没有跟随Player移动，所以看不到后面的跑道，我们可以将场景中的Camera设置为Player的子节点。
 
-   ![drag camera to player](./images/drag-camera-to-player.gif)
+The length of the road can be changed by modifying the value of `roadLength` in the __Properties__ panel for the `GameManager`.
 
-这样Camera就会跟随Player的移动而移动，现在预览可以从头跑到尾的观察生成的跑道了。
+When previewing, the road is now automatically generated, but because the __Camera__ does not follow the `Player`, the road behind cannot be seen. Setting the __Camera__ in the __Scene__ as a child node of the `Player` can help solve this.
 
-## 增加开始菜单
-开始菜单是游戏不可或缺的一部分，我们可以在这里加入游戏名称、游戏简介、制作人员等信息。
+  ![drag camera to player](./images/drag-camera-to-player.gif)
 
-1. 添加一个名为Play的按钮
+The Camera will follow the Player's movement.
 
-   ![create button](./images/create-button.gif)
+## Adding a start menu
+The __start menu__ is an indispensable part of most any game. Add the game name, game introduction, production staff and other information here.
 
-   这个操作生成了一个Canvas节点，一个PlayButton节点和一个Label节点。因为UI组件需要在带有 `CanvasComponent` 的父节点下才能显示，所以编辑器在发现目前场景中没有带这个组件的节点时会自动添加一个。
-   创建按钮后，将Label节点上的 `cc.LabelComponent` 的String属性从Button改为Play。
-2. 在Canvas底下创建一个名字为StartMenu的空节点，将PlayButton拖到它底下。我们可以通过点击工具栏上的2D/3D按钮![2d-view](./images/2d-view.png)来切换到2D编辑视图下进行UI编辑操作，详细的描述请查阅 [场景编辑](../../editor/scene/index.md)。
-3. 增加一个背景框，在StartMenu下新建一个名字为BG的Sprite节点，调节它的位置到PlayButton的上方，设置它的宽高为（200，200）,并将它的SpriteFrame设置为 `internal/default_ui/default_sprite_splash` 。
+1. Add a button called `Play`
+
+    ![create button](./images/create-button.gif)
+
+  This operation creates a `Canvas` node, a `PlayButton` node, and a `Label` node. Because the UI component needs to be displayed under the parent node with `CanvasComponent`, the editor will automatically add one when it finds that there is not a node with this component in the current __Scene__. After creating the button, change the `String` property of `cc.LabelComponent` on the `Label` node from `Button` to `Play.`
+
+2. Create an empty node named `StartMenu` under `Canvas` and drag `PlayButton` under it. We can switch to the 2D editing view for UI editing operations by clicking the 2D/3D button on the toolbar.
+
+  > **Note**: 2D View is this toolbar button ![2d-view](./images/2d-view.png). 
+
+  > **Note**: Before proceeding, please read the [Scene Editing](../../editor/scene/index.md) documentation.
+
+3. Add a background frame, create a Sprite node named `BG` under `StartMenu`, adjust its position to above the `PlayButton`, set its width and height to __(200, 200)__, and set its SpriteFrame to `internal/default_ui/ default_sprite_splash`.
+
     ![change spriteFrame](./images/change-spriteFrame.png)
-4. 添加一个名为Title的 `Label` 用于开始菜单的标题，。
+
+4. Add a __Label__ called `Title` for the title of the start menu.
+
    ![add title label](./images/add-label-title.gif)
 
-5. 修改Title的文字，并调整Title的位置、文字大小、颜色。
-   ![modify title](./images/title-inspector.png)
-6. 增加操作的Tips，然后调整PlayButton的位置，一个简单的开始菜单就完成了
-   ![modify title](./images/start-menu.png)
-7. 增加游戏状态逻辑，一般我们可以将游戏分为三个状态：
-   - 初始化（Init）：显示游戏菜单，初始化一些资源。
-   - 游戏进行中（Playing）：隐藏游戏菜单，玩家可以操作角度进行游戏。
-   - 结束（End）：游戏结束，显示结束菜单。
+5. Modify Title's text and adjust Title's position, text size and color.
+   
+   ! [modify title] (./ images / title-inspector.png)
 
-   使用一个枚举（enum）类型来表示这几个状态。
+6. Increase the operation Tips, and then adjust the position of the PlayButton, a simple start menu is complete
+   
+   ! [modify title] (./ images / start-menu.png)
+
+7. Add game state logic, generally we can divide the game into three states:
+   -Init: Display the game menu and initialize some resources.
+   -Playing: Hide the game menu, players can operate the game from an angle.
+   -End: End the game and display the end menu.
+
+   Use an enum type to represent these states.
    ```ts
     enum BlockType{
         BT_NONE,
