@@ -373,20 +373,21 @@ The __start menu__ is an indispensable part of most any game. Add the game name,
 
    ![add title label](./images/add-label-title.gif)
 
-5. Modify Title's text and adjust Title's position, text size and color.
+5. Modify the text for `Title` and adjust it's *position*, *text size* and *color*.
    
-   ! [modify title] (./ images / title-inspector.png)
+   ![modify title](./images/title-inspector.png)
 
-6. Increase the operation Tips, and then adjust the position of the PlayButton, a simple start menu is complete
+6. Adjust the position of the `PlayButton`, and a simple start menu is complete.
    
-   ! [modify title] (./ images / start-menu.png)
+   ![modify title](./images/start-menu.png)
 
-7. Add game state logic, generally we can divide the game into three states:
-   -Init: Display the game menu and initialize some resources.
-   -Playing: Hide the game menu, players can operate the game from an angle.
-   -End: End the game and display the end menu.
+7. Add game state logic, generally it can be divided into three states:
+   - **Init**: Display the game menu and initialize some resources.
+   - **Playing**: Hide the game menu, players can operate the game.
+   - **End**: End the game and display the ending menu.
 
    Use an enum type to represent these states.
+
    ```ts
     enum BlockType{
         BT_NONE,
@@ -400,13 +401,14 @@ The __start menu__ is an indispensable part of most any game. Add the game name,
     };
    ```
 
-    GameManager脚本中加入表示当前状态的私有变量
+    Add a private variable that represents the current state to the `GameManager` script
+
     ```ts
     private _curState: GameState = GameState.GS_INIT;
     ```
 
-    为了在开始时不让用户操作角色，而在游戏进行时让用户操作角色，我们需要动态的开启和关闭角色对鼠标消息的监听。
-    所以对PlayerController做如下的修改：
+    In-order not to let the user operate the character at the beginning, but to allow the user to operate the character while the game is in progress, we need to dynamically turn on and off the character's monitoring of mouse messages. This can be done with the following changes to `PlayerController`:
+
     ```ts
     start () {
         // Your initialization goes here.
@@ -421,13 +423,16 @@ The __start menu__ is an indispensable part of most any game. Add the game name,
         }
     }
     ```
-    然后需要在GameManager脚本中引用PlayerController，需要在Inspector中将场景的Player拖入到这个变量中。
+
+    Next, reference `PlayerController` in the `GameManager` script. Drag the `Player` of the scene into this variable in the __Inspector__ panel.
+    
     ```ts
     @property({type: PlayerController})
     public playerCtrl: PlayerController = null;
     ```
 
-    为了动态的开启\关闭开启菜单，我们需要在GameManager中引用StartMenu节点，需要在Inspector中将场景的StartMenu拖入到这个变量中。
+    In-order to dynamically open/close the open menu, the `StartMenu` needs to be referenced in the `GameManager`. Drag the `StartMenu` of the scene into this variable in the __Inspector__ panel.
+
     ```ts
     @property({type: Node})
     public startMenu: Node = null;
@@ -435,7 +440,8 @@ The __start menu__ is an indispensable part of most any game. Add the game name,
 
     ![add player to game manager](./images/game-manager-player.png)
 
-    增加状态切换代码，并修改GameManger的初始化方法：
+    Modify the code in the `GameManger`:
+
     ```ts
     start () {
         this.curState = GameState.GS_INIT;
@@ -465,24 +471,26 @@ The __start menu__ is an indispensable part of most any game. Add the game name,
         this._curState = value;
     }
     ```
-8. 添加对Play按钮的事件监听。
-    为了能在点击Play按钮后开始游戏，我们需要对按钮的点击事件做出响应。
-    在GameManager脚本中加入响应按钮点击的代码，在点击后进入游戏的Playing状态：
+
+8. Add event monitoring to the `Play` button. In-order to start the game after clicking the `Play` button, the button needs to respond to click events. Add code that responds to the button click in the `GameManager` script, and click to enter the game's `Playing` state:
+    
     ```ts
     onStartButtonClicked() {
         this.curState = GameState.GS_PLAYING;
     }
     ```
-    然后在Play按钮的Inspector上添加ClickEvents的响应函数。
+    
+    Next, add the response function of __Click Events__ in the __Inspector__ panbel of the `Play` button.
 
     ![play button inspector](./images/play-button-inspector.png)
 
-现在预览场景就可以点击Play按钮开始游戏了。
+Now preview the scene by clicking the `Play` button to start the game.
 
-## 添加游戏结束逻辑
-目前游戏角色只是呆呆的往前跑，我们需要添加游戏规则，来让他跑的更有挑战性。
-1. 角色每一次跳跃结束需要发出消息，并将自己当前所在位置做为参数发出消息
-   在PlayerController中记录自己跳了多少步
+## Adding game end logic
+The game character is just running forward, with no purpose. Let's add game rules to make the game play more challenging.
+
+1. The character needs to send a message at the end of each jump, that records how many steps the character jumped and its current position. This can be done in `PlayerController`.
+
    ```ts
     private _curMoveIndex = 0;
     // ...
@@ -491,30 +499,35 @@ The __start menu__ is an indispensable part of most any game. Add the game name,
 
         this._curMoveIndex += step;
     }
-
    ```
 
-   在每次跳跃结束发出消息：
+   Send a message at the end of each jump:
    ```ts
     onOnceJumpEnd() {
         this._isMoving = false;
         this.node.emit('JumpEnd', this._curMoveIndex);
     }
    ```
-2. 在GameManager中监听角色跳跃结束事件，并根据规则判断输赢
-   增加失败和结束判断，如果跳到空方块或是超过了最大长度值都结束：
+
+2. Monitor the character's jumping end event in `GameManager`, and judge the winning or losing according to the rules.
+  
+  Increase the failure and end judgment, if it jumps to an empty square or exceeds the maximum length value, it will end:
+
    ```ts
     checkResult(moveIndex: number) {
         if (moveIndex <= this.roadLength) {
-            if (this._road[moveIndex] == BlockType.BT_NONE) {   //跳到了空方块上
+            // Jump to the empty square
+            if (this._road[moveIndex] == BlockType.BT_NONE) {   
                 this.curState = GameState.GS_INIT;
             }
-        } else {    // 跳过了最大长度
+        } else {    // skipped the maximum length
             this.curState = GameState.GS_INIT;
         }
     }
    ```
-   监听角色跳跃消息，并调用判断函数：
+
+   Monitor the character'S jump message and call a function to decide:
+
    ```ts
     start () {
         this.curState = GameState.GS_INIT;
@@ -526,13 +539,16 @@ The __start menu__ is an indispensable part of most any game. Add the game name,
         this.checkResult(moveIndex);
     }
    ```
-   此时预览，会发现重新开始游戏时会有判断出错，是因为我们重新开始时没有重置PlayerController中的_curMoveIndex属性值。所以我们在PlayerController中增加一个reset函数：
+
+   If you preview playing the game now, there will be a judgment error when restarting the game. This is because we did not reset the `_curMoveIndex` property value in `PlayerController` when the game restarts. To fix this, add a reset function in `PlayerController`.
+
    ```ts
     reset() {
         this._curMoveIndex = 0;
     }
    ```
-   在GameManager的init函数调用reset来重置PlayerController的属性。
+   Call `reset()` in the `init` function of `GameManager` to reset the properties of `PlayerController`.
+
    ```ts
     init() {
         \\ ...
@@ -542,6 +558,7 @@ The __start menu__ is an indispensable part of most any game. Add the game name,
 
 ## 步数显示
 我们可以将当前跳的步数显示到界面上，这样在跳跃过程中看着步数的不断增长会十分有成就感。
+
 1. 在Canvas下新建一个名为Steps的Label，调整位置、字体大小等属性。
 
    ![steps label](./images/steps-label.png)
