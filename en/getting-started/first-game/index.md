@@ -556,21 +556,25 @@ The game character is just running forward, with no purpose. Let's add game rule
     }
    ```
 
-## 步数显示
-我们可以将当前跳的步数显示到界面上，这样在跳跃过程中看着步数的不断增长会十分有成就感。
+## Step counting display
+We can display the current number of steps jumped in the interface, so that watching the continuous growth of steps during the jump will be very fulfilling.
 
-1. 在Canvas下新建一个名为Steps的Label，调整位置、字体大小等属性。
+1. Create a new label named `Steps` under __Canvas__, adjust the position, font size and other properties.
 
    ![steps label](./images/steps-label.png)
 
-2. 在GameManager中引用这个Label
+2. Reference the `Steps` label in `GameManager`
+
    ```ts
     @property({type: LabelComponent})
     public stepsLabel: LabelComponent = null;
    ```
+
    ![steps label to game manager](./images/add-steps-to-game-manager.png)
-3. 将当前步数数据更新到这个Label中
-   因为我们现在没有结束界面，游戏结束就跳回开始界面，所以在开始界面要看到上一次跳的步数，因此我们在进入Playing状态时，将步数重置为0。
+
+3. Update the current step data to appear in this Label. 
+    Because an ending interface has yet to be created we reset the number of steps to 0 when restarting playing.
+
    ```ts
     set curState (value: GameState) {
         switch(value) {
@@ -579,8 +583,10 @@ The game character is just running forward, with no purpose. Let's add game rule
                 break;
             case GameState.GS_PLAYING:
                 this.startMenu.active = false;
-                this.stepsLabel.string = '0';   // 将步数重置为0
-                setTimeout(() => {      //直接设置active会直接开始监听鼠标事件，做了一下延迟处理
+                //  reset the number of steps to 0
+                this.stepsLabel.string = '0';  
+                // set active directly to start listening for mouse events directly 
+                setTimeout(() => {   
                     this.playerCtrl.setInputActive(true);
                 }, 0.1);
                 break;
@@ -591,7 +597,8 @@ The game character is just running forward, with no purpose. Let's add game rule
     }
    ```
 
-    在响应角色跳跃的函数中，将步数更新到Label控件上
+    Update the `Steps` Label in the function that responds to the character jumping.
+
     ```ts
     onPlayerJumpEnd(moveIndex: number) {
         this.stepsLabel.string = '' + moveIndex;
@@ -599,58 +606,63 @@ The game character is just running forward, with no purpose. Let's add game rule
     }
     ```
 
+## Light and shadow
+Where there is light, there will be a shadow, and light and shadows constitute a 3D world where light and dark intersect. Next, let's add a simple shadow to the character.
 
+### Turning on the shadow
 
-## 光照和阴影
-有光的地方就会有影子，光和影构成明暗交错的3D世界。接下来我们为角色加上简单的影子。
-### 开启阴影
-1. 在 **层级管理器** 中点击最顶部的 `Scene` 节点，将planarShadows选项中的Enabled打钩，并修改Distance和Normal参数
+1. In the **Hieracrhy Manager**, click the `Scene` node at the top, check `Enabled` in the `planShadows` option, and modify the `Distance` and `Normal` parameters
 
     ![planar shadows](./images/planarShadows.png)
 
-2. 点击Player节点下的Body节点，将 `cc.ModelComponent` 下的ShadowCastingMode设置为ON。
+2. Click the `Body` node under the `Player` node, and set `ShadowCastingMode` under `cc.ModelComponent` to `ON`.
+
     ![model shadow](./images/model-shadow.png)
 
-此时在场景编辑器中会看到一个阴影面片，预览会发现看不到这个阴影，因为它在模型的正后方，被胶囊体盖住了。
+A shadow patch can be seen in the in the scene editor. However, this shadow cannot be seen when previewing because it is covered by the capsule body directly behind the model.
 
 ![player shadow](./images/player-shadow-scene.png)
 
-### 调整光照
-新建场景时默认会添加一个 `DirctionalLight` ，由这个平行光计算阴影，所以为了让阴影换个位置显示，我们可以调整这个平行光的方向。
-在 **层级管理器** 中点击选中 `Main Light` 节点，调整Rotation参数为（-10，17，0）。
+### Adjusting the light
+
+When creating a new scene, a `DirctionalLight` will be added __by default__, and the shadow will be calculated from this parallel light. The direction of this parallel light can be adjusted in-order to display the shadow in another position.
+
+In the **Hierarchy Manager**, click to select the `Main Light` node and adjust the `Rotation` parameter to __(-10, 17, 0)__.
 
 ![main light](./images/main-light.png)
 
-预览可以看到影子效果：
+Preview the game and you can see this effect:
 
 ![player shadow preview](./images/player-shadow-preview.png)
 
-## 添加主角模型
-做为一个官方教程，用胶囊体当主角显的有点寒碜，所以我们花（低）重（预）金（算）制作了一个Cocos主角。
+## Adding a character model
+Using the capsule body as the character is a bit shabby, we can change this to make a Cocos character.
 
-### 导入模型资源
-从原始资源导入模型、材质、动画等资源不是本篇基础教程的重点，所以这边直接使用已经导入工程的资源。
-将[项目工程](https://github.com/cocos-creator/tutorial-mind-your-step-3d)中assets目录下的cocos文件夹拷贝到你自己工程的assets目录下。
+### Importing model resources
+Copy the `cocos` folder under the `assets` directory in [Project Engineering](https://github.com/cocos-creator/tutorial-mind-your-step-3d) to the `assets` directory of your own project.
 
-### 添加到场景中
-在cocos文件中已经包含了一个名为Cocos的Prefab，将它拖到场景中Player下的Body节点中。
+### Adding to the scene
+A prefab called `Cocos` has been included in the cocos file, drag it to the `Body` node under `Player` in the scene.
 
 ![add cocos prefab](./images/add-cocos-prefab.png)
 
-此时会发现模型有些暗，可以加个聚光灯，以突出它锃光瓦亮的脑门。
+At this time, you will find that the model is a little dark and a spotlight can be added to highlight its shiny brain.
 
 ![add cocos light](./images/cocos-add-light.png)
 
-### 添加跳跃动画
-现在预览可以看到主角初始会有一个待机动画，但是跳跃时还是用这个待机动画会显得很不协调，所以我们在跳跃过程中换成跳跃的动画。
-在 `PlayerController` 类中添加一个引用模型动画的变量：
+### Adding a jumping animation
+When previewing the game, the character will initially have a standby animation, but a jumping animation needs to be used during a jump.
+
+Add a variable in the `PlayerController` class that references the model animation:
 
 ```ts
     @property({type: SkeletalAnimationComponent})
     public CocosAnim: SkeletalAnimationComponent = null;
 ```
-然后在`Inspector`中要将Cocos节点拖入这个变量里。
-在jumpByStep函数中播放跳跃动画
+
+Then in the __Inspector__, drag the `Cocos` node into this variable. 
+
+The jump animation needs to be used in the `jumpByStep` function.
 
 ```ts
     jumpByStep(step: number) {
@@ -666,8 +678,10 @@ The game character is just running forward, with no purpose. Let's add game rule
 
         this._isMoving = true;
 
-        this.CocosAnim.getState('cocos_anim_jump').speed = 3.5; //跳跃动画时间比较长，这里加速播放
-        this.CocosAnim.play('cocos_anim_jump'); //播放跳跃动画
+        // The jumping animation takes a long time, here is accelerated playback
+        this.CocosAnim.getState('cocos_anim_jump').speed = 3.5;
+        // Play jumping animation
+        this.CocosAnim.play('cocos_anim_jump');
         if (step === 1) {
             //this.BodyAnim.play('oneStep');
         } else if (step === 2) {
@@ -678,7 +692,7 @@ The game character is just running forward, with no purpose. Let's add game rule
     }
 ```
 
-在onOnceJumpEnd函数中让主角变为待机状态，播放待机动画。
+In the `onOnceJumpEnd` function, change to the standby state and play the standby animation.
 
 ```ts
     onOnceJumpEnd() {
@@ -688,12 +702,12 @@ The game character is just running forward, with no purpose. Let's add game rule
     }
 ```
 
-预览效果：
+When previewing, the results are as follows:
 
 ![cocos play](./images/cocos-play.gif)
 
-## 最终代码
-PlayerController.ts
+## Final Code
+The final code for `PlayerController.ts` should look like this:
 
 ```ts
 import { _decorator, Component, Vec3, systemEvent, SystemEvent, EventMouse, AnimationComponent, SkeletalAnimationComponent, v3 } from "cc";
@@ -756,8 +770,10 @@ export class PlayerController extends Component {
 
         this._isMoving = true;
 
-        this.CocosAnim.getState('cocos_anim_jump').speed = 3.5; //跳跃动画时间比较长，这里加速播放
-        this.CocosAnim.play('cocos_anim_jump'); //播放跳跃动画
+        // The jumping animation takes a long time, here is accelerated playback
+        this.CocosAnim.getState('cocos_anim_jump').speed = 3.5;
+        // Play jumping animation
+        this.CocosAnim.play('cocos_anim_jump');
         if (step === 1) {
             //this.BodyAnim.play('oneStep');
         } else if (step === 2) {
@@ -793,7 +809,7 @@ export class PlayerController extends Component {
 }
 ```
 
-GameManager.ts
+The final code for `GameManager.ts` should look like this:
 
 ```ts
 import { _decorator, Component, Prefab, instantiate, Node, LabelComponent, CCInteger, v3} from "cc";
@@ -847,8 +863,10 @@ export class GameManager extends Component {
                 break;
             case GameState.GS_PLAYING:
                 this.startMenu.active = false;
-                this.stepsLabel.string = '0';   // 将步数重置为0
-                setTimeout(() => {      //直接设置active会直接开始监听鼠标事件，做了一下延迟处理
+                //  reset the number of steps to 0
+                this.stepsLabel.string = '0';  
+                // set active directly to start listening for mouse events directly 
+                setTimeout(() => {   
                     this.playerCtrl.setInputActive(true);
                 }, 0.1);
                 break;
@@ -900,10 +918,12 @@ export class GameManager extends Component {
 
     checkResult(moveIndex: number) {
         if (moveIndex <= this.roadLength) {
-            if (this._road[moveIndex] == BlockType.BT_NONE) {   //跳到了空方块上
+            if (this._road[moveIndex] == BlockType.BT_NONE) {   
+                // ump to the empty square
                 this.curState = GameState.GS_INIT;
             }
-        } else {    // 跳过了最大长度
+        } else {    
+            // skipped the maximum length
             this.curState = GameState.GS_INIT;
         }
     }
@@ -919,17 +939,20 @@ export class GameManager extends Component {
 }
 ```
 
-## 总结
-恭喜您完成了用 Cocos Creator 3D 制作的第一个游戏！在 [这里](https://github.com/cocos-creator/tutorial-mind-your-step-3d) 可以下载完整的工程，希望这篇快速入门教程能帮助您了解 Cocos Creator 3D 游戏开发流程中的基本概念和工作流程。如果您对编写和学习脚本编程不感兴趣，也可以直接从完成版的项目工程中把写好的脚本复制过来使用。
+## The end!
 
-接下来您还可以继续完善游戏的各方各面，以下是一些推荐的改进方向：
-- 为游戏增加难度，当角色在原地停留1秒就算失败
-- 改为无限跑道，动态的删除已经跑过的跑道，延长后面的跑道。
-- 增加游戏音效
-- 为游戏增加结束菜单界面，统计玩家跳跃步数和所花的时间
-- 用更漂亮的资源替换角色和跑道
-- 可以增加一些可拾取物品来引导玩家“犯错”
-- 添加一些粒子特效，例如角色运动时的拖尾、落地时的灰尘
-- 为触屏设备加入两个操作按钮来代替鼠标左右键操作
+__Congratulations on completing your first game made with Cocos Creator 3D!__ 
 
-此外如果希望将完成的游戏发布到服务器上分享给好友玩耍，可以阅读 [发布工作流](../../editor/publish/index.md) 一节的内容。
+The complete project can be downloaded on our [GitHub](https://github.com/cocos-creator/tutorial-mind-your-step-3d). The hope is this quick start tutorial will help you understand the Cocos Creator 3D game development process, basic concepts and workflow. 
+
+Next, you can continue to improve all aspects of the game. Here are some ideas for improvement:
+  - Increase the difficulty of the game, when the character stays in place for 1 second it fails.
+  - Change to infinite runway, dynamically delete the runway that has been run, and extend the runway behind.
+  - Add game sound effects.
+  - Add an end menu interface to the game, and count the number of jumping steps and time spent by the player.
+  - Replace characters and runways with prettier assets.
+  - Can add some pickable items to guide players to "make mistakes"
+  - Add some particle special effects, such as trailing when the character moves, dust when landing
+  - Add two operation buttons for touch screen devices instead of left and right mouse button operation
+
+Lastly, why not share this game with your friends? You can publish the completd game to a server of your choice using the [Publishing Workflow](../../editor/publish/index.md) documentation.
