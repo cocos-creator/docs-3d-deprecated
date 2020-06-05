@@ -29,7 +29,7 @@ In __Cocos Creator 3D__, **Scene** is the center for organizing game content dur
 
 When the player runs the game, the game scene will be loaded. After the game scene is loaded, scripts of the included components will be automatically run. Apart from __assets__, game scenes are the foundation of all content creation. Now, to create a new __Scene__:
 
-  1. In the **Explorer**, click to select the **assets** directory, click the plus button in the upper left corner, select the folder, and name it __Scenes__. Example:
+  1. In the **Explorer**, click to select the **assets** directory, click the __+__ button in the upper left corner, select the folder, and name it __Scenes__. Example:
 
    ![create scene](./images/create-folder.png)
 
@@ -50,7 +50,7 @@ Our main character needs to run from left to right on a road composed of cubes (
 
   2. Clone the cube to make two more cube with the shortcut key __Ctrl+D__.
 
-  3. Sort the __Cubes__ by their position. 
+  3. Assign the __Cubes__ each a unique position: 
     - First one at position __(0, -1.5, 0)__.
     - Second one at position __(1, -1.5, 0)__.
     - Third one at position __(2, -1.5, 0)__.
@@ -64,7 +64,7 @@ Our main character needs to run from left to right on a road composed of cubes (
 ### Create a main character node
 __First__, create an empty node named `Player`.
 
-__Second__, create a __Model Component__ named `Body` under the `Player` node. For convenience, let's use the builtin capsule model as the body of our main character.
+__Second__, create a __Model Component__ named `Body` under the `Player` node. For convenience, let's use the built-in __Capsule__ model as the body of our main character.
 
   ![create player node](./images/create-player.gif)
 
