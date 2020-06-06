@@ -1,14 +1,14 @@
 # Canvas Component Reference
 
-The **Canvas** component is in charge of rendering all UI components, all UI elements must be placed under a __Canvas__ so that it can be rendered. The **Canvas** component can adapt the UI elements in __design resolution__ to the actual resolution of the device screen and can control zoom of all UI elements. There can be multiple __Canvas__ in the scene, each of them represents a camera, the rendering results of each canvas and 3d cameras can be presented in a certain order controlled by the `priority`.
-
-The Canvas __design resolution__ and __adaptation scheme__ are uniformly set in the __Project Setting__. A camera is provided inside the __Canvas__, and the default z axis direction is __-1000 ~ 998__, so the z axis on the UI must be within this range to display properly (without taking the threshold value).
-
 ![](canvas/canvas.png)
 
-In the previous design, __Canvas__ was last rendered, meaning it could mask the rendering of all 3D content, but this was far from sufficient for project development needs, such as a 2D map with a 3D character. So, we've added the **RenderMode** property, which allows developers to sort the rendering order of the 3D Camera and UI Camera. To be noted, if you want to have canvas and 3d camera content mixed up, only the lowest camera or canvas can have the **SOLID_COLOR** **ClearFlag**, otherwise a camera with **SOLID_COLOR** flag will erase all content rendered before it.
+The node where the **Canvas** component is the root of the UI rendering. There can be multiple __Canvas__ in the scene. **all UI elements must be placed under a __Canvas__ so that it can be rendered**. Under which Canvas node, it is rendered by which Canvas. Each canvas can be presented in a certain order controlled by the `priority` attribute.
 
-The __Canvas__ component is not only the root of the UI rendering, but also a very important feature in the game production is the multi-resolution adaptation, please refer to the [Multi-Resolution Adaption](../engine/multi-resolution.md) documentation.
+In addition to the root node of the UI, it also has a screen adaptation function,  please refer to the [Multi-Resolution Adaption](../engine/multi-resolution.md) documentation. It also plays very important feature in the game production is the multi-resolution adaptation. The Canvas __design resolution__ and __adaptation scheme__ are uniformly set in the __Project Setting__. A camera is provided inside the __Canvas__, and the default z axis direction is __-1000 ~ 998__, so the z axis on the UI must be within this range to display properly (without taking the threshold value).
+
+![](canvas/design-resolution.png)
+
+In the previous design, __Canvas__ was last rendered, meaning it could mask the rendering of all 3D content, but this was far from sufficient for project development needs, such as a 2D map with a 3D character. So, we've added the **RenderMode** property, which allows developers to sort the rendering order of the 3D Camera and UI Camera. To be noted, if you want to have canvas and 3d camera content mixed up, only the lowest camera or canvas can have the **SOLID_COLOR** **ClearFlag**, otherwise a camera with **SOLID_COLOR** flag will erase all content rendered before it.
 
 ## Canvas Properties
 
