@@ -23,6 +23,8 @@ The **Explorer** panel is the main panel. It has a *heads-up menu area*, *a cent
     - **Expand the folder**: right arrow or Enter
     - **Multi-select**: Ctrl or Cmd + click
     - **Multi-select**: Shift + click
+    - **Rename**: Enter/F2
+    - **Cancel Rename**: Esc
 
 ## New assets
 
@@ -91,4 +93,4 @@ The **Fold or expand all button**  is an easy way to retract the view range and 
 
 ## Renaming an asset
 
-Select a asset, use either the __shortcut key F2__ or __right-click__ to get a menu selecting **Rename** to enter to modify the name. The name can not be empty. Use the **shortcut key Esc** will cancel a rename. The name of the script cannot start with a number and cannot be the same as an existing script file.
+Select a asset, use either the __shortcut key F2__ or by a __right-click__ and selecting **Rename** to modify the name. The name cannot be empty. Use the **shortcut key Esc** will cancel the rename. The name of the script cannot start with a number and cannot be the same as an existing script file.

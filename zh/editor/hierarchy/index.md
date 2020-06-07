@@ -21,7 +21,7 @@
     - 节点的展开：右箭头
     - 多选：Ctrl or Cmd + 点击
     - 多选：Shift + 点击
-    - 重命名： Enter / F2
+    - 重命名： Enter/F2
     - 取消输入：Esc
 
 ## 新建节点
