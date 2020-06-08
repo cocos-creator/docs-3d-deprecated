@@ -213,7 +213,7 @@ The `Player` can be moved in a horizontal direction. This is a start, but not go
 
 > **Note**: Before proceeding, please read the [Animation Editor](../../editor/animation/index.md) documentation.
 
-After reading and understanding about the __Animation Editor__ let's start implementating character animations!
+After reading and understanding the capabilities of the __Animation Editor__ character animations can be implementated!
 
 1. Locate the **Animation Editor** on the side of the editor below the **Console**. Select the `Body` node in the __Scene__, to add an __Animation Component__ and create a new __Animation Clip__. Give this new _Animation Clip__ a name of `oneStep`.
 
