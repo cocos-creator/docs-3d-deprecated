@@ -114,9 +114,9 @@ export class PlayerController extends Component {
 }
 ```
 
-This code is the structure needed to write a __component__. Scripts with this structure are the **Components in Cocos Creator 3D**. They can be attached to nodes in the __Scene__ and provide various functions for controlling nodes. For detailed information review the [Script]( ../../scripting/index.md) documentation.
+This code is the structure needed to write a __component__. Scripts with this structure are **Components in Cocos Creator 3D**. They can be attached to nodes in a __Scene__ and provide various functionality for controlling nodes. For detailed information review the [Script]( ../../scripting/index.md) documentation.
 
-We add the monitoring of mouse events in the script, and then let the `Player` move, modify the code in `PlayerController` as follows:
+Monitoring of mouse events needs to be added in the script to let the `Player` node move. Modify the code in `PlayerController` as follows:
 
 ```ts
 import { _decorator, Component, Vec3, systemEvent, SystemEvent, EventMouse, AnimationComponent, v3 } from "cc";
