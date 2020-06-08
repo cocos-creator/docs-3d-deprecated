@@ -194,11 +194,11 @@ export class PlayerController extends Component {
 }
 ```
 
-__Next__, attach the `PlayerController` component to the `Player` node. Select the `Player` node in the **Hierarchy Manager**, then click the **Add Component** button in the **Property Inspector**, select **Add User Script Component- > PlayerController** to the `Player` node to add the `PlayerController` component.
+__Next__, attach the `PlayerController` component to the `Player` node. Select the `Player` node in the **Hierarchy Manager**, then click the **Add Component** button in the **Property Inspector**, select **Custom Script Component- > PlayerController** to the `Player` node to add the `PlayerController` component.
 
   ![add player controller comp](./images/add-player-controller.png)
 
-In-order to see the object at runtime, we need to adjust some parameters of the Camera in the scene, set the __position__ to __(0, 0, 13)__, and set the __Color__ to __(50, 90, 255, 255)__:
+In-order to see the object at runtime, we need to adjust some parameters of the __Camera__ in the scene, set the __position__ to __(0, 0, 13)__, and set the __Color__ to __(50, 90, 255, 255)__:
 
   ![camera setting](./images/camera-setting.png)
 
@@ -209,7 +209,7 @@ __Now__, click the __Play__ button. Once running, click the left and right mouse
 For additional etails please refer to the [Project Preview Debugging](../../editor/preview/index.md) documentation.
 
 ### Adding character animations
-So far, the `Player` can be moved in a horizontal direction. This is a start but not god enough. `Player` must become more life-like. We can achieve this effect by adding a vertical animation to the character. 
+The `Player` can be moved in a horizontal direction. This is a start, but not god enough. `Player` must become more life-like. This effect can be achieved by adding a vertical animation to the character. 
 
 > **Note**: Before proceeding, please read the [Animation Editor](../../editor/animation/index.md) documentation.
 
