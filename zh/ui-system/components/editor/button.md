@@ -17,7 +17,7 @@ Button 组件可以响应用户的点击操作，当用户点击 Button 时，Bu
 | Target               | Node 类型，当 Button 发生 Transition 的时候，会相应地修改 Target 节点的 SpriteFrame，颜色或者 Scale。                      |
 | interactable         | 布尔类型，设为 false 时，则 Button 组件进入禁用状态。                                                                    |
 | Transition           | 枚举类型，包括 NONE, COLOR，SPRITE 和 SCALE。每种类型对应不同的 Transition 设置。详情见下方的 **Button Transition** 部分。    |
-| Click Event          | 列表类型，默认为空，用户添加的每一个事件由节点引用，组件名称和一个响应函数组成。详情见下方的 **Button 事件** 部分。                 |
+| Click Event          | 列表类型，默认为空，用户添加的每一个事件由节点引用，组件名称和一个响应函数组成。详情见下方的 **Button 点击事件** 部分。                 |
 
 ### Button Transition
 
@@ -57,7 +57,7 @@ Button 的 Transition 用来指定当用户点击 Button 时的状态表现。�
 | Duration       | Button 状态切换需要的时间间隔。                                                                |
 | ZoomScale      | 当用户点击按钮后，按钮会缩放到一个值，这个值等于 Button 原始 scale * zoomScale, zoomScale 可以为负数  |
 
-### 详细说明
+### Button 点击事件
 
 Button 目前只支持 Click 事件，即当用户点击并释放 Button 时才会触发相应的回调函数。
 
@@ -86,8 +86,8 @@ const { ccclass, property } = _decorator;
 export class example extends Component {
     onLoad(){
         const clickEventHandler = new EventHandler();
-        clickEventHandler.target = this.node; //这个 node 节点是你的事件处理代码组件所属的节点
-        clickEventHandler.component = 'example';//这个是代码文件名
+        clickEventHandler.target = this.node; // 这个 node 节点是你的事件处理代码组件所属的节点
+        clickEventHandler.component = 'example';// 这个是代码文件名
         clickEventHandler.handler = 'callback';
         clickEventHandler.customEventData = 'foobar';
 
@@ -96,7 +96,7 @@ export class example extends Component {
     }
 
     callback(event: Event, customEventData: string){
-        //这里 event 是一个 Touch Event 对象，你可以通过 event.target 取到事件的发送节点
+        // 这里 event 是一个 Touch Event 对象，你可以通过 event.target 取到事件的发送节点
         const node = event.target as Node;
         const button = node.getComponent(ButtonComponent);
         console.log(customEventData); // foobar
@@ -110,7 +110,7 @@ export class example extends Component {
 获得当前点击按钮的屏幕坐标点。
 
 ```ts
-//假设我们在一个组件的 onLoad 方法里面添加事件处理回调，在 callback 函数中进行事件处理:
+// 假设我们在一个组件的 onLoad 方法里面添加事件处理回调，在 callback 函数中进行事件处理
 
 import { _decorator, Component, ButtonComponent } from "cc";
 const { ccclass, property } = _decorator;
@@ -128,8 +128,9 @@ export class example extends Component {
     }
 }
 ```
+
 ---
 
-### [**其他基础模块参考**](base-component.md)
+- [其他基础模块参考](base-component.md)
 
-### [**渲染模块参考**](render-component.md)
+- [渲染模块参考](render-component.md)

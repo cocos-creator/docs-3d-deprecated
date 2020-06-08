@@ -21,7 +21,7 @@ Toggle 是一个 CheckBox，当它和 ToggleGroup 一起使用的时候，可以
 
 ## Toggle 事件
 
-事件结构参考：[组件事件结构](./button.md#组件事件结构)      |
+事件结构参考：[组件事件结构](./button.md#组件事件结构)。
 
 Toggle 的事件回调有二个参数，第一个参数是 Toggle 本身, 第二个参数是 customEventData。
 
@@ -89,6 +89,6 @@ export class example extends Component {
 
 ---
 
-### [**其他基础模块参考**](base-component.md)
+- [其他基础模块参考](base-component.md)
 
-### [**渲染模块参考**](render-component.md)
+- [渲染模块参考](render-component.md)

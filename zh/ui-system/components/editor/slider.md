@@ -29,7 +29,7 @@ Slider 的事件回调有两个参数，第一个参数是 Slider 本身，第�
 
 ## 详细说明
 
-Slider 通常用于调节数值的 UI（例如音量调节），它主要的部件一个滑块按钮，该部件用于用户交互，通过该部件可进行调节 Slider 的数值大小。
+Slider 通常用于调节 UI 的数值（例如音量调节），它主要的部件是一个滑块按钮，该部件用于用户交互，通过该部件可进行调节 Slider 的数值大小。
 
 通常一个 Slider 的节点树如下图：
 
@@ -91,6 +91,6 @@ export class example extends Component {
 
 ---
 
-### [**其他基础模块参考**](base-component.md)
+- [其他基础模块参考](base-component.md)
 
-### [**渲染模块参考**](render-component.md)
+- [渲染模块参考](render-component.md)

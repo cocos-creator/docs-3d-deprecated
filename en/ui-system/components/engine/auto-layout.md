@@ -24,15 +24,15 @@ In the vertical layout type, the Layout component will not modify the position o
 
 ## Node Direction
 
-The Layout arrays' child nodes are based on the display order of child nodes in **Hierarchy** and refers to the array directions set up by the `Vertical Direction` or `Horizontal Direction` properties.
+The Layout arrays' child nodes are based on the display order of child nodes in __Hierarchy__ and refers to the array directions set up by the `Vertical Direction` or `Horizontal Direction` properties.
 
 ### Horizontal Direction
 
-You can set up two directions: `Left to Right` or `Right to Left`. The former will array the nodes from left to right according to their display order in **Hierarchy**; the later will array the nodes from right to left according to their display order in **Hierarchy**.
+You can set up two directions: `Left to Right` or `Right to Left`. The former will array the nodes from left to right according to their display order in __Hierarchy__; the later will array the nodes from right to left according to their display order in __Hierarchy__.
 
 ### Vertical Direction
 
-You can set up two directions: `Top to Bottom` or `Bottom to Top`. The former will array the nodes from top to bottom according to their display order in **Hierarchy**; the later will array the nodes from bottom to top according to their display order in **Hierarchy**.
+You can set up two directions: `Top to Bottom` or `Bottom to Top`. The former will array the nodes from top to bottom according to their display order in __Hierarchy__; the later will array the nodes from bottom to top according to their display order in __Hierarchy__.
 
 ## Other layout types are coming soon
 

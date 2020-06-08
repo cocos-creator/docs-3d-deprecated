@@ -1,15 +1,6 @@
 # 发布到微信小游戏
-这篇文档将会覆盖：
 
-- 微信小游戏的运行环境介绍
-- 如何使用 Cocos Creator 3D发布微信小游戏
-- 小游戏资源管理
-
-## 微信小游戏的运行环境介绍
-
-微信小游戏是微信小程序下的游戏产品平台，它不仅提供了强大的游戏能力，还和小程序一样，提供了大量的原生接口，比如支付，社交，文件系统，照片，NFC 等。相当于同时结合了 WEB 易于传播以及 Native 功能丰富的优势。
-
-小游戏的运行环境是小程序环境的扩展，基本思路也是封装必要的 WEB 接口提供给用户，尽可能追求和 WEB 同样的开发体验。小游戏在小程序环境的基础上提供了 WebGL 接口的封装，使得渲染能力和性能有了大幅度提升。不过由于这些接口都是微信团队通过自研的原生实现封装的，所以并不可以等同为浏览器环境。
+微信小游戏的运行环境是微信小程序环境的扩展，在小程序环境的基础上提供了 WebGL 接口的封装，使得渲染能力和性能有了大幅度提升。不过由于这些接口都是微信团队通过自研的原生实现封装的，所以并不可以等同为浏览器环境。
 
 作为引擎方，为了尽可能简化开发者的工作量，我们为用户完成的主要工作包括：
 
@@ -21,37 +12,41 @@
 
 ## 使用 Cocos Creator 3D 发布微信小游戏
 
-1. 在 [微信公众平台](https://mp.weixin.qq.com/debug/wxagame/dev/devtools/download.html) 下载微信开发者工具
-2. 在编辑器菜单栏的 **偏好设置 -> [原生开发环境]()** 中设置微信开发者工具路径
+1. 在 [微信官方文档](https://mp.weixin.qq.com/debug/wxagame/dev/devtools/download.html) 下载微信开发者工具
+
+2. 在编辑器菜单栏的 **Cocos Creator 3D -> 偏好设置 -> [原生开发环境](../../editor/preferences/index.md#%E5%8E%9F%E7%94%9F%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83)** 中设置微信开发者工具路径
 
     ![](./publish-wechatgame/preference.png)
+
 3. 登陆微信公众平台，找到 appid
 
     ![](./publish-wechatgame/appid.jpeg)
+
 4. 在 **构建发布** 面板的 **发布平台** 中选择 **微信小游戏**，填入小游戏 appid，然后点击 **构建**
 
     ![](./publish-wechatgame/build.png)
+
 5. 点击 **运行** 打开微信开发者工具
 
     ![](./publish-wechatgame/tool.jpeg)
-**注意**：微信开发者工具，如果之前在点击上没运行过，会出现：`Please ensure that the IDE has been properly installed` 的报错。需要手动打开一次微信开发者工具，然后才能在 Cocos Creator 3D 里直接点击 **运行** 调用。
+
+    **注意**：微信开发者工具，如果之前在点击上没运行过，会出现：`Please ensure that the IDE has been properly installed` 的报错。需要手动打开一次微信开发者工具，然后才能在 Cocos Creator 3D 里直接点击 **运行** 调用。
+
 6. 预览部署
 
-按照这样的流程，项目的 build 目录下就会生成一个微信小游戏的发布包 **wechatgame** 文件夹(具体构建任务名为准），其中已经包含了微信小游戏环境的配置文件：`game.json` 和 `project.config.json`
+    按照这样的流程，项目的 build 目录下就会生成一个微信小游戏的发布包 **wechatgame** 文件夹(具体构建任务名为准），其中已经包含了微信小游戏环境的配置文件：`game.json` 和 `project.config.json`
 
-![](./publish-wechatgame/package.jpeg)
+    ![](./publish-wechatgame/package.jpeg)
 
 ## 构建选项介绍
 
-参数名 | 可选 | 默认值 | 说明
+选项名 | 可选 | 默认值 | 说明
 - | - | - | -
-appid | 必填 | 'wx6ac3f5090a6b99c5' | 微信小程序 appid，填写后将会写入在 `project.config.json` 内。
-remoteServerAddress | 选填 | ' ' | 远程服务器地址，填写后获取资源将会从该路径上获取
-subContext | 选填 | ' ' | 子域文件夹，相对于构建最终包体的路径，将会在构建之后拷贝到结果内
-orientation | 必填 | 'landscape' | 设备方向，填写后将会写入在 `game.json` 内。
-分包 | 可选 | true | 是否开启分包功能
-
-平台相关的配置选项都是根据平台的支持来的，这里只提供了部分数据的界面修改，具体参数请参考[微信小游戏配置文档](https://developers.weixin.qq.com/minigame/dev/reference/configuration/app.html#%E9%85%8D%E7%BD%AE%E9%A1%B9)。
+分包 | 可选 | true | 设是否开启分包功能
+appid | 必填 | 'wx6ac3f5090a6b99c5' | 微信小游戏 appid，填写后将会写入在 `project.config.json` 内。
+远程服务器地址 | 选填 | 空 | 远程服务器地址，之后将会从该地址获取资源
+开放数据域代码目录 | 选填 | 空 | 如果存在开放数据域的话，通过这个字段来指定开放数据域文件夹在构建目录中的相对路径，这样在构建过程中就不会覆盖或修改该目录
+设备方向 | 必填 | landscape | 设备方向，填写后将会写入在 `game.json` 内。
 
 ## 小游戏环境的资源管理
 
@@ -88,6 +83,10 @@ orientation | 必填 | 'landscape' | 设备方向，填写后将会写入在 `ga
 
 **注意**：如果缓存资源超过微信环境限制，用户需要手动清除资源，可以在微信小游戏下使用 `wx.downloader.cleanAllAssets()` 和 `wx.downloader.cleanOldAssets()` 接口来清除缓存。前者会清除缓存目录下的所有缓存资源，请慎重使用；而后者会清除缓存目录下目前应用中未使用到的缓存资源。
 
+## 微信小游戏分包加载
+
+请参考 [分包加载](../../asset/subpackage.md)。
+
 ## 平台 SDK 接入
 
 除了纯游戏内容以外，其实微信小游戏环境还提供了非常强大的原生 SDK 接口，其中最重要的就是用户、社交、支付等，这些接口都是仅存在于微信小游戏环境中的，等同于其他平台的第三方 SDK 接口。这类 SDK 接口的移植工作在现阶段还是需要开发者自己处理。下面列举一些微信小游戏所提供的强大 SDK 能力：
@@ -98,12 +97,6 @@ orientation | 必填 | 'landscape' | 设备方向，填写后将会写入在 `ga
 4. 文件上传下载
 5. 媒体：图片、录音、相机等
 6. 其他：位置、设备信息、扫码、NFC、等等
-
-## 接入微信小游戏的开放数据域
-
-微信小游戏为了保护其社交关系链数据，增加了 **开放数据域** 的概念，这是一个单独的游戏执行环境。开放数据域中的资源、引擎、程序，都和主游戏完全隔离，开发者只有在开放数据域中才能访问微信提供的 `wx.getFriendCloudStorage()` 和 `wx.getGroupCloudStorage()` 两个 API，用于实现一些例如排行榜的功能。
-
-详情请参考 [接入微信小游戏的开放数据域](../publish/publish-wechatgame-subdomain.md)。
 
 ## 微信小游戏已知问题：
 
@@ -116,9 +109,9 @@ orientation | 必填 | 'landscape' | 设备方向，填写后将会写入在 `ga
 
 ## 参考链接
 
-- [微信小游戏开发文档](https://mp.weixin.qq.com/debug/wxagame/dev/index.html)
+- [微信小游戏开发文档](https://developers.weixin.qq.com/minigame/dev/guide/)
 - [微信公众平台](https://mp.weixin.qq.com/)
-- [小游戏 API 文档](https://developers.weixin.qq.com/minigame/dev/document/render/canvas/wx.createCanvas.html)
-- [微信开发者工具下载](https://mp.weixin.qq.com/debug/wxagame/dev/devtools/download.html)
-- [微信开发者工具文档](https://developers.weixin.qq.com/minigame/dev/devtools/devtools.html)
+- [小游戏 API 文档](https://developers.weixin.qq.com/minigame/dev/api/)
+- [微信开发者工具下载](https://developers.weixin.qq.com/miniprogram/dev/devtools/download.html)
+- [微信开发者工具文档](https://developers.weixin.qq.com/miniprogram/dev/devtools/devtools.html)
 - [微信缓存空间溢出测试案例](https://github.com/cocos-creator/WeChatMiniGameTest)

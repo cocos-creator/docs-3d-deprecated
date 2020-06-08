@@ -1,9 +1,8 @@
-# 渲染组件介绍
+# UI 渲染组件介绍
 
-- [SpriteComponent 介绍](sprite.md)
-- [LabelComponent 介绍](label.md)
-- [MaskComponent 介绍](mask.md)
-- [LabelOutlineComponent 介绍](label-outline.md)
-- [GraphicsComponent 介绍](graphics.md)
-- [RichTextComponent 介绍](richtext.md)
-- [UIModelComponent 介绍](ui-model.md)
+- [Sprite 组件参考](sprite.md)
+- [Label 组件参考](label.md)
+- [Mask 组件参考](mask.md)
+- [Graphics 组件参考](graphics.md)
+- [RichText 组件参考](richtext.md)
+- [UIStaticBatch 组件参考](ui-static.md)

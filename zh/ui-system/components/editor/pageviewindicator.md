@@ -23,6 +23,6 @@ PageViewIndicator 一般不会单独使用，它需要与 `PageView` 配合使�
 
 ---
 
-### [**其他基础模块参考**](base-component.md)
+- [其他基础模块参考](base-component.md)
 
-### [**渲染模块参考**](render-component.md)
+- [渲染模块参考](render-component.md)

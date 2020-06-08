@@ -25,6 +25,6 @@ ScrollBar 一般不会单独使用，它需要与 `ScrollView` 配合使用，�
 
 ---
 
-### [**其他基础模块参考**](base-component.md)
+- [其他基础模块参考](base-component.md)
 
-### [**渲染模块参考**](render-component.md)
+- [渲染模块参考](render-component.md)

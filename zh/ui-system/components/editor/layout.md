@@ -4,15 +4,15 @@ Layout 是一种容器组件，容器能够开启自动布局功能，自动按�
 
 - 水平布局容器
 
-![horizontal-layout.png](layout/horizontal-layout.png)
+  ![horizontal-layout.png](layout/horizontal-layout.png)
 
 - 垂直布局容器
 
-![vertical-layout.png](layout/vertical-layout.png)
+  ![vertical-layout.png](layout/vertical-layout.png)
 
 - 网格布局容器
 
-![grid-layout.png](layout/grid-layout.png)
+  ![grid-layout.png](layout/grid-layout.png)
 
 点击 **属性检查器** 下面的 **添加组件** 按钮，然后选择 **UI/Layout** 即可添加 Layout 组件到节点上。
 
@@ -22,7 +22,7 @@ Layout 是一种容器组件，容器能够开启自动布局功能，自动按�
 
 | 属性                 | 功能说明                                                                                                                                           |
 | --------------       | -----------                                                                                                                                        |
-| Type                 | 布局类型，支持 NONE, HORIZONTAL，VERTICAL 和 GRID。请参考详[自动布局](../engine/auto-layout.md)。                                                                                                |
+| Type                 | 布局类型，支持 NONE, HORIZONTAL，VERTICAL 和 GRID。详情请参考 [自动布局](../engine/auto-layout.md)。                                                                                                |
 | ResizeMode           | 缩放模式，支持 NONE，CHILDREN 和 CONTAINER。                                                                                                        |
 | PaddingLeft          | 排版时，子物体相对于容器左边框的距离。                                                                                                            |
 | PaddingRight         | 排版时，子物体相对于容器右边框的距离。                                                                                                            |
@@ -32,8 +32,9 @@ Layout 是一种容器组件，容器能够开启自动布局功能，自动按�
 | SpacingY             | 垂直排版时，子物体与子物体在垂直方向上的间距。NONE 模式无此属性。                                                                                  |
 | Horizontal Direction | 指定水平排版时，第一个子节点从容器的左边还是右边开始布局。当容器为 Grid 类型时，此属性和 Start Axis 属性一起决定 Grid 布局元素的起始水平排列方向。 |
 | Vertical Direction   | 指定垂直排版时，第一个子节点从容器的上面还是下面开始布局。当容器为 Grid 类型时，此属性和 Start Axis 属性一起决定 Grid 布局元素的起始垂直排列方向。 |
-| Cell Size            | 此属性只在 Grid 布局时存在，指定网格容器里面排版元素的大小。                                                                                       |
+| Cell Size            | 此属性只在 Grid 布局、Children 缩放模式时存在，指定网格容器里面排版元素的大小。                                                                                       |
 | Start Axis           | 此属性只在 Grid 布局时存在，指定网格容器里面元素排版指定的起始方向轴。                                                                             |
+| Affected By Scale    | 子节点的缩放是否影响布局。  |
 
 ## 详细说明
 
