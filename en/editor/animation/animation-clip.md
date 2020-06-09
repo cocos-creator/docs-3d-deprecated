@@ -1,4 +1,4 @@
-# Edit animation sequence
+# Editing a animation sequence
 
 After the __animation clip__ is attached to the __Node__, click __Enter Animation Edit Mode__ to enter the __animation editing mode__, and then you can create some __animation frame data__ in the __animation clip__.
 
