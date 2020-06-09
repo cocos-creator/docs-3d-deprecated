@@ -13,7 +13,7 @@ There are two ways to create a new __Animation component__:
 
 Specifics about __Animation component__ parameters can be found in [Animation Component Reference](./../../engine/animation/animation-component.md) documentation.
 
-## Creating and mounting animation clips
+## Creating and attaching animation clips
 
 Even though there is an __Animation component__ on the __Node__, there is no corresponding __animation clip data__. There are two ways to create __animation clips__:
 
