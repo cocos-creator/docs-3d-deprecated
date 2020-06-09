@@ -215,7 +215,7 @@ The `Player` can be moved in a horizontal direction. This is a start, but not go
 
 After reading and understanding the capabilities of the __Animation Editor__ character animations can be implementated!
 
-1. Locate the **Animation Editor** on the side of the editor below the **Console**. Select the `Body` node in the __Scene__, to add an __Animation Component__ and create a new __Animation Clip__. Give this new _Animation Clip__ a name of `oneStep`.
+1. Locate the **Animation Editor**, at the bottom of the editor alongside the __Assets Preview__ and the **Console** panels. Select the `Body` node in the __Scene__ and click to add an __Animation Component__ and then click again tp create a new __Animation Clip__. Give this new __Animation Clip__ a name of `oneStep`.
 
    ![player move](./images/add-animation.gif)
 
@@ -225,7 +225,7 @@ After reading and understanding the capabilities of the __Animation Editor__ cha
 
 > **Note**: Remember to save the animation before exiting the animation editing mode, otherwise the animation will be lost.
 
-3. __Animation Clips__ can also be created using the **Explorer** panel. Below we create a __Clip__ named `twoStep` and add it to the __AnimationComponent__ on `Body`.
+3. __Animation Clips__ can also be created using the **Explorer** panel. Next, Create a __Clip__ named `twoStep` and add it to the __AnimationComponent__ on `Body`.
 
    ![add animation from assets](./images/add-animation-from-assets.gif)
 
@@ -242,41 +242,40 @@ After reading and understanding the capabilities of the __Animation Editor__ cha
       @property({type: AnimationComponent})
       public BodyAnim: AnimationComponent = null;
    ```
-   Then in the ** Property Inspector **, drag the `AnimationComponent` on Body to this variable.
+   Then in the **Property Inspector**, drag the `AnimationComponent` to the `Body` variable.
 
     ![drag to animComp](./images/drag-to-animComp.gif)
 
     Add the animation playback code to the jump function `jumpByStep`:
+    ```ts
+    if (step === 1) {
+        this.BodyAnim.play('oneStep');
+    } else if (step === 2) {
+        this.BodyAnim.play('twoStep');
+    }
+    ```
 
-   ```ts
-      if (step === 1) {
-         this.BodyAnim.play('oneStep');
-      } else if (step === 2) {
-         this.BodyAnim.play('twoStep');
-      }
-   ```
-
-   Click the __Play__ button. When playing click the left and right mouse buttons, you can see the new jump effect in action:
+   Click the __Play__ button. When playing, click the left and right mouse buttons, you can see the new jump effect in action:
 
       ![preview with jump](./images/preview-with-jump.gif)
 
-## Upgrade the road
-In-order to make the gameplay longer and more enjoyable, we need a long stretch of road to let the `Player` run all the way to the right. Copying a bunch of cubes in the __Scene__ and editing the position to form the road is not a wise practice. We can complete this by using a script to automatically create the road pieces.
+## Upgrading the road
+In-order to make the gameplay longer and more enjoyable, we need a long stretch of road to let the `Player` run all the way to the right. Copying a bunch of cubes in the __Scene__ and editing the position of each cube to form the road is not a wise practice. We can, however, complete this by using a script to automatically create the road pieces.
 
 ### A "Game Manager" can help.
-Most games have a __manager__, which is mainly responsible for the management of the entire game life cycle. You can put the dynamic creation code of the road in this same manager. Create a node named `GameManager` in the __Scene__. Next, create a TypesScript file named `GameManager` in `assets/Scripts` and add it to the `GameManager` node.
+Most games have a __manager__, which is mainly responsible for the management of the entire game life-cycle. You can put the code for the dynamic creation of the road in this same manager. Create a node named `GameManager` in the __Scene__. Next, create a TypesScript file named `GameManager` in `assets/Scripts` and add it to the `GameManager` node.
 
 ### Making a Prefab
-For the node that needs to be generated repeatedly, we can save it as a **Prefab (prefabricated)** resource. This means it can be used as a template when we dynamically generate the node.
+For a node that needs to be generated repeatedly, it can be saved as a **Prefab (prefabricated)** resource. This means it can be used as a template when we dynamically generate other nodes of this same type.
 
 > **Note**: Before proceeding, please read the [Prefab Resources](../../asset/prefab.md) documentation.
 
-It is necesssary to make the basic element `cube` of the road into a __Prefab__, and then we can delete all three cubes in the __Scene__.
+It is necesssary to make the basic element `cube` of the road into a __Prefab__, after which all three cubes in the __Scene__ can be deleted.
 
    ![create cube prefab](./images/create-cube-prefab.gif)
 
 ### Adding the automatic road creation
-A very long road is needed. The ideal method is to dynamically increase the length of the road, so that the `Player` can run forever. First, generate a fixed-length road with a length that is arbitraty. Replace the code in the `GameManager` script with the following code:
+A very long road is needed. The ideal method is to dynamically increase the length of the road, so that the `Player` can run forever. First, generate a fixed-length road with a length that is arbitraty. To do so, replace the code in the `GameManager` script with the following code:
 
 ```ts
 import { _decorator, Component, Prefab, instantiate, Node, CCInteger} from "cc";
@@ -344,14 +343,14 @@ export class GameManager extends Component {
 
 The length of the road can be changed by modifying the value of `roadLength` in the __Properties__ panel for the `GameManager`.
 
-When previewing, the road is now automatically generated, but because the __Camera__ does not follow the `Player`, the road behind cannot be seen. Setting the __Camera__ in the __Scene__ as a child node of the `Player` can help solve this.
+When previewing, the road is now automatically generated, however, because the __Camera__ does not follow the `Player`, the road behind cannot be seen. Changing the __Camera__ in the __Scene__ to be a child node of the `Player` can help solve this.
 
   ![drag camera to player](./images/drag-camera-to-player.gif)
 
-The Camera will follow the Player's movement.
+Now, the __Camera__ will follow the Player's movement.
 
 ## Adding a start menu
-The __start menu__ is an indispensable part of most any game. Add the game name, game introduction, production staff and other information here.
+The __start menu__ is an indispensable part of most any game. Add the game name, game introduction, production staff and other information here. Creating a simple start menu starts with some basic steps:
 
 1. Add a button called `Play`
 
@@ -365,7 +364,7 @@ The __start menu__ is an indispensable part of most any game. Add the game name,
 
   > **Note**: Before proceeding, please read the [Scene Editing](../../editor/scene/index.md) documentation.
 
-3. Add a background frame, create a Sprite node named `BG` under `StartMenu`, adjust its position to above the `PlayButton`, set its width and height to __(200, 200)__, and set its SpriteFrame to `internal/default_ui/ default_sprite_splash`.
+3. Add a background frame by creating a Sprite node named `BG` under `StartMenu`. Adjust `BG`'s position to above the `PlayButton`, setting the *width* and *height* to __(200, 200)__, and setting its __SpriteFrame__ to `internal/default_ui/ default_sprite_splash`.
 
     ![change spriteFrame](./images/change-spriteFrame.png)
 
@@ -377,14 +376,14 @@ The __start menu__ is an indispensable part of most any game. Add the game name,
    
    ![modify title](./images/title-inspector.png)
 
-6. Adjust the position of the `PlayButton`, and a simple start menu is complete.
+6. Adjust the position of the `PlayButton`. The layout of a simple __start menu__ is complete.
    
    ![modify title](./images/start-menu.png)
 
 7. Add game state logic, generally it can be divided into three states:
-   - **Init**: Display the game menu and initialize some resources.
-   - **Playing**: Hide the game menu, players can operate the game.
-   - **End**: End the game and display the ending menu.
+   - **Init**: display the game menu and initialize some resources.
+   - **Playing**: hide the game menu, players can operate the game.
+   - **End**: end the game and display the ending menu.
 
    Use an enum type to represent these states.
 
@@ -424,7 +423,7 @@ The __start menu__ is an indispensable part of most any game. Add the game name,
     }
     ```
 
-    Next, reference `PlayerController` in the `GameManager` script. Drag the `Player` of the scene into this variable in the __Inspector__ panel.
+    Next, reference `PlayerController` in the `GameManager` script. Drag the `Player` variable in the __Inspector__ panel.
     
     ```ts
     @property({type: PlayerController})
@@ -461,7 +460,9 @@ The __start menu__ is an indispensable part of most any game. Add the game name,
                 break;
             case GameState.GS_PLAYING:
                 this.startMenu.active = false;
-                setTimeout(() => {      //直接设置active会直接开始监听鼠标事件，做了一下延迟处理
+                // Directly setting active will directly start monitoring
+                // mouse events, and do a little delay processing
+                setTimeout(() => {
                     this.playerCtrl.setInputActive(true);
                 }, 0.1);
                 break;
@@ -480,16 +481,16 @@ The __start menu__ is an indispensable part of most any game. Add the game name,
     }
     ```
     
-    Next, add the response function of __Click Events__ in the __Inspector__ panbel of the `Play` button.
+    Next, add the response function of __Click Events__ in the __Inspector__ panbel for the `Play` button.
 
     ![play button inspector](./images/play-button-inspector.png)
 
-Now preview the scene by clicking the `Play` button to start the game.
+Now, preview the scene by clicking the `Play` button to start the game.
 
 ## Adding game end logic
-The game character is just running forward, with no purpose. Let's add game rules to make the game play more challenging.
+The game character is just running forward, with no purpose. Adding game rules to make the game play more challenging would make the game more playable and give it a purpose.
 
-1. The character needs to send a message at the end of each jump, that records how many steps the character jumped and its current position. This can be done in `PlayerController`.
+1. The character needs to send a message at the end of each jump. This message shoul record how many steps the character jumped and its current position. This can be done in `PlayerController`.
 
    ```ts
     private _curMoveIndex = 0;
@@ -509,9 +510,9 @@ The game character is just running forward, with no purpose. Let's add game rule
     }
    ```
 
-2. Monitor the character's jumping end event in `GameManager`, and judge the winning or losing according to the rules.
+2. Monitor the character's jumping end event in `GameManager`, and judge the winning or losing of the game, according to the rules.
   
-  Increase the failure and end judgment, if it jumps to an empty square or exceeds the maximum length value, it will end:
+  Increase the failure and ending logic to judge how the game is being played.If `Player` jumps to an empty square or exceeds the maximum length value, the game will end:
 
    ```ts
     checkResult(moveIndex: number) {
@@ -526,7 +527,7 @@ The game character is just running forward, with no purpose. Let's add game rule
     }
    ```
 
-   Monitor the character'S jump message and call a function to decide:
+   Monitor the character's jump message and call a function to decide:
 
    ```ts
     start () {
@@ -540,15 +541,15 @@ The game character is just running forward, with no purpose. Let's add game rule
     }
    ```
 
-   If you preview playing the game now, there will be a judgment error when restarting the game. This is because we did not reset the `_curMoveIndex` property value in `PlayerController` when the game restarts. To fix this, add a reset function in `PlayerController`.
+   If you preview playing the game now, there will be a logic error when restarting the game. This is because we did not reset the `_curMoveIndex` property value in `PlayerController` when the game restarts. To fix this, add a reset function in `PlayerController`.
 
    ```ts
     reset() {
         this._curMoveIndex = 0;
     }
    ```
-   Call `reset()` in the `init` function of `GameManager` to reset the properties of `PlayerController`.
 
+   Call `reset()` in the `init` function of `GameManager` to reset the properties of `PlayerController`.
    ```ts
     init() {
         \\ ...
@@ -557,9 +558,9 @@ The game character is just running forward, with no purpose. Let's add game rule
    ```
 
 ## Step counting display
-We can display the current number of steps jumped in the interface, so that watching the continuous growth of steps during the jump will be very fulfilling.
+We can display the current number of steps jumped in the interface. Perhaps watching the continuous growth of steps during the jump will be very fulfilling to the player.
 
-1. Create a new label named `Steps` under __Canvas__, adjust the position, font size and other properties.
+1. Create a new label named `Steps` under __Canvas__, adjust the *position*, *font size* and *other properties*.
 
    ![steps label](./images/steps-label.png)
 
@@ -572,8 +573,7 @@ We can display the current number of steps jumped in the interface, so that watc
 
    ![steps label to game manager](./images/add-steps-to-game-manager.png)
 
-3. Update the current step data to appear in this Label. 
-    Because an ending interface has yet to be created we reset the number of steps to 0 when restarting playing.
+3. Update the current `Step` data to appear in new `Steps` Label. A game ending interface has yet to be created, for now, reset the number of steps to __0__ when restarting playing.
 
    ```ts
     set curState (value: GameState) {
@@ -597,7 +597,7 @@ We can display the current number of steps jumped in the interface, so that watc
     }
    ```
 
-    Update the `Steps` Label in the function that responds to the character jumping.
+    Update the `Steps` Label in a function that responds to the character jumping. It should make sense that recording the number of `Steps` would take place after each and every jump for accuracy.
 
     ```ts
     onPlayerJumpEnd(moveIndex: number) {
@@ -606,25 +606,24 @@ We can display the current number of steps jumped in the interface, so that watc
     }
     ```
 
-## Light and shadow
-Where there is light, there will be a shadow, and light and shadows constitute a 3D world where light and dark intersect. Next, let's add a simple shadow to the character.
+## Lights and shadows
+Where there is light, there will be a shadow. Light and shadows create a 3D world where light and dark intersect. Next, let's add a simple shadow to the character.
 
-### Turning on the shadow
+### Turning on shadows
 
-1. In the **Hieracrhy Manager**, click the `Scene` node at the top, check `Enabled` in the `planShadows` option, and modify the `Distance` and `Normal` parameters
+1. In the **Hieracrhy Manager**, click the `Scene` node at the top, check `Enabled` in the `planShadows` property, and modify the `Distance` and `Normal` parameters
 
     ![planar shadows](./images/planarShadows.png)
 
-2. Click the `Body` node under the `Player` node, and set `ShadowCastingMode` under `cc.ModelComponent` to `ON`.
+2. Click the `Body` node, under the `Player` node, and set `ShadowCastingMode` under `cc.ModelComponent` to `ON`.
 
     ![model shadow](./images/model-shadow.png)
 
-A shadow patch can be seen in the in the scene editor. However, this shadow cannot be seen when previewing because it is covered by the capsule body directly behind the model.
+A patch of shadow can be seen in the in the __Scene__ editor. However, this shadow cannot be seen when previewing because it is covered by the capsule body that is directly behind the model.
 
 ![player shadow](./images/player-shadow-scene.png)
 
 ### Adjusting the light
-
 When creating a new scene, a `DirctionalLight` will be added __by default__, and the shadow will be calculated from this parallel light. The direction of this parallel light can be adjusted in-order to display the shadow in another position.
 
 In the **Hierarchy Manager**, click to select the `Main Light` node and adjust the `Rotation` parameter to __(-10, 17, 0)__.
@@ -646,60 +645,60 @@ A prefab called `Cocos` has been included in the cocos file, drag it to the `Bod
 
 ![add cocos prefab](./images/add-cocos-prefab.png)
 
-At this time, you will find that the model is a little dark and a spotlight can be added to highlight its shiny brain.
+The model is a little dark and a spotlight can be added to highlight its shiny brain.
 
 ![add cocos light](./images/cocos-add-light.png)
 
 ### Adding a jumping animation
 When previewing the game, the character will initially have a standby animation, but a jumping animation needs to be used during a jump.
 
-Add a variable in the `PlayerController` class that references the model animation:
+First, add a variable in the `PlayerController` class that references the model animation:
 
 ```ts
     @property({type: SkeletalAnimationComponent})
     public CocosAnim: SkeletalAnimationComponent = null;
 ```
 
-Then in the __Inspector__, drag the `Cocos` node into this variable. 
+Then, in the __Inspector__, drag the `Cocos` node into this variable. 
 
 The jump animation needs to be used in the `jumpByStep` function.
 
 ```ts
-    jumpByStep(step: number) {
-        if (this._isMoving) {
-            return;
-        }
-        this._startJump = true;
-        this._jumpStep = step;
-        this._curJumpTime = 0;
-        this._curJumpSpeed = this._jumpStep / this._jumpTime;
-        this.node.getPosition(this._curPos);
-        Vec3.add(this._targetPos, this._curPos, v3(this._jumpStep, 0, 0));
-
-        this._isMoving = true;
-
-        // The jumping animation takes a long time, here is accelerated playback
-        this.CocosAnim.getState('cocos_anim_jump').speed = 3.5;
-        // Play jumping animation
-        this.CocosAnim.play('cocos_anim_jump');
-        if (step === 1) {
-            //this.BodyAnim.play('oneStep');
-        } else if (step === 2) {
-            this.BodyAnim.play('twoStep');
-        }
-
-        this._curMoveIndex += step;
+jumpByStep(step: number) {
+    if (this._isMoving) {
+        return;
     }
+    this._startJump = true;
+    this._jumpStep = step;
+    this._curJumpTime = 0;
+    this._curJumpSpeed = this._jumpStep / this._jumpTime;
+    this.node.getPosition(this._curPos);
+    Vec3.add(this._targetPos, this._curPos, v3(this._jumpStep, 0, 0));
+
+    this._isMoving = true;
+
+    // The jumping animation takes a long time, here is accelerated playback
+    this.CocosAnim.getState('cocos_anim_jump').speed = 3.5;
+    // Play jumping animation
+    this.CocosAnim.play('cocos_anim_jump');
+    if (step === 1) {
+        //this.BodyAnim.play('oneStep');
+    } else if (step === 2) {
+        this.BodyAnim.play('twoStep');
+    }
+
+    this._curMoveIndex += step;
+}
 ```
 
 In the `onOnceJumpEnd` function, change to the standby state and play the standby animation.
 
 ```ts
-    onOnceJumpEnd() {
-        this._isMoving = false;
-        this.CocosAnim.play('cocos_anim_idle');
-        this.node.emit('JumpEnd', this._curMoveIndex);
-    }
+onOnceJumpEnd() {
+    this._isMoving = false;
+    this.CocosAnim.play('cocos_anim_idle');
+    this.node.emit('JumpEnd', this._curMoveIndex);
+}
 ```
 
 When previewing, the results are as follows:
