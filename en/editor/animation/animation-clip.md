@@ -33,7 +33,7 @@ The __animation clip__ defines the position of the data by the name of the node,
 
     At this time, we can right-click on __Migrate Data__ on the missing node, and then click on other nodes to migrate the data. If you do not want to migrate after clicking __Migrate Data__, click directly in the timeline area or click __Cancel__ in the pop-up window after clicking other nodes.
 
-    !(./animation-clip/moving_node.gif)
+    ![](./animation-clip/moving_node.gif)
 
     > **Note**: by default, node data migration will overwrite the data on the target node
 
