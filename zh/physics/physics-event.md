@@ -28,7 +28,7 @@ Cocos Creator 3D 的物理事件有触发事件和碰撞事件。
 
 代码示例：
 
-```
+```ts
 public start () {
     let Collider = this.getComponent(ColliderComponent);
     Collider.on('onTriggerStay', this.onTrigger, this);
@@ -52,7 +52,7 @@ private onTrigger (event: ITriggerEvent) {
 
 代码示例：
 
-```
+```ts
 public start () {
     let Collider = this.getComponent(ColliderComponent);
     Collider.on('onCollisionStay', this.onCollision, this);

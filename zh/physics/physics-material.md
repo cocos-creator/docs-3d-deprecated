@@ -28,7 +28,7 @@ restitution | 回弹系数
 
 代码中实例化：
 
-```
+```ts
 let newPmtl = new PhysicMaterial();
 newPmtl.friction = 0.1;
 newPmtl.restitution = 0.1;
@@ -45,14 +45,14 @@ newPmtl.restitution = 0.1;
 
 代码中操作：
 
-```
+```ts
 const collider = this.node.getComponent(ColliderComponent);
 collider.material = newPmtl;
 ```
 
 因为[材质共享](physics-collider.md##物理材质)的设计，实际在代码中可以直接这样操作（因为在获取 `material`时会创建一个实例）
 
-```
+```ts
 collider.material.friction = 0.1;
 collider.material.restitution = 0.1;
 ```

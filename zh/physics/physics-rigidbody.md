@@ -16,7 +16,7 @@
 
 代码示例：
 
-```
+```ts
 if (rigidBody.isAwake) {
     rigidBody.sleep();
 }
@@ -61,7 +61,7 @@ if (rigidBody.isSleeping) {
 
 代码示例：
 
-```
+```ts
 rigidBody.setLinearVelocity(new Vec3(5, 0, 0));
 rigidBody.setAngularVelocity(new Vec3(5, 0, 0));
 ```
