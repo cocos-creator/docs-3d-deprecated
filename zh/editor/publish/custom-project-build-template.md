@@ -56,7 +56,7 @@ project-folder
 | vivo 小游戏 | vivo-mini-game | project.config.json |
 | 华为快游戏 | huawei-mini-game | X（暂不支持） |
 | 支付宝小游戏 | alipay-mini-game | game.json |
-| 原生平台 | native | X（暂不支持） |
+| 原生平台 | native | X（暂不推荐使用） |
 
 ## 自定义构建插件
 
