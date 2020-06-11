@@ -21,6 +21,12 @@ Publish a project from the command line can help us build an auto-publish routin
 
 Currently, when using the command line to build, except for the required build options, if no parameter values are uploaded, the default values are used to build. Please refer to the description below and the platform's build options description for specific default values.
 
+## Exit Code
+
+- **332** Build failed —— Invalid build parameters.
+- **334** Build failed —— Some unexpected errors occurred during the build process, please refer to the build log for details.
+- **336** Build success.
+
 ## Publish Parameters
 
 - `--project`: Required, specify the project path.
