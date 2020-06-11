@@ -58,7 +58,7 @@ Use the feature map to quickly understand engine features
 - [Falling ball](https://github.com/cocos-creator/example-3d/tree/master/falling-ball): Demo of falling ball game Demo, based on the physics system, completed the basic gameplay of falling ball game
 - [Rolling Ball](https://github.com/cocos-creator/example-3d/tree/master/roll-a-ball): Demo of physics-based object movement Demo, which moves the object by applying force to the object
 - [Engulfing Black Hole](https://github.com/cocos-creator/example-3d/tree/master/simple-hole): Devouring Game Demo Demo
-- [Simple-FPS](https://github.com/cocos-creator/example-3d/tree/master/simple-fps): Simple FPS game demo, users can use this case study to complete a simple FPS game
+- [Simple-Games](https://github.com/cocos-creator/example-3d/tree/master/simple-games)：Simple games demo, users can use this case study to complete some simple and famous games.
 - [Module display collection](https://github.com/cocos-creator/test-cases-3d): The example project of each function of the engine, which basically covers most of the function modules of the engine. Users can refer to it when using the functions Development in this project
 - [UI Show Demo](https://github.com/cocos-creator/demo-ui/tree/3d): Demo of various UI components combined use Demo
 
