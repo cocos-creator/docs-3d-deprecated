@@ -66,18 +66,18 @@ Transform Gizmo Based Point Configure is used to set the position and rotation o
 ![pivot local](images/pivot-local.png)
 ![center global](images/center-global.png)
 
-### 位置
+### Position
 
-Click the Pivot/Center button to toggle between Pivot and Center.
+Click the **Pivot/Center** button to toggle between **Pivot** and **Center**.
 
-- **Pivot** : Use the world position of node.
-- **Center**: Use the center position of all selected nodes.
+- **Pivot** : use the world position of node.
+- **Center**: use the center position of all selected nodes.
 
-### 方向
+### Rotation
 
-Click the Local/Global button to toggle between Local and Global.
+Click the **Local/Global** button to toggle between **Local** and **Global**.
 
-- **Local** : Use the rotation of node.
-- **Global** : Use the rotation of world space.
+- **Local** : use the rotation of node.
+- **Global** : use the rotation of world space.
 
 ## [<-Scene Editor](index.md)
