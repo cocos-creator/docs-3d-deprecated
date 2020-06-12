@@ -35,7 +35,7 @@ The **Scene Gizmo** is in the upper-right corner of the **Scene** view. It indic
 - Click on the cube in the center, you can switch between *ortho* camera mode and *perspective* camera mode.
 
 ## Selecting a node
-The node will be selected if you left click the mouse on the node in **Scene Editor**. You can use transform tools (like position, rotation) to do some node operations only if you have selected it.
+The node will be selected upon left-clicking the mouse on the node in **Scene Editor**. You can use transform tools (like position, rotation) to do basic node operations when it is selected.
 
 ## Gizmo Operation Introduction
 The main function of **Scene Editor** is to edit and arrange the visible elements in the scene and get a WYSIWYG scene immediately, we mainly use **Gizmo** tools to assist in the visual editing of the scene。
