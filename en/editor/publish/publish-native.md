@@ -86,7 +86,7 @@ Android requires that all APKs be digitally signed with a certificate before the
 
 #### Orientation
 
-The orientation of the device includes four types **Portrait**, **Landscape Left**, and **Landscape Right**.
+The orientation of the device includes three types **Portrait**, **Landscape Left**, and **Landscape Right**.
 
 #### Generate App Bundle (Google Play)
 

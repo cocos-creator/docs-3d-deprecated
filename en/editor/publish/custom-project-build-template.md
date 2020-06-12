@@ -56,7 +56,7 @@ The `json` files corresponding to the data fusion for each mini game are as foll
 | OPPO Mini Game | oppo-mini-game | manifest.json |
 | vivo Mini Game | vivo-mini-game | project.config.json |
 | Alipay Mini Game | alipay-mini-game | game.json |
-| Native | native | X(Not recommended) |
+| Native | native | X (Not recommended) |
 
 ## Custom Build Plugins
 
