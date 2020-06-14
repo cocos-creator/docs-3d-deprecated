@@ -47,7 +47,7 @@ Cocos Creator 3D 的物理系统的更多内容将通过以下模块来进行更
 ---|---
 [**物理选项**](physics-item.md) | 介绍了 Cocos Creator 3D 中可选的底层物理引擎选项
 [**物理系统**](physics-system.md) | 介绍了物理系统，以及物理系统的一系列属性和接口
-[**物理组件**](physics-component.md) | 介绍了一些列物理组件以及面板上的一系列属性
+[**物理组件**](physics-component.md) | 介绍了一些物理组件以及面板上的一系列属性
 [**物理使用**](physics-use.md) | 进一步介绍了物理相关的使用，事件、分组掩码等
 
 ---
