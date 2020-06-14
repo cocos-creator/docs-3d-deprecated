@@ -3,19 +3,46 @@
 ## Contributions in English
 
 ### Using Bold
-- to note step numbers. Example: __First__, __Second__, __Third__, etc
-- to designate important Creator Components, Objets, etc. Example: __Scene__, __Sprite Component__
-- to designate important Creator UI elements. Example: __Hierarchy Panel__, __Assets Panel__
+- to note step numbers. 
+  - __Example__: __First__, __Second__, __Third__, etc
+- to designate important Creator Components, Objets, UI Elements. 
+  - __Example__: __Scene__, __Sprite inspector__, __Sprite__ inspector, __Asset panel__ or __Asset__ panel
 
-### Using Italics
-- list items. Example: *apple*, *orange*, *banana*, and *pear*
+### List items
+- __Example__: *apple*, *orange*, *banana*, and *pear*
+- __Example__:
+  - apple
+  - orange
+  - pear
 
-### Using a single backtick
-- designate properties
-- filenames and paths. Example: `myfile.txt` and `/mypath/myfile.txt`
+### Using a single backtick (code wrapper)
+- designate class names, property names and function names.
+  - __Example__: `SpriteComponent`, `onEnable`, `SpriteComponent.spriteFrame`
+- filenames and paths. 
+  - __Example__: `myfile.txt`, `/mypath/myfile.txt`, `/assets/xyz/`
 
 ### Using a triple backtick
 - code blocks
+
+### Tables
+Can bold or italics the first colume but bot the second column. __Examples__:
+
+| Properties | Explanation |
+| --- | --- |
+| anisotropy | Anisotropy value |
+| minFilter | Narrowing Filter Algorithm |
+
+| Properties | Explanation |
+| --- | --- |
+| **anisotropy** | Anisotropy value |
+| **minFilter** | Narrowing Filter Algorithm |
+
+| Properties | Explanation |
+| --- | --- |
+| *anisotropy* | Anisotropy value |
+| *minFilter* | Narrowing Filter Algorithm |
+
+
 
 ### Grammar suggestions
 - __Firstly__ ->  __First__.
@@ -28,8 +55,8 @@
 
 ### Technical designations
 - json -> JSON
-- js -> JavaScript
-- ts -> TypeScript
+- js or JS -> JavaScript
+- ts or TS -> TypeScript
 
  
 
