@@ -23,6 +23,8 @@ The **Explorer** panel is the main panel. It has a *heads-up menu area*, *a cent
     - **Expand the folder**: right arrow or Enter
     - **Multi-select**: Ctrl or Cmd + click
     - **Multi-select**: Shift + click
+    - **Rename**: Enter/F2
+    - **Cancel Rename**: Esc
 
 ## New assets
 
@@ -36,7 +38,7 @@ New asset:
 
 __Right-click__ on the new asset in the menu:
 
-  ![New asset by right-clicking the menu](img/db-context-submenu.png)
+  ![New asset by right-clicking the menu](img/context-menu.png)
 
 
 ## Selecting an asset
@@ -76,6 +78,8 @@ The **Sort by button** in the top menu has __2__ sorting methods: *Sort by name*
 
 The **Search Type button** in the top menu has __3__ sorting methods: *Search Name*, *Search UUID*, and *Search Type*. Where *Search Type* is the *Import type* of the search asset, not the suffix type of the asset.
 
+  ![Search Resources](img/search-type.png)
+
 The **Search box** changes the instant search. You can select the asset in the search results, after clearing the search content, the selected asset will be relocated within the window to achieve the purpose of locating the asset by searching.
 
   ![Search Resources](img/search.png)
@@ -89,4 +93,4 @@ The **Fold or expand all button**  is an easy way to retract the view range and 
 
 ## Renaming an asset
 
-Select a asset, use either the __shortcut key F2__ or __right-click__ to get a menu selecting **Rename** to enter to modify the name. The name can not be empty. Use the **shortcut key Esc** will cancel a rename. The name of the script cannot start with a number and cannot be the same as an existing script file.
+Select a asset, use either the __shortcut key F2__ or by a __right-click__ and selecting **Rename** to modify the name. The name cannot be empty. Use the **shortcut key Esc** will cancel the rename. The name of the script cannot start with a number and cannot be the same as an existing script file.

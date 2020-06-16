@@ -2,13 +2,14 @@
 
 射线检测是非常重要的功能，常常用来判断各种情况。
 其本质是对一条射线和另一个形状进行**相交性判断**，如下图所示。
+
 ![图解](img/raycast.jpg)
 
 ## 构造射线
 
 射线`ray`处于`cc`模块的`geometry`命名空间下，因此访问`ray`需要先导入`geometry`：
 
-```
+```ts
 import { geometry } from "cc";
 ```
 
@@ -18,7 +19,7 @@ import { geometry } from "cc";
 
 1. 通过`起点`+`方向`，如`ray`的构造函数或静态接口`create`：
 
-```
+```ts
 import { geometry } from "cc";
 const { ray } = geometry;
 // 构造一条从（0，-1，0）出发，指向 Y 轴的射线
@@ -31,7 +32,7 @@ const outRay2 = ray.create(0, -1, 0, 0, 1, 0);
 
 2. 通过`起点`+`射线上的另一点`，如`ray`的静态接口`fromPoints`中:
 
-```
+```ts
 import { geometry, Vec3 } from "cc";
 // 构造一条从原点出发，指向 Z 轴的射线
 const outRay = new geometry.ray();
@@ -41,9 +42,10 @@ geometry.ray.fromPoints(outRay, Vec3.ZERO, Vec3.UNIT_Z);
 3. 用相机构造一条从相机原点到屏幕（或者说相机的近端面）某点发射出的射线：
 
 **注：首先需要获取一个相机组件或者相机实例的引用**。
+
 **注：相机组件和相机实例两者暴露的接口参数顺序不一样**。
 
-```
+```ts
 import { geometry, CameraComponent } from "cc";
 const { ray } = geometry;
 // 此处假设已经有 cameraCom 的引用了

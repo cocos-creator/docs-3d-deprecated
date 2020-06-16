@@ -45,18 +45,18 @@ project-folder
 具体各个小游戏平台有做对应数据融合的 json 文件列表如下:
 
 | 平台 | 平台实际名称 | 自定义构建模板 |
-| -------- | ---------- | ----------- |
+| --- | --- | --- |
 | 微信小游戏 | wechatgame | game.ejs, game.json, project.config.json |
 | Web Mobile | web-mobile | index.ejs |
-| Web Desktop | web-desktop | index.ejs |
+| Web 桌面端 | web-desktop | index.ejs |
 | 小米快游戏 | xiaomi-quick-game | manifest.json |
-| 华为快游戏 | huawei-mini-game | 使用面板上的 |
-| Cocos Play | cocos-play | game.config.json |
+| Cocos Play | cocos-play |  game.config.json |
 | 百度小游戏 | baidu-mini-game | game.json, project.swan.json |
-| OPPO 快游戏 | oppo-mini-game | manifest.json |
-| vivo 快游戏 | vivo-mini-game | project.config.json |
+| OPPO 小游戏 | oppo-mini-game | manifest.json |
+| vivo 小游戏 | vivo-mini-game | project.config.json |
+| 华为快游戏 | huawei-mini-game | X（暂不支持） |
 | 支付宝小游戏 | alipay-mini-game | game.json |
-| 原生 | native | X |
+| 原生平台 | native | X（暂不推荐使用） |
 
 ## 自定义构建插件
 

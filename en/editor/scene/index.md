@@ -23,11 +23,19 @@ In 2D view, you can move and rotate view of **Scene Editor** by following operat
 - **F** shortcut：focus editor to the selected node.
 
 
-### Coordinate system and grid
-Grid in the scene is important reference information for us to place the scene elements. For information of the relationship between coordinate system and node attributes like position, please read [Transform](../../concepts/scene/coord.md) section.
+### Coordinate System And Grid
+The **Grid** in a scene is an important reference information for us to layout scene elements. For information on relationship between coordinate system and node attributes, like position, please read [Transform](../../concepts/scene/coord.md) documentation.
 
-## Select a node
-The node will be selected if you left click the mouse on the node in **Scene Editor**. You can use transform tools (like position, rotation) to do some node operations only if you have selected it.
+### Scene Gizmo
+The **Scene Gizmo** is in the upper-right corner of the **Scene** view. It indicates the view direction of editor camera in **Scene** view. You can change view direction quickly by clicking on it.
+
+![Scene Gizmo](images/scene-gizmo.png)
+
+- Click on the six arrows, you can change to the *top*, *down*, *left*, *right*, *front*, *back* views separately.
+- Click on the cube in the center, you can switch between *ortho* camera mode and *perspective* camera mode.
+
+## Selecting a node
+The node will be selected upon left-clicking the mouse on the node in **Scene Editor**. You can use transform tools (like position, rotation) to do basic node operations when it is selected.
 
 ## Gizmo Operation Introduction
 The main function of **Scene Editor** is to edit and arrange the visible elements in the scene and get a WYSIWYG scene immediately, we mainly use **Gizmo** tools to assist in the visual editing of the scene。
