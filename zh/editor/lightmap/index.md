@@ -10,7 +10,7 @@
    
    ![create lightmap](./images/bake_menu.png)
 
-2. 在烘焙前需要在编辑器中设置光源组件的`Bakeable`属性为`true`(想启用哪个光源就开启对应光源即可)。
+2. 在烘焙前需要在编辑器中设置光源组件的`Bakeable`属性为`true`(注意:目前只支持一个主方向光源)。
    
    ![enable lightbake](./images/bakeable.png)
 
@@ -23,7 +23,8 @@
 
 ![bake result](./images/lightmap_result.png)
 
-其中`Baked result(烘焙结果显示面板)`显示了烘焙后的lightmap贴图, `Lightmap clear(清空按钮)`可以删除烘焙的生成结果，`信息输出面板`显示了每张烘焙图片的信息(文件名,大小等)。
+其中`Baked result(烘焙结果显示面板)`显示了烘焙后的lightmap贴图, `Lightmap clear(清空按钮)`可以删除烘焙的生成结果，`信息输出面板`显示了每张烘焙图片的信息(文件名,大小等)。  
+(注意: v1.1中只支持地形lightmap,在v1.1.1版本后也支持了模型的lightmap，但是模型在开启lightmap前，需要模型中包含两套uv，第二套uv用来access lightmap，同时材质也需要勾选 lightmap选项才能应用模型烘焙后的阴影信息。)
 
 ## 编辑
 烘焙过程是根据面板设置的各个参数来计算生成的结果，如下图：
