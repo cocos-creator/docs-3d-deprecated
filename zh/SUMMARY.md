@@ -41,7 +41,7 @@
   - [编辑动画曲线](editor/animation/animation-curve.md)
   - [动画事件](editor/animation/animation-event.md)
 - [地形系统](editor/terrain/index.md)
-
+- [烘焙系统](editor/lightmap/index.md)
 - [构建发布](editor/publish/index.md)
   - [熟悉构建发布面板](editor/publish/build-panel.md)
   - [通用构建参数介绍](editor/publish/build-options.md)
