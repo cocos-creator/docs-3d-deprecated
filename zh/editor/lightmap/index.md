@@ -14,7 +14,7 @@
    
    ![enable lightbake](./images/bakeable.png)
 
-3. 在弹出的lightmap面板中，设置好对应参数后可点击`Lightmap Generate(生成光照贴图)`按钮，选择对应存储文件夹即可生成光照贴图。
+3. 在弹出的lightmap面板中，设置好对应参数后可点击`Lightmap Generate(生成光照贴图)`按钮，选择对应存储文件夹即可生成光照贴图(注意:存储文件夹一定要存储在assets文件夹下才生效)。
    
    ![create lightmap asset](./images/lightmap_generate.png)
 
