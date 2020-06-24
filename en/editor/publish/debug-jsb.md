@@ -10,7 +10,7 @@ If a game can only run on a physical device, then the packaged game must be debu
 
 - Select the **Android / iOS** platform and **Debug** mode in the **Build** panel of Cocos Creator 3D to build, compile and run a project (The iOS platform recommends connecting to the physical device via Xcode to compile and run).
 
-- Open address with Chrome browser: `chrome-devtools://devtools/bundled/js_app.html?v8only=true&ws={IP}:6086/00010002-0003-4004-8005-000600070008`, where `{IP}` is the local IP of the Android/iOS device, then you can debug it.
+- Open address with Chrome browser: `devtools://devtools/bundled/js_app.html?v8only=true&ws={IP}:6086/00010002-0003-4004-8005-000600070008`, where `{IP}` is the local IP of the Android/iOS device, then you can debug it.
 
   ![](debug-jsb/v8-android-debug.png)
 
@@ -20,7 +20,7 @@ The steps for debugging a game on the Windows / Mac platform are similar to the 
 
 - Compile and run the packaged project with the IDE (Visual Studio for Windows and Xcode for Mac).
 
-- Open Chrome while the game is running and enter the address: `chrome-devtools://devtools/bundled/js_app.html?v8only=true&ws=127.0.0.1:6086/00010002-0003-4004-8005-000600070008` to debug it.
+- Open Chrome while the game is running and enter the address: `devtools://devtools/bundled/js_app.html?v8only=true&ws=127.0.0.1:6086/00010002-0003-4004-8005-000600070008` to debug it.
 
    ![](debug-jsb/v8-win32-debug.png)
 

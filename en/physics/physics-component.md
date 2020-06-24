@@ -1,14 +1,10 @@
 # Physics Component
 
-Cocos Creator 3D currently provides users with a variety of collider components and common rigid body components, as well as tool-type constant force components.
-
-Note: More functional components will be released in subsequent versions, please pay attention to the version update announcement.
+__Cocos Creator 3D__ currently provides users with a variety of __collider components__, common __rigid body components__, as well as __tool-type constant force components__.
 
 ## Collider Component
 
-The collider component is used to represent the shape of the collision body of a rigid body. Different geometric shapes have different properties.
-
-**Note: The first letters of the following attribute names are all lowercase in the actual code**.
+The __collider component__ is used to represent the shape of the __collision body__ of a __rigid body__. Different geometric shapes have different properties.
 
 ### BoxColliderComponent
 
@@ -16,10 +12,10 @@ The collider component is used to represent the shape of the collision body of a
 
   Properties | Description
   ---|---
-  **material** | The physics material referenced by the collider (the default physics material was referenced when it is empty)
-  **isTrigger** | Whether it is a trigger, the trigger will not generate physical feedback
-  **center**  | The origin of the shape in the local coordinate system
-  **size**  | The size of the box, ie length, width, height
+  *material* | The physics material referenced by the collider (the default physics material was referenced when it is empty)
+  *isTrigger* | Whether it is a trigger, the trigger will not generate physical feedback
+  *center* | The origin of the shape in the local coordinate system
+  *size*  | The size of the box, ie length, width, height
 
 ### SphereColliderComponent
 
@@ -27,7 +23,7 @@ The collider component is used to represent the shape of the collision body of a
 
 Properties | Description (Other reference box colliders)
 ---|---
-**radius** | Radius of the sphere
+*radius* | Radius of the sphere
 
 ### CylinderColliderComponent
 
@@ -35,11 +31,11 @@ Properties | Description (Other reference box colliders)
 
 Properties | Description (Other reference box colliders)
 ---|---
-**direction** | The reference axis of the cylinder's extended direction
-**height** | The total height of the cylinder
-**radius** | The radius of the circular surfaces at both ends of the cylinder
+*direction* | The reference axis of the cylinder's extended direction
+*height* | The total height of the cylinder
+*radius* | The radius of the circular surfaces at both ends of the cylinder
 
-**Note: `builtin` does not currently support cylindrical components**.
+> **Note**: `builtin` does not currently support cylindrical components.
 
 ### CapsuleColliderComponent
 
@@ -47,10 +43,10 @@ Properties | Description (Other reference box colliders)
 
 Properties | Description（Other reference cylinders and box colliders）
 ---|---
-**cylinderHeight** | The height of the cylinder in the capsule
-**radius** | The radius of the sphere in the capsule
+*cylinderHeight* | The height of the cylinder in the capsule
+*radius* | The radius of the sphere in the capsule
 
-**Note: `cannon.js` does not support capsule components, it is recommended to use two spheres and cylinders to piece together**.
+> **Note**: `cannon.js` does not support capsule components. It is recommended to use two spheres and cylinders and piece them together.
 
 ### MeshColliderComponent
 
@@ -58,48 +54,48 @@ Properties | Description（Other reference cylinders and box colliders）
 
 Properties | Description (Other reference box colliders)
 ---|---
-**mesh** | The mesh resource referenced by the mesh collider, used to initialize the mesh collision volume
+*mesh* | The mesh resource referenced by the mesh collider, used to initialize the mesh collision volume
 
-**Note: `builtin` does not currently support the mesh collider component**.
+>> **Note**: `builtin` does not currently support the mesh collider component.
 
-**Note: `cannon.js` has poor support for the mesh collider component, and only allows detection with the sphere collider**.
+> **Note**: `cannon.js` has poor support for the mesh collider component, and only allows detection with the sphere collider**.
 
-**Note: `ammo.js` currently only supports static mesh colliders (`mass` is `0` or without `RigidBody` component)**.
+> **Note**: `ammo.js` currently only supports static mesh colliders (`mass` is `0` or without a `RigidBody` component).
 
 ## RigidBodyComponent
 
-In order to more easily simulate physical behavior, Cocos Creator 3D provides users with rigid body components, the preview is as follows:
+In order to more easily simulate physical behavior, __Cocos Creator 3D__ provides users with __rigid body components__.
 
 ![RigidBodyComponent](img/rigid-body.jpg)
 
 Properties | Description (The property values ​​in the above picture are all default values)
 ---|---
-**mass** | The mass of the object (when the mass is 0, it represents a static rigid body, which is the same as the effect without the rigid body component)
-**linearDamping** | Linear damping, used to reduce the linear velocity of an object
-**angularDamping** | Angular damping, used to reduce the rotation rate of objects
-**isKinematic** | Whether the rigid body is controlled by the user, regardless of the physics engine
-**useGravity** | Whether the rigid body is affected by gravity
-**fixedRotation** | Whether it is necessary to fix the object's rotation during collision
-**linerFactor** | Linear factor, which can affect the change of linear velocity in each axis
-**angularFactor** | Rotation factor, which can affect the change of the rotation speed of each axis
+*mass* | The mass of the object (when the mass is 0, it represents a static rigid body, which is the same as the effect without the rigid body component)
+*linearDamping* | Linear damping, used to reduce the linear velocity of an object
+*angularDamping* | Angular damping, used to reduce the rotation rate of objects
+*isKinematic* | Whether the rigid body is controlled by the user, regardless of the physics engine
+*useGravity* | Whether the rigid body is affected by gravity
+*fixedRotation* | Whether it is necessary to fix the object's rotation during collision
+*linerFactor* | Linear factor, which can affect the change of linear velocity in each axis
+*angularFactor* | Rotation factor, which can affect the change of the rotation speed of each axis
 
-**Note: `builtin` does not currently support RigidBodyComponent**.
+> **Note**: `builtin` does not currently support `RigidBodyComponent`.
 
 ## ConstantForce
 
-This is a tool component that depends on a RigidBodyComponent and will apply a given force and torque to a rigid body every frame.
+This is a tool component that depends on a `RigidBodyComponent` and will apply a given force and torque to a rigid body every frame.
 
 ![ConstantForce](img/constant-force.jpg)
 
 Properties | Description
 ---|---
-**force** | The force applied to the rigid body in the world coordinate system
-**localForce** | The force applied to the rigid body in the local coordinate system
-**torque** | Torque applied to the rigid body in the world coordinate system
-**localTorque** | Torque applied to the rigid body in the local coordinate system
+*force* | The force applied to the rigid body in the world coordinate system
+*localForce* | The force applied to the rigid body in the local coordinate system
+*torque* | Torque applied to the rigid body in the world coordinate system
+*localTorque* | Torque applied to the rigid body in the local coordinate system
 
-**Note: `builtin` does not currently support Hengli components**.
+> **Note**: `builtin` does not currently support Hengli components*.
 
 ---
 
-Continue to the [physics-use](physics-use.md) documentation.
+Continue to the [using physics](physics-use.md) documentation.
