@@ -2,9 +2,9 @@
 
 The power of the __Cocos Creator 3D__ editor is that it allows developers to quickly prototype games.
 
-Let's follow a guided tutorial to make a magical game named **One Step Two Steps**. This game tests the player's reaction ability, and chooses whether to jump one step or two steps according to traffic conditions.
+Let's follow a guided tutorial to make a magical game named **Mind Your Step**. This game tests the player's reaction ability, and chooses whether to jump one step or two steps according to traffic conditions.
 
-You can try out the completed form of the game [here](https://gameall3d.github.io/MindYourStep_Tutorial/index.html).
+You can try out the completed the game [here](https://gameall3d.github.io/MindYourStep_Tutorial/index.html).
 
 ![](images/cocos-play.gif)
 
@@ -206,10 +206,10 @@ __Now__, click the __Play__ button. Once running, click the left and right mouse
 
   ![player move](./images/player-move.gif)
 
-For additional etails please refer to the [Project Preview Debugging](../../editor/preview/index.md) documentation.
+For additional details please refer to the [Project Preview Debugging](../../editor/preview/index.md) documentation.
 
 ### Adding character animations
-The `Player` can be moved in a horizontal direction. This is a start, but not god enough. `Player` must become more life-like. This effect can be achieved by adding a vertical animation to the character. 
+The `Player` can be moved in a horizontal direction. This is a start, but not good enough. `Player` must become more life-like. This effect can be achieved by adding a vertical animation to the character. 
 
 > **Note**: Before proceeding, please read the [Animation Editor](../../editor/animation/index.md) documentation.
 
