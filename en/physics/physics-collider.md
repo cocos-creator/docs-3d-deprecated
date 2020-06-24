@@ -56,6 +56,25 @@ The `Collider` component has the `attachedRigidbody` property. This property can
 - When there is no `RigidBody` component in its own node, this property is returned as `null`.
 -`attachedRigidbody` is a read-only property.
 
+## Auto-Scaling
+
+Each component is bound to a node, some components dynamically update their data based on the bound node, collider components update their data based on the node The information automatically updates the corresponding shape data, allowing collision bodies to more easily fit the rendered model.
+
+Updating data to model components as an example.
+
+The model component automatically updates the model's world matrix according to the bound nodes, thus changing the node's position, scaling, rotation, etc. , which allows the rendered model to have a corresponding affine transformation.
+
+However, some properties of collider shape lead to a different treatment of scaling.
+
+- Collider shape are generally described by their geometry structure.
+- Most of the collider shape are of the convex hull type.
+
+These properties restrict transformations such as tangential, non-uniform scaling, etc., taking the sphere collider as an example.
+
+Assume that the scaling information of the bound nodes is `(1,2,1)` (non-uniform scaling), since the structure described by the model and the collider is not  same, the sphere model is represented using multiple primitives (e.g., triangles) that, when scaled, model shape into a pebble-like shape; however, the sphere collider is described by the size of the radius, which is scaled in the dimension with the largest value (to ensure that the collision body can be as large as possible of the enclosing model), but scaled it is still a sphere.
+
+![non-uniform-scale](img/collider-non-uniform-scale.jpg)
+
 ## PhysicsMaterial
 
 The collision body has physics material properties. Related content is described in detail in [physics material] (physics-material.md). Here, the difference between shared and non-shared interfaces is mainly introduced.
