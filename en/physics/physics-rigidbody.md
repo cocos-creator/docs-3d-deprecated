@@ -15,6 +15,14 @@ Rigid bodies are generally divided into three types, `static`, `dynamic`, and `k
 - **dynamic**, which means that a dynamic rigid body can **be subjected to forces**, specifically those with a mass greater than `0` and `isKinematic` being `false`.
 - **kinematic**, which means kinematic rigid body, the user controls the movement of the rigid body, specifically the mass is greater than `0` and `isKinematic` is `true`.
 
+## Center Of Mass
+
+Currently the center of mass is fixed to the node to which the rigid body component is bound, and the center of mass is relative to the collider shape. By adjusting the collider shape offset (`center`), the center of mass can be shifted in shape.
+
+![center-of-mass](img/center-of-mass.jpg)
+
+> **Note**: In order to make it easier to fit collider shape to the model, methods for changing mass centers may be added in the future, as well as methods for dynamically calculating mass centers mechanism.
+
 ## Sleeping And Waking a Rigid Body
 
 An example using TypeScript:
