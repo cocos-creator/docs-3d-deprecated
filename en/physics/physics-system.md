@@ -1,21 +1,22 @@
 # Physics System
 
-The physics system is used to manage all physics related functions. Currently it is responsible for synchronizing physical elements, triggering physical events and scheduling iterations of the physical world.
+The physics system is used to manage all physics related functions. Currently, it is responsible for synchronizing physical elements, triggering physics events and scheduling iterations of the physical world.
 
 ## Physics World
 
 When the physics world iterates, physical calculations will be made on physical elements, such as calculating whether each object collides and the force of the object. When the calculation is completed, the physics system will update the physics world to the scene world, so that the game objects will generate corresponding physical behaviors.
 
-The current physics execution flow of Cocos Creator 3D: **trigger physics events** -> **sync scene data to physics** -> **physics world iteration** -> **sync physics data to scene**.
+The current physics execution flow of __Coccos Creator 3D__: **trigger physics events** -> **sync scene data to physics** -> **physics world iteration** -> **sync physics data to scene**.
 
-**Note: At present, there is only a single physical world, and the functional support of the multi-physics world will be discussed later**.
+> **Note**: There is only a single physical world, and the functional support of the multi-physics world will be discussed later.
 
 Scene World And Physics World:
+
 ![Scene World and Physics World](img/physics-world.jpg)
 
 ## Physics System Properties
 
-At present, the properties of the physics system can only be set through the code for the time being. A setting panel will be added in the future, please pay attention to the update announcement.
+The properties of the physics system can only be set through the code for the time being. A setting panel will be added in the future, please pay attention to the update announcement.
 
 Properties | Description
 ---|---
@@ -27,8 +28,8 @@ Properties | Description
 **gravity** | The gravity value of the physical world, the default is `(0, -10, 0)`
 **defaultMaterial** | Get the default physics material (read only)
 
-Get the instance of physics system: `PhysicsSystem.instance`
+Obtain the instance of physics system using: `PhysicsSystem.instance`
 
 ---
 
-Continue to the [physics-component](physics-component.md) documentation.
+Continue to the [physics component](physics-component.md) documentation.
