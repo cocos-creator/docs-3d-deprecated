@@ -40,7 +40,7 @@
   - [编辑帧动画](editor/animation/sprite-animation.md)
   - [编辑动画曲线](editor/animation/animation-curve.md)
   - [动画事件](editor/animation/animation-event.md)
-- [地形系统](editor/terrain/index.md)
+- [Terrain System](editor/terrain/index.md)
 
 - [Build and Publish](editor/publish/index.md)
   - [About the Build Panel](editor/publish/build-panel.md)

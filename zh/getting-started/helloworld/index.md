@@ -1,5 +1,5 @@
 # Hello World项目
-第一个cocos creator项目, 为您展示:
+第一个Cocos Creator 3D项目, 为您展示:
 - 创建项目
 - 了解工程目录
 - 创建一个物体
@@ -9,7 +9,10 @@
 
 ## 新建项目
 
-选择空的模板，设置项目路径，点击下方的<font color=#A52A2A>新建项目</font>按钮。
+在Dashboard面板中，点击右下角<font color=#A52A2A>新建</font>按钮，在弹出菜单中选中Creator 3D。
+<img src="index/dashboard.png"/>
+
+选择空的模板，设置项目路径，点击下方的<font color=#A52A2A>创建</font>按钮。
 
 <img src="index/new.png"/>
 
@@ -62,7 +65,7 @@
 
 ## 添加脚本
 - 新建脚本
-  <br/>在资源管理器面板<font color=#A52A2A>点击鼠标右键</font>，选择<font color=#A52A2A>新建</font>-><font color=#A52A2A>JavaScript</font>。</br>
+  <br/>在资源管理器面板<font color=#A52A2A>点击鼠标右键</font>，选择<font color=#A52A2A>新建</font>-><font color=#A52A2A>TypeScript</font>。</br>
   <img src="index/script.png"/>
 
 - 生命周期函数（按以下顺序调用）
@@ -86,11 +89,11 @@
     <br/>添加onLoad()函数，并输出Hello world</br>
 
 ```ts
-import { _decorator, Component } from "cc";
+import { _decorator, Component, Node } from 'cc';
 const { ccclass, property } = _decorator;
 
-@ccclass("normal")
-export class normal extends Component {
+@ccclass('HelloWorld')
+export class HelloWorld extends Component {
     /* class member could be defined like this */
     // dummy = '';
 
@@ -103,7 +106,7 @@ export class normal extends Component {
         console.info('Hello world');
     }
 
-    // update (deltaTime) {
+    // update (deltaTime: number) {
     //     // Your update function goes here.
     // }
 }
@@ -119,11 +122,12 @@ export class normal extends Component {
 <img src="index/run.png"/>
 
 ## 调试项目
- <br>点击编辑器<font color=#A52A2A>菜单栏</font>点击-><font color=#A52A2A>开发者</font>-><font color=#A52A2A>打开场景调试工具</font></br>
+以Chrome浏览器为例：
+ 按 `F12` 或者 `Ctrl + Shift + I` 打开Chrome的**开发者工具**。
  - 日志信息
  <br/>Console面板显示了所有日志输出</br>
  <img src="index/console.png"/>
 
  - 断点调试
-   <br/>选择<font color=#A52A2A>标签栏</font>的<font color=#A52A2A>Source</font>选项，按下<font color=#A52A2A>CTRL+P</font>，搜索HelloWorld.js，在onLoad函数里设置断点，再运行预览时就可以调试了。</br>
+   <br/>选择<font color=#A52A2A>标签栏</font>的<font color=#A52A2A>Source</font>选项，按下<font color=#A52A2A>Ctrl+P</font>，搜索HelloWorld.js，在onLoad函数里设置断点，再刷新网页就可以调试了。</br>
    <img src="index/debug.png"/>

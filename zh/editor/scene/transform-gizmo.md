@@ -57,4 +57,27 @@
 
 在UI元素的排版中，经常会需要使用 **矩形变换工具** 直接精确控制节点四条边的位置和长度。而对于必须保持原始图片宽高比的图像元素，通常不会使用矩形变换工具来调整尺寸。
 
+## 变换工具基准点设置
+
+![position toggles](images/position-toggles.png)
+
+变换工具基准点设置用于设置变换工具的位置以及它操作的方向。
+
+![pivot local](images/pivot-local.png)
+![center global](images/center-global.png)
+
+### 位置
+
+点击Pivot/Center按钮，会在Pivot和Center两个选项中切换
+
+- **Pivot** : 变换工具使用节点的世界坐标
+- **Center**: 变换工具使用所有选择的物体的中心位置坐标
+
+### 方向
+
+点击Local/Global按钮，会在Local和Global两个选项中切换
+
+- **Local** : 变换工具使用节点的旋转方向
+- **Global** : 变换工具使用世界空间的方向
+
 ## [<-场景编辑器](index.md)

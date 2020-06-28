@@ -29,31 +29,34 @@
 ## 分组
 
 - 设置分组值
+  
   以下分组值为`3`，二进制为`11`，表示在第`0`，`1`组（从`0`开始）
 
-  ```
+  ```ts
   const group = (1 << 0) + (1 << 1);
   Collider.setGroup(group);
   ```
 
 - 获取分组值
 
-  ```
+  ```ts
   Collider.getGroup();
   ```
 
 - 添加分组值
+  
   上述代码基础上，经过以下代码后，分组值为`7`，二进制为`111`，所以表示在`0`，`1`，`2`组。
 
-  ```
+  ```ts
   const group = 1 << 2;
   Collider.addGroup(group);
   ```
 
 - 减少分组值
+  
   上述代码基础上，经过以下代码后，分组值为`3`，所以在`0`，`1`组。
 
-  ```
+  ```ts
   const group = 1 << 2;
   Collider.removeGroup(group);
   ```
@@ -65,31 +68,34 @@
 ## 掩码
 
 - 设置掩码值
+  
   以下 mask 的值`3`，二进制为`11`，表示可检测的组为`0`，`1` 。
 
-  ```
+  ```ts
   const mask = (1 << 0) + (1 << 1);
   Collider.setMask(mask);
   ```
 
 - 获取掩码值
 
-  ```
+  ```ts
   console.log(Collider.getMask());
   ```
 
 - 添加掩码值
+  
   上述代码的基础上，经过以下代码后，增加了一个可检测组`3`。
 
-  ```
+  ```ts
   const mask = 1 << 2;
   Collider.addMask(mask);
   ```
 
 - 减少掩码值
+  
   以下代码去掉了一个可检测组`3`。
 
-  ```
+  ```ts
   const mask = 1 << 2;
   Collider.removeMask(mask);
   ```
@@ -108,7 +114,7 @@
 
 方式一：定义在一个`object`中
 
-```
+```ts
 export const PHY_GROUP = {
     Group0: 1 << 0, // 第 0 组，相当于给它取了一个 Group0 的别名。
     Group1: 1 << 1
@@ -117,7 +123,7 @@ export const PHY_GROUP = {
 
 方式二：定义在一个`enum`中 （`typescript only`）
 
-```
+```ts
 enum PHY_GROUP {
     Group0 = 1 << 0,
     Group1 = 1 << 1
@@ -126,7 +132,7 @@ enum PHY_GROUP {
 
 **注：这里可以考虑复用`Layer`中预设的层**。
 
-为了能够在面板上设置分组，需要通过`cc`模块导出的`Enum`函数，将定义好的分组注册到编辑器中`Enum(PHY_CROUP)`。
+为了能够在面板上设置分组，需要通过`cc`模块导出的`Enum`函数，将定义好的分组注册到编辑器中`Enum(PHY_GROUP)`。
 
 **注：由于历史原因，`Enum`函数对`-1`有特殊处理，如果不熟悉，请勿定义值为`-1`的属性**。
 
