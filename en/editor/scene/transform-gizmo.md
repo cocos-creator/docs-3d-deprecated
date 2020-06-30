@@ -57,4 +57,27 @@ Whe the rect transform tool is active：
 
 In UI elements layout, **rect transform tool** is always used to precisely control the position and length of the node's dimensions. As to the image elements that must keep original image aspect ratio, the rectangle transform tool is normally not the best choice for size adjustment.
 
+## Transform Gizmo Based Point Configure
+
+![position toggles](images/position-toggles.png)
+
+Transform Gizmo Based Point Configure is used to set the position and rotation of transform gizmo.
+
+![pivot local](images/pivot-local.png)
+![center global](images/center-global.png)
+
+### Position
+
+Click the **Pivot/Center** button to toggle between **Pivot** and **Center**.
+
+- **Pivot** : use the world position of node.
+- **Center**: use the center position of all selected nodes.
+
+### Rotation
+
+Click the **Local/Global** button to toggle between **Local** and **Global**.
+
+- **Local** : use the rotation of node.
+- **Global** : use the rotation of world space.
+
 ## [<-Scene Editor](index.md)

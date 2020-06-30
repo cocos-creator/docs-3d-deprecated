@@ -12,7 +12,7 @@ Cocos Creator 3D 从 **v1.0.3** 版本开始正式支持将游戏发布到 Cocos
 
 一、使用 Cocos Creator 3D 打开需要发布的项目工程，在 **构建发布** 面板的 **发布平台** 中选择 **Cocos Play**，然后点击 **构建**。
 
-![](publish-cocos-play/build.png)
+![](publish-cocos-play/build.jpg)
 
 参数配置具体的填写规则如下：
 
@@ -42,7 +42,7 @@ Cocos Creator 3D 从 **v1.0.3** 版本开始正式支持将游戏发布到 Cocos
 
 二、**构建发布** 面板的相关参数设置完成后，点击 **构建**。构建完成后点击对应构建任务下方的 **文件图标** 按钮来打开构建发布包。如果构建任务名是 `cocos-play`，可以看到在默认发布路径 `build` 目录下生成了 `cocos-play` 文件夹，该文件夹就是导出的 Cocos Play 游戏工程和 cpk，cpk 包在 `build/cocos-play` 目录下。
 
-![](publish-cocos-play/package.png)
+![](publish-cocos-play/package.jpg)
 
 ### 接入测试
 

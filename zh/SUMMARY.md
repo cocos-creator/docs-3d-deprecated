@@ -41,7 +41,7 @@
   - [编辑动画曲线](editor/animation/animation-curve.md)
   - [动画事件](editor/animation/animation-event.md)
 - [地形系统](editor/terrain/index.md)
-
+- [烘焙系统](editor/lightmap/index.md)
 - [构建发布](editor/publish/index.md)
   - [熟悉构建发布面板](editor/publish/build-panel.md)
   - [通用构建参数介绍](editor/publish/build-options.md)
@@ -52,7 +52,7 @@
     - [安装配置原生环境](editor/publish/setup-native-development.md)
     - [原生平台 JavaScript 调试](editor/publish/debug-jsb.md)
   - [发布到 OPPO 小游戏](editor/publish/publish-oppo-mini-game.md)
-  - [发布到百度小游戏](publish/publish-baidu-mini-game.md)
+  - [发布到百度小游戏](editor/publish/publish-baidu-mini-game.md)
   - [发布到华为快游戏](editor/publish/publish-huawei-mini-game.md)
   - [发布到 vivo 小游戏](editor/publish/publish-vivo-mini-game.md)
   - [发布到小米快游戏](editor/publish/publish-xiaomi-quick-game.md)

@@ -90,6 +90,8 @@ Cocos Creator 3D 从 v1.0.2 开始正式支持将游戏发布到 OPPO 小游戏�
 
 将构建生成的小游戏 rpk 包（ dist 目录中）拷贝到手机 SD 卡的 **/sdcard/games/** 目录。然后在 Android 设备上打开之前已经安装完成的 **OPPO 小游戏调试器**，点击 **OPPO 小游戏** 栏目，然后找到填写游戏名相对应的图标即可，如没有发现，可点击右上角的更多按钮-刷新按钮进行刷新。
 
+  **注意：OPPO 小游戏调试器为 V3.2.0 及以上的需要将准备好的 rpk 拷贝到手机 sdcard 的 Android/data/com.nearme.instant.platform/files/games 中, 无 games 目录则需新建**
+
 ![](./oppo-mini-game/rpk_games.jpg)
 
 四、分包 rpk

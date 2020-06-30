@@ -20,7 +20,7 @@
 
 ## 物理引擎:`cannon.js`
 
-[cannon.js](https://github.com/cocos-creator/cannon.js) 是一个开源的物理引擎，它使用 js 语言开发并实现了比较全面的物理功能，如果您的项目需要更多复杂的物理功能，哪么您可以考虑使用 [cannon.js](https://github.com/cocos-creator/cannon.js)。`cannon.js`模块大小为`141KB`。
+[cannon.js](https://github.com/cocos-creator/cannon.js) 是一个开源的物理引擎，它使用 js 语言开发并实现了比较全面的物理功能，如果您的项目需要更多复杂的物理功能，那么您可以考虑使用 [cannon.js](https://github.com/cocos-creator/cannon.js)。`cannon.js`模块大小为`141KB`。
 
 ## 物理引擎:`ammo.js`
 
