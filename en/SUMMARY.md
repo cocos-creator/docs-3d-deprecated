@@ -41,6 +41,7 @@
   - [Animation Curves](editor/animation/animation-curve.md)
   - [Animation Events](editor/animation/animation-event.md)
 - [Terrain System](editor/terrain/index.md)
+- [Lightmap](editor/lightmap/index.md)
 
 - [Build and Publish](editor/publish/index.md)
   - [About the Build Panel](editor/publish/build-panel.md)
