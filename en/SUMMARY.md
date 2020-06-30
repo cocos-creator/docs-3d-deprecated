@@ -41,6 +41,7 @@
   - [编辑动画曲线](editor/animation/animation-curve.md)
   - [动画事件](editor/animation/animation-event.md)
 - [Terrain System](editor/terrain/index.md)
+- [Lightmap](editor/lightmap/index.md)
 
 - [Build and Publish](editor/publish/index.md)
   - [About the Build Panel](editor/publish/build-panel.md)
