@@ -1,98 +1,102 @@
-# Hello World项目
-第一个cocos creator项目, 为您展示:
-- 创建项目
-- 了解工程目录
-- 创建一个物体
-- 修改相机属性
-- 创建、修改、绑定脚本
-- 运行及调试项目
+# Hello World project
 
-## 新建项目
+This is the very first __Cocos Creator 3D__ project, and it aims to demonstrate the following:
+- Creating a project
+- Understanding the project directory
+- Creating an object
+- Modifying `Camera` properties
+- Creating, modifying, and binding scripts
+- Running projects
 
-选择空的模板，设置项目路径，点击下方的<font color=#A52A2A>新建项目</font>按钮。
+## Creating a New Project
 
-<img src="index/new.png"/>
+Select an empty template, set the project path, and click the __New Project__ button below.
 
-## 编辑器界面
+![](index/new.png)
 
-<img src="index/engine.png"/>
+## The Editor interface
 
-## 工程目录
-通常情况的我们只需要关心<font color=#A52A2A>assets</font>(资源目录)
+This is the default layout of the __Editor__ interface: 
 
-- assets(资源目录)
+![](index/engine.png)
 
-- build(构建目录)
+The layout is customizable, if you don't find the default layout suitable.
 
-- library(导入的资源目录)
+## Project Directory
+Usually, the most commonly used directory is `assets`. There are others:
 
-- local(日志文件目录)
+- assets (resources directory)
+- build (build directory)
+- library (imported resources directory)
+- local (log file directory)
+- profiles (editor configuration)
+- temp (temporary file directory)
+- package.json (project configuration)
 
-- profiles(编辑器配置)
+## Creating a New Scene
 
-- temp(临时文件目录)
+In the bottom left __Explorer__ panel, __click the right mouse button__ and select __New__->__Scene__.
 
-- package.json(项目配置)
+![](index/scene.png)
 
-## 新建场景
+## Creating an Object
 
-左下方资源管理器面板<font color=#A52A2A>点击鼠标右键</font>，选择<font color=#A52A2A>新建</font>-><font color=#A52A2A>Scene</font>。
+Upper left __Hierarchy Manager__ panel, click the __right mouse button__, select __Create__ -> __3D object__ -> __Cube cube__. The created cube will appear in the scene editor.
 
-<img src="index/scene.png"/>
+![](index/cube.png)
 
-## 创建物体
+## Modifying the Camera
 
-左上方层级管理器面板<font color=#A52A2A>点击鼠标右键</font>, 选择<font color=#A52A2A>创建</font>-><font color=#A52A2A>3D对象</font>-><font color=#A52A2A>Cube 正方体</font>。创建的正方体就会出现在场景编辑器里。
+### Selecting the `Camera` object
+In the __Hierarchy Manager__ panel, select `Camera`, and the scene editor will select it and display a __Gizmo__.
 
-<img src="index/cube.png"/>
+![](index/select.png)
 
-## 修改Camera
+### Modifying the `Camera` position
+In the scene editor, drag the __Gizmo__ so that the `Camera` can see the created cube.
 
-- 选择Camera对象
-<br/>在层级管理器面板，选择Camera，场景编辑器会选中它，并显示Gizmo。</br>
-<img src="index/select.png"/>
+![](index/move.png)
 
-- 修改Camera位置
-<br/>在场景编辑器里，拖动Gizmo, 使Camera能够看到创建的正方体。</br>
-<img src="index/move.png"/>
+### Modifying the `Camera` background color
+In the __Property Inspector__ panel, click the `Color` property and select black as the background color. 
 
-- 修改Camera背景颜色
-<br/>在属性检查器面板，点击Color属性，选择黑色为背景色。</br>
-<img src="index/property.png"/>
+![](index/property.png)
 
-## 添加脚本
-- 新建脚本
-  <br/>在资源管理器面板<font color=#A52A2A>点击鼠标右键</font>，选择<font color=#A52A2A>新建</font>-><font color=#A52A2A>JavaScript</font>。</br>
-  <img src="index/script.png"/>
+## Adding a script
 
-- 生命周期函数（按以下顺序调用）
-   - onLoad
-     <br/>脚本初始化时调用</br>
-   - onEnable
-     <br/>组件的 enabled 属性从 false 变为 true 时调用</br>
-   - start
-     <br/>组件第一次激活时调用</br>
-   - update
-     <br/>每一帧渲染前更新物体调用</br>
-   - lateUpdate
-     <br/>在所有组件的 update 都执行完之后调用</br>
-   - onDisable
-     <br/>组件的 enabled 属性从 true 变为 false 时调用</br>
-   - onDestroy
-     <br/>组件或者所在节点销毁时调用</br>
+### Creating a new script
+In the __Explorer__ panel, __click the right mouse button__, select __New__ -> __JavaScript__. 
 
-<br/>
-- 添加代码
-    <br/>添加onLoad()函数，并输出Hello world</br>
+![](index/script.png)
+
+### Life cycle functions
+Life cycle functions (called in the following order):
+   - `onLoad`
+     Called when the script is initialized
+   - `onEnable`
+     Called when the enabled property of the component changes from `false` to `true`
+   - `start`
+     Called when the component is first activated
+   - `update` 
+     Update object call before rendering each frame
+   - `lateUpdate`
+     Called after the update of all components has been executed
+   - `onDisable`
+     Called when the `enabled` property of the component changes from `true` to `false`
+   - `onDestroy`
+     Called when the component or node is destroyed
+
+### Adding code
+Add `onLoad()` function to output `Hello world`:
 
 ```ts
-import { _decorator, Component } from "cc";
-const { ccclass, property } = _decorator;
+import {_decorator, Component} from "cc";
+const {ccclass, property} = _decorator;
 
 @ccclass("normal")
 export class normal extends Component {
     /* class member could be defined like this */
-    // dummy = '';
+    // dummy ='';
 
     /* use `property` decorator if your want the member to be serializable */
     // @property
@@ -104,26 +108,28 @@ export class normal extends Component {
     }
 
     // update (deltaTime) {
-    //     // Your update function goes here.
-    // }
+    // // Your update function goes here.
+    //}
 }
 ```
 
+### Bind scripts to objects
+Select the created cube and click __Add component__ -> __custom script__->__HelloWorld__
 
-- 为物体绑定脚本
-<br>选择创建的正方体，在属性检查器面板点击<font color=#A52A2A>添加组件</font>-><font color=#A52A2A>自定义脚本</font>-><font color=#A52A2A>HelloWorld</font></br>
-<img src="index/component.png"/>
+![](index/component.png)
 
-## 运行项目
-<br>编辑器<font color=#A52A2A>菜单栏</font>点击-><font color=#A52A2A>项目</font>-><font color=#A52A2A>运行预览</font>, 或者点击中间的<font color=#A52A2A>运行</font>按钮。</br>
-<img src="index/run.png"/>
+## Running a project
+In the __Editor__, from the __menu bar__ click __Project__ -> __Run preview__, or Click the __Run__ button in the middle. 
 
-## 调试项目
- <br>点击编辑器<font color=#A52A2A>菜单栏</font>点击-><font color=#A52A2A>开发者</font>-><font color=#A52A2A>打开场景调试工具</font></br>
- - 日志信息
- <br/>Console面板显示了所有日志输出</br>
- <img src="index/console.png"/>
+![](index/run.png)
 
- - 断点调试
-   <br/>选择<font color=#A52A2A>标签栏</font>的<font color=#A52A2A>Source</font>选项，按下<font color=#A52A2A>CTRL+P</font>，搜索HelloWorld.js，在onLoad函数里设置断点，再运行预览时就可以调试了。</br>
-   <img src="index/debug.png"/>
+## Debuging a project
+In the __Editor__, from the __menu bar__ click __developer__ -> __scene debugging tool__</font>
+
+It is also may be necessary to Log information. The __Console__ panel displays all log output.
+
+![](index/console.png)
+
+__Breakpointsa__ can also be placed for stooping execution of the debugger to examine values. Select the __Source__ option on the __tab bar__ and press __CTRL+P__, Search for `HelloWorld.js`, set a breakpoint in the `onLoad()` function, and then run the preview to debug. 
+
+![](index/debug.png)
