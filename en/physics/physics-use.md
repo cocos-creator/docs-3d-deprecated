@@ -1,4 +1,4 @@
-# Use Physics
+# Using Physics
 
 In order to introduce how to use physics better, the following modules will be introduced:
 
@@ -14,4 +14,4 @@ Module | Description
 
 Continue to the [Collision Components](physics-collider.md) documentation.
 
-Or go back to [Physics Introduction](physics.md).
+Or go back to [Physics Introduction](physics.md) documentation.

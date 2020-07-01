@@ -1,11 +1,10 @@
 # Raycast Detection
 
-Raycast detection is a very important function and is often used to judge various situations.
-The essence is to make a **intersection judgment** between a ray and another shape, as shown in the figure below.
+__Raycast detection__ is a very important function and is often used to judge various situations. The essence is to make a **intersection judgment** between a ray and another shape, as shown in the figure below.
 
 ![raycast](img/raycast.jpg)
 
-## Construct Ray
+## Constructing a Ray
 
 The `ray` is under the `geometry` namespace of the `cc` module, so in order to access to `ray`, we need to import `geometry`:
 
@@ -41,9 +40,9 @@ geometry.ray.fromPoints(outRay, Vec3.ZERO, Vec3.UNIT_Z);
 
 3. Use the camera to construct a ray emitted from the origin of the camera to a point on the screen (or the near plane of the camera):
 
-**Note: First you need to get a reference to a camera component or camera instance**.
+> **Note**: First you need to get a reference to a camera component or camera instance.
 
-**Note: The order of the interface parameters exposed by both the camera component and the camera instance is not the same**.
+> **Note**: The order of the interface parameters exposed by both the camera component and the camera instance is not the same.
 
 ```ts
 import { geometry, CameraComponent } from "cc";
@@ -58,7 +57,7 @@ cameraCom.screenPointToRay(0, 0, outRay);
 
 ## Interface Introduction
 
-Cocos Creator 3D provides a set of ray detection functions based on the physics engine in the `v1.0.1` version.
+__Cocos Creator 3D__ provides a set of ray detection functions based on the physics engine in the `v1.0.1` version.
 
 However, it should be noted that the detected object is a physics collider, and the corresponding collider component on the inspector panel, such as `BoxColliderComponent`.
 
@@ -74,14 +73,14 @@ Parameter explanation:
 - `maxDistance` : Maximum detection distance, please do not pass Infinity or Number.MAX_VALUE
 - `queryTrigger` : Whether to detect triggers
 
-## Get Results
+## Getting Results
 
 To get the detection results of the above interfaces, you need to use the following methods separately:
 
 - Get the detection results of `raycastAll`: `PhysicsSystem.instance.raycastResults`
 - Get the detection result of `raycastClosest`: `PhysicsSystem.instance.raycastClosestResult`
 
-**Note: The returned object is read-only and reused, and the corresponding result will be updated after each call to the detection interface**.
+> **Note**: The returned object is read-only and reused, and the corresponding result will be updated after each call to the detection interface.
 
 ## Information Stored By Results
 
@@ -92,8 +91,8 @@ The information is stored by `PhysicsRayResult`, which mainly has the following 
 - `hitPoint` : hit point (in world coordinate system)
 - `hitNormal` :The normal of the hit point's face (in the world coordinate system) (supported in `v1.1` version, currently there is no such information in `builtin`)
 
-Related test cases [test-case-3d](https://github.com/cocos-creator/test-cases-3d/blob/master/assets/cases/physics/scenes/physics-raycast.scene)
+Related test cases can be found [here](https://github.com/cocos-creator/test-cases-3d/blob/master/assets/cases/physics/scenes/physics-raycast.scene).
 
 ---
 
-Return to the [physics-use](physics-use.md) documentation.
+Return to the [using physics](physics-use.md) documentation.
