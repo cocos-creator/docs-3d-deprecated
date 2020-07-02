@@ -55,9 +55,9 @@ export class tweentest extends Component {
 
 但目前的接口存在一定的限制，例如：通过`this.node.position`获取到的`position`是一个通用的`Vec3`。
 
-当执行`this.node.position.x = 1`这段代码的时候，只执行了`position`的`getter`，并没有执行`postion`的`setter`。由于`dirty`并没有更新，便会导致渲染时使用的节点的`Transform`信息没有更新。
+当执行`this.node.position.x = 1`这段代码的时候，只执行了`position`的`getter`，并没有执行`position`的`setter`。由于`dirty`并没有更新，便会导致渲染时使用的节点的`Transform`信息没有更新。
 
-目前，我们也不支持这样的调用，而是鼓励使用`setPostion`或`position`的`setter`，即以下代码方式：
+目前，我们也不支持这样的调用，而是鼓励使用`setPosition`或`position`的`setter`，即以下代码方式：
 
 ```typescript
 let _pos = new Vec3(0, 1, 0);
