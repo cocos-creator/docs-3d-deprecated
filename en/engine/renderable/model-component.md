@@ -6,7 +6,7 @@ Properties | Functions
 --- | ---
 *mesh* | 3D model resources for rendering.
 *materials* | The material used to render the model, one material corresponds to one submesh in the mesh.
-*shadowCastingMode* | If planar shadows are enabled in the scene, planar shadows will be rendered when enabled.
+*shadowCastingMode* | Whether the model casts shadows. The planar shadow system in the scene should be enabled beforehand.
 *visibility* | Used for which camera the model will be rendered, only the camera with the same visibility as the model will render the model.
 
 ## Model group rendering
@@ -15,7 +15,7 @@ The group rendering function is determined by the `Visibility` property of the c
 
   > **Note**: Please review the [Camera Component](../../editor/components/camera-component.md) documentation for additional information, if required.
 
-## Static batch
+## Static batching
 
 The current static batching scheme is static batching at run time. Static batching can be performed by calling `BatchingUtility.batchStaticModel`. This function receives a node, and then merges all `Mesh` in `ModelComponent` under that node into one, and hangs it under another node.
 
@@ -48,12 +48,12 @@ Operations such as merging vertices per frame introduce a portion of CPU overhea
 
 ## Batch best practices
 
-Generally speaking, the priority of the batch system is: *static batching* -> *dynamic instancing* -> *dynamic batching*. 
+Generally speaking, the priority of the batch system is: *static batching* -> *instancing batching* -> *VB-merging batching*.
 
 The material must be insured that it is consistent, under this premise:
- - If you are certain that certain models will remain completely static during the game cycle, use *static batching*. 
- - If there are a large number of the same model repeated drawing, there is only a relatively controllable small difference between each other, use *dynamic instancing*. 
- - If there are a large number of models with very low number of triangles but different vertex data, consider trying *dynamic batching*.
+ - If you are certain that certain models will remain completely static during the game cycle, use *static batching*.
+ - If there are a large number of the same model repeated drawing, there is only a relatively controllable small difference between each other, use *instancing batching*.
+ - If there are a large number of models with very low number of triangles but different vertex data, consider trying *VB-merging batching*.
 
 ---
 
