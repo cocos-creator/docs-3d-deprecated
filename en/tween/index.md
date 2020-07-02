@@ -55,9 +55,9 @@ In-order to reduce the frequency of updating the `Node Transform` information, `
 
 > **Note**: the current interface has certain restrictions, for example  `position` obtained through `this.node.position` is a generic `Vec3`.
 
-When this code `this.node.position.x = 1` is executed, only the `getter` of `position` is executed, and the `setter` of `postion` is not executed. Since `dirty` is not updated, it will cause the `Transform` information of the nodes used during rendering not to be updated.
+When this code `this.node.position.x = 1` is executed, only the `getter` of `position` is executed, and the `setter` of `position` is not executed. Since `dirty` is not updated, it will cause the `Transform` information of the nodes used during rendering not to be updated.
 
-Ssuch calls are not supported, but the use of `setPostion` or `position` is encouraged. Example:
+Such calls are not supported, but the use of `setPosition` or `position` is encouraged. Example:
 
 ```typescript
 let _pos = new Vec3(0, 1, 0);
