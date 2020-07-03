@@ -15,7 +15,7 @@
 
 ## 简单示例
 
-```
+```typescript
 import { _decorator, Component, Vec3, tween } from "cc";
 
 @ccclass("tween-test")
@@ -55,11 +55,11 @@ export class tweentest extends Component {
 
 但目前的接口存在一定的限制，例如：通过`this.node.position`获取到的`position`是一个通用的`Vec3`。
 
-当执行`this.node.position.x = 1`这段代码的时候，只执行了`position`的`getter`，并没有执行`postion`的`setter`。由于`dirty`并没有更新，便会导致渲染时使用的节点的`Transform`信息没有更新。
+当执行`this.node.position.x = 1`这段代码的时候，只执行了`position`的`getter`，并没有执行`position`的`setter`。由于`dirty`并没有更新，便会导致渲染时使用的节点的`Transform`信息没有更新。
 
-目前，我们也不支持这样的调用，而是鼓励使用`setPostion`或`position`的`setter`，即以下代码方式：
+目前，我们也不支持这样的调用，而是鼓励使用`setPosition`或`position`的`setter`，即以下代码方式：
 
-```
+```typescript
 let _pos = new Vec3(0, 1, 0);
 this.node.position = _pos;      // 这里将通过 position 的 setter
 this.node.setPosition(_pos);    // 这里将通过接口 setPosition
@@ -98,7 +98,7 @@ this.node.setPosition(_pos);    // 这里将通过接口 setPosition
 
 定义如下:
 
-```
+```typescript
 interface ITweenOption {
     easing?: TweenEasing | ((k: number) => number);
     progress?: (start: number, end: number, current: number, ratio: number) => number;
@@ -108,15 +108,15 @@ interface ITweenOption {
 }
 ```
 
-与 Creator 2D 不同的是新增了`onStart，onUpdate，onComplete`等属性，这些属性是回调函数，调用时会传入缓动的目标。
+与 Creator 2D 不同的是新增了`onStart`，`onUpdate`，`onComplete`等属性，这些属性是回调函数，调用时会传入缓动的目标。
 
-另外，`onUpdate`调用时还会多传入一个目前缓动的进行值，范围为`(0-1]`。
+另外, `onUpdate`调用时还会多传入一个目前缓动的进行值，范围为`(0-1]`。
 
 #### 回调的使用范例
 
 以`onUpdate`为例，以下代码缓动一个位置，然后在`onUpdate`中将其设置到多个对象上，这样就像是缓动的合批。
 
-```
+```typescript
 import { Node, tween, Vec3 } from "cc";
 const nodeArray: Node[] = []; // 此处替换成你的节点数组
 const tweenTagertVec3 = new Vec3();
