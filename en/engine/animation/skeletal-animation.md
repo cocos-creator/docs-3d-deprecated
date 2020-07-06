@@ -15,35 +15,35 @@ The dominant purpose of this system is performance, and some sacrifices in expre
 The dominant purpose of this system is expressiveness, ensuring the correct display of all details, and complete program control capabilities.
 
 The current runtime process is roughly as follows:
-  * All animation data are calculated dynamically according to the current global time;
-  * Animation data will be output to the skeleton node tree of the scene;
-  * Users and any other system can affect the skin effect by manipulating this bone node tree;
-  * Each skinning model component (`SkinningModelComponent`) holds a common skinning model class (`SkinningModel`). Extract the transformation data from joint node tree, do frustum culling, upload the complete bone transformation information of the current frame to UBO, and complete the skinning in the GPU.
+  * All animation data are calculated dynamically according to the current global time.
+  * Animation data will be output to the skeleton node tree of the scene.
+  * Users and any other system can affect the skin effect by manipulating this node tree.
+  * Each __Skinning Model Component__ (`SkinningModelComponent`) holds a common __Skinning Model__ class (`SkinningModel`). Extract the transformation data from joint node tree, do frustum culling, upload the complete joint transformation information of the current frame to UBO, and complete the skinning in the GPU.
 
 This provides the fundamental support for all the following functions:
-  * blendshape support
-  * Mixing and masking of any number of animation clips
+  * Blendshape support
+  * Mixing and masking of any number of __Animation Clips__
   * Inverse kinematics, secondary physics
   * Explicit procedural control over any joint tranformations
 
 ## Selection and best practice of two systems
 
-After importing all model resources, all prefabs use the pre-baking system by default to achieve the best performance. It is recommended that you only use the real-time computing system if you clearly feel that the performance of the pre-baking system cannot reach the standard. Although the two systems can be switched seamlessly at runtime, try to do this as less frequent as possible, because each switch involves the reconstruction of the underlying rendering data.
+After importing all model resources, all prefabs use the pre-baked system by default to achieve the best performance. It is recommended that you only use the real-time calculated system if you clearly feel that the performance of the pre-baked system cannot reach the standard. Although the two systems can be switched seamlessly at runtime, try to do this as less frequent as possible, because each switch involves the reconstruction of the underlying rendering data.
 
 ## Skinning algorithm
 
 We have two built-in common standard skinning algorithms, which have similar performance and only affect the rendering results:
 
-  1. __LBS (Linear Blend Skinning)__: bone information is stored in the form of a 3x4 matrix, and the matrix is ​​interpolated directly to achieve skinning, and there are well-known problems such as volume loss, etc.
-  2. __DQS (Dual Quaternion Skinning)__: The bone information is interpolated in the form of double quaternion, which is more accurate and natural for the skeleton animation without scaling transformation, but for performance reasons, there are pragmatic approximation measures for scaling animations.
+  1. __LBS (Linear Blend Skinning)__: joint information is stored in the form of a 3x4 matrix, and the matrix is ​​interpolated directly to achieve skinning, and there are well-known problems such as volume loss, etc.
+  2. __DQS (Dual Quaternion Skinning)__: The joint information is interpolated in the form of dual quaternions, which is more accurate and natural for the skeleton animation without scaling transformation, but for performance reasons, there are pragmatic approximation measures for scaling animations.
 
 The engine uses LBS by default. You can switch the skinning algorithm by modifying the `updateJointData` function reference of the engine skeletal-animation-utils.ts and the header file reference in cc-skinning.chunk.
 
-It is recommended that projects with higher pursuit of skin animation quality can try to enable DQS, but since there is no `fma` instruction before GLSL 400, operations such as `cross` cannot bypass floating-point cancellation on some GPUs, and the error is relatively high. Redundant, may introduce some visible defects.
+It is recommended that projects with higher pursuit of skin animation quality can try to enable DQS, but since there is no `fma` instruction before GLSL 400, operations such as `cross` cannot bypass floating-point cancellation on some GPUs, and the error is relatively high. This may introduce some visible defects.
 
 ## Socket system
 
-If you need to attach some external nodes to the specified bone joints, you need to use the __Socket system__ of the __Skeleton Animation Component__:
+If you need to attach some external nodes to the specified joint joints, you need to use the __Socket system__ of the __Skeleton Animation Component__:
   * Create a new child node directly under the node of `SkeletalAnimationComponent` to be attached to.
   * Add an array element in the sockets list of the `SkeletalAnimationComponent`. Select the path of the joint to be attached to from the drop-down list (note that the `defaultClip` property of the `SkeletalAnimationComponent` must be a valid clip, the content of the drop-down list depend on this), and specify the target as the child node just created.
   * This child node becomes a socket node, you can put any node under and it will follow the transformations of the specified joint.
@@ -52,22 +52,22 @@ If you need to attach some external nodes to the specified bone joints, you need
 
 ## About Dynamic Instancing
 
-Based on the framework of the pre-baking skeletal animation system, the instancing of the skin model has also become a function within reach, but to ensure correctness, you need to collect some relatively low-level information.
+Based on the framework of the pre-baked skeletal animation system, the instancing of the skin model has also become a function within reach, but to ensure correctness, you need to collect some relatively low-level information.
 
 The fundamental problem here is that the joint texture atlass used by each model in the same drawcall must be the same. If they are not the same, the display effect will be completely messy.
 
 The way to distribute all the animation data used at runtime to each joint texture atlases becomes a project-specific information, thus needs developer's input. See the [joint texture layout panel](../../editor/project/joints-texture-layout.md) documentation for more details on how to configure this.
 
-> **Note**: Instancing is only supported under the pre-baking system. Although we do not strictly prohibit instancing under the real-time calculated system (only the warning in the editor), there will be problems with the rendering results. Depending on the resource allocation situation at the time, all the instances could be playing the same clip at best, or more often, completely mad rendering results.
+> **Note**: Instancing is only supported under the pre-baked system. Although we do not strictly prohibit instancing under the real-time calculated system (will only trigger some warnings in the editor), there will be problems with the rendering results. Depending on the resource allocation situation at the time, all the instances could be playing the same clip at best, or more often, completely mad rendering results.
 
-> **Note**: For models with instancing turned on in the material, the planar shadow system will also automatically draw using instancing. In particular, the shadow of the skin model has a higher requirement for the layout of the joint texture atlas, because the pipeline state of the shadow is unified, all the animation of the skin model with the shadow turned on needs to be guaranteed on the same texture (Compared to when drawing the model itself, only the instances in the same drawcall need to keep the bone texture consistent).
+> **Note**: For models with instancing turned on in the material, the planar shadow system will also automatically draw using instancing. In particular, the shadow of the skin model has a higher requirement for the layout of the joint texture atlas, because the pipeline state of the shadow is unified, all the animation of the skin model with the shadow turned on needs to be put into the same texture (Compared to when drawing the model itself, only the instances in the same drawcall need to be put into the same texture).
 
 ## Batched Skinning Model Component
 
-The bone texture uploaded by the GPU on the bottom layer has been globally automatically batched and reused. The upper layer data can currently be combined with all the sub-skin models controlled by the same bone animation component by using the `BatchedSkinningModelComponent`:
+The joint texture uploaded by the GPU on the bottom layer has been globally automatically batched and reused. The upper layer data can currently be combined with all the sub-skin models controlled by the same joint animation component by using the `BatchedSkinningModelComponent`:
 
 ![](batched-skinning-model-component.png)
 
 The batch version of the effect is relatively complicated to write, but it can basically be based on the common effects used by the sub-materials, adding some relatively direct preprocessing and interface changes. The built-in resources in the editor (util/batched-unlit) provide a The integrated version of builtin-unlit can be referenced.
 
-> **Note**: Only using the Batched Skinning Model Component under the pre-baking system can guarantee the correctness. Although it can also be used under the real-time calculated system, there will be rendering problems when the number of bones after the merger exceeds 30 (the maximum number of Uniform arrays).
+> **Note**: Only using the Batched Skinning Model Component under the pre-baked system can guarantee the correctness. Although it can also be used under the real-time calculated system, there will be rendering problems when the number of joints after the merger exceeds 30 (the maximum number of Uniform arrays).
