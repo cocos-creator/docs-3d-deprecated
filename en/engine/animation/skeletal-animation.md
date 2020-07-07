@@ -70,4 +70,4 @@ The joint texture uploaded by the GPU on the bottom layer has been globally auto
 
 The batch version of the effect is relatively complicated to write, but it can basically be based on the common effects used by the sub-materials, adding some relatively direct preprocessing and interface changes. The built-in resources in the editor (util/batched-unlit) provide a The integrated version of builtin-unlit can be referenced.
 
-> **Note**: Only using the Batched Skinning Model Component under the pre-baked system can guarantee the correctness. Although it can also be used under the real-time calculated system, there will be rendering problems when the number of joints after the merger exceeds 30 (the maximum number of Uniform arrays).
+> **Note**: Only using the Batched Skinning Model Component under the pre-baked system can guarantee the correctness. Although it can also be used under the real-time calculated system, there **will** be rendering problems when the number of joints after the merger exceeds 30 (the maximum number of Uniform arrays).

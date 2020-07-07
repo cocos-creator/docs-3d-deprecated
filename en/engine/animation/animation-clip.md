@@ -35,7 +35,7 @@ animationClip.curves = [{ // he property curve on the component
 
 The above __Animation Clip__ contains a curve to control the `value` property of the `MyComponent` component of the *Body* sub-node. The curve has three frames, so that the `value` property becomes 0.5 at 0.3 seconds and 0.5 at 0.6 seconds and then becomes 1.0 at 0.9 seconds.
 
-> **Note**: the frame time of the curve is indexed into the `AnimationClip.keys` array by reference. Multiple curves can share the frame time. This will bring additional performance optimizations.
+> **Note**: the frame time of the curve is indexed into the `AnimationClip.keys` array by reference. Multiple curves can share the frame time. This **will** bring additional performance optimizations.
 
 ### Target
 
