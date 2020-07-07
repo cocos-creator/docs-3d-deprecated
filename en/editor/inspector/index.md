@@ -1,59 +1,106 @@
-# Property inspector
+# Property Inspector
 
-**Property Inspector** is the work area where developers view and edit the properties of the currently selected nodes and/or components. Select the node in the **Scene Editor** or **Hierarchy Manager**, and the properties of the node and the properties of all components on the node will be displayed in the **Property Inspector** for your query and editing.
+The **Property Inspector** is important for viewing and editing the properties of nodes or assets. You can edit the location of a node, components, pictures, materials, models and other assets of a node. 
 
-![introduce](index/introduce.jpg)
+The **Property Inspector** features many details and can seem complicated. To get started, aselect the node in **Scene Editor**, **Hierarchy Manager**, or select the asset in **Asset Manager**. Properties can now be displayed or edited.
 
-## Node name and activation switch
+![introduce](index/introduce.gif)
 
-The checkbox in the upper left corner indicates the active state of the node. When the node is inactive, all components related to image rendering on the node will be closed, and the entire node including child nodes will be effectively hidden.
+## Header area
 
-The name of the node is displayed on the right of the node activation switch, which is the same as the node display name in the **Hierarchy Manager**.
+The **two arrows** on the left are the historical records, click to switch the editing items. The **lock icon** on the right can *lock the panel*, *fix the edited object*, and *prevent the panel from changing* with the new selected item.
 
-## Node properties
+![header](index/header.png)
 
-In the **Property Inspector** the attributes of the node will be displayed. The attributes of the node are arranged under the Node heading. Click Node to collapse or expand the attributes of the node. There is a node setting button on the right side of the Node title, you can reset the node properties or reset the node properties and the modification of all component properties, or paste the copied components.
+## Editing a Node
 
-In addition to the transformation attributes such as *position*, *rotation*, *scale*, and *size*. The properties of the node also include *anchor*, *color*, *opacity*, and *skew*. Modifying the properties of a node usually allows you to immediately see the node's appearance or position change in the scene editor.
+Nodes correspond to the nodes in the tree structure in the **Hierarchy Manager** and display the same name.
 
-## Component properties
-Below the node properties, all components and component properties attached on the node are listed. Just like the node attribute, clicking the component name will switch the collapse/expand state of the component attribute. In the case where many components are attached on the node, you can obtain a larger working area by folding component attributes that are not frequently modified. To the right of the component name are buttons for help documentation and component settings. The help document button can jump to the document introduction page related to the component, and the component setting button can perform functions such as removing, resetting, moving up, moving down, copying and pasting the component.
+1. The check box in the upper left corner indicates the activation state of the node. By default, the check box indicates that the node is in an inactive state. The node will be suspended from rendering, and the entire node, including child nodes, will be hidden when running.
+2. In the input box is the name of the node. The name can be empty.
+3. Next are several general properties of the node: *position*, *rotation*, *scale*, and *layer*.
 
-The attributes of components created by users through scripts are declared by scripts. Different types of properties have different control appearances and editing methods in the Property inspector. We will introduce the definition of properties in detail in the section [Declaring Properties](../../scripting/ccclass.md#property) documentation.
+![node-attrs](index/node-attrs.png)
 
-## Editing attributes
+4. The node menu on the right, the menu inside can be copied, paste the value of the node attribute, or you can paste a new component.
 
-**Properties** are variables declared publicly in the component script and can be serialized and stored in the scene and animation data. Through the **Attribute Checker** we can quickly modify the attribute settings to achieve the purpose of adjusting game data and gameplay without programming.
+![node-menu](index/node-menu.png)
 
-Generally, attributes can be divided into **value types** and **reference types** according to different memory locations of variables.
+5. Use the **Add component** button, after clicking, a list of components will appear, including components provided by the system and custom script components.
 
-## Value type attributes
+![add-component](index/add-component.png)
 
-**Value type** includes simple variable types that take up very little memory, such as numbers, strings, and enumerations:
+The list of added components has a search box that supports the up and down arrows on the keyboard, or **Enter** can be used to confirm the selection.
 
-- *Number*: You can directly use the keyboard to enter, or you can press the up and down arrows next to the input box to gradually increase or decrease the attribute value.
-- *Vector (Vec2)*: The control of the vector is the combination of two numeric inputs, and the input box will identify the sub-property name corresponding to each numeric value with x and y.
-- *String*: Use the keyboard to input the string directly in the text box. The string input control is divided into single line and multi-line. The multi-line text box can be changed by pressing Enter.
-- *Boolean*: edit in the form of a check box, the selected state indicates that the attribute value is true, and the non-selected state indicates false.
-- *Enum*: Edit in the form of a pull-down menu, click the enumeration menu, and then select an item from the pop-up menu list to complete the modification of the enumeration value.
-- *Color*: Click the color attribute preview box, and a color selector window will pop up. In this window, you can directly click the desired color with the mouse, or directly enter the specified color in the RGBA color input box below. Click anywhere outside the color selector window to close the window and use the last selected color as the attribute color.
+## Editing Node Components
 
-![value](index/value.jpg)
+This panel can display node components and component properties.
+Like the general properties of nodes, each component has a foldable or expandable header.
 
-## Reference type attributes
+When multiple components are attached to a node, the scrolling range can be reduced by folding components that are not frequently modified, and improve editing efficiency.
 
-**Reference types** include more complex objects, such as *nodes*, *components*, or *assets*. Different from the various editing methods of the value type, the reference type usually has only one editing method: **Draging the node or asset to the property bar**.
+To the right of the component name is a help document and a component menu button. The help document button can jump to the API document of the component. The component menu can be operated on: *removed*, *moved up*, *moved down*, *copied*, *pasted as a value*, or *pasted as a new component*.
 
-The attributes of the reference type will show `None` after initialization, because the initial value of the attributes of the reference type cannot be set by script. You can drag and drop the corresponding type of node or asset according to the type of attribute to complete the reference assignment.
+![component-menu](index/component-menu.png)
 
-The property bar that needs to be dragged to assign a value will be displayed as a label. `cc.Node` may be displayed on the label, indicating that any node can be dragged up, or the label shows the component name such as `cc.AnimationComponent`, etc. Only the nodes that contain the corresponding components will do.
+The component created by the user through a script, when editing a node, can be directly dragged into the **Property Inspector** to generate a component.
 
-The attribute bar that needs to be dragged and assigned to the asset will be displayed as a label. The label shows the type of asset, such as prefab and texture. Just drag and drop the corresponding type of asset from the **Asset Manager** to complete the assignment.
+The different properties in the script component are declared by the user in the script code. When the different types of properties are edited, the editor will automatically recognize the appropriate UI component.
 
-![object](index/object.jpg)
+The definition of properties is explained, in detail, in the [Declaring Properties](../../scripting/ccclass.md#property) documentation.
 
-## Merge operation
+## How to use UI components
 
-**Attribute checker** allows multiple selection of nodes, and modify the attributes on multiple nodes at the same time. After selecting multiple nodes, the inconsistent attributes will be displayed as the invalid behavior of **UI Components**.
+Properties are divided into **value types** and **reference types**.
 
-![object](index/merge.jpg)
+### Value type properties
+
+**Value type** includes simple variable types that take up very little memory, such as *numbers*, *strings*, *booleans*, and *enumerations*:
+
+  - **Number**: the keyboard is used to enter digits. The up and down arrows next to the input box can gradually increase or decrease the attributes value.
+  - **Vector (Vec2)**: The vector control is a combination of two numeric inputs, and the input box will identify the sub-property name corresponding to each numeric value with *x* and *y*.
+  - **String**: the keyboard is used to input strings directly in a text box. The string input control is divided into single line and multi-line. The multi-line text box can be changed by pressing **Enter**.
+  - **Boolean**: edited in the form of a check box. The selected state indicates that the attribute value is true, and the non-selected state indicates false.
+  - **Enum**: edited in the form of a pull-down menu. Click the enumeration menu, and then select an item from the pop-up menu list to complete the modification of the enumeration value.
+  - **Color**: click the color attribute preview box, and a **color picker** window will pop up. In this window, you can directly click the desired color with the mouse, or directly enter the designation in the RGBA color input box below s color. Click **Color Picker** anywhere outside the window to close the window and use the last selected color as the attribute value.
+
+For example, the color picker component:
+
+![ui-color](index/ui-color.png)
+
+### Reference type properties
+
+**Reference types** include objects, such as *nodes*, *components*, or *assets*. You can select and assign values ​​by **dragging** or **popping up the resource panel**.
+
+![assets-panel](index/assets-panel.png)
+
+## Batch operationas
+
+1. Multi-selectable nodes, inconsistent properties cannot be modified, and `-` in the input component indicates that they cannot be modified.
+
+![multiple-edit](index/multiple-edit.png)
+
+2. Batch assign materials, pictures, animations and other assets, which can be dragged multiple times.
+
+![drag-assets](index/drag-assets.png)
+
+## Editing Prefab Nodes
+
+When editing a Prefab Node, the header area buttons are: *disassociate*, *associate*, *locate assets*, *restore from assets*, and *update to assets*.
+
+![prefab-menu](index/prefab-menu.png)
+
+1. **Disassociation** refers to disconnecting the prefab node from the resource and turning it into a normal node, the color is no longer green.
+2. **Association** means that a Prefab resource is selected first and then associated with the current Prefab node. The new association between common nodes and Prefab assets can be found in the top menu of the editor **Edit**:
+
+![prefab-edit-menu](index/prefab-edit-menu.png)
+
+3. **Locating assets** refers to locating the Prefab resource on the assets panel and making it flash.
+4. **Restore from resource** means to return an edited Prefab node, along with its child nodes, to the initial state.
+5. **Update to resource** refers to updating the Prefab node data that has been edited to the Prefab resource.
+
+## Editing Assets
+
+When editing assets, please pay attention to the last click to save, the **green tick icon** in the figure below is the save button.
+
+![edit-assets](index/edit-assets.png)
