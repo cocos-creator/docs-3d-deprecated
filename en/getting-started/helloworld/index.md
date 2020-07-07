@@ -1,16 +1,20 @@
 # Hello World project
 
 This is the very first __Cocos Creator 3D__ project, and it aims to demonstrate the following:
-- Creating a project
-- Understanding the project directory
-- Creating an object
-- Modifying `Camera` properties
-- Creating, modifying, and binding scripts
-- Running projects
+  - Creating a project
+  - Understanding the project directory
+  - Creating an object
+  - Modifying `Camera` properties
+  - Creating, modifying, and binding scripts
+  - Running projects
 
 ## Creating a New Project
 
-Select an empty template, set the project path, and click the __New Project__ button below.
+In the __Dashboard__ panel, click the __New__ button in the lower right corner and select __Creator 3D__ in the pop-up menu.
+
+<img src="index/dashboard.png"/>
+
+Select an empty template, set the project path, and click the __Create__ button below.
 
 ![](index/new.png)
 
@@ -65,7 +69,7 @@ In the __Property Inspector__ panel, click the `Color` property and select black
 ## Adding a script
 
 ### Creating a new script
-In the __Explorer__ panel, __click the right mouse button__, select __New__ -> __JavaScript__. 
+In the __Explorer__ panel, __click the right mouse button__, select __New__ -> __TypeScript__. 
 
 ![](index/script.png)
 
@@ -90,11 +94,11 @@ Life cycle functions (called in the following order):
 Add `onLoad()` function to output `Hello world`:
 
 ```ts
-import {_decorator, Component} from "cc";
+import { _decorator, Component, Node } from 'cc';
 const {ccclass, property} = _decorator;
 
-@ccclass("normal")
-export class normal extends Component {
+@ccclass('HelloWorld')
+export class HelloWorld extends Component {
     /* class member could be defined like this */
     // dummy ='';
 
@@ -107,7 +111,7 @@ export class normal extends Component {
         console.info('Hello world');
     }
 
-    // update (deltaTime) {
+    // // update (deltaTime: number) {
     // // Your update function goes here.
     //}
 }
@@ -124,7 +128,7 @@ In the __Editor__, from the __menu bar__ click __Project__ -> __Run preview__, o
 ![](index/run.png)
 
 ## Debuging a project
-In the __Editor__, from the __menu bar__ click __developer__ -> __scene debugging tool__</font>
+In the __Editor__, from the __menu bar__ click __developer__ -> __scene debugging tool__
 
 It is also may be necessary to Log information. The __Console__ panel displays all log output.
 
