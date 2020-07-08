@@ -1,14 +1,14 @@
 # Physics Introduction
 
-Cocos Creator 3D currently supports the lightweight collision detection system `builtin` and the physics engine `cannon.js` with physical simulation, and the `asm.js`/`wasm` version `ammo.js` of the powerful physics engine `bullet`, also we provides users with efficient component-based workflow and convenient methods of use.
+__Cocos Creator 3D__ currently supports the lightweight collision detection system `builtin` and the physics engine `cannon.js` with physical simulation, and the `asm.js`/`wasm` version `ammo.js` of the powerful physics engine `bullet`, also we provides users with efficient component-based workflow and convenient methods of use.
 
 ## Physics World And Elements
 
-Elements in the physics world can be divided into **rigid body**. We can adding physics elements by adding a collider(`Collider`) or rigid body(`RigidBody`) component to the game object in Cocos Creator 3D. The physics system will perform calculations on these elements to make their behaviors the same with the real world.
+Elements in the physics world can be divided into **rigid body**. We can adding physics elements by adding a collider (`Collider`) or rigid body (`RigidBody`) component to the game object. The physics system will perform calculations on these elements to make their behaviors the same with the real world.
 
-**Note: The "rigid body" here doesn't refer to the `RigidBody` component, the `RigidBody` component is used to control the properties related to the physical behavior of the rigid body**
+> **Note**: The __rigid body__ here doesn't refer to the `RigidBody` component. The `RigidBody` component is used to control the properties related to the physical behavior of the rigid body.
 
-### Adding Physical Element
+### Adding a Physical Element
 
 Adding a physical element to the world can be divided int the following steps：
 
@@ -29,19 +29,19 @@ Finally, click the run button, you can see the changes of physical elements in t
 
 ![physics world](img/physics.jpg)
 
-**Note: You can see the new preview result on the browser you just ran by clicking the refresh button directly after adjusting the property value of the component**
+> **Note**: You can see the new preview result on the browser you just ran by clicking the refresh button directly after adjusting the property value of the component.
 
 ### Composition Of Physical Elements
 
-In Cocos Creator 3D, a physical element can be composed of the following ways:
+A physical element can be composed of the following ways:
 
-- A RigidBody component
-- One or more collider components
-- One RigidBody component plus one or more collider components
+- A `RigidBody` component
+- One or more `Collider` components
+- One `RigidBody` component plus one or more collider components
 
 ## More Detailed Modules
 
-More content of Cocos Creator 3D physics system will be introduced in more detail through the following modules:
+Additional physics system will be introduced in more detail through the following modules:
 
 Module | Description
 ---|---
