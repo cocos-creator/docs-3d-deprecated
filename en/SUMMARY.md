@@ -109,7 +109,7 @@
   - [动画组件](engine/animation/animation-component.md)
   - [动画剪辑](engine/animation/animation-clip.md)
   - [骨骼动画](engine/animation/skeletal-animation.md)
-- [缓动](tween/index.md)
+- [Tween](tween/index.md)
 
 - [物理](physics/physics.md)
   - [物理选项](physics/physics-item.md)

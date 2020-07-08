@@ -25,7 +25,20 @@
 3. 将以上 TextureCube 资源拖入到 Skybox 面板上的 Envmap 属性上。
 ![设置天空盒的环境贴图](skybox/EnvmapSet.jpg)
 
-完成以上步骤后，就可以在场景中看到最新替换的环境图。
+完成以上步骤后，应该就可以在编辑器的场景中看到最新替换的环境贴图。
+
+## 确认 SkyIllum 参数
+
+如果完成上一步之后，场景编辑器里并没有正确显示出天空盒的贴图，那么很有可能是 SkyIllum 参数设太低了。请检查一下 Scene 节点的属性面板里 ambient -> SkyIllum 参数。一般而言,SkyIllum < 300 就不太看得出天空盒贴图了，SkyIllum = 5000 大概是月夜的光照强度。对于新建的 Cocos Creator 3D 项目，默认的 SkyIllum = 20000。
+
+## 修改 Camera 的 Clear Flag
+
+在完成以上步骤之后，虽然场景编辑器里面已经可以正确显示天空盒，但运行起来的时候仍然看不到。这时候需要修改 Camera 的 Clear Flag 为 SKYBOX，如下图
+
+![修改摄像机的 Clear Flag 为 SKYBOX](skybox/SkyboxCamera.jpg)
+
+这样就完成了 Cocos Creator 3D 中设置天空盒的所有步骤。
+
 
 ## Skybox 面板
 
