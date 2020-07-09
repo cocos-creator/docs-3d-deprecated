@@ -105,10 +105,10 @@
   - [渲染模块(Renderer)](particle-system/renderer.md)
   - [拖尾模块(TrailModule)](particle-system/trail-module.md)
 
-- [动画](engine/animation/index.md)
-  - [动画组件](engine/animation/animation-component.md)
-  - [动画剪辑](engine/animation/animation-clip.md)
-  - [骨骼动画](engine/animation/skeletal-animation.md)
+- [Animation](engine/animation/index.md)
+  - [Animation Components](engine/animation/animation-component.md)
+  - [Animation Clips](engine/animation/animation-clip.md)
+  - [Skeletal Animation](engine/animation/skeletal-animation.md)
 - [Tween](tween/index.md)
 
 - [物理](physics/physics.md)
