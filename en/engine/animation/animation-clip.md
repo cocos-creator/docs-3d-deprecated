@@ -219,7 +219,7 @@ For numeric types or value types, **Cocos Creator 3D** provides several general 
 When the `interpolate` property of the curve data is `true`, the curve will try to use the **interpolation** function:
   - If the type of curve value is `number`, `Number`, **linear interpolation** will be applied;
    - If the curve value inherits from `ValueType`, the `lerp` function of `ValueType` will be called to complete the **interpolation**. Most of the value types built into **Cocos Creator 3D** implement its `lerp` as **linear interpolation**.
-  - If the curve value is [interpolable](), the curve value's `lerp` function will be called to complete the **interpolation** <sup id="a2">[2](#f2)</sup>.
+  - If the curve value is [interpolable](https://docs.cocos.com/creator3d/api/en/interfaces/animation.ilerpable.html), the curve value's `lerp` function will be called to complete the **interpolation** <sup id="a2">[2](#f2)</sup>.
 
 If the curve value does not satisfy any of the above conditions, or when the `interpolate` property of the curve data is `false`,
 there will be no interpolation operation. Always use the curve value of the previous frame as the result.
@@ -341,7 +341,7 @@ The table below represents several commonly used **looping** modes:
 | **WrapMode.Loop** | Loop playback. |
 | **WrapMode.PingPng** | After playing from the beginning to the end of the animation, play backwards from the end to the beginning, and so on |
 
-For more **looping** modes, see [WrapMode]().
+For more **looping** modes, see [WrapMode](https://docs.cocos.com/creator3d/api/en/enums/animation.wrapmode.html).
 
 <b id="f1">1</b>The node of the __Animation Clip__ is the node attached to the __Animation Component__ that guides the use of the __Animation State__ object of the __Animation Clip__. [↩](#a1)
 
