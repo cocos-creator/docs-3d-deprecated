@@ -2,9 +2,9 @@
 
 In __Cocos Creator 3D__, the physics material is a __asset__, which records the surface information of the object. This is used to calculate the friction and elastic force of the colliding object.
 
-## Properties
+## Properties of Materials
 
-The physics material properties are shown below:
+The properties of __Physics Materials__ are shown below:
 
 ![physics material](img/physic-material.jpg)
 
@@ -17,7 +17,7 @@ When in contact with other surfaces, these coefficients are used to calculate th
 
 ## Creating Physics Materials
 
-Physics materials can be created in two ways:
+__Physics Materials__ can be created in two ways:
 
 1. Create in editor
 2. Code instantiation
@@ -34,9 +34,9 @@ newPmtl.friction = 0.1;
 newPmtl.restitution = 0.1;
 ```
 
-## Application
+## Application of materials
 
-At present, the physics material is set in units of collision bodies, and each `Collider` has a `material` property (when not set, `Collider` will refer to the default physics material in the physics system).
+The physics material is set in units of collision bodies, and each `Collider` has a `material` property (when not set, `Collider` will refer to the default physics material in the physics system).
 The application to `Collider` is also divided into editor operation and code operation.
 
 To operate in the editor, just drag the resource into the `cc.PhysicMaterial` property box, as shown in the following figure:

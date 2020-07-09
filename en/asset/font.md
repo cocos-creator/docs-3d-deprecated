@@ -20,7 +20,7 @@ The bitmap font is composed of a font file in `.fnt` format and a `.png` image. 
 
 When importing bitmap fonts, be sure to drag both the `.fnt` file and the `.png` file into the **Assets Panel** at the same time.
 
-**After importing the bitmap font, you need to change the type of png file to sprite-frame, otherwise the bitmap font will not work properly.**
+> **Note**: after importing the bitmap font, you need to change the type of the `.png` file to __sprite-frame__, otherwise the bitmap font will not work properly.
 
 The imported fonts are displayed in the **Assets Panel**, as follows:
 
