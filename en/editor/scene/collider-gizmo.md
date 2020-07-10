@@ -11,4 +11,6 @@ For more information about the collider of Cocos Creator 3D, you can read the [P
 
 ![sphere collider gizmo](images/sphere-collider-gizmo.png)
 
-## [<-Scene Editor](index.md)
+---
+
+Continue to the [Scene Editor](index.md) documentation.
