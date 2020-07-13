@@ -47,7 +47,7 @@ This brings up two key issues, home page loading speed and remote resource cachi
 
 Specifically, developers need to do:
 
-1. When building, check the **MD5 Cache** in the **Build** panel.
+1. When building, enable the **MD5 Cache** in the **Build** config panel.
 2. Set the **Remote service address**, and then click **Build**.
 3. When the build is complete, upload the **res** folder in the mini game release package to the server.
 4. Delete the **res** folder inside the local release package.
