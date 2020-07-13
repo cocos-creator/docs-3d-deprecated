@@ -30,7 +30,7 @@ In addition, the game submission, review and release process of the **WeChat Min
 
     ![](./publish-wechatgame/tool.jpeg)
 
-    **Note**: The **WeChat DevTools**, if it has not been run on a Mac before, will show an error that states: `Please ensure that the IDE has been properly installed`. You need to manually open the **WeChat DevTools** once, before you can click **Run**.
+    > **Note**: The **WeChat DevTools**, if it has not been run on a Mac before, will show an error that states: `Please ensure that the IDE has been properly installed`. You need to manually open the **WeChat DevTools** once, before you can click **Run**.
 
 6. Preview deployment
 
