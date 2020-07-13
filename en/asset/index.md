@@ -8,9 +8,9 @@ The **Assets Manager** is an important tool for accessing and managing assets, d
 
 ## Assets Workflow
 
-- **Assets Workflow** - the general Assets workflow including importing assets, synchronizing assets, locating assets, etc. can be seen: [Assets Workflow](asset-workflow.md)
-- **Getting and Loading assets** - detailed instructions for getting and loading assets can be found in: [Getting and Loading assets](load-assets.md)
-- **Sub-package loading of assets** - for game sub-packaging of small game platforms, Cocos Creator 3D provides developers with sub-package loading functions. For detailed instructions, please read the [Subpackage Loading](subpackage.md) documentation.
+- **Assets Workflow** - the general Assets workflow including importing assets, synchronizing assets, locating assets, etc. can be found in the [Assets Workflow](asset-workflow.md) documentation.
+- **Getting and Loading assets** - detailed instructions for getting and loading assets can be found in the [Getting and Loading assets](load-assets.md) documentation.
+- **Sub-package loading of assets** - for game sub-packaging of small game platforms, __Cocos Creator 3D__ provides developers with sub-package loading functions. For detailed instructions, please read the [Subpackage Loading](subpackage.md) documentation.
 
 ## Common Assets type workflow
 
