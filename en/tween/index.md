@@ -135,4 +135,4 @@ Starting from `v1.0.4` when the easing target is `Node`, it will listen to its d
 
 > **Note**: related test cases are located on [GitHub](https://github.com/cocos-creator/test-cases-3d).
 
-> **Note**: Please refer to [Using the Tween System](https://docs.cocos.com/creator/manual/zh/scripting/tween.html) documentation.
+> **Note**: Please refer to [Using the Tween System](https://docs.cocos.com/creator/manual/en/scripting/tween.html) documentation.
