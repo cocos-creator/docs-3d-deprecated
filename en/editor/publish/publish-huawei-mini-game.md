@@ -43,9 +43,9 @@ The specific filling rules for the relevant parameter configuration are as follo
 
 - **Custom manifest file path (optional)**
 
-  This is an optional item, which is the expansion function of Huawei Quick Game. When used, you need to select a `json` file, and the data type in the file is required to be in `json` format.
+  This is an optional item, which is the expansion function of Huawei Quick Game. When used, you need to select a `JSON` file, and the data type in the file is required to be in `JSON` format.
 
-  > Note: The json data is not available when the key value are `package`, `appType`, `name`, `versionName`, `versionCode`, `icon`, `minPlatformVersion`, `config`, `display`, otherwise it will be overwritten by data such as **Game Package Name**, **Game Name**, **Desktop Icon**, **Game Version Name**, **Game Version Number** during the build.
+  > Note: The `JSON` data is not available when the key value are `package`, `appType`, `name`, `versionName`, `versionCode`, `icon`, `minPlatformVersion`, `config`, `display`, otherwise it will be overwritten by data such as **Game Package Name**, **Game Name**, **Desktop Icon**, **Game Version Name**, **Game Version Number** during the build.
 
 - **Build Sub Package**
 
