@@ -40,7 +40,7 @@ The specific filling rules for the relevant parameter configuration are as follo
 - **App Version Number**: is required. **App Version Number** is different from the **App Version Name**, and the **App Version Number** is mainly used to distinguish the version update. Each time when you submit audit, the **App Version Number** is at least 1 higher than the value of the last submitted audit. It must not be equal to or less than the value of the last submitted audit, and it is recommended that the **App Version Number** be recursively incremented by 1 each time when the audit is submitted.<br>
   > **Note**: The **App Version Number** must be a positive integer.
 
-- **Supported Minimum Platform Version Number**: is required. According to the requirements of Xiaomi Quick Games, this value must be greater than or equal to **1050** at present.
+- **Supported Minimum Platform Version Number**: is required. According to the requirements of Xiaomi Quick Games, this value must be greater than or equal to **1050**.
 
 - **Build Sub Package**: is supported from v1.0.4 onwards and is enabled by default. For details, please refer to **Subpackage rpk** at the end of this document.
 

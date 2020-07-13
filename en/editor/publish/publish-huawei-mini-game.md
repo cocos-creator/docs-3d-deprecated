@@ -39,7 +39,7 @@ The specific filling rules for the relevant parameter configuration are as follo
 
 - **Supported Minimum Platform Version Number**
 
-  This item is required. According to the requirements of Huawei Quick Games, this value must be greater than or equal to **1035** at present.
+  This item is required. According to the requirements of Huawei Quick Games, this value must be greater than or equal to **1035**.
 
 - **Custom manifest file path (optional)**
 
