@@ -61,10 +61,13 @@ The specific filling rules for the relevant parameter configuration are as follo
 
   At this point, the `res` directory will no longer be included in the built-up rpk, and the resources in the `res` directory will be downloaded from the filled **Small Packet Mode Server Path** through the network request.
 
-- **Keystore**: when you check the **Keystore**, the default is to build the rpk package with a certificate that comes with Cocos Creator 3D, which is used only for **debugging**. **Note**: When the rpk package is to be used to submit an audit, do not check the **Keystore** to build it.
+- **Keystore**: when you check the **Keystore**, the default is to build the rpk package with a certificate that comes with Cocos Creator 3D, which is used only for **debugging**. 
+
+  > **Note**: When the rpk package is to be used to submit an audit, do not check the **Keystore** to build it.
   
-  If you don't check the **Keystore**, you need to configure the signature files **certificate.pem path** and **private.pem path**, where you build a rpk package that you can **publish directly**. The developer can configure two signature files by using the **search icon** button to the right of the input box.<br>
-  **Note**: These two signature files are not recommended to be placed in the `build/xiaomi-quick-game` directory of the release package, otherwise the build directory will be emptied each time when it is built, resulting in file loss.
+  If you don't check the **Keystore**, you need to configure the signature files **certificate.pem path** and **private.pem path**, where you build a rpk package that you can **publish directly**. The developer can configure two signature files by using the **search icon** button to the right of the input box.
+
+  > **Note**: These two signature files are not recommended to be placed in the `build/xiaomi-quick-game` directory of the release package, otherwise the build directory will be emptied each time when it is built, resulting in file loss.
 
   There are two ways to generate a signature file:
 
