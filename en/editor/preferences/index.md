@@ -1,6 +1,6 @@
 # Preferences
 
-The personalized settings of the editor are provided in the **Preferences** window. You can click the menu `Cocos Creator 3D-> Preferences` to open the **Preferences** window.
+The personalized settings of the editor are provided in the **Preferences** window. You can click the **Preferences** menu to open the **Preferences** window.
 
 Preferences is divided into the following pages:
 
@@ -28,7 +28,7 @@ General page are mainly configured for some basic data related to the editor.
 
 This page is used to set the path of the development environment required when the game is published to the native platform (iOS, Android, Mac, Windows).
 
-- **Use Builtin JS Engine**: Whether to use the engine path that comes with the Cocos Creator 3D installation path as the JavaScript engine path.This engine is used for scene rendering in the scene panel of editor, declaration of built-in components, and engine modules in other Web environments such as `preview` or `publish`.
+- **Use Builtin JS Engine**: Whether to use the engine path that comes with the __Cocos Creator 3D__ installation path as the JavaScript engine path.This engine is used for scene rendering in the scene panel of editor, declaration of built-in components, and engine modules in other Web environments such as `preview` or `publish`.
 
 - **Custom JS Engine**: In addition to using the built-in engine, you can also go to [engine repository](https://github.com/cocos-creator/engine) to clone or fork a copy of the engine to the local anywhere, then uncheck `Use Builtin JS Engine`, then set the JavaScript engine path to your customized engine path. You can use the editor to customize your engine.
 
@@ -78,4 +78,4 @@ For this feature, if you have more awesome suggestions, welcome to tell us in th
 
 ### Turn on terrain
 
-For more details can refer to [Terrain system](../terrain/index.md).
+For more details can refer to [Terrain system](../terrain/index.md) documentation.
