@@ -1,10 +1,10 @@
 # Publishing to Xiaomi Quick Games
 
-Starting with v1.0.3, Cocos Creator 3D officially supports the release of games to the **Xiaomi Quick Games**.
+__Cocos Creator 3D__ officially supports the release of games to the **Xiaomi Quick Games** platform.
 
 ## Environment Configuration
 
-- Install [Node.js](https://nodejs.org/en/download/) 8.1.4 or above, globally:
+- Install [Node.js](https://nodejs.org/en/download/) 8.1.4 or above, globally.
 
 - Make sure the **npm** version that **Node.js** comes with is **5.2.0** minimum. Upgrade the **npm** command as follows:
 
@@ -15,17 +15,17 @@ Starting with v1.0.3, Cocos Creator 3D officially supports the release of games 
   npm install npm@latest -g
   ```
 
-- Download [Xiaomi Quick Game Debugger and Xiaomi Quick Game Runtime Environment](https://forum.cocos.org/t/topic/81887), and install it on your Xiaomi device (recommended MIUI 8.5.0 or above)
+- Download [Xiaomi Quick Game Debugger and Xiaomi Quick Game Runtime Environment](https://forum.cocos.org/t/topic/81887), and install it on your Xiaomi device (recommended MIUI 8.5.0 or above).
 
 ## Release Process
 
 1. Use **Cocos Creator 3D** to open the project that needs to be released. Select **Xiaomi Quick Game** in the **Platform** dropdown of the **Build** panel.
 
-    ![](./publish-xiaomi-quick-game/build.jpg)
+  ![](./publish-xiaomi-quick-game/build.jpg)
 
-    Click on the **xiaomi-quick-game** below to expand the parameter configuration of **Xiaomi Quick Game**.
+  Click on the **xiaomi-quick-game** below to expand the parameter configuration of **Xiaomi Quick Game**.
 
-    ![](./publish-xiaomi-quick-game/xiaomi_options.jpg)
+  ![](./publish-xiaomi-quick-game/xiaomi_options.jpg)
 
 The specific filling rules for the relevant parameter configuration are as follows:
 
@@ -37,7 +37,8 @@ The specific filling rules for the relevant parameter configuration are as follo
 
 - **App Version Name**: is required. **App Version Name** is the real version, such as: **1.0.0**.
 
-- **App Version Number**: is required. **App Version Number** is different from the **App Version Name**, and the **App Version Number** is mainly used to distinguish the version update. Each time when you submit audit, the **App Version Number** is at least 1 higher than the value of the last submitted audit. It must not be equal to or less than the value of the last submitted audit, and it is recommended that the **App Version Number** be recursively incremented by 1 each time when the audit is submitted.<br>
+- **App Version Number**: is required. **App Version Number** is different from the **App Version Name**, and the **App Version Number** is mainly used to distinguish the version update. Each time when you submit audit, the **App Version Number** is at least 1 higher than the value of the last submitted audit. It must not be equal to or less than the value of the last submitted audit, and it is recommended that the **App Version Number** be recursively incremented by 1 each time when the audit is submitted.
+
   > **Note**: The **App Version Number** must be a positive integer.
 
 - **Supported Minimum Platform Version Number**: is required. According to the requirements of Xiaomi Quick Games, this value must be greater than or equal to **1050**.
@@ -56,7 +57,7 @@ The specific filling rules for the relevant parameter configuration are as follo
 
   3. After the build is complete, click the **Open** button after the **Build Path** to upload the `res` directory under the release path to the small packet mode server. For example, if the default release path is `build`, the **Build Task Name** is `xiaomi-quick-game`, you need to upload the `/build/xiaomi-quick-game/res` directory.
 
-      > **Note**: If you are using the command line to compile small packet mode, remember to backup the `build/xiaomi-pack-tools/res` directory, then delete the `build/xiaomi-pack-tools/res` directory, and then perform command line compilation (`npm run build`).
+    > **Note**: If you are using the command line to compile small packet mode, remember to backup the `build/xiaomi-pack-tools/res` directory, then delete the `build/xiaomi-pack-tools/res` directory, and then perform command line compilation (`npm run build`).
 
   At this point, the `res` directory will no longer be included in the built-up rpk, and the resources in the `res` directory will be downloaded from the filled **Small Packet Mode Server Path** through the network request.
 
@@ -80,7 +81,7 @@ The specific filling rules for the relevant parameter configuration are as follo
       openssl req -newkey rsa:2048 -nodes -keyout private.pem   -x509 -days 3650 -out certificate.pem
       ```
 
-      > **Note**: **openssl** can be used directly in the terminal in Linux or Mac environment, and in the Windows environment you need to install `openssl` and configure system environment variables. Restart Creator 3D after the configuration is complete.
+      > **Note**: **openssl** can be used directly in the terminal in Linux or Mac environment, and in the Windows environment you need to install `openssl` and configure system environment variables. Restart __Cocos Creator 3D__ after the configuration is complete.
 
 **2. Build**
 
@@ -134,7 +135,9 @@ Debugging can currently be initiated from the command line.
 
 Subpackage rpk can be used according to your needs. 
 
-Subpackage loading, that is, splitting the game content into several packages according to certain rules, only downloading the necessary packages when starting up for the first time. This necessary package is called **main package**. And the developer can trigger in the main package to download other sub-packages, which can effectively reduce the time spent on the first boot. To use this function, you need to set [Subpackage Configuration](../../asset/subpackage.md) in Cocos Creator 3D, and the package will be automatically subpackaged when the setting is completed. **Note**: The size of a single subpackage/main package must not exceed **5M**, and the sum of all packages must not exceed **10M**.
+Subpackage loading, that is, splitting the game content into several packages according to certain rules, only downloading the necessary packages when starting up for the first time. This necessary package is called **main package**. And the developer can trigger in the main package to download other sub-packages, which can effectively reduce the time spent on the first boot. To use this function, you need to set [Subpackage Configuration](../../asset/subpackage.md) in __Cocos Creator 3D__, and the package will be automatically subpackaged when the setting is completed. 
+
+> **Note**: The size of a single subpackage/main package must not exceed **5M**, and the sum of all packages must not exceed **10M**.
 
 When the build is complete, an `.rpk` file is generated in the `/build/xiaomi-quick-game/dist` directory.
 
