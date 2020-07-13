@@ -1,6 +1,6 @@
 # Publishing to OPPO Mini Games
 
-Starting with v1.0.2, Cocos Creator 3D officially supports the release of games to the **OPPO Mini Games**. This document is currently written based on v1.0.2, if you are using a lower version of the editor, it is recommended to upgrade to v1.0.2 or higher.
+__Cocos Creator 3D__ officially supports the release of games to the **OPPO Mini Games**. 
 
 ## Environment Configuration
 
@@ -28,7 +28,8 @@ The specific filling rules for the relevant parameter configuration are as follo
 
 - **Game Version Name**: is required. **Game Version Name** is the real version, such as: 1.0.0.
 
-- **Game Version Number**: is required. **Game Version Number** is different from the **Game Version Name**, and the **Game Version Number** is mainly used to distinguish the version update. Each time when you submit audit, the game version number is at least 1 higher than the value of the last submitted audit. It must not be equal to or less than the value of the last submitted audit, and it is recommended that the **Game Version Number** be recursively incremented by 1 each time when the audit is submitted.<br>
+- **Game Version Number**: is required. **Game Version Number** is different from the **Game Version Name**, and the **Game Version Number** is mainly used to distinguish the version update. Each time when you submit audit, the game version number is at least 1 higher than the value of the last submitted audit. It must not be equal to or less than the value of the last submitted audit, and it is recommended that the **Game Version Number** be recursively incremented by 1 each time when the audit is submitted.
+
   > **Note**: The **Game Version Number** must be a positive integer.
 
 - **Supported Minimum Platform Version Number**: is required. According to the requirements for OPPO Mini Games, this value must be greater than or equal to **1031**.
@@ -49,7 +50,9 @@ The specific filling rules for the relevant parameter configuration are as follo
 
 - **Build Sub Package**: this option is supported from v1.0.4 onwards and is enabled by default. For details, please refer to **Subpackage** at the end of this document.
 
-- **Keystore**: when you check the **Keystore**, the default is to build the rpk package with a certificate that comes with Creator 3D, which is used only for **debugging**. **Note**: When the rpk package is to be used to submit an audit, do not check the **Keystore** to build it.
+- **Keystore**: when you check the **Keystore**, the default is to build the rpk package with a certificate that comes with Creator 3D, which is used only for **debugging**. 
+
+  > **Note**: When the rpk package is to be used to submit an audit, do not check the **Keystore** to build it.
   
   If you don't check the **Keystore**, you need to configure the signature files **certificate.pem path** and **private.pem path**, where you build a rpk package that you can **publish directly**. The user can configure two signature files by using the **search icon** button to the right of the input box.
 
@@ -85,7 +88,8 @@ Copy the generated mini-game **rpk** file to the `/sdcard/games/` directory on y
 Subpackage loading, that is, splitting the game content into several packages according to certain rules, only downloading the necessary packages when starting up for the first time. This necessary package is called **main package**, and the developer can trigger in the main package to download other sub-packages, which can effectively reduce the time spent on the first boot. To use this function, you need to set [Subpackage Configuration](../../asset/subpackage.md) in Cocos Creator 3D, and the package will be automatically subpackaged when the setting is completed.
 
 After the build is complete, the subpackage directory is in the `dist` directory. <br>
-In this case, you need to create a new **subPkg** directory in the **sdcard** directory of the Android device, and then copy the **.rpk** file in the `dist` directory to the **subPkg** directory.<br>
+In this case, you need to create a new **subPkg** directory in the **sdcard** directory of the Android device, and then copy the **.rpk** file in the `dist` directory to the **subPkg** directory.
+
 Then switch to the **Package Load** section of OPPO **Mini Game Debugger**, click **Refresh** at the top right to see the game name of the subpackage, click **Second Open** to use the same as the normal packaged **rpk**.
 
 ![](./oppo-mini-game/run_subpackage.jpg)
