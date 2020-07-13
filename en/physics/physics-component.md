@@ -56,7 +56,7 @@ Properties | Description (Other reference box colliders)
 ---|---
 *mesh* | The mesh resource referenced by the mesh collider, used to initialize the mesh collision volume
 
->> **Note**: `builtin` does not currently support the mesh collider component.
+> **Note**: `builtin` does not currently support the mesh collider component.
 
 > **Note**: `cannon.js` has poor support for the mesh collider component, and only allows detection with the sphere collider**.
 
