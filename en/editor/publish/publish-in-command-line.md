@@ -35,9 +35,10 @@ Currently, when using the command line to build, except for the required build o
 
   If no parameters are specified after `--build`, then the parameters used in the **Build** panel, such as platforms, templates, and so on, will be used as default parameters. If additional parameter settings are specified, the default parameters will be overwritten with the specified parameters. The available parameters are:
 
-    - `configPath`: Parameter file path. If define `configPath`, then Cocos Creator 3D will load this file as a build parameter in the `json` file format. This parameter can be modified by yourself or exported directly from the **Build** panel.
+    - `configPath`: Parameter file path. If define `configPath`, then Cocos Creator 3D will load this file as a build parameter in the `JSON` file format. This parameter can be modified by yourself or exported directly from the **Build** panel.
     
     - `includedModules`: Package modules for custom engines. Only the required modules are packaged.
+      
       > **Note**: The pass is an array of module `entry` fields, see [the documentation](https://github.com/cocos-creator/engine/blob/3d-v1.0.0/scripts/module-division/division-config.json) for details.
     - `taskName`: Build task name, the name of the release folder generated after the build.
     - `name`: Game name
