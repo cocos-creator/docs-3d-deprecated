@@ -53,9 +53,9 @@ Specifically, developers need to do the following:
 3. After the build is complete, upload the `build/baidu-mini-game/res` folder to the server.
 4. Delete the `res` folder under the local release package directory.
 
-> **Note**:
-> 1. When Baidu loads the resources on the remote server on the physical device, it only supports access via HTTPS, so the resource file must be placed on HTTPS, otherwise the loading of the resource will fail.
-> 2. If the cache resource exceeds the environment limit of Baidu, you need to manually clear the resource. You can use the `remoteDownloader.cleanAllCaches()` and `remoteDownloader.cleanOldCaches()` interfaces to clear the cache in Baidu mini game. The former will clear all cache resources in the cache directory, please use it with caution. The latter will clear the cache resources that are not used in the current application in the cache directory.
+> **Note**: When Baidu loads the resources on the remote server on the physical device, it only supports access via HTTPS, so the resource file must be placed on HTTPS, otherwise the loading of the resource will fail.
+
+> **Note**: If the cache resource exceeds the environment limit of Baidu, you need to manually clear the resource. You can use the `remoteDownloader.cleanAllCaches()` and `remoteDownloader.cleanOldCaches()` interfaces to clear the cache in Baidu mini game. The former will clear all cache resources in the cache directory, please use it with caution. The latter will clear the cache resources that are not used in the current application in the cache directory.
 
 ## Baidu Mini Game Subpackage Loading
 
