@@ -48,17 +48,18 @@ Because the build process generates so many log messages, by default only error 
 
 - **Log Level**
 
-  Click **Cocos Creator 3D -> Preferences -> Extension** in the menu bar, set **Package** to `builder`, and then set the log type to output to the **Console** panel in **Log Level**.
+  Click **Preferences -> Extension** in the menu bar, set **Package** to `builder`, and then set the log type to output to the **Console** panel in **Log Level**.
 
   ![builder-log](./build-panel/builder-log.jpg)
 
 - **Log File**
 
-  Starting from v1.0.3, the editor will record the error log generated during each build, which can be viewed by clicking the ![log](build-panel/log.jpg) button under build task in the **Build** panel. The log file is stored in the project's `temp/build-log` directory and can be attached when you send feedback to the forum on build related issues.
+  The editor will record the error log generated during each build, which can be viewed by clicking the ![log](build-panel/log.jpg) button under build task in the **Build** panel. The log file is stored in the project's `temp/build-log` directory and can be attached when you send feedback to the forum on build related issues.
 
 ## Adjust the build options configuration
 
-The **Build** panel has a ![](build-panel/view_build_parameter.png) button below the build task, which can be clicked to see or adjust the configuration of the previous build options. Click the **Recompile** button after the adjustment is complete, the generated release package will directly overwrite the original.<br>
+The **Build** panel has a ![](build-panel/view_build_parameter.png) button below the build task, which can be clicked to see or adjust the configuration of the previous build options. Click the **Recompile** button after the adjustment is complete, the generated release package will directly overwrite the original.
+
 The information about the completed build task will be saved in the `profiles/packages/build.json` file of the project. As long as the source file of the corresponding build task is not deleted, either in the **Build** panel or directly deleted in the project directory, you can view the build options configuration of the previous build after reopening the editor, as well as to run and preview again.
 
 > **Note**: The ![](build-panel/view_build_parameter.png) button is for developers to recompile after adjusting the build options of the current build task, while the **New Build Task** button is for creating a new build task, please don't confuse the two.
@@ -67,13 +68,13 @@ The information about the completed build task will be saved in the `profiles/pa
 
 ### Export
 
-The **Export** option at the top right of the **Build** panel exports the current configuration of build options to a `json` file. This mainly facilitates building from the command-line and sharing the configuration of build options within the same project. The exported configuration of build options are platform-specific. For developers who use the command line to build, you can directly use the `json` configuration file as the `configPath` of the command-line build options.
+The **Export** option at the top right of the **Build** panel exports the current configuration of build options to a `JSON` file. This mainly facilitates building from the command-line and sharing the configuration of build options within the same project. The exported configuration of build options are platform-specific. For developers who use the command line to build, you can directly use the `JSON` configuration file as the `configPath` of the command-line build options.
 
 ![export](build-panel/export.jpg)
 
 ### Import
 
-The **Import** option reads `json` configuration file into the **Build** panel for developers to share build options configuration.
+The **Import** option reads `JSON` configuration file into the **Build** panel for developers to share build options configuration.
 
 ## Recompile
 
