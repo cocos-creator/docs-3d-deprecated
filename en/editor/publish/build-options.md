@@ -10,7 +10,7 @@ The default release path is in the `build` under the project folder. If you use 
 
 ### Debug
 
-In release mode, the `uuid` of the resource, the built engine script and the project script will be compressed and confused, and the json of the same resource will be subpackaged to reduce the number of resource loads. When debugging a project, it is recommended to check the **Debug** option for easy positioning of the problem.
+In release mode, the `uuid` of the resource, the built engine script and the project script will be compressed and confused, and the JSON of the same resource will be subpackaged to reduce the number of resource loads. When debugging a project, it is recommended to check the **Debug** option for easy positioning of the problem.
 
 ### Replace Splash screen
 
