@@ -51,7 +51,7 @@ When the `Type` property selects `FILLED`, a new set of properties appears to be
 | Fill Range | Normalized values for padding ranges (same from 0 ~ 1). When set to 1, it fills up the entire range of the original image. |
 | Fill Center | Fill center point, this property can only be modified if the `RADIAL` fill type is selected. Determines which point on the Sprite is used as pivot when the FillType is set to RADIAL. |
 
-![racial](sprite/racial.png)
+![radial](sprite/radial.png)
 
 #### Fill Range Supplemental description
 
