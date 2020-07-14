@@ -7,7 +7,6 @@ The **Build** panel allows you to publish games to multiple platforms, including
 - [About the Build Panel](build-panel.md)
 - [General Build Options](build-options.md)
 - [Publishing to the Web](publish-web.md)
-
 - [Publishing to native](publish-native.md)
   - [Setup Native Development](setup-native-development.md)
   - [Debuging JavaScript on Native Platforms](debug-jsb.md)

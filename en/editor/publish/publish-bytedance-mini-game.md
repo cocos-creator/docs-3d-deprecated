@@ -1,10 +1,10 @@
 # Publish to ByteDance Mini Games
 
-ByteDance mini-game is developed based on the ByteDance full products, which does not require users to download, and is a brand-new game type that can be played on tap.
+**ByteDance Mini Games** are developed based on ByteDance full products, which do not require users to download. This is a brand-new game type that can be played on tap.
 
-The game submission, review and release process of the mini-games need to comply with the requirements and standard processes of the Byte official team. For specific information, please refer to the link at the end of the article.
+The game submission, review and release process of a mini-game needs to comply with the requirements and standard processes of the Byte official specification. For specific information, please refer to the links at the end of this document.
 
-## Publish ByteDance with Cocos Creator 3D
+## Publish to ByteDance with Cocos Creator 3D
 
 1. Download **ByteDance DevTools** on [ByteDance Official Document](https://microapp.bytedance.com/docs/zh-CN/mini-game/develop/developer-instrument/developer-instrument-update-and-download).
 
@@ -45,7 +45,7 @@ In a **ByteDance Mini Game** environment, resource management is the most specia
 
 This brings up two key issues, home page loading speed and remote resource caching and version management. For the home page loading speed, we recommend that developers only save the script file in the **ByteDance Mini Game** package, and all other resources are downloaded from the remote server. As for downloading, caching and version management of remote resources, Cocos Creator 3D has done the job for developers.
 
-Specifically, developers need to do:
+Specifically, developers need to do the following:
 
 1. When building, enable the **MD5 Cache** in the **Build** config panel.
 2. Set the **Remote service address**, and then click **Build**.
