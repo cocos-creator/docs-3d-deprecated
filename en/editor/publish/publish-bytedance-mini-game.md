@@ -18,8 +18,7 @@ The game submission, review and release process of a mini-game needs to comply w
 
 4. Preview game
 
-    Following this process, a `bytedance-mini-game` folder will be generated in the project's **build** directory (the name of the folder is based on the **Build Task Name**),then you can open your d
-
+    Following this process, a `bytedance-mini-game` folder will be generated in the project's **build** directory (the name of the folder is based on the **Build Task Name**),then you can open your game with the **ByteDance DevTools**.
     ![](./publish-bytedance-mini-game/tool.jpg)
 
 ## Build Options
