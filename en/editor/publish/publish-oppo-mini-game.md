@@ -34,7 +34,7 @@ The specific filling rules for the relevant parameter configuration are as follo
 
 - **Supported Minimum Platform Version Number**: is required. According to the requirements for OPPO Mini Games, this value must be greater than or equal to **1031**.
 
-- **Small Packet Mode**: is optional. The in-package volume of the mini-game contains code and resources that cannot exceed 10M, and resources can be loaded via network requests. **Small Packet Mode** is to help users keep the script files in the mini game package, other resources are uploaded to the remote server, and downloaded from the remote server as needed. And the download, cache and version management of remote resources, Cocos Creator 3D has already helped the developer. What the developer needs to do is the following steps:
+- **Small Packet Mode**: is optional. The in-package volume of the mini-game contains code and resources that cannot exceed 10M, and resources can be loaded via network requests. **Small Packet Mode** is to help users keep the script files in the mini game package, other resources are uploaded to the remote server, and downloaded from the remote server as needed. And the download, cache and version management of remote resources, **Cocos Creator 3D** has already helped the developer. What the developer needs to do is the following steps:
 
   1. When building, check the **Small Packet Mode** and fill in the **Small Packet Mode Server Path**.
 
@@ -69,7 +69,7 @@ The specific filling rules for the relevant parameter configuration are as follo
       openssl req -newkey rsa:2048 -nodes -keyout private.pem   -x509 -days 3650 -out certificate.pem
       ```
 
-      > **Note**: **openssl** can be used directly in the terminal in **Linux** or **Mac** environment, and in the **Windows** environment you need to install `openssl` and configure system environment variables. Restart Cocos Creator 3D after the configuration is complete.
+      > **Note**: **openssl** can be used directly in the terminal in **Linux** or **Mac** environment, and in the **Windows** environment you need to install `openssl` and configure system environment variables. Restart **Cocos Creator 3D** after the configuration is complete.
 
 **2. Build**
 
@@ -85,7 +85,7 @@ Copy the generated mini-game **rpk** file to the `/sdcard/games/` directory on y
 
 **4. Subpackage rpk**
 
-Subpackage loading, that is, splitting the game content into several packages according to certain rules, only downloading the necessary packages when starting up for the first time. This necessary package is called **main package**, and the developer can trigger in the main package to download other sub-packages, which can effectively reduce the time spent on the first boot. To use this function, you need to set [Subpackage Configuration](../../asset/subpackage.md) in Cocos Creator 3D, and the package will be automatically subpackaged when the setting is completed.
+Subpackage loading, that is, splitting the game content into several packages according to certain rules, only downloading the necessary packages when starting up for the first time. This necessary package is called **main package**, and the developer can trigger in the main package to download other sub-packages, which can effectively reduce the time spent on the first boot. To use this function, you need to set [Subpackage Configuration](../../asset/subpackage.md) in **Cocos Creator 3D**, and the package will be automatically subpackaged when the setting is completed.
 
 After the build is complete, the subpackage directory is in the `dist` directory. <br>
 In this case, you need to create a new **subPkg** directory in the **sdcard** directory of the Android device, and then copy the **.rpk** file in the `dist` directory to the **subPkg** directory.
