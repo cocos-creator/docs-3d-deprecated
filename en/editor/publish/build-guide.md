@@ -4,7 +4,7 @@ The build process is mainly divided into two parts, the **General Build Process*
 
 ## General build Process
 
-The general build process for Cocos Creator 3D consists of the following:
+The general build process for **Cocos Creator 3D** consists of the following:
 
 1. Initialization of build parameters
 2. Prepare build data
@@ -180,9 +180,4 @@ The Auto Atlas prints the `uuid` information of the original small image and the
 
 ### Engine compilation failed.
 
-If it's a custom engine compilation failure, check your modified code, or custom engine path.<br>
-If it is an engine compilation failure, please send a question to the [Forum](https://discuss.cocos2d-x.org/) with the Cocos Creator 3D version, the build options configuration, the build log file in the Build panel, and a demo that reproduces the problem.
-
-### Other errors
-
-If you encounter other errors that cannot be resolved by yourself, please send a question to the [Forum](https://discuss.cocos2d-x.org/) with the Cocos Creator 3D version, the build options configuration, the build log file in the Build panel, and a demo that reproduces the problem.
+If it's a custom engine compilation failure, check your modified code, or custom engine path.
