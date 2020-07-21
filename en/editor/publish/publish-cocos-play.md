@@ -1,12 +1,12 @@
 # Publishing to Cocos Play
 
-Starting with v1.0.3, Cocos Creator 3D officially supports the release of games to the **Cocos Play**.
+**Cocos Creator 3D** officially supports the release of games to the **Cocos Play**.
 
 ## Publish Cocos Play with Cocos Creator 3D
 
 ### Prerequisites
 
-- Download and install [Cocos Play Self-test Tools](https://gamebox.gitbook.io/project/you-xi-jie-ru-wen-dang/zi-yuan-xia-zai/zi-ce-gong-ju) on your Android device (recommended Android Phone 6.0 or above).
+- Download and install the [Cocos Play Self-test Tools](https://gamebox.gitbook.io/project/you-xi-jie-ru-wen-dang/zi-yuan-xia-zai/zi-ce-gong-ju) on your Android device (recommended Android Phone 6.0 or above).
 
 ### Build
 
@@ -18,7 +18,7 @@ The specific filling rules for the relevant parameter configuration are as follo
 
   - **tinyPacketMode**
 
-    This item is optional. The in-package volume of the game contains code and resources that cannot exceed 10M, and resources can be loaded via network requests. **tinyPacketMode** is to help developers keep the script files in the game package, other resources are uploaded to the remote server, and downloaded from the remote server as needed. And the download, cache and version management of remote resources, Cocos Creator 3D has already helped the developer. What the developer needs to do is the following steps:
+    This item is optional. The in-package volume of the game contains code and resources that cannot exceed 10M, and resources can be loaded via network requests. **tinyPacketMode** is to help developers keep the script files in the game package, other resources are uploaded to the remote server, and downloaded from the remote server as needed. And the download, cache and version management of remote resources, **Cocos Creator 3D** has already helped the developer. What the developer needs to do is the following steps:
 
     - When building, check the **tinyPacketMode** and fill in the **tinyPacketModeServer**.
 
@@ -47,7 +47,7 @@ The specific filling rules for the relevant parameter configuration are as follo
 ### Access testing
 
 Developers must use the Cocos Play **Self-test Tools** to test access without problems before submitting to the platform for review. The size of the package is not required for the self-test, but if it is to be submitted for review, the package size cannot exceed 10M.<br>
-The **Self-test Tools** can launch the game and provide features such as game login, payment, etc. By reading the game configuration parameters, you can determine the type of game to start and how the game will start. For details, please refer to [Self-test Tools Documentation](https://gamebox.gitbook.io/project/you-xi-jie-ru-wen-dang/ji-shu-dui-jie/zi-ce-gong-ju).
+The **Self-test Tools** can launch the game and provide features such as game login, payment, etc. By reading the game configuration parameters, you can determine the type of game to start and how the game will start. For details, please refer to the [Self-test Tools](https://gamebox.gitbook.io/project/you-xi-jie-ru-wen-dang/ji-shu-dui-jie/zi-ce-gong-ju) documentation.
 
 Open the previously installed **Self-test Tools**, then click the **Configure Game** button at the top left of the **Self-test Tools** to enter the game configuration page. Configure parameters as required and click **Save**.
 
