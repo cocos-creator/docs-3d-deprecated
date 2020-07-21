@@ -1,6 +1,6 @@
 # Publishing to Alipay Mini Games
 
-Starting with v1.0.3, Cocos Creator 3D officially supports the release of games to the **Alipay Mini Games**.
+**Cocos Creator 3D** officially supports the release of games to the **Alipay Mini Games**.
 
 ## Environment Configuration
 
@@ -12,21 +12,17 @@ Starting with v1.0.3, Cocos Creator 3D officially supports the release of games 
 
 ## Release Process
 
-**First**, use Cocos Creator 3D to open the project that needs to be released. Select **Alipay Mini Game** in the **Platform** dropdown of the **Build** panel, and then click **Build**.
+**First**, use **Cocos Creator 3D** to open the project that needs to be released. Select **Alipay Mini Game** in the **Platform** dropdown of the **Build** panel, and then click **Build**.
 
 ![](./publish-alipay-mini-game/build_option.png)
 
 The specific filling rules for the relevant parameter configuration are as follows:
 
-- Polyfills
+  - **Polyfills** - **Polyfills** are optional. If this option is checked at build time, the resulting release package will have the corresponding polyfills in it, and will also increase the size of the package. Developers can choose polyfills on demand, but only `Async Functions` are currently available.
 
-  **Polyfills** is optional. If this option is checked at build time, the resulting release package will have the corresponding polyfills in it, and will also increase the size of the package. Developers can choose polyfills on demand, but only `Async Functions` are currently available.
+  - **Remote URL** - **Remote URL** is optional. For details, please refer to the **Resource Management for Alipay Mini Game Environment** section below.
 
-- Remote URL
-
-  **Remote URL** is optional. For details, please refer to the **Resource Management for Alipay Mini Game Environment** section below.
-
-**Second**, after the build is completed, click the **folder icon** button below the alipay-mini-game build task to open the `build` release path. If the Build Task Name is `alipay-mini-game`, you can see that the Alipay Mini Game's project folder `alipay-mini-game` is generated in the `build` directory, which has included Alipay Mini Game environment configuration file `game.json`.
+**Second**, after the build is completed, click the **folder icon** button below the alipay-mini-game build task to open the `build` release path. If the Build Task Name is `alipay-mini-game`, you can see that the **Alipay Mini Game's** project folder `alipay-mini-game` is generated in the `build` directory, which has included Alipay Mini Game environment configuration file `game.json`.
 
 ![](./publish-alipay-mini-game/build.png)
 
@@ -38,21 +34,21 @@ The specific filling rules for the relevant parameter configuration are as follo
 
 **Alipay Mini Game** is similar to **WeChat Mini Game**. There are restrictions on the package size. Resources more than **4MB** must be downloaded via a network request.
 
-It is recommended to only save script files in the mini-game packages, while other resources are uploaded to the remote server, and downloaded from the remote server as needed. The download, cache, and version management of remote resources, Cocos Creator 3D has already done it for you. The specific implementation logic is similar to the WeChat Mini Game. Please refer to [Resource Management for WeChat Mini Game Environment](./publish-wechatgame.md) documentation for details.
+It is recommended to only save script files in the mini-game packages, while other resources are uploaded to the remote server, and downloaded from the remote server as needed. The download, cache, and version management of remote resources, **Cocos Creator 3D** has already done it for you. The specific implementation logic is similar to the **WeChat Mini Game**. Please refer to the [Resource Management for WeChat Mini Game Environment](./publish-wechatgame.md) documentation for details.
 
 Specifically, developers need to:
 
-1. Set the **Remote URL** in the **Build** panel. And then click **Build**.
-2. When the build is complete, upload the `build/alipay-mini-game/res` folder to the server.
-3. Delete the `res` folder under the local release package directory.
+  1. Set the **Remote URL** in the **Build** panel. And then click **Build**.
+  2. When the build is complete, upload the `build/alipay-mini-game/res` folder to the server.
+  3. Delete the `res` folder under the local release package directory.
 
 ## Alipay Mini Games Known issues
 
 Currently, our adaptation of **Alipay Mini Games** has not been completely completed, and the following modules are still not supported:
 
-- WebView
-- VideoPlayer
-- Subpackage Loading
-- Custom Font
+  - WebView
+  - VideoPlayer
+  - Subpackage Loading
+  - Custom Font
 
-The above functions are expected to be gradually supported in future updates, and we will continue to communicate closely with **Alipay Mini Games** engineers to continuously optimize the adaptation effect.
+The above functions are expected to be gradually supported in future updates.
