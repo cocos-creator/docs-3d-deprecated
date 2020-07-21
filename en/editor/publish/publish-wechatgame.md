@@ -5,14 +5,14 @@ The runtime environment of the **WeChat Mini Game** is an extension of the **WeC
 On the engine side, in order to make the developers' workload as easy as possible, our main tasks for developers include the following:
 
 - The engine framework adapts to the WeChat Mini Game API, pure game logic level, developers do not need any additional modifications.
-- The Cocos Creator 3D editor provides a fast packaging process, released directly as a **WeChat Mini Game**, and automatically evokes the **WeChat DevTools**.
+- The **Cocos Creator 3D** editor provides a fast packaging process, released directly as a **WeChat Mini Game**, and automatically evokes the **WeChat DevTools**.
 - Automatically load remote resources, cache resources, and cache resource version control.
 
-In addition, the game submission, review and release process of the **WeChat Mini Game** is no different from the **WeChat Mini Program**. Please refer to the [WeChat Mini Game Developer Documentation](https://developers.weixin.qq.com/minigame/en/dev/guide/).
+In addition, the game submission, review and release process of the **WeChat Mini Game** is no different from the **WeChat Mini Program**. Please refer to the [WeChat Mini Game Developer](https://developers.weixin.qq.com/minigame/en/dev/guide/) documentation.
 
 ## Publishing WeChat Mini Games with Cocos Creator 3D
 
-1. Download **WeChat DevTools** on [WeChat Official Document](https://developers.weixin.qq.com/miniprogram/en/dev/devtools/download.html)
+1. Download the **WeChat DevTools** on [WeChat Official Document](https://developers.weixin.qq.com/miniprogram/en/dev/devtools/download.html)
 
 2. Set the **WeChatGame App Path** in **Cocos Creator 3D -> Preferences -> [Native Develop](../../editor/preferences/index.md)**.
 
@@ -60,7 +60,7 @@ In a **WeChat Mini Game** environment, resource management is the most special p
 
 4. You cannot download script files from a remote server.
 
-This brings up two key issues, home page loading speed and remote resource caching and version management. For the home page loading speed, we recommend that developers only save the script file in the **WeChat Mini Game** package, and all other resources are downloaded from the remote server. As for downloading, caching and version management of remote resources, Cocos Creator 3D has done the job for developers. Let's look at the logic of this part below.
+This brings up two key issues, home page loading speed and remote resource caching and version management. For the home page loading speed, we recommend that developers only save the script file in the **WeChat Mini Game** package, and all other resources are downloaded from the remote server. As for downloading, caching and version management of remote resources, **Cocos Creator 3D** has done the job for developers. 
 
 In the **WeChat Mini Game** environment, we provide a `wxDownloader` object, and after setting the `REMOTE_SERVER_ROOT` property to it, the logic of the engine to download resources becomes:
 
@@ -104,12 +104,12 @@ In addition to pure game content, the **WeChat Mini Game** environment actually 
 
 ## WeChat Mini Games Known issues
 
-In addition, our adaptation of WeChat Mini Games has not been completely completed, and the following modules are still not supported:
+__Cocos Creator 3D__'s adaptation of **WeChat Mini Games** has not been completely implemented. The following modules are still not supported:
 
-- VideoPlayer
-- WebView
+  - VideoPlayer
+  - WebView
 
-If you need it, you can currently use it by calling the WeChat's API directly.
+It is possible to use the missing functionality by calling the **WeChat's** API directly.
 
 ## Reference documentation
 
