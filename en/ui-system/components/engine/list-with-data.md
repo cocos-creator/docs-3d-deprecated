@@ -10,10 +10,8 @@ Let's take an inventory interface as example, we need following data structure t
 - Icon id, we can put up a icon id to spriteFrame reference dictionary or array
 - Item name
 - Item price
-- ...
 
-We will introduce how to define a data class and generate those data in __Inspector__ panel. If you're not familiar with component system of Cocos Creator 3D, please start with [Workflow of script development](../../../scripting/index.md) chapter.
-
+We will introduce how to define a data class and generate those data in __Inspector__ panel. If you're not familiar with component system of __Cocos Creator 3D__, please start with [Workflow of script development](../../../scripting/index.md) documentation.
 
 ### Custom data class
 
@@ -50,7 +48,7 @@ export class ItemList extends Component {
 }
 ```
 
-We defined an `Item` class at the top of the script for storing and easily updating data needed by item. Please notice this class does not extends `cc.Component`, so it can be defined as a property type for any component. You can learn more details about data class here [Declare class](../../../scripting/ccclass.md).
+We defined an `Item` class at the top of the script for storing and easily updating data needed by item. Please notice this class does not extends `cc.Component`, so it can be defined as a property type for any component. Please refer to the [Declare class](../../../scripting/ccclass.md) documentation for additional details.
 
 After the `Item` class definition, we defined a component class. Each script file can only contains one component definition and the component name will be the same as the file name. So the component we define is `ItemList`. In this component we have a list property which type is `Item`. This way we can populate the list with data input in __Inspector__ panel.
 
@@ -62,7 +60,7 @@ We have our data ready for now, you can also type in more data entries as you wi
 
 ## Make the view for data: Prefab as template
 
-Let's now move on to the 'view' to visualize data, we can use [Prefab](../../../asset/prefab.md) to do this job. Let's create a prefab that looks like this:
+Now move on to the **view** to visualize data, we can use [Prefab](../../../asset/prefab.md) to do this job. Let's create a prefab that looks like this:
 
 ![item template](list-with-data/item-template.png)
 
@@ -86,15 +84,15 @@ export class ItemTemplate extends Component {
 }
 ```
 
-Let's drag all those nodes onto the property fields of `ItemTemplate` component.
+Drag all those nodes onto the property fields of `ItemTemplate` component.
 
 ![item binding](list-with-data/item-binding.png)
 
-__Note__: We will assign value for `id` property through script, no data binding needed.
+> __Note__: We will assign value for `id` property through script, no data binding needed.
 
 ### Update template display with script
 
-Let's modify `ItemTemplate.js` script to add function to update the renderer components with input data. Let's add the following to the end of script:
+Modify `ItemTemplate.js` script to add function to update the renderer components with input data. Let's add the following to the end of script:
 
 ```ts
 // data: { id, iconSF, itemName, itemPrice }
@@ -110,7 +108,7 @@ init(data: Item) {
 
 ## Instantiate template with data
 
-Let's go back to `ItemList.js` script, and add reference to our Prefab and then instantiate it with data.
+Go back to `ItemList.js` script, and add reference to our Prefab and then instantiate it with data.
 
 ```ts
 //...
@@ -136,7 +134,7 @@ Now we can add a __Layout__ component to the node that holds `ItemList.js` throu
 
 Don't forget to drag and drop `item` Prefab to `itemPrefab` property field of `ItemList` component. You can also add a __Sprite__ component to the node as the background.
 
-We have completed all the work. Now `itemList` node should look like this:
+All steps have been completed. Now `itemList` node should look like this:
 
 ![itemlist complete](list-with-data/itemlist-complete.png)
 
@@ -146,4 +144,6 @@ Running preview of the scene will get the result like this (the acutal look depe
 
 ![result](list-with-data/result.png)
 
-The __Layout__ component added in previous step is not necessary. We can use it to help putting multiple items in a container in order but you can also use the script program to do that. You can also add a __ScrollView__ component together to display a large amount of content in a limited space. For details of those layout method please read [Auto Layout Container](auto-layout.md) and [ScrollView Component](../editor/scrollview.md).
+The __Layout__ component added in previous step is not necessary. We can use it to help putting multiple items in a container in order but you can also use the script program to do that. You can also add a __ScrollView__ component together to display a large amount of content in a limited space. 
+
+For details of layout methods please read the [Auto Layout Container](auto-layout.md) and the [ScrollView Component](../editor/scrollview.md) documentation.
