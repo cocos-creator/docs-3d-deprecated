@@ -133,7 +133,7 @@ There are three ways to run rpk on your phone:
 
 ## Subpackage Loading
 
-The subpackage loading of vivo Mini Games, is similar to WeChat Mini Games. Please refer to the [Subpackage Loading](../../asset/subpackage.md) documentation for details.
+The subpackage loading of __vivo Mini Games__, is similar to __WeChat Mini Games__. Please refer to the [Subpackage Loading](../../asset/subpackage.md) documentation for details.
 
 ## Reference documentation
 
