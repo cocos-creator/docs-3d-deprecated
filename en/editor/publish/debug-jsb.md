@@ -1,4 +1,4 @@
-# Debuging JavaScript on Native Platforms
+# Debugging JavaScript on Native Platforms
 
 After a game is released on the native platform, because the runtime environment is different, there may be some bugs that cannot be reproduced in the browser preview. This means we must debug it directly on the native platform. Cocos Creator 3D makes it easy to debug JavaScript remotely in the native platforms.
 
