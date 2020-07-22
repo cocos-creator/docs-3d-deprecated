@@ -47,7 +47,7 @@
   - [About the Build Panel](editor/publish/build-panel.md)
   - [General Build Options](editor/publish/build-options.md)
   - [Publishing to the Web](editor/publish/publish-web.md)
-  - [Publishing to native](editor/publish/publish-native.md)
+  - [Publishing to Native](editor/publish/publish-native.md)
     - [Setup Native Development](editor/publish/setup-native-development.md)
     - [Debuging JavaScript on Native Platforms](editor/publish/debug-jsb.md)
   - [Publishing from the Command Line](editor/publish/publish-in-command-line.md)
@@ -55,14 +55,14 @@
   - [Build Process with FAQ](editor/publish/build-guide.md)
   - Publish to Mini Games
     - [Publishing to Alipay Mini Games](editor/publish/publish-alipay-mini-game.md)
-    - [Publishing to Huawei Quick Games](editor/publish/publish-huawei-mini-game.md)
+    - [Publishing to Baidu Mini Games](editor/publish/publish-baidugame.md)
     - [Publishing to ByteDance Mini Games](editor/publish/publish-bytedance-mini-game.md)
     - [Publishing to Cocos Play](editor/publish/publish-cocos-play.md)
-    - [Publishing to WeChat Mini Games](editor/publish/publish-wechatgame.md)
-        - [WeChat Engine Plugin](editor/publish/wechatgame-plugin.md)
+    - [Publishing to Huawei Quick Games](editor/publish/publish-huawei-mini-game.md)
     - [Publishing to OPPO Mini Games](editor/publish/publish-oppo-mini-game.md)
     - [Publishing to vivo Mini Games](editor/publish/publish-vivo-mini-game.md)
-    - [Publishing to Baidu Mini Games](editor/publish/publish-baidugame.md)
+    - [Publishing to WeChat Mini Games](editor/publish/publish-wechatgame.md)
+        - [WeChat Engine Plugin](editor/publish/wechatgame-plugin.md)
     - [Publishing to Xiaomi Quick Games](editor/publish/publish-xiaomi-quick-game.md)
 
 ## Engine Manual
