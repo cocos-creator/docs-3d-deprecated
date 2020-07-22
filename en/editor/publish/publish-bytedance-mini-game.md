@@ -1,4 +1,4 @@
-# Publish to ByteDance Mini Games
+# Publishing to ByteDance Mini Games
 
 **ByteDance Mini Games** are developed based on ByteDance full products, which do not require users to download. This is a brand-new game type that can be played on tap.
 
@@ -12,13 +12,14 @@ The game submission, review and release process of a mini-game needs to comply w
 
     ![](https://sf1-ttcdn-tos.pstatp.com/obj/website-img/f296a9f80eaeb40f4af38e8a4e25e17e_12.png)
 
-3. Select the **ByteDance Mini Game** in the **Platform** of the **Build** panel, fill in the `mini game appid`, and then click **Build**
+3. Select the **ByteDance Mini Game** in the **Platform** in the **Build** panel, fill in the `mini game appid`, and then click **Build**
 
     ![](./publish-bytedance-mini-game/build.jpg)
 
 4. Preview game
 
-    Following this process, a `bytedance-mini-game` folder will be generated in the project's **build** directory (the name of the folder is based on the **Build Task Name**),then you can open your game with the **ByteDance DevTools**.
+    Following this process, a `bytedance-mini-game` folder will be generated in the project's **build** directory (the name of the folder is based on the **Build Task Name**), then you can open your game with the **ByteDance DevTools**.
+
     ![](./publish-bytedance-mini-game/tool.jpg)
 
 ## Build Options
