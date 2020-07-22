@@ -1,5 +1,5 @@
 # Collider Gizmo
-For more information about the collider of Cocos Creator 3D, you can read the [Physics Introduction](../../physics/physics.md) documentation.
+For more information about the collider of __Cocos Creator 3D__, you can read the [Physics Introduction](../../physics/physics.md) documentation.
 
 ## Box Collider
 `Box Collider Gizmo` shows the length, width, height of the box. You can edit them by dragging the control quad.
