@@ -2,7 +2,7 @@
 
 After a game is released on the native platform, because the runtime environment is different, there may be some bugs that cannot be reproduced in the browser preview. This means we must debug it directly on the native platform. **Cocos Creator 3D** makes it easy to debug JavaScript remotely in the native platforms.
 
-## Debug on Android / iOS
+## Debugging on Android / iOS
 
 If a game can only run on a physical device, then the packaged game must be debugged on a physical device. Debugging steps are as follows:
 
@@ -14,7 +14,7 @@ If a game can only run on a physical device, then the packaged game must be debu
 
   ![](debug-jsb/v8-android-debug.png)
 
-## Debug on Windows / Mac
+## Debugging on Windows / Mac
 
 The steps for debugging a game on the Windows / Mac platform are similar to the Android / iOS, just compile the project and run it in the IDE.
 
