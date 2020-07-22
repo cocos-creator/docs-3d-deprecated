@@ -4,7 +4,7 @@ __Cocos Creator 3D__ officially supports the release of games to the **OPPO Mini
 
 ## Environment Configuration
 
-- Download [OPPO Mini Game Debugger](https://cdofs.oppomobile.com/cdo-activity/static/201810/26/quickgame/documentation/games/use.html) and install it on your Android device (Android Phone 6.0 or above is recommended)
+- Download [OPPO Mini Game Debugger](https://cdofs.oppomobile.com/cdo-activity/static/201810/26/quickgame/documentation/#/games/use) and install it on your Android device (Android Phone 6.0 or above is recommended)
 
 - Install [nodejs-8.1.4](https://nodejs.org/en/download/) or above, globally
 
