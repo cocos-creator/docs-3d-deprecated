@@ -1,5 +1,7 @@
 # Publishing to Alipay Mini Games
 
+> **Note**: Some platforms only have Chinese documentation available when visiting the platforms website. It may be necessary to use Google Translate in-order to review the documentation.
+
 **Cocos Creator 3D** officially supports the release of games to the **Alipay Mini Games**.
 
 ## Environment Configuration

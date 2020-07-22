@@ -1,5 +1,7 @@
 # Publishing to Baidu Mini Games
 
+> **Note**: Some platforms only have Chinese documentation available when visiting the platforms website. It may be necessary to use Google Translate in-order to review the documentation.
+
 **Cocos Creator 3D** officially supports the release of games to the **Baidu Mini Games**.
 
 The runtime environment of the Baidu Mini Game is an extension of the **Baidu Smart Mini Program**. This provides a WebGL interface encapsulation based on the mini program environment. This greatly improves the rendering capabilities and performance. However, since these interfaces are encapsulated by the Baidu team, they are not equivalent to the browser environment.
@@ -86,6 +88,8 @@ Currently, the adaptation work of Baidu Mini Game is not completely finished, an
 If needed, you can directly call Baidu's [API](https://smartprogram.baidu.com/docs/game/api/openApi/authorize/) as needed.
 
 ## Reference documentation
+
+> **Note**: Some platforms only have Chinese documentation available when visiting the platforms website. It may be necessary to use Google Translate in-order to review the documentation.
 
 - [Baidu Mini Game Registration Guide](https://smartprogram.baidu.com/docs/game/)
 - [Baidu DevTools documentation](https://smartprogram.baidu.com/docs/game/tutorials/howto/dev/)

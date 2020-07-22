@@ -1,5 +1,7 @@
 # Publishing to Cocos Play
 
+> **Note**: Some platforms only have Chinese documentation available when visiting the platforms website. It may be necessary to use Google Translate in-order to review the documentation.
+
 **Cocos Creator 3D** officially supports the release of games to the **Cocos Play**.
 
 ## Publish Cocos Play with Cocos Creator 3D
@@ -84,6 +86,8 @@ There are two ways to start the game through the **Self-test Tools**.
     - Click on **Save** after the configuration is complete, then click on **Start Game** to open the game.
 
 ## Reference documentation
+
+> **Note**: Some platforms only have Chinese documentation available when visiting the platforms website. It may be necessary to use Google Translate in-order to review the documentation.
 
 - [Cocos Play Center](https://gamebox.cocos.com/)
 - [Cocos Play Documentation Center](https://gamebox.gitbook.io/project/)

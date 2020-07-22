@@ -1,5 +1,7 @@
 # Publishing to WeChat Mini Games
 
+> **Note**: Some platforms only have Chinese documentation available when visiting the platforms website. It may be necessary to use Google Translate in-order to review the documentation.
+
 The runtime environment of the **WeChat Mini Game** is an extension of the **WeChat Mini Program**, providing a WebGL interface encapsulation based on the mini program environment, greatly improving rendering capabilities and performance. However, since these interfaces are encapsulated by the WeChat team, they are not equivalent to the browser environment.
 
 On the engine side, in order to make the developers' workload as easy as possible, our main tasks for developers include the following:
@@ -112,6 +114,8 @@ __Cocos Creator 3D__'s adaptation of **WeChat Mini Games** has not been complete
 It is possible to use the missing functionality by calling the **WeChat's** API directly.
 
 ## Reference documentation
+
+> **Note**: Some platforms only have Chinese documentation available when visiting the platforms website. It may be necessary to use Google Translate in-order to review the documentation.
 
 - [WeChat Mini Game Developer Document](https://developers.weixin.qq.com/minigame/en/dev/guide/)
 - [WeChat Public Platform](https://mp.weixin.qq.com/?lang=en_US)

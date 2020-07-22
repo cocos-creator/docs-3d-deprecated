@@ -1,5 +1,7 @@
 # Publishing to Xiaomi Quick Games
 
+> **Note**: Some platforms only have Chinese documentation available when visiting the platforms website. It may be necessary to use Google Translate in-order to review the documentation.
+
 __Cocos Creator 3D__ officially supports the release of games to the **Xiaomi Quick Games** platform.
 
 ## Environment Configuration
@@ -145,5 +147,7 @@ Subpackage loading, that is, splitting the game content into several packages ac
 When the build is complete, an `.rpk` file is generated in the `/build/xiaomi-quick-game/dist` directory.
 
 ## Reference documentation
+
+> **Note**: Some platforms only have Chinese documentation available when visiting the platforms website. It may be necessary to use Google Translate in-order to review the documentation.
 
 - [Xiaomi Quick Game Reference documentation](https://forum.cocos.org/t/topic/81887)

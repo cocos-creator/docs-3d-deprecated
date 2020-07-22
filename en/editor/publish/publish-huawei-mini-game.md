@@ -1,5 +1,7 @@
 # Publishing to Huawei Quick Games
 
+> **Note**: Some platforms only have Chinese documentation available when visiting the platforms website. It may be necessary to use Google Translate in-order to review the documentation.
+
 __Cocos Creator 3D__ officially supports the release of games to the **Huawei Quick Games**.
 
 ## Environment Configuration
@@ -111,5 +113,7 @@ After the build is complete, the generated subpackages and main package are merg
 > **Note**: Currently, Huawei Quick Game does not support downloading multiple subpackages at the same time, please download them in order if you need to download multiple subpackages.
 
 ## Reference documentation
+
+> **Note**: Some platforms only have Chinese documentation available when visiting the platforms website. It may be necessary to use Google Translate in-order to review the documentation.
 
 [Huawei Quick Game development documentation](https://developer.huawei.com/consumer/en/doc/development/quickApp-Guides/quickgame-develop-runtime-game)
