@@ -45,7 +45,7 @@ The specific filling rules for the relevant parameter configuration are as follo
 
 - **Build Sub Package**: is supported from v1.0.4 onwards and is enabled by default. For details, please refer to **Subpackage rpk** at the end of this document.
 
-- **Small Packet Mode**: is optional. The in-package volume of the quick-game contains code and resources that cannot exceed 10M, and resources can be loaded via network requests. **Small Packet Mode** is to help developers keep the script files in the quick game package, other resources are uploaded to the remote server, and downloaded from the remote server as needed. And the download, cache and version management of remote resources, Cocos Creator 3D has already helped the developer. What the developer needs to do is the following steps:
+- **Small Packet Mode**: is optional. The in-package volume of the quick-game contains code and resources that cannot exceed 10M, and resources can be loaded via network requests. **Small Packet Mode** is to help developers keep the script files in the quick game package, other resources are uploaded to the remote server, and downloaded from the remote server as needed. And the download, cache and version management of remote resources, __Cocos Creator 3D__ has already helped the developer. What the developer needs to do is the following steps:
 
   1. When building, check the **Small Packet Mode** and fill in the **Small Packet Mode Server Path**.
 
@@ -57,17 +57,17 @@ The specific filling rules for the relevant parameter configuration are as follo
 
   3. After the build is complete, click the **Open** button after the **Build Path** to upload the `res` directory under the release path to the small packet mode server. For example, if the default release path is `build`, the **Build Task Name** is `xiaomi-quick-game`, you need to upload the `/build/xiaomi-quick-game/res` directory.
 
-    > **Note**: If you are using the command line to compile small packet mode, remember to backup the `build/xiaomi-pack-tools/res` directory, then delete the `build/xiaomi-pack-tools/res` directory, and then perform command line compilation (`npm run build`).
+      > **Note**: If you are using the command line to compile small packet mode, remember to backup the `build/xiaomi-pack-tools/res` directory, then delete the `build/xiaomi-pack-tools/res` directory, and then perform command line compilation (`npm run build`).
 
   At this point, the `res` directory will no longer be included in the built-up rpk, and the resources in the `res` directory will be downloaded from the filled **Small Packet Mode Server Path** through the network request.
 
-- **Keystore**: when you check the **Keystore**, the default is to build the rpk package with a certificate that comes with Cocos Creator 3D, which is used only for **debugging**. 
+- **Keystore**: when you check the **Keystore**, the default is to build the rpk package with a certificate that comes with __Cocos Creator 3D__, which is used only for **debugging**. 
 
-  > **Note**: When the rpk package is to be used to submit an audit, do not check the **Keystore** to build it.
+    > **Note**: When the rpk package is to be used to submit an audit, do not check the **Keystore** to build it.
   
   If you don't check the **Keystore**, you need to configure the signature files **certificate.pem path** and **private.pem path**, where you build a rpk package that you can **publish directly**. The developer can configure two signature files by using the **search icon** button to the right of the input box.
 
-  > **Note**: These two signature files are not recommended to be placed in the `build/xiaomi-quick-game` directory of the release package, otherwise the build directory will be emptied each time when it is built, resulting in file loss.
+    > **Note**: These two signature files are not recommended to be placed in the `build/xiaomi-quick-game` directory of the release package, otherwise the build directory will be emptied each time when it is built, resulting in file loss.
 
   There are two ways to generate a signature file:
 
