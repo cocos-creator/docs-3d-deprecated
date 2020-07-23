@@ -40,8 +40,7 @@ the macro name shouldn't collide with any existing macros inside the shader.<br>
 This property doesn't exist by default, which means the pass is executed unconditionally.
 
 ## Priority
-Specifies the rendering priority of the current pass, the bigger the number, the lower the priority;<br>
-default is (128), min is (0), max is (255), arithmetic operations between these constants and integer constants are supported.
+Specifies the rendering priority of the current pass, the bigger the number, the lower the priority. The default is (128), min is (0), max is (255), arithmetic operations between these constants and integer constants are supported.
 
 ## Stage
 Specifies which render stage the current pass belongs to.
