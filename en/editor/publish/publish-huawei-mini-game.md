@@ -51,7 +51,7 @@ The specific filling rules for the relevant parameter configuration are as follo
 
 - **Build Sub Package**
 
-  This option is supported from v1.0.4 onwards and is enabled by default. For details, please refer to **Subpackage** at the end of this document.
+  This option is enabled by default. For details, please refer to **Subpackage** at the end of this document.
 
 - **Small Packet Mode**
 
