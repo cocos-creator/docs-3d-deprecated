@@ -22,7 +22,7 @@ The editor will first summarize the scene currently involved in the build and al
 
 This step will also sort out the resource types based on the build's internal division, such as scenes, scripts, texture compression tasks, JSON grouping information, etc., and weed out resource information that is not used. 
 
-> Note: All user scripts are loaded before this step is performed.
+> **Note**: All user scripts are loaded before this step is performed.
 
 ### Write the built resource to the file system
 
