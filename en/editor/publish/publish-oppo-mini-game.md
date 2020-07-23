@@ -50,7 +50,7 @@ The specific filling rules for the relevant parameter configuration are as follo
 
   At this point, the `res` directory will no longer be included in the built-up rpk, and the resources in the `res` directory will be downloaded from the filled **Small Packet Mode Server Path** through the network request.
 
-- **Build Sub Package**: this option is supported from v1.0.4 onwards and is enabled by default. For details, please refer to **Subpackage** at the end of this document.
+- **Build Sub Package**: this option is enabled by default. For details, please refer to **Subpackage** at the end of this document.
 
 - **Keystore**: when you check the **Keystore**, the default is to build the rpk package with a certificate that comes with Creator 3D, which is used only for **debugging**. 
 
