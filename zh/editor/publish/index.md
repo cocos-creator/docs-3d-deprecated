@@ -6,6 +6,7 @@
 
 - [熟悉构建发布面板](build-panel.md)
 - [了解通用构建参数](build-options.md)
+
 - [发布到 web 平台](publish-web.md)
 - [发布到微信小游戏](publish-wechatgame.md)
   - [启用微信小游戏引擎插件](wechatgame-plugin.md)
@@ -20,7 +21,9 @@
 - [发布到 Cocos Play](publish-cocos-play.md)
 - [发布到支付宝小游戏](publish-alipay-mini-game.md)
 - [命令行发布项目](publish-in-command-line.md)
-- [定制项目的构建模版](custom-project-build-template.md)
+- 定制项目构建流程
+    - [自定义构建模版](custom-project-build-template.md)
+    - [扩展构建流程](custom-build-plugin.md)
 - [构建流程简介与常见错误处理](build-guide.md)
 
 先从 [熟悉构建发布面板](build-panel.md) 开始了解。

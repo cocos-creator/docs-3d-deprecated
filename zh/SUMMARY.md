@@ -59,7 +59,9 @@
   - [发布到百度小游戏](editor/publish/publish-baidu-mini-game.md)
   - [发布到小米快游戏](editor/publish/publish-xiaomi-quick-game.md)
   - [命令行发布项目](editor/publish/publish-in-command-line.md)
-  - [定制项目的构建模版](editor/publish/custom-project-build-template.md)
+  - 定制项目构建流程
+    - [自定义构建模版]((editor/publish/custom-project-build-template.md)
+    - [扩展构建流程]((editor/publish/custom-build-plugin.md)
   - [构建流程简介与常见错误处理](editor/publish/build-guide.md)
 
 ## 引擎手册
