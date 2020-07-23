@@ -12,25 +12,25 @@ __Right-click__ in the **Assets Panel**, select **New -> Auto Atlas Configuratio
 
 ## Configuring Auto Atlas Assets
 
-After selecting an **Auto Atlas Resource** in the __Assets Panel__, the **Attributes Inspector** panel will display all of the configurable items for the **Auto Atlas Resource**.
+After selecting an **Auto Atlas Resource** in the __Assets Panel__, the **Property Inspector** panel will display all of the configurable items for the **Auto Atlas Resource**.
 
 | Properties | Functional Description
 | -------------- | ----------- |
-| Maximum Width | Single Atlas Maximum Width |
-| Maximum Height | Maximum Height of a Single Atlas |
-| Spacing | Spacing between shreds in the atlas |
-| Allow Rotation | Whether Rotate Fragments |
-| Output size is square | Whether to force the size of the atlas to be square |
-| The output size is a power of two | Whether to set the size of the atlas to a multiple of a square |
-| Algorithm | Atlas packaging strategy, currently only one option |
-| Output format | Atlas image generation format, the available formats are [png, jpg, webp ...] |
-| Expand the edge | Expand a pixel outer frame outside the border of the broken image, and copy the adjacent broken image pixels to the outer frame. This feature is also called "Extrude". |
-| Does not include unreferenced assets | In preview, this option will not take effect, this option will take effect after building |
+| **Maximum Width** | Single Atlas Maximum Width |
+| **Maximum Height** | Maximum Height of a Single Atlas |
+| **Spacing** | Spacing between shreds in the atlas |
+| **Allow Rotation** | Whether Rotate Fragments |
+| **Output size is square** | Whether to force the size of the atlas to be square |
+| **The output size is a power of two** | Whether to set the size of the atlas to a multiple of a square |
+| **Algorithm** | Atlas packaging strategy, currently only one option |
+| **Output format** | Atlas image generation format, the available formats are [png, jpg, webp ...] |
+| **Expand the edge** | Expand a pixel outer frame outside the border of the broken image, and copy the adjacent broken image pixels to the outer frame. This feature is also called "Extrude". |
+| **Does not include unreferenced assets** | In preview, this option will not take effect, this option will take effect after building |
 
 After the configuration is complete, you can click the **Preview** button to preview the packaged results. The related results generated according to the current automatic atlas configuration will be displayed in the area below the **Properties Inspector**. Please note that after each configuration, you can re-click **Preview** to update the preview image. (Generating a preview is not required).
 
 The results are divided into:
-   - __Packed Textures:__ Display the packaged atlas pictures and picture-related information. If there are multiple pictures to be generated, they will be listed below in the **Attributes Inspector**.
+   - __Packed Textures:__ Display the packaged atlas pictures and picture-related information. If there are multiple pictures to be generated, they will be listed below in the **Property Inspector**.
    - __Unpacked Textures:__ Display the broken image assets that cannot be packed into the atlas. The cause may be that the size of these broken image assets is larger than the size of the atlas assets. At this time, the configuration or fragmentation of the following atlas may need to be adjusted. The size of the figure is increased.
 
 ## Generating an Atlas
