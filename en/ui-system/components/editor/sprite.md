@@ -10,21 +10,21 @@ You can add a Sprite component to the node by clicking the __Add Component__ but
 
 | Properties | Function Explanation
 | -------------- | ----------- |
-| Type | Rendering mode, currently includes `SIMPLE`, `SLICED`, `TILED`, `FILLED` four rendering modes.
-| Color | Image color.
-| Grayscale | If enabled, Sprite will be rendered in gray scale mode.
-| Size Mode | Specify the size of the Sprite.<br>`TRIMMED` automatically fit to the size of the sprite cropped<br>`RAW` automatic fit for sprite original size.<br>`CUSTOM` use the node preset size. When the developer manually modifies `Size` properties, `Size Mode` will be automatically set to `Custom`.
-| Atlas | [Auto Atlas](../../../asset/atlas.md) which the Sprite display image resource belongs to.
-| Sprite Frame | [Sprite Frame Assets](../../../asset/sprite-frame.md) which is used to render the Sprite. (The __Edit__ button behind Sprite Frame is used to edit the 9-sliced cutting of the image resource, please refer to [Use a Sliced Sprite to make a UI image](../engine/sliced-sprite.md).
-| Trim | Whether the transparent pixel area is included in the node bounding box. Please refer to [Auto Trim for SpriteFrame](../engine/trim.md).
-| Src Blend Factor | The source image blend mode.
-| Dst Blend Factor | The destination image blend mode. Together with the above properties, you can mix the foreground Sprite and background in different ways to render, and you can refer to [glBlendFunc Tool](http://www.andersriggelsen.dk/glblendfunc.php) for a effect preview.
+| **Type** | Rendering mode, currently includes `SIMPLE`, `SLICED`, `TILED`, `FILLED` four rendering modes.
+| **Color** | Image color.
+| **Grayscale** | If enabled, Sprite will be rendered in gray scale mode.
+| **Size Mode** | Specify the size of the Sprite.<br>`TRIMMED` automatically fit to the size of the sprite cropped<br>`RAW` automatic fit for sprite original size.<br>`CUSTOM` use the node preset size. When the developer manually modifies `Size` properties, `Size Mode` will be automatically set to `Custom`.
+| **Atlas** | [Auto Atlas](../../../asset/atlas.md) which the Sprite display image resource belongs to.
+| **Sprite Frame** | [Sprite Frame Assets](../../../asset/sprite-frame.md) which is used to render the Sprite. (The __Edit__ button behind Sprite Frame is used to edit the 9-sliced cutting of the image resource, please refer to [Use a Sliced Sprite to make a UI image](../engine/sliced-sprite.md).
+| **Trim** | Whether the transparent pixel area is included in the node bounding box. Please refer to [Auto Trim for SpriteFrame](../engine/trim.md).
+| **Src Blend Factor** | The source image blend mode.
+| **Dst Blend Factor** | The destination image blend mode. Together with the above properties, you can mix the foreground Sprite and background in different ways to render, and you can refer to [glBlendFunc Tool](http://www.andersriggelsen.dk/glblendfunc.php) for an effect preview.
 
 After adding the Sprite component, drag the SpriteFrame type resource from the __Assets__ to the `Sprite Frame` property reference. Then, the resource image can be displayed through the Sprite component.
 
 If this SpriteFrame resource is contained within an Atlas resource, then the `Atlas` property of the Sprite will be set up along with it.
 
-__To dynamically replace SpriteFrame, you need to dynamically load the image resource before you replace it, please refer to [Acquire and load asset: how to dynamically load](../../../asset/load-assets.md).__
+> **Note**: To dynamically replace SpriteFrame, you need to dynamically load the image resource before you replace it, please refer to the [Acquire and load asset: how to dynamically load](../../../asset/load-assets.md) documentation.
 
 ## Rendering mode
 
@@ -46,10 +46,10 @@ When the `Type` property selects `FILLED`, a new set of properties appears to be
 
 | Properties |   Function Explanation
 | -------------- | ----------- |
-| Fill Type | Fill type selection, including `HORIZONTAL`, `VERTICAL`, and `RADIAL`. |
-| Fill Start | Normalized values for filling starting position (from 0 ~ 1, denoting the percentage of total population), when you select a horizontal fill, the `Fill Start` is set to 0, and it is populated from the leftmost edge of the image. |
-| Fill Range | Normalized values for padding ranges (same from 0 ~ 1). When set to 1, it fills up the entire range of the original image. |
-| Fill Center | Fill center point, this property can only be modified if the `RADIAL` fill type is selected. Determines which point on the Sprite is used as pivot when the FillType is set to RADIAL. |
+| **Fill Type** | Fill type selection, including `HORIZONTAL`, `VERTICAL`, and `RADIAL`. |
+| **Fill Start** | Normalized values for filling starting position (from 0 ~ 1, denoting the percentage of total population), when you select a horizontal fill, the `Fill Start` is set to 0, and it is populated from the leftmost edge of the image. |
+| **Fill Range** | Normalized values for padding ranges (same from 0 ~ 1). When set to 1, it fills up the entire range of the original image. |
+| **Fill Center** | Fill center point, this property can only be modified if the `RADIAL` fill type is selected. Determines which point on the Sprite is used as pivot when the FillType is set to RADIAL. |
 
 ![radial](sprite/radial.png)
 
@@ -57,5 +57,6 @@ When the `Type` property selects `FILLED`, a new set of properties appears to be
 
 Under both the `HORIZONTAL` and `VERTICAL` fill types, the values set by `Fill Start` affect the total number of fills, if `Fill Start` is set to 0.5, even if `Fill Range` is set to 1.0, the actual padding is still only half the total size of the Sprite.
 
-The `Fill Start` in the `RADIAL` type only determines the orientation of the starting fill, when `Fill Start` is set to 0, start filling from the x axis positive direction.<br>
+The `Fill Start` in the `RADIAL` type only determines the orientation of the starting fill, when `Fill Start` is set to 0, start filling from the x axis positive direction.
+
 `Fill Range` determines the total amount of padding, which fills the entire circle when `Fill Range` is set to 1. A counter anticlockwise fill when `Fill Range` is positive, and is filled clockwise when negative.
