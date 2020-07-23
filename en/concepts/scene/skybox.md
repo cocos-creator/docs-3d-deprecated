@@ -20,7 +20,7 @@ Enabling the __Skybox__ effect in __Cocos Creator 3D__, takes just one step:
 Modifying the environment map of the __Skybox__ in __Cocos Creator 3D__ is done by setting a resource of type __TextureCube__. Importing from a resource into a __TextureCube__ and setting it into a __Skybox__ can be done in the following steps:
 
   1. Import picture resources. 
-  > **Note:** Here is an example of a panorama, we will introduce how to make a `CubeMap` later in this documentation.
+  > **Note**: Here is an example of a panorama, we will introduce how to make a `CubeMap` later in this documentation.
   2. Select the imported panorama asset and set it to the __TextureCube__ type in the __Inspector panel__ on the right, as shown in this figure:
   ![Set as TextureCube](skybox/TextureCube.jpg)
   3. Drag the __TextureCube__ asset to the __Envmap property__ on the __Skybox's Inspector Panel__.
