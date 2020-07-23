@@ -96,18 +96,21 @@ For these special usages, you'll have to explicitly declare the macro, using mac
 | options | An arbitrary-length array,<br>specifying every possible options | nothing | For macros with discrete, explicit choices |
 
 Declarations for the above case are：
+
 ```glsl
 #pragma define LAYERS range([4, 5])
 #pragma define METALLIC_SOURCE options([r, g, b, a])
 ```
-The first line declares a macro named `LAYERS`, with possible range of [4, 5];<br>
-The second line declares a macro named `METALLIC_SOURCE`, with four possible options: 'r', 'g', 'b', 'a'.<br>
+
+The first line declares a macro named `LAYERS`, with possible range of [4, 5]. The second line declares a macro named `METALLIC_SOURCE`, with four possible options: 'r', 'g', 'b', 'a'.<br>
 
 > **Note**: every tag accepts a single parameter, in the syntax of YAML.
 
 ### Functional Macros
-Due to lack of native support in WebGL platform, functional macros are provided as an effect compile-time feature, all references will be expanded in the output shader.<br>
-This is an good match for inlining some simple utility functions, or similar code repeating several times.<br>
+Due to lack of native support in WebGL platform, functional macros are provided as an effect compile-time feature, all references will be expanded in the output shader.
+
+This is an good match for inlining some simple utility functions, or similar code repeating several times.
+
 In fact, many built-in utility functions are functional macros:
 ```glsl
 #define CCDecode(position) \
@@ -120,8 +123,7 @@ In fact, many built-in utility functions are functional macros:
   #pragma // empty pragma trick to get rid of trailing semicolons at effect compile time
 ```
 
-Meanwhile, same as the macro system in C/C++, the mechanism does nothing on checking [macro hygiene](https://en.wikipedia.org/wiki/Hygienic_macro),<br>
-So any problem comes with it will have to be dealt with by developers manually:
+Meanwhile, same as the macro system in C/C++, the mechanism does nothing on checking [macro hygiene](https://en.wikipedia.org/wiki/Hygienic_macro). Any issues will have to be dealt with by developers manually:
 ```glsl
 // please do be careful with unhygienic macros like this
 #define INCI(i) do { int a=0; ++i; } while(0)
