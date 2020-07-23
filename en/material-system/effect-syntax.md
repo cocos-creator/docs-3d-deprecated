@@ -1,9 +1,8 @@
 # Effect Syntax Guide
 
-Writing your own effect can give you all the capabilities to customize the rendering process.<br>
-Cocos Effect is a single-source embedded domain-specific language, based on YAML and GLSL.<br>
-The YAML part declares the general framework, while GLSL part specifies the actual shader.<br>
-Together they form a complete specification for the rendering process.
+Writing your own effect can give you all the capabilities to customize the rendering process.
+
+Cocos Effect is a single-source embedded domain-specific language, based on YAML and GLSL. The YAML part declares the general framework, while GLSL part specifies the actual shader. Together they form a complete specification for the rendering process.
 
 We recommend editing effect files using Visual Studio Code with the official `Cocos Effect` plugin from the marketplace.
 
@@ -21,19 +20,23 @@ const effect = cc.EffectAsset.get('builtin-unlit'); // this is the EffectAsset r
 const mat = new cc.Material();
 mat.initialize({ effectName: 'builtin-standard' }); // now `mat` is a valid standard material
 ```
-And the names are automatically generated based on its file path (relative to the `assets/effects` folder in your project) and file name(extension excluded). <br>
-The builtin effects are located directly inside the `assets/effects` folder in the internal database, so the effect names don't contain a path.<br>
+
+And the names are automatically generated based on its file path (relative to the `assets/effects` folder in your project) and file name(extension excluded).
+
+The builtin effects are located directly inside the `assets/effects` folder in the internal database, so the effect names don't contain a path.
+
 
 ## About YAML
-YAML is a human-readable data-serialization language, with a flexible, minimal syntax and easily configurable, which makes it an ideal choice.<br>
-But the syntax maybe somewhat unique, at first for those who are unfamiliar with the language,<br>
-so we made a quick intro to the most commonly used syntaxes and language features [here](yaml-101.md) for your reference.
+YAML is a human-readable data-serialization language, with a flexible, minimal syntax and easily configurable, which makes it an ideal choice. However, the syntax maybe somewhat unique, at first for those who are unfamiliar with the language. There is a quick intro to the most commonly used syntaxes and language features [here](yaml-101.md).
 
 ## Configurable Pass Parameters
-The shader entries are the only required fields, namely `vert` and `frag`, in the format of `shaderChunkName:entryFunctionName`.<br>
-Normally the `main` function shouldn't be specified in shader, for version-specific wrappers will be inserted at compile-time,<br>
-assigning the return value of the specified function to the ouput of current shader stage. (gl_Position or the final output color).<br>
-You can find all the optional parameter list [here](pass-parameter-list.md).
+The shader entries are the only required fields, namely `vert` and `frag`, in the format of `shaderChunkName:entryFunctionName`.
+
+Normally the `main` function shouldn't be specified in shader, for version-specific wrappers will be inserted at compile-time.
+
+assigning the return value of the specified function to the ouput of current shader stage. (gl_Position or the final output color).
+
+You can find all of the optional parameters in the [pass parameter list](pass-parameter-list.md) documentation.
 
 ## Shader Chunks
 Syntactically shader chunks are a superset of GLSL, all the extended features will be processed immediately at resource compile-time.<br>
