@@ -45,7 +45,7 @@ The specific filling rules for the relevant parameter configuration are as follo
 
 - **Supported Minimum Platform Version Number**: is required. According to the requirements of Xiaomi Quick Games, this value must be greater than or equal to **1050**.
 
-- **Build Sub Package**: is supported from v1.0.4 onwards and is enabled by default. For details, please refer to **Subpackage rpk** at the end of this document.
+- **Build Sub Package**: is enabled by default. For details, please refer to **Subpackage rpk** at the end of this document.
 
 - **Small Packet Mode**: is optional. The in-package volume of the quick-game contains code and resources that cannot exceed 10M, and resources can be loaded via network requests. **Small Packet Mode** is to help developers keep the script files in the quick game package, other resources are uploaded to the remote server, and downloaded from the remote server as needed. And the download, cache and version management of remote resources, __Cocos Creator 3D__ has already helped the developer. What the developer needs to do is the following steps:
 
