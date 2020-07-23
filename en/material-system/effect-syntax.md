@@ -7,7 +7,7 @@ Together they form a complete specification for the rendering process.
 
 We recommend editing effect files using Visual Studio Code with the official `Cocos Effect` plugin from the marketplace.
 
-> Note: This document is targeted at technical artists or graphic designers, if you are a design artist who needs specific shader customizations, please contact your technical artist or programmer for support.
+> **Note**: This document is targeted at technical artists or graphic designers, if you are a design artist who needs specific shader customizations, please contact your technical artist or programmer for support.
 
 ## Framework Syntax
 Using `builtin-unlit.effect` as an example, it looks something like this:
@@ -100,7 +100,7 @@ Declarations for the above case are：
 The first line declares a macro named `LAYERS`, with possible range of [4, 5];<br>
 The second line declares a macro named `METALLIC_SOURCE`, with four possible options: 'r', 'g', 'b', 'a'.<br>
 
-> Note: every tag accepts a single parameter, in the syntax of YAML.
+> **Note**: every tag accepts a single parameter, in the syntax of YAML.
 
 ### Functional Macros
 Due to lack of native support in WebGL platform, functional macros are provided as an effect compile-time feature, all references will be expanded in the output shader.<br>
