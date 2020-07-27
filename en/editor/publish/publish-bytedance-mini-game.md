@@ -33,19 +33,19 @@ Options | Optional or not | Default | Explanation
 **Open data context root** | Optional | Empty | If an Open Data Context exists, use this root to specify the relative path of the Open Data Context folder in the build directory so that the directory is not overwritten or modified during the build.
 **Orientation** | Required | `landscape` | Device orientation, it will be written to `game.json` file.
 
-##  Resource Management for ByteDance Mini Game Environment
+##  Asset Management for ByteDance Mini Game Environment
 
-In a **ByteDance Mini Game** environment, resource management is the most special part. It differs from the browser in the following four points:
+In a **ByteDance Mini Game** environment, asset management is the most special part. It differs from the browser in the following four points:
 
-1. The size of the **ByteDance Mini Game** package cannot exceed **4MB**, including all the code and resources. Additional resources must be downloaded via web request.
+1. The size of the **ByteDance Mini Game** package cannot exceed **4MB**, including all the code and assets. Additional assets must be downloaded via web request.
 
 2. For files downloaded from a remote server, the **ByteDance Mini Game** environment does not have the browser's caching and outdated update mechanism.
 
-3. For the resources in the **ByteDance Mini Game** package, they are not loaded on demand in the mini game environment, but rather all the resources in the package are loaded at once, and then the game page is launched.
+3. For the assets in the **ByteDance Mini Game** package, they are not loaded on demand in the mini game environment, but rather all the assets in the package are loaded at once, and then the game page is launched.
 
 4. You cannot download script files from a remote server.
 
-This brings up two key issues, home page loading speed and remote resource caching and version management. For the home page loading speed, we recommend that developers only save the script file in the **ByteDance Mini Game** package, and all other resources are downloaded from the remote server. As for downloading, caching and version management of remote resources, Cocos Creator 3D has done the job for developers.
+This brings up two key issues, home page loading speed and remote asset caching and version management. For the home page loading speed, we recommend that developers only save the script file in the **ByteDance Mini Game** package, and all other assets are downloaded from the remote server. As for downloading, caching and version management of remote assets, Cocos Creator 3D has done the job for developers.
 
 Specifically, developers need to do the following:
 
