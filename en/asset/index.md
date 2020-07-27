@@ -4,7 +4,7 @@ This section will introduce the overall workflow of the assets in __Cocos Creato
 
 ## Assets Manager
 
-The **Assets Manager** is an important tool for accessing and managing assets, developers are recommended to familiarize themselves with the use of the **Assets Manager** foe managing assets. Read the [**Assets Manager**](../editor/assets/index.md) documentation for a detailed introduction.
+The **Assets Manager** is an important tool for accessing and managing assets, developers are recommended to familiarize themselves with the use of the **Assets Manager** for managing assets. Read the [Assets Manager](../editor/assets/index.md) documentation for a detailed introduction.
 
 ## Assets Workflow
 
