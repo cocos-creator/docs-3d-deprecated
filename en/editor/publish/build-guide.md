@@ -144,17 +144,17 @@ The entire build process is in a separate `worker`, so if you want to see the lo
 
 Please make sure that the scenes involved in the build can be previewed properly before the build, some of the scenes resource loss, script compilation failure problems can be exposed in the preview stage. Building on the premise of a normal preview allows for better troubleshooting and saves time.
 
-### Resource loading 404
+### Assets loading with a 404
 
-In this case, please copy the `uuid` in the lost resource error message to **Assets** to find the corresponding resource, and then see if all the resources on which the resource depends are normal.
+In this case, please copy the `uuid` in the lost resource error message to **Assets** to find the corresponding resource, and then see if all the assets on which the resource depends are normal.
 
-Resource Loading 404 usually occurs in the following situations:
+Assets loading with a 404 usually occurs in the following situations:
 
-1. **Resources that are not in the `resource` are dynamically loaded in the script**
+1. **Assets that are not in the `resource` are dynamically loaded in the script**
 
-    - **Reason**: Only the resources in the `resources` directory and those involved in building the scene will be packaged into the final release package. And only the resource `url` in the `resources` directory will be written to `settings.js`, so if a resource is used in the script but not in the `resources` directory, then 404 will appear when it is loaded.
+    - **Reason**: Only the assets in the `resources` directory and those involved in building the scene will be packaged into the final release package. And only the resource `url` in the `resources` directory will be written to `settings.js`, if an asset is used in the script but not in the `resources` directory, then a 404 will appear when it is loaded.
 
-    - **Solution**: Move the used resources to the `resources` directory.
+    - **Solution**: Move the used assets to the `resources` directory.
 
 2. **The loaded resource had a problem when it was imported, causing the data to not be generated properly into the `library`**
 
