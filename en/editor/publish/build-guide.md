@@ -124,7 +124,7 @@ During the resource packaging process, the `uuid` of all resources involved in t
 
 At this stage, the editor will arrage the **scenes assets that selected in Build panel and all assets in the resources directory. All assets will be deserialized by engine to find out the dependent assets in deep**. Before deserialization, editor will load all the scripts（expect plugin scripts) in the project, if the script is written illegally and fails to load, it will make this build task stop immediately. If any dependent asset is missing during the deserialization process, a warning info will be print, but editor will continue to build. When warning info is printed, we recommend you to read and try to resolve it, otherwise it may cause some unexpect errors after build. During the packaging process, the assets will be re-compressed and serialized after deserialization to reduce the package size. Also, all serialized files will be sorted into deferent `JSON` groups to reduce the size of game package.
 
-Resources that perform deserialization during the packing process will recompress the serialization to reduce the package size after packing. The serialized files of the texture resources are all packaged into a single `JSON` file, and the other serialized files are subpackaged according to the build options configuration.
+Assets that perform deserialization during the packing process will recompress the serialization to reduce the package size after packing. The serialized files of the texture resources are all packaged into a single `JSON` file, and the other serialized files are subpackaged according to the build options configuration.
 
 #### Build scripts
 
