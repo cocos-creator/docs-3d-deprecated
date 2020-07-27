@@ -42,9 +42,9 @@ Please refer to the [Baidu Mini Game Developer Documentation](https://smartprogr
 
 ## Resource Management for Baidu Mini Game Environment
 
-**Baidu Mini Game** is similar to **WeChat Mini Game**. There are restrictions on the package size. Resources more than **4MB** must be downloaded via a network request.
+**Baidu Mini Game** is similar to **WeChat Mini Game**. There are restrictions on the package size. Assets more than **4MB** must be downloaded via a network request.
 
-It is recommended to only save script files in the mini-game packages, while other resources are uploaded to the remote server, and downloaded from the remote server as needed. The download, cache, and version management of remote resources, **Cocos Creator 3D** has already done it for you. The specific implementation logic is similar to the WeChat Mini Game. Please refer to the [Resource Management for WeChat Mini Game Environment](./publish-wechatgame.md) documentation for details.
+It is recommended to only save script files in the mini-game packages, while other assets are uploaded to the remote server, and downloaded from the remote server as needed. The download, cache, and version management of remote assets, **Cocos Creator 3D** has already done it for you. The specific implementation logic is similar to the WeChat Mini Game. Please refer to the [Resource Management for WeChat Mini Game Environment](./publish-wechatgame.md) documentation for details.
 
 When the **MD5 Cache** feature of the engine is enabled, the URL of the file will change as the content of the file changes. When the game releases a new version, the resources of the old version will naturally become invalid in the cache, and only the new resources can be requested from the server, which achieves the effect of version control.
 
