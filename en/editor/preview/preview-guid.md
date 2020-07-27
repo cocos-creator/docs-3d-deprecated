@@ -18,6 +18,6 @@ Under normal circumstances, if generating `settings.js` fails, there will be err
 
 Please refer to the [Introduction To The Build Process](../publish/build-guide.md) documentation for additional details about how `settings.js` is generated.
 
-### Resources Loading 404
+### Assets Loading with a 404
 
-Usually, this is caused by resource loss or import failure. Please **use the missing resource uuid to search in the editor's assets panel**. If no resources are found, usually the resource is lost. You need to modify the scene or resource using the resource. If resources are found, you can try to re-import.
+Usually, this is caused by asset loss or import failure. Please **use the missing asset uuid to search in the editor's assets panel**. If no assets are found, usually the asset is lost. You need to modify the scene or asset using the assets. If assets are found, you can try to re-import.
