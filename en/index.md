@@ -19,7 +19,7 @@ Use the feature map to quickly understand engine features
   - [Physical Simulation](physics/physics.md)
   - [Scripting Guide and Event System](scripting/index.md)
   - [Components](editor/components/index.md)
-  - [Resources](asset/index.md)
+  - [Assets](asset/index.md)
   - [Scene and Environment Settings](concepts/scene/index.md)
 
 - Beginner's guide
