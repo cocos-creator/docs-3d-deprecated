@@ -1,12 +1,12 @@
 # Effect Syntax Guide
 
-Writing your own effect can give you all the capabilities to customize the rendering process.
+Writing your own effects provides all the capabilities to customize the rendering process.
 
-Cocos Effect is a single-source embedded domain-specific language, based on YAML and GLSL. The YAML part declares the general framework, while GLSL part specifies the actual shader. Together they form a complete specification for the rendering process.
+`Cocos Effect` is a single-source embedded domain-specific language, based on __YAML__ and __GLSL__. The __YAML__ part declares the general framework, while __GLSL__ part specifies the actual shader. Together they form a complete specification for the rendering process.
 
-We recommend editing effect files using Visual Studio Code with the official `Cocos Effect` plugin from the marketplace.
+We recommend editing effect files using __Visual Studio Code__ with the official `Cocos Effect` plugin from the marketplace.
 
-> **Note**: This document is targeted at technical artists or graphic designers, if you are a design artist who needs specific shader customizations, please contact your technical artist or programmer for support.
+> **Note**: This document is targeted at Technical Artists or Graphics developers. If you are a design artist who needs specific shader customizations, please contact your Technical Artist or Programmer for support.
 
 ## Framework Syntax
 Using `builtin-unlit.effect` as an example, it looks something like this:
