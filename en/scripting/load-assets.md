@@ -79,7 +79,7 @@ We have example for asset loading, please see these [test-case-3d(AssetLoading)]
 
 There are two points to note when loading assets dynamically. 
 
-__First__, the `resources` folder needs to be created manually inside the `assets` folder and must be located in the __root directory__, like this:
+__First__, the `resources` folder needs to be created manually inside the `resources` folder and must be located in the __root directory__, like this:
 
 ![](load-assets/resources-file-tree.jpg)
 

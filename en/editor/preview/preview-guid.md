@@ -14,7 +14,7 @@ When opening **Cocos Creator 3D**, the editor will open a web server(we use Expr
 
 You can open **Developer-> Build Debugging Tools** to see if there are any error messages.
 
-Under normal circumstances, if generating `settings.js` fails, there will be error messages in console. Most common is a script error, because when generating `settings.js`, all scripts in the project are loaded in the build process. If any script contains illegal writing, an unexpected error will be thrown during the loading process and `setting.js` will fail to be generated .For specific error message information, you can refer to the hint in the error message. Usually the error content here is the uuid of the asset. The corresponding `uuid` can be copied to the `assets` panel to search and locate the script.
+Under normal circumstances, if generating `settings.js` fails, there will be error messages in console. Most common is a script error, because when generating `settings.js`, all scripts in the project are loaded in the build process. If any script contains illegal writing, an unexpected error will be thrown during the loading process and `setting.js` will fail to be generated .For specific error message information, you can refer to the hint in the error message. Usually the error content here is the uuid of the asset. The corresponding `uuid` can be copied to the __Assets Panel__ to search and locate the script.
 
 Please refer to the [Introduction To The Build Process](../publish/build-guide.md) documentation for additional details about how `settings.js` is generated.
 
