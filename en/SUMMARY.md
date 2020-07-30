@@ -218,7 +218,7 @@
   - [Audio](asset/audio.md)
   - [Material](asset/material.md)
   - [Mesh](asset/mesh.md)
-  - [Animation resources](asset/anim.md)
+  - [Animation assets](asset/anim.md)
 
 - [测试规范](tests/index.md)
   - [测试流程文档](tests/qa-process.md)
