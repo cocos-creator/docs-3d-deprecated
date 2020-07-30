@@ -10,7 +10,7 @@ On the engine side, in order to make the developers' workload as easy as possibl
 
 - The engine framework adapts to the Baidu Mini Game API, pure game logic level, developers do not need any additional modifications.
 - The **Cocos Creator 3D** editor provides a fast packaging process, released directly as a **Baidu Mini Game**, and automatically evokes the Baidu DevTools.
-- Automatically load remote resources, cache resources, and cache resource version control.
+- Automatically load remote assets, cache assets, and cache asset version control.
 
 Please refer to the [Baidu Mini Game Developer Documentation](https://smartprogram.baidu.com/docs/game/) documentation to review the game submission, the review, and the release process for a Baidu Mini Game.
 
@@ -40,13 +40,13 @@ Please refer to the [Baidu Mini Game Developer Documentation](https://smartprogr
 
     > **Note**: When previewing and debugging, if a prompt appears stating: `The current version of the developer tool can't publish mini program, please update to the latest devtools`. This means the **appid** filled in the **Build** panel is the **appid** of the **Baidu Smart Mini Program**, not the **appid** of the **Baidu Mini Game**, please re-apply for the **appid** of the **Baidu Mini Game**.
 
-## Resource Management for Baidu Mini Game Environment
+## asset Management for Baidu Mini Game Environment
 
 **Baidu Mini Game** is similar to **WeChat Mini Game**. There are restrictions on the package size. Assets more than **4MB** must be downloaded via a network request.
 
-It is recommended to only save script files in the mini-game packages, while other assets are uploaded to the remote server, and downloaded from the remote server as needed. The download, cache, and version management of remote assets, **Cocos Creator 3D** has already done it for you. The specific implementation logic is similar to the WeChat Mini Game. Please refer to the [Resource Management for WeChat Mini Game Environment](./publish-wechatgame.md) documentation for details.
+It is recommended to only save script files in the mini-game packages, while other assets are uploaded to the remote server, and downloaded from the remote server as needed. The download, cache, and version management of remote assets, **Cocos Creator 3D** has already done it for you. The specific implementation logic is similar to the WeChat Mini Game. Please refer to the [asset Management for WeChat Mini Game Environment](./publish-wechatgame.md) documentation for details.
 
-When the **MD5 Cache** feature of the engine is enabled, the URL of the file will change as the content of the file changes. When the game releases a new version, the resources of the old version will naturally become invalid in the cache, and only the new resources can be requested from the server, which achieves the effect of version control.
+When the **MD5 Cache** feature of the engine is enabled, the URL of the file will change as the content of the file changes. When the game releases a new version, the assets of the old version will naturally become invalid in the cache, and only the new assets can be requested from the server, which achieves the effect of version control.
 
 Specifically, developers need to do the following:
 
@@ -55,9 +55,9 @@ Specifically, developers need to do the following:
 3. After the build is complete, upload the `build/baidu-mini-game/res` folder to the server.
 4. Delete the `res` folder under the local release package directory.
 
-> **Note**: When Baidu loads the resources on the remote server on the physical device, it only supports access via HTTPS, so the resource file must be placed on HTTPS, otherwise the loading of the resource will fail.
+> **Note**: When Baidu loads the assets on the remote server on the physical device, it only supports access via HTTPS, so the asset file must be placed on HTTPS, otherwise the loading of the asset will fail.
 
-> **Note**: If the cache resource exceeds the environment limit of Baidu, you need to manually clear the resource. You can use the `remoteDownloader.cleanAllCaches()` and `remoteDownloader.cleanOldCaches()` interfaces to clear the cache in Baidu mini game. The former will clear all cache resources in the cache directory, please use it with caution. The latter will clear the cache resources that are not used in the current application in the cache directory.
+> **Note**: If the cache asset exceeds the environment limit of Baidu, you need to manually clear the asset. You can use the `remoteDownloader.cleanAllCaches()` and `remoteDownloader.cleanOldCaches()` interfaces to clear the cache in Baidu mini game. The former will clear all cache assets in the cache directory, please use it with caution. The latter will clear the cache assets that are not used in the current application in the cache directory.
 
 ## Baidu Mini Game Subpackage Loading
 

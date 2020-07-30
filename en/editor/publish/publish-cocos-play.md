@@ -20,19 +20,19 @@ The specific filling rules for the relevant parameter configuration are as follo
 
   - **tinyPacketMode**
 
-    This item is optional. The in-package volume of the game contains code and resources that cannot exceed 10M, and resources can be loaded via network requests. **tinyPacketMode** is to help developers keep the script files in the game package, other resources are uploaded to the remote server, and downloaded from the remote server as needed. And the download, cache and version management of remote resources, **Cocos Creator 3D** has already helped the developer. What the developer needs to do is the following steps:
+    This item is optional. The in-package volume of the game contains code and assets that cannot exceed 10M, and assets can be loaded via network requests. **tinyPacketMode** is to help developers keep the script files in the game package, other assets are uploaded to the remote server, and downloaded from the remote server as needed. And the download, cache and version management of remote assets, **Cocos Creator 3D** has already helped the developer. What the developer needs to do is the following steps:
 
     - When building, check the **tinyPacketMode** and fill in the **tinyPacketModeServer**.
 
-    - **First game resource package into the game package**, this item is optional.
+    - **First game asset package into the game package**, this item is optional.
 
-      In the `tinyPacketMode`, due to too many resources on the launch scene, downloading and loading resources for a long time may result in a short black screen when entering the game for the first time. If **First game resource package into the game package** is checked, you can reduce the black screen time when you first enter the game. However, it should be noted that the `res/import` resource does not support split resource downloading at this time, and the entire `import` directory is also packaged into the first package.
+      In the `tinyPacketMode`, due to too many assets on the launch scene, downloading and loading assets for a long time may result in a short black screen when entering the game for the first time. If **First game asset package into the game package** is checked, you can reduce the black screen time when you first enter the game. However, it should be noted that the `res/import` asset does not support split asset downloading at this time, and the entire `import` directory is also packaged into the first package.
   
       Developers can choose whether to check this item according to their needs. Then click on **Build**.
 
     - After the build is complete, click the **Open** button after the **Build Path** to upload the `res` directory under the release path to the server. For example, if the default release path is `build`, the Build Task Name is `cocos-play`, you need to upload the `/build/cocos-play/res` directory.
 
-    At this point, the `res` directory will no longer be included in the built-up cpk, and the resources in the `res` directory will be downloaded from the filled **tinyPacketMode Server Path** through the network request.
+    At this point, the `res` directory will no longer be included in the built-up cpk, and the assets in the `res` directory will be downloaded from the filled **tinyPacketMode Server Path** through the network request.
 
     The build parameters when publishing from the command line:
 

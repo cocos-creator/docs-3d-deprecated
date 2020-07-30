@@ -40,7 +40,7 @@ This page is used to set the path of the development environment required when t
 
 ## Data Editor
 
-This category is used to set the default open mode for resources.
+This category is used to set the default open mode for assets.
 
 ![edit](./index/edit.jpg)
 

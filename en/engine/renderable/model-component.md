@@ -4,7 +4,7 @@ The __ModelComponent__ is used to display a static 3D model. Set the model grid 
 
 Properties | Functions
 --- | ---
-*mesh* | 3D model resources for rendering.
+*mesh* | 3D model assets for rendering.
 *materials* | The material used to render the model, one material corresponds to one submesh in the mesh.
 *shadowCastingMode* | Whether the model casts shadows. The planar shadow system in the scene should be enabled beforehand.
 *visibility* | Used for which camera the model will be rendered, only the camera with the same visibility as the model will render the model.

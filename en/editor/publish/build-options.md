@@ -4,13 +4,13 @@
 
 ### Build Path
 
-You can designate a release path for the game by inputting a path in the **Build Path** input field or choosing one via the **...** browsing button. The following cross-platform release will create resources or projects in child folders of this release path.
+You can designate a release path for the game by inputting a path in the **Build Path** input field or choosing one via the **...** browsing button. The following cross-platform release will create assets or projects in child folders of this release path.
 
 The default release path is in the `build` under the project folder. If you use version control systems like `git` and `svn`, you can ignore the `build` folder in version control.
 
 ### Debug
 
-In release mode, the `uuid` of the resource, the built engine script and the project script will be compressed and confused, and the JSON of the same resource will be subpackaged to reduce the number of resource loads. When debugging a project, it is recommended to check the **Debug** option for easy positioning of the problem.
+In release mode, the `uuid` of the asset, the built engine script and the project script will be compressed and confused, and the JSON of the same asset will be subpackaged to reduce the number of asset loads. When debugging a project, it is recommended to check the **Debug** option for easy positioning of the problem.
 
 ### Replace Splash screen
 
@@ -38,7 +38,7 @@ For more details on `source maps`, please refer to the [Source Maps](https://dev
 
 ### Compress Texture
 
-Some compression options can be added to `spriteFrame` type image resources in the editor. Once enabled, the corresponding image resources are generated based on these compression options during build. If disabled, the compression texture will not take effect at build time even if configured. 
+Some compression options can be added to `spriteFrame` type image assets in the editor. Once enabled, the corresponding image assets are generated based on these compression options during build. If disabled, the compression texture will not take effect at build time even if configured. 
 
 Please refer to the [Compress Texture](../../asset/compress-texture.md) documentation for details.
 
@@ -59,7 +59,7 @@ When merging assets automatically, all `JSON` files that the **Start Scene** dep
 
 Append MD5 hash to the exported assets for resolving CDN or browser cache issue.
 
-After being enabled, if any resource fails to load, it is because the renamed new file can not be found. It is usually because some third party resources was not loaded by `cc.loader`. If this happens, you can convert the url before loading, to fix the loading problem. Example:
+After being enabled, if any asset fails to load, it is because the renamed new file can not be found. It is usually because some third party assets was not loaded by `cc.loader`. If this happens, you can convert the url before loading, to fix the loading problem. Example:
 
 ```js
 url = cc.loader.md5Pipe.transformURL(url);

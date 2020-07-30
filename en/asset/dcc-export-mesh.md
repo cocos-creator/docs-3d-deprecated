@@ -43,6 +43,6 @@ During the game development process, the orientation of the model may be used. F
 
 2. When a part of the model needs to be transparent and a part does not need to be transparent, it should be exported into two materials. If it is a material export that is prone to model penetration, you need to manually adjust the material.
 
-3. External resource references, use relative path when exporting. Otherwise, under the cooperation of multiple people, the original resource path will not be recognized, resulting in the model's built-in materials cannot obtain the texture correctly and appear yellow. **Autodesk 3ds Max** export local path is modified as follows:
+3. External asset references, use relative path when exporting. Otherwise, under the cooperation of multiple people, the original asset path will not be recognized, resulting in the model's built-in materials cannot obtain the texture correctly and appear yellow. **Autodesk 3ds Max** export local path is modified as follows:
 
 ![relative path](./mesh/relative_path.png)
