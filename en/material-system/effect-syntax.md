@@ -180,7 +180,8 @@ vec4 vert () {
 You can find the complete built-in shader uniform list [here](builtin-shader-uniforms.md).
 
 ### Fragment Ouput<sup id="a1">[1](#f1)</sup>
-To encapsulate render pipeline complexities, use `CCFragOutput`:
+To encapsulate render pipeline complexities, use `CCFragOutput`.
+
 For unlit shaders:
 ```glsl
 #include <output>
@@ -191,9 +192,9 @@ vec4 frag () {
 }
 ```
 
-The code can work in both HDR and LDR pipeline.
+so that the code can work in both the __HDR__ and __LDR__ pipelines.
 
-If there's lighting involved, combine with `CCStandardShading` to form a surface shader structure:
+If lighting is involved, combine with `CCStandardShading` to form a surface shader structure:
 
 ```glsl
 #include <shading-standard>
@@ -244,7 +245,7 @@ comp.setInstancedAttribute('a_instanced_color', [100, 150, 200, 255]); // should
 ### WebGL 1 fallback Support
 The effect compiler provides fallback conversion from GLSL 300 ES to GLSL 100 automatically, for WebGL 1.0 only support GLSL 100 syntax. this should be transparent to developers for the most time.
 
-Currently the automatic conversion only supports some basic usage, and if some post-100 features or extensions were used, (texelFetch, textureGrad, etc.) Developers have to do your own porting using the language built-in __VERSION__ macro:
+Currently the automatic conversion only supports some basic usage, and if some post-100 features or extensions were used, (texelFetch, textureGrad, etc.) Developers have to do your own porting using the language built-in \_\_VERSION__ macro:
 
 ```glsl
 vec4 fragTextureLod (samplerCube tex, vec3 coord, float lod) {
