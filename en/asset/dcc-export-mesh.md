@@ -39,7 +39,7 @@ During the game development process, the orientation of the model may be used. F
 
 ## Artist's production specifications
 
-1. Reasonably formulating a sub-resources name under model resources.(e.g **mesh** or **material**). Each modification of the sub-resources name will result in the loss of the place associated with the sub-resources in the project.
+1. Reasonably formulating a sub-assets name under model assets.(e.g **mesh** or **material**). Each modification of the sub-assets name will result in the loss of the place associated with the sub-assets in the project.
 
 2. When a part of the model needs to be transparent and a part does not need to be transparent, it should be exported into two materials. If it is a material export that is prone to model penetration, you need to manually adjust the material.
 
