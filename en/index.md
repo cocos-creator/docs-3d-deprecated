@@ -26,7 +26,7 @@ Use the feature map to quickly understand engine features:
 - Beginner's guide
   - [Novice](getting-started/index.md)
   - [Dashboard](getting-started/dashboard/index.md)
-  - [Hello world!](Getting-started/helloworld/index.md)
+  - [Hello world!](getting-started/helloworld/index.md)
   - [Quick start: making your first game](getting-started/first-game/index.md)
   - [Caution](getting-started/attention/index.md)
 
