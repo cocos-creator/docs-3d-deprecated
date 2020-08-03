@@ -14,7 +14,7 @@ Image assets will use thumbnails of their own pictures as icons in the **Assets 
 
 **1. The object contained in the container is using textures**
 
-In the editor, drag the __SpriteFrame__ asset to the __Sprite Frame__ property of the **Sprite** component to switch the image displayed by the __Sprite__. At runtime, taking the content picture in the above picture as an example, The entire resource is divided into image asset (`content`) ,its sub-asset (`spriteFrame`) and sub-asset (`texture`). The resources in the game package can be obtained by the following methods:
+In the editor, drag the __SpriteFrame__ asset to the __Sprite Frame__ property of the **Sprite** component to switch the image displayed by the __Sprite__. At runtime, taking the content picture in the above picture as an example, The entire asset is divided into image asset (`content`) ,its sub-asset (`spriteFrame`) and sub-asset (`texture`). The assets in the game package can be obtained by the following methods:
 
 __Method 1__: (load __ImageAsset__):
 
@@ -42,7 +42,8 @@ loader.loadRes(url, SpriteFrame,(err: any , spriteFrame) => {
 ```
 
 __Assets__ on the server can only be loaded into __ImageAsset__. For specific methods, please refer to the [Asset Loading](./load-assets.md) documentation.
-We will provide a way to package ImageAsset as a SpriteFrame in a later release to make it easier for users to use image resources.
+
+__Cocos Creator__ will provide a way to package an __Image Asset__ as a __SpriteFrame__ in a later release to make it easier for users to use image assets.
 
 **2. The container contains objects that are used by RenderTexture**
 
