@@ -8,14 +8,14 @@ __Cocos Creator 3D__ supports importing images in multiple formats (see the tabl
 
 | Image format | Android | iOS | WeChat game | Web |
 | ------------ | ------------- | --------- | -------- | -------- |
-| PNG | Supported | Supported | Supported | Supported |
-| JPG | Supported | Supported | Supported | Supported |
-| WEBP | Native Supported for Android 4.0+<br>Other versions can use [this library](https://github.com/alexey-pelykh/webp-android-backport) | can use [this library](https://github.com/carsonmcdonald/WebP-iOS-example) | Not Supported | [partially supported](https://caniuse.com/#feat=webp) |
-| PVR | Not Supported | Supported | Supported iOS devices | Supported iOS devices |
-| ETC1 | Supported | Not Supported | Supported Android devices | Supported Android devices |
-| ETC2 | Supported with __WebGL2__ or __WebGL__ extension if available |
+| **PNG** | Supported | Supported | Supported | Supported |
+| **JPG** | Supported | Supported | Supported | Supported |
+| **WEBP** | Native Supported for Android 4.0+<br>Other versions can use [this library](https://github.com/alexey-pelykh/webp-android-backport) | can use [this library](https://github.com/carsonmcdonald/WebP-iOS-example) | Not Supported | [partially supported](https://caniuse.com/#feat=webp) |
+| **PVR** | Not Supported | Supported | Supported iOS devices | Supported iOS devices |
+| **ETC1** | Supported | Not Supported | Supported Android devices | Supported Android devices |
+| **ETC2** | Supported with __WebGL2__ or __WebGL__ extension if available |
 
-By default, __Cocos Creator 3D__ outputs the original image during construction. If you need to compress an image during the build process, you can select this image in the **Assets Panel** and then manage it in the **Attribute Editor** to edit the texture format of the image.
+By default, __Cocos Creator 3D__ outputs the original image during construction. If you need to compress an image during the build process, you can select this image in the **Assets Panel** and then manage it in the **Property Inspector** to edit the texture format of the image.
 
 ![compress-texture](compress-texture/compress-texture.png)
 
@@ -38,6 +38,6 @@ The user can customize the supported image assets for a platform and the priorit
 ![1](compress-texture/compress-1.jpg)
 ![2](compress-texture/compress-2.jpg)
 
-In the example images above, the default platform is configured with compressed textures in `png` format, the web platform is configured with compressed textures in `pvr` and `png` formats, and no configuration is added on other platforms. When building a web platform, this image will be compressed into two formats: __`pvr` and `png`__. When building other platforms, it will only generate images in the `png` format.
+In the example images above, the default platform is configured with compressed textures in `png` format, the web platform is configured with compressed textures in `pvr` and `png` formats, and no configuration is added on other platforms. When building a web platform, this image will be compressed into two formats: `pvr` and `png`. When building other platforms, it will only generate images in the `png` format.
 
 The default settings of `macro.SUPPORT_TEXTURE_FORMATS` is only supported by `pvr` on the iOS platform. This means `pvr` images will only be loaded on iOS browsers, and browsers on other platforms will load `png` images.

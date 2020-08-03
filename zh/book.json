@@ -44,10 +44,6 @@
                         "link": "http://docs.cocos2d-x.org/api-ref/index.html"
                     }
                 ]
-            },
-            {
-                "name": "AnySDK",
-                "link": "http://docs.anysdk.com/"
             }
         ],
         "version": [
@@ -57,6 +53,10 @@
                     {
                         "name": "1.0",
                         "link": "https://docs.cocos.com/creator3d/1.0/manual/zh"
+                    },
+                    {
+                        "name": "1.2",
+                        "link": "https://docs.cocos.com/creator3d/manual/zh"
                     }
                 ]
             }

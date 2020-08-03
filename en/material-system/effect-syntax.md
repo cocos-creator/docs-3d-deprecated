@@ -1,13 +1,12 @@
 # Effect Syntax Guide
 
-Writing your own effect can give you all the capabilities to customize the rendering process.<br>
-Cocos Effect is a single-source embedded domain-specific language, based on YAML and GLSL.<br>
-The YAML part declares the general framework, while GLSL part specifies the actual shader.<br>
-Together they form a complete specification for the rendering process.
+Writing your own effects provides all the capabilities to customize the rendering process.
 
-We recommend editing effect files using Visual Studio Code with the official `Cocos Effect` plugin from the marketplace.
+`Cocos Effect` is a single-source embedded domain-specific language, based on __YAML__ and __GLSL__. The __YAML__ part declares the general framework, while __GLSL__ part specifies the actual shader. Together they form a complete specification for the rendering process.
 
-> Note: This document is targeted at technical artists or graphic designers, if you are a design artist who needs specific shader customizations, please contact your technical artist or programmer for support.
+We recommend editing effect files using __Visual Studio Code__ with the official `Cocos Effect` plugin from the marketplace.
+
+> **Note**: This document is targeted at Technical Artists or Graphics developers. If you are a design artist who needs specific shader customizations, please contact your Technical Artist or Programmer for support.
 
 ## Framework Syntax
 Using `builtin-unlit.effect` as an example, it looks something like this:
@@ -21,19 +20,23 @@ const effect = cc.EffectAsset.get('builtin-unlit'); // this is the EffectAsset r
 const mat = new cc.Material();
 mat.initialize({ effectName: 'builtin-standard' }); // now `mat` is a valid standard material
 ```
-And the names are automatically generated based on its file path (relative to the `assets/effects` folder in your project) and file name(extension excluded). <br>
-The builtin effects are located directly inside the `assets/effects` folder in the internal database, so the effect names don't contain a path.<br>
+
+And the names are automatically generated based on its file path (relative to the `assets/effects` folder in your project) and file name(extension excluded).
+
+The builtin effects are located directly inside the `assets/effects` folder in the internal database, so the effect names don't contain a path.
+
 
 ## About YAML
-YAML is a human-readable data-serialization language, with a flexible, minimal syntax and easily configurable, which makes it an ideal choice.<br>
-But the syntax maybe somewhat unique, at first for those who are unfamiliar with the language,<br>
-so we made a quick intro to the most commonly used syntaxes and language features [here](yaml-101.md) for your reference.
+YAML is a human-readable data-serialization language, with a flexible, minimal syntax and easily configurable, which makes it an ideal choice. However, the syntax maybe somewhat unique, at first for those who are unfamiliar with the language. There is a quick intro to the most commonly used syntaxes and language features [here](yaml-101.md).
 
 ## Configurable Pass Parameters
-The shader entries are the only required fields, namely `vert` and `frag`, in the format of `shaderChunkName:entryFunctionName`.<br>
-Normally the `main` function shouldn't be specified in shader, for version-specific wrappers will be inserted at compile-time,<br>
-assigning the return value of the specified function to the ouput of current shader stage. (gl_Position or the final output color).<br>
-You can find all the optional parameter list [here](pass-parameter-list.md).
+The shader entries are the only required fields, namely `vert` and `frag`, in the format of `shaderChunkName:entryFunctionName`.
+
+Normally the `main` function shouldn't be specified in shader, for version-specific wrappers will be inserted at compile-time.
+
+assigning the return value of the specified function to the ouput of current shader stage. (gl_Position or the final output color).
+
+You can find all of the optional parameters in the [pass parameter list](pass-parameter-list.md) documentation.
 
 ## Shader Chunks
 Syntactically shader chunks are a superset of GLSL, all the extended features will be processed immediately at resource compile-time.<br>
@@ -84,6 +87,7 @@ Although the effect compiler will try to be smart and collect all pre-processing
 // multiple discrete 'options'
 float metallic = texture(pbrMap, uv).METALLIC_SOURCE;
 ```
+
 For these special usages, you'll have to explicitly declare the macro, using macro tags:<br>
 
 | Tag     | Tag Parameter | Default Value | Usage |
@@ -92,18 +96,21 @@ For these special usages, you'll have to explicitly declare the macro, using mac
 | options | An arbitrary-length array,<br>specifying every possible options | nothing | For macros with discrete, explicit choices |
 
 Declarations for the above case are：
+
 ```glsl
 #pragma define LAYERS range([4, 5])
 #pragma define METALLIC_SOURCE options([r, g, b, a])
 ```
-The first line declares a macro named `LAYERS`, with possible range of [4, 5];<br>
-The second line declares a macro named `METALLIC_SOURCE`, with four possible options: 'r', 'g', 'b', 'a'.<br>
 
-> Note: every tag accepts a single parameter, in the syntax of YAML.
+The first line declares a macro named `LAYERS`, with possible range of [4, 5]. The second line declares a macro named `METALLIC_SOURCE`, with four possible options: 'r', 'g', 'b', 'a'.<br>
+
+> **Note**: every tag accepts a single parameter, in the syntax of YAML.
 
 ### Functional Macros
-Due to lack of native support in WebGL platform, functional macros are provided as an effect compile-time feature, all references will be expanded in the output shader.<br>
-This is an good match for inlining some simple utility functions, or similar code repeating several times.<br>
+Due to lack of native support in WebGL platform, functional macros are provided as an effect compile-time feature, all references will be expanded in the output shader.
+
+This is an good match for inlining some simple utility functions, or similar code repeating several times.
+
 In fact, many built-in utility functions are functional macros:
 ```glsl
 #define CCDecode(position) \
@@ -115,8 +122,8 @@ In fact, many built-in utility functions are functional macros:
   #endif                      \
   #pragma // empty pragma trick to get rid of trailing semicolons at effect compile time
 ```
-Meanwhile, same as the macro system in C/C++, the mechanism does nothing on checking [macro hygiene](https://en.wikipedia.org/wiki/Hygienic_macro),<br>
-So any problem comes with it will have to be dealt with by developers manually:
+
+Meanwhile, same as the macro system in C/C++, the mechanism does nothing on checking [macro hygiene](https://en.wikipedia.org/wiki/Hygienic_macro). Any issues will have to be dealt with by developers manually:
 ```glsl
 // please do be careful with unhygienic macros like this
 #define INCI(i) do { int a=0; ++i; } while(0)
@@ -127,8 +134,10 @@ INCI(a); // wrong! a would still be 4
 ```
 
 ### Vertex Input<sup id="a1">[1](#f1)</sup>
-To encapsulate in-shader data pre-processing like data decompression and vertex skinning, utility function `CCVertInput` is provided;<br>
+To encapsulate in-shader data pre-processing like data decompression and vertex skinning, utility function `CCVertInput` is provided.
+
 For all shaders used to draw mesh assets, you need something like this:
+
 ```glsl
 #include <input>
 vec4 vert () {
@@ -137,7 +146,9 @@ vec4 vert () {
   // ... do your thing with `position` (models space, after skinning)
 }
 ```
+
 If normals are required, use the standard version:
+
 ```glsl
 #include <input-standard>
 vec4 vert () {
@@ -146,7 +157,9 @@ vec4 vert () {
   // ... now use `In.position`, etc.
 }
 ```
-This will acquire position, normal and tangent data, all after vertex skinning.<br>
+
+This will acquire position, normal and tangent data, all after vertex skinning.
+
 Other vertex data (uv, color, etc.) can be declared directly.
 
 To support dynamic instancing & batching, use `CCGetWorldMatrix`:
@@ -167,7 +180,8 @@ vec4 vert () {
 You can find the complete built-in shader uniform list [here](builtin-shader-uniforms.md).
 
 ### Fragment Ouput<sup id="a1">[1](#f1)</sup>
-To encapsulate render pipeline complexities, use `CCFragOutput`:
+To encapsulate render pipeline complexities, use `CCFragOutput`.
+
 For unlit shaders:
 ```glsl
 #include <output>
@@ -177,8 +191,11 @@ vec4 frag () {
   return CCFragOutput(o);
 }
 ```
-So the code can work in both HDR and LDR pipeline.<br>
-If there's lighting involved, combine with `CCStandardShading` to form a surface shader structure:
+
+so that the code can work in both the __HDR__ and __LDR__ pipelines.
+
+If lighting is involved, combine with `CCStandardShading` to form a surface shader structure:
+
 ```glsl
 #include <shading-standard>
 #include <output-standard> // note the header file change
@@ -191,15 +208,18 @@ vec4 frag () {
   return CCFragOutput(color);
 }
 ```
-Under the framework writing your own surface shader or even shading algorithm becomes staightforward;<br>
 
-> Note: the `CCFragOutput` function should not be overriden, unless using custom render pipelines.
+Under the framework writing your own surface shader or even shading algorithm becomes staightforward.
+
+> **Note**: the `CCFragOutput` function should not be overriden, unless using custom render pipelines.
 
 ### Custom Instancing Attribute
-Dynamic instancing is a very flexible batching framework, whcih allows user-defined instanced properties on top of the built-in ones.<br>
+Dynamic instancing is a very flexible batching framework, whcih allows user-defined instanced properties on top of the built-in ones.
+
 Here's how you can define them in shader:
 
 All the related code need to be wrapped inside the agreed upon macro, `USE_INSTANCING`:
+
 ```glsl
 #if USE_INSTANCING // when instancing is enabled
   #pragma format(RGBA8) // normalized unsigned byte
@@ -212,18 +232,21 @@ Relevant details:
 * All instanced properties are input attributes of the vertex shader, so if some property is needed in fragment shader, you need to pass it as varyings;
 * Make sure the code works for all branches, regardless of the actual state of `USE_INSTANCING`;
 
-The instanced property value will be initialized to all zeros by default.<br>
+The instanced property value will be initialized to all zeros by default.
+
 Use the `setInstancedAttribute` on `ModelComponent` to assign new values:
+
 ```ts
 const comp = node.getComponent(ModelComponent);
 comp.setInstancedAttribute('a_instanced_color', [100, 150, 200, 255]); // should match the specified format
 ```
-> Note: The instanced properties will be reset to all zeros whenever creating a new PSO (the most common case is when assigning a new material).
+> **Note**: The instanced properties will be reset to all zeros whenever creating a new PSO (the most common case is when assigning a new material).
 
 ### WebGL 1 fallback Support
-The effect compiler provides fallback conversion from GLSL 300 ES to GLSL 100 automatically, for WebGL 1.0 only support GLSL 100 syntax. this should be transparent to developers for the most time.<br>
-Currently the automatic conversion only supports some basic usage, and if some post-100 features or extensions were used, (texelFetch, textureGrad, etc.)<br>
-you have to do your own porting using the language built-in \_\_VERSION__ macro:
+The effect compiler provides fallback conversion from GLSL 300 ES to GLSL 100 automatically, for WebGL 1.0 only support GLSL 100 syntax. this should be transparent to developers for the most time.
+
+Currently the automatic conversion only supports some basic usage, and if some post-100 features or extensions were used, (texelFetch, textureGrad, etc.) Developers have to do your own porting using the language built-in \_\_VERSION__ macro:
+
 ```glsl
 vec4 fragTextureLod (samplerCube tex, vec3 coord, float lod) {
   #if __VERSION__ < 130
@@ -237,6 +260,7 @@ vec4 fragTextureLod (samplerCube tex, vec3 coord, float lod) {
   #endif
 }
 ```
+
 The effect compiler will finally split these compile-time constant branches into different output versions.
 
 ### About UBO Memory Layout
@@ -247,9 +271,10 @@ First the conclusion, the final rules are, every non-sampler uniform should be s
 
 These rules will be checked rigorously at effect compile-time and throws detailed, implicit padding related compile error.
 
-This might sound overly-strict at first, but it's for a few good reasons:<br>
-First, UBO is a much better basic unit to efficiently reuse data, so discrete declaration is no longer an option;<br>
-Second, currently many platforms, including WebGL 2.0 only support one platform-independent memory layout, namely **std140**, and it has many restrictions<sup id="a3">[3](#f3)</sup>:
+This might sound overly-strict at first, but it's for a few good reasons:
+
+__First__, UBO is a much better basic unit to efficiently reuse data, so discrete declaration is no longer an option.
+__Second__, currently many platforms, including WebGL 2.0 only support one platform-independent memory layout, namely **std140**, and it has many restrictions<sup id="a3">[3](#f3)</sup>:
 * All vec3 members will be aligned to vec4：
 ```glsl
 uniform ControversialType {
@@ -276,9 +301,9 @@ uniform CorrectUBOOrder {
 }; // total of 16 bytes
 ```
 
-This means lots of wasted space, and some driver implementation might not completely conform to the standard<sup id="a5">[5](#f5)</sup>, hence all the strict checking procedure help to clear some pretty insidious bugs.<br>
+This means lots of wasted space, and some driver implementation might not completely conform to the standard<sup id="a5">[5](#f5)</sup>, hence all the strict checking procedure help to clear some pretty insidious bugs.
 
-> Note: the actual uniform type can differ from the public interfaces the effect exposes to artists and runtime properties. Through [property target](pass-parameter-list.md#Properties) system, every single channel can be manipulated independently, without restriction of the original uniform.
+> **Note**: the actual uniform type can differ from the public interfaces the effect exposes to artists and runtime properties. Through [property target](pass-parameter-list.md#Properties) system, every single channel can be manipulated independently, without restriction of the original uniform.
 
 <b id="f1">[1]</b> Shaders for systems with procedurally generated mesh, like particles, sprites, post-effects, etc. may handle things a bit differently [↩](#a1)<br>
 <b id="f2">[2]</b> Integer-typed attribute is not supported on WebGL 1.0 platform, so use the default float type if targeting this platform [↩](#a2)<br>

@@ -1,7 +1,7 @@
 ## Texture Animation Module
 ![](particle-system/texture_animation.png)
 
-Attribute | Role
+Property | Role
 ---|---
 **mode** | A grid texture contains an animation frame for particle playback.
 **numTilesX** | The number of animation frames in the x direction.

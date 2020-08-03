@@ -10,7 +10,7 @@ This chapter will introduce the __Animation System__ of __Cocos Creator 3D__. In
 - [Familiar with animation editor](animation-editor.md)
 - [Create Animation components and animation clips](animation-create.md)
 - [Edit Animation Sequence](animation-clip.md)
-- [Make Frame Animation](sprite-animation.md)
+- [Creating A Frame Animation](sprite-animation.md)
 - [Edit Animation Curve](animation-curve.md)
 - [Animation event](animation-event.md)
 
