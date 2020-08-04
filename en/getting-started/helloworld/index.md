@@ -29,13 +29,13 @@ The layout is customizable, if you don't find the default layout suitable.
 ## Project Directory
 Usually, the most commonly used directory is `assets`. There are others:
 
-- assets (resources directory)
-- build (build directory)
-- library (imported resources directory)
-- local (log file directory)
-- profiles (editor configuration)
-- temp (temporary file directory)
-- package.json (project configuration)
+- `assets` (resources directory)
+- `build` (build directory)
+- `library` (imported resources directory)
+- `local` (log file directory)
+- `profiles` (editor configuration)
+- `temp` (temporary file directory)
+- `package.json` (project configuration)
 
 ## Creating a New Scene
 
@@ -118,7 +118,7 @@ export class HelloWorld extends Component {
 ```
 
 ### Bind scripts to objects
-Select the created cube and click __Add component__ -> __custom script__->__HelloWorld__
+Select the created cube and click __Add component__ -> __Custom Script__->__HelloWorld__
 
 ![](index/component.png)
 
@@ -128,12 +128,12 @@ In the __Editor__, from the __menu bar__ click __Project__ -> __Run preview__, o
 ![](index/run.png)
 
 ## Debuging a project
-In the __Editor__, from the __menu bar__ click __developer__ -> __scene debugging tool__
+In the __Editor__, from the __menu bar__ click __Developer__ -> __Scene Debugging Tool__
 
 It is also may be necessary to Log information. The __Console__ panel displays all log output.
 
 ![](index/console.png)
 
-__Breakpointsa__ can also be placed for stooping execution of the debugger to examine values. Select the __Source__ option on the __tab bar__ and press __CTRL+P__, Search for `HelloWorld.ts`, set a breakpoint in the `onLoad()` function, and then run the preview to debug. 
+__Breakpoints__ can also be placed for stopping execution of the debugger to examine values. Select the __Source__ option on the __tab bar__ and press __CTRL+P__, Search for `HelloWorld.ts`, set a breakpoint in the `onLoad()` function, and then run the preview to debug. 
 
 ![](index/debug.png)
