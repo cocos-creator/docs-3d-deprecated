@@ -134,6 +134,6 @@ It is also may be necessary to Log information. The __Console__ panel displays a
 
 ![](index/console.png)
 
-__Breakpointsa__ can also be placed for stooping execution of the debugger to examine values. Select the __Source__ option on the __tab bar__ and press __CTRL+P__, Search for `HelloWorld.js`, set a breakpoint in the `onLoad()` function, and then run the preview to debug. 
+__Breakpointsa__ can also be placed for stooping execution of the debugger to examine values. Select the __Source__ option on the __tab bar__ and press __CTRL+P__, Search for `HelloWorld.ts`, set a breakpoint in the `onLoad()` function, and then run the preview to debug. 
 
 ![](index/debug.png)
