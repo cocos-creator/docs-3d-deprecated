@@ -20,7 +20,7 @@ Mouse over this option and an **Edit** button will appear. Click this button and
 
 ### Included Scenes
 
-There are usually multiple game scenes in the project, this option allows you to choose the scenes you want to package. During the build process, all assets that depended on these selected scene assets in deep will be packaged. Just select the game scenes that are actually needed can reduce the size of game package after build. 
+There are usually multiple game scenes in the project, this option allows you to choose the scenes you want to package. During the build process, all assets that depended on these selected scene assets in deep will be packaged. Just select the game scenes that are actually needed can reduce the size of game package after build.
 
 For more information about assets packaging, please refer to the [Build Process with FAQ](./build-guide) documentation.
 
@@ -32,19 +32,21 @@ The first scene after entering the game can be set directly in the **Start Scene
 
 The build will compress engine files and project scripts by default, if you want to generate a `sourcemap`, you need to check this box.
 
-A `source map` is a file that maps from the transformed source to the original source, enabling the browser to reconstruct the original source and present the reconstructed original in the debugger. 
+A `source map` is a file that maps from the transformed source to the original source, enabling the browser to reconstruct the original source and present the reconstructed original in the debugger.
 
 For more details on `source maps`, please refer to the [Source Maps](https://developer.mozilla.org/en-US/docs/Tools/Debugger/How_to/Use_a_source_map) documentation.
 
 ### Compress Texture
 
-Some compression options can be added to `spriteFrame` type image assets in the editor. Once enabled, the corresponding image assets are generated based on these compression options during build. If disabled, the compression texture will not take effect at build time even if configured. 
+Some compression options can be added to `spriteFrame` type image assets in the editor. Once enabled, the corresponding image assets are generated based on these compression options during build. If disabled, the compression texture will not take effect at build time even if configured.
 
 Please refer to the [Compress Texture](../../asset/compress-texture.md) documentation for details.
 
 ### packAutoAtlas
 
-The **Auto Atlas** is the editor's built-in texture merge. If this is disabled, even if you configure the `packAutoAtlas`, it will not take effect at build time. 
+The **Auto Atlas** is the editor's built-in texture merge. If this is disabled, even if you configure the `packAutoAtlas`, it will not take effect at build time.
+
+When the **Auto Atlas** is configured in the `resources` folder, the compiled image, the raw images and all they serialization JSON will be packaged. Please don't use it like that unless necessary.
 
 Please refer to the [Auto Atlas](../../asset/auto-atlas.md) documentation for details.
 
@@ -77,6 +79,6 @@ Click **Project -> Project Setting -> Modules** in the menu bar to open the **Mo
 
 ### Canvas
 
-Click **Project -> Project Setting -> General -> Default canvas setting** in the menu bar to set the **Canvas**. The Canvas is mainly used to set multiple resolutions. If there is no `Canvas` component in the project, this option can be ignored. 
+Click **Project -> Project Setting -> General -> Default canvas setting** in the menu bar to set the **Canvas**. The Canvas is mainly used to set multiple resolutions. If there is no `Canvas` component in the project, this option can be ignored.
 
 Please refer to the [Multi-Resolution Adaption](../../ui-system/components/engine/multi-resolution.md) documentation for details.
