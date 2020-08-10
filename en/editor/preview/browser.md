@@ -112,7 +112,7 @@ Open `Project ——> Project Preview`,we can modified custom device info in thi
 
 Take Chrome for example, open menu and choose `Developer/Developer Tools` to open the Developer Tools. We can debug source code, add breakpoint, check call stack and step control during debugging.
 
-To learn more about using DevTools, please read [Chrome Dev Tools User Guide](https://developer.chrome.com/devtools), or other browser's developer documentation.
+To learn more about using DevTools, please read [Chrome Dev Tools User Guide](https://developers.google.com/web/tools/chrome-devtools), or other browser's developer documentation.
 
 ## Browser compatibility
 
