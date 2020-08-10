@@ -43,15 +43,17 @@ export const configs: IConfigs = {
         options: {
             remoteAddress: {
                 label: 'i18n:xxx',
-                ui: 'input',
-                options: {
-                    placeholder: 'Enter remote address...'
+                render: {
+                    ui: 'input',
+                    attributes: {
+                        placeholder: 'Enter remote address...',
+                    },
                 },
-                verifyRules: ['require', 'http']
-            }
-        }
-    }
-}
+                verifyRules: ['require', 'http'],
+            },
+        },
+    },
+};
 ```
 
 > 注意：如果平台 key 添写的是 `*` 则对所有的平台都生效，但是用 `*` 和指定平台名称是互斥的，请不要在同一个构建插件内部同时使用两种配置方式。其中 `hooks` 字段传递的脚本将会在构建进程内执行，`panel` 字段传递的脚本则会在渲染进程内执行，不同进程内的环境变量会有所差异，在编写脚本时需要额外注意。
@@ -67,15 +69,15 @@ declare interface IBuildPlugin {
 }
 declare type IDisplayOptions = Record<string, IConfigItem>;
 declare interface IConfigItem {
-
     // 默认值，注册的默认值将会在插件自身配置里的 options.[platform].xxx 字段内
     default?: any;
 
-
-    // ------ 渲染 ui 组件规则，与 ui-prop 处统一规则一致，只有指定了 ui 属性的配置才会在构建配置面板上显示
-    ui?: string;
-    // 传给 ui 组件的配置参数
-    options?: IUiOptions;
+    render: ?{
+        // ------ 渲染 ui 组件规则，与 ui-prop 处统一规则一致，只有指定了 ui 属性的配置才会在构建配置面板上显示
+        ui?: string;
+        // 传给 ui 组件的配置参数
+        attributes?: IUiOptions;
+    };
 
     // 配置显示的名字，如果需要翻译，则传入 i18n:${key}
     label?: string;
@@ -84,10 +86,11 @@ declare interface IConfigItem {
     description?: string;
 
     // 配置的类型
-    type?: "array" | "object";
+    type?: 'array' | 'object';
 
     // 如果 type 是 array，则会按照指定数据类型和 itemConfigs 来渲染数据
     itemConfigs?: Record<string, IConfigItem> | IConfigItem[];
+}
 
 declare interface IUiOptions extends IOptionsBase {
     // 校验规则数组，构建提供一些基础规则，也可以通过 verifyRuleMap 来指定新的校验规则,只有当传入 require 时才会做无值的校验，否则仅存在值时才校验
@@ -100,7 +103,7 @@ declare interface IUiOptions extends IOptionsBase {
 ```
 
 > 其中 IOptionsBase 的接口定义需要参考 [ui-prop 自动渲染规则定义](ui/ui-prop.md);
-其中配置 IConfigItem 的接口定义需要参考 [通用配置参数的接口定义](package/config.md);
+> 其中配置 IConfigItem 的接口定义需要参考 [通用配置参数的接口定义](package/config.md);
 
 ## 自定义构建钩子函数代码配置
 
@@ -120,7 +123,6 @@ declare interface IHook {
     onAfterBuild?: IBaseHooks;
 }
 type IBaseHooks = (options: IBuildTaskOptions, result?: IBuildResult) => void;
-
 ```
 
 > 注意：在 `onBeforeCompressSettings` 开始才能访问到 `result` 参数，并且传递到钩子函数内的 `options` 是实际构建进程中使用 `options` 一个副本仅作为信息的获取参考，因而直接修改它并不会真正的影响构建。构建参数的修改请使用入口的 `options` 来配置。由于接口定义众多，详细的接口定义可以参考构建插件模板文件夹内的 `@types/builder.d.ts` 文件。
