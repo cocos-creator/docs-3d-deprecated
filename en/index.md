@@ -1,8 +1,8 @@
-# Cocos Creator 3D User Manual
+# Cocos Creator 3.0 Tech Preview User Manual
 
-Welcome to the __Cocos Creator 3D__ user manual! This manual includes detailed instructions, a workflow for users, and a step-by-step tutorial for beginners. This manual canan help you quickly learn how to develop cross-platform games with __Cocos Creator 3D__.
+Welcome to the __Cocos Creator 3.0 Tech Preview__ user manual! This manual includes detailed instructions, a workflow for users, and a step-by-step tutorial for beginners. This manual canan help you quickly learn how to develop cross-platform games with __Cocos Creator 3.0 Tech Preview__.
 
-> **Note**: please select the corresponding manual version in the upper right corner according to the __Cocos Creator 3D__ version you are using.
+> **Note**: please select the corresponding manual version in the upper right corner according to the __Cocos Creator 3.0 Tech Preview__ version you are using.
 
 ## General guide
 
@@ -67,4 +67,4 @@ Use the feature map to quickly understand engine features:
 - [Module display collection](https://github.com/cocos-creator/test-cases-3d): The example project of each function of the engine, which basically covers most of the function modules of the engine. Users can refer to it when using the functions Development in this project
 - [UI Show Demo](https://github.com/cocos-creator/demo-ui/tree/3d): Demo of various UI components combined use Demo
 
-> **Note**: the above items will be updated from time to time. Their default branch on GitHub is `master`, which generally corresponds to the latest __Cocos Creator 3D__ version. If you are still using an older version of __Cocos Creator 3D__, these projects may not open, try to switch to the same named branch as the old version.
+> **Note**: the above items will be updated from time to time. Their default branch on GitHub is `master`, which generally corresponds to the latest __Cocos Creator 3.0 Tech Preview__ version. If you are still using an older version of __Cocos Creator 3.0 Tech Preview__, these projects may not open, try to switch to the same named branch as the old version.
