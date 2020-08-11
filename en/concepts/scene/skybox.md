@@ -4,7 +4,7 @@ __Skybox__, in video games, is a cube that wraps the entire scene. The __Skybox_
 
 The __Skybox__ in __Cocos Creator 3D__, is shown below:
 
-![skybox](skybox/Skybox.jpg)
+![skybox](skybox/Skybox.png)
 
 ## Enabling Skybox
 
@@ -19,12 +19,28 @@ Enabling the __Skybox__ effect in __Cocos Creator 3D__, takes just one step:
 
 Modifying the environment map of the __Skybox__ in __Cocos Creator 3D__ is done by setting a asset of type __TextureCube__. Importing from a asset into a __TextureCube__ and setting it into a __Skybox__ can be done in the following steps:
 
-  1. Import picture assets. 
-  > **Note**: Here is an example of a panorama, we will introduce how to make a `CubeMap` later in this documentation.
-  2. Select the imported panorama asset and set it to the __TextureCube__ type in the __Inspector panel__ on the right, as shown in this figure:
-  ![Set as TextureCube](skybox/TextureCube.jpg)
-  3. Drag the __TextureCube__ asset to the __Envmap property__ on the __Skybox's Inspector Panel__.
-  ![Set the environment map of the skybox](skybox/EnvmapSet.jpg)
+1. Import picture assets. 
+    > **Note**: Here is an example of a panorama, we will introduce how to make a `CubeMap` later in this documentation.
+
+2. Select the imported panorama asset and set it to the __TextureCube__ type in the __Inspector panel__ on the right, as shown in this figure:
+   
+    ![Set as TextureCube](skybox/TextureCube.jpg)
+
+3. Drag the __TextureCube__ asset to the __Envmap property__ on the __Skybox's Inspector Panel__.
+   
+    ![Set the environment map of the skybox](skybox/EnvmapSet.jpg)
+
+After completing the above steps, you should be able to see the newly replaced environment map in the editor scene.
+
+## Confirm the parameter of SkyIllum
+If the skybox didn't show in the scene editor after you completing the previous step, then it is highly likely that the SkyIllum parameter setting is too low. Check the parameter of `ambient -> SkyIllum` in the inspector of scene node. Generally speaking, if SkyIllum <300, the sky box texture is not very visible. SkyIllum = 5000 is probably the light intensity of the moon night. For the newly created Cocos Creator 3D project, the default SkyIllum = 20000.
+
+## Modify the Clear Flag of Camera
+After completing the above steps, although the skybox can be displayed correctly in the scene editor, it is still not visible when running. At this time, you need to modify the Clear Flag of Camera to SKYBOX, as shown below
+
+![change Clear Flag of Camera to SKYBOX](skybox/SkyboxCamera.jpg)
+
+This completes all the steps of setting the skybox in Cocos Creator 3D.
 
 ## Skybox panel
 
@@ -47,10 +63,21 @@ __CubeMap__ is a kind of environment map asset for a __Skybox__. It is composed 
 
 To make a __CubeMap__ in __Cocos Creator 3D__ and set it to a __Skybox__, follow these steps:
 
-  1. Create a new __CubeMap__ asset, and import the six texture map assets prepared in advance, and set these texture assets to the __Texture__ type.
-  2. Drag the imported texture assets into the corresponding input box, and click the green check button when you are finished.
-  ![Set as CubeMap](skybox/CubeMap.jpg)
+1. import the six texture map assets prepared in advance, and set these texture assets to the __Texture__ type.
 
-  3. Finally, drag the completed __CubeMap__ asset into the __Envmap__ property box of the __Skybox__. This completes the application of a __CubeMap__.
+    ![import Cubemap textures](skybox/Cubemap_Textures.png)
+    ![create Cubemap textures type](skybox/Cubemap_Textures_type.png)
+
+2. Create a new __CubeMap__ resource  
+ 
+    ![create Cubemap](skybox/Cubemap_Create.png)
+
+3. Drag the imported texture assets into the corresponding input box, and click the green check button when you are finished.
+   
+    ![Set CubeMap](skybox/Cubemap_Inspector.png)
+
+4. Finally, drag the completed __CubeMap__ asset into the __Envmap__ property box of the __Skybox__. This completes the application of a __CubeMap__.
+
+    ![CubeMap](skybox/Cubemap_Show.png)
 
 > **Note**: Faces that are not mapped in __CubeMap__. It will be filled with a default texture.
