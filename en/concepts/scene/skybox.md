@@ -63,7 +63,7 @@ __CubeMap__ is a kind of environment map asset for a __Skybox__. It is composed 
 
 To make a __CubeMap__ in __Cocos Creator 3D__ and set it to a __Skybox__, follow these steps:
 
-1. import the six texture map assets prepared in advance, and set these texture assets to the __Texture__ type.
+1. Import the six texture map assets prepared in advance, and set these texture assets to the __Texture__ type.
 
     ![import Cubemap textures](skybox/Cubemap_Textures.png)
     ![create Cubemap textures type](skybox/Cubemap_Textures_type.png)
