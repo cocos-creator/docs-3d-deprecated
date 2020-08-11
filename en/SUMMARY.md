@@ -194,7 +194,7 @@
   - [组件](scripting/component.md)
   - [组件顺序](scripting/execution-order-component.md)
   - [事件机制](engine/event/index.md)
-  - [插件脚本](scripting/plugin-scripts.md)
+  - [插件脚本](scripting/external-scripts.md)
   - [添加 Log](scripting/log.md)
   - [废弃 API](scripting/deprecated.md)
 
