@@ -46,7 +46,7 @@ Please refer to the [Compress Texture](../../asset/compress-texture.md) document
 
 The **Auto Atlas** is the editor's built-in texture merge. If this is disabled, even if you configure the `packAutoAtlas`, it will not take effect at build time.
 
-When the **Auto Atlas** is configured in the `resources` folder, the compiled image, the raw images and all they serialization JSON will be packaged. Please don't use it like that unless necessary.
+When the **Auto Atlas** is configured in the `resources` folder, the compiled image, the raw images and all the serialization JSON will be packaged. Please don't use it like that unless necessary.
 
 Please refer to the [Auto Atlas](../../asset/auto-atlas.md) documentation for details.
 
