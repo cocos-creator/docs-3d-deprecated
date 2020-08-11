@@ -1,6 +1,6 @@
 # 扩展构建流程
 
-构建平台插件首先是需要一个普通的编辑器插件格式，关于插件的基本结构可以参考 [Package 插件系统](../package/index.md)。扩展构建功能首先需要对构建的整体处理流程有所了解，不熟悉的用户建议先阅读 [构建流程简介与常见问题指南](./build-guide.md)。
+构建平台插件首先是需要一个普通的编辑器插件格式，关于插件的基本结构可以参考 [Package 插件系统](../extension/install.md)。扩展构建功能首先需要对构建的整体处理流程有所了解，不熟悉的用户建议先阅读 [构建流程简介与常见问题指南](./build-guide.md)。
 
 ## 快速开始
 
@@ -102,7 +102,7 @@ declare interface IUiOptions extends IOptionsBase {
 }
 ```
 
-> 其中 IOptionsBase 的接口定义需要参考 [ui-prop 自动渲染规则定义](ui/ui-prop.md);
+> 其中 IOptionsBase 的接口定义需要参考 [ui-prop 自动渲染规则定义](../extension/ui.md);
 
 ## 自定义构建钩子函数代码配置
 
