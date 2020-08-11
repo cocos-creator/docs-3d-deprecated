@@ -46,7 +46,6 @@ The user can customize the supported image assets for a platform and the priorit
 
 ![1](compress-texture/compress-1.jpg)
 
-**Example (1):**
 As the compress presets of the MiniGame platform shown in the figure, if the build target is **Huawei Quick Game**, **Builder** will not package the **PVR** texture format. For more details about the support of platforms, please refer to [Details of compressed texture support for platforms](##Details of compressed texture support for platforms)
 
 ![2](compress-texture/compress-2.jpg)

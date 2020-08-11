@@ -40,8 +40,7 @@ the macro name shouldn't collide with any existing macros inside the shader.<br>
 This property doesn't exist by default, which means the pass is executed unconditionally.
 
 ## Priority
-Specifies the rendering priority of the current pass, the bigger the number, the lower the priority;<br>
-default is (128), min is (0), max is (255), arithmetic operations between these constants and integer constants are supported.
+Specifies the rendering priority of the current pass, the bigger the number, the lower the priority. The default is (128), min is (0), max is (255), arithmetic operations between these constants and integer constants are supported.
 
 ## Stage
 Specifies which render stage the current pass belongs to.
@@ -144,7 +143,7 @@ If `newFloat` property already exists before migration, nothing will happen, unl
 ```
 Then the migration is guaranteed to execute, regardless of the existing data.<br>
 
-> Note: Migration in force mode will execute in every database event, which is basically every mouse click in editor. So use it as a quick-and-dirty test measure, and be sure not to submit effect files with force mode migrations into version control.
+> **Note**: Migration in force mode will execute in every database event, which is basically every mouse click in editor. So use it as a quick-and-dirty test measure, and be sure not to submit effect files with force mode migrations into version control.
 
 ## Property Parameter List
 All parameters are optional, with its default value in bold.

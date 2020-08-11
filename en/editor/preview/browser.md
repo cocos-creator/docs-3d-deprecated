@@ -1,11 +1,10 @@
-
 # Preview In Browser
 
 ## How To Preview
 
 ![preview](index/preview.jpg)
 
-We can click the **Preview** button on top of editor window to see the game in action. After click, editor will launch the game in your default browser. We recommend [Chrome](http://google.com/chrome) as the browser of the choice, since the DevTools of Chrome is most advanced in web debugging and inspecting.
+Click the **Preview** button on top of editor window to see the game in action. After clicking, editor will launch the game in your default browser. We recommend [Chrome](http://google.com/chrome) as the browser of choice, since the developer tools in Chrome are most advanced in web debugging and inspecting.
 
 There are a number of control in **Preview** page:
 
@@ -23,13 +22,13 @@ There are a number of control in **Preview** page:
 ![refresh](index/refresh.jpg)
 
 If we want to refresh the preview page after some modified, just refresh in browser or click the refresh button in editor.
-The difference is that click refresh button in editor will **refresh all preview pages**.If you want the preview page to refresh automatically, just save the scene.The settings for saving scene auto-refresh can be enable in `Project Settings-> Project Preview`.
+The difference is that click refresh button in editor will **refresh all preview pages**.If you want the preview page to refresh automatically, just save the scene.The settings for saving scene auto-refresh can be enable in __Project Settings-> Project Preview__.
 
 ![start-scene](index/auto-refresh.jpg)
 
 ## Scene of Preview
 
-The editor will use **the current scene** as start-scene of preview, we can modified it in `Project Settings-> Project Preview`.(Please refer to [Project Settings](../project/index.md) for details)
+The editor will use **the current scene** as start-scene of preview, we can modified it in `Project Settings-> Project Preview`. For more information, please refer to the [Project Settings](../project/index.md) documentation.
 
 ![start-scene](index/start-scene.jpg)
 
@@ -47,11 +46,11 @@ There are the following ways to debug the preview page on the mobile phone:
 
 ![preview-url](index/preview-url.jpg)
 
-> **Notes**: Make sure the mobile phone and the computer is **on the same network segment**.Since there will be multiple networks on the computer, if the IP address of the preview URL in the editor is incorrectly, you can modify it in `Preferences-> General Settings-> Select Local Preview Address`. Please refer to the description of [preference settings](../preference/index.md) for details.
+> **Note**: Make sure the mobile phone and the computer is **on the same network segment**.Since there will be multiple networks on the computer, if the IP address of the preview URL in the editor is incorrectly, you can modify it in `Preferences-> General Settings-> Select Local Preview Address`. Please refer to the description of the[preference settings](../preference/index.md) documentation.
 
 ## Custom Preview Template
 
-We can add custom preview template to change the preview result,just put your template in **`preview-template`** folder in the project dictionary.Editor also use template to render to `index.html`. If there is a file named `index.ejs` in this dictionary,editor will use it as the template that render to `index.html`.Your can click the menu in editor **`Project ——> Generate Preview Template`** to get the latest template used in editor.
+We can add custom preview template to change the preview result,just put your template in **`preview-template`** folder in the project dictionary.Editor also use template to render to `index.html`. If there is a file named `index.ejs` in this dictionary,editor will use it as the template that render to `index.html`.Your can click the menu in editor **Project ——> Generate Preview Template** to get the latest template used in editor.
 
 ```
 project-folder
@@ -61,15 +60,15 @@ project-folder
         |--index.ejs
 ```
 
-> **Notes**: There are some preview menu items and preview debugging tools in the preview template, We recommended you keep all the content and **just add what you need** or modified code carefully to avoid some unexpected errors.. In addition, if `index.html` and `index.ejs` coexist, **`index.html` will replace `index.ejs`** as the render-template for preview page .
+> **Note**: There are some preview menu items and preview debugging tools in the preview template, We recommended you keep all the content and **just add what you need** or modified code carefully to avoid some unexpected errors.. In addition, if `index.html` and `index.ejs` coexist, `index.html` **will replace** `index.ejs` as the render-template for preview page.
 
 ### Examples of Use
 
-Code of this example is stored in the [test-case-3d](https://github.com/cocos-creator/test-cases-3d).
+Code of this example is stored in the [test-case-3d](https://github.com/cocos-creator/test-cases-3d) repository.
 
 1. **Get lasted preview template**
 
-     Click the menu **`Project-> Generate Preview Template`** to generate a preview template, and the address generated by the preview template will be printed in the console.
+     Click the menu **Project-> Generate Preview Template** to generate a preview template, and the address generated by the preview template will be printed in the console.
 
 2. **Add script in folder**
 
@@ -104,20 +103,20 @@ Code of this example is stored in the [test-case-3d](https://github.com/cocos-cr
 
 ## Add Custom Devices Info
 
-Open `Project ——> Project Preview`,we can modified custom device info in this page, they will work after refresh your preview page.
+Open __Project ——> Project Preview__. Custom device info can be modified on this page, and changes will work after refreshing the preview page.
 
 ![Custom Devices Info](./browser/user_device.jpg)
 
 ## Debugging with browser Developer Tools
 
-Take Chrome for example, open menu and choose `Developer/Developer Tools` to open the Developer Tools. We can debug source code, add breakpoint, check call stack and step control during debugging.
+Take Chrome for example, open menu and choose __Developer/Developer Tools__ to open the __Developer Tools__. It is possible to debug source code, add breakpoints, check the call stack and use step control during debugging.
 
-To learn more about using DevTools, please read [Chrome Dev Tools User Guide](https://developers.google.com/web/tools/chrome-devtools), or other browser's developer documentation.
+To learn more about using DevTools, please read the [Chrome Dev Tools User Guide](https://developer.chrome.com/devtools) documentation, or other browser's developer documentation.
 
 ## Browser compatibility
 
-The desktop browsers tested during Cocos Creator 3D development include: Chrome, Firefox (Firefox), other browsers can be used as long as the kernel version is high enough. Please do not enable IE6 compatibility mode.Browsers tested on mobile devices include: Safari (iOS), Chrome, QQ browser, UC browser, WeChat built-in Webview.
+The desktop browsers tested during __Cocos Creator 3D__ development include: Chrome, Firefox (Firefox), other browsers can be used as long as the kernel version is high enough. Please do not enable IE6 compatibility mode. Browsers tested on mobile devices include: *Safari (iOS)*, *Chrome*, *QQ browser*, *UC browser*, and *WeChat built-in Webview*.
 
-<hr>
+---
 
-Continue to [Introduction To Preview Process And Common Error Handling](preview-guid.md) documentation.
+Continue to the [Introduction To Preview Process And Common Error Handling](preview-guid.md) documentation.

@@ -25,4 +25,6 @@ Particle System Gizmo is used for the visualization of the [ShapeModule](../part
 
 ![particle cone gizmo](images/particle-cone-gizmo.png)
 
-## [<-Scene Editor](index.md)
+---
+
+Continue to the [Scene Editor](index.md) documentation.

@@ -1,13 +1,13 @@
 # Auto fit for multi-resolution
 
-In the overall design of Cocos Creator 3D, it follows Cocos Creator's solution about adapting to screens with various resolutions with one set of resources. Generally speaking, we realize the adaptation scheme for multi-resolution through the following technology:
+In the overall design of **Cocos Creator 3D**, it follows Cocos Creator's solution about adapting to screens with various resolutions with one set of assets. Generally speaking, we realize the adaptation scheme for multi-resolution through the following technology:
 
 - __Canvas__ component immediately obtains the actual resolution of the device screen and appropriately adjusts the size of all the render elements in the scene.
 - __Widget__ is put on rendering elements, which can align the element with different referential positions of the parent node according to different needs.
 - __Label__ component has a built-in function that provides various dynamic layout modes. When the bounding box of labels change because of the alignment requirement of the Widget, labels will present the perfect layout effect according to your needs.
 - __Sliced Sprite__ provides images whose size can be arbitrarily designated. Simultaneously, it can meet various alignment requirements and display images with high definition on screens of any resolution.
 
-Next, we start off by getting to know the concepts of design resolution and screen resolution, then we will go on to learn the zooming in/out function of the [Canvas](../editor/canvas.md) component.
+Next, start off by getting to know the concepts of design resolution and screen resolution, then we will go on to learn the zooming in/out function of the [Canvas](../editor/canvas.md) component.
 
 ## Design resolution and screen resolution
 
@@ -15,7 +15,7 @@ __Design resolution__ is the resolution sample used by content creators when cre
 
 Normally, design resolution will use the screen resolution of the device that is being used the most by the targeted group on the market, such as: screen resolutions of `800x480` and `1280x720` that are being used by Android devices currently, or screen resolutions of `1136x640` and `960x640` that are being used by iOS devices. Therefore, after designers or directors set up the scene by using design resolution, the game will automatically adapt to the device used by the major targeted group.
 
-Then when the design resolution is different from the screen resolution, how could Cocos Creator 3D adapt to the device?
+Then when the design resolution is different from the screen resolution, how could **Cocos Creator 3D** adapt to the device?
 
 Supposing the design resolution is `800x480`, designers will create a background image of the same resolution.
 

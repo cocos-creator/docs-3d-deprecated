@@ -45,7 +45,7 @@ Additional physics system will be introduced in more detail through the followin
 
 Module | Description
 ---|---
-[**Physics Options**](physics-item.md) | Introduces the optional options of low-level physics engine in Cocos Creator 3D
+[**Physics Options**](physics-item.md) | Introduces the optional options of low-level physics engine in **Cocos Creator 3D**
 [**Physics System**](physics-system.md) | Introduces the physics system and a series of properties and interfaces of the physics system.
 [**Physics Component**](physics-component.md) | Introduces some physics components and a series of properties on the panel.
 [**Physics Usage**](physics-use.md) | Further introduces the use of physics, events, group masks, etc.

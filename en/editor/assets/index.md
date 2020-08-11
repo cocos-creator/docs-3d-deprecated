@@ -55,7 +55,7 @@ In the __Asset List__, you can use the following operations to select assets:
 The assets are moved by dragging the tree nodes:
 
 - **Move the asset**: the asset is dragged from one folder in the tree list to another folder. An orange frame will indicate the range of the folder to which the new location belongs.
-- **Drag out assets**: you can drag *.prefab*, *.gltf*, *.mesh*, *.fbx* assets to the **Scene Panel** or the **Level Panel** to generate nodes.
+- **Drag out assets**: you can drag *.prefab*, *.gltf*, *.mesh*, *.fbx* assets to the **Scene Panel** or the **Hierarchy Manager** to generate nodes.
 - **Drag the asset**: drag the node from the **Explorer Panel** to a folder in the list. You can save the node as a `.prefab` asset. Please see the[Prefab Asset](../../asset/prefab.md) documentation. From the file manager of the **operating system**, drag the file to the list to realize the asset import.
 
   ![Mobile Resources](img/drag.png)

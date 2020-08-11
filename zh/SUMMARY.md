@@ -51,6 +51,7 @@
     - [原生平台 JavaScript 调试](editor/publish/debug-jsb.md)
   - [发布到支付宝小游戏](editor/publish/publish-alipay-mini-game.md)
   - [发布到华为快游戏](editor/publish/publish-huawei-mini-game.md)
+  - [发布到字节小游戏](editor/publish/publish-bytedance-mini-game.md)
   - [发布到 Cocos Play](editor/publish/publish-cocos-play.md)
   - [发布到微信小游戏](editor/publish/publish-wechatgame.md)
     - [启用微信小游戏引擎插件](editor/publish/wechatgame-plugin.md)
@@ -189,7 +190,7 @@
   - [组件](scripting/component.md)
   - [组件顺序](scripting/execution-order-component.md)
   - [事件机制](engine/event/index.md)
-  - [插件脚本](scripting/plugin-scripts.md)
+  - [插件脚本](scripting/external-scripts.md)
   - [添加 Log](scripting/log.md)
   - [废弃 API](scripting/deprecated.md)
 
