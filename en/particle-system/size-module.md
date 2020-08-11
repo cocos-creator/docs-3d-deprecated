@@ -1,7 +1,7 @@
 ## Size Overtime Module
 ![](particle-system/size_module.png)
 
-Attribute | Role
+Property | Role
 ---|---
 **separateAxes** | Whether the three axes are scaled separately.
 **size** | The curve of the size change with time can be used in different calculation modes. It is valid when separateAxes is false.

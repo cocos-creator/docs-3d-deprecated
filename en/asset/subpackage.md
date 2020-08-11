@@ -28,7 +28,7 @@ When building and publishing, all the **code** and **assets** in the **cases/01_
 
   - **Code**: all code in the **cases/01_graphics** folder will be merged into an entry script file named **01_graphics/game.js**, and these codes will be removed from the main package .
   
-  - **Resources**: will move the **cases/01_graphics** sub-package assets from the **res/raw-assets** folder in the release package directory to **sub-packages/01_graphics** in the release package directory under __contents__.
+  - **Assets**: will move the **cases/01_graphics** sub-package assets from the **res/raw-assets** folder in the release package directory to **sub-packages/01_graphics** in the release package directory under __contents__.
 
 ## Loading child packages
 

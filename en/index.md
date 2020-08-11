@@ -2,11 +2,11 @@
 
 Welcome to the __Cocos Creator 3D__ user manual! This manual includes detailed instructions, a workflow for users, and a step-by-step tutorial for beginners. This manual canan help you quickly learn how to develop cross-platform games with __Cocos Creator 3D__.
 
-> **Note**: Please select the corresponding manual version in the upper right corner according to the __Cocos Creator 3D__ version you are using.
+> **Note**: please select the corresponding manual version in the upper right corner according to the __Cocos Creator 3D__ version you are using.
 
 ## General guide
 
-Use the feature map to quickly understand engine features
+Use the feature map to quickly understand engine features:
 
 - [Function Map](module-map/index.md)
   - [Graphics rendering](module-map/graphics.md)
@@ -19,15 +19,18 @@ Use the feature map to quickly understand engine features
   - [Physical Simulation](physics/physics.md)
   - [Scripting Guide and Event System](scripting/index.md)
   - [Components](editor/components/index.md)
-  - [Resources](asset/index.md)
+  - [Assets](asset/index.md)
   - [Scene and Environment Settings](concepts/scene/index.md)
+
 
 - Beginner's guide
   - [Novice](getting-started/index.md)
   - [Dashboard](getting-started/dashboard/index.md)
-  - [Hello world!](Getting-started/helloworld/index.md)
+  - [Hello world!](getting-started/helloworld/index.md)
   - [Quick start: making your first game](getting-started/first-game/index.md)
   - [Caution](getting-started/attention/index.md)
+
+
 - Editor manual
   - [Quick Start](getting-started/index.md)
   - [Panel Introduction](editor/index.md)
@@ -36,6 +39,8 @@ Use the feature map to quickly understand engine features
   - [Animation System](editor/animation/index.md)
   - [Terrain System](editor/terrain/index.md)
   - [Build release](editor/publish/index.md)
+
+
 - Engine Manual
   - [Scenes and Environment](concepts/scene/index.md)
   - [Lighting](concepts/scene/light.md)
@@ -62,4 +67,4 @@ Use the feature map to quickly understand engine features
 - [Module display collection](https://github.com/cocos-creator/test-cases-3d): The example project of each function of the engine, which basically covers most of the function modules of the engine. Users can refer to it when using the functions Development in this project
 - [UI Show Demo](https://github.com/cocos-creator/demo-ui/tree/3d): Demo of various UI components combined use Demo
 
-> **Note**: these items will be updated with the version from time to time. Their default branch on GitHub is master, which generally corresponds to the latest __Cocos Creator 3D__ and version. If you are still using an older version of __Cocos Creator 3D__, these projects may not open, try to switch to the same named branch as the old version.
+> **Note**: the above items will be updated from time to time. Their default branch on GitHub is `master`, which generally corresponds to the latest __Cocos Creator 3D__ version. If you are still using an older version of __Cocos Creator 3D__, these projects may not open, try to switch to the same named branch as the old version.

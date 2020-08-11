@@ -1,7 +1,7 @@
 ## Trail Module
 ![](particle-system/trail_module.png)
 
-Attribute | Role
+Property | Role
 ---|---
 **mode** | Particle forms a trailing effect on each particle's trajectory.
 **LifeTime** | The life cycle of trail.

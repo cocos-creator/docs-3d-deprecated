@@ -4,7 +4,7 @@ The particle rendering part is controlled by ParticleSystemRenderer, which is di
 ![](particle-system/renderer.png)
 
 
-Attribute | Role
+Property | Role
 ---|---
 **renderMode** | Set a particle patch generation method, **billboard** particles always face the camera, **stretchedBillboard** particles always face the camera, but will be stretched according to the relevant parameters, **horizontalBillboard** particle patches are always in the xz plane Parallel, **verticalBillboard** The particle patch is always parallel to the Y axis, but will face the camera, and **mesh** particles are a model.
 **velocityScale** | In **stretchedBillboard** mode, the particles are stretched according to the speed in the direction of motion.

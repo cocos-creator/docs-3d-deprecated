@@ -4,7 +4,7 @@ Cocos Creator 3D 从 v1.0.2 开始正式支持将游戏发布到 OPPO 小游戏�
 
 ## 环境配置
 
-- 下载 [OPPO 小游戏调试器](https://cdofs.oppomobile.com/cdo-activity/static/201810/26/quickgame/documentation/games/use.html)，并安装到 Android 设备上（建议 Android Phone 6.0 或以上版本）
+- 下载 [OPPO 小游戏调试器](https://cdofs.oppomobile.com/cdo-activity/static/201810/26/quickgame/documentation/#/games/use)，并安装到 Android 设备上（建议 Android Phone 6.0 或以上版本）
 
 - 全局安装 [nodejs-8.1.4](https://nodejs.org/zh-cn/download/) 或以上版本
 

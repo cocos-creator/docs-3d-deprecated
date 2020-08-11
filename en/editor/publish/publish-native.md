@@ -1,8 +1,8 @@
 # Publishing to native
 
-Cocos Creator 3D officially supports the native platform since v1.0.3, click the **Project -> Build** in the main menu to open the **Build** panel.
+**Cocos Creator 3D** officially supports the native platform since v1.0.3, click the **Project -> Build** in the main menu to open the **Build** panel.
 
-Currently, there are four native platforms, which include **Android**, **iOS**, **Mac** and **Windows**. The options to release games on iOS, Mac and Windows will only appear on those operating systems. This means it isn't possible to publish, for example, a game to iOS from a Windows computer. Currently, all native platforms are packaged together, you can configure the parameters of each native platform in the **Build** panel, and all native platform release packages can be generated in one build.
+There are four native platforms, which include **Android**, **iOS**, **Mac** and **Windows**. The options to release games on iOS, Mac and Windows will only appear on those operating systems. This means it isn't possible to publish, for example, a game to iOS from a Windows computer. Currently, all native platforms are packaged together, you can configure the parameters of each native platform in the **Build** panel, and all native platform release packages can be generated in one build.
 
 ## Environment Configuration
 
@@ -18,9 +18,9 @@ The following are specific build options for individual platforms and considerat
 
 ### MD5 Cache
 
-**MD5 Cache** is used as a generic option, mainly to add MD5 information to all resource file names after the build, solving **the CDN resource cache problem** during **hot update**.  
+**MD5 Cache** is used as a generic option, mainly to add MD5 information to all asset file names after the build, solving **the CDN asset cache problem** during **hot update**.  
 
-When enabled, if any resource fails to load, it is because after renaming the new file, it cannot be found. This is usually because some third party resources used in C++ was not loaded by `cc.loader`. At this point, you can convert the URL before loading with the following method, to fix the loading problem:
+When enabled, if any asset fails to load, it is because after renaming the new file, it cannot be found. This is usually because some third party assets used in C++ was not loaded by `cc.loader`. At this point, you can convert the URL before loading with the following method, to fix the loading problem:
 
 ```cpp
 auto cx = ScriptingCore::getInstance()->getGlobalContext();
@@ -51,7 +51,7 @@ Let's review the concept of the source-code engine:
 > - The first time the source-code engine builds and compiles a project, it takes a long time to compile C++ code, depending on the configuration of the computer, which may take 5~20 minutes. After the same project has been compiled once, the time required for the next recompile is greatly shortened.
 > - The projects built by the source-code engine, compiled and run using native development environment (such as Android Studio, Xcode, etc. IDE), and also can be debugged and error captured.
 
-Currently, Cocos Creator 3D installation directory under `resources/3d/cocos2d-x-lite` already contains the **Cocos2d-x** source-code engine.
+The **Cocos Creator 3D** installation directory under `resources/3d/cocos2d-x-lite` already contains the **Cocos2d-x** source-code engine.
 
 #### Polyfills
 
@@ -75,14 +75,15 @@ Set the **Target API Level** required to compile the Android platform. Click the
 
 Set the CPU types that Android needs to support, including **armeabi-v7a**、**arm64-v8a** and **x86**. You can choose one or more options.
 
-> **Note**:
-> 1. When you select an ABI to build and then build another ABI without `Clean`, both ABI's `so` will be packaged into the APK, which is the default behavior of Android Studio. If you import a project with Android Studio, after selecting an ABI to build, run **Build -> Clean Project**, then build another ABI, only the latter ABI will be packaged into the APK.
-> 2. After the project is imported with Android Studio, it is an independent existence and does not depend on the **Build** panel. If you need to modify the ABI, you can directly modify the `PROP_APP_ABI` property in `gradle.properties` as shown below:
->     ![modify abi](publish-native/modify_abi.png)
+> **Note**: When you select an ABI to build and then build another ABI without `Clean`, both ABI's `so` will be packaged into the APK, which is the default behavior of Android Studio. If you import a project with Android Studio, after selecting an ABI to build, run **Build -> Clean Project**, then build another ABI, only the latter ABI will be packaged into the APK.
+
+> **Note**: After the project is imported with Android Studio, it is an independent existence and does not depend on the **Build** panel. If you need to modify the ABI, you can directly modify the `PROP_APP_ABI` property in `gradle.properties` as shown below:
+
+  ![modify abi](publish-native/modify_abi.png)
 
 #### Keystore
 
-Android requires that all APKs be digitally signed with a certificate before they can be installed. Cocos Creator 3D provides a default keystore, check the **Use Debug Keystore** to use the `default keystore`. If you need to customize the keystore, you can remove the **Use Debug Keystore** checkbox. Please refer to the official [Android Documentation](https://developer.android.com/studio/publish/app-signing) for details.
+Android requires that all APKs be digitally signed with a certificate before they can be installed. A default keystore is provided, check the **Use Debug Keystore** to use the `default keystore`. If you need to customize the keystore, you can remove the **Use Debug Keystore** checkbox. Please refer to the official [Android Documentation](https://developer.android.com/studio/publish/app-signing) for details.
 
 #### Orientation
 
