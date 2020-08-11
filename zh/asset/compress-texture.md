@@ -68,4 +68,4 @@ Cocos Creator 3D 在构建图片的时候，会查找当前图片是否进行了
 | Xiaomi Quick Game | ETC1                 |
 | iOS               | ASTC / PVR / WEBP    |
 | Android           | ASTC / ETC2 / ETC1 / WEBP |
-| Mac               | ASTC                 |
+| Mac               | ASTC / PVR           |
