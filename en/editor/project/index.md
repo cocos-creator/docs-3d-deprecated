@@ -1,6 +1,6 @@
 # Project Setting
 
-The Project Settings windows are available from Cocos Creator 3D’s main menu (Project > Project Setting) which includes all the settings related to your project. These settings will be saved in the project's `settings /packages` folder. If you need to synchronize project settings between different developers, please not add the settings directory to .gitignore.
+The Project Settings windows are available from Cocos Creator 3D’s main menu (Project > Project Setting) which includes all the settings related to your project. These settings will be saved in the project's `settings / packages` folder. If you need to synchronize project settings between different developers, this folder should be added in your source control system.
 
 ## General
 

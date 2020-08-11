@@ -6,14 +6,15 @@
 
 **Cocos Creator 3D** supports importing images in multiple formats (see the table below for details), but in an actual running game, we do not recommend using the original images as assets to load. For example, on a mobile platform, only 80% or less of the original image quality may be required, or a `.png` without the transparent channel can be converted into a `.jpg`, which can reduce the storage space required.
 
-| Image format | Android                                                                                                                            | iOS                                                                        | MIni Game                 | Web                                                   | Mac & Windows         |
-| ------------ | ---------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------- | ------------------------- | ----------------------------------------------------- | --------------------- |
-| PNG          | Supported                                                                                                                          | Supported                                                                  | Supported                 | Supported                                             | Supported             | Supported |
-| JPG          | Supported                                                                                                                          | Supported                                                                  | Supported                 | Supported                                             | Supported             | Supported |
-| WEBP         | Native Supported for Android 4.0+<br>Other versions can use [this library](https://github.com/alexey-pelykh/webp-android-backport) | can use [this library](https://github.com/carsonmcdonald/WebP-iOS-example) | Supported                 | [partially supported](https://caniuse.com/#feat=webp) | Supported             | Supported |
-| PVR          | Not Supported                                                                                                                      | Supported                                                                  | Supported iOS devices     | Supported iOS devices                                 | Supported Mac devices |
-| ETC1         | Supported                                                                                                                          | Not Supported                                                              | Supported Android devices | Supported Android devices                             | Not Supported         |
-| ETC2         | Supported with **WebGL2** or **WebGL** extension if available                                                                      | Not Supported                                                              | Not Supported             | Supported Android devices                             | Not Supported         |
+| Image format | Android | iOS | Mini Game | Web  | Mac & Windows |
+| ------- | -------- | ------ | ----- | ------ | ------ |
+| PNG | Supported | Supported   | Supported | Supported | Supported |
+| JPG | Supported | Supported | Supported | Supported | Supported |
+| WEBP | Native Supported for Android 4.0+<br>Other versions can use [this library](https://github.com/alexey-pelykh/webp-android-backport) | can use [this library](https://github.com/carsonmcdonald/WebP-iOS-example) | Supported | [Partially Supported](https://caniuse.com/#feat=webp) | Not Supported |
+| PVR | Not Supported | Supported | Supported iOS  | Supported iOS  | Mac Supported |
+| ETC1 | Supported | Not Supported | Supported Android  | Supported Android  | Not Supported |
+| ETC2 | Partially Supported | Not Supported | Not Supported | Supported Android  | Not Supported |
+| ASTC | Partially Supported  | Partially Supported | Not Supported | Partially Supported  | Mac Supported |
 
 By default, **Cocos Creator 3D** outputs the original image during build. If you need to compress an image during the build process, you can select this image in the **Assets Panel** and then manage it in the **Inspector** to edit the compress texture format of the image.
 
@@ -55,10 +56,12 @@ In the example picture above, both **ETC1** and **PVR** types are configured wit
 
 ## Details of compressed texture support for platforms
 
+Except for the `JPG and PNG` supported by all platforms, the details of other formats are as follows:
+
 | Platform          | TextureCompressTypes |
 | ----------------- | -------------------- |
-| Web Desktop       | ETC2 / ETC1 / PVR    |
-| Web Mobile        | ETC2 / ETC1 / PVR    |
+| Web Desktop       | ASTC / ETC2 / ETC1 / PVR / WEBP |
+| Web Mobile        | ASTC / ETC2 / ETC1 / PVR / WEBP |
 | WeChat Game       | ETC1 / PVR           |
 | AliPay Mini Game  | ETC1 / PVR           |
 | Baidu Mini Game   | ETC1 / PVR           |
@@ -67,6 +70,6 @@ In the example picture above, both **ETC1** and **PVR** types are configured wit
 | Huawei Quick Game | ETC1                 |
 | Cocos Play        | ETC1                 |
 | Xiaomi Quick Game | ETC1                 |
-| iOS / Mac         | ASTC / PVR           |
-| Android           | ASTC / ETC2 / ETC1   |
-| Windows           | ASTC                 |
+| iOS               | ASTC / PVR / WEBP    |
+| Android           | ASTC / ETC2 / ETC1 / WEBP |
+| Mac               | ASTC                 |
