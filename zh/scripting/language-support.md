@@ -21,7 +21,7 @@ Creator 3D 支持的 JavaScript 语言规范为 ES6。
 
 特别地，Creator 3D 目前支持 “Legacy” 装饰器提案，其用法和含义见 [babel-plugin-proposal-decorators](https://babeljs.io/docs/en/babel-plugin-proposal-decorators)。
 由于该 [提案](https://github.com/tc39/proposal-decorators) 仍处于 阶段2，
-引擎暴露的所有装饰器相关功能接口都在以下划线开头的 [`_decorator` 命名空间](about:blank)下。
+引擎暴露的所有装饰器相关功能接口都在以下划线开头的 [`_decorator` 命名空间](https://github.com/cocos-creator/engine/blob/3d-v1.2/cocos/core/data/class-decorator.ts#L28)下。
 
 #### 运行环境
 
@@ -70,7 +70,7 @@ Creator 3D 使用 [babel](https://babeljs.io/) 而非 [tsc](https://www.typescri
 
 编译时不会读取 `tsconfig.json`
 意味着 `tsconfig.json` 的编译选项并不影响编译，
-但存在例外，见 [模块解析](模块解析)。
+但存在例外，见 [模块解析](####模块解析)。
 
 你仍然可以在项目中使用 `tsconfig.json` 以配合 IDE 实现类型检查等功能。
 为了使得 IDE 的 TypeScript 检查功能 和 Creator 3D 行为兼容，
