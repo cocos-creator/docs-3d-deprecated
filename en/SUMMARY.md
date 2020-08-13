@@ -55,15 +55,15 @@
   - [Build Process with FAQ](editor/publish/build-guide.md)
   - Publishing to Mini Games
     - [Publishing to Alipay Mini Games](editor/publish/publish-alipay-mini-game.md)
-    - [Publishing to Baidu Mini Games](editor/publish/publish-baidugame.md)
     - [Publishing to ByteDance Mini Games](editor/publish/publish-bytedance-mini-game.md)
     - [Publishing to Cocos Play](editor/publish/publish-cocos-play.md)
     - [Publishing to Huawei Quick Games](editor/publish/publish-huawei-mini-game.md)
     - [Publishing to OPPO Mini Games](editor/publish/publish-oppo-mini-game.md)
     - [Publishing to vivo Mini Games](editor/publish/publish-vivo-mini-game.md)
-    - [Publishing to WeChat Mini Games](editor/publish/publish-wechatgame.md)
-        - [WeChat Engine Plugin](editor/publish/wechatgame-plugin.md)
+    - [Publishing to Baidu Mini Games](editor/publish/publish-baidugame.md)
     - [Publishing to Xiaomi Quick Games](editor/publish/publish-xiaomi-quick-game.md)
+    - [Publishing to WeChat Mini Games](editor/publish/publish-wechatgame.md)
+      - [WeChat Engine Plugin](editor/publish/wechatgame-plugin.md)
 
 ## Engine Manual
 
@@ -158,7 +158,7 @@
       - [Graphics Reference](ui-system/components/editor/graphics.md)
       - [RichText Reference](ui-system/components/editor/richtext.md)
       - [UIStaticBatch Reference](ui-system/components/editor/ui-static.md)
-    - [UI Basic Component ](ui-system/components/editor/base-component.md)
+    - [UI Basic Component](ui-system/components/editor/base-component.md)
       - [Canvas Reference](ui-system/components/editor/canvas.md)
       - [UITransform Reference](ui-system/components/editor/ui-transform.md)
       - [Widget Reference](ui-system/components/editor/widget.md)
