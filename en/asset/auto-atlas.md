@@ -36,12 +36,12 @@ The results are divided into:
 
 ## Generating an Atlas
 
-When inside the editor or previewing the project __Cocos Creator 3D__ is directly using the split **SpriteFrame** assets, only after you build the project with the option **AutoAtlas** enabled, the Atlas asset will be generated and be used instead of all split assets.
+When inside the editor or previewing the project __Cocos Creator 3D__ is directly using the split **SpriteFrame** assets, only after you build the project with the option **AutoAtlas** enabled, the **Atlas** asset will be generated and be used instead of all split assets.
 
-In general, after Atlas asset is generated, the Texture2D assets and Image assets related by the original split assets will be deleted in the package. The following two special cases will have special process:
+In general, after **Atlas** asset is generated, the **Texture2D** assets and **Image** assets related by the original split assets will be deleted in the package. The following two special cases will have special process:
 
-1. When Atlas asset is in a `resources` directory, the Texture2D assets and Image assets related by the original SpriteFrame assets in the AutoAtlas asset's directory will also be generated.
+1. When **Atlas** asset is in a `resources` directory, the **Texture2D** assets and Image assets related by the original **SpriteFrame** assets in the **AutoAtlas** asset's directory will also be generated.
 
-2. When any Texture2D asset depended by SpriteFrame assets in the Atlas asset's folder is directly used by other asset, the dependent **Texture2D** asset and **Image** asset will be generated also.
+2. When any **Texture2D** asset depended by **SpriteFrame** assets in the **Atlas** asset's folder is directly used by another asset, the dependent **Texture2D** asset and **Image** asset will also be generated.
 
-The two situations above will increase the package size, please do not use Atlas like this unless necessary, **Builder** will also console warning to prompt you.
+The two situations above will increase the package size, please do not use an **Atlas** like this unless necessary, **Builder** will also produce  a console warning to prompt you to consider your package size.
