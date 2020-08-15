@@ -30,7 +30,6 @@ When using these software packages to generate an __Atlas__, please select a **.
 
 Users of the __TexturePacker__ software need to pay attention to a few items:
   - Use version __4.x__ only. Version __3.x__ is not supported.
-  - __TexturePacker__'s packing result, does not match __Cocos Creator__'s nine-grid algorithm. Therefore, in __Cocos Creator 3D v1.0.4__, please prohibit rotation when generating a composite image to obtain the correct effect. This should be fixed in __Cocos Creator 3D v1.1__.
 
 ## Importing Atlas Assets
 

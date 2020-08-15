@@ -48,15 +48,15 @@
         ],
         "version": [
             {
-                "name": "1.1",
+                "name": "1.2",
                 "links": [
                     {
                         "name": "1.0",
                         "link": "https://docs.cocos.com/creator3d/1.0/manual/zh"
                     },
                     {
-                        "name": "1.2",
-                        "link": "https://docs.cocos.com/creator3d/manual/zh"
+                        "name": "1.1",
+                        "link": "https://docs.cocos.com/creator3d/1.1/manual/zh"
                     }
                 ]
             }
