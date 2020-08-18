@@ -3,7 +3,6 @@ We supports UI custom material in sprite component since v1.2, the user interfac
 
 ![](ui-material/UIMaterial.png)
 
-其使用方法与其他材质并无不同，但由于 SpriteComponent 面板有基于 UI 内置材质的功能，所以有一些需要注意的点：
 Its usage is no different from other materials, but because the SpriteComponent has some function based on the UI-built-in materials, there are some points to note:
 
 - When the number of custom materials is set to 0 or empty, the default material will be used. Please refer to [SpriteComponent](../editor/sprite.md)
