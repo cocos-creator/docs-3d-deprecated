@@ -20,7 +20,7 @@ Enabling the __Skybox__ effect in __Cocos Creator 3D__, takes just one step:
 Modifying the environment map of the __Skybox__ in __Cocos Creator 3D__ is done by setting a asset of type __TextureCube__. Importing from a asset into a __TextureCube__ and setting it into a __Skybox__ can be done in the following steps:
 
 1. Import picture assets. 
-    > **Note**: Here is an example of a panorama, we will introduce how to make a `CubeMap` later in this documentation.
+    > **Note**: This example is of a panorama. Creating a `CubeMap` is covered later in this documentation.
 
 2. Select the imported panorama asset and set it to the __TextureCube__ type in the __Inspector panel__ on the right, as shown in this figure:
    
@@ -32,15 +32,14 @@ Modifying the environment map of the __Skybox__ in __Cocos Creator 3D__ is done 
 
 After completing the above steps, you should be able to see the newly replaced environment map in the editor scene.
 
-## Confirm the parameter of SkyIllum
-If the skybox didn't show in the scene editor after you completing the previous step, then it is highly likely that the SkyIllum parameter setting is too low. Check the parameter of `ambient -> SkyIllum` in the inspector of scene node. Generally speaking, if SkyIllum <300, the sky box texture is not very visible. SkyIllum = 5000 is probably the light intensity of the moon night. For the newly created Cocos Creator 3D project, the default SkyIllum = 20000.
+## Confirm setting the SkyIllum parameter
+If the skybox doesn't show in the __Scene Editor__ after completing the previous step, it is highly likely that the SkyIllum parameter setting is too low. Check the parameter of `ambient -> SkyIllum` in the __Inspector Panel__ of the scene node. Generally speaking, if SkyIllum < 300, the skybox texture is not very visible. SkyIllum is 5000 is probably the light intensity of the moon at night. For a newly created __Cocos Creator 3D__ project, the default SkyIllum is 20000.
 
 ## Modify the Clear Flag of Camera
-After completing the above steps, although the skybox can be displayed correctly in the scene editor, it is still not visible when running. At this time, you need to modify the Clear Flag of Camera to SKYBOX, as shown below
+After completing the above steps, although the skybox can be displayed correctly in the __Scene Editor__, it is still not visible when running. At this time, you need to modify the __Clear Flag__ of __Camera__ to `SKYBOX`, as shown below
 
 ![change Clear Flag of Camera to SKYBOX](skybox/SkyboxCamera.jpg)
 
-This completes all the steps of setting the skybox in Cocos Creator 3D.
 
 ## Skybox panel
 
@@ -76,7 +75,7 @@ To make a __CubeMap__ in __Cocos Creator 3D__ and set it to a __Skybox__, follow
    
     ![Set CubeMap](skybox/Cubemap_Inspector.png)
 
-4. Finally, drag the completed __CubeMap__ asset into the __Envmap__ property box of the __Skybox__. This completes the application of a __CubeMap__.
+4. Finally, drag the completed __CubeMap__ asset into the __Envmap__ property box of the __Skybox__.
 
     ![CubeMap](skybox/Cubemap_Show.png)
 
