@@ -57,9 +57,9 @@ __Note__: All tag names should be lowercase and the attribute assignment should 
 
 #### Optional attribute of img tag
 
-For better typography we have provided additional optional attributes for the img tag. You can use `width`, `height` to specify the size of the SpriteFrame. This will allow the image to be larger or smaller than the line height (but it will not change the line height).
+For better typography, additional optional attributes to the img tag have been provided. Developers can use `width`, `height` to specify the size of the SpriteFrame. This will allow the image to be larger or smaller than the line height (but it will not change the line height).
 
-When you change the height or width of the SpriteFrame, you may need to use the `align` attribute to adjust the alignment of the image in the line.
+When the height or width of the SpriteFrame changes, The `align` attribute may need to be used to adjust the alignment of the image in the line.
 
 | Attribute | Description | Example | Note   |
 | --------- | ----------- | ------- | ------ |
@@ -67,7 +67,7 @@ When you change the height or width of the SpriteFrame, you may need to use the 
 | width     | Specify the SpriteFrame width size, the size should be a integer.| `<img src='foo' width=50 />` | You can use both Height and Width `<img src='foo' width=20 height=30 />`
 | align     | Specify the SpriteFrame alignment in line, the value should be `bottom`, `top` or `center`.| `<img src='foo' align=center />` | Default SpriteFrame alignment will be bottom 
 
-To support custom image layout, we also provide the `offset` attribute for fine-tune the position of the specified SpriteFrame in the RichText component. When setting the `offset` attribute, keep in mind that the value must be an integer, and it will cause the image to overlap the text if it is not set properly.
+To support custom image layout, the `offset` attribute can be used to fine-tune the position of the specified SpriteFrame in the RichText component. When setting the `offset` attribute, keep in mind that the value must be an integer, and it will cause the image to overlap the text if it is not set properly.
 
 | `offset` attribute | Example | Description | Note   |
 | --------- | ------- | ----------- | ------ |
@@ -88,7 +88,7 @@ is equal to:
 
 ## Cache Mode
 
-Since the RichText component is assembled from multiple Label nodes, the number of drawcalls for complex rich text will also be high. Therefore, the engine provides the CacheMode setting of the Label component for the RichText component to avoid the increase of drawcall. For a detailed description of each cache type, refer to [Cache Mode of the Label component](./label.md)
+Since the RichText component is assembled from multiple Label nodes, the number of drawcalls for complex rich text will also be high. Therefore, the engine provides the CacheMode setting of the Label component for the RichText component to avoid the increase of drawcall. For a detailed description of each cache type, refer to [Cache Mode of the Label component](./label.md) documentation.
 
 | Attributes |   Description
 | -------------- | ----------- |
