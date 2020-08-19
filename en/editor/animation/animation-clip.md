@@ -31,16 +31,14 @@ The __animation clip__ defines the position of the data by the name of the node,
 
 ![paste-node-data](animation-clip/paste-node-data.gif)
 
-  **Notes:**
-
-> When using **shortcut keys to copy and paste node data**, please **make sure that no attribute track or keyframe is currently selected**. Because when there is a selected attribute track or key frame, the animation data will be copied first.
+> **Note**: When using **shortcut keys to copy and paste node data**, please **make sure that no attribute track or keyframe is currently selected**. Because when there is a selected attribute track or key frame, the animation data will be copied first.
 > If the paste target node does not exist when the attribute track in the animation data is copied, it will not be created automatically. Please create the required components in advance.
 
 - **Migrating node data**: sometimes we will rename the node after the animation is completed, which will cause problems with the animation data, as shown below:
 
   ![](./animation-clip/missing_node.png)
 
-  At this time, we can right-click on __Migrate Data__ on the missing node, and then click on other nodes to migrate the data. If you do not want to migrate after clicking __Migrate Data__, click directly in the timeline area or click __Cancel__ in the pop-up window after clicking other nodes.
+  Next, right-click on __Migrate Data__ on the missing node, and then click on other nodes to migrate the data. If you do not want to migrate after clicking __Migrate Data__, click directly in the timeline area or click __Cancel__ in the pop-up window after clicking other nodes.
 
   ![](./animation-clip/moving_node.gif)
 
