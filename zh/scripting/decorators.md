@@ -101,8 +101,8 @@ node: Node | null = null;
 ```ts
 @type(Node) // 隐含 `@serializable` 和 `@editable`：
             // 同时参与序列化以及编辑器交互；
-            // 不推荐的做法；
-            // 显式声明 `@serializable` 和 `@editable` 使得逻辑更清晰
+            // 这是不推荐的做法！
+            // 反之，显式声明 `@serializable` 和 `@editable` 使得逻辑更清晰
 node: Node | null = null;
 
 @displayName("My Node")
