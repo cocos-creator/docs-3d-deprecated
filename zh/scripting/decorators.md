@@ -68,9 +68,52 @@ count = 0;
 age = 0;
 ```
 
-### 其它装饰器
+### 类型装饰器
 
-`@type` 用于向序列化和编辑器提供类型信息。`@type` 隐含着 `@serialiable` 和 `@editable`。
+`@type` 用于向序列化和编辑器提供类型信息。
+
+例如，我们有一个字段 `node`，它的类型可能为 `null` 或者 `Node`，
+这时，我们需要向编辑器提供它的类型信息：
+```ts
+@editable
+@type(Node)
+node: Node | null = null;
+```
+
+`@type` 也向序列化提供了信息：
+```ts
+@serializable
+@type(Node)
+node: Node | null = null;
+```
+
+当属性同时需要序列化以及编辑器交互，也只用一个 `@type` 装饰器：
+```ts
+@serializable
+@editable
+@type(Node)
+node: Node | null = null;
+```
+
+#### ⚠️ 兼容行为
+
+在 1.2 版本之前，`@type` 隐含着可序列化以及可编辑器交互。为了兼容，我们在 1.2 及后续的版本保留了此行为，并对其做出限制：当仅存在 `@type` 或 `@property` 装饰器时，`@type` 才隐含可序列化以及可编辑器交互：
+```ts
+@type(Node) // 隐含 `@serializable` 和 `@editable`：
+            // 同时参与序列化以及编辑器交互；
+            // 不推荐的做法：显式声明 `@serializable` 和 `@editable`
+            // 使得逻辑更清晰
+node: Node | null = null;
+
+@displayName("My Node")
+@type(Node)
+node2: Node | null = null; // `node2` 不会参与序列化！
+```
+
+我们建议开发者不依赖 `@type` 的隐含意义，
+而是显式地使用序列化装饰器以及编辑器装饰器以使属性的用途更清晰。
+
+### 其它装饰器
 
 `@override` 显式声明此属性将覆盖基类的同一属性。
 
