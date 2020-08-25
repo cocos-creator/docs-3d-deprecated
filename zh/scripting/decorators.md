@@ -95,6 +95,78 @@ node: Node | null = null;
 node: Node | null = null;
 ```
 
+#### 什么时候需要 `@type` 装饰器？
+
+在大多数情况下，即使未指定 `@type` 装饰器，属性也可以得以正确的
+编辑和序列化，那么，何时 `@type` 装饰器是必要的呢？
+
+##### 当需要区分整数和浮点数时
+
+```ts
+@editable
+count = 0;
+```
+
+`count` 在编辑器将被允许设置为任何数值，包括浮点数。但假使你只希望它是整数的时候，你需要通过类型装饰器来告诉编辑器：
+
+```ts
+@editable
+@integer // 仅接受整数
+count = 0;
+```
+
+##### 当属性是枚举时
+
+```ts
+enum class Color { Black, White }
+
+@editable
+color = Color.Black;
+```
+
+枚举值 `Color.Black` 仅仅是一个数值。当希望编辑器中让它以枚举的形式（也就是说提供一个类似于列表的空间以选择 `Color.Black`、`Color.White` 等）时，你需要告诉编辑器 `color` 的类型是枚举：
+
+```ts
+@editable
+@enumeration(Color) // 属性 `color` 的值必须是枚举 `Color` 的成员
+color = Color.Black;
+```
+
+##### 当属性是数组时
+
+```ts
+@editable
+values: number[] = [];
+```
+
+因为在 JavaScript 中，数组是无类型的，你需要告诉编辑器数组元素的类型：
+
+```ts
+@editable
+@float // 指定了数组元素的类型；当编辑器运行时发现 `values` 是数组
+       // 又指定了 `@float` 时，`values` 会被当作一个
+       // 接受浮点数数组的属性
+values: number[] =[];
+```
+
+##### 当属性是可选的
+
+在一些情况下，我们的属性被声明为是可选的：
+```ts
+@editable
+node: Node | null = null;
+```
+
+当 `node` 的值只会是 `Node` 类型时，编辑器可以正确地将该属性以 `Node` 的身份进行编辑和展示。
+
+但此例中，当 `node` 值是 `null` 时，编辑器并不知道它可以接受其它什么类型的值，因此，我们需要类型装饰器来让编辑器知道：
+
+```ts
+@editable
+@type(Node) // 除了空值外，属性 `node` 的值还可能是 `Node` 对象
+node: Node | null = null;
+```
+
 #### ⚠️ 兼容行为
 
 在 1.2 版本之前，`@type` 隐含着可序列化以及可编辑器交互。为了兼容，我们在 1.2 及后续的版本保留了此行为，并对其做出限制：当仅存在 `@type` 或 `@property` 装饰器时，`@type` 才隐含可序列化以及可编辑器交互：
