@@ -88,7 +88,7 @@ is equal to:
 
 ## Cache Mode
 
-Since the RichText component is assembled from multiple Label nodes, the number of drawcalls for complex rich text will also be high. Therefore, the engine provides the CacheMode setting of the Label component for the RichText component to avoid the increase of drawcall. For a detailed description of each cache type, refer to [Cache Mode of the Label component](./label.md) documentation.
+Since the RichText component is assembled from multiple Label nodes, the number of drawcalls for complex rich text will also be high. Therefore, the engine provides the CacheMode setting of the Label component for the RichText component to avoid the increase of drawcall. For a detailed description of each cache type, please refer to the [Cache Mode of the Label component](./label.md) documentation.
 
 | Attributes |   Description
 | -------------- | ----------- |
