@@ -119,6 +119,7 @@ count = 0;
 
 ```ts
 enum class Color { Black, White }
+Enum.recognize(Color); // 将该对象标记为枚举
 
 @editable
 color = Color.Black;
@@ -128,7 +129,7 @@ color = Color.Black;
 
 ```ts
 @editable
-@enumeration(Color) // 属性 `color` 的值必须是枚举 `Color` 的成员
+@type(Color) // 属性 `color` 的值必须是枚举 `Color` 的成员
 color = Color.Black;
 ```
 
