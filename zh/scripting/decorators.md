@@ -119,7 +119,7 @@ count = 0;
 
 ```ts
 enum class Color { Black, White }
-Enum.recognize(Color); // 将该对象标记为枚举
+ccenum(Color); // 将该对象标记为枚举
 
 @editable
 color = Color.Black;
