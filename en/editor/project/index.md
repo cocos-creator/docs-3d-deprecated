@@ -9,7 +9,7 @@ The **Project Settings** windows are available from Cocos Creator 3D’s main me
 ### Default Canvas settings
 
 The default Canvas settings include design resolution and adapted screen width/height, which are used to specify the default design resolution value in Canvas when creating a new scene or Canvas component, as well as the `Fit Height, Fit Width` options.
-different
+
 For more information, please refer to [Multi-resolution adaptation scheme](../ui-system/components/engine/multi-resolution.md) documentation.
 
 ## Engine Modules
