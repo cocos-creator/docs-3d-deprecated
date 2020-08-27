@@ -3,7 +3,7 @@
 游戏中的天空盒是一个包裹整个场景的立方体，天空盒可以很好的渲染整个环境的气氛，并表达整个场景的环境，在基于 PBR 的工作流中天空盒也是非常重要的部分。
 
  Cocos Creator 3D 中的天空盒，如下图所示：
-![skybox](skybox/Skybox.jpg)
+![skybox](skybox/Skybox.png)
 
 ## 开启天空盒
 
@@ -61,9 +61,21 @@ CubeMap （立方体贴图）是天空盒的一种环境贴图资源，它由立
 
 在 Cocos Creator 3D 中制作一张 CubeMap 并且设置到 Skybox 中，只需要以下步骤：
 
-1. 新建 CubeMap 资源，并且导入预先准备好的六张贴图资源，并将这些贴图资源设置为 Texture 类型。
-2. 将导入的贴图资源拖入到相应的输入框中，完成后点击绿色勾选按钮，这样就完成了一张 CubeMap。
-![设置为 CubeMap](skybox/CubeMap.jpg)
-3. 最后，将完成的 CubeMap 资源拖入到 Skybox 的 Envmap 属性框中，这样就完成了 CubeMap 的应用。
+1. 导入预先准备好的六张贴图资源，并将这些贴图资源设置为 Texture 类型。
+   
+   ![import Cubemap textures](skybox/Cubemap_Textures.png)
+   ![create Cubemap textures type](skybox/Cubemap_Textures_type.png)
+
+2. 新建 CubeMap 资源
+
+    ![create Cubemap](skybox/Cubemap_Create.png)
+
+3. 将导入的贴图资源拖入到相应的输入框中，完成后点击绿色勾选按钮，这样就完成了一张 CubeMap。
+
+    ![Set CubeMap](skybox/Cubemap_Inspector.png)
+
+4. 最后，将完成的 CubeMap 资源拖入到 Skybox 的 Envmap 属性框中，这样就完成了 CubeMap 的应用。
+
+    ![CubeMap](skybox/Cubemap_Show.png)
 
 **注： CubeMap 中未设置贴图的面将用默认的资源进行填充**。
