@@ -20,7 +20,7 @@ By default, **Cocos Creator 3D** outputs the original image during build. If you
 
 ![compress-texture](compress-texture/compress-texture.png)
 
-The editor will provide a preset by default. If you need to add more presets, you can click the `Edit preset` button to open `Project Setting -> Compress Texture` to add and edit presets. The compression format here is readonly. For how to add texture compression presets, please refer to [Project Settings](./editor/project/index.md).
+The editor will provide a preset by default. If you need to add more presets, you can click the `Edit preset` button to open `Project Settings -> Compress Texture` to add and edit presets. The compression format here is readonly. For how to add texture compression presets, please refer to [Project Settings](./editor/project/index.md) documentation.
 
 ![meta](compress-texture/meta.png)
 
