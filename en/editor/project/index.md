@@ -10,7 +10,7 @@ The **Project Settings** windows are available from Cocos Creator 3D’s main me
 
 The default Canvas settings include design resolution and adapted screen width/height, which are used to specify the default design resolution value in Canvas when creating a new scene or Canvas component, as well as the `Fit Height, Fit Width` options.
 
-For more information, please refer to [Multi-resolution adaptation scheme](../ui-system/components/engine/multi-resolution.md) documentation.
+For more information, please refer to the [Multi-resolution adaptation scheme](../ui-system/components/engine/multi-resolution.md) documentation.
 
 ## Engine Modules
 
@@ -20,7 +20,7 @@ The setting here is to crop the modules used in the engine to reduce the size of
 
 ## Macro Config
 
-For more information and code of the engine macro module, please refer to [Engine macro](https://github.com/cocos-creator/engine/blob/3d/cocos/core/platform/macro.ts#L824) documentation.
+For more information and code of the engine macro module, please refer to the [Engine macro](https://github.com/cocos-creator/engine/blob/3d/cocos/core/platform/macro.ts#L824) documentation.
 
 This panel here provide the convenience to modify the macro configuration. The **Macro Config** will take effect during preview and build. At the same time, the default value of the current macro configuration will be updated with the configuration of the custom engine.
 
@@ -40,7 +40,7 @@ Platform is rough devised as following:
 4. Mini Game: Refers to the mini-games of various manufacturers' platforms, such as WeChat Mini Games and Huawei Quick Game Waiting;
 5. Android
 
-For the detail of the texture compression support of the platforms, please refer to [Compressed Texture Chapter](../../asset/compress-texture.md) documentation.
+For the detail of the texture compression support of the platforms, please refer to the [Compressed Texture Chapter](../../asset/compress-texture.md) documentation.
 
 ### Add / remove texture compression presets
 
