@@ -14,15 +14,16 @@
 
 | 属性           | 功能说明                                                 |
 | -------------- | -----------                                            |
-| RenderMode    | Canvas 渲染模式，**Intersperse** 下可以指定 Canvas 与场景中的相机的渲染顺序，**Overlay** 下 Canvas 会在所有场景相机渲染完成后渲染。注意：启用 **Intersperse** 模式，如果 3D 场景的相机内容显示上要在 Canvas 前面，相机的 ClearFlags 也要为 Dont_Clear。
+| RenderMode    | Canvas 渲染模式，**Intersperse** 下可以指定 Canvas 与场景中的相机的渲染顺序，**Overlay** 下 Canvas 会在所有场景相机渲染完成后渲染。在修改此参数时请详细阅读下方的[注意事项](#注意事项)。
 | Priority       | 当 RenderMode 为 **Intersperse** 时，指定与其它相机的渲染顺序，当 RenderMode 为 **Overlay** 时，指定跟其余 Canvas 做排序使用。
-| ClearFlag     | Canvas 清理屏幕缓冲区的标记。<br>Dont_Clear 不清理。<br>Depth_Only 清理深度缓冲。<br>Solid_Color 清理颜色深度缓冲。
+| ClearFlag     | Canvas 清理屏幕缓冲区的标记。<br>Depth_Only 清理深度缓冲。<br>Solid_Color 清理颜色深度缓冲。
 | Color     | 清理颜色缓冲区后的颜色。
 | TargetTexture | 目标渲染纹理
 
 ## 注意事项
 
 如果遇到 UI 渲染出错，花屏，闪屏等现象，可以看此处的[注意事项](../engine/priority.md#注意事项)。
+
 ---
 
 - [其他基础模块参考](base-component.md)

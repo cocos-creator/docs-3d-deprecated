@@ -36,7 +36,7 @@ UI 相机与 3D 相机混排的关键因素是在 UI 相机这里。因此，我
 - 如果场景中包含 UI 背景层、3D 场景层、 UI 操作层，则：
   - 2D 背景层：**ClearFlag** 属性设置为 `Solid_Color`。
   - 3D 场景层：**ClearFlag** 属性设置为 `Depth_Only`。
-  - 2D UI 层：若有模型，**ClearFlag** 属性设置为 `Depth_Only` 以避免出现模型闪屏或者穿透的情况。若没有模型，**ClearFlag** 属性可设置为 `Dont_Clear` 或 `Depth_Only`。
+  - 2D UI 层：**ClearFlag** 属性设置为 `Depth_Only`。
 
 ![sort](./priority/sort.png)
 ---
