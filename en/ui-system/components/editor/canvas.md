@@ -14,10 +14,10 @@ In the previous design, __Canvas__ was last rendered, meaning it could mask the 
 
 | Properties    | Function Explanation  |
 | ------------- | ----------- |
-| __ClearFlag__     | Clean up the flag of the screen buffer.<br>__DONT_CLEAR__: No cleanup.<br>__DEPTH_ONLY__: Clear the depth buffer.<br>__SOLID_COLOR__: Clear the color depth buffer. |
+| __ClearFlag__     | Clean up the flag of the screen buffer.<br>__DEPTH_ONLY__: Clear the depth buffer.<br>__SOLID_COLOR__: Clear the color depth buffer. |
 | __Color__     | The color used to clear the whole render buffer. |
 | __Priority__       | Camera sort priority.<br>Only when the **Canvas** **RenderMode** is **INTERSPERSE**, the canvas can be rendered before any camera with lower priority.<br>When **RenderMode** is **OVERLAY**, the priority only affect the order among all canvas. |
-| __RenderMode__    | Render mode of the Canvas.<br>When set to **INTERSPERSE**, the priority take effect among all canvas and cameras in the Scene. When set to **OVERLAY**, the canvas will always be rendered after all cameras in the scene.<br>**Note**: When **INTERSPERSE** mode is enabled and its priority is lower than other camera, the camera's **ClearFlags** should be set to **DONT_ClEAR**, otherwise the content of the beneath canvas will be erased. |
+| __RenderMode__    | Render mode of the Canvas.<br>When set to **INTERSPERSE**, the priority take effect among all canvas and cameras in the Scene. When set to **OVERLAY**, the canvas will always be rendered after all cameras in the scene.<br>When modifying this parameter, please read the following[Detailed Explanation](#Detailed-Explanation) |
 | __TargetTexture__ | Rendering texture of the target. |
 
 ## Detailed Explanation
