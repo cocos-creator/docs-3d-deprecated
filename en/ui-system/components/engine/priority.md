@@ -38,4 +38,4 @@ To set the __ClearFlag__ property, please refer to the following situations:
 - If the scene contains 2D background layer, 3D scene layer, 2D UI layer, then:
   - **2D background layer**: __ClearFlag__ property is set to `Solid_Color`.
   - **3D scene layer**: __ClearFlag__ property is set to `Depth_Only`.
-  - **2D UI layer**:  __ClearFlag__ property is set to `Depth_Only`
+  - **2D UI layer**: If the model is included, the __ClearFlag__ property is set to `Depth_Only` to avoid a model splash screen. If no model is present, the __ClearFlag__ property can be set to `Dont_Clear`/`Depth_Only`.
