@@ -83,15 +83,15 @@
 
 ## Physics 物理设置
 
-![Physics](./index/physics-index.png)
-
-注意：只有在项目设置的引擎模块中 Physics 选项被勾选时，这些配置才有效。
+在项目设置的引擎模块中 Physics 选项被勾选时，物理配置生效。
 
 ![Physics-In-Engine](./index/physics-in-engine.png)
 
 物理配置将会在项目预览和项目发布时使用，会影响到重力，摩擦力，动能传递，检测碰撞等方面的物理效果。
 
 ### 属性说明
+
+![Physics](./index/physics-index.png)
 
 - `gravity` 重力矢量，正负数值体现了方向性，默认值 *{ x: 0, y: -10, z: 0 }*
 - `allowSleep` 是否允许休眠，默认值 *true*
@@ -105,41 +105,39 @@
 - `restitution` 弹性系数，默认值 *0.1*
 - `useNodeChains` 是否使用节点链组合刚体，默认值 *true*
 - `useCollisionMatrix`  是否使用碰撞矩阵，默认值 *true*
+- `collisionMatrix`  碰撞矩阵的设置结果，{ index: value } 格式，默认值 *{ "0": 1 }*
 
 ### 碰撞矩阵
 
-碰撞矩阵默认使用内置 Layers ，顺排作为横轴 x, 逆排作为竖轴 y，勾选表示 x 轴的项与 y 轴的项有交叉，有碰撞的意思，
-不勾选表示不碰撞。
+![Physics-collision](./index/physics-collision.png)
 
-默认都勾选，所以默认值都为 *-1 (0xffffffff)*，转为可视化的 32 位字符为 "11111111111111111111111111111111",  
+碰撞矩阵的识别类似 Layers 逻辑，暂且叫它为 Groups ,每个 Group 为 `{ index, name }` 格式，`index` 从 0 到 31 ，`name` 是名称。
+
+Groups `index` 从大到小作为横轴 x, 从小到大作为竖轴 y，可选框勾上时表示 x 轴的项与 y 轴的项有交叉，有碰撞的意思，不勾选表示不碰撞
+记录的结果以 y 轴的 `index` 值为键名 , `value` 为键值。
+
+引擎默认给定一个 Group `{ index: 0, name: 'DEFAULT' }` 且默认勾选，即默认 `DEFAULT` 的 `Collision Matrix` 值为 1。
+
+用户对项目可新增自己的 Groups，注意 `index`, `name` 均不能为空，且不能与现有项重复。
+![Physics-collision-add](./index/physics-collision-add.png)
+
 
 运算规则为：
+```
+- 勾选 value |= (1 << xIndex)
+- 不勾选 value &= ~(1 << xIndex)
+```
+注意一个勾选比如 `DEFAULT (y)` 勾选 `water (x)` 等同于赋值 `water (y)` 勾选 `DEFAULT (x)` ,第二个赋值在界面中没有体现，但依然会给与两次赋值，一次是设定 `DEFAULT (y)` ,一次是设定 `water (y)`。
 
-- value = -1;
-- 勾选 value |= x
-- 不勾选 value &= ~x
-
-结果记录以 y 轴的 Layer 值为 key 键名 , value 为键值，示例记录数据如下图。
-
-![Physics-Layers-use](./index/physics-layers-use.png)
+![Physics-collision-demo](./index/physics-collision-demo.png)
 
 ```js
-collisionMatrix = {
-    1: -1, // First
-    1048576: -1,
-    2097152: -1,
-    4194304: -1,
-    8388608: -1,
-    16777216: -1,
-    33554432: -1,
-    268435456: -1,
-    1073741824: -2 // Default
-}
+    "collisionMatrix": {
+      "0": 3,
+      "1": 1
+    }
 ```
 
-示例中增加了一个自定义的 Layer (First) 以增加示例内容
-
-![Physics-Layers](./index/physics-layers.png)
 
 ## 骨骼贴图布局设置
 
