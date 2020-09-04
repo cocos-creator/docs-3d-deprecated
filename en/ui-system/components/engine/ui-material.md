@@ -5,7 +5,7 @@
 
 Using a custom material works the same as the UI_built-in materials. However, there are few items to take into consideration:
 
-- When the number of custom materials is set to `0` or empty, the default material will be used. Please refer to [SpriteComponent](../editor/sprite.md) documentation.
+- When the number of custom materials is set to `0` or empty, the default material will be used. Please refer to the [SpriteComponent](../editor/sprite.md) documentation.
 - UI does not support multiple materials, the number of custom materials is at most one.
 - When the ui custom material is used, the `Grayscale` function on the panel will be invalid. Users can choose to implement this function in the material.
 - After setting the custom material, the `Color` property on the panel will be mixed with the color set in the material itself (if had) to affect the rendering color of the sprite.
