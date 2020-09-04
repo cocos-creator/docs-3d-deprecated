@@ -11,14 +11,15 @@ You can add a Sprite component to the node by clicking the __Add Component__ but
 | Properties | Function Explanation
 | -------------- | ----------- |
 | **Type** | Rendering mode, currently includes `SIMPLE`, `SLICED`, `TILED`, `FILLED` four rendering modes.
+| **Materials** | Custom Material, please refer to [UI Custom Material](../engine/ui-material.md)
+| **Src Blend Factor** | The source image blend mode.
+| **Dst Blend Factor** | The destination image blend mode. Together with the above properties, you can mix the foreground Sprite and background in different ways to render, and you can refer to [glBlendFunc Tool](http://www.andersriggelsen.dk/glblendfunc.php) for an effect preview.
 | **Color** | Image color.
-| **Grayscale** | If enabled, Sprite will be rendered in gray scale mode.
 | **Size Mode** | Specify the size of the Sprite.<br>`TRIMMED` automatically fit to the size of the sprite cropped<br>`RAW` automatic fit for sprite original size.<br>`CUSTOM` use the node preset size. When the developer manually modifies `Size` properties, `Size Mode` will be automatically set to `Custom`.
 | **Atlas** | [Auto Atlas](../../../asset/atlas.md) which the Sprite display image asset belongs to.
 | **Sprite Frame** | [Sprite Frame Assets](../../../asset/sprite-frame.md) which is used to render the Sprite. (The __Edit__ button behind Sprite Frame is used to edit the 9-sliced cutting of the image asset, please refer to [Use a Sliced Sprite to make a UI image](../engine/sliced-sprite.md).
 | **Trim** | Whether the transparent pixel area is included in the node bounding box. Please refer to [Auto Trim for SpriteFrame](../engine/trim.md).
-| **Src Blend Factor** | The source image blend mode.
-| **Dst Blend Factor** | The destination image blend mode. Together with the above properties, you can mix the foreground Sprite and background in different ways to render, and you can refer to [glBlendFunc Tool](http://www.andersriggelsen.dk/glblendfunc.php) for an effect preview.
+| **Grayscale** | If enabled, Sprite will be rendered in gray scale mode.
 
 After adding the Sprite component, drag the SpriteFrame type asset from the __Assets__ to the `Sprite Frame` property reference. Then, the asset image can be displayed through the Sprite component.
 

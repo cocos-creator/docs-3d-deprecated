@@ -134,6 +134,7 @@
   - [Auto Layout Container](ui-system/components/engine/auto-layout.md)
   - [List with data](ui-system/components/engine/list-with-data.md)
   - [Stretchable UI Sprite](ui-system/components/engine/sliced-sprite.md)
+  - [UI Custom Material](ui-system/components/engine/ui-material.md)
 
 - [Components](editor/components/index.md)
   - [AudioSourceComponent](audio-system/overview.md)

@@ -46,3 +46,4 @@ UI 渲染组件的先后顺序采用的是广度排序方案，也就是 Canvas 
 - [制作动态生成内容的列表](list-with-data.md)
 - [制作可任意拉伸的 UI 图像](sliced-sprite.md)
 - [UI 静态合批组件](../editor/ui-static.md)
+- [UI 材质说明](ui-material.md)

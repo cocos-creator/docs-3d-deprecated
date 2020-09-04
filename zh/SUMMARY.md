@@ -130,6 +130,7 @@
   - [自动布局容器](ui-system/components/engine/auto-layout.md)
   - [制作动态生成内容的列表](ui-system/components/engine/list-with-data.md)
   - [制作可任意拉伸的 UI 图像](ui-system/components/engine/sliced-sprite.md)
+  - [UI材质](ui-system/components/engine/ui-material.md)
 - [组件](editor/components/index.md)
   - [AudioSourceComponent](audio-system/overview.md)
   - [ModelComponent](engine/renderable/model-component.md)
