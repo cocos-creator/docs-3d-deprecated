@@ -108,7 +108,7 @@ Then you can drag any node on the __Hierarchy Manager__ to the `Player` control:
 
 ![player-in-inspector](access-node-component/player-in-inspector.png)
 
-这样一来它的 player 属性就会被设置成功，你可以直接在脚本里访问 player：
+The `Player` property will be set successfully, and can be accessed directly in a script. Example:
 
 ```ts
 // Cannon.ts
@@ -128,9 +128,9 @@ export class Cannon extends Component {
 }
 ```
 
-### 利用属性检查器设置组件
+### Use the Property Inspector to set up components
 
-在上面的例子中，如果你将属性的 type 声明为 Player 组件，当你拖动节点 "Player Node" 到 **属性检查器**，player 属性就会被设置为这个节点里面的 Player 组件。这样你就不需要再自己调用 `getComponent` 啦。
+In the above example, if the type of the attribute is declared as a `Player` component, when the `Player` node is dragged to the **Property Inspector**, the `Player` attribute will be set to the `Player` component in this node. This way developers don't need to call `getComponent()` themselves.
 
 ```ts
 // Cannon.ts
@@ -150,12 +150,11 @@ export class Cannon extends Component {
 }
 ```
 
-你还可以将属性的默认值由 `null` 改为数组`[]`，这样你就能在 **属性检查器** 中同时设置多个对象。<br>
-不过如果需要在运行时动态获取其它对象，还需要用到下面介绍的查找方法。
+The default value of the property can be changed from `null` to array `[]`, so that multiple objects in the **Property Inspector** can be set at the same time. However, if dynamically obtaining other objects at runtime is needed, it is also necessary to use the search method described below.
 
-### 查找子节点
+### Find child nodes
 
-有时候，游戏场景中会有很多个相同类型的对象，像是炮塔、敌人和特效，它们通常都有一个全局的脚本来统一管理。如果用 **属性检查器** 来一个一个将它们关联到这个脚本上，那工作就会很繁琐。为了更好地统一管理这些对象，我们可以把它们放到一个统一的父物体下，然后通过父物体来获得所有的子物体：
+Sometimes, there are many objects of the same type in the game scene, such as turrets, enemies, and special effects, and they usually have a global script to manage them uniformly. Using the **Property Inspector** to associate them with this script one by one, the work will be very tedious. In-order to better manage these objects uniformly, they can be put under a unified parent object, and then obtain all the child objects through the parent object:
 
 ```ts
 // CannonManager.ts
@@ -174,33 +173,33 @@ export class CannonManager extends Component {
 }
 ```
 
-你还可以使用 `getChildByName`：
+Using `getChildByName`:
 
 ```ts
 this.node.getChildByName("Cannon 01");
 ```
 
-如果子节点的层次较深，你还可以使用 `find`，`find` 将根据传入的路径进行逐级查找：
+If the child node has a deeper level, `find` can be used, and  will search step by step according to the path passed in:
 
 ```ts
 find("Cannon 01/Barrel/SFX", this.node);
 ```
 
-### 全局名字查找
+### Global name lookup
 
-当 `find` 只传入第一个参数时，将从场景根节点开始逐级查找：
+When `find` only passes in the first parameter, it will be searched step by step from the scene root node:
 
 ```ts
 this.backNode = find("Canvas/Menu/Back");
 ```
 
-## 访问已有变量里的值
+## Accessing values in existing variables
 
-如果你已经在一个地方保存了节点或组件的引用，你也可以直接访问它们
+If you have saved references to nodes or components in one place, you can also access them directly.
 
-### 通过模块访问
+### Accessing via module
 
-你可以使用 `import` 来实现脚本的跨文件操作，让我们看个示例：
+Use `import` to implement script cross-file operations. Example:
 
 ```ts
 // Global.ts, now the filename matters
@@ -215,7 +214,7 @@ export class Global extends Component {
 }
 ```
 
-每个脚本都能用 `import{ } from` + 文件名(不含路径) 来获取到对方 exports 的对象。
+Each script can use `import{} from` + file name (without path) to get the object of the other party's exports. Example:
 
 ```ts
 // Back.ts
@@ -250,4 +249,4 @@ export class AnyScript extends Component {
 ```
 ---
 
-继续前往 [常用节点和组件接口](basic-node-api.md)。
+Continue to the [Common nodes and component interfaces](basic-node-api.md) documentation.
