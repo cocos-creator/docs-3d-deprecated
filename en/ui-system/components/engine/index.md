@@ -50,3 +50,4 @@ As you can see on the __Project -> Project Setting -> General -> Default canvas 
 - [List with data](list-with-data.md)
 - [Stretchable UI Sprite](sliced-sprite.md)
 - [UI Static Batching](../editor/ui-static.md)
+- [UI Custom Material](ui-material.md)

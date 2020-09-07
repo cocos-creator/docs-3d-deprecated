@@ -83,6 +83,8 @@ After the relevant parameters of the **Build** panel are set, click **Build**. W
 
 Copy the generated mini-game **rpk** file to the `/sdcard/games/` directory on your phone's SD card. Then open the **Mini Game Debugger** that has been installed before on the Android device, click the **OPPO Mini Game** section, and then find the icon corresponding to the game name. If not found, click on the **More -> Refresh** button in the upper right corner to refresh.
 
+  > **Note**: If the OPPO Mini Game Debugger version is `V3.2.0` and above,you need to copy the mini-game **rpk** file to the `Android/data/com.nearme.instant.platform/files/games` directory on your phone's SD card.If there is no `games` directory, you need to create a new one.
+
 ![](./oppo-mini-game/rpk_games.jpg)
 
 **4. Subpackage rpk**
@@ -97,6 +99,8 @@ Then switch to the **Package Load** section of OPPO **Mini Game Debugger**, clic
 ![](./oppo-mini-game/run_subpackage.jpg)
 
 > **Note**: Subpackage rpk needs to be copied to the `/sdcard/subPkg/` directory of Android devices, and non-subpackage rpk needs to be copied to the `/sdcard/games/` directory of Android devices, both of which cannot be mixed.
+
+> **Note**: If the OPPO Mini Game Debugger version is `V3.2.0` and above,you need to copy the mini-game **rpk** file to the `Android/data/com.nearme.instant.platform/files/subPkg` directory on your phone's SD card.If there is no `subPkg` directory, you need to create a new one.
 
 ## Reference documentation
 
