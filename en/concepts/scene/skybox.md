@@ -19,15 +19,15 @@ Enabling the __Skybox__ effect in __Cocos Creator 3D__, takes just one step:
 
 Modifying the environment map of the __Skybox__ in __Cocos Creator 3D__ is done by setting a asset of type __TextureCube__. Importing from a asset into a __TextureCube__ and setting it into a __Skybox__ can be done in the following steps:
 
-1. Import picture assets. 
+1. Import picture assets.
     > **Note**: This example is of a panorama. Creating a `CubeMap` is covered later in this documentation.
 
 2. Select the imported panorama asset and set it to the __TextureCube__ type in the __Inspector panel__ on the right, as shown in this figure:
-   
+
     ![Set as TextureCube](skybox/TextureCube.jpg)
 
 3. Drag the __TextureCube__ asset to the __Envmap property__ on the __Skybox's Inspector Panel__.
-   
+
     ![Set the environment map of the skybox](skybox/EnvmapSet.jpg)
 
 After completing the above steps, you should be able to see the newly replaced environment map in the editor scene.
@@ -67,16 +67,20 @@ To make a __CubeMap__ in __Cocos Creator 3D__ and set it to a __Skybox__, follow
     ![import Cubemap textures](skybox/Cubemap_Textures.png)
     ![create Cubemap textures type](skybox/Cubemap_Textures_type.png)
 
-2. Create a new __CubeMap__ resource  
- 
+2. Create a new __CubeMap__ resource
+
     ![create Cubemap](skybox/Cubemap_Create.png)
 
 3. Drag the imported texture assets into the corresponding input box, and click the green check button when you are finished.
-   
+
     ![Set CubeMap](skybox/Cubemap_Inspector.png)
 
 4. Finally, drag the completed __CubeMap__ asset into the __Envmap__ property box of the __Skybox__.
 
     ![CubeMap](skybox/Cubemap_Show.png)
 
-> **Note**: Faces that are not mapped in __CubeMap__. It will be filled with a default texture.
+> **Note**:
+
+1. Faces that are not mapped in __CubeMap__. It will be filled with a default texture.
+
+2. The pictures associated with the TextureCube **should not be the same**. Otherwise, there will be a problem that some platforms do not display
