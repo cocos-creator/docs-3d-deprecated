@@ -54,6 +54,7 @@
 ## 演示和范例项目
 
 - [展示范例集合](https://github.com/cocos-creator/example-3d)：从基本组件的使用到渲染效果的展示，这个项目里包括了多个侧重功能不同的场景及多个游戏 Demo 供用户参考
+- [功能测试例集合](https://github.com/cocos-creator/tes-cases-3d)：每个功能点的使用合集，Demo 供用户参考。
 - [一步两步](https://github.com/cocos-creator/tutorial-mind-your-step-3d)：也就是 [快速上手](getting-started/first-game/index.md) 文档里分步讲解制作的游戏
 - [物理测试范例](https://github.com/cocos-creator/example-3d/tree/master/physics-3d): 包含了一些物理测试例和一些案例工程，如吞噬黑洞、简化小车、坠落小球等，测试例和案例介绍了一些基础的功能和使用方法，方便您结合文档了解物理功能
 - [Simple-Games](https://github.com/cocos-creator/example-3d/tree/master/simple-games)：简单小游戏集合演示 Demo, 用户可通过此案例学习完成一些简单并且常见的小游戏

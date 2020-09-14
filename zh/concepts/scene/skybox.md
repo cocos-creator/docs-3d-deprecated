@@ -62,7 +62,7 @@ CubeMap （立方体贴图）是天空盒的一种环境贴图资源，它由立
 在 Cocos Creator 3D 中制作一张 CubeMap 并且设置到 Skybox 中，只需要以下步骤：
 
 1. 导入预先准备好的六张贴图资源，并将这些贴图资源设置为 Texture 类型。
-   
+
    ![import Cubemap textures](skybox/Cubemap_Textures.png)
    ![create Cubemap textures type](skybox/Cubemap_Textures_type.png)
 
@@ -78,4 +78,8 @@ CubeMap （立方体贴图）是天空盒的一种环境贴图资源，它由立
 
     ![CubeMap](skybox/Cubemap_Show.png)
 
-**注： CubeMap 中未设置贴图的面将用默认的资源进行填充**。
+## 注
+
+1. CubeMap 中未设置贴图的面将用默认的资源进行填充。
+
+2. TextureCube 中**关联设置的图片不要是同一张**。否则会出现某些平台不显示的问题。
