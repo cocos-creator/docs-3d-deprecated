@@ -1,105 +1,130 @@
-# 常用节点和组件接口
+# Common Node and Component Interface
 
-在通过 [访问节点和组件](access-node-component.md) 介绍的方法获取到节点或组件实例后，这篇文章将会介绍通过节点和组件实例可以通过哪些常用接口实现我们需要的种种效果和操作。这一篇也可以认为是 [Node](../../../api/zh/classes/Node.html) 和 [Component](../../../api/zh/classes/Component.html) 类的 API 阅读指南，可以配合 API 一起学习理解。
+After obtaining a __Node__ or __Component__ instance through the method introduced in the [Access Node and Component](access-node-component.md) documentation, there are common interfaces that can be used to achieve the various effects needed through the node and component instance and it's operation. 
 
-## 节点状态和层级操作
+Please review the [Node](../../../api/zh/classes/Node.html) and the [Component](../../../api/zh/classes/Component.html) API documentation.
 
-假设我们在一个组件脚本中，通过 `this.node` 访问当前脚本所在节点。
+## Node Status and Level Operations
 
-### 激活/关闭节点
-
-节点默认是激活的，我们可以在代码中设置它的激活状态，方法是设置节点的 `active` 属性：
-
-`this.node.active = false;`
-
-设置 `active` 属性和在编辑器中切换节点的激活、关闭状态，效果是一样的。当一个节点是关闭状态时，它的所有组件都将被禁用。同时，它所有子节点，以及子节点上的组件也会跟着被禁用。要注意的是，子节点被禁用时，并不会改变它们的 `active` 属性，因此当父节点重新激活的时候它们就会回到原来的状态。
-
-也就是说，`active` 表示的其实是该节点 **自身的** 激活状态，而这个节点 **当前** 是否可被激活则取决于它的父节点。并且如果它不在当前场景中，它也无法被激活。我们可以通过节点上的只读属性 `activeInHierarchy` 来判断它当前是否已经激活。
-
-`this.node.active = true;`
-
-若节点原先就处于 **可被激活** 状态，修改 `active` 为 true 就会立即触发激活操作：
-
-- 在场景中重新激活该节点和节点下所有 active 为 true 的子节点
-- 该节点和所有子节点上的所有组件都会被启用，他们中的 `update` 方法之后每帧会执行
-- 这些组件上如果有 `onEnable` 方法，这些方法将被执行
-
-`this.node.active = false;`
-
-如该节点原先就已经被激活，修改 `active` 为 false 就会立即触发关闭操作：
-
-- 在场景中隐藏该节点和节点下的所有子节点
-- 该节点和所有子节点上的所有组件都将被禁用，也就是不会再执行这些组件中的 `update` 中的代码
-- 这些组件上如果有 `onDisable` 方法，这些方法将被执行
-
-### 更改节点的父节点
-
-假设父节点为 `parentNode`，子节点为 `this.node`
-
-您可以：
+Suppose you are inside a running component script, to access a node inside the current script use `this`. Example:
 
 ```ts
-this.node.parent = parentNode;
+`this.node`
 ```
 
-或
+### Activating and Deactivating a Node
+
+A node is activated by default. It's activation state can be changed  in code by setting the node's `active` property. Example:
 
 ```ts
+this.node.active = false;`
+```
+
+Setting the `active` property and switching the active and closed states of the node in the editor have the same effect. When a node is down, all its components will be disabled. At the same time, all its child nodes and components on the child nodes will also be disabled. It should be noted that when child nodes are disabled, their `active` attributes are not changed, so they will return to their original state when the parent node is reactivated.
+
+In other words, `active` actually represents the active state of the node ** itself**, and whether this node **current** can be activated depends on its parent node. And if it is not in the current scene, it cannot be activated. We can use the read-only attribute `activeInHierarchy` on the node to determine whether it is currently activated. Example:
+
+```ts
+this.node.active = true;
+```
+
+If the node is in the **can be activated** state, modifying `active` to `true` will immediately trigger the following activation operations:
+
+  - Reactivate the node and all child nodes under the node whose active is true in the scene
+  - All components on this node and all child nodes will be enabled, and the update method in them will be executed every frame afterwards
+  - If there are `onEnable` methods on these components, these methods will be executed
+
+```ts
+this.node.active = false;
+```
+
+If the node is already activated, changing `active` to `false` will immediately trigger the following shutdown operations:
+
+  - Hide the node and all child nodes under the node in the scene
+  - All components on this node and all child nodes will be disabled, that is, the code in `update` in these components will no longer be executed
+  - If there are `onDisable` methods on these components, these methods will be executed
+
+### Change the Parent Node of a Node
+
+Suppose the parent node is `parentNode` and the child node is `this.node`. 
+
+This is valid:
+
+```ts
+// method 1
+this.node.parent = parentNode;
+```
+This is also valid:
+```ts
+// method 2
 this.node.removeFromParent(false);
 parentNode.addChild(this.node);
 ```
 
-这两种方法是等价的。
+These two methods are equivalent.
 
-注意：
- - `removeFromParent` 通常需要传入一个 `false`，否则默认会清空节点上绑定的事件和 action 等。
- - 通过 [创建和销毁节点](create-destroy.md) 介绍的方法创建出新节点后，要为节点设置一个父节点才能正确完成节点的初始化。
+> **Note**: `removeFromParent` usually needs to pass in a `false`, otherwise the events and actions bound on the node will be cleared by default.
 
-### 索引节点的子节点
+> **Note**: After creating a new node through the method introduced in the [Create and Destroy Node](create-destroy.md) documentation, it is a **must** to set a parent node for the node to correctly initialize the node.
 
-`this.node.children` 将返回节点的所有子节点数组。<br>
-`this.node.childrenCount` 将返回节点的子节点数量。
+### Child Nodes of the Parent Node
 
-**注意** 以上两个 API 都只会返回节点的直接子节点，不会返回子节点的子节点。
+`this.node.children` will return an array of all child nodes of the node.
 
-## 更改节点的变换（位置、旋转、缩放）
+`this.node.childrenCount` will return the number of children of the node.
 
-### 更改节点位置
+> **Note**: the above two APIs will only return the direct child nodes of the node, not the child nodes of the child node.
 
-使用 `setPosition` 方法：
+## Changing Node Transformations (position, rotation, scaling)
 
-`this.node.setPosition(100, 50, 100);`<br>
-`this.node.setPosition(new Vec3(100,50,100));`
+### Changing Node Location
 
-设置 `position` 变量：
+Use the `setPosition` method:
 
-`this.node.position = new Vec3(100,50,100);`
+```ts
+this.node.setPosition(100, 50, 100);
+this.node.setPosition(new Vec3(100,50,100));
+```
 
-以上两种用法等价。
+Setting the `position` variable:
 
-### 更改节点旋转
+```ts
+this.node.position = new Vec3(100,50,100);
+```
 
-`this.node.setRotation(90,90,90);`
+The above two usages are equivalent.
 
-或通过欧拉角设置本地旋转
+### Changing Node Rotation
 
-`this.node.setRotationFromEuler(90,90,90);`
+Example: 
+```ts
+this.node.setRotation(90,90,90);
+```
 
-### 更改节点缩放
+Or set local rotation by __Euler angle__"
 
-`this.node.setScale(2,2,2);`
+```ts
+this.node.setRotationFromEuler(90,90,90);
+```
 
+### Changing Node Scale
 
-## 常用组件接口
+Example:
 
-`Component` 是所有组件的基类，任何组件都包括如下的常见接口（假设我们在该组件的脚本中，以 this 指代本组件）：
+```ts
+this.node.setScale(2,2,2);
+```
 
-- `this.node`：该组件所属的节点实例
-- `this.enabled`：是否每帧执行该组件的 `update` 方法，同时也用来控制渲染组件是否显示
-- `update(deltaTime: number)`：作为组件的成员方法，在组件的 `enabled` 属性为 `true` 时，其中的代码会每帧执行
-- `onLoad()`：组件所在节点进行初始化时（节点添加到节点树时）执行
-- `start()`：会在该组件第一次 `update` 之前执行，通常用于需要在所有组件的 `onLoad` 初始化完毕后执行的逻辑
+## Common Component Interface
+
+`Component` is the base class of all components, and any component includes the following common interfaces (assuming that we use this to refer to this component in the script of the component):
+
+  - `this.node`: the node instance to which this component belongs.
+  - `this.enabled`: Whether to execute the `update` method of the component every frame, and also to control whether the rendering component is displayed.
+  - `update(deltaTime: number)`: As a member method of the component, when the component's `enabled` property is `true`, the code in it will be executed every frame.
+  - `onLoad()`: Executed when the node where the component is located is initialized (when the node is added to the node tree).
+  - `start()`: It will be executed before the first `update` of the component, usually used for logic that needs to be executed after the `onLoad` of all components is initialized.
 
 ---
 
-更多组件成员方法请继续参考 [生命周期回调](life-cycle-callbacks.md) 文档。
+For more __Component__ member methods, please continue to refer to the [Life-cycle callbacks](life-cycle-callbacks.md) documentation.
