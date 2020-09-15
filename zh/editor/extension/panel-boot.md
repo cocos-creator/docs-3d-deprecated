@@ -2,7 +2,7 @@
 
 我们已经在 [package.json](./panel.md) 里写好了面板的定义，这时候就需要实现面板的逻辑功能了。
 
-我们需要实现在 panel 中定义的 main 入口文件：
+这时候就需要在 panel 定义中标识 main 入口文件，并填充其内容：
 
 ```javascript
 'use strict';
@@ -15,6 +15,8 @@ exports.style = '';
 exports.$ = {};
 // 面板上的方法
 exports.methods = {};
+// 面板上触发的事件
+exports.listeners = {};
 
 // 当面板渲染成功后触发
 exports.ready = async function() {};
@@ -83,7 +85,7 @@ exports.$ = {
 首先定义好选择器，编辑器会在 template 渲染完成后，自动调用 document.querySelector 找到对应的元素，并挂在 this.$ 上：
 
 ```javascript
-exports.read = function() {
+exports.ready = function() {
     console.log(this.$.header); // <header>
     console.log(this.$.test); // <section class="test">
 }
@@ -103,6 +105,34 @@ exports.methods = {
 };
 ```
 
+## listeners
+
+基础的布局完成后，我们有时候需要根据一些情况，去更新一些面板上的状态，这时候就需要使用 listeners 功能了。
+
+```javascript
+exports.listeners = {
+    /**
+     * 面板隐藏的时候触发
+     */
+    hide() {
+        console.log(this.hidden);
+    },
+    /**
+     * 面板显示的时候触发
+     */
+    show() {
+        console.log(this.hidden);
+    },
+    /**
+     * 面板大小更改的时候触发
+     */
+    resize() {
+        console.log(this.clientHeight);
+        console.log(this.clientWidth);
+    },
+};
+```
+
 ## ready
 
 当面板启动完成的时候，将会触发这个生命周期函数。
@@ -117,4 +147,4 @@ exports.methods = {
 
 ## close
 
-当窗口内的所有面板允许关闭后，会触发面板的 close，一旦触发 close，结束后将强制关闭窗口，所以请在 close 进行数据的保存，如果出现异常关闭，请做好数据的备份，以便在重新启动的时候尽可能回复数据。
+当窗口内的所有面板允许关闭后，会触发面板的 close，一旦触发 close，结束后将强制关闭窗口，所以请在 close 进行数据的保存，如果出现异常关闭，请做好数据的备份，以便在重新启动的时候尽可能恢复数据。

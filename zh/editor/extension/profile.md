@@ -1,6 +1,7 @@
 # 配置系统
 
-在编写扩展插件的时候，很可能需要保存一些扩展的配置。所以编辑器内就提供了一套配置管理机制。
+在编写扩展的时候，有可能需要保存一些配置，并提供一些配置让用户进行自定义设置。
+所以编辑器内就提供了一套配置管理机制。
 
 ## 配置类型
 
@@ -13,7 +14,7 @@
 
 存放一些编辑器相关的功能设置。这部分也是编辑器的主要配置。
 
-偏好设置分成三个层级，优先级从高到低：
+编辑器设置分成三个层级，优先级从高到低：
 
 ```
 local -> global -> default
@@ -53,12 +54,28 @@ local -> default
 }
 ```
 
-contributions.project 分成 editor 和 project 两种配置，这两中配置的定义都是 object 对象。
+```typescript
+interface ProfileInfo {
+    editor: { [ key: string ]: ProfileItem };
+    project: { [ key: string ]: ProfileItem };
+}
+
+interface ProfileItem {
+    // 配置的默认数据
+    default: any;
+    // 配置更改后，会自动发送这个消息进行通知
+    message: string;
+    // 简单的描述配置信息的作用，支持 i18n:key 语法
+    label: string;
+}
+```
+
+contributions.profile 分成 editor 和 project 两种配置，这两中配置的定义都是 object 对象。
 object 的 key 为配置的 key，value 则是描述这个配置的基本信息。
 
 ### default 
 
-类型 {any}
+类型 {any} 可选
 
 配置的默认值。可以是任何类型。
 

@@ -63,6 +63,26 @@
   - [Custom Project Build Process](editor/publish/custom-project-build-template.md)
   - [Build Process with FAQ](editor/publish/build-guide.md)
 
+## 进阶使用
+
+- [Extended Editor](editor/extension/first.md)
+  - [Your First Extension](editor/extension/first.md)
+  - [Install And Share](editor/extension/install.md)
+  - [Extension Description](editor/extension/define.md)
+  - [Extended Panel](editor/extension/panel.md)
+    - [Compose Panel](editor/extension/panel-boot.md)
+    - [Panel Message](editor/extension/panel-messages.md)
+  - [Contributions](editor/extension/contributions.md)
+    - [Message](editor/extension/contributions-messages.md)
+    - [Shortcuts](editor/extension/contributions-shortcuts.md)
+    - [Menu](editor/extension/contributions-menu.md)
+  - [Basic](editor/extension/basic.md)
+    - [Extension](editor/extension/package.md)
+    - [Message](editor/extension/messages.md)
+    - [I18n](editor/extension/i18n.md)
+    - [Profile](editor/extension/profile.md)
+    - [Editor UI](editor/extension/ui.md)
+
 ## Engine Manual
 
 - [功能地图](module-map/index.md)

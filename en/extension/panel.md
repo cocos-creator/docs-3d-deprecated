@@ -1,10 +1,10 @@
-# 扩展面板
+# Extension panel
 
-在实现一个功能的同时，很可能需要界面上的 UI 交互，Cocos Creator 3D 也为扩展提供了这种能力。
+While implementing a function, it is likely to require UI interaction on the interface. Cocos Creator 3D also provides this ability for extension.
 
-## 在扩展里声明面板
+## Declare the panel in the extension
 
-在 package.json 里可以定义 panels 字段。
+The panels field can be defined in package.json.
 
 ```json
 {
@@ -29,38 +29,38 @@
 }
 ```
 
-这个字段是个 object，定义如下：
+This field is an object, defined as follows:
 
 ```typescript
-// panels 定义
+// panels definition
 interface PanelMap {
     [name: string]: PanelInfo;
 }
 
-// 每个 panel 的定义
+// The definition of each panel
 interface PanelInfo {
-    // 面板标题，支持 i18n:key 格式
+    // Panel title, supports i18n:key format
     title: string;
-    // 面板入口，一个相对路径
+    // Panel entry, a relative path
     main: string;
-    // 面板图标，一个相对路径
+    // Panel icon, a relative path
     icon?: string;
-    // 面板类型，默认 dockable
-    type?: 'dockable' | 'simple';
+    // Panel type, default dockable
+    type?:'dockable' |'simple';
 
     flags?: PanelFlags;
     size?: PanelSize;
 }
 
-// panel 里的一些标记
+// Some tags in the panel
 interface PanelFlags {
-    // 是否允许缩放，默认 true
+    // Whether to allow zoom, default true
     resizable?: boolean;
-    // 是否需要保存，默认 false
+    // Need to save, default false
     save?: boolean;
 }
 
-// panel 的一些尺寸限制
+// Some size limitations of panel
 interface PanelSize {
     width?: number;
     height?: number;
