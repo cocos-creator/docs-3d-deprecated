@@ -177,7 +177,7 @@ vec4 vert () {
   // ...
 }
 ```
-You can find the complete built-in shader uniform list [here](builtin-shader-uniforms.md).
+You can find the complete built-in shader uniform list [in this](builtin-shader-uniforms.md) documentation.
 
 ### Fragment Ouput<sup id="a1">[1](#f1)</sup>
 To encapsulate render pipeline complexities, use `CCFragOutput`.
