@@ -9,7 +9,7 @@
 ## 实例
 
 ```javascript
-var ctx = node.getComponent(cc.GraphicsComponent);
+var ctx = node.getComponent(Graphics);
 ctx.lineWidth = 20;
 ctx.rect(20,20,80,100);
 ctx.stroke();

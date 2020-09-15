@@ -40,7 +40,7 @@ ScrollBar 是可选的，你可以选择只设置 Horizontal ScrollBar 或者 Ve
 
 ## 详细说明
 
-ScrollView 组件必须有指定的 content 节点才能起作用，通过指定滚动方向和 content 节点在此方向上的长度来计算滚动时的位置信息，Content 节点也可以通过添加 `WidgetComponent` 设置自动 resize，也可以通过添加 `LayoutComponent` 来完成子节点布局，但是这两个组件不应该同时添加到一个节点上以避免产生不可预料的后果。
+ScrollView 组件必须有指定的 content 节点才能起作用，通过指定滚动方向和 content 节点在此方向上的长度来计算滚动时的位置信息，Content 节点也可以通过添加 `Widget` 设置自动 resize，也可以通过添加 `Layout` 来完成子节点布局，但是这两个组件不应该同时添加到一个节点上以避免产生不可预料的后果。
 
 通常一个 ScrollView 的节点树如下图：
 
@@ -55,7 +55,7 @@ ScrollView 组件必须有指定的 content 节点才能起作用，通过指定
 这种方法添加的事件回调和使用编辑器添加的事件回调是一样的，都是通过代码添加。首先需要构造一个 `EventHandler` 对象，然后设置好对应的 `target`、`component`、`handler` 和 `customEventData` 参数。
 
 ```ts
-import { _decorator, Component, ScrollViewComponent, EventHandler } from "cc";
+import { _decorator, Component, ScrollView, EventHandler } from "cc";
 const { ccclass, property } = _decorator;
 
 @ccclass("example")
@@ -67,13 +67,13 @@ export class example extends Component {
         scrollViewEventHandler.handler = 'callback';
         scrollViewEventHandler.customEventData = 'foobar';
 
-        const scrollview = this.node.getComponent(ScrollViewComponent);
+        const scrollview = this.node.getComponent(ScrollView);
         scrollview.scrollEvents.push(scrollViewEventHandler);
     }
 
     callback(scrollview, eventType, customEventData){
         // 这里 scrollview 是一个 Scrollview 组件对象实例
-        // 这里的 eventType === ScrollViewComponent.EventType enum 里面的值
+        // 这里的 eventType === ScrollView.EventType enum 里面的值
         // 这里的 customEventData 参数就等于你之前设置的 'foobar'
     }
 }
@@ -85,18 +85,18 @@ export class example extends Component {
 
 ```js
 // 假设我们在一个组件的 onLoad 方法里面添加事件处理回调，在 callback 函数中进行事件处理:
-import { _decorator, Component, ScrollViewComponent } from "cc";
+import { _decorator, Component, ScrollView } from "cc";
 const { ccclass, property } = _decorator;
 
 @ccclass("example")
 export class example extends Component {
-    @property(ScrollViewComponent)
-    scrollview: ScrollViewComponent | null = null;
+    @property(ScrollView)
+    scrollview: ScrollView | null = null;
     onLoad(){
         this.scrollview.node.on('scroll-to-top', this.callback, this);
     }
 
-    callback(scrollView: ScrollViewComponent){
+    callback(scrollView: ScrollView){
         // 回调的参数是 ScrollView 组件，注意这种方式注册的事件，无法传递 customEventData
     }
 }

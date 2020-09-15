@@ -57,7 +57,7 @@ export let markAsWarning: (owner: object, ownerName: string, properties: IMarkIt
 export let replaceProperty: (owner: object, ownerName: string, properties: IReplacement[]) => void;
 
 /** 此函数用于设置全局默认的信息输出次数 */
-export function setDefaultLogTimes (times: number): void;  
+export function setDefaultLogTimes (times: number): void;
 ```
 
 ## 使用规范
@@ -70,13 +70,13 @@ export function setDefaultLogTimes (times: number): void;
 
 ```typescript
 // 对于替换参数不兼容的API，通过合适的自定义功能进行适配
-replaceProperty(AnimationComponent.prototype, 'AnimationComponent.prototype', [
+replaceProperty(Animation.prototype, 'Animation.prototype', [
     {
         name: 'removeClip',
         newName: 'removeState',
         customFunction: function (...args: any) {
             const arg0 = args[0] as AnimationClip;
-            return AnimationComponent.prototype.removeState.call(this, arg0.name);
+            return Animation.prototype.removeState.call(this, arg0.name);
         }
     }
 ]);

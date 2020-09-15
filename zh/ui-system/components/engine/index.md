@@ -1,10 +1,10 @@
 # UI 结构说明
 
-UI 采用的是基于树状的渲染结构，整个 UI 的渲染都是基于 Canvas 节点（带有 CanvasComponent 的节点）作为根节点来进行，也就是 UI 节点的最终根节点必须是 Canvas 节点才可以被该 Canvas 渲染。每一个 UI 节点必须带有 `UITransformComponent` 组件作为点击或者对齐策略等生效的必要条件。
+UI 采用的是基于树状的渲染结构，整个 UI 的渲染都是基于 Canvas 节点（带有 Canvas 的节点）作为根节点来进行，也就是 UI 节点的最终根节点必须是 Canvas 节点才可以被该 Canvas 渲染。每一个 UI 节点必须带有 `UITransform` 组件作为点击或者对齐策略等生效的必要条件。
 
-在整体渲染方面，UI 采用了一套独立的渲染管线且优先级是最高的，整个渲染管线会先渲染 3D 部分再渲染 UI。然后 UI 又通过 Canvas 节点的 CanvasComponent 组件上的 `priority` 来决定渲染顺序。
+在整体渲染方面，UI 采用了一套独立的渲染管线且优先级是最高的，整个渲染管线会先渲染 3D 部分再渲染 UI。然后 UI 又通过 Canvas 节点的 Canvas 组件上的 `priority` 来决定渲染顺序。
 
-UI 还支持对模型进行渲染，唯一的条件是带有模型组件（例如 `ModelComponent` / `SkinningModelComponent`）的节点必须添加 **UI / Model** 组件才可以和 UI 在相同的管线上进行渲染。
+UI 还支持对模型进行渲染，唯一的条件是带有模型组件（例如 `MeshRenderer` / `SkinnedMeshRenderer`）的节点必须添加 **UI / Model** 组件才可以和 UI 在相同的管线上进行渲染。
 
 UI 渲染流程如下：
 
@@ -16,7 +16,7 @@ UI 是游戏开发的必要交互部分，一般游戏上的按钮、文字、�
 
 ![resolution-config](multi-resolution/resolution_config.png)
 
-设计分辨率设置完成后，开始创建 UI 元素，所有的 UI 元素都包含在 Canvas 节点下。可以在 **层级管理器** 面板中点击左上方的 **+** 按钮，然后选择 **UI -> Canvas** 来创建 Canvas 节点。Canvas 节点上有一个 [CanvasComponent](../editor/canvas.md) 组件，该组件内部会自动创建一个 camera。开发者可以通过调整 `CanvasComponent` 上的 `RenderMode` 属性来实现真正意义上的 3D 相机与 2D 相机的穿插渲染。还可以通过 `CanvasComponent` 上的 `priority` 参数来调整多个 Canvas 之间的显示优先级。
+设计分辨率设置完成后，开始创建 UI 元素，所有的 UI 元素都包含在 Canvas 节点下。可以在 **层级管理器** 面板中点击左上方的 **+** 按钮，然后选择 **UI -> Canvas** 来创建 Canvas 节点。Canvas 节点上有一个 [Canvas](../editor/canvas.md) 组件，该组件内部会自动创建一个 camera。开发者可以通过调整 `Canvas` 上的 `RenderMode` 属性来实现真正意义上的 3D 相机与 2D 相机的穿插渲染。还可以通过 `Canvas` 上的 `priority` 参数来调整多个 Canvas 之间的显示优先级。
 
 **注意**：
 - 在一个场景中可以存在多个 Canvas 节点，但是 Canvas 节点不应该嵌套在另一个 Canvas 节点或其子节点下。

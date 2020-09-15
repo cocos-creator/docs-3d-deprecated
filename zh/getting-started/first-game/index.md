@@ -101,7 +101,7 @@ export class PlayerController extends Component {
 
 我们在脚本中添加对鼠标事件的监听，然后让Player动起来，将PlayerController中代码做如下修改。
 ```ts
-import { _decorator, Component, Vec3, systemEvent, SystemEvent, EventMouse, AnimationComponent, v3 } from "cc";
+import { _decorator, Component, Vec3, systemEvent, SystemEvent, EventMouse, Animation, v3 } from "cc";
 const { ccclass, property } = _decorator;
 
 @ccclass("PlayerController")
@@ -203,7 +203,7 @@ export class PlayerController extends Component {
 
 退出动画编辑模式前前记得要保存动画，否则做的动画就白费了。
 
-3. 我们还可以通过 **资源管理器** 来创建Clip，下面我们创建一个名为twoStep的Clip并将它添加到Body身上的 `AnimationComponent` 上，这里为了录制方便调整了一下面板布局。
+3. 我们还可以通过 **资源管理器** 来创建Clip，下面我们创建一个名为twoStep的Clip并将它添加到Body身上的 `Animation` 上，这里为了录制方便调整了一下面板布局。
 
    ![add animation from assets](./images/add-animation-from-assets.gif)
 4. 进入动画编辑模式，选择并编辑twoStep的clip，类似第2步，添加三个position的关键帧，分别为（0，0，0）、（0，1，0）、（0，0，0）。
@@ -212,12 +212,12 @@ export class PlayerController extends Component {
 
 5. 在 `PlayerController组件` 中引用 `动画组件` ，我们需要在代码中根据跳的步数不同来播放不同的动画。
 
-   首先需要 在 `PlayerController组件` 中引用Body身上的 `AnimationComponent`。
+   首先需要 在 `PlayerController组件` 中引用Body身上的 `Animation`。
    ```ts
-      @property({type: AnimationComponent})
-      public BodyAnim: AnimationComponent = null;
+      @property({type: Animation})
+      public BodyAnim: Animation = null;
    ```
-   然后在 **属性检查器** 中将Body身上的 `AnimationComponent` 拖到这个变量上。
+   然后在 **属性检查器** 中将Body身上的 `Animation` 拖到这个变量上。
 
       ![drag to animComp](./images/drag-to-animComp.gif)
 
@@ -312,12 +312,12 @@ export class GameManager extends Component {
     // }
 }
 ```
-在GameManager的inspector面板中可以通过修改roadLength的值来改变跑道的长度。
-预览可以看到现在自动生成了跑道，不过因为Camera没有跟随Player移动，所以看不到后面的跑道，我们可以将场景中的Camera设置为Player的子节点。
+在 GameManager 的 inspector 面板中可以通过修改 roadLength 的值来改变跑道的长度。
+预览可以看到现在自动生成了跑道，不过因为Camera没有跟随 Player移动，所以看不到后面的跑道，我们可以将场景中的Camera设置为 Player 的子节点。
 
    ![drag camera to player](./images/drag-camera-to-player.gif)
 
-这样Camera就会跟随Player的移动而移动，现在预览可以从头跑到尾的观察生成的跑道了。
+这样 Camera 就会跟随 Player 的移动而移动，现在预览可以从头跑到尾的观察生成的跑道了。
 
 ## 增加开始菜单
 开始菜单是游戏不可或缺的一部分，我们可以在这里加入游戏名称、游戏简介、制作人员等信息。
@@ -326,17 +326,17 @@ export class GameManager extends Component {
 
    ![create button](./images/create-button.gif)
 
-   这个操作生成了一个Canvas节点，一个PlayButton节点和一个Label节点。因为UI组件需要在带有 `CanvasComponent` 的父节点下才能显示，所以编辑器在发现目前场景中没有带这个组件的节点时会自动添加一个。
-   创建按钮后，将Label节点上的 `cc.LabelComponent` 的String属性从Button改为Play。
+   这个操作生成了一个Canvas节点，一个PlayButton节点和一个Label节点。因为UI组件需要在带有 `Canvas` 的父节点下才能显示，所以编辑器在发现目前场景中没有带这个组件的节点时会自动添加一个。
+   创建按钮后，将Label节点上的 `Label` 的String属性从Button改为Play。
 2. 在Canvas底下创建一个名字为StartMenu的空节点，将PlayButton拖到它底下。我们可以通过点击工具栏上的2D/3D按钮![2d-view](./images/2d-view.png)来切换到2D编辑视图下进行UI编辑操作，详细的描述请查阅 [场景编辑](../../editor/scene/index.md)。
-3. 增加一个背景框，在StartMenu下新建一个名字为BG的Sprite节点，调节它的位置到PlayButton的上方，设置它的宽高为（200，200）,并将它的SpriteFrame设置为 `internal/default_ui/default_sprite_splash` 。
+3. 增加一个背景框，在 StartMenu 下新建一个名字为BG的Sprite节点，调节它的位置到 PlayButton 的上方，设置它的宽高为（200，200）,并将它的 SpriteFrame 设置为 `internal/default_ui/default_sprite_splash` 。
     ![change spriteFrame](./images/change-spriteFrame.png)
 4. 添加一个名为Title的 `Label` 用于开始菜单的标题，。
    ![add title label](./images/add-label-title.gif)
 
-5. 修改Title的文字，并调整Title的位置、文字大小、颜色。
+5. 修改Title的文字，并调整 Title 的位置、文字大小、颜色。
    ![modify title](./images/title-inspector.png)
-6. 增加操作的Tips，然后调整PlayButton的位置，一个简单的开始菜单就完成了
+6. 增加操作的Tips，然后调整 PlayButton 的位置，一个简单的开始菜单就完成了
    ![modify title](./images/start-menu.png)
 7. 增加游戏状态逻辑，一般我们可以将游戏分为三个状态：
    - 初始化（Init）：显示游戏菜单，初始化一些资源。
@@ -357,7 +357,7 @@ export class GameManager extends Component {
     };
    ```
 
-    GameManager脚本中加入表示当前状态的私有变量
+    GameManager 脚本中加入表示当前状态的私有变量
     ```ts
     private _curState: GameState = GameState.GS_INIT;
     ```
@@ -378,13 +378,13 @@ export class GameManager extends Component {
         }
     }
     ```
-    然后需要在GameManager脚本中引用PlayerController，需要在Inspector中将场景的Player拖入到这个变量中。
+    然后需要在 GameManager 脚本中引用 PlayerController，需要在 Inspector 中将场景的 Player 拖入到这个变量中。
     ```ts
     @property({type: PlayerController})
     public playerCtrl: PlayerController = null;
     ```
 
-    为了动态的开启\关闭开启菜单，我们需要在GameManager中引用StartMenu节点，需要在Inspector中将场景的StartMenu拖入到这个变量中。
+    为了动态的开启 \ 关闭开启菜单，我们需要在 GameManager 中引用 StartMenu 节点，需要在 Inspector 中将场景的 StartMenu 拖入到这个变量中。
     ```ts
     @property({type: Node})
     public startMenu: Node = null;
@@ -392,7 +392,7 @@ export class GameManager extends Component {
 
     ![add player to game manager](./images/game-manager-player.png)
 
-    增加状态切换代码，并修改GameManger的初始化方法：
+    增加状态切换代码，并修改 GameManger 的初始化方法：
     ```ts
     start () {
         this.curState = GameState.GS_INIT;
@@ -422,24 +422,24 @@ export class GameManager extends Component {
         this._curState = value;
     }
     ```
-8. 添加对Play按钮的事件监听。
-    为了能在点击Play按钮后开始游戏，我们需要对按钮的点击事件做出响应。
-    在GameManager脚本中加入响应按钮点击的代码，在点击后进入游戏的Playing状态：
+8. 添加对 Play 按钮的事件监听。
+    为了能在点击 Play 按钮后开始游戏，我们需要对按钮的点击事件做出响应。
+    在 GameManager 脚本中加入响应按钮点击的代码，在点击后进入游戏的 Playing 状态：
     ```ts
     onStartButtonClicked() {
         this.curState = GameState.GS_PLAYING;
     }
     ```
-    然后在Play按钮的Inspector上添加ClickEvents的响应函数。
+    然后在 Play 按钮的 Inspector 上添加 ClickEvents 的响应函数。
 
     ![play button inspector](./images/play-button-inspector.png)
 
-现在预览场景就可以点击Play按钮开始游戏了。
+现在预览场景就可以点击 Play 按钮开始游戏了。
 
 ## 添加游戏结束逻辑
 目前游戏角色只是呆呆的往前跑，我们需要添加游戏规则，来让他跑的更有挑战性。
 1. 角色每一次跳跃结束需要发出消息，并将自己当前所在位置做为参数发出消息
-   在PlayerController中记录自己跳了多少步
+   在 PlayerController 中记录自己跳了多少步
    ```ts
     private _curMoveIndex = 0;
     // ...
@@ -458,7 +458,7 @@ export class GameManager extends Component {
         this.node.emit('JumpEnd', this._curMoveIndex);
     }
    ```
-2. 在GameManager中监听角色跳跃结束事件，并根据规则判断输赢
+2. 在 GameManager 中监听角色跳跃结束事件，并根据规则判断输赢
    增加失败和结束判断，如果跳到空方块或是超过了最大长度值都结束：
    ```ts
     checkResult(moveIndex: number) {
@@ -483,13 +483,13 @@ export class GameManager extends Component {
         this.checkResult(moveIndex);
     }
    ```
-   此时预览，会发现重新开始游戏时会有判断出错，是因为我们重新开始时没有重置PlayerController中的_curMoveIndex属性值。所以我们在PlayerController中增加一个reset函数：
+   此时预览，会发现重新开始游戏时会有判断出错，是因为我们重新开始时没有重置 PlayerController 中的 _curMoveIndex 属性值。所以我们在 PlayerController 中增加一个 reset 函数：
    ```ts
     reset() {
         this._curMoveIndex = 0;
     }
    ```
-   在GameManager的init函数调用reset来重置PlayerController的属性。
+   在 GameManager 的 init 函数调用 reset 来重置 PlayerController 的属性。
    ```ts
     init() {
         \\ ...
@@ -499,18 +499,18 @@ export class GameManager extends Component {
 
 ## 步数显示
 我们可以将当前跳的步数显示到界面上，这样在跳跃过程中看着步数的不断增长会十分有成就感。
-1. 在Canvas下新建一个名为Steps的Label，调整位置、字体大小等属性。
+1. 在 Canvas 下新建一个名为 Steps 的 Label，调整位置、字体大小等属性。
 
    ![steps label](./images/steps-label.png)
 
 2. 在GameManager中引用这个Label
    ```ts
-    @property({type: LabelComponent})
-    public stepsLabel: LabelComponent = null;
+    @property({type: Label})
+    public stepsLabel: Label = null;
    ```
    ![steps label to game manager](./images/add-steps-to-game-manager.png)
-3. 将当前步数数据更新到这个Label中
-   因为我们现在没有结束界面，游戏结束就跳回开始界面，所以在开始界面要看到上一次跳的步数，因此我们在进入Playing状态时，将步数重置为0。
+3. 将当前步数数据更新到这个 Label 中
+   因为我们现在没有结束界面，游戏结束就跳回开始界面，所以在开始界面要看到上一次跳的步数，因此我们在进入 Playing 状态时，将步数重置为 0。
    ```ts
     set curState (value: GameState) {
         switch(value) {
@@ -531,7 +531,7 @@ export class GameManager extends Component {
     }
    ```
 
-    在响应角色跳跃的函数中，将步数更新到Label控件上
+    在响应角色跳跃的函数中，将步数更新到 Label 控件上
     ```ts
     onPlayerJumpEnd(moveIndex: number) {
         this.stepsLabel.string = '' + moveIndex;
@@ -548,7 +548,7 @@ export class GameManager extends Component {
 
     ![planar shadows](./images/planarShadows.png)
 
-2. 点击Player节点下的Body节点，将 `cc.ModelComponent` 下的ShadowCastingMode设置为ON。
+2. 点击 Player 节点下的 Body 节点，将 `MeshRenderer` 下的 ShadowCastingMode 设置为 ON。
     ![model shadow](./images/model-shadow.png)
 
 此时在场景编辑器中会看到一个阴影面片，预览会发现看不到这个阴影，因为它在模型的正后方，被胶囊体盖住了。
@@ -566,14 +566,14 @@ export class GameManager extends Component {
 ![player shadow preview](./images/player-shadow-preview.png)
 
 ## 添加主角模型
-做为一个官方教程，用胶囊体当主角显的有点寒碜，所以我们花（低）重（预）金（算）制作了一个Cocos主角。
+做为一个官方教程，用胶囊体当主角显的有点寒碜，所以我们花（低）重（预）金（算）制作了一个 Cocos 主角。
 
 ### 导入模型资源
 从原始资源导入模型、材质、动画等资源不是本篇基础教程的重点，所以这边直接使用已经导入工程的资源。
-将[项目工程](https://github.com/cocos-creator/tutorial-mind-your-step-3d)中assets目录下的cocos文件夹拷贝到你自己工程的assets目录下。
+将[项目工程](https://github.com/cocos-creator/tutorial-mind-your-step-3d)中 assets 目录下的 cocos 文件夹拷贝到你自己工程的 assets 目录下。
 
 ### 添加到场景中
-在cocos文件中已经包含了一个名为Cocos的Prefab，将它拖到场景中Player下的Body节点中。
+在 cocos 文件中已经包含了一个名为 Cocos 的 Prefab，将它拖到场景中Player下的Body节点中。
 
 ![add cocos prefab](./images/add-cocos-prefab.png)
 
@@ -586,11 +586,11 @@ export class GameManager extends Component {
 在 `PlayerController` 类中添加一个引用模型动画的变量：
 
 ```ts
-    @property({type: SkeletalAnimationComponent})
-    public CocosAnim: SkeletalAnimationComponent = null;
+    @property({type: SkeletalAnimation})
+    public CocosAnim: SkeletalAnimation = null;
 ```
-然后在`Inspector`中要将Cocos节点拖入这个变量里。
-在jumpByStep函数中播放跳跃动画
+然后在`Inspector`中要将 Cocos 节点拖入这个变量里。
+在 jumpByStep 函数中播放跳跃动画
 
 ```ts
     jumpByStep(step: number) {
@@ -636,16 +636,16 @@ export class GameManager extends Component {
 PlayerController.ts
 
 ```ts
-import { _decorator, Component, Vec3, systemEvent, SystemEvent, EventMouse, AnimationComponent, SkeletalAnimationComponent, v3 } from "cc";
+import { _decorator, Component, Vec3, systemEvent, SystemEvent, EventMouse, Animation, SkeletalAnimation, v3 } from "cc";
 const { ccclass, property } = _decorator;
 
 @ccclass("PlayerController")
 export class PlayerController extends Component {
 
-    @property({type: AnimationComponent})
-    public BodyAnim: AnimationComponent = null;
-    @property({type: SkeletalAnimationComponent})
-    public CocosAnim: SkeletalAnimationComponent = null;
+    @property({type: Animation})
+    public BodyAnim: Animation = null;
+    @property({type: SkeletalAnimation})
+    public CocosAnim: SkeletalAnimation = null;
 
     // for fake tween
     private _startJump: boolean = false;
@@ -736,7 +736,7 @@ export class PlayerController extends Component {
 GameManager.ts
 
 ```ts
-import { _decorator, Component, Prefab, instantiate, Node, LabelComponent, CCInteger, v3} from "cc";
+import { _decorator, Component, Prefab, instantiate, Node, Label, CCInteger, v3} from "cc";
 import { PlayerController } from "./PlayerController";
 const { ccclass, property } = _decorator;
 
@@ -764,8 +764,8 @@ export class GameManager extends Component {
     @property({type: PlayerController})
     public playerCtrl: PlayerController = null;
     private _curState: GameState = GameState.GS_INIT;
-    @property({type: LabelComponent})
-    public stepsLabel: LabelComponent = null;
+    @property({type: Label})
+    public stepsLabel: Label = null;
 
     start () {
         this.curState = GameState.GS_INIT;

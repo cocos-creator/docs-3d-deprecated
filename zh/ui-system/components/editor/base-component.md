@@ -11,7 +11,7 @@
 - [ProgressBar 组件参考](progress.md)
 - [LabelOutline 组件参考](label-outline.md)
 - [Toggle 组件参考](toggle.md)
-- [UIModel 组件参考](ui-model.md)
+- [UIMeshRenderer 组件参考](ui-model.md)
 - [ToggleGroup 组件参考](toggleContainer.md)
 - [Slider 组件参考](slider.md)
 - [PageView 组件参考](pageview.md)

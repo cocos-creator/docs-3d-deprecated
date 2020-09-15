@@ -79,7 +79,7 @@ Button 目前只支持 Click 事件，即当用户点击并释放 Button 时才�
 这种方法添加的事件回调和使用编辑器添加的事件回调是一样的，都是通过代码添加。首先需要构造一个 `EventHandler` 对象，然后设置好对应的 `target`、`component`、`handler` 和 `customEventData` 参数。
 
 ```ts
-import { _decorator, Component, Event, Node, ButtonComponent, EventHandler } from "cc";
+import { _decorator, Component, Event, Node, Button, EventHandler } from "cc";
 const { ccclass, property } = _decorator;
 
 @ccclass("example")
@@ -91,14 +91,14 @@ export class example extends Component {
         clickEventHandler.handler = 'callback';
         clickEventHandler.customEventData = 'foobar';
 
-        const button = this.node.getComponent(ButtonComponent);
+        const button = this.node.getComponent(Button);
         button.clickEvents.push(clickEventHandler);
     }
 
     callback(event: Event, customEventData: string){
         // 这里 event 是一个 Touch Event 对象，你可以通过 event.target 取到事件的发送节点
         const node = event.target as Node;
-        const button = node.getComponent(ButtonComponent);
+        const button = node.getComponent(Button);
         console.log(customEventData); // foobar
     }
 }
@@ -112,18 +112,18 @@ export class example extends Component {
 ```ts
 // 假设我们在一个组件的 onLoad 方法里面添加事件处理回调，在 callback 函数中进行事件处理
 
-import { _decorator, Component, ButtonComponent } from "cc";
+import { _decorator, Component, Button } from "cc";
 const { ccclass, property } = _decorator;
 
 @ccclass("example")
 export class example extends Component {
-    @property(ButtonComponent)
-    button: ButtonComponent | null = null;
+    @property(Button)
+    button: Button | null = null;
     onLoad(){
         this.button.node.on('click', this.callback, this);
     }
 
-    callback(button: ButtonComponent){
+    callback(button: Button){
         // 注意这种方式注册的事件，无法传递 customEventData
     }
 }

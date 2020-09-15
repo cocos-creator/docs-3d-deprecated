@@ -45,11 +45,11 @@ geometry.ray.fromPoints(outRay, Vec3.ZERO, Vec3.UNIT_Z);
 > **Note**: The order of the interface parameters exposed by both the camera component and the camera instance is not the same.
 
 ```ts
-import { geometry, CameraComponent } from "cc";
+import { geometry, Camera } from "cc";
 const { ray } = geometry;
 // It is assumed here that there is already a reference to cameraCom
-const cameraCom: CameraComponent;
-const cameraCom: CameraComponent;
+const cameraCom: Camera;
+const cameraCom: Camera;
 // Get a ray emitted by the screen coordinates (0, 0)
 const outRay = new ray();
 cameraCom.screenPointToRay(0, 0, outRay);
@@ -59,7 +59,7 @@ cameraCom.screenPointToRay(0, 0, outRay);
 
 __Cocos Creator 3D__ provides a set of ray detection functions based on the physics engine in the `v1.0.1` version.
 
-However, it should be noted that the detected object is a physics collider, and the corresponding collider component on the inspector panel, such as `BoxColliderComponent`.
+However, it should be noted that the detected object is a physics collider, and the corresponding collider component on the inspector panel, such as `BoxCollider`.
 
 Currently, the interface is provided by PhysicsSystem, which has the following two categories:
 

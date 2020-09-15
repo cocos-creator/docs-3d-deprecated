@@ -19,7 +19,7 @@ Cocos Creator 3D粒子系统以模块来组织功能，包含了以下模块：
 
 模块 | 描述
 ---|---
-[**ParticleSystemComponent**](main-module.md) | 用于存储在Inspector中显示的所有数据，管理粒子生成、更新、销毁相关模块，控制粒子播放
+[**ParticleSystem**](main-module.md) | 用于存储在Inspector中显示的所有数据，管理粒子生成、更新、销毁相关模块，控制粒子播放
 [**ShapeModule**](emitter.md) | 用于控制粒子发射，包括发射方向与速度，支持预定义的发射方向包括方块、圆、锥体、球、半球
 [**AnimatorModule**](module.md) |  用于控制粒子发射后状态更新。已支持的功能有：大小、颜色、旋转、速度、加速度、限速、贴图动画
 [**ParticleSystemRenderer**](renderer.md) |  用于生成粒子渲染所需要的数据。包括vb、ib、渲染状态相关的控制
