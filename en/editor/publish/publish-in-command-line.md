@@ -35,10 +35,12 @@ Currently, when using the command line to build, except for the required build o
 
   If no parameters are specified after `--build`, then the parameters used in the **Build** panel, such as platforms, templates, and so on, will be used as default parameters. If additional parameter settings are specified, the default parameters will be overwritten with the specified parameters. The available parameters are:
 
-    - `configPath`: Parameter file path. If define `configPath`, then Cocos Creator 3D will load this file as a build parameter in the `json` file format. This parameter can be modified by yourself or exported directly from the **Build** panel.
+    - `configPath`: Parameter file path. If define `configPath`, then __Cocos Creator 3D__ will load this file as a build parameter in the `JSON` file format. This parameter can be modified by yourself or exported directly from the **Build** panel.
     
     - `includedModules`: Package modules for custom engines. Only the required modules are packaged.
-      > **Note**: The pass is an array of module `entry` fields, see [the documentation](https://github.com/cocos-creator/engine/blob/3d-v1.0.0/scripts/module-division/division-config.json) for details.
+      
+      > **Note**: The pass is an array of module `entry` fields, see [this documentation](https://github.com/cocos-creator/engine/blob/3d-v1.0.0/scripts/module-division/division-config.json) for details.
+
     - `taskName`: Build task name, the name of the release folder generated after the build.
     - `name`: Game name
     - `platform`: Required, the platform needs to be built.
@@ -52,7 +54,7 @@ Currently, when using the command line to build, except for the required build o
     - `replaceSplashScreen`: Whether to replace the splash screen, the default is `false`.
     - `md5Cache`: Enabled or disabled the MD5 Cache, the default is `false`.
 
-Starting from **v1.0.3**, each platform's build will be embedded in the **Build** panel as a separate plugin, so each platform's build options are in different locations, and the build options are in `packages.platform-name.key`. For example, to specify the build options for the WeChat Mini Game, the configuration is as follows:
+Each platform's build will be embedded in the **Build** panel as a separate plugin, so each platform's build options are in different locations, and the build options are in `packages.platform-name.key`. For example, to specify the build options for the WeChat Mini Game, the configuration is as follows:
 
 ```bash
 {
@@ -69,6 +71,6 @@ After the build plugin system is opened to the public, the configuration paramet
 
 ## Publishing using Jenkins
 
-Cocos Creator 3D still needs the GUI environment when running from the command line. If the Jenkins server can not run Cocos Creator 3D from the command line, a solution is running Jenkins in agent mode, so it can interact with the operating systems window server. For more details please review this Stack Overflow post: <https://stackoverflow.com/questions/13966595/build-unity-project-with-jenkins-failed>.
+**Cocos Creator 3D** still needs the GUI environment when running from the command line. If the Jenkins server can not run **Cocos Creator 3D** from the command line, a solution is running Jenkins in agent mode, so it can interact with the operating systems window server. For more details please review this [Stack Overflow post]( https://stackoverflow.com/questions/13966595/build-unity-project-with-jenkins-failed).
 
-If the Jenkins can not compile under Windows, specify a local user for the Jenkins service in the Windows **Control Panel -> Administrative Tools -> Services**, and then restart the computer. You don't need to set up a master-slave mode separately.
+If the Jenkins server can not compile under Windows, specify a local user for the Jenkins service in the Windows **Control Panel -> Administrative Tools -> Services**, and then restart the computer. You don't need to set up a master-slave mode separately.

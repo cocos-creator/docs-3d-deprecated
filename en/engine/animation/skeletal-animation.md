@@ -28,7 +28,7 @@ This provides the fundamental support for all the following functions:
 
 ## Selection and best practice of two systems
 
-After importing all model resources, all prefabs use the pre-baked system by default to achieve the best performance. It is recommended that you only use the real-time calculated system if you clearly feel that the performance of the pre-baked system cannot reach the standard. Although the two systems can be switched seamlessly at runtime, try to do this as less frequent as possible, because each switch involves the reconstruction of the underlying rendering data.
+After importing all model assets, all prefabs use the pre-baked system by default to achieve the best performance. It is recommended that you only use the real-time calculated system if you clearly feel that the performance of the pre-baked system cannot reach the standard. Although the two systems can be switched seamlessly at runtime, try to do this as less frequent as possible, because each switch involves the reconstruction of the underlying rendering data.
 
 ## Skinning algorithm
 
@@ -48,7 +48,7 @@ If you need to attach some external nodes to the specified joint joints, you nee
   * Add an array element in the sockets list of the `SkeletalAnimationComponent`. Select the path of the joint to be attached to from the drop-down list (note that the `defaultClip` property of the `SkeletalAnimationComponent` must be a valid clip, the content of the drop-down list depend on this), and specify the target as the child node just created.
   * This child node becomes a socket node, you can put any node under and it will follow the transformations of the specified joint.
 
-`FBX` or `glTF` resources will be automatically adapted to use this socket system at import time, without any manual interference.
+`FBX` or `glTF` assets will be automatically adapted to use this socket system at import time, without any manual interference.
 
 ## About Dynamic Instancing
 
@@ -58,7 +58,7 @@ The fundamental problem here is that the joint texture atlass used by each model
 
 The way to distribute all the animation data used at runtime to each joint texture atlases becomes a project-specific information, thus needs developer's input. See the [joint texture layout panel](../../editor/project/joints-texture-layout.md) documentation for more details on how to configure this.
 
-> **Note**: Instancing is only supported under the pre-baked system. Although we do not strictly prohibit instancing under the real-time calculated system (will only trigger some warnings in the editor), there will be problems with the rendering results. Depending on the resource allocation situation at the time, all the instances could be playing the same clip at best, or more often, completely mad rendering results.
+> **Note**: Instancing is only supported under the pre-baked system. Although we do not strictly prohibit instancing under the real-time calculated system (will only trigger some warnings in the editor), there will be problems with the rendering results. Depending on the asset allocation situation at the time, all the instances could be playing the same clip at best, or more often, completely mad rendering results.
 
 > **Note**: For models with instancing turned on in the material, the planar shadow system will also automatically draw using instancing. In particular, the shadow of the skin model has a higher requirement for the layout of the joint texture atlas, because the pipeline state of the shadow is unified, all the animation of the skin model with the shadow turned on needs to be put into the same texture (Compared to when drawing the model itself, only the instances in the same drawcall need to be put into the same texture).
 
@@ -68,6 +68,6 @@ The joint texture uploaded by the GPU on the bottom layer has been globally auto
 
 ![](batched-skinning-model-component.png)
 
-The batch version of the effect is relatively complicated to write, but it can basically be based on the common effects used by the sub-materials, adding some relatively direct preprocessing and interface changes. The built-in resources in the editor (util/batched-unlit) provide a The integrated version of builtin-unlit can be referenced.
+The batch version of the effect is relatively complicated to write, but it can basically be based on the common effects used by the sub-materials, adding some relatively direct preprocessing and interface changes. The built-in assets in the editor (util/batched-unlit) provide a The integrated version of builtin-unlit can be referenced.
 
 > **Note**: Only using the Batched Skinning Model Component under the pre-baked system can guarantee the correctness. Although it can also be used under the real-time calculated system, there **will** be rendering problems when the number of joints after the merger exceeds 30 (the maximum number of Uniform arrays).

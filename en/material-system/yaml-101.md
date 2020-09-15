@@ -62,8 +62,7 @@ techniques:
     # ...
 ```
 
-Another YAML feature that might comes in handy for us is reference and inheritance.<br>
-Let's look at reference first:
+Another YAML feature that might comes in handy is reference and inheritance. Take a look at reference first:
 
 ```yaml
 object1: &o1
@@ -138,7 +137,8 @@ CCEffect %{
 ```
 
 # References
-* https://en.wikipedia.org/wiki/YAML
-* https://yaml.org/spec/1.2/spec.html
+
+* [YAML on Wikipedia](https://en.wikipedia.org/wiki/YAML)
+* [YAML.org Spec](https://yaml.org/spec/1.2/spec.html)
 
 <b id="f1">[1]</b> The YAML standard doesn't support tabs, so the effect compiler will try to replace all the tabs in file with 2 spaces first, to avoid the trivial yet annoying trouble of accidentally inserting tabs somewhere. But overall, please try to avoid doing that completely to make sure the compilation goes smoothly. [↩](#a1)<br>
