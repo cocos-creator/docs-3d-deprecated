@@ -18,9 +18,9 @@ Please refer to the [Baidu Mini Game Developer Documentation](https://smartprogr
 
 ### Prerequisites
 
-- Download and install **Baidu DevTools** in [Baidu DevTools Documentation](https://smartprogram.baidu.com/docs/game/tutorials/howto/dev/).
+- Download and install **Baidu DevTools** in the [Baidu DevTools](https://smartprogram.baidu.com/docs/game/tutorials/howto/dev/) documentation.
 - Download and install the **Baidu App** in the app store of your phone.
-- Log in to [Baidu Smart Mini Progame Platform](https://smartprogram.baidu.com/developer/index.html) and find **App ID**.
+- Log in to the [Baidu Smart Mini Progame Platform](https://smartprogram.baidu.com/developer/index.html) and find **App ID**.
 
   ![](./publish-baidugame/appid.png)
 
