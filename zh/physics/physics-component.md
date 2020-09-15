@@ -10,7 +10,7 @@ Cocos Creator 3D 目前为用户提供了多种碰撞器组件和通用的刚体
 
 **注：以下属性名称的首字母在实际代码中都为小写**。
 
-### 盒碰撞器组件（BoxColliderComponent）
+### 盒碰撞器组件（BoxCollider）
 
 ![盒碰撞器组件](img/collider-box.jpg)
 
@@ -21,7 +21,7 @@ Cocos Creator 3D 目前为用户提供了多种碰撞器组件和通用的刚体
   **center**  |  本地坐标系下形状的原点
   **size**  |  盒的大小，即长、宽、高
 
-### 球碰撞器组件（SphereColliderComponent）
+### 球碰撞器组件（SphereCollider）
 
 ![球碰撞器组件](img/collider-sphere.jpg)
 
@@ -29,7 +29,7 @@ Cocos Creator 3D 目前为用户提供了多种碰撞器组件和通用的刚体
 ---|---
 **radius** | 球的半径
 
-### 圆柱体碰撞器组件（CylinderColliderComponent）
+### 圆柱体碰撞器组件（CylinderCollider）
 
 ![圆柱体碰撞器组件](img/collider-cylinder.jpg)
 
@@ -41,7 +41,7 @@ Cocos Creator 3D 目前为用户提供了多种碰撞器组件和通用的刚体
 
 **注：`builtin`暂不支持圆柱体组件**。
 
-### 胶囊体碰撞器组件（CapsuleColliderComponent）
+### 胶囊体碰撞器组件（CapsuleCollider）
 
 ![胶囊体碰撞器组件](img/collider-capsule.jpg)
 
@@ -52,7 +52,7 @@ Cocos Creator 3D 目前为用户提供了多种碰撞器组件和通用的刚体
 
 **注：`cannon.js`不支持胶囊体组件，建议使用两个球和圆柱体拼凑**。
 
-### 网格碰撞器组件（MeshColliderComponent）
+### 网格碰撞器组件（MeshCollider）
 
 ![网格碰撞器组件](img/collider-mesh.jpg)
 
@@ -66,7 +66,7 @@ Cocos Creator 3D 目前为用户提供了多种碰撞器组件和通用的刚体
 
 **注：`ammo.js`目前只支持静态网格碰撞体（`mass`为`0`或无`RigidBody`组件的）**。
 
-## 刚体组件（RigidBodyComponent）
+## 刚体组件（RigidBody）
 
 为了更便捷的模拟物理行为，Cocos Creator 3D为用户提供了刚体组件，预览图如下：
 

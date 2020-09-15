@@ -5,10 +5,10 @@
 像其他组件一样为结点添加动画组件：
 
 ```ts
-import { AnimationComponent, Node } from "cc";
+import { Animation, Node } from "cc";
 
 function (node: Node) {
-    const animationComponent = node.addComponent(AnimationComponent);
+    const animationComponent = node.addComponent(Animation);
 }
 ```
 
@@ -56,7 +56,7 @@ animationComponent.crossFade('run', 0.3); // 在 0.3 秒内平滑地从走的动
 可以通过 `getState()` 获取动画状态：
 
 ```ts
-const animationComponent = node.getComponent(AnimationComponent);
+const animationComponent = node.getComponent(Animation);
 animationComponent.clips = [ idleClip, runClip ];
 
 // 获取 `idleClip` 的状态
@@ -101,14 +101,14 @@ animationComponent.getState('idle').speed = 2.0; // 以两倍速播放待机动�
 以下代码演示了这一过程。
 
 ```ts
-import { AnimationComponent, Component } from "cc";
+import { Animation, Component } from "cc";
 class MyScript extends Component {
     constructor() {
 
     }
 
     public start() {
-        const animationComponent = this.node.getComponent(AnimationComponent);
+        const animationComponent = this.node.getComponent(Animation);
         if (animationComponent && animationComponent.defaultClip) {
             const { defaultClip } = animationComponent;
             defaultClip.events.push({

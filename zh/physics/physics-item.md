@@ -16,7 +16,7 @@
 
 - `builtin`只有`trigger`类型的事件。
 - `RigidbodyComponent`无效。
-- `ColliderComponent`中的`isTrigger`无论值真假，都为触发器。
+- `Collider`中的`isTrigger`无论值真假，都为触发器。
 
 ## 物理引擎:`cannon.js`
 

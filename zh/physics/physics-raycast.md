@@ -46,10 +46,10 @@ geometry.ray.fromPoints(outRay, Vec3.ZERO, Vec3.UNIT_Z);
 **注：相机组件和相机实例两者暴露的接口参数顺序不一样**。
 
 ```ts
-import { geometry, CameraComponent } from "cc";
+import { geometry, Camera } from "cc";
 const { ray } = geometry;
 // 此处假设已经有 cameraCom 的引用了
-const cameraCom: CameraComponent;
+const cameraCom: Camera;
 // 获得一条途径屏幕坐标（0，0）发射出的一条射线
 const outRay = new ray();
 cameraCom.screenPointToRay(0, 0, outRay);
@@ -59,7 +59,7 @@ cameraCom.screenPointToRay(0, 0, outRay);
 
 Cocos Creator 3D 在`v1.0.1`版本上提供了一套基于物理引擎的射线检测功能。
 
-但需要注意的是，检测的对象是物理碰撞器，在场景面板上与之对应的是碰撞器组件，例如 `BoxColliderComponent`。
+但需要注意的是，检测的对象是物理碰撞器，在场景面板上与之对应的是碰撞器组件，例如 `BoxCollider`。
 
 目前接口由`PhysicsSystem`提供，有以下两类：
 

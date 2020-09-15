@@ -4,11 +4,11 @@
 The following code works in both __JavaScript__ and __TypeScript__:
 
 ```javascript
-this.getComponent('cc.BoxColliderComponent')
+this.getComponent('cc.BoxCollider')
 
 - or -
 
-this.getComponent(cc.BoxColliderComponent)
+this.getComponent(cc.BoxCollider)
 ```
 
 ## Collider and Trigger

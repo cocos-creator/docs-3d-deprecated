@@ -4,15 +4,15 @@
 
 | 参数 |   描述
 | -------------- | ----------- |
-|cc.GraphicsComponent.LineJoin.BEVEL   | 创建斜角。
-|cc.GraphicsComponent.LineJoin.ROUND  | 创建圆角。
-|cc.GraphicsComponent.LineJoin.MITER | 默认。创建尖角。
+|Graphics.LineJoin.BEVEL   | 创建斜角。
+|Graphics.LineJoin.ROUND  | 创建圆角。
+|Graphics.LineJoin.MITER | 默认。创建尖角。
 
 ## 实例
 
 ```javascript
-var ctx = node.getComponent(cc.GraphicsComponent);
-ctx.lineJoin = cc.GraphicsComponent.LineJoin.ROUND;
+var ctx = node.getComponent(Graphics);
+ctx.lineJoin = Graphics.LineJoin.ROUND;
 ctx.moveTo(20,20);
 ctx.lineTo(100,50);
 ctx.lineTo(20,100);

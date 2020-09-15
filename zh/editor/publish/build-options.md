@@ -55,7 +55,7 @@
 启用后，如果出现资源加载不了的情况，说明找不到重命名后的新文件。这通常是因为有些第三方资源没通过 cc.loader 加载引起的。这时可以在加载前先用以下方法转换 url ，转换后的路径就能正确加载。
 
 ```js
-url = cc.loader.md5Pipe.transformURL(url);
+url = loader.md5Pipe.transformURL(url);
 ```
 
 ## 其他参与构建的参数配置

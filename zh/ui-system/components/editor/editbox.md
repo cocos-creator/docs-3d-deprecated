@@ -52,7 +52,7 @@ EditBox 是一种文本输入组件，该组件让你可以轻松获取用户输
 这种方法添加的事件回调和使用编辑器添加的事件回调是一样的，都是通过代码添加。首先需要构造一个 `EventHandler` 对象，然后设置好对应的 `target`、`component`、`handler` 和 `customEventData` 参数。
 
 ```ts
-import { _decorator, Component, EditBoxComponent, EventHandler } from "cc";
+import { _decorator, Component, EditBox, EventHandler } from "cc";
 const { ccclass, property } = _decorator;
 
 @ccclass("example")
@@ -64,7 +64,7 @@ export class example extends Component {
         editboxEventHandler.handler = 'onEditDidBegan';
         editboxEventHandler.customEventData = 'foobar';
 
-        const editbox = this.node.getComponent(EditBoxComponent);
+        const editbox = this.node.getComponent(EditBox);
         editbox.editingDidBegan.push(editboxEventHandler);
         // 你也可以通过类似的方式来注册其它回调函数
         // editbox.editingDidEnded.push(editboxEventHandler);
@@ -101,18 +101,18 @@ export class example extends Component {
 
 ```ts
 // 假设我们在一个组件的 onLoad 方法里面添加事件处理回调，在 callback 函数中进行事件处理:
-import { _decorator, Component, EditBoxComponent } from "cc";
+import { _decorator, Component, EditBox } from "cc";
 const { ccclass, property } = _decorator;
 
 @ccclass("example")
 export class example extends Component {
-    @property(EditBoxComponent)
-    editbox: EditBoxComponent | null = null;
+    @property(EditBox)
+    editbox: EditBox | null = null;
     onLoad(){
         this.editbox.node.on('editing-did-began', this.callback, this);
     }
 
-    callback(editbox: EditBoxComponent){
+    callback(editbox: EditBox){
         // 回调的参数是 editbox 组件，注意这种方式注册的事件，无法传递 customEventData
     }
 }

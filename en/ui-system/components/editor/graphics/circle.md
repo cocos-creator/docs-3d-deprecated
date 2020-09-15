@@ -11,7 +11,7 @@ The `circle()` method is used to create a circle.
 ## Example
 
 ```javascript
-var ctx = node.getComponent(cc.GraphicsComponent);
+var ctx = node.getComponent(Graphics);
 ctx.circle(200,200, 200);
 ctx.stroke();
 ```

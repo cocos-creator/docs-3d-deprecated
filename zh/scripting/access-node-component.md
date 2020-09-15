@@ -27,7 +27,7 @@
 你会经常需要获得同一个节点上的其它组件，这就要用到 `getComponent` 这个 API，它会帮你查找你要的组件。
 
 ```ts
-import { _decorator, Component, LabelComponent } from "cc";
+import { _decorator, Component, Label } from "cc";
 const { ccclass, property } = _decorator;
 
 @ccclass("test")
@@ -35,7 +35,7 @@ export class test extends Component {
     private label: any = null
 
     start(){
-        this.label = this.getComponent(LabelComponent);
+        this.label = this.getComponent(Label);
         let text = this.name + 'started';
         // Change the text in Label Component
         this.label.string = text;
@@ -53,14 +53,14 @@ export class test extends Component {
 
 ```ts
     start() {
-        console.log( this.node.getComponent(LabelComponent) === this.getComponent(LabelComponent) );  // true
+        console.log( this.node.getComponent(Label) === this.getComponent(Label) );  // true
     }
 ```
 
 如果在节点上找不到你要的组件，`getComponent` 将返回 null，如果你尝试访问 null 的值，将会在运行时抛出 "TypeError" 这个错误。因此如果你不确定组件是否存在，请记得判断一下：
 
 ```ts
-import { _decorator, Component, LabelComponent } from "cc";
+import { _decorator, Component, Label } from "cc";
 const { ccclass, property } = _decorator;
 
 @ccclass("test")
@@ -68,7 +68,7 @@ export class test extends Component {
     private label: any =null;
 
     start() {
-        this.label = this.getComponent(LabelComponent);
+        this.label = this.getComponent(Label);
         if (this.label) {
             this.label.string = "Hello";
         }
@@ -221,7 +221,7 @@ export class Global extends Component {
 
 ```ts
 // Back.ts
-import { _decorator, Component, Node, LabelComponent } from "cc";
+import { _decorator, Component, Node, Label } from "cc";
 const { ccclass, property } = _decorator;
 // this feels more safe since you know where the object comes from
 import{Global}from "./Global";
@@ -230,7 +230,7 @@ import{Global}from "./Global";
 export class Back extends Component {
     onLoad(){
         Global.backNode=this.node;
-        Global.backLabel=this.getComponent(LabelComponent);
+        Global.backLabel=this.getComponent(Label);
     }
 }
 ```

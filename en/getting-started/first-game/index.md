@@ -45,12 +45,12 @@ When the player runs the game, the game scene will be loaded. After the game sce
 Our main character needs to run from left to right on a road composed of cubes (blocks). Let's make the road by using a built-in cube.
 
   1. Right click on __Scene Node__ in the **Hierarchy Manager**, then choose __Create --> 3D Object --> Cube__
-  
+
   ![create cube](./images/create-cube.gif)
 
   2. Clone the cube to make two more cube with the shortcut key __Ctrl+D__.
 
-  3. Assign the __Cubes__ each a unique position: 
+  3. Assign the __Cubes__ each a unique position:
     - First one at position __(0, -1.5, 0)__.
     - Second one at position __(1, -1.5, 0)__.
     - Third one at position __(2, -1.5, 0)__.
@@ -77,7 +77,7 @@ The effect is as follows:
    ![create player](./images/create-player.png)
 
 ### Writing a script for the main character
-It is necessary for the main character to be affected when the mouse moves. To do this a custom script needs to be written. 
+It is necessary for the main character to be affected when the mouse moves. To do this a custom script needs to be written.
 
 #### Creating a script
 1. If you have not yet created a `Scripts` folder, right-click the **assets** folder in the __Explorer__ panel, select **New -> Folder**, and rename the newly created folder to `Scripts`.
@@ -119,7 +119,7 @@ This code is the structure needed to write a __component__. Scripts with this st
 Monitoring of mouse events needs to be added in the script to let the `Player` node move. Modify the code in `PlayerController` as follows:
 
 ```ts
-import { _decorator, Component, Vec3, systemEvent, SystemEvent, EventMouse, AnimationComponent, v3 } from "cc";
+import { _decorator, Component, Vec3, systemEvent, SystemEvent, EventMouse, Animation, v3 } from "cc";
 const { ccclass, property } = _decorator;
 
 @ccclass("PlayerController")
@@ -209,7 +209,7 @@ __Now__, click the __Play__ button. Once running, click the left and right mouse
 For additional details please refer to the [Project Preview Debugging](../../editor/preview/index.md) documentation.
 
 ### Adding character animations
-The `Player` can be moved in a horizontal direction. This is a start, but not good enough. `Player` must become more life-like. This effect can be achieved by adding a vertical animation to the character. 
+The `Player` can be moved in a horizontal direction. This is a start, but not good enough. `Player` must become more life-like. This effect can be achieved by adding a vertical animation to the character.
 
 > **Note**: Before proceeding, please read the [Animation Editor](../../editor/animation/index.md) documentation.
 
@@ -239,10 +239,10 @@ After reading and understanding the capabilities of the __Animation Editor__ cha
 
    First, reference the __AnimationComponent__ on the `Body` in the `PlayerController` component.
    ```ts
-      @property({type: AnimationComponent})
-      public BodyAnim: AnimationComponent = null;
+      @property({type: Animation})
+      public BodyAnim: Animation = null;
    ```
-   Then in the **Property Inspector**, drag the `AnimationComponent` to the `Body` variable.
+   Then in the **Property Inspector**, drag the `Animation` to the `Body` variable.
 
     ![drag to animComp](./images/drag-to-animComp.gif)
 
@@ -356,11 +356,11 @@ The __start menu__ is an indispensable part of most any game. Add the game name,
 
     ![create button](./images/create-button.gif)
 
-  This operation creates a `Canvas` node, a `PlayButton` node, and a `Label` node. Because the UI component needs to be displayed under the parent node with `CanvasComponent`, the editor will automatically add one when it finds that there is not a node with this component in the current __Scene__. After creating the button, change the `String` property of `cc.LabelComponent` on the `Label` node from `Button` to `Play.`
+  This operation creates a `Canvas` node, a `PlayButton` node, and a `Label` node. Because the UI component needs to be displayed under the parent node with `Canvas`, the editor will automatically add one when it finds that there is not a node with this component in the current __Scene__. After creating the button, change the `String` property of `cc.Label` on the `Label` node from `Button` to `Play.`
 
 2. Create an empty node named `StartMenu` under `Canvas` and drag `PlayButton` under it. We can switch to the 2D editing view for UI editing operations by clicking the 2D/3D button on the toolbar.
 
-  > **Note**: 2D View is this toolbar button ![2d-view](./images/2d-view.png). 
+  > **Note**: 2D View is this toolbar button ![2d-view](./images/2d-view.png).
 
   > **Note**: Before proceeding, please read the [Scene Editing](../../editor/scene/index.md) documentation.
 
@@ -373,11 +373,11 @@ The __start menu__ is an indispensable part of most any game. Add the game name,
    ![add title label](./images/add-label-title.gif)
 
 5. Modify the text for `Title` and adjust it's *position*, *text size* and *color*.
-   
+
    ![modify title](./images/title-inspector.png)
 
 6. Adjust the position of the `PlayButton`. The layout of a simple __start menu__ is complete.
-   
+
    ![modify title](./images/start-menu.png)
 
 7. Add game state logic, generally it can be divided into three states:
@@ -424,7 +424,7 @@ The __start menu__ is an indispensable part of most any game. Add the game name,
     ```
 
     Next, reference `PlayerController` in the `GameManager` script. Drag the `Player` variable in the __Inspector__ panel.
-    
+
     ```ts
     @property({type: PlayerController})
     public playerCtrl: PlayerController = null;
@@ -474,13 +474,13 @@ The __start menu__ is an indispensable part of most any game. Add the game name,
     ```
 
 8. Add event monitoring to the `Play` button. In-order to start the game after clicking the `Play` button, the button needs to respond to click events. Add code that responds to the button click in the `GameManager` script, and click to enter the game's `Playing` state:
-    
+
     ```ts
     onStartButtonClicked() {
         this.curState = GameState.GS_PLAYING;
     }
     ```
-    
+
     Next, add the response function of __Click Events__ in the __Inspector__ panbel for the `Play` button.
 
     ![play button inspector](./images/play-button-inspector.png)
@@ -511,14 +511,14 @@ The game character is just running forward, with no purpose. Adding game rules t
    ```
 
 2. Monitor the character's jumping end event in `GameManager`, and judge the winning or losing of the game, according to the rules.
-  
+
   Increase the failure and ending logic to judge how the game is being played.If `Player` jumps to an empty square or exceeds the maximum length value, the game will end:
 
    ```ts
     checkResult(moveIndex: number) {
         if (moveIndex <= this.roadLength) {
             // Jump to the empty square
-            if (this._road[moveIndex] == BlockType.BT_NONE) {   
+            if (this._road[moveIndex] == BlockType.BT_NONE) {
                 this.curState = GameState.GS_INIT;
             }
         } else {    // skipped the maximum length
@@ -567,8 +567,8 @@ We can display the current number of steps jumped in the interface. Perhaps watc
 2. Reference the `Steps` label in `GameManager`
 
    ```ts
-    @property({type: LabelComponent})
-    public stepsLabel: LabelComponent = null;
+    @property({type: Label})
+    public stepsLabel: Label = null;
    ```
 
    ![steps label to game manager](./images/add-steps-to-game-manager.png)
@@ -584,9 +584,9 @@ We can display the current number of steps jumped in the interface. Perhaps watc
             case GameState.GS_PLAYING:
                 this.startMenu.active = false;
                 //  reset the number of steps to 0
-                this.stepsLabel.string = '0';  
-                // set active directly to start listening for mouse events directly 
-                setTimeout(() => {   
+                this.stepsLabel.string = '0';
+                // set active directly to start listening for mouse events directly
+                setTimeout(() => {
                     this.playerCtrl.setInputActive(true);
                 }, 0.1);
                 break;
@@ -615,7 +615,7 @@ Where there is light, there will be a shadow. Light and shadows create a 3D worl
 
     ![planar shadows](./images/planarShadows.png)
 
-2. Click the `Body` node, under the `Player` node, and set `ShadowCastingMode` under `cc.ModelComponent` to `ON`.
+2. Click the `Body` node, under the `Player` node, and set `ShadowCastingMode` under `MeshRenderer` to `ON`.
 
     ![model shadow](./images/model-shadow.png)
 
@@ -655,11 +655,11 @@ When previewing the game, the character will initially have a standby animation,
 First, add a variable in the `PlayerController` class that references the model animation:
 
 ```ts
-    @property({type: SkeletalAnimationComponent})
-    public CocosAnim: SkeletalAnimationComponent = null;
+    @property({type: SkeletalAnimation})
+    public CocosAnim: SkeletalAnimation = null;
 ```
 
-Then, in the __Inspector__, drag the `Cocos` node into this variable. 
+Then, in the __Inspector__, drag the `Cocos` node into this variable.
 
 The jump animation needs to be used in the `jumpByStep` function.
 
@@ -709,16 +709,16 @@ When previewing, the results are as follows:
 The final code for `PlayerController.ts` should look like this:
 
 ```ts
-import { _decorator, Component, Vec3, systemEvent, SystemEvent, EventMouse, AnimationComponent, SkeletalAnimationComponent, v3 } from "cc";
+import { _decorator, Component, Vec3, systemEvent, SystemEvent, EventMouse, Animation, SkeletalAnimation, v3 } from "cc";
 const { ccclass, property } = _decorator;
 
 @ccclass("PlayerController")
 export class PlayerController extends Component {
 
-    @property({type: AnimationComponent})
-    public BodyAnim: AnimationComponent = null;
-    @property({type: SkeletalAnimationComponent})
-    public CocosAnim: SkeletalAnimationComponent = null;
+    @property({type: Animation})
+    public BodyAnim: Animation = null;
+    @property({type: SkeletalAnimation})
+    public CocosAnim: SkeletalAnimation = null;
 
     // for fake tween
     private _startJump: boolean = false;
@@ -811,7 +811,7 @@ export class PlayerController extends Component {
 The final code for `GameManager.ts` should look like this:
 
 ```ts
-import { _decorator, Component, Prefab, instantiate, Node, LabelComponent, CCInteger, v3} from "cc";
+import { _decorator, Component, Prefab, instantiate, Node, Label, CCInteger, v3} from "cc";
 import { PlayerController } from "./PlayerController";
 const { ccclass, property } = _decorator;
 
@@ -839,8 +839,8 @@ export class GameManager extends Component {
     @property({type: PlayerController})
     public playerCtrl: PlayerController = null;
     private _curState: GameState = GameState.GS_INIT;
-    @property({type: LabelComponent})
-    public stepsLabel: LabelComponent = null;
+    @property({type: Label})
+    public stepsLabel: Label = null;
 
     start () {
         this.curState = GameState.GS_INIT;
@@ -863,9 +863,9 @@ export class GameManager extends Component {
             case GameState.GS_PLAYING:
                 this.startMenu.active = false;
                 //  reset the number of steps to 0
-                this.stepsLabel.string = '0';  
-                // set active directly to start listening for mouse events directly 
-                setTimeout(() => {   
+                this.stepsLabel.string = '0';
+                // set active directly to start listening for mouse events directly
+                setTimeout(() => {
                     this.playerCtrl.setInputActive(true);
                 }, 0.1);
                 break;
@@ -917,11 +917,11 @@ export class GameManager extends Component {
 
     checkResult(moveIndex: number) {
         if (moveIndex <= this.roadLength) {
-            if (this._road[moveIndex] == BlockType.BT_NONE) {   
+            if (this._road[moveIndex] == BlockType.BT_NONE) {
                 // ump to the empty square
                 this.curState = GameState.GS_INIT;
             }
-        } else {    
+        } else {
             // skipped the maximum length
             this.curState = GameState.GS_INIT;
         }
@@ -940,9 +940,9 @@ export class GameManager extends Component {
 
 ## The end!
 
-__Congratulations on completing your first game made with Cocos Creator 3D!__ 
+__Congratulations on completing your first game made with Cocos Creator 3D!__
 
-The complete project can be downloaded on our [GitHub](https://github.com/cocos-creator/tutorial-mind-your-step-3d). The hope is this quick start tutorial will help you understand the Cocos Creator 3D game development process, basic concepts and workflow. 
+The complete project can be downloaded on our [GitHub](https://github.com/cocos-creator/tutorial-mind-your-step-3d). The hope is this quick start tutorial will help you understand the Cocos Creator 3D game development process, basic concepts and workflow.
 
 Next, you can continue to improve all aspects of the game. Here are some ideas for improvement:
   - Increase the difficulty of the game, when the character stays in place for 1 second it fails.

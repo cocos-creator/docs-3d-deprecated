@@ -22,7 +22,7 @@ __Method 1__: (load __ImageAsset__):
 const self = this;
 const url = 'test_assets/test_altas/content';
 loader.loadRes(url, ImageAsset,(err: any, imageAsset) => {
-  const sprite = this.getComponent(SpriteComponent);
+  const sprite = this.getComponent(Sprite);
   const spriteFrame = new SpriteFrame();
   const tex = new Texture2D();
   tex.image = imageAsset;
@@ -36,7 +36,7 @@ __Method 2__:（load SpriteFrame)：
 const self = this;
 const url = 'test_assets/test_altas/content/spriteFrame';
 loader.loadRes(url, SpriteFrame,(err: any , spriteFrame) => {
-  const sprite = this.getComponent(SpriteComponent);
+  const sprite = this.getComponent(Sprite);
   sprite.spriteFrame = spriteFrame;
 });
 ```
@@ -50,7 +50,7 @@ __Cocos Creator__ will provide a way to package an __Image Asset__ as a __Sprite
 __RenderTexture__ is a rendering texture that renders content from the camera directly to a texture instead of the screen. __SpriteFrame__ can easily display 3D camera content on the UI by managing __RenderTexture__. Use is as follows:
 
 ```typescript
-const cameraComp = this.getComponent(CameraComponent);
+const cameraComp = this.getComponent(Camera);
 const renderTexture = new RenderTexture();
 const size = view.getVisibleSize();
 renderTexture.reset({
@@ -63,7 +63,7 @@ renderTexture.reset({
 cameraComp.targetTexture = renderTexture;
 const spriteFrame = new SpriteFrame();
 spriteFrame.texture = renderTexture;
-const sprite = this.getComponent(SpriteComponent);
+const sprite = this.getComponent(Sprite);
 sprite.spriteFrame = spriteFrame;
 ```
 

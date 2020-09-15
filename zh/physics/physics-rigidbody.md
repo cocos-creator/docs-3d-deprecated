@@ -2,7 +2,7 @@
 
 ## 获取刚体组件
 
-`TypeScript`的代码示例：`const rigidBody = this.getComponent(RigidBodyComponent);`
+`TypeScript`的代码示例：`const rigidBody = this.getComponent(RigidBody);`
 
 ## 刚体类型
 

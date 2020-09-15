@@ -7,9 +7,9 @@
 
 ## 开启阴影
 
-Cococs Creator 3D 目前支持高性价比的 Planar Shadow ，后面会提供更多 Shadow 类型，请留意更新公告。
+Cocos Creator 3D 目前支持高性价比的 Planar Shadow ，后面会提供更多 Shadow 类型，请留意更新公告。
 
-在 Cococs Creator 3D 中开启 Planar Shadow 只需要两步：
+在 Cocos Creator 3D 中开启 Planar Shadow 只需要两步：
 
 1. 在层级管理器上选择 Scene 节点，可以看到以下面板，将 planarShadows 的 Enabled 属性勾选上。
 ![planar shadow 所处位置](shadow/planarShadows.jpg)

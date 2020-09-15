@@ -20,7 +20,7 @@ Cocos Creator 3D SpriteFrame 是 UI 渲染基础图形的容器。其本身管�
 ```typescript
 const url = 'test_assets/test_atlas/content/spriteFrame';
 loader.loadRes(url, SpriteFrame,(err: any , spriteFrame) => {
-  const sprite = this.getComponent(SpriteComponent);
+  const sprite = this.getComponent(Sprite);
   sprite.spriteFrame = spriteFrame;
 });
 ```
@@ -33,7 +33,7 @@ loader.loadRes(url, SpriteFrame,(err: any , spriteFrame) => {
 const self = this;
 const url = 'test_assets/test_atlas/content';
 loader.loadRes(url, ImageAsset,(err: any, imageAsset) => {
-  const sprite = this.getComponent(SpriteComponent);
+  const sprite = this.getComponent(Sprite);
   sprite.spriteFrame = SpriteFrame.createWithImage(imageAsset);
 });
 ```
@@ -43,7 +43,7 @@ loader.loadRes(url, ImageAsset,(err: any, imageAsset) => {
 const self = this;
 const url = 'test_assets/test_atlas/content';
 loader.loadRes(url, ImageAsset,(err: any, imageAsset) => {
-  const sprite = this.getComponent(SpriteComponent);
+  const sprite = this.getComponent(Sprite);
   const spriteFrame = new SpriteFrame();
   const tex = new Texture2D();
   tex.image = imageAsset;
@@ -54,14 +54,14 @@ loader.loadRes(url, ImageAsset,(err: any, imageAsset) => {
 
 方法三（canvas 绘制内容 UI 上显示）（加载 ImageSource）：
 ```typescript
-const sprite = this.getComponent(SpriteComponent);
+const sprite = this.getComponent(Sprite);
 sprite.spriteFrame = SpriteFrame.createWithImage(canvas);
 ```
 
 或者用户也可以手动来填充信息如下：
 
 ```typescript
-const sprite = this.getComponent(SpriteComponent);
+const sprite = this.getComponent(Sprite);
 const img = new ImageAsset(canvas);
 const tex = new Texture2D();
 tex.image = img;
@@ -75,7 +75,7 @@ sprite.spriteFrame = sp;
 RenderTexture 是一个渲染纹理，它可以将摄像机上的内容直接渲染到一张纹理上而不是屏幕上。SpriteFrame 通过管理 RenderTexture 可以轻松的将 3D 相机内容显示在 UI 上。使用方法如下：
 
 ```typescript
-const cameraComp = this.getComponent(CameraComponent);
+const cameraComp = this.getComponent(Camera);
 const renderTexture = new RenderTexture();
 const size = view.getVisibleSize();
 renderTexture.reset({
@@ -88,7 +88,7 @@ renderTexture.reset({
 cameraComp.targetTexture = renderTexture;
 const spriteFrame = new SpriteFrame();
 spriteFrame.texture = renderTexture;
-const sprite = this.getComponent(SpriteComponent);
+const sprite = this.getComponent(Sprite);
 sprite.spriteFrame = spriteFrame;
 ```
 
