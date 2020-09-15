@@ -11,7 +11,7 @@ There are two ways to create a new __Animation component__:
 
 ![add-component](animation-clip/add-component.png)
 
-Specifics about __Animation component__ parameters can be found in [Animation Component Reference](./../../engine/animation/animation-component.md) documentation.
+Specifics about __Animation component__ parameters can be found in the [Animation Component Reference](./../../engine/animation/animation-component.md) documentation.
 
 ## Creating and attaching animation clips
 

@@ -64,7 +64,7 @@ If you need to publish to the website, you'd better build it on Mac. If use Wind
 
 ## Content Editing
 
-The markdown source of this book is in language specific folders [/en](en) and [/zh](zh). Language options are registered in [LANGS.md](LANGS.md) file.
+The markdown source of this book is in language specific folders [/en](en) and [/zh](zh). Language options are registered in the [LANGS.md](LANGS.md) file.
 
 ### Index
 
