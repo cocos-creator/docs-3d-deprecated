@@ -24,7 +24,7 @@ digraph G {
     efx:shd -> shd [dir=back arrowtail=ediamond]
     mat:efx -> efx [dir=back arrowtail=ediamond]
 
-    rnd [label="<hd> RenderableComponent | <mats> materials"]
+    rnd [label="<hd> Renderable | <mats> materials"]
 
     cmp -> rnd:hd [dir=back arrowtail=empty]
     rnd:mats -> mat [dir=back arrowtail=ediamond]

@@ -171,8 +171,8 @@ class MyValueProxy implements animation.ValueProxyFactory {
 ```ts
 { // 目标对象是
     modifiers: [
-        // `ModelComponent` 组件的
-        new animation.ComponentPath(js.getClassName(ModelComponent)),
+        // `MeshRenderer` 组件的
+        new animation.ComponentPath(js.getClassName(MeshRenderer)),
         // `sharedMaterials` 属性的
         'sharedMaterials',
         // 第一个材质

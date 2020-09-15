@@ -36,10 +36,10 @@ xxx.emit(type, ...arg);
 系统事件指的是全局事件，直接从浏览器进行事件监听和派发。
 
 ```ts
-cc.systemEvent.on(type, func, target);
+systemEvent.on(type, func, target);
 ```
 
-当前支持的系统事件有：触摸事件，鼠标事件，重力事件，按键事件。可以通过 `cc.SystemEventType` 获取全局事件类型。
+当前支持的系统事件有：触摸事件，鼠标事件，重力事件，按键事件。可以通过 `SystemEventType` 获取全局事件类型。
 
 | 事件名            | 事件类型说明                                           |
 | --------------  | -----------                                       |
@@ -61,7 +61,7 @@ cc.systemEvent.on(type, func, target);
 
 ### UI 事件
 
-事件处理是在节点（cc.Node）中完成的。对于组件，可以通过访问节点 this.node 来注册和监听事件。监听事件可以 通过 this.node.on() 函数来注册，方法如下：
+事件处理是在节点（Node）中完成的。对于组件，可以通过访问节点 this.node 来注册和监听事件。监听事件可以 通过 this.node.on() 函数来注册，方法如下：
 
 ```ts
 import { _decorator, Component, Node } from "Cocos3D";

@@ -234,10 +234,10 @@ Relevant details:
 
 The instanced property value will be initialized to all zeros by default.
 
-Use the `setInstancedAttribute` on `ModelComponent` to assign new values:
+Use the `setInstancedAttribute` on `MeshRenderer` to assign new values:
 
 ```ts
-const comp = node.getComponent(ModelComponent);
+const comp = node.getComponent(MeshRenderer);
 comp.setInstancedAttribute('a_instanced_color', [100, 150, 200, 255]); // should match the specified format
 ```
 > **Note**: The instanced properties will be reset to all zeros whenever creating a new PSO (the most common case is when assigning a new material).

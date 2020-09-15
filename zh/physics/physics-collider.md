@@ -6,15 +6,15 @@ Cocos Creator 3D 目前支持两种语言进行开发，分别为`JavaScript`和
 
 **注：`TypeScript`具有良好的语法分析和类型提示，推荐使用**。
 
-以获取`BoxColliderComponent`为例，在`JavaScript`中获取`Collider`组件：
+以获取`BoxCollider`为例，在`JavaScript`中获取`Collider`组件：
 
-1. `this.getComponent('cc.BoxColliderComponent')`
-2. `this.getComponent(cc.BoxColliderComponent)`
+1. `this.getComponent('BoxCollider')`
+2. `this.getComponent(BoxCollider)`
 
 在`TypeScript`中获取`Collider`组件：
 
 1. 上述`JavaScript`使用的方式
-2. **`this.getComponent(BoxColliderComponent)`** (**推荐使用，提示导入时，注意导入位置为`cc`**)
+2. **`this.getComponent(BoxCollider)`** (**推荐使用，提示导入时，注意导入位置为`cc`**)
 
 **注：若无智能导入提示，请检查工作目录是不是在工程的顶层，以及是否使用较新的`VSCode`编辑器**。
 

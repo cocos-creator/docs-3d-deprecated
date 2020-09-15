@@ -64,7 +64,7 @@ Append MD5 hash to the exported assets for resolving CDN or browser cache issue.
 After being enabled, if any asset fails to load, it is because the renamed new file can not be found. It is usually because some third party assets was not loaded by `cc.loader`. If this happens, you can convert the url before loading, to fix the loading problem. Example:
 
 ```js
-url = cc.loader.md5Pipe.transformURL(url);
+url = loader.md5Pipe.transformURL(url);
 ```
 
 ## Other option configurations involved in the build.

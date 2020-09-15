@@ -7,10 +7,10 @@
 ```typescript
 // 方法一：把 3D 相机照射的内容绘制到 UI 的精灵帧上
 export class CaptureToWeb extends Component {
-    @property(SpriteComponent)
-    sprite: SpriteComponent = null;
-    @property(CameraComponent)
-    camera: CameraComponent = null;
+    @property(Sprite)
+    sprite: Sprite = null;
+    @property(Camera)
+    camera: Camera = null;
 
     protected _renderTex: RenderTexture = null;
 
@@ -43,8 +43,8 @@ export class CaptureToWeb extends Component {
 
 // 方法二：把 3D 相机照射的内容绘制到 3D 模型上
 export class RenderCameraToModel extends Component {
-    @property(ModelComponent)
-    model: ModelComponent = null;
+    @property(MeshRenderer)
+    model: MeshRenderer = null;
 
     start () {
         // Your initialization goes here.
@@ -55,7 +55,7 @@ export class RenderCameraToModel extends Component {
             colorFormat: RenderTexture.PixelFormat.RGBA8888,
             depthStencilFormat: RenderTexture.DepthStencilFormat.DEPTH_24_STENCIL_8,
         });
-        const cameraComp = this.getComponent(CameraComponent);
+        const cameraComp = this.getComponent(Camera);
         cameraComp.targetTexture = renderTex;
         const pass = this.model.material.passes[0];
         const binding = pass.getBinding('mainTexture');

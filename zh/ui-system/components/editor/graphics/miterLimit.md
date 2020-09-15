@@ -13,7 +13,7 @@
 ## 实例
 
 ```javascript
-var ctx = node.getComponent(cc.GraphicsComponent);
+var ctx = node.getComponent(Graphics);
 ctx.miterLimit = 10;
 ctx.moveTo(20,20);
 ctx.lineTo(100,50);

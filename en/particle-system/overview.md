@@ -21,7 +21,7 @@ The __Cocos Creator 3D__ particle system organizes functions in modules, includi
 
 Module | Description
 ---|---
-[**ParticleSystemComponent**](main-module.md) | It is used to store all the data displayed in the Inspector, manage the related modules of particle generation, update and destruction, and control the particle playback.
+[**ParticleSystem**](main-module.md) | It is used to store all the data displayed in the Inspector, manage the related modules of particle generation, update and destruction, and control the particle playback.
 [**ShapeModule**](emitter.md) | Used to control particle emission, including emission direction and speed, and supports predefined emission directions including squares, circles, cones, balls, and hemispheres.
 [**AnimatorModule**](module.md) |  Used to control the state update after particle emission. The supported functions are: size, color, rotation, speed, acceleration, speed limit, texture animation.
 [**ParticleSystemRenderer**](renderer.md) |  Used to generate the data needed for particle rendering. Including control related to vb, ib, rendering state.

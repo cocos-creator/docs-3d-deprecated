@@ -12,7 +12,7 @@ The `ellipse()` method is used to create an ellipse.
 ## Example
 
 ```javascript
-var ctx = node.getComponent(cc.GraphicsComponent);
+var ctx = node.getComponent(Graphics);
 ctx.ellipse(200,100, 200,100);
 ctx.stroke();
 ```

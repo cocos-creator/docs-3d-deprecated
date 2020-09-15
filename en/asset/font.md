@@ -2,7 +2,7 @@
 
 There are three types of font assets available to games made with __Cocos Creator__: __system fonts__, __dynamic fonts__, and __bitmap fonts__.
 
-The __system font__ renders text by calling the __system font__ that comes with the game running platform, and does not require the user to add any related assets to the project. To use __system fonts__, use the **Use System Font** property in [LabelComponent](../ui-system/components/editor/label.md).
+The __system font__ renders text by calling the __system font__ that comes with the game running platform, and does not require the user to add any related assets to the project. To use __system fonts__, use the **Use System Font** property in [Label](../ui-system/components/editor/label.md).
 
 ## Importing font assets
 
