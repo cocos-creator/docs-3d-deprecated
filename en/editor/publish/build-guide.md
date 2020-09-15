@@ -140,7 +140,7 @@ The build provides a partial lifecycle hook function that facilitates the develo
 
 ## Frequently asked questions
 
-The entire build process is in a separate `worker`, so if you want to see the log information during the build, please refer to the [Build Log](./build-panel.md).
+The entire build process is in a separate `worker`, so if you want to see the log information during the build, please refer to the [Build Log](./build-panel.md) documentation.
 
 Please make sure that the scenes involved in the build can be previewed properly before the build, some of the scenes asset loss, script compilation failure problems can be exposed in the preview stage. Building on the premise of a normal preview allows for better troubleshooting and saves time.
 

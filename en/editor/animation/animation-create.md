@@ -29,4 +29,4 @@ It is not enough to just create it. We need to click on the node, in the __Hiera
 
 ---
 
-So far, we have completed the preparations before the animation, the next step is to edit the [animation sequences](animation-clip.md).
+So far, preparations have been completed, before the animation, the next step is to edit the [Animation Sequences](animation-clip.md).
