@@ -68,6 +68,94 @@ The name of the compressed texture is only used for display. When adding a compr
 
 If you want to replace all the preset options currently used for image asset, you can move the mouse to the preset name, click the button to copy the ID to and search and replace in the project by yourself.
 
+### Export / import compressed texture presets
+
+The compressed texture configuration page allows you to import and export compressed texture presets for better cross-project reuse configuration, or you can edit the compressed texture presets externally and import them into the editor.
+
+In most cases, you can import and export directly. If you need to write this configuration yourself, you need to refer to the following interface definitions and examples:
+
+```ts
+type IConfigGroups = Record<ITextureCompressPlatform, IConfigGroupsInfo>;
+type ITextureCompressPlatform = 'miniGame' | 'web' | 'ios' | 'android' | 'pc';
+type ITextureCompressType =
+    | 'jpg'
+    | 'png'
+    | 'webp'
+    | 'pvrtc_4bits_rgb'
+    | 'pvrtc_4bits_rgba'
+    | 'pvrtc_4bits_rgb_a'
+    | 'pvrtc_2bits_rgb'
+    | 'pvrtc_2bits_rgba'
+    | 'pvrtc_2bits_rgb_a'
+    | 'etc1_rgb'
+    | 'etc1_rgb_a'
+    | 'etc2_rgb'
+    | 'etc2_rgba'
+    | 'astc_4x4'
+    | 'astc_5x5'
+    | 'astc_6x6'
+    | 'astc_8x8'
+    | 'astc_10x5'
+    | 'astc_10x10'
+    | 'astc_12x12';
+type IConfigGroupsInfo = Record<ITextureCompressType, IQuality>
+interface ICompressPresetItem {
+    name: string;
+    options: IConfigGroups;
+}
+```
+
+Example:
+
+```json
+{
+    "default": {
+        "name": "default",
+        "options": {
+            "miniGame": {
+                "etc1_rgb": "fast",
+                "pvrtc_4bits_rgb": "fast"
+            },
+            "android": {
+                "astc_8x8": "-medium",
+                "etc1_rgb": "fast"
+            },
+            "ios": {
+                "astc_8x8": "-medium",
+                "pvrtc_4bits_rgb": "fast"
+            },
+            "web": {
+                "astc_8x8": "-medium",
+                "etc1_rgb": "fast",
+                "pvrtc_4bits_rgb": "fast"
+            },
+        }
+    },
+    "transparent": {
+        "name": "transparent",
+        "options": {
+            "miniGame": {
+                "etc1_rgb_a": "fast",
+                "pvrtc_4bits_rgb_a": "fast"
+            },
+            "android": {
+                "astc_8x8": "-medium",
+                "etc1_rgb_a": "fast"
+            },
+            "ios": {
+                "astc_8x8": "-medium",
+                "pvrtc_4bits_rgb_a": "fast"
+            },
+            "web": {
+                "astc_8x8": "-medium",
+                "etc1_rgb_a": "fast",
+                "pvrtc_4bits_rgb_a": "fast"
+            },
+        }
+    }
+}
+```
+
 ## Layers
 
 ![Layers](./index/layers.png)
@@ -89,57 +177,57 @@ This config of physics will effect only when **Physics Module** is enabled in **
 
 ![Physics-In-Engine](./index/physics-in-engine.png)
 
-物理配置将会在项目预览和项目发布的代码中使用，物理效果体现在控制重力，摩擦力，动能传递，检测碰撞等方面。
+The physical configuration will be used in the project preview and the code released by the project. The physical effects are reflected in the control of gravity, friction, kinetic energy transfer, and collision detection.
 
-### 属性说明
+### Property description
 
-- `gravity` 重力矢量，正负数值体现了方向性，默认值 *{ x: 0, y: -10, z: 0 }*
-- `allowSleep` 是否允许休眠，默认值 *true*
-- `sleepThreshold` 进入休眠的默认速度临界值，默认值 *0.1*，最小值 *0*
-- `autoSimulation` 是否开启自动模拟
-- `fixedTimeStep` 每步模拟消耗的固定时间，默认值 *1/60*，最小值 *0*
-- `maxSubSteps` 每步模拟的最大子步数，默认值 *1*，最小值 *0*
-- `friction` 摩擦系数，默认值 *0.5*
-- `rollingFriction` 滚动摩擦系数，默认值 *0.1*
-- `spinningFriction` 自旋摩擦系数，默认值 *0.1*
-- `restitution` 弹性系数，默认值 *0.1*
-- `useNodeChains` 是否使用节点链组合刚体，默认值 *true*
-- `useCollsionMatrix`  是否使用碰撞矩阵，默认值 *true*
+- `gravity` Gravity vector, positive and negative values ​​reflect the directionality. **Default:** `{ x: 0, y: -10, z: 0 }`.
+- `allowSleep` Whether to allow hibernation.**Default:** `true`.
+- `sleepThreshold` The default speed threshold for entering sleep. **Default:** `0.1`，**Min:** `0`.
+- `autoSimulation` Whether to enable automatic simulation.
+- `fixedTimeStep` Fixed time spent in each simulation step.**Default:** `1/60`, **Min:** `0`.
+- `maxSubSteps` Maximum number of substeps per simulation step. **Default:** `1`, **Min:** `0`.
+- `friction` Coefficient of friction. **Default:** `0.5`.
+- `rollingFriction` Rolling friction coefficient. **Default:** `0.1`.
+- `spinningFriction` Spin friction coefficient. **Default:** `0.1`.
+- `restitution` Coefficient of elasticity. **Default:** `0.1`.
+- `useNodeChains` Whether to use a node chain to combine rigid bodies. **Default:** `true`.
+- `useCollisionMatrix` Whether to use collision matrix. **Default:** `true`.
+- `collisionMatrix` The setting result of the collision matrix. **Format:** `{ index: value }`, **Default:** `{ "0": 1 }`.
 
-### 碰撞矩阵
+### Collision Matrix
 
-碰撞矩阵默认使用内置 Layers ，顺排作为横轴 x, 逆排作为竖轴 y，勾选表示 x 轴的项与 y 轴的项有交叉，有碰撞的意思，
-不勾选表示不碰撞。
+![Physics-collision](./index/physics-collision.png)
 
-默认都勾选，所以默认值都为 *-1 (0xffffffff)*，转为可视化的 32 位字符为 "11111111111111111111111111111111",  
+The recognition of the collision matrix is ​​similar to the logic of Layers. Let’s call it **Groups**. Each Group is in the format of `{index: [index], name: [name] }`, `index` ranges from 0 to 31, and `name` is the name.
 
-运算规则为：
+The `index` of **Groups**  is the horizontal axis x from large to small, and the vertical axis y from small to large. When the check box is checked, it means that the item on the x-axis and the item on the y-axis will have collision. collision
+The recorded result takes the y-axis `index` value as the key name and `value` as the key value.
 
-- value = -1;
-- 勾选 value |= x
-- 不勾选 value &= ~x
+The engine defaults to a **Group** `{ index: 0, name:'DEFAULT' }` and it is checked by default, that is, the default `Collision Matrix` value of `DEFAULT` is 1.
 
-结果记录以 y 轴的 Layer 值为 key 键名 , value 为键值，示例记录数据如下图。
+You can add their own **Groups** to your project. Note that both `index` and `name` cannot be empty and cannot be repeated with existing items.
+![Physics-collision-add](./index/physics-collision-add.png)
 
-![Physics-Layers-use](./index/physics-layers-use.png)
+The operation rules are:
 
-```js
-collisionMatrix = {
-    1: -1, // First
-    1048576: -1,
-    2097152: -1,
-    4194304: -1,
-    8388608: -1,
-    16777216: -1,
-    33554432: -1,
-    268435456: -1,
-    1073741824: -2 // Default
-}
+```
+- Check value |= (1 << xIndex)
+- Uncheck value &= ~(1 << xIndex)
 ```
 
-示例中增加了一个自定义的 Layer (First) 以增加示例内容
+注意一个勾选比如 `DEFAULT (y)` 勾选 `water (x)` 等同于赋值 `water (y)` 勾选 `DEFAULT (x)` ,第二个赋值在界面中没有体现，但依然会给与两次赋值，一次是设定 `DEFAULT (y)` ,一次是设定 `water (y)`。
 
-![Physics-Layers](./index/physics-layers.png)
+Note that a check such as `DEFAULT (y)` checking `water (x)` is equivalent to assigning `water (y)` checking `DEFAULT (x)`, the second assignment is not reflected in the interface, but it will still Give two assignments, once to set `DEFAULT (y)` and once to set `water (y)`.
+
+![Physics-collision-demo](./index/physics-collision-demo.png)
+
+```js
+    "collisionMatrix": {
+      "0": 3,
+      "1": 1
+    }
+```
 
 ## Bone map layout settings
 

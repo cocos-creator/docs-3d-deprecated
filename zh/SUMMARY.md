@@ -25,7 +25,7 @@
 
 - [项目预览调试](editor/preview/index.md)
   - [浏览器预览](editor/preview/browser.md)
-  - [预览流程简介与常见错误处理](preview-guid.md)
+  - [预览流程简介与常见错误处理](editor/preview/preview-guid.md)
 
 - [粒子编辑器](particle-system/editor/index.md)
   - [曲线编辑器](particle-system/editor/curve-editor.md)

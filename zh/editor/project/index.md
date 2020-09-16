@@ -66,6 +66,94 @@
 
 当然，如果确实有替换所有当前使用到该预设图片资源的预设选项需求是，可以鼠标上移到预设名称处，点击拷贝 ID 的按钮，自行在项目内搜索替换即可。
 
+### 导出 / 导入压缩纹理预设
+
+压缩纹理配置页面允许导入、导出压缩纹理预设来更好的跨项目复用配置，也可以自行在外部编辑好压缩纹理预设再导入到编辑器内。
+
+大部分情况下直接导入导出即可，如果需要自行编写这份配置需要参考下方接口定义与范例：
+
+```ts
+type IConfigGroups = Record<ITextureCompressPlatform, IConfigGroupsInfo>;
+type ITextureCompressPlatform = 'miniGame' | 'web' | 'ios' | 'android' | 'pc';
+type ITextureCompressType =
+    | 'jpg'
+    | 'png'
+    | 'webp'
+    | 'pvrtc_4bits_rgb'
+    | 'pvrtc_4bits_rgba'
+    | 'pvrtc_4bits_rgb_a'
+    | 'pvrtc_2bits_rgb'
+    | 'pvrtc_2bits_rgba'
+    | 'pvrtc_2bits_rgb_a'
+    | 'etc1_rgb'
+    | 'etc1_rgb_a'
+    | 'etc2_rgb'
+    | 'etc2_rgba'
+    | 'astc_4x4'
+    | 'astc_5x5'
+    | 'astc_6x6'
+    | 'astc_8x8'
+    | 'astc_10x5'
+    | 'astc_10x10'
+    | 'astc_12x12';
+type IConfigGroupsInfo = Record<ITextureCompressType, IQuality>
+interface ICompressPresetItem {
+    name: string;
+    options: IConfigGroups;
+}
+```
+
+示例参考：
+
+```json
+{
+    "default": {
+        "name": "default",
+        "options": {
+            "miniGame": {
+                "etc1_rgb": "fast",
+                "pvrtc_4bits_rgb": "fast"
+            },
+            "android": {
+                "astc_8x8": "-medium",
+                "etc1_rgb": "fast"
+            },
+            "ios": {
+                "astc_8x8": "-medium",
+                "pvrtc_4bits_rgb": "fast"
+            },
+            "web": {
+                "astc_8x8": "-medium",
+                "etc1_rgb": "fast",
+                "pvrtc_4bits_rgb": "fast"
+            },
+        }
+    },
+    "transparent": {
+        "name": "transparent",
+        "options": {
+            "miniGame": {
+                "etc1_rgb_a": "fast",
+                "pvrtc_4bits_rgb_a": "fast"
+            },
+            "android": {
+                "astc_8x8": "-medium",
+                "etc1_rgb_a": "fast"
+            },
+            "ios": {
+                "astc_8x8": "-medium",
+                "pvrtc_4bits_rgb_a": "fast"
+            },
+            "web": {
+                "astc_8x8": "-medium",
+                "etc1_rgb_a": "fast",
+                "pvrtc_4bits_rgb_a": "fast"
+            },
+        }
+    }
+}
+```
+
 ## Layers
 
 ![Layers](./index/layers.png)
@@ -121,12 +209,13 @@ Groups `index` 从大到小作为横轴 x, 从小到大作为竖轴 y，可选�
 用户对项目可新增自己的 Groups，注意 `index`, `name` 均不能为空，且不能与现有项重复。
 ![Physics-collision-add](./index/physics-collision-add.png)
 
-
 运算规则为：
+
 ```
 - 勾选 value |= (1 << xIndex)
 - 不勾选 value &= ~(1 << xIndex)
 ```
+
 注意一个勾选比如 `DEFAULT (y)` 勾选 `water (x)` 等同于赋值 `water (y)` 勾选 `DEFAULT (x)` ,第二个赋值在界面中没有体现，但依然会给与两次赋值，一次是设定 `DEFAULT (y)` ,一次是设定 `water (y)`。
 
 ![Physics-collision-demo](./index/physics-collision-demo.png)
@@ -137,7 +226,6 @@ Groups `index` 从大到小作为横轴 x, 从小到大作为竖轴 y，可选�
       "1": 1
     }
 ```
-
 
 ## 骨骼贴图布局设置
 
