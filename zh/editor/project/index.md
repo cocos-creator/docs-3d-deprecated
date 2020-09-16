@@ -199,33 +199,35 @@ interface ICompressPresetItem {
 
 ![Physics-collision](./index/physics-collision.png)
 
-碰撞矩阵的识别类似 Layers 逻辑，暂且叫它为 Groups ,每个 Group 为 `{ index, name }` 格式，`index` 从 0 到 31 ，`name` 是名称。
+#### 分组的概念
 
-Groups `index` 从大到小作为横轴 x, 从小到大作为竖轴 y，可选框勾上时表示 x 轴的项与 y 轴的项有交叉，有碰撞的意思，不勾选表示不碰撞
-记录的结果以 y 轴的 `index` 值为键名 , `value` 为键值。
+碰撞矩阵的识别通过分组管理，每一组格式为 `{ index, name }` 格式，`index` 与 Layers 概念相同，也是从 0 到 31 的位数，而 `name` 是这组的名称。
 
-引擎默认给定一个 Group `{ index: 0, name: 'DEFAULT' }` 且默认勾选，即默认 `DEFAULT` 的 `Collision Matrix` 值为 1。
+默认会有一个 Default 分组 `{ index: 0, name: 'DEFAULT' }`
 
-用户对项目可新增自己的 Groups，注意 `index`, `name` 均不能为空，且不能与现有项重复。
+可以新增分组，新增时 `index`, `name` 均不能为空，且不能与现有项重复；新增后分组不可以删除，但可以修改分组的名称。
+
 ![Physics-collision-add](./index/physics-collision-add.png)
 
-运算规则为：
 
-```
-- 勾选 value |= (1 << xIndex)
-- 不勾选 value &= ~(1 << xIndex)
-```
+#### 碰撞分组配对
 
-注意一个勾选比如 `DEFAULT (y)` 勾选 `water (x)` 等同于赋值 `water (y)` 勾选 `DEFAULT (x)` ,第二个赋值在界面中没有体现，但依然会给与两次赋值，一次是设定 `DEFAULT (y)` ,一次是设定 `water (y)`。
+比如新增了一个 water 分组。
 
 ![Physics-collision-demo](./index/physics-collision-demo.png)
 
-```js
-    "collisionMatrix": {
-      "0": 3,
-      "1": 1
-    }
-```
+这张表里面的行与列分别列出了分组列表里面的项，你可以在这张表里面配置哪一个分组可以对其他的分组进行碰撞检测。
+
+**  DEFAULT 分组 和 water 分组交叉的复选框勾上，就表示两组所在的节点，各自进行碰撞检测时，都会将对方组进行碰撞检测，没有勾上就不会有进行检测 **
+
+根据上面的规则，在这张表里产生的碰撞对有：
+
+DEFAULT - water
+
+DEFAULT - DEFAULT
+
+water - DEFAULT
+
 
 ## 骨骼贴图布局设置
 
