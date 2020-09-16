@@ -192,10 +192,10 @@ interface ICompressPresetItem {
 - `spinningFriction` 自旋摩擦系数，默认值 *0.1*
 - `restitution` 弹性系数，默认值 *0.1*
 - `useNodeChains` 是否使用节点链组合刚体，默认值 *true*
-- `useCollisionMatrix`  是否使用碰撞矩阵，默认值 *true*
+- `useCollisionMatrix` 是否使用碰撞矩阵，默认值 *true*
 - `collisionMatrix`  碰撞矩阵的设置结果，{ index: value } 格式，默认值 *{ "0": 1 }*
 
-### 碰撞矩阵
+### 碰撞矩阵设置
 
 ![Physics-collision](./index/physics-collision.png)
 
