@@ -199,35 +199,35 @@ The physical configuration will be used in the project preview and the code rele
 
 ![Physics-collision](./index/physics-collision.png)
 
-The recognition of the collision matrix is ​​similar to the logic of Layers. Let’s call it **Groups**. Each Group is in the format of `{index: [index], name: [name] }`, `index` ranges from 0 to 31, and `name` is the name.
+#### Grouping concept
 
-The `index` of **Groups**  is the horizontal axis x from large to small, and the vertical axis y from small to large. When the check box is checked, it means that the item on the x-axis and the item on the y-axis will have collision. collision
-The recorded result takes the y-axis `index` value as the key name and `value` as the key value.
+The collision matrix is ​​managed by groups. Each group is in the format of `{ index, name }`. The concept of `index` is the same as Layers, which is also a number of digits from 0 to 31, and `name` is the name of this group.
 
-The engine defaults to a **Group** `{ index: 0, name:'DEFAULT' }` and it is checked by default, that is, the default `Collision Matrix` value of `DEFAULT` is 1.
+There will be a Default group by default `{ index: 0, name:'DEFAULT' }`
 
-You can add their own **Groups** to your project. Note that both `index` and `name` cannot be empty and cannot be repeated with existing items.
+Click the `+` button you can add a new group. B
+
+> Note: Both `index` and `name` cannot be empty and cannot be repeated with existing items; after adding, the group cannot be deleted, only the name of the group can be modified.
+
 ![Physics-collision-add](./index/physics-collision-add.png)
 
-The operation rules are:
+#### Collision group pairing
 
-```
-- Check value |= (1 << xIndex)
-- Uncheck value &= ~(1 << xIndex)
-```
-
-注意一个勾选比如 `DEFAULT (y)` 勾选 `water (x)` 等同于赋值 `water (y)` 勾选 `DEFAULT (x)` ,第二个赋值在界面中没有体现，但依然会给与两次赋值，一次是设定 `DEFAULT (y)` ,一次是设定 `water (y)`。
-
-Note that a check such as `DEFAULT (y)` checking `water (x)` is equivalent to assigning `water (y)` checking `DEFAULT (x)`, the second assignment is not reflected in the interface, but it will still Give two assignments, once to set `DEFAULT (y)` and once to set `water (y)`.
+In the Group Collide Map section we can control whether collide is allowed for each group with any other groups. The Collide map looks like this:
 
 ![Physics-collision-demo](./index/physics-collision-demo.png)
 
-```js
-    "collisionMatrix": {
-      "0": 3,
-      "1": 1
-    }
-```
+The rows and columns in this table respectively list the items in the group list. You can configure which group in this table can perform collision detection on other groups.
+
+**When the checkboxes where the DEFAULT grouping and water grouping intersect is checked, it means that the nodes of the two groups will be tested for collision when they are in each group.**
+
+According to the above rules, the collision pairs generated in this table are:
+
+DEFAULT - water
+
+DEFAULT - DEFAULT
+
+water - DEFAULT
 
 ## Bone map layout settings
 

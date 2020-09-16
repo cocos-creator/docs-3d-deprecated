@@ -205,10 +205,9 @@ interface ICompressPresetItem {
 
 默认会有一个 Default 分组 `{ index: 0, name: 'DEFAULT' }`
 
-可以新增分组，新增时 `index`, `name` 均不能为空，且不能与现有项重复；新增后分组不可以删除，但可以修改分组的名称。
+点击 `+` 按钮可以新增分组，新增时 `index`, `name` 均不能为空，且不能与现有项重复；新增后分组不可以删除，但可以修改分组的名称。
 
 ![Physics-collision-add](./index/physics-collision-add.png)
-
 
 #### 碰撞分组配对
 
@@ -218,7 +217,7 @@ interface ICompressPresetItem {
 
 这张表里面的行与列分别列出了分组列表里面的项，你可以在这张表里面配置哪一个分组可以对其他的分组进行碰撞检测。
 
-**  DEFAULT 分组 和 water 分组交叉的复选框勾上，就表示两组所在的节点，各自进行碰撞检测时，都会将对方组进行碰撞检测，没有勾上就不会有进行检测 **
+**当DEFAULT 分组 和 water 分组交叉的复选框勾上时，表示两组所在的节点，各自进行碰撞检测时，都会将对方组进行碰撞检测，没有勾上就不会有进行检测**
 
 根据上面的规则，在这张表里产生的碰撞对有：
 
@@ -227,7 +226,6 @@ DEFAULT - water
 DEFAULT - DEFAULT
 
 water - DEFAULT
-
 
 ## 骨骼贴图布局设置
 
