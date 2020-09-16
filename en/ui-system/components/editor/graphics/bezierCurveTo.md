@@ -16,7 +16,7 @@ The `bezierCurveTo()` method adds a bezier curve to the current path by using th
 ## Example
 
 ```javascript
-var ctx = node.getComponent(cc.GraphicsComponent);
+var ctx = node.getComponent(Graphics);
 ctx.moveTo(20,20);
 ctx.bezierCurveTo(20,100,200,100,200,20);
 ctx.stroke();

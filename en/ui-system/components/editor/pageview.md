@@ -57,7 +57,7 @@ The __PageView__ component must have the specified content node to work. Each ch
 The event callback added by this method is the same as the event callback added by the editor, all added by code. First you need to construct a `EventHandler` object, and then set the corresponding `target`, `component`, `handler` and `customEventData` parameters.
 
 ```ts
-import { _decorator, Component, Event, Node, PageViewComponent, EventHandler } from "cc";
+import { _decorator, Component, Event, Node, PageView, EventHandler } from "cc";
 const { ccclass, property } = _decorator;
 
 @ccclass("example")
@@ -71,14 +71,14 @@ export class example extends Component {
         pageChangedEventHandler.handler = 'callback';
         pageChangedEventHandler.customEventData = 'foobar';
 
-        const page = this.node.getComponent(PageViewComponent);
+        const page = this.node.getComponent(PageView);
         page.clickEvents.push(pageChangedEventHandler);
     }
 
     callback(event: Event, customEventData: string){
         // The event here is a Touch Event object, and you can get the send node of the event by event.target
         const node = event.target as Node;
-        const pageview = node.getComponent(PageViewComponent);
+        const pageview = node.getComponent(PageView);
         console.log(customEventData); // foobar
     }
 }
@@ -91,7 +91,7 @@ By `pageView.node.on('page-turning', ...)` way to add.
 ```ts
 // Suppose we add event handling callbacks to the onLoad method of a component and perform event handling in the callback function:
 
-import { _decorator, Component, Event, Node, PageViewComponent } from "cc";
+import { _decorator, Component, Event, Node, PageView } from "cc";
 const { ccclass, property } = _decorator;
 
 @ccclass("example")
@@ -100,7 +100,7 @@ export class example extends Component {
         this.pageView.node.on('page-turning', this.callback, this);
     }
 
-    callback(pageView: PageViewComponent){
+    callback(pageView: PageView){
         // The parameter of the callback is the PageView component. Note that events registered this way cannot pass customEventData
     }
 }

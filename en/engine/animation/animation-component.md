@@ -5,10 +5,10 @@ __Animation components__ control the playback of animations.
 __Animation components__ are added to nodes in exactly the same way as other components:
 
 ```ts
-import { AnimationComponent, Node } from "cc";
+import { Animation, Node } from "cc";
 
 function (node: Node) {
-    const animationComponent = node.addComponent(AnimationComponent);
+    const animationComponent = node.addComponent(Animation);
 }
 ```
 
@@ -37,7 +37,7 @@ animationComponent.crossFade('run', 0.3); // Smoothly switch from walking animat
 ```
 
 The `crossFade()` fade-in and fade-out mechanism makes it possible for more than one animation state to play at the same time.
-Therefore, the __animation component__ has no concept of the *current animation*. 
+Therefore, the __animation component__ has no concept of the *current animation*.
 
 The __animation component__ still provides `pause()`, `resume()` and `stop()` methods. These calls pause, continue, and stop all __animation states__ that are playing, however, they also pause, resume, and stop switching animations.
 
@@ -48,7 +48,7 @@ Sometimes it is necessary to perform other operations on the __animation state__
 You can get the __animation state__ through `getState()`:
 
 ```ts
-const animationComponent = node.getComponent(AnimationComponent);
+const animationComponent = node.getComponent(Animation);
 animationComponent.clips = [ idleClip, runClip ];
 
 // Get the status of `idleClip`
@@ -85,14 +85,14 @@ The `events` of an `AnimationClip` contains all event descriptions for the anima
 `func` represents the method name that is called back when the event is triggered. When the event is triggered, a **search** for a method named `func` on all components of the current node, once found, it is called with  `params` passed to it. Example:
 
 ```ts
-import { AnimationComponent, Component } from "cc";
+import { Animation, Component } from "cc";
 class MyScript extends Component {
     constructor() {
 
     }
 
     public start() {
-        const animationComponent = this.node.getComponent(AnimationComponent);
+        const animationComponent = this.node.getComponent(Animation);
         if (animationComponent && animationComponent.defaultClip) {
             const { defaultClip } = animationComponent;
             defaultClip.events.push({

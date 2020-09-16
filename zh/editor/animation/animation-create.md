@@ -5,7 +5,7 @@
 在每个节点上，我们都可以添加不同的组件。如果我们想在这个节点上创建动画，也必须为它新建一个 Animation 组件。
 创建的方法有两种：
 
- - 选中相应的节点，在属性检查器中点击下方的`添加组件`，在  Components 中选择 AnimationComponent。
+ - 选中相应的节点，在属性检查器中点击下方的`添加组件`，在  Components 中选择 Animation。
  - 打开动画编辑器，然后在层级管理器中选中需要添加动画的节点，在动画编辑器中点击`添加 Animation 组件`按钮。
 
 ![add-component](animation-clip/add-component.png)

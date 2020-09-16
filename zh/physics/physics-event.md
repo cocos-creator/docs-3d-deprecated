@@ -23,14 +23,14 @@ Cocos Creator 3D 的物理事件有触发事件和碰撞事件。
 
 监听触发事件，需要通过注册事件来添加相应的回调：
 
-1. 通过`this.getComponent(ColliderComponent)`获取到`ColliderComponent`
-2. 通过`ColliderComponent`的`on`或者`once`方法注册相应事件的回调
+1. 通过`this.getComponent(Collider)`获取到`Collider`
+2. 通过`Collider`的`on`或者`once`方法注册相应事件的回调
 
 代码示例：
 
 ```ts
 public start () {
-    let Collider = this.getComponent(ColliderComponent);
+    let Collider = this.getComponent(Collider);
     Collider.on('onTriggerStay', this.onTrigger, this);
 }
 
@@ -47,14 +47,14 @@ private onTrigger (event: ITriggerEvent) {
 
 监听碰撞事件，需要通过注册事件来添加相应的回调：
 
-1. 通过 `this.getComponent(ColliderComponent)` 获取到 `ColliderComponent`
-2. 通过 `ColliderComponent` 的 `on` 或者 `once` 方法注册相应事件的回调
+1. 通过 `this.getComponent(Collider)` 获取到 `Collider`
+2. 通过 `Collider` 的 `on` 或者 `once` 方法注册相应事件的回调
 
 代码示例：
 
 ```ts
 public start () {
-    let Collider = this.getComponent(ColliderComponent);
+    let Collider = this.getComponent(Collider);
     Collider.on('onCollisionStay', this.onCollision, this);
 }
 

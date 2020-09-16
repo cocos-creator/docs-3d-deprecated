@@ -134,7 +134,7 @@ class BlahBlahComponent {
         forTarget(target: BlahBlahComponent) {
             // do something useful here
             return {
-                // Called every time the value of the target 
+                // Called every time the value of the target
                 // object is set
                 set(value: number) {
                     target.setUniform(0, value);
@@ -157,7 +157,7 @@ class MyValueProxy implements animation.ValueProxyFactory {
     public forTarget(target: BlahBlahComponent) {
         // do something useful here
         return {
-            // Called every time the value of the target object 
+            // Called every time the value of the target object
             // is set
             set(value: number) {
                 target.setUniform(0, value);
@@ -172,8 +172,8 @@ class MyValueProxy implements animation.ValueProxyFactory {
 ```ts
 { // the target object
     modifiers: [
-        // `ModelComponent` Component
-        new animation.ComponentPath(js.getClassName(ModelComponent)),
+        // `MeshRenderer` Component
+        new animation.ComponentPath(js.getClassName(MeshRenderer)),
         // `sharedMaterials` attribute
         'sharedMaterials',
         // The first material
@@ -238,7 +238,7 @@ const numberCurve: IPropertyCurveData = {
     keys: 0,
     values: [ 0, 1, 2, 3 ],
     // The interpolate property is turned on by default
-    /* interpolate: true, */ 
+    /* interpolate: true, */
 };
 
 // Use lerp() of value type Vec3
@@ -292,7 +292,7 @@ class MyCurveValue implements ILerpable {
             // The position attribute is not interpolated
             this.position.clone(),
             // Rotate property uses Quat's lerp() method
-            this.rotation.lerp(to.rotation, t), 
+            this.rotation.lerp(to.rotation, t),
         );
     }
 

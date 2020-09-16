@@ -46,7 +46,7 @@ newPmtl.restitution = 0.1;
 代码中操作：
 
 ```ts
-const collider = this.node.getComponent(ColliderComponent);
+const collider = this.node.getComponent(Collider);
 collider.material = newPmtl;
 ```
 

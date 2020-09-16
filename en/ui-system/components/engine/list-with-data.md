@@ -48,7 +48,7 @@ export class ItemList extends Component {
 }
 ```
 
-We defined an `Item` class at the top of the script for storing and easily updating data needed by item. Please notice this class does not extends `cc.Component`, so it can be defined as a property type for any component. Please refer to the [Declare class](../../../scripting/ccclass.md) documentation for additional details.
+We defined an `Item` class at the top of the script for storing and easily updating data needed by item. Please notice this class does not extends `Component`, so it can be defined as a property type for any component. Please refer to the [Declare class](../../../scripting/ccclass.md) documentation for additional details.
 
 After the `Item` class definition, we defined a component class. Each script file can only contains one component definition and the component name will be the same as the file name. So the component we define is `ItemList`. In this component we have a list property which type is `Item`. This way we can populate the list with data input in __Inspector__ panel.
 
@@ -75,12 +75,12 @@ You can freely customize the prefab as you need, the picture above only shows an
 export class ItemTemplate extends Component {
     @property
     public id = 0;
-    @property(SpriteComponent)
-    public icon: SpriteComponent | null = null;
-    @property(LabelComponent)
-    public itemName: LabelComponent | null = null;
-    @property(LabelComponent)
-    public itemPrice: LabelComponent | null = null;
+    @property(Sprite)
+    public icon: Sprite | null = null;
+    @property(Label)
+    public itemName: Label | null = null;
+    @property(Label)
+    public itemPrice: Label | null = null;
 }
 ```
 
@@ -144,6 +144,6 @@ Running preview of the scene will get the result like this (the acutal look depe
 
 ![result](list-with-data/result.png)
 
-The __Layout__ component added in previous step is not necessary. We can use it to help putting multiple items in a container in order but you can also use the script program to do that. You can also add a __ScrollView__ component together to display a large amount of content in a limited space. 
+The __Layout__ component added in previous step is not necessary. We can use it to help putting multiple items in a container in order but you can also use the script program to do that. You can also add a __ScrollView__ component together to display a large amount of content in a limited space.
 
 For details of layout methods please read the [Auto Layout Container](auto-layout.md) and the [ScrollView Component](../editor/scrollview.md) documentation.

@@ -63,7 +63,7 @@ PageView 组件必须有指定的 content 节点才能起作用，content 中的
 这种方法添加的事件回调和使用编辑器添加的事件回调是一样的，都是通过代码添加。首先需要构造一个 `EventHandler` 对象，然后设置好对应的 `target`、`component`、`handler` 和 `customEventData` 参数。
 
 ```ts
-import { _decorator, Component, Event, Node, PageViewComponent, EventHandler } from "cc";
+import { _decorator, Component, Event, Node, PageView, EventHandler } from "cc";
 const { ccclass, property } = _decorator;
 
 @ccclass("example")
@@ -75,14 +75,14 @@ export class example extends Component {
         pageChangedEventHandler.handler = 'callback';
         pageChangedEventHandler.customEventData = 'foobar';
 
-        const page = this.node.getComponent(PageViewComponent);
+        const page = this.node.getComponent(PageView);
         page.clickEvents.push(pageChangedEventHandler);
     }
 
     callback(event: Event, customEventData: string){
         //这里 event 是一个 Touch Event 对象，你可以通过 event.target 取到事件的发送节点
         const node = event.target as Node;
-        const pageview = node.getComponent(PageViewComponent);
+        const pageview = node.getComponent(PageView);
         console.log(customEventData); // foobar
     }
 }
@@ -94,7 +94,7 @@ export class example extends Component {
 
 ```ts
 // 假设我们在一个组件的 onLoad 方法里面添加事件处理回调，在 callback 函数中进行事件处理:
-import { _decorator, Component, Event, Node, PageViewComponent } from "cc";
+import { _decorator, Component, Event, Node, PageView } from "cc";
 const { ccclass, property } = _decorator;
 
 @ccclass("example")
@@ -103,7 +103,7 @@ export class example extends Component {
         this.pageView.node.on('page-turning', this.callback, this);
     }
 
-    callback(pageView: PageViewComponent){
+    callback(pageView: PageView){
         // 回调的参数是 pageView 组件
         // 另外，注意这种方式注册的事件，也无法传递 customEventData
     }

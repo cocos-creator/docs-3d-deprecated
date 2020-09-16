@@ -11,7 +11,7 @@
 ## 实例
 
 ```javascript
-var ctx = node.getComponent(cc.GraphicsComponent);
+var ctx = node.getComponent(Graphics);
 ctx.circle(200,200, 200);
 ctx.stroke();
 ```

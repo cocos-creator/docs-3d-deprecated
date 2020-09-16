@@ -13,7 +13,7 @@
 ![Baseline](./index/instancing_baseline.gif)
 
 要创建开启 instancing 版本的模型，需要：
-* 确认骨骼动画组件 (SkeletalAnimationComponent) 上勾选了 `useBakedAnimation`（使用预烘焙动画模式）；
+* 确认骨骼动画组件 (SkeletalAnimation) 上勾选了 `useBakedAnimation`（使用预烘焙动画模式）；
 * 对所有蒙皮模型 (SkinningModel) 使用的材质，勾选 `USE_INSTANCING` 开关；
 
 ![Enabling](./index/enabling_instancing.png)
@@ -31,8 +31,8 @@
 ![Panel](./index/joint_texture_layout_new.png)
 
 * 点击加号 ① ，可以增加一个 Texture 单元，一个 Texture 单元由多个 Skeleton 单元组成。
-* 点击加号 ② ，可以增加一个 Skeleton 单元，一个 Skeleton 单元由一个 cc.Skeleton 资源和一至多个 cc.AnimationClip 资源组成。
-* 点击加号 ③ ，可以增加一个 cc.AnimationClip 资源槽。
+* 点击加号 ② ，可以增加一个 Skeleton 单元，一个 Skeleton 单元由一个 Skeleton 资源和一至多个 AnimationClip 资源组成。
+* 点击加号 ③ ，可以增加一个 AnimationClip 资源槽。
 
 这里我们将 9 个不同的动画分开放在 9 个 Texture 单元内：
 

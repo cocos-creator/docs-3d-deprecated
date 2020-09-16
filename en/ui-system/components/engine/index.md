@@ -1,10 +1,10 @@
 # UI Architecture
 
-The UI uses a tree-based rendering structure, and the entire UI is rendered based on the Canvas node (a node with `CanvasComponent`) as the root node. That is, the final root node of the UI node must be the Canvas node before it can be rendered by the Canvas. The `UITransformComponent` is the necessary condition that each UI node must have for a click or alignment strategy, etc. to take effect.
+The UI uses a tree-based rendering structure, and the entire UI is rendered based on the Canvas node (a node with `Canvas`) as the root node. That is, the final root node of the UI node must be the Canvas node before it can be rendered by the Canvas. The `UITransform` is the necessary condition that each UI node must have for a click or alignment strategy, etc. to take effect.
 
-In terms of overall rendering, the UI uses a separate render pipeline with the highest priority, the entire render pipeline will rendering 3D part before rendering the UI. And then the UI determines the rendering order by the `priority` property on the `CanvasComponent` of the Canvas node.
+In terms of overall rendering, the UI uses a separate render pipeline with the highest priority, the entire render pipeline will rendering 3D part before rendering the UI. And then the UI determines the rendering order by the `priority` property on the `Canvas` of the Canvas node.
 
-The UI also supports model rendering, the only condition being that a node with the model components (such as `ModelComponent`/`SkinningModelComponent`) must add __UI/Model__ component before it can be rendered on the same pipeline as the UI.
+The UI also supports model rendering, the only condition being that a node with the model components (such as `MeshRenderer`/`SkinnedMeshRenderer`) must add __UI/Model__ component before it can be rendered on the same pipeline as the UI.
 
 The UI rendering process as follows:
 
@@ -16,7 +16,7 @@ The UI is a necessary interaction part of game development. The buttons, labels,
 
 ![resolution-config](multi-resolution/resolution_config.png)
 
-Now that your design resolution is setup, you can start creating the UI elements. All UI elements are contained under the `Canvas` node, you can create a `Canvas` node by clicking the __+__ button at the top left of the __Hierarchy__ panel, and then select the __UI -> Canvas__. There is a [CanvasComponent](../editor/canvas.md) on the Canvas node, which automatically creates a camera inside. You can achieve true interspersed rendering between 3D camera and 2D camera by adjusting the `RenderMode` property on `CanvasComponent`. And then adjust the display priority between multiple Canvas with the `priority` property on `CanvasComponent`.
+Now that your design resolution is setup, you can start creating the UI elements. All UI elements are contained under the `Canvas` node, you can create a `Canvas` node by clicking the __+__ button at the top left of the __Hierarchy__ panel, and then select the __UI -> Canvas__. There is a [Canvas](../editor/canvas.md) on the Canvas node, which automatically creates a camera inside. You can achieve true interspersed rendering between 3D camera and 2D camera by adjusting the `RenderMode` property on `Canvas`. And then adjust the display priority between multiple Canvas with the `priority` property on `Canvas`.
 
 > __Note__: There can be more than one Canvas node in a scene, but the Canvas should not be nested under another Canvas or its child nodes.
 
@@ -50,3 +50,4 @@ As you can see on the __Project -> Project Setting -> General -> Default canvas 
 - [List with data](list-with-data.md)
 - [Stretchable UI Sprite](sliced-sprite.md)
 - [UI Static Batching](../editor/ui-static.md)
+- [UI Custom Material](ui-material.md)

@@ -14,8 +14,8 @@ Adding a physical element to the world can be divided int the following steps：
 
 1. Create a new shape `Cube`；
 2. Click `Add Component` on the `Inspector` panel witch is on the right of editor；
-3. Select `BoxColliderComponent` under the `Physics` menu, and adjust the parameters；
-4. add a `RigidBodyComponent` component in order to make it have physical behavior。
+3. Select `BoxCollider` under the `Physics` menu, and adjust the parameters；
+4. add a `RigidBody` component in order to make it have physical behavior。
 
 In this way we get a physical element that has **both a collider and a physical behavior**.
 
