@@ -134,10 +134,14 @@ After selecting multiple __key frames__, adjust the number of interval __key fra
 
 ### Copying/pasting keyframes
 
-- After selecting the __key frame__, follow the normal __shortcut key__ __C/V__ to *copy* and *paste*. Note that the location of the __shortcut key__ __paste__ will start from the current __key frame__.
-- After selecting the __key frame__, __right-click__ on the selected __key frame__, select __Copy Key Frame__, and then __right-click__ elsewhere, select __Paste Key Frame__.
+- A. After selecting the __key frame__, follow the normal __shortcut key__ __C/V__ to *copy* and *paste*. Note that the location of the __shortcut key__ __paste__ will start from __the current key frame__(The red line position).
+- B. After selecting the __key frame__, __right-click__ on the selected __key frame__, select __Copy Key Frame__, and then __right-click__ elsewhere, select __Paste Key Frame__.
 
     ![](./animation-clip/copy-key frames.gif)
+
+The copy and paste of key frame data supports cross-node and cross-clip use.
+
+> Note: There is a difference between A and B. When using the shortcut key to paste the keyframe data, it will be pasted one by one in the order of the copied track data, while right-clicking on the target property track and selecting paste will only pasted on the target property track.Please be sure to copy the correct data to produce unexpected results.
 
 For more about the design of animation sequences and the content of scripting animations, you can refer to the [Animation Clip](./../../engine/animation/animation-clip.md) documentation.
 

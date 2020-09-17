@@ -20,7 +20,7 @@ This step mainly initializes the initial `options` passed to the build to the in
 
 The editor will first summarize the scene currently involved in the build and all assets in the `resources` directory. Each asset is packaged through the engine's deserialization process to find the dependent asset and recursion to pack the assets. The entire project's scripting environment is configured before being deserialized, that is, all non-plugin project scripts are loaded. Because whether the script loads correctly or not directly affects the deserialization, failure to load because the script is not written legally will directly result in build failure. If the dependent asset is lost in the deserialization process, a warning is issued, but the build continues nonetheless. The warning here does not mean that the problem does not need to be resolved, and if the asset loss is not resolved, it is difficult to guarantee that the problem will not occur after the build.
 
-This step will also sort out the asset types based on the build's internal division, such as scenes, scripts, texture compression tasks, JSON grouping information, etc., and weed out asset information that is not used. 
+This step will also sort out the asset types based on the build's internal division, such as scenes, scripts, texture compression tasks, JSON grouping information, etc., and weed out asset information that is not used.
 
 > **Note**: All user scripts are loaded before this step is performed.
 
@@ -72,6 +72,7 @@ After performing the previous steps, then we need to generate the used assets in
     - sourceMaps: Whether or not to enable `sourceMap`
     - platform: Build platform
     - the modification times for the engine files.
+    - Whether to check the separation engine (WeChat platform only)
 
 5. **build JSON**: Serialized JSON is merged based on the JSON grouping and written to the file system (placed in the `res/import` directory). If in release mode, compression is also performed on the `uuid` in the serialized JSON.
 
@@ -178,6 +179,6 @@ The Auto Atlas prints the `uuid` information of the original small image and the
 
 ![build-atlas](./build-guide/build-atlas.jpg)
 
-### Engine compilation failed.
+### Engine compilation failed
 
 If it's a custom engine compilation failure, check your modified code, or custom engine path.
