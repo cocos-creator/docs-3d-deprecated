@@ -82,7 +82,7 @@ Cocos Creator 3D 的通用构建流程，主要有以下部分内容：
 
 - **md5 处理**：将 res 文件夹内的资源全部加上 md5 后缀，并整理数据准备记录在 settings 内。
 
-- **main.js 模板文件生成**：根据用户选项注入一些项目设置到 main.js 文件夹内并生成到构建输出目录下。
+- **application.js 模板文件生成**：根据用户选项注入一些项目设置到 application.js 文件夹内并生成到构建输出目录下。
 
 ### 整理 settings 数据
 

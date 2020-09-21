@@ -80,7 +80,7 @@ After performing the previous steps, then we need to generate the used assets in
 
 7. **MD5 Cache**: Add the MD5 suffix to all the assets in the `res` folder and organize the data to record in `settings`.
 
-8. **Generate `main.js` template file**: Configure project settings into the `main.js` folder according to the the developers specified options. Generate them in the build output directory.
+8. **Generate `application.js` template file**: Configure project settings into the `application.js` folder according to the the developers specified options. Generate them in the build output directory.
 
 ### Organizing the data of `settings`
 
