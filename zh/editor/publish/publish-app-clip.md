@@ -2,7 +2,7 @@
 
 从 v1.2.1 版本开始，通过 iOS 平台构建出的 Xcode 工程已经包含了 App Clip 编译目标。通过本流程构建出资源就可以运行/发布 App Clip 应用。
 
-Cocos Creator 还支持以 App Clip 的方式嵌入到其他的 Xcode 工程中。比如：在使用 其他游戏引擎 **生成** iOS 工程文件后，通过此构建过程就可以把 Cocos Creator 项目中嵌入其中。 方便玩家通过 App Clip 轻松体验应用。 
+Cocos Creator 还支持以 App Clip 的方式将游戏嵌入到其他的 Xcode 工程中。比如：在使用 其他游戏引擎 **生成** iOS 工程文件后，通过此构建过程就可以把 Cocos Creator 项目中嵌入其中。 方便玩家通过 App Clip 轻松体验应用。 
 
 ## 环境要求
 
