@@ -37,7 +37,7 @@ Cocos Creator 还支持以 App Clip 的方式嵌入到其他的 Xcode 工�
 
 ### 为 Cocos Creator 工程构建 App Clip 资源
 
-**在构建 App Clip 之前，需要先完成原生 iOS 平台的构建，** 以生成 Xcode 主工程。
+*在构建 App Clip 之前，需要先完成原生 iOS 平台的构建，* 以生成 Xcode 主工程。
 
 将 **App Clip Resources Path** 设置为 **iOS 主工程的构建目录**。生成的资源文件会被存放到子目录　`ios-app-clip/` 中。
 
@@ -58,7 +58,7 @@ Cocos Creator 还支持以 App Clip 的方式嵌入到其他的 Xcode 工�
 
 ## 构建
 
-**构建** 后，通过设置 `Bundle ID` 等几个步骤，便可以在 Xcode 中调试 App Clip。
+**构建** 后，通过设置 `Bundle ID` 等几个步骤，便可以在 Xcode 中运行/调试 App Clip。
 
 
 ## 后续步骤
