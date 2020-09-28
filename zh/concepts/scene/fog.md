@@ -11,7 +11,7 @@
 
 ## 开启方式
 
-![image](./fogInspector.png)
+![image](./fog/fogInspector.png)
 
 点击场景的Scene节点,在Inspector面板中展开fog选项,勾选Enabled属性即可开启全局雾功能，不论全局雾的类型如何，都可以通过FogColor设置全局雾的颜色。
 
@@ -20,7 +20,7 @@
 ### Linear Fog
 
 
-![image](./linear_fog.png)
+![image](./fog/linear_fog.png)
 
 线性雾的混合因子的算法通过:
 
@@ -41,7 +41,7 @@
 
 ### Exponential Fog 与 Exponential Squared Fog
 
-![image](./expfog.png)
+![image](./fog/expfog.png)
 
 Exponential Fog的混合因子f的求取通过如下的方式：
 
@@ -55,7 +55,7 @@ Exponential Squared Fog的混合因子求取如下：
 
 ### Layered Fog
 
-![image](./layerfog.png)
+![image](./fog/layerfog.png)
 
 引擎对Layered Fog的计算相对前面三种雾化类型的计算稍显复杂，引入了FogTop的概念，同时需要在x-z平面进行距离计算。
 

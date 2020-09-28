@@ -95,6 +95,7 @@
   - [Scene](concepts/scene/scene.md)
   - [Node](concepts/scene/node.md)
   - [Skybox](concepts/scene/skybox.md)
+  - [GlobalFog](concepts/scene/fog.md)
 
 - [Lighting](concepts/scene/light.md)
   - [Physically based lighting](concepts/scene/light/pbr-lighting.md)
