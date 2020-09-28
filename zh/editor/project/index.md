@@ -64,22 +64,169 @@
 
 ![修改纹理压缩预设名称](./texture-compress/edit.jpg)
 
-当然，如果确实有替换所有当前使用到该预设图片资源的预设选项需求是，可以鼠标上移到预设名称处，点击拷贝 ID 的按钮，自行在项目内搜索替换即可。
+### 导出 / 导入压缩纹理预设
+
+压缩纹理配置页面允许导入、导出压缩纹理预设来更好的跨项目复用配置，也可以自行在外部编辑好压缩纹理预设再导入到编辑器内。
+
+大部分情况下直接导入导出即可，如果需要自行编写这份配置需要参考下方接口定义与范例：
+
+```ts
+type IConfigGroups = Record<ITextureCompressPlatform, IConfigGroupsInfo>;
+type ITextureCompressPlatform = 'miniGame' | 'web' | 'ios' | 'android' | 'pc';
+type ITextureCompressType =
+    | 'jpg'
+    | 'png'
+    | 'webp'
+    | 'pvrtc_4bits_rgb'
+    | 'pvrtc_4bits_rgba'
+    | 'pvrtc_4bits_rgb_a'
+    | 'pvrtc_2bits_rgb'
+    | 'pvrtc_2bits_rgba'
+    | 'pvrtc_2bits_rgb_a'
+    | 'etc1_rgb'
+    | 'etc1_rgb_a'
+    | 'etc2_rgb'
+    | 'etc2_rgba'
+    | 'astc_4x4'
+    | 'astc_5x5'
+    | 'astc_6x6'
+    | 'astc_8x8'
+    | 'astc_10x5'
+    | 'astc_10x10'
+    | 'astc_12x12';
+type IConfigGroupsInfo = Record<ITextureCompressType, IQuality>
+interface ICompressPresetItem {
+    name: string;
+    options: IConfigGroups;
+}
+```
+
+示例参考：
+
+```json
+{
+    "default": {
+        "name": "default",
+        "options": {
+            "miniGame": {
+                "etc1_rgb": "fast",
+                "pvrtc_4bits_rgb": "fast"
+            },
+            "android": {
+                "astc_8x8": "-medium",
+                "etc1_rgb": "fast"
+            },
+            "ios": {
+                "astc_8x8": "-medium",
+                "pvrtc_4bits_rgb": "fast"
+            },
+            "web": {
+                "astc_8x8": "-medium",
+                "etc1_rgb": "fast",
+                "pvrtc_4bits_rgb": "fast"
+            },
+        }
+    },
+    "transparent": {
+        "name": "transparent",
+        "options": {
+            "miniGame": {
+                "etc1_rgb_a": "fast",
+                "pvrtc_4bits_rgb_a": "fast"
+            },
+            "android": {
+                "astc_8x8": "-medium",
+                "etc1_rgb_a": "fast"
+            },
+            "ios": {
+                "astc_8x8": "-medium",
+                "pvrtc_4bits_rgb_a": "fast"
+            },
+            "web": {
+                "astc_8x8": "-medium",
+                "etc1_rgb_a": "fast",
+                "pvrtc_4bits_rgb_a": "fast"
+            },
+        }
+    }
+}
+```
 
 ## Layers
 
 ![Layers](./index/layers.png)
 
--   Layers 能让相机渲染部分场景，让灯光照亮部分场景。也可以在射线检测时通过 Layers 处理物体是否碰撞。
--   可自定义 0 到 19 个 Layers，当您把输入框清空时即删除原先的设置。
--   后 12 个 Layers 是引擎内置的，不可修改。
--   目前使用的位置有：编辑 node 节点时， inspector 面板上的 Layer 属性; 编辑 Camera 节点时的 Visibility 属性。
+- Layers 能让相机渲染部分场景，让灯光照亮部分场景。
+- 可自定义 0 到 19 个 Layers，当您把输入框清空时即删除原先的设置。
+- 后 12 个 Layers 是引擎内置的，不可修改。
+- 目前使用的位置有：
+    1. 编辑 node 节点时， inspector 面板上的 Layer 属性;
 
-![Layers-node](./index/layers-node.png)
+    ![Layers-node](./index/layers-node.png)
 
-![Layers-camera](./index/layers-camera.png)
+    2. 编辑 Camera 节点时的 Visibility 属性。节点的 layer 属性匹配相机的 visibility 属性，只有相机 visibility 中包含的 layer 所代表的节点可以被相机看见。更多说明可以参考 [Camera 组件介绍](./../components/camera-component.md);
+
+    ![Layers-camera](./index/layers-camera.png)
 
 <!-- native 引擎设置的修改主要影响的是构建原生项目时使用 cocos2dx 引擎模板，修改后可以实时生效。 -->
+
+## Physics 物理设置
+
+在项目设置的引擎模块中 Physics 选项被勾选时，物理配置生效。
+
+![Physics-In-Engine](./index/physics-in-engine.png)
+
+物理配置将会在项目预览和项目发布时使用，会影响到重力，摩擦力，动能传递，检测碰撞等方面的物理效果。
+
+### 属性说明
+
+![Physics](./index/physics-index.png)
+
+- `gravity` 重力矢量，正负数值体现了在坐标轴上的方向性，默认值 *{ x: 0, y: -10, z: 0 }*
+- `allowSleep` 是否允许刚体进入休眠状态，默认值 *true*
+- `sleepThreshold` 进入休眠的默认速度临界值，默认值 *0.1*，最小值 *0*
+- `autoSimulation` 是否开启自动模拟
+- `fixedTimeStep` 每步模拟消耗的固定时间，默认值 *1/60*，最小值 *0*
+- `maxSubSteps` 每步模拟的最大子步数，默认值 *1*，最小值 *0*
+- `friction` 摩擦系数，默认值 *0.5*
+- `rollingFriction` 滚动摩擦系数，默认值 *0.1*
+- `spinningFriction` 自旋摩擦系数，默认值 *0.1*
+- `restitution` 弹性系数，默认值 *0.1*
+- `useNodeChains` 是否使用节点链组合刚体，默认值 *true*
+- `useCollisionMatrix` 是否使用碰撞矩阵，默认值 *true*
+- `collisionMatrix`  碰撞矩阵的设置结果，{ index: value } 格式，默认值 *{ "0": 1 }*
+
+### 碰撞矩阵设置
+
+![Physics-collision](./index/physics-collision.png)
+
+#### 分组的概念
+
+碰撞矩阵的识别通过分组管理，每一组格式为 `{ index, name }` 格式，`index` 与 Layers 概念相同，也是从 0 到 31 的位数，而 `name` 是这组的名称。
+
+默认会有一个 Default 分组 `{ index: 0, name: 'DEFAULT' }`
+
+点击 `+` 按钮可以新增分组，新增时 `index`, `name` 均不能为空，且不能与现有项重复；新增后分组不可以删除，但可以修改分组的名称。
+
+![Physics-collision-add](./index/physics-collision-add.png)
+
+#### 碰撞分组配对
+
+比如新增了一个 water 分组。
+
+![Physics-collision-demo](./index/physics-collision-demo.png)
+
+这张表里面的行与列分别列出了分组列表里面的项，你可以在这张表里面配置哪一个分组可以对其他的分组进行碰撞检测。
+
+**当DEFAULT 分组 和 water 分组交叉的复选框勾上时，表示两组所在的节点，各自进行碰撞检测时，都会将对方组进行碰撞检测，没有勾上就不会有进行检测**
+
+根据上面的规则，在这张表里产生的碰撞对有：
+
+DEFAULT - water
+
+DEFAULT - DEFAULT
+
+water - DEFAULT
 
 ## 骨骼贴图布局设置
 
