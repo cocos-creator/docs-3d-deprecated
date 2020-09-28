@@ -158,7 +158,7 @@ interface ICompressPresetItem {
 
 ![Layers](./index/layers.png)
 
-- Layers 能让相机渲染部分场景，让灯光照亮部分场景。也可以在射线检测时通过 Layers 处理物体是否碰撞。
+- Layers 能让相机渲染部分场景，让灯光照亮部分场景。
 - 可自定义 0 到 19 个 Layers，当您把输入框清空时即删除原先的设置。
 - 后 12 个 Layers 是引擎内置的，不可修改。
 - 目前使用的位置有：编辑 node 节点时， inspector 面板上的 Layer 属性; 编辑 Camera 节点时的 Visibility 属性。
@@ -166,6 +166,8 @@ interface ICompressPresetItem {
 ![Layers-node](./index/layers-node.png)
 
 ![Layers-camera](./index/layers-camera.png)
+
+更多说明可以参考 [Camera 组件介绍](./../components/camera-component.md);
 
 <!-- native 引擎设置的修改主要影响的是构建原生项目时使用 cocos2dx 引擎模板，修改后可以实时生效。 -->
 

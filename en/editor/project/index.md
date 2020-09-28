@@ -160,14 +160,16 @@ Example:
 
 ![Layers](./index/layers.png)
 
-- Layers allows the camera to render part of the scene and let the light illuminate part of the scene. It is also possible to deal with whether objects collide through Layers during ray inspection.
+- Layers allows the camera to render part of the scene and let the light illuminate part of the scene.
 - You can customize 0 to 19 Layers, and the original settings will be deleted when you clear the input box.
 - The last 12 Layers are built-in in the engine and cannot be modified.
-- The positions currently used are: when editing the node node, the Layer property on the inspector panel; when editing the Camera node, the Visibility property.
+- The layers of node matches the visibility option of the camera, the camera can only see nodes whose layer is included in the camera's visibility.
 
 ![Layers-node](./index/layers-node.png)
 
 ![Layers-camera](./index/layers-camera.png)
+
+For more instructions, please refer to [Camera Component introduction](./../components/camera-component.md);
 
 ## Physics
 
