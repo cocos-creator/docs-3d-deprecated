@@ -36,7 +36,7 @@
 ![](./build-open-data-context/folder-structure.png)
 
 - **render/template.js**：记录 XML 文本信息，可参考 [标签文档](https://wechat-miniprogram.github.io/minigame-canvas-engine/api/tags.html#%E6%A0%87%E7%AD%BE%E5%88%97%E8%A1%A8)，工程里默认使用模版引擎生成 XML 文本
-- **render/style.js**： 记录 CSS 样式文本信息，可参考 [样式文档](https://wechat-miniprogram.github.io/minigame-canvas-engine/api/style.html#%E5%B8%83%E5%B1%80)
+- **render/style.js**：记录 CSS 样式文本信息，可参考 [样式文档](https://wechat-miniprogram.github.io/minigame-canvas-engine/api/style.html#%E5%B8%83%E5%B1%80)
 - **render/dataDemo.js**：模拟一些随机的排行版数据，开发者可以在这里请求平台方的关系链数据，并传给 doT 模版引擎生成相关 XML 文本
 - **render/avatar.png**：模版工程展示用的头像图片，可以删除
 - **engine.js**：小游戏 Canvas 引擎源码
