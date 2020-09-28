@@ -25,7 +25,7 @@
 
 - [项目预览调试](editor/preview/index.md)
   - [浏览器预览](editor/preview/browser.md)
-  - [预览流程简介与常见错误处理](preview-guid.md)
+  - [预览流程简介与常见错误处理](editor/preview/preview-guid.md)
 
 - [粒子编辑器](particle-system/editor/index.md)
   - [曲线编辑器](particle-system/editor/curve-editor.md)
@@ -47,6 +47,7 @@
   - [通用构建参数介绍](editor/publish/build-options.md)
   - [命令行发布项目](editor/publish/publish-in-command-line.md)
   - [定制项目的构建模版](editor/publish/custom-project-build-template.md)
+  - [扩展构建流程](editor/publish/custom-build-plugin.md)
   - [构建流程简介与常见错误处理](editor/publish/build-guide.md)
   - [发布到 web 平台](editor/publish/publish-web.md)
   - [发布到原生平台](editor/publish/publish-native.md)

@@ -8,6 +8,7 @@
 - [了解通用构建参数](build-options.md)
 - [命令行发布项目](publish-in-command-line.md)
 - [定制项目的构建模版](custom-project-build-template.md)
+- [扩展构建流程](custom-build-plugin.md)
 - [构建流程简介与常见错误处理](build-guide.md)
 
 - [发布到 web 平台](publish-web.md)
