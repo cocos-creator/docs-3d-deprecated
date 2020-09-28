@@ -11,7 +11,7 @@ There are two ways to create a new __Animation component__:
 
 ![add-component](animation-clip/add-component.png)
 
-Specifics about __Animation component__ parameters can be found in [Animation Component Reference](./../../engine/animation/animation-component.md) documentation.
+Specifics about __Animation component__ parameters can be found in the [Animation Component Reference](./../../engine/animation/animation-component.md) documentation.
 
 ## Creating and attaching animation clips
 
@@ -29,4 +29,4 @@ It is not enough to just create it. We need to click on the node, in the __Hiera
 
 ---
 
-So far, we have completed the preparations before the animation, the next step is to edit the [animation sequences](animation-clip.md).
+So far, preparations have been completed, before the animation, the next step is to edit the [Animation Sequences](animation-clip.md).

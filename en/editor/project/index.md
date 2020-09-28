@@ -229,4 +229,4 @@ water - DEFAULT
 
 ## Bone map layout settings
 
-Explicitly specify the bone texture layout to assist the instancing of the skinning models. For details, please refer to [here](joints-texture-layout.md).
+Explicitly specify the bone texture layout to assist the instancing of the skinning models. For details, please refer to the [Joints Texture Layout](joints-texture-layout.md) documentation.

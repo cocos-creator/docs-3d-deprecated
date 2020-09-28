@@ -27,7 +27,7 @@ The builtin effects are located directly inside the `assets/effects` folder in t
 
 
 ## About YAML
-YAML is a human-readable data-serialization language, with a flexible, minimal syntax and easily configurable, which makes it an ideal choice. However, the syntax maybe somewhat unique, at first for those who are unfamiliar with the language. There is a quick intro to the most commonly used syntaxes and language features [here](yaml-101.md).
+YAML is a human-readable data-serialization language, with a flexible, minimal syntax and easily configurable, which makes it an ideal choice. However, the syntax maybe somewhat unique, at first for those who are unfamiliar with the language. For an introduction to the most commonly used syntaxes and language features, please refer to the [YAML 101](yaml-101.md) documentation.
 
 ## Configurable Pass Parameters
 The shader entries are the only required fields, namely `vert` and `frag`, in the format of `shaderChunkName:entryFunctionName`.
@@ -177,7 +177,7 @@ vec4 vert () {
   // ...
 }
 ```
-You can find the complete built-in shader uniform list [here](builtin-shader-uniforms.md).
+You can find the complete built-in shader uniform list [in this](builtin-shader-uniforms.md) documentation.
 
 ### Fragment Ouput<sup id="a1">[1](#f1)</sup>
 To encapsulate render pipeline complexities, use `CCFragOutput`.
