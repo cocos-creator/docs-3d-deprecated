@@ -74,6 +74,7 @@
   - [场景结构](concepts/scene/scene.md)
   - [节点](concepts/scene/node.md)
   - [天空盒](concepts/scene/skybox.md)
+  - [全局雾](concepts/scene/fog.md)
 
 - [光照](concepts/scene/light.md)
   - [基于物理的光照](concepts/scene/light/pbr-lighting.md)

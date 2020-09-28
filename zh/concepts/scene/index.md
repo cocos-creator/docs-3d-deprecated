@@ -10,6 +10,7 @@
 - [场景结构](scene.md)
 - [节点](node.md)
 - [天空盒](skybox.md)
+- [全局雾](fog.md)
 
 ---
 
