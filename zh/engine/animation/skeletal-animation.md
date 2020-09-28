@@ -2,7 +2,7 @@
 # 骨骼动画
 
 骨骼动画是一种常见但类型特殊的动画，我们提供两套系统，针对不同方向的需求，分别优化。<br>
-这两套系统的唯一开关就是 `SkeletalAnimationComponent` 上的 `useBakedAnimation` 开关，<br>
+这两套系统的唯一开关就是 `SkeletalAnimation` 上的 `useBakedAnimation` 开关，<br>
 启用对应预烘焙骨骼动画系统，禁用后对应实时计算骨骼动画系统，运行时也可以无缝切换。
 
 ## 预烘焙骨骼动画系统
@@ -11,8 +11,8 @@
 我们针对性地做了很多底层优化，目前的运行时流程大致如下：
 * 所有动画数据都会按照指定帧率提前预采样、烘焙到全局复用的骨骼动画贴图合集上；
 * 根据运行平台是否支持浮点纹理，会对应使用 RGBA32F 或 RGBA8 格式的 fallback；（这层用户不必关心，不对最终表现有影响，只是低端平台最后的保底策略）
-* 每个骨骼动画组件（SkeletalAnimationComponent）负责维护当前的播放进度，以 UBO（一个 vec4）的形式存储；
-* 各蒙皮模型组件（SkinningModelComponent）持有预烘焙蒙皮模型类（BakedSkinningModel），<br>
+* 每个骨骼动画组件（SkeletalAnimation）负责维护当前的播放进度，以 UBO（一个 vec4）的形式存储；
+* 各蒙皮模型组件（SkinnedMeshRenderer）持有预烘焙蒙皮模型类（BakedSkinningModel），<br>
   根据同样提前烘焙好的包围盒信息计算 culling，更新 UBO，在 GPU 上从贴图合集内取到当前数据完成蒙皮。
 
 ## 实时计算骨骼动画系统
@@ -22,7 +22,7 @@
 * 所有动画数据根据当前全局时间动态插值计算；
 * 动画数据会输出到场景的骨骼节点树中；
 * 用户和其他任何系统都可以通过操纵这个骨骼节点树对蒙皮效果产生影响；
-* 各蒙皮模型组件（SkinningModelComponent）持有普通蒙皮模型类（SkinningModel），<br>
+* 各蒙皮模型组件（SkinnedMeshRenderer）持有普通蒙皮模型类（SkinningModel），<br>
   每帧提取骨骼节点树信息计算 culling，将当前帧完整骨骼变换信息上传 UBO，在 GPU 内完成蒙皮。
 
 这为以下所有功能提供了最基础的支撑：
@@ -68,7 +68,7 @@ FBX 或 glTF 资源内的挂点模型会自动对接挂点系统，无需任何�
 
 ## 批量蒙皮模型组件
 
-目前底层上传 GPU 的骨骼纹理已做到全局自动合批复用，上层数据目前可以通过使用 批量蒙皮模型组件（BatchedSkinningModelComponent）将同一个骨骼动画组件控制的所有子蒙皮模型合并：
+目前底层上传 GPU 的骨骼纹理已做到全局自动合批复用，上层数据目前可以通过使用 批量蒙皮模型组件（BatchedSkinnedMeshRenderer）将同一个骨骼动画组件控制的所有子蒙皮模型合并：
 
 ![](batched-skinning-model-component.png)
 

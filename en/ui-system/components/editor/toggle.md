@@ -11,7 +11,7 @@ Click the __Add Component__ button at the bottom of the __Inspector__ panel and 
 | Properties     | Function Explanation |
 | -------------- | -----------   |
 | IsChecked      | Boolean type. When set to true, enable the check mark component |
-| CheckMark      | SpriteComponent type. The image displayed when Toggle is selected |
+| CheckMark      | Sprite type. The image displayed when Toggle is selected |
 | CheckEvents    | List type, default is null. Each event added by the user is composed of the node reference, component name and a response function. Please see the __Toggle Event__ section below for details |
 
 __Note__: Because Toggle is inherited from Button, so the properties exists in Button also apply to Toggle, please refer to the [Button Component](button.md) for details.

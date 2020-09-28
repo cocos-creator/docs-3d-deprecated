@@ -15,7 +15,7 @@ In the panel **Project -> Project Settings -> Module Options** of the Editor, yo
 If you use `builtin` for development, please note the following:
 
 - `builtin` only has events of type `trigger`.
-- `RigidBodyComponent` is invalid.
+- `RigidBody` is invalid.
 - `isTrigger` in `ColliderComponent` is a trigger regardless of whether the value is true or false.
 
 ## Physics Engine: `cannon.js`

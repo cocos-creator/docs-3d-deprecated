@@ -14,8 +14,8 @@ Cocos Creator 3D 目前支持轻量的碰撞检测系统`builtin`和具有物理
 
 1. 新建一个形状 `Cube`；
 2. 在右侧 `Inspector` 面板上点击 `Add Component`；
-3. 在 `Physics` 目录下选择 `BoxColliderComponent`, 并调整参数；
-3. 为了使它具有物理行为，接着添加一个 `RigidBodyComponent` 组件。
+3. 在 `Physics` 目录下选择 `BoxCollider`, 并调整参数；
+3. 为了使它具有物理行为，接着添加一个 `RigidBody` 组件。
 
 这样，便有了一个**既有碰撞器又有物理行为**的一个物理元素。
 

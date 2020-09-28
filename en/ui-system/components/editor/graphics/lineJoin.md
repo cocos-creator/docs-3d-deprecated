@@ -4,15 +4,15 @@ The `lineJoin` property represents the style of the joint between two line segme
 
 | Possible line join options | Description |
 | -------------- | ----------- |
-| *cc.GraphicsComponent.LineJoin.BEVEL* | Creates a bevel |
-| *cc.GraphicsComponent.LineJoin.ROUND* | Create a fillet |
-| *cc.GraphicsComponent.LineJoin.MITER* | Default. Create sharp corners |
+| *Graphics.LineJoin.BEVEL* | Creates a bevel |
+| *Graphics.LineJoin.ROUND* | Create a fillet |
+| *Graphics.LineJoin.MITER* | Default. Create sharp corners |
 
 ## Example
 
 ```javascript
-var ctx = node.getComponent(cc.GraphicsComponent);
-ctx.lineJoin = cc.GraphicsComponent.LineJoin.ROUND;
+var ctx = node.getComponent(Graphics);
+ctx.lineJoin = Graphics.LineJoin.ROUND;
 ctx.moveTo(20,20);
 ctx.lineTo(100,50);
 ctx.lineTo(20,100);

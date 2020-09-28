@@ -197,7 +197,7 @@ vec4 frag () {
 
 在运行时所有属性都会默认初始化为 0，脚本中设置接口为：
 ```ts
-const comp = node.getComponent(ModelComponent);
+const comp = node.getComponent(MeshRenderer);
 comp.setInstancedAttribute('a_instanced_color', [100, 150, 200, 255]); // should match the specified format
 ```
 > 注意：在每次重建 PSO 时（一般对应更换新材质时）所有属性值都会重置，需要重新设置。

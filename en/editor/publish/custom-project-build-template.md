@@ -21,9 +21,9 @@ In addition to this, build templates can be customized in the following ways.
 
 ### ejs type
 
-Since the content of the package is not guaranteed to be exactly the same in every version, when the build template within the editor is updated, the developer also needs to update the build template within their project. Now add a new way to use the template, click on **Project -> Create preview template** in the main menu, and an `.ejs` template file will be generated for the corresponding platform.
+Since the content of the package is not guaranteed to be exactly the same in every version, when the build template within the editor is updated, the developer also needs to update the build template within their project. Now add a new way to use the template, click on **Project -> Create preview template** in the main menu, and an `ejs` template file will be generated for the corresponding platform.
 
-```
+```md
 project-folder
  |--assets
  |--build

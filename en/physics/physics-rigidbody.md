@@ -1,10 +1,10 @@
 #  Rigid Body Components
 
-## Obtaining a `RigidBodyComponent`
+## Obtaining a `RigidBody`
 An example using TypeScript:
 
 ```typescript
-const rigidBody = this.getComponent(RigidBodyComponent);
+const rigidBody = this.getComponent(RigidBody);
 ```
 
 ## Rigid Body Types

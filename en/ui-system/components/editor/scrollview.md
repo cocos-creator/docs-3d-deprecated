@@ -42,13 +42,13 @@ To build a connection, you can drag a node with the ScrollBar component in the _
 
 The ScrollView component can only work with the specified content node. It calculates location information during scrolling using both the designated scroll direction and the length of the content node in this direction.
 
-The Content node can also set up the auto resize by adding a `WidgetComponent`, or it can arrange the layout of child nodes by adding a `LayoutComponent`, but these two components should not be added to a node at the same time to avoid unintentional consequences.
+The Content node can also set up the auto resize by adding a `Widget`, or it can arrange the layout of child nodes by adding a `Layout`, but these two components should not be added to a node at the same time to avoid unintentional consequences.
 
 Normally a ScrollView node tree resembles the following:
 
 ![scrollview-hierarchy](scroll/scrollview-hierarchy.png)
 
-The `view` here is used to define a scroll area that can be displayed. As a result, the MaskComponent will normally be added to the `view`. Contents that can scroll can be put in the content node or added to its child node.
+The `view` here is used to define a scroll area that can be displayed. As a result, the Mask will normally be added to the `view`. Contents that can scroll can be put in the content node or added to its child node.
 
 ## Add a callback through the script code
 
@@ -57,7 +57,7 @@ The `view` here is used to define a scroll area that can be displayed. As a resu
 The event callback added by this method is the same as the event callback added by the editor, all added by code. First you need to construct a `EventHandler` object, and then set the corresponding `target`, `component`, `handler` and `customEventData` parameters.
 
 ```ts
-import { _decorator, Component, ScrollViewComponent, EventHandler } from "cc";
+import { _decorator, Component, ScrollView, EventHandler } from "cc";
 const { ccclass, property } = _decorator;
 
 @ccclass("example")
@@ -71,13 +71,13 @@ export class example extends Component {
         scrollViewEventHandler.handler = 'callback';
         scrollViewEventHandler.customEventData = 'foobar';
 
-        const scrollview = this.node.getComponent(ScrollViewComponent);
+        const scrollview = this.node.getComponent(ScrollView);
         scrollview.scrollEvents.push(scrollViewEventHandler);
     }
 
     callback(scrollview, eventType, customEventData){
         // here scrollview is a Scrollview component object instance
-        // here the eventType === ScrollViewComponent.EventType enum
+        // here the eventType === ScrollView.EventType enum
         // here the customEventData parameter is equal to the "foobar" you set before
     }
 }
@@ -89,18 +89,18 @@ By `scrollview.node.on('scroll-to-top', ...)` way to add.
 
 ```js
 // Suppose we add an event handler callback to the onLoad method of a component and handle the event in the callback function:
-import { _decorator, Component, ScrollViewComponent } from "cc";
+import { _decorator, Component, ScrollView } from "cc";
 const { ccclass, property } = _decorator;
 
 @ccclass("example")
 export class example extends Component {
-    @property(ScrollViewComponent)
-    scrollview: ScrollViewComponent | null = null;
+    @property(ScrollView)
+    scrollview: ScrollView | null = null;
     onLoad(){
         this.scrollview.node.on('scroll-to-top', this.callback, this);
     }
 
-    callback(scrollView: ScrollViewComponent){
+    callback(scrollView: ScrollView){
         // The callback parameter is the ScrollView component, note that events registered this way cannot pass customEventData.
     }
 }

@@ -6,9 +6,9 @@ __Cocos Creator 3D__ currently provides users with a variety of __collider compo
 
 The __collider component__ is used to represent the shape of the __collision body__ of a __rigid body__. Different geometric shapes have different properties.
 
-### BoxColliderComponent
+### BoxCollider
 
-![BoxColliderComponent](img/collider-box.jpg)
+![BoxCollider](img/collider-box.jpg)
 
   Properties | Description
   ---|---
@@ -17,17 +17,17 @@ The __collider component__ is used to represent the shape of the __collision bod
   *center* | The origin of the shape in the local coordinate system
   *size*  | The size of the box, ie length, width, height
 
-### SphereColliderComponent
+### SphereCollider
 
-![SphereColliderComponent](img/collider-sphere.jpg)
+![SphereCollider](img/collider-sphere.jpg)
 
 Properties | Description (Other reference box colliders)
 ---|---
 *radius* | Radius of the sphere
 
-### CylinderColliderComponent
+### CylinderCollider
 
-![CylinderColliderComponent](img/collider-cylinder.jpg)
+![CylinderCollider](img/collider-cylinder.jpg)
 
 Properties | Description (Other reference box colliders)
 ---|---
@@ -37,9 +37,9 @@ Properties | Description (Other reference box colliders)
 
 > **Note**: `builtin` does not currently support cylindrical components.
 
-### CapsuleColliderComponent
+### CapsuleCollider
 
-![CapsuleColliderComponent](img/collider-capsule.jpg)
+![CapsuleCollider](img/collider-capsule.jpg)
 
 Properties | Description（Other reference cylinders and box colliders）
 ---|---
@@ -48,9 +48,9 @@ Properties | Description（Other reference cylinders and box colliders）
 
 > **Note**: `cannon.js` does not support capsule components. It is recommended to use two spheres and cylinders and piece them together.
 
-### MeshColliderComponent
+### MeshCollider
 
-![MeshColliderComponent](img/collider-mesh.jpg)
+![MeshCollider](img/collider-mesh.jpg)
 
 Properties | Description (Other reference box colliders)
 ---|---
@@ -62,11 +62,11 @@ Properties | Description (Other reference box colliders)
 
 > **Note**: `ammo.js` currently only supports static mesh colliders (`mass` is `0` or without a `RigidBody` component).
 
-## RigidBodyComponent
+## RigidBody
 
 In order to more easily simulate physical behavior, __Cocos Creator 3D__ provides users with __rigid body components__.
 
-![RigidBodyComponent](img/rigid-body.jpg)
+![RigidBody](img/rigid-body.jpg)
 
 Properties | Description (The property values ​​in the above picture are all default values)
 ---|---
@@ -79,11 +79,11 @@ Properties | Description (The property values ​​in the above picture are all
 *linerFactor* | Linear factor, which can affect the change of linear velocity in each axis
 *angularFactor* | Rotation factor, which can affect the change of the rotation speed of each axis
 
-> **Note**: `builtin` does not currently support `RigidBodyComponent`.
+> **Note**: `builtin` does not currently support `RigidBody`.
 
 ## ConstantForce
 
-This is a tool component that depends on a `RigidBodyComponent` and will apply a given force and torque to a rigid body every frame.
+This is a tool component that depends on a `RigidBody` and will apply a given force and torque to a rigid body every frame.
 
 ![ConstantForce](img/constant-force.jpg)
 

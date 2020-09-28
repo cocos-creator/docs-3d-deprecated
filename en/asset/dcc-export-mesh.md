@@ -8,7 +8,7 @@ The following uses Blender 2.8 as an example to introduce the model import proce
 
 ![blender model](./mesh/blender_model.png)
 
-In [Blender's FBX export options documentation](https://docs.blender.org/manual/en/2.80/addons/io_scene_fbx.html), we choose __up__ as __y up__ and __forward__ as __-z forward__.
+In [Blender's FBX Export Options](https://docs.blender.org/manual/en/2.80/addons/io_scene_fbx.html) documentation, we choose __up__ as __y up__ and __forward__ as __-z forward__.
 
 ![blender export](./mesh/blender_export_fbx_1.png)
 

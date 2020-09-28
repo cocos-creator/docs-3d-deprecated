@@ -5,9 +5,9 @@
 ## 实例
 
 ```javascript
-var ctx = node.getComponent(cc.GraphicsComponent);
+var ctx = node.getComponent(Graphics);
 ctx.lineWidth = 2;
-ctx.strokeColor = cc.hexToColor('#0000ff');
+ctx.strokeColor = hexToColor('#0000ff');
 ctx.rect(20,20,250,200);
 ctx.stroke();
 ```

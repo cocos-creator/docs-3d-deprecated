@@ -2,22 +2,22 @@
 
 __Cocos Creator 3D__ includes the following __Components__：
 
-- [AudioSourceComponent](../../audio-system/overview.md)
-- [ModelComponent](../../engine/renderable/model-component.md)
-- [SkinningModelComponent](../../engine/animation/skeletal-animation.md)
-- [CameraComponent](camera-component.md)
-- [DirectionalLightComponent](../../concepts/scene/light/dir-light.md)
-- [SphereLightComponent](../../concepts/scene/light/sphere-light.md)
-- [SpotLightComponent](../../concepts/scene/light/spot-light.md)
-- [AnimationComponent](../../engine/animation/animation-component.md)
-- [BillboardComponent](../../particle-system/billboard-component.md)
-- [LineComponent](../../particle-system/line-component.md)
-- [ParticleSystemComponent](../../particle-system/main-module.md)
-- [BoxColliderComponent](../../physics/physics-component.md#boxcollidercomponent)
-- [SphereColliderComponent](../../physics/physics-component.md#spherecollidercomponent)
-- [RigidBodyComponent](../../physics/physics-component.md#RigidBodyComponent)
+- [AudioSource](../../audio-system/overview.md)
+- [MeshRenderer](../../engine/renderable/model-component.md)
+- [SkinnedMeshRenderer](../../engine/animation/skeletal-animation.md)
+- [Camera](camera-component.md)
+- [DirectionalLight](../../concepts/scene/light/dir-light.md)
+- [SphereLight](../../concepts/scene/light/sphere-light.md)
+- [SpotLight](../../concepts/scene/light/spot-light.md)
+- [Animation](../../engine/animation/animation-component.md)
+- [Billboard](../../particle-system/billboard-component.md)
+- [Line](../../particle-system/line-component.md)
+- [ParticleSystem](../../particle-system/main-module.md)
+- [BoxCollider](../../physics/physics-component.md#boxcollidercomponent)
+- [SphereCollider](../../physics/physics-component.md#spherecollidercomponent)
+- [RigidBody](../../physics/physics-component.md#RigidBody)
 - [UI Components](../../ui-system/components/editor/index.md)
 
 ---
 
-Continue to the [AudioSourceComponent](../../audio-system/overview.md) documentation.
+Continue to the [AudioSource](../../audio-system/overview.md) documentation.

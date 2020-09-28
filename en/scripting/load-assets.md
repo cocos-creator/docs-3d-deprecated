@@ -77,13 +77,13 @@ Although it is intuitive to set assets in the **Attributes Inspector**, the asse
 
 We have example for asset loading, please see these [test-case-3d(AssetLoading)](https://github.com/cocos-creator/test-cases-3d/tree/master/assets/cases/scripting/asset_loading)
 
-There are two points to note when loading assets dynamically. 
+There are two points to note when loading assets dynamically.
 
 __First__, the `resources` folder needs to be created manually inside the `resources` folder and must be located in the __root directory__, like this:
 
 ![](load-assets/resources-file-tree.jpg)
 
-All assets that need to be dynamically loaded through a script must be placed in the `resources` folder or its subfolders. 
+All assets that need to be dynamically loaded through a script must be placed in the `resources` folder or its subfolders.
 
 > **Note**: The assets in the folder can refer to other assets outside the folder, and can also be referenced by external scenes or assets. When the project is built, except for the scenes that have been checked in the Build panel, all assets in the `resources` folder, together with the assets outside the `resources` folder that are dependent by necessary assets, other assets will be deleted.
 
@@ -104,7 +104,7 @@ loader.loadRes("test assets/prefab", Prefab , (err: any, prefab: Prefab) => {
 
 // load the AnimationClip
 loader.loadRes("test assets/anim", AnimationClip , (err: any, clip: AnimationClip) => {
-    this.node.getComponent(AnimationComponent).addClip(clip, "anim");
+    this.node.getComponent(Animation).addClip(clip, "anim");
 });
 ```
 
@@ -115,7 +115,7 @@ After the image is set to a spriteframe, texture or other image types, an asset 
 ```typescript
 // load a SpriteFrame，image is ImageAsset，spriteFrame is image/spriteFrame, texture is image/texture
 loader.loadRes("test assets/image/spriteFrame", SpriteFrame ,(err: any, spriteFrame: SpriteFrame) => {
-    this.node.getComponent(SpriteComponent).spriteFrame = spriteFrame;
+    this.node.getComponent(Sprite).spriteFrame = spriteFrame;
 });
 ```
 
@@ -124,7 +124,7 @@ loader.loadRes("test assets/image/spriteFrame", SpriteFrame ,(err: any, spriteFr
 loader.loadRes("test assets/image/texture", Texture2D ,(err: any, texture: Texture2D) => {
     const spriteFrame = new SpriteFrame();
     spriteFrame.texture = texture;
-    this.node.getComponent(SpriteComponent).spriteFrame = spriteFrame;
+    this.node.getComponent(Sprite).spriteFrame = spriteFrame;
 });
 ```
 
@@ -139,7 +139,7 @@ For an atlas imported from a third-party tool such as Texturepacker, if you want
 // Note Atlas resource file (plist) usually of the same name and a picture file (PNG) placed in a directory, So should need to in the second parameter specifies the resource type.
 loader.loadRes("test assets/atlas.plist", SpriteAtlas, (err: any, atlas: SpriteAtlas) => {
     const frame = atlas.getSpriteFrame('sheep_run_0');
-    this.node.getComponent(SpriteComponent)..spriteFrame = frame;
+    this.node.getComponent(Sprite)..spriteFrame = frame;
 });
 ```
 
@@ -174,7 +174,7 @@ loader.loadResDir("test assets", (err: any, assets: Array<Asset>) => {
     // ...
 });
 
-// load the test assets, all SpriteFrame in the directory, 
+// load the test assets, all SpriteFrame in the directory,
 // and get their path
 loader.loadResDir("test assets", SpriteFrame, (err: any, assets: Array<Asset>, urls: Array<string>) => {
     // ...
@@ -192,7 +192,7 @@ loader.load(remoteUrl1, (err: any, image: ImageAsset) => {
     // Use imageAsset to create sprite frame or texture
 });
 
-// Remote URL without image suffix, you must specify the type 
+// Remote URL without image suffix, you must specify the type
 // of remote image file
 const remoteUrl2 = "http://unknown.org/emoji?id=124982374";
 loader.load({url: remoteUrl2, type: 'png'}, (err: any, image: ImageAsset) => {
@@ -228,7 +228,7 @@ const deps = loader.getDependsRecursively('prefabs/sample');
 loader.release(deps);
 
 // If there are some assets in this prefab that are shared with other
-// parts of the scene, you don't want them to be released, you can delete 
+// parts of the scene, you don't want them to be released, you can delete
 // this asset from the dependency list.
 const deps = loader.getDependsRecursively('prefabs/sample');
 const index = deps.indexOf(texture2d._uuid);

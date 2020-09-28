@@ -24,7 +24,7 @@ Cocos Creator 3D 自 v1.0.3 起正式支持原生平台，点击菜单栏的 **�
 ```cpp
 auto cx = ScriptingCore::getInstance()->getGlobalContext();
 JS::RootedValue returnParam(cx);
-ScriptingCore::getInstance()->evalString("cc.loader.md5Pipe.transformURL('url')", &returnParam);
+ScriptingCore::getInstance()->evalString("loader.md5Pipe.transformURL('url')", &returnParam);
 
 string url;
 jsval_to_string(cx, returnParam, &url);

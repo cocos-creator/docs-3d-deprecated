@@ -76,12 +76,12 @@ export class ItemList extends Component {
 export class ItemTemplate extends Component {
     @property
     public id = 0;
-    @property(SpriteComponent)
-    public icon: SpriteComponent | null = null;
-    @property(LabelComponent)
-    public itemName: LabelComponent | null = null;
-    @property(LabelComponent)
-    public itemPrice: LabelComponent | null = null;
+    @property(Sprite)
+    public icon: Sprite | null = null;
+    @property(Label)
+    public itemName: Label | null = null;
+    @property(Label)
+    public itemPrice: Label | null = null;
 }
 ```
 
