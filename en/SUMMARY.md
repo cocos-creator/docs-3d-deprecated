@@ -68,7 +68,7 @@
 ## 进阶使用
 
 - [Extended Editor](editor/extension/readme.md)
-  - [Your First Extension](editor/extension/first.md)
+  - [The First Extension](editor/extension/first.md)
   - [Install And Share](editor/extension/install.md)
   - [Extension Description](editor/extension/define.md)
   - [Extended Panel](editor/extension/panel.md)
