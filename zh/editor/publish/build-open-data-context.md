@@ -38,7 +38,7 @@
 - **render/template.js**：记录 XML 文本信息，可参考 [标签文档](https://wechat-miniprogram.github.io/minigame-canvas-engine/api/tags.html#%E6%A0%87%E7%AD%BE%E5%88%97%E8%A1%A8)，工程里默认使用模版引擎生成 XML 文本
 - **render/style.js**： 记录 CSS 样式文本信息，可参考 [样式文档](https://wechat-miniprogram.github.io/minigame-canvas-engine/api/style.html#%E5%B8%83%E5%B1%80)
 - **render/dataDemo.js**：模拟一些随机的排行版数据，开发者可以在这里请求平台方的关系链数据，并传给 doT 模版引擎生成相关 XML 文本
-- **render/avatar.png**：展示用的头像图片，可以删除
+- **render/avatar.png**：模版工程展示用的头像图片，可以删除
 - **engine.js**：小游戏 Canvas 引擎源码
 - **index.js**：开放数据域工程入口文件，在该文件中通过将 XML 文本和 CSS 样式传递给 Canvas 引擎，即可渲染开放数据域
 
@@ -85,7 +85,7 @@ export default {
 该属性主要设置主域更新 sharedCanvas 到屏幕上的频率，避免主域频繁更新开放域贴图，以防造成一定的性能损耗。
 
 ## 一些推荐做法
-1. 前面提到，在下一次构建开放数据域工程模版时，如果构建目录下已经存在 **openDataContext** 目录，则不会被覆盖掉，这是因为我们不希望覆盖掉用定制过的工程。由于 build 目录默认被 git 忽略，如果开发者希望将 **openDataContext** 工程纳入版本管理，可以考虑将构建后的工程放入 build-templates 目录，具体可参考 [定制项目构建流程](./custom-project-build-template.md)
+1. 前面提到，在下一次构建开放数据域工程模版时，如果构建目录下已经存在 **openDataContext** 目录，则不会被覆盖掉，这是因为我们不希望覆盖掉开发者定制过的工程。由于 build 目录默认被 git 忽略，如果开发者希望将 **openDataContext** 工程纳入版本管理，可以考虑将构建后的工程放入 build-templates 目录，具体可参考 [定制项目构建流程](./custom-project-build-template.md)
 2. 在开放数据域项目中，如果需要监听来自主域的消息，则需要先判断消息是否来自主域引擎，以微信接口为例：
 ```js
 wx.onMessage(res => {
@@ -94,11 +94,11 @@ wx.onMessage(res => {
     }
 });
 ```
-我们也推荐，在向开放域发送消息是，附带上 type 信息，这里 `res.type === 'engine'` 表示消息来源于引擎，避免处理错误的消息。
+我们也推荐在向开放域发送消息时，附带上 type 信息，这里 `res.type === 'engine'` 表示消息来源于引擎，避免处理错误的消息源。
 
 ## 已知问题
 
-在百度平台的开放数据域里，由于图片只能加载来自百度返回的用户头像，所以生成的模版工程里，可能本地的头像图片会加载不出来。
+在百度平台的开放数据域里，由于图片只能加载来自百度返回玩家头像，所以生成的模版工程里，可能本地的头像图片会加载不出来。
 
 ## 参考链接
 
