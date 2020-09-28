@@ -64,8 +64,6 @@
 
 ![修改纹理压缩预设名称](./texture-compress/edit.jpg)
 
-当然，如果确实有替换所有当前使用到该预设图片资源的预设选项需求是，可以鼠标上移到预设名称处，点击拷贝 ID 的按钮，自行在项目内搜索替换即可。
-
 ### 导出 / 导入压缩纹理预设
 
 压缩纹理配置页面允许导入、导出压缩纹理预设来更好的跨项目复用配置，也可以自行在外部编辑好压缩纹理预设再导入到编辑器内。
@@ -161,13 +159,14 @@ interface ICompressPresetItem {
 - Layers 能让相机渲染部分场景，让灯光照亮部分场景。
 - 可自定义 0 到 19 个 Layers，当您把输入框清空时即删除原先的设置。
 - 后 12 个 Layers 是引擎内置的，不可修改。
-- 目前使用的位置有：编辑 node 节点时， inspector 面板上的 Layer 属性; 编辑 Camera 节点时的 Visibility 属性。
+- 目前使用的位置有：
+    1. 编辑 node 节点时， inspector 面板上的 Layer 属性;
 
-![Layers-node](./index/layers-node.png)
+    ![Layers-node](./index/layers-node.png)
 
-![Layers-camera](./index/layers-camera.png)
+    2. 编辑 Camera 节点时的 Visibility 属性。节点的 layer 属性匹配相机的 visibility 属性，只有相机 visibility 中包含的 layer 所代表的节点可以被相机看见。更多说明可以参考 [Camera 组件介绍](./../components/camera-component.md);
 
-更多说明可以参考 [Camera 组件介绍](./../components/camera-component.md);
+    ![Layers-camera](./index/layers-camera.png)
 
 <!-- native 引擎设置的修改主要影响的是构建原生项目时使用 cocos2dx 引擎模板，修改后可以实时生效。 -->
 
@@ -183,8 +182,8 @@ interface ICompressPresetItem {
 
 ![Physics](./index/physics-index.png)
 
-- `gravity` 重力矢量，正负数值体现了方向性，默认值 *{ x: 0, y: -10, z: 0 }*
-- `allowSleep` 是否允许休眠，默认值 *true*
+- `gravity` 重力矢量，正负数值体现了在坐标轴上的方向性，默认值 *{ x: 0, y: -10, z: 0 }*
+- `allowSleep` 是否允许刚体进入休眠状态，默认值 *true*
 - `sleepThreshold` 进入休眠的默认速度临界值，默认值 *0.1*，最小值 *0*
 - `autoSimulation` 是否开启自动模拟
 - `fixedTimeStep` 每步模拟消耗的固定时间，默认值 *1/60*，最小值 *0*

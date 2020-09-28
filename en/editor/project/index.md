@@ -66,8 +66,6 @@ The name of the compressed texture is only used for display. When adding a compr
 
 ![Modify the name of the texture compression preset](./texture-compress/edit.jpg)
 
-If all the preset options used for an image asset need to be replaced, move the mouse to the preset name, click the button to copy the ID to and search and replace it in the project manually.
-
 ### Export / import compressed texture presets
 
 The compressed texture configuration page allows developers to import and export compressed texture presets for better cross-project reuse. It is also possible to edit the compressed texture presets externally and import them into the editor.
@@ -165,29 +163,27 @@ Example:
 - The last 12 Layers are built-in in the engine and cannot be modified.
 - The layers of node matches the visibility option of the camera, the camera can only see nodes whose layer is included in the camera's visibility.
 
-![Layers-node](./index/layers-node.png)
+    ![Layers-node](./index/layers-node.png)
 
-![Layers-camera](./index/layers-camera.png)
-
-For more instructions, please refer to [Camera Component introduction](./../components/camera-component.md);
+    ![Layers-camera](./index/layers-camera.png) For more instructions, please refer to [Camera Component introduction](./../components/camera-component.md);
 
 ## Physics
 
 ![Physics](./index/physics-index.png)
 
-This physics configuration will be in effect only when the **Physics Module** is enabled in the **Engine Module**.
+This physics configuration will be take effect only when the **Physics Module** is enabled in the **Engine Module**.
 
 ![Physics-In-Engine](./index/physics-in-engine.png)
 
-The physical configuration will be used in the project when preview and release. The physical effects are reflected in the control of *gravity, friction, kinetic energy transfer, and collision detection*.
+The physical configuration will take effect for both preview and publish environments. It includes parameters like *gravity, friction, kinetic energy transfer, and collision detection*.
 
 ### Property description
 
-- `gravity` Gravity vector, positive and negative values ​​reflect the directionality. **Default:** `{ x: 0, y: -10, z: 0 }`.
-- `allowSleep` Whether to allow hibernation. **Default:** `true`.
-- `sleepThreshold` The default speed threshold for entering sleep. **Default:** `0.1`，**Min:** `0`.
+- `gravity` Gravity direction vector, the sign means the positive or negative direction on the axis. **Default:** `{ x: 0, y: -10, z: 0 }`.
+- `allowSleep` Whether to allow rigid bodies to enter sleep state. **Default:** `true`.
+- `sleepThreshold` The maximum speed threshold for entering sleep. **Default:** `0.1`，**Min:** `0`.
 - `autoSimulation` Whether to enable automatic simulation.
-- `fixedTimeStep` Fixed time spent in each simulation step. **Default:** `1/60`, **Min:** `0`.
+- `fixedTimeStep` Fixed time step between each simulation. **Default:** `1/60`, **Min:** `0`.
 - `maxSubSteps` Maximum number of substeps per simulation step. **Default:** `1`, **Min:** `0`.
 - `friction` Coefficient of friction. **Default:** `0.5`.
 - `rollingFriction` Rolling friction coefficient. **Default:** `0.1`.
@@ -203,11 +199,11 @@ The physical configuration will be used in the project when preview and release.
 
 #### Grouping concept
 
-The collision matrix is ​​managed by groups. Each group has a format of `{ index, name }`. The concept of `index` is the same as Layers, which is also a number of digits from 0 to 31, and `name` is the name of this group.
+The collision matrix is ​​managed by groups. Each group has a format of `{ index, name }`. The concept of `index` is the same as Layers, which also represents the digit position from 0 to 31, and `name` is the name of this group.
 
-There will be a Default group by default `{ index: 0, name:'DEFAULT' }`
+There is only one group by default: `{ index: 0, name:'DEFAULT' }`
 
-Click the `+` button you can add a new group.
+By clicking the `+` button you can add a new group.
 
 > **Note**: Both `index` and `name` cannot be empty and cannot be repeated with existing items; after adding, the group cannot be deleted, only the name of the group can be modified.
 
@@ -215,13 +211,13 @@ Click the `+` button you can add a new group.
 
 #### Collision group pairing
 
-In the Group Collision Map section we can control whether collide is allowed for each group with any other groups. The Collision map looks like this:
+In the Group Collision Map section we can control whether collision is allowed for each group with any other groups. The Collision map looks like this:
 
 ![Physics-collision-demo](./index/physics-collision-demo.png)
 
 The rows and columns in this table respectively list the items in the group list. Developers can configure which group in this table can perform collision detection on other groups.
 
-**When the checkboxes where the DEFAULT grouping and water grouping intersect is checked, it means that the nodes of the two groups will be tested for collision when they are in each group.**
+**When the checkboxes where the DEFAULT grouping and water grouping intersect is checked, it means that the nodes of the two groups will be tested for collision.**
 
 According to the above rules, the collision pairs generated in this table are:
 
