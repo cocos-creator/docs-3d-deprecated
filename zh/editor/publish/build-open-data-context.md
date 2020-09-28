@@ -85,8 +85,10 @@ export default {
 该属性主要设置主域更新 sharedCanvas 到屏幕上的频率，避免主域频繁更新开放域贴图，以防造成一定的性能损耗。
 
 ## 一些推荐做法
+
 1. 前面提到，在下一次构建开放数据域工程模版时，如果构建目录下已经存在 **openDataContext** 目录，则不会被覆盖掉，这是因为我们不希望覆盖掉开发者定制过的工程。由于 build 目录默认被 git 忽略，如果开发者希望将 **openDataContext** 工程纳入版本管理，可以考虑将构建后的工程放入 build-templates 目录，具体可参考 [定制项目构建流程](./custom-project-build-template.md)
 2. 在开放数据域项目中，如果需要监听来自主域的消息，则需要先判断消息是否来自主域引擎，以微信接口为例：
+
 ```js
 wx.onMessage(res => {
     if (!(res && res.type === 'engine')) {
@@ -94,6 +96,7 @@ wx.onMessage(res => {
     }
 });
 ```
+
 我们也推荐在向开放域发送消息时，附带上 type 信息，这里 `res.type === 'engine'` 表示消息来源于引擎，避免处理错误的消息源。
 
 ## 已知问题
