@@ -25,7 +25,7 @@
 
 - [Preview a Game](editor/preview/index.md)
   - [Previewing in Browser](editor/preview/browser.md)
-  - [Introduction To Preview Process And Common Error Handling](preview-guid.md)
+  - [Introduction To Preview Process And Common Error Handling](editor/preview/preview-guid.md)
 
 - [Particle Editor](particle-system/editor/index.md)
   - [Curve Editor](particle-system/editor/curve-editor.md)
