@@ -11,6 +11,7 @@ This section includes the following:
 -[Node](node.md)
 -[Skybox](skybox.md)
 -[Global Fog](fog.md)
+-[Shadows](shadow.md)
 
 ---
 

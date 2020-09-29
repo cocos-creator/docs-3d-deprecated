@@ -43,4 +43,5 @@
 各类属性的详细说明请见：
 - [环境光](../concepts/scene/ambient.md)
 - [阴影](../concepts/scene/shadow.md)
+- [全局雾](../concepts/scene/fog.md)
 - [天空盒](../concepts/scene/skybox.md)

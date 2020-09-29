@@ -34,4 +34,4 @@ The following describes all the properties of the panel:
 
 ---
 
-Continue to the [Ambient Light](ambient.md) documentation.
+Continue to the [Scene](index.md) documentation.

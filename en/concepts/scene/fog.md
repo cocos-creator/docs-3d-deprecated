@@ -69,3 +69,7 @@ The following are the meanings of its parameters:
 `FogRange`: Scope of fog.
 
 Layered Fog is still relatively common in reality, If it can be used reasonably, I believe it will improve the effect, but at the same time the amount of calculation will increase to a certain extent. The developer can decide whether and where to use layered fog for a balance of performance and visual quality.
+
+---
+
+Continue to the [Shadows](shadow.md) documentation.

@@ -96,13 +96,13 @@
   - [Node](concepts/scene/node.md)
   - [Skybox](concepts/scene/skybox.md)
   - [GlobalFog](concepts/scene/fog.md)
+  - [Shadows](concepts/scene/shadow.md)
 
 - [Lighting](concepts/scene/light.md)
   - [Physically based lighting](concepts/scene/light/pbr-lighting.md)
   - [Directional lighting](concepts/scene/light/dir-light.md)
   - [Spherical lighting](concepts/scene/light/sphere-light.md)
   - [Spot lighting](concepts/scene/light/spot-light.md)
-  - [Shadows](concepts/scene/shadow.md)
   - [Ambient lighting](concepts/scene/ambient.md)
 
 - [Materials System](material-system/overview.md)

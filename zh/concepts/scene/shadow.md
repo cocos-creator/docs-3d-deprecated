@@ -34,4 +34,4 @@ Cocos Creator 3D 目前支持高性价比的 Planar Shadow ，后面会提供更
 
 ---
 
-继续前往 [环境光](ambient.md) 说明文档。
+继续前往 [场景](index.md) 说明文档。
