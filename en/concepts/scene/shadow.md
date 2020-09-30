@@ -2,12 +2,12 @@
 
 In the 3D world, *light* and *shadows* have always been extremely important components. They can enrich the entire environment, good-quality shadows can achieve the effect of false realization, and make the entire world have a three-dimensional feel to it.
 
-Here is an example of a shadow from __Cocos Creator 3D__:
+Here is an example of a shadow from __Cocos Creator__:
 ![shadow](shadow/shadowExample.png)
 
 ## Turning on shadows
 
-__Cococs Creator 3D__ currently supports two shadow modes, __shadow Map__ and __planer Shadow__ for developers to use.
+__Cocos Creator__ currently supports two shadow modes, __shadow Map__ and __planer Shadow__ for developers to use.
 
 * It takes three steps to enable a __Planar Shadow__ in __Cococs Creator 3D__:
 
@@ -48,9 +48,9 @@ The following describes all the properties of the panel:
 | --- | --- |
 | **Enabled**     | Whether to turn on the shadow effect |
 | **Type**        | Choose shade type |
-| **ShadowColor** | color value of the resulting shadow |
-| **Normal**      | normals to vertical and shadow planes |
-| **Distance**    | the distance of the shadow plane from the coordinate origin in the direction of the normal |
+| **ShadowColor** | Color value of the resulting shadow |
+| **Normal**      | Normals to vertical and shadow planes |
+| **Distance**    | The distance of the shadow plane from the coordinate origin in the direction of the normal |
 
 ## ShadowMap panel
 
@@ -62,7 +62,7 @@ The following describes all the properties of the panel:
 | --- | --- |
 | **Enabled**         | Whether to turn on the shadow effect |
 | **Type**            | Choose shade type |
-| **ShadowColor**     | color value of the resulting shadow |
+| **ShadowColor**     | Color value of the resulting shadow |
 | **Pcf**             | Set the anti-aliasing level of the shadow edge |
 | **Near**            | Set the near clipping plane of the main light source shadow camera |
 | **Far**             | Set the far clipping plane of the main light source shadow camera |
