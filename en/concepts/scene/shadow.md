@@ -9,7 +9,7 @@ Here is an example of a shadow from __Cocos Creator__:
 
 __Cocos Creator__ currently supports two shadow modes, __shadow Map__ and __planer Shadow__ for developers to use.
 
-* It takes three steps to enable a __Planar Shadow__ in __Cococs Creator 3D__:
+* It takes three steps to enable a __Planar Shadow__ in __Cocos Creator__:
 
   1. Select the Scene node on the level manager, you can see the following panel, check the *Enabled* property of *Shadows*.
 ![location of enable shadow](shadow/shadows.png)
@@ -22,7 +22,7 @@ __Cocos Creator__ currently supports two shadow modes, __shadow Map__ and __plan
 
   > **Note**: __Planar Shadow__ will only be cast on the shadow surface. Adjusting the directional light angle can adjust the shadow projection.
 
-* It takes four steps to enable a __Shadow Map__ in __Cococs Creator 3D__:
+* It takes four steps to enable a __Shadow Map__ in __Cocos Creator__:
 
   1. Select the Scene node on the level manager, you can see the following panel, check the *Enabled* property of *Shadows*.
 ![location of enable shadow](shadow/shadows.png)
