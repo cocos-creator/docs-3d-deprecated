@@ -14,7 +14,7 @@
 - [发布到原生平台](publish-native.md)
   - [安装配置原生环境](setup-native-development.md)
   - [原生平台 JavaScript 调试](debug-jsb.md)
-- [发布到 iOS App Clip (轻 App)](publish-app-clip.md)
+- [发布到 iOS App Clip (轻 App)](publish-ios-app-clip.md)
 - [发布到支付宝小游戏](publish-alipay-mini-game.md)
 - [发布到字节小游戏](publish-bytedance-mini-game.md)
 - [发布到 Cocos Play](publish-cocos-play.md)
