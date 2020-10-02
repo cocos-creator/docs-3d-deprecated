@@ -11,6 +11,7 @@
 - [节点](node.md)
 - [天空盒](skybox.md)
 - [全局雾](fog.md)
+- [阴影](shadow.md)
 
 ---
 
