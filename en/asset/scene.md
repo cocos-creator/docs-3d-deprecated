@@ -41,4 +41,5 @@ After opening the __Scene__ file, *Scene* is the root node of the __Scene__ node
 For a detailed description of each attribute, see the following documents:
 - [Ambient light](../concepts/scene/ambient.md)
 - [Shadow](../concepts/scene/shadow.md)
-- [ Skybox](../concepts/scene/skybox.md)
+- [Global Fog](../concepts/scene/fog.md)
+- [Skybox](../concepts/scene/skybox.md)
