@@ -4,9 +4,8 @@
 
 ![物理引擎选项](img/physics-module.jpg)
 
-**注：默认为`cannon.js`物理引擎**。
-
-**注：开发过程中物理引擎可随意切换**。
+> **注**：默认为`cannon.js`物理引擎。
+> **注**：开发过程中物理引擎可随意切换。
 
 ## 碰撞检测:`builtin`
 
@@ -24,7 +23,7 @@
 
 ## 物理引擎:`ammo.js`
 
-[ammo.js](https://github.com/cocos-creator/ammo.js) 是 [bullet](https://github.com/bulletphysics/bullet3) 物理引擎的 `asm.js` / `wasm` 版本（目前仅提供了 `asm.js` 版本），由 [emscripten](https://github.com/emscripten-core/emscripten) 工具编译而来。Bullet 具有完善的物理功能，未来我们也将在此投入更多工作。
+[ammo.js](https://github.com/cocos-creator/ammo.js) 是 [bullet](https://github.com/bulletphysics/bullet3) 物理引擎的 `asm.js` / `wasm` 版本（目前仅提供了 `asm.js` 版本），由 [emscripten](https://github.com/emscripten-core/emscripten) 工具编译而来。`Bullet`具有完善的物理功能，未来我们也将在此投入更多工作。
 
 需要注意的是，目前`ammo.js`模块具有**1MB左右**的大小。
 
@@ -32,7 +31,7 @@
 
 若不需要用到任何物理相关的组件和接口，可以取消黄色框的勾选，这样在发布时将有更小的包体。
 
-**注：若处于取消勾选的状态，项目将不可以使用物理相关的组件和接口，否则运行时将会报错**。
+> **注**：若处于取消勾选的状态，项目将不可以使用物理相关的组件和接口，否则运行时将会报错。
 
 <!-- ## 扩展物理后端 -->
 
