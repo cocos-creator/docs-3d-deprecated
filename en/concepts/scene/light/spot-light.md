@@ -18,4 +18,4 @@
 
 ---
 
-Continue to the [Shadows](../shadow.md) documentation。
+Continue to the [Ambient lighting](../ambient.md) documentation。

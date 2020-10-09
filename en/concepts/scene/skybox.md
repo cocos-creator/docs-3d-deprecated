@@ -82,3 +82,7 @@ To make a __CubeMap__ in __Cocos Creator 3D__ and set it to a __Skybox__, follow
 > **Note**: Faces that are not mapped in __CubeMap__. It will be filled with a default texture.
 
 > **Note**: The pictures associated with the TextureCube **should not be the same**. Otherwise, there will be a problem that some platforms will not display it.
+
+---
+
+Continue to the [Global Fog](fog.md) documentation.

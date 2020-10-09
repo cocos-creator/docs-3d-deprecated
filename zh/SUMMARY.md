@@ -75,13 +75,13 @@
   - [节点](concepts/scene/node.md)
   - [天空盒](concepts/scene/skybox.md)
   - [全局雾](concepts/scene/fog.md)
+  - [阴影](concepts/scene/shadow.md)
 
 - [光照](concepts/scene/light.md)
   - [基于物理的光照](concepts/scene/light/pbr-lighting.md)
   - [主方向光](concepts/scene/light/dir-light.md)
   - [球面光](concepts/scene/light/sphere-light.md)
   - [聚光灯](concepts/scene/light/spot-light.md)
-  - [阴影](concepts/scene/shadow.md)
   - [环境光](concepts/scene/ambient.md)
 
 - [材质](material-system/overview.md)
