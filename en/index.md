@@ -35,6 +35,7 @@ Use the feature map to quickly understand engine features:
   - [Quick Start](getting-started/index.md)
   - [Panel Introduction](editor/index.md)
   - [Project Preview Debugging](editor/preview/index.md)
+  - [Game View](editor/gameview/index.md)
   - [Particle Editor](particle-system/editor/index.md)
   - [Animation System](editor/animation/index.md)
   - [Terrain System](editor/terrain/index.md)
