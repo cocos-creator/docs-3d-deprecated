@@ -173,7 +173,7 @@ This physics configuration will be take effect only when the **Physics Module** 
 
 It should be noted that the collision matrix is a further encapsulation of the physical group mask functionality.It is similar to the grouping configuration of `Creator 2D`, but with some differences. The grouping configuration of `Creator 2D` is only responsible for initialization, while the grouping configuration of `Creator 3D` is also responsible for automatic updates (which may be adjusted to be initialization only in the future).
 
-Therefore, after `useCollisionMatrix` is turned on, the mask value can only be set through the collision matrix, meaning that related apis such as `setMask` cannot be used. To modify the collision matrix at runtime, refer to [PhysicsSystem](../../physics/physics-system.md#Interfaces) of `setCollisionGroup`.
+Therefore, after `useCollisionMatrix` is turned on, the mask value can only be set through the collision matrix, meaning that related apis such as `setMask` cannot be used. To modify the collision matrix at runtime, please refer to the [PhysicsSystem](../../physics/physics-system.md#Interfaces) documentation under `setCollisionGroup`.
 
 ![Physics-In-Engine](./index/physics-in-engine.png)
 
