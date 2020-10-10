@@ -1,10 +1,10 @@
-## Game view description
+## GameView description
 
 ![image](./gameview.png)
 
-`GameView` is a game view function embedded in the editor. It can run the game in the editor without opening the browser. The advantage is that it can adjust the model and state of the game in real time through gizmo or other plugins of the editor, etc,achieving "what you see is what you get" when the game is running.
+`GameView` is a game view function embedded in the editor. It can run the game in the editor without opening the browser. The advantage is that it can adjust the model and state of the game in real time through gizmo or other plugins of the editor, etc, achieving what you see, is what you get when the game is running.
 
-## Game view open method
+## GameView open method
 
 ![image](./gameviewOpen.png)
 
@@ -22,11 +22,11 @@ After opening the `GameView` window through the above method, you can�
 
 `step`: Click this button to run the game step by step, which is convenient for debugging.
 
-## Game view synchronization
+## GameView synchronization
 
 The `GameView` before running can exist as a preview function. When adjusting the gizmo or adjusting the scene through other plugins, the `GameView` screen can be synchronized in real time.
 
-## Game view runtime
+## GameView runtime
 
 ![image](./gameviewUI.png)
 
