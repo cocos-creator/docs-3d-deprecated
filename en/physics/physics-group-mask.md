@@ -148,7 +148,7 @@ The collision matrix is a further encapsulation of the packet mask configuration
 
 However, it should be noted that when the collision matrix is turned on, the mask value can only be updated through the interface related to the collision matrix, and the interface related to `setMask` above will be invalid.
 
-For details, please refer to the [collision matrix Settings](../editor/project/index.md#CollisionMatrix) and [the interface related to the collision matrix](physics-system.md#Interfaces).
+For details, please refer to the [collision matrix Settings](../editor/project/index.md#CollisionMatrix) documentation and the [interface related to the collision matrix](physics-system.md#Interfaces) documentation.
 
 ---
 

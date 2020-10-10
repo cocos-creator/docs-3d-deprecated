@@ -171,7 +171,7 @@ Example:
 
 This physics configuration will be take effect only when the **Physics Module** is enabled in the **Engine Module**.
 
-It should be noted that the collision matrix is a further encapsulation of the physical group mask functionality.It is similar to the grouping configuration of 'Creator 2D', but with some differences. The grouping configuration of 'Creator 2D' is only responsible for initialization, while the grouping configuration of 'Creator 3D' is also responsible for automatic updates (which may be adjusted to be initialization only in the future).
+It should be noted that the collision matrix is a further encapsulation of the physical group mask functionality.It is similar to the grouping configuration of `Creator 2D`, but with some differences. The grouping configuration of `Creator 2D` is only responsible for initialization, while the grouping configuration of `Creator 3D` is also responsible for automatic updates (which may be adjusted to be initialization only in the future).
 
 Therefore, after `useCollisionMatrix` is turned on, the mask value can only be set through the collision matrix, meaning that related apis such as `setMask` cannot be used. To modify the collision matrix at runtime, refer to [PhysicsSystem](../../physics/physics-system.md#Interfaces) of `setCollisionGroup`.
 
@@ -199,13 +199,13 @@ The physical configuration will take effect for both preview and publish environ
 
 ### Collision Matrix
 
-The collision matrix is used to manage the group and mask of physical elements. The corresponding mask value will be set automatically after 'useCollisionMatrix' is turned on.This feature is still in its infancy, so please use it with caution.
+The collision matrix is used to manage the group and mask of physical elements. The corresponding mask value will be set automatically after `useCollisionMatrix` is turned on.This feature is still in its infancy, so please use it with caution.
 
 ![Physics-collision](./index/physics-collision.png)
 
 #### Grouping concept
 
-In the editor, the grouping format of the collision matrix is`{index, name}`, `index`is the number of bits from `0` to `31`, and `name` is the name of the group. The new project project will have a default grouping:`{index: 0, name:'DEFAULT'}`.
+In the editor, the grouping format of the collision matrix is `{index, name}`, `index` is the number of bits from `0` to `31`, and `name` is the name of the group. The new project project will have a default grouping: `{index: 0, name:'DEFAULT'}`.
 
 By clicking the `+` button you can add a new group.
 
@@ -215,13 +215,13 @@ By clicking the `+` button you can add a new group.
 
 #### How to configure
 
-Take a new 'water' group as an example:
+Take a new `water` group as an example:
 
 ![Physics-collision-demo](./index/physics-collision-demo.png)
 
 This table lists all the groups, and you can check it to determine which two groups will do the collision detection.
 
-**As shown in the figure above, whether`DEFAULT`and`water`will perform collision detection will be determined by whether the corresponding check box is checked**.
+**As shown in the figure above, whether `DEFAULT` and `water` will perform collision detection will be determined by whether the corresponding check box is checked**.
 
 According to the above rules, the collision pairs generated in this table are:
 
@@ -232,7 +232,7 @@ And the grouping pairs that do not perform collision detection include:
 
 - water - water
 
-In addition, the 'Group' property on the rigid body component needs to be configured into the corresponding physical element:
+In addition, the `Group` property on the rigid body component needs to be configured into the corresponding physical element:
 
 ![rigidbody-group](./index/rigidbody-group.jpg)
 

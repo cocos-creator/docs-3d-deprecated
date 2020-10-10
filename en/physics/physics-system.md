@@ -18,7 +18,7 @@ Scene World And Physics World:
 
 The properties of the physics system can only be set through the code for the time being. A setting panel will be added in the future, please pay attention to the update announcement.
 
-Note: Gets the instance of physics system using: `PhysicsSystem.instance`
+> **Note**: Gets the instance of physics system using: `PhysicsSystem.instance`
 
 Properties | Description
 ---|---
@@ -37,12 +37,12 @@ Properties | Description
 
 ## Interfaces
 
-接口 | 签名 | 解释
+Property | Signature | Description
 ---|---|---
-isCollisionGroup | `(g1:number, g2:number)=>boolean` | Are collisions between `g1` and `g2`?
-setCollisionGroup | `(g1:number, g2:number, collision=true)=>void` | Sets whether collisions occur between `g1` and `g2`.
-resetCollisionMatrix | `(mask=0xffffffff)=>void` | Reset the mask corresponding to all groups of the collision matrix to the given value
-resetAccumulator | `(time=0)=>void` | Reset the accumulator of time to given value
+**isCollisionGroup** | `(g1:number, g2:number)=>boolean` | Are collisions between `g1` and `g2`?
+**setCollisionGroup** | `(g1:number, g2:number, collision=true)=>void` | Sets whether collisions occur between `g1` and `g2`.
+**resetCollisionMatrix** | `(mask=0xffffffff)=>void` | Reset the mask corresponding to all groups of the collision matrix to the given value
+**resetAccumulator** | `(time=0)=>void` | Reset the accumulator of time to given value
 
 ---
 
