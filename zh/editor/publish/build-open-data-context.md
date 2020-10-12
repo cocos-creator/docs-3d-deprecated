@@ -28,7 +28,9 @@
 
 ## 开放数据域工程定制方法
 
-在准备定制开放数据域工程之前，我们需要先了解一些基础技能，这里包括 [minigame-canvas-engine 快速入门](https://wechat-miniprogram.github.io/minigame-canvas-engine/api/guide.html#%E5%AE%89%E8%A3%85) 和 [doT 模版引擎使用](http://olado.github.io/doT/?spm=a2c6h.12873639.0.0.36f45227oKu0XO)
+在准备定制开放数据域工程之前，我们需要先了解一些基础技能:
+- [minigame-canvas-engine 快速入门](https://wechat-miniprogram.github.io/minigame-canvas-engine/api/guide.html#%E5%AE%89%E8%A3%85)
+- [doT 模版引擎使用](http://olado.github.io/doT/?spm=a2c6h.12873639.0.0.36f45227oKu0XO)
 
 在了解完这些基础技能之后，我们就可以很方便的定制开放数据域工程了。  
 构建生成后的开放数据域工程模版，目录结构如下：
