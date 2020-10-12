@@ -1,12 +1,12 @@
-## External code support
+# External code support
 
-### Plugin script
+## Plugin script
 
 When the script resource is imported with **import as a plug-in**, this script resource is called **plug-in script**. Plug-in scripts are usually used to import third-party libraries. Currently only supports JavaScript plug-in scripts.
 
 Unlike other scripts in the project, **Cocos Creator 3D** will not modify the content of the plug-in script, but some code may be inserted to adapt to Creator 3D itself; in particular, **Cocos Creator 3D** will shield the global variables `module`, `exports`, `define`.
 
-#### Execution timing
+### Execution timing
 
 Developers can control whether plug-in scripts are executed in certain environments.
 
@@ -18,7 +18,7 @@ Options | Affected Platform | Remarks
 
 In the import checker, developers can specify dependencies to ensure the execution order of scripts.
 
-#### Usability and cross-platform
+### Usability and cross-platform
 
 The plug-in script is copied to the build directory almost intact, so the usability and cross-platform of the plug-in script are not guaranteed by **Cocos Creator 3D**. For example, when plug-in scripts use language features that are not supported by certain platforms, errors will result, especially:
 
@@ -28,7 +28,7 @@ The plug-in script is copied to the build directory almost intact, so the usabil
  -**Plugins that rely on the DOM API will not be able to publish to the native platform**<br>
  A large number of front-end plug-ins can be used in web pages, such as jQuery, but they may depend on the browser's DOM API. Plugins that rely on these APIs cannot be used on the native platform.
 
-#### Interaction
+### Interaction
 
 Plug-in scripts and non-plug-in scripts cannot interact in the form of import. For example, even if the developer knows that their target platform actually supports CommonJS, nor can it be used in a non-plug-in script forcibly through the relative path of `require`.
 
@@ -40,7 +40,7 @@ Therefore, plug-in scripts generally communicate in the form of global variables
 
 > **Note**: Developers can freely encapsulate or extend the **Cocos Creator 3D** engine in the plug-in script, but this will increase the cost of team communication and make the script difficult to reuse.
 
-#### Import options
+### Import options
 
 Many third-party JavaScript libraries provide library functions in the form of global variables. These libraries often write global variables `window`, `global`, `self` and `this`.
 

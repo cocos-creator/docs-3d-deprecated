@@ -1,4 +1,4 @@
-## tsconfig.json
+# tsconfig.json
 
 The *majority* of compilation options in `tsconfig.json` in the project do not affect the compilation of `Typescript`.
 
