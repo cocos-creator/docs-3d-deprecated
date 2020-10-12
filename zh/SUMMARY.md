@@ -53,6 +53,7 @@
   - [发布到原生平台](editor/publish/publish-native.md)
     - [安装配置原生环境](editor/publish/setup-native-development.md)
     - [原生平台 JavaScript 调试](editor/publish/debug-jsb.md)
+  - [发布到 iOS App Clip (轻 App)](editor/publish/publish-ios-app-clip.md)
   - [发布到支付宝小游戏](editor/publish/publish-alipay-mini-game.md)
   - [发布到字节小游戏](editor/publish/publish-bytedance-mini-game.md)
   - [发布到 Cocos Play](editor/publish/publish-cocos-play.md)
