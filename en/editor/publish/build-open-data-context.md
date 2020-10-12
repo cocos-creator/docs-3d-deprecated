@@ -18,9 +18,10 @@ And with a few basic front-end skills, a developer can simply implement a ranked
     ![](./build-open-data-context/generate-template.png)
 
 3. After the build is complete, a project named **openDataContext** will be generated in the directory, which is a built-in template project in Cocos Creator.  
-> **Note**: Next time you build, if the **openDataContext** directory exists in the build directory, it will not be overwritten.
 
     ![](./build-open-data-context/build-output.png)
+
+> **Note**: Next time you build, if the **openDataContext** directory exists in the build directory, it will not be overwritten.
 
 4. Use the developer tools provided by the platform to open the built main project, you can see the effect of the **Open Data Context Template Project**.
 
