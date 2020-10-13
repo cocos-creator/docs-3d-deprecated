@@ -198,7 +198,7 @@ __Next__, attach the `PlayerController` component to the `Player` node. Select t
 
   ![add player controller comp](./images/add-player-controller.png)
 
-In-order to see the object at runtime, we need to adjust some parameters of the __Camera__ in the scene, set the __position__ to __(0, 0, 13)__, and set the __Color__ to __(50, 90, 255, 255)__:
+In-order to see the object at runtime, we need to adjust some parameters of the __Camera__ in the scene, set the __position__ to __(0, 0, 13)__, and set the __ClearColor__ to __(50, 90, 255, 255)__:
 
   ![camera setting](./images/camera-setting.png)
 
@@ -213,7 +213,7 @@ The `Player` can be moved in a horizontal direction. This is a start, but not go
 
 > **Note**: Before proceeding, please read the [Animation Editor](../../editor/animation/index.md) documentation.
 
-After reading and understanding the capabilities of the __Animation Editor__ character animations can be implementated!
+After reading and understanding the capabilities of the __Animation Editor__ character animations can be implemented!
 
 1. Locate the **Animation Editor**, at the bottom of the editor alongside the __Assets Preview__ and the **Console** panels. Select the `Body` node in the __Scene__ and click to add an __Animation Component__ and then click again tp create a new __Animation Clip__. Give this new __Animation Clip__ a name of `oneStep`.
 
@@ -275,7 +275,7 @@ It is necesssary to make the basic element `cube` of the road into a __Prefab__,
    ![create cube prefab](./images/create-cube-prefab.gif)
 
 ### Adding the automatic road creation
-A very long road is needed. The ideal method is to dynamically increase the length of the road, so that the `Player` can run forever. First, generate a fixed-length road with a length that is arbitraty. To do so, replace the code in the `GameManager` script with the following code:
+A very long road is needed. The ideal method is to dynamically increase the length of the road, so that the `Player` can run forever. First, generate a fixed-length road with a length that is arbitrary. To do so, replace the code in the `GameManager` script with the following code:
 
 ```ts
 import { _decorator, Component, Prefab, instantiate, Node, CCInteger} from "cc";
@@ -490,7 +490,7 @@ Now, preview the scene by clicking the `Play` button to start the game.
 ## Adding game end logic
 The game character is just running forward, with no purpose. Adding game rules to make the game play more challenging would make the game more playable and give it a purpose.
 
-1. The character needs to send a message at the end of each jump. This message shoul record how many steps the character jumped and its current position. This can be done in `PlayerController`.
+1. The character needs to send a message at the end of each jump. This message should record how many steps the character jumped and its current position. This can be done in `PlayerController`.
 
    ```ts
     private _curMoveIndex = 0;
@@ -611,7 +611,7 @@ Where there is light, there will be a shadow. Light and shadows create a 3D worl
 
 ### Turning on shadows
 
-1. In the **Hieracrhy Manager**, click the `Scene` node at the top, check `Enabled` in the `planShadows` property, and modify the `Distance` and `Normal` parameters
+1. In the **Hierarchy Manager**, click the `Scene` node at the top, check `Enabled` in the `shadows` property, and modify the `Distance` and `Normal` parameters
 
     ![planar shadows](./images/planarShadows.png)
 
@@ -624,7 +624,7 @@ A patch of shadow can be seen in the in the __Scene__ editor. However, this shad
 ![player shadow](./images/player-shadow-scene.png)
 
 ### Adjusting the light
-When creating a new scene, a `DirctionalLight` will be added __by default__, and the shadow will be calculated from this parallel light. The direction of this parallel light can be adjusted in-order to display the shadow in another position.
+When creating a new scene, a `DirectionalLight` will be added __by default__, and the shadow will be calculated from this parallel light. The direction of this parallel light can be adjusted in-order to display the shadow in another position.
 
 In the **Hierarchy Manager**, click to select the `Main Light` node and adjust the `Rotation` parameter to __(-10, 17, 0)__.
 
@@ -954,4 +954,4 @@ Next, you can continue to improve all aspects of the game. Here are some ideas f
   - Add some particle special effects, such as trailing when the character moves, dust when landing
   - Add two operation buttons for touch screen devices instead of left and right mouse button operation
 
-Lastly, why not share this game with your friends? You can publish the completd game to a server of your choice using the [Publishing Workflow](../../editor/publish/index.md) documentation.
+Lastly, why not share this game with your friends? You can publish the completed game to a server of your choice using the [Publishing Workflow](../../editor/publish/index.md) documentation.
