@@ -544,7 +544,7 @@ export class GameManager extends Component {
 ## 光照和阴影
 有光的地方就会有影子，光和影构成明暗交错的3D世界。接下来我们为角色加上简单的影子。
 ### 开启阴影
-1. 在 **层级管理器** 中点击最顶部的 `Scene` 节点，将planarShadows选项中的Enabled打钩，并修改Distance和Normal参数
+1. 在 **层级管理器** 中点击最顶部的 `Scene` 节点，将`shadows`选项中的Enabled打钩，并修改Distance和Normal参数
 
     ![planar shadows](./images/planarShadows.png)
 
@@ -556,7 +556,7 @@ export class GameManager extends Component {
 ![player shadow](./images/player-shadow-scene.png)
 
 ### 调整光照
-新建场景时默认会添加一个 `DirctionalLight` ，由这个平行光计算阴影，所以为了让阴影换个位置显示，我们可以调整这个平行光的方向。
+新建场景时默认会添加一个 `DirectionalLight` ，由这个平行光计算阴影，所以为了让阴影换个位置显示，我们可以调整这个平行光的方向。
 在 **层级管理器** 中点击选中 `Main Light` 节点，调整Rotation参数为（-10，17，0）。
 
 ![main light](./images/main-light.png)
