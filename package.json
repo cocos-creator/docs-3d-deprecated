@@ -15,7 +15,7 @@
   "scripts": {
     "build": "gulp restore-ignore && gulp prebuild && gitbook build && gulp postbuild",
     "preview": "gulp preview",
-    "upload": "gulp publish --dest /Volumes/creator/manual",
+    "upload": "gulp publish --dest /Volumes/creator3d/manual",
     "publish": "npm run build && npm run upload"
   },
   "repository": {
