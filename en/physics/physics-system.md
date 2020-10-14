@@ -14,21 +14,35 @@ Scene World And Physics World:
 
 ![Scene World and Physics World](img/physics-world.jpg)
 
-## Physics System Properties
+## Properties
 
 The properties of the physics system can only be set through the code for the time being. A setting panel will be added in the future, please pay attention to the update announcement.
+
+> **Note**: Gets the instance of physics system using: `PhysicsSystem.instance`
 
 Properties | Description
 ---|---
 **enable** | Whether to enable the physics system, the default is `true`
+**gravity** | The gravity value of the physics world, the default is `(0, -10, 0)`
 **allowSleep** | Whether to allow the physics system to automatically sleep, the default is `true`
-**useFixedTime** | Whether the physical simulations used a fixed time(the number of steps will be fixed to `1`), the default is `true`
-**maxSubStep** | The maximum number of physical simulation sub-steps per frame, the default is `2`
-**deltaTime** | The time spent in each step of physical simulation, the default is `1/60`, note that is not every frame
-**gravity** | The gravity value of the physical world, the default is `(0, -10, 0)`
+**maxSubSteps** | The maximum number of physics simulation sub-steps per frame, the default is `2`
+**fixedTimeStep** | The time spent in each step of physics simulation, the default is `1/60`, note that is not every frame
+**sleepThreshold** | The default speed threshold for going to sleep, the default is `0.1`
+**autoSimulation** | Automatic simulation, the default is `true`
 **defaultMaterial** | Get the default physics material (read only)
+**raycastResults** | Gets the raycast test results (read only)
+**raycastClosestResult** | Gets the raycastClosest test result (read only)
+**useCollisionMatrix** | Whether to use a collision matrix, the default is `false`
+**collisionMatrix** | Gets the collision matrix
 
-Obtain the instance of physics system using: `PhysicsSystem.instance`
+## Interfaces
+
+Property | Signature | Description
+---|---|---
+**isCollisionGroup** | `(g1:number, g2:number)=>boolean` | Are collisions between `g1` and `g2`?
+**setCollisionGroup** | `(g1:number, g2:number, collision=true)=>void` | Sets whether collisions occur between `g1` and `g2`.
+**resetCollisionMatrix** | `(mask=0xffffffff)=>void` | Reset the mask corresponding to all groups of the collision matrix to the given value
+**resetAccumulator** | `(time=0)=>void` | Reset the accumulator of time to given value
 
 ---
 

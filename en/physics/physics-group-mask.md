@@ -95,10 +95,7 @@ Collider.removeMask(mask);
 ```
 
 > **Note**: The addition and subtraction operation have higher priority than the shift operation.
-
 > **Note**: Flexible use of group and mask can reduce the cost of additional detecting.
-
-> **Note**: The group and mask of the physics system may continue to use the `Layer` property of `Node` and provide a setting panel, please pay attention to the update announcement.
 
 ## Examples
 
@@ -144,6 +141,14 @@ The mask can be defined according to grouping, for example:
 By executing `(value >>> 0).toString(2)` in the running environment of JavaScript, you can see the binary string representation.
 
 ![View binary](img/mask-all.jpg)
+
+## Collision Matrix
+
+The collision matrix is a further encapsulation of the packet mask configuration, which provides a more unified management and makes it easier to initialize the packet mask configuration without writing any code, and can be configured directly in the editor's project Settings.
+
+However, it should be noted that when the collision matrix is turned on, the mask value can only be updated through the interface related to the collision matrix, and the interface related to `setMask` above will be invalid.
+
+For details, please refer to the [collision matrix Settings](../editor/project/index.md#CollisionMatrix) documentation and the [interface related to the collision matrix](physics-system.md#Interfaces) documentation.
 
 ---
 
