@@ -60,10 +60,7 @@ Use the feature map to quickly understand engine features:
 
 - [Show example collection](https://github.com/cocos-creator/example-3d): From the use of basic components to the display of rendering effects, this project includes multiple scenarios with different functions and multiple Game Demo for user reference
 - [One step and two steps](https://github.com/cocos-creator/tutorial-mind-your-step-3d): This is the [Quick Start](getting-started/first-game/index.md) document Step-by-step explanation of the game
-- [Physics car](https://github.com/cocos-creator/example-3d/tree/master/simple-car-game): Demo of racing games Demo, based on the physics system, contains the basic gameplay of racing games
-- [Falling ball](https://github.com/cocos-creator/example-3d/tree/master/falling-ball): Demo of falling ball game Demo, based on the physics system, completed the basic gameplay of falling ball game
-- [Rolling Ball](https://github.com/cocos-creator/example-3d/tree/master/roll-a-ball): Demo of physics-based object movement Demo, which moves the object by applying force to the object
-- [Engulfing Black Hole](https://github.com/cocos-creator/example-3d/tree/master/simple-hole): Devouring Game Demo Demo
+- [Examples of Physics](https://github.com/cocos-creator/example-3d/tree/master/physics-3d): Includes some Physics test cases and examples, such as "Engulfing Black Hole", "Simple Car", "Falling ball",etc. The test cases and cases introduce some basic functions and usage methods, so that you can understand the physical functions in combination with the documentation.
 - [Simple-Games](https://github.com/cocos-creator/example-3d/tree/master/simple-games)：Simple games demo, users can use this case study to complete some simple and famous games.
 - [Module display collection](https://github.com/cocos-creator/test-cases-3d): The example project of each function of the engine, which basically covers most of the function modules of the engine. Users can refer to it when using the functions Development in this project
 - [UI Show Demo](https://github.com/cocos-creator/demo-ui/tree/3d): Demo of various UI components combined use Demo

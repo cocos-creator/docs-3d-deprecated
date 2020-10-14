@@ -86,7 +86,7 @@
 
 <br/>
 - 添加代码
-    <br/>添加onLoad()函数，并输出Hello world</br>
+    <br/>添加start()函数，并输出Hello world</br>
 
 ```ts
 import { _decorator, Component, Node } from 'cc';
@@ -129,5 +129,5 @@ export class HelloWorld extends Component {
  <img src="index/console.png"/>
 
  - 断点调试
-   <br/>选择<font color=#A52A2A>标签栏</font>的<font color=#A52A2A>Source</font>选项，按下<font color=#A52A2A>Ctrl+P</font>，搜索HelloWorld.ts，在onLoad函数里设置断点，再刷新网页就可以调试了。</br>
+   <br/>选择<font color=#A52A2A>标签栏</font>的<font color=#A52A2A>Source</font>选项，按下<font color=#A52A2A>Ctrl+P</font>，搜索HelloWorld.ts，在start函数里设置断点，再刷新网页就可以调试了。</br>
    <img src="index/debug.png"/>
