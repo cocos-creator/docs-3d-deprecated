@@ -102,7 +102,7 @@ export class CompB extends Component {
 
 ```
 
-组件顺序 CompA 在 CompB 上面时，输出：
+When `CompA` is above `CompB` on the inspector panel, the output may be this way：
 
 ```
 CompA onLoad!
@@ -113,7 +113,7 @@ CompA update!
 CompB update!
 ```
 
-When the component sequence `CompA` is above `CompB`, the output way be this way：
+When the component sequence `CompA` is above `CompB`, the output may be this way：
 
 ```
 CompB onLoad!
