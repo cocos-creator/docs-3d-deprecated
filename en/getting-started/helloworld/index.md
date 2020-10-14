@@ -91,7 +91,7 @@ Life cycle functions (called in the following order):
      Called when the component or node is destroyed
 
 ### Adding code
-Add `onLoad()` function to output `Hello world`:
+Add `start()` function to output `Hello world`:
 
 ```ts
 import { _decorator, Component, Node } from 'cc';
@@ -134,6 +134,6 @@ It is also may be necessary to Log information. The __Console__ panel displays a
 
 ![](index/console.png)
 
-__Breakpoints__ can also be placed for stopping execution of the debugger to examine values. Select the __Source__ option on the __tab bar__ and press __CTRL+P__, Search for `HelloWorld.ts`, set a breakpoint in the `onLoad()` function, and then run the preview to debug. 
+__Breakpoints__ can also be placed for stopping execution of the debugger to examine values. Select the __Source__ option on the __tab bar__ and press __CTRL+P__, Search for `HelloWorld.ts`, set a breakpoint in the `start()` function, and then run the preview to debug. 
 
 ![](index/debug.png)

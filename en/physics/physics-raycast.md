@@ -91,7 +91,7 @@ The information is stored by `PhysicsRayResult`, which mainly has the following 
 - `hitPoint` : hit point (in world coordinate system)
 - `hitNormal` :The normal of the hit point's face (in the world coordinate system) (supported in `v1.1` version, currently there is no such information in `builtin`)
 
-Related test cases can be found [here](https://github.com/cocos-creator/test-cases-3d/blob/master/assets/cases/physics/scenes/physics-raycast.scene).
+Related test cases can be found [here](https://github.com/cocos-creator/example-3d/blob/master/physics-3d/assets/cases/scenes/csae-physics-raycast.scene).
 
 ---
 

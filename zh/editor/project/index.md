@@ -192,41 +192,52 @@ interface ICompressPresetItem {
 - `rollingFriction` 滚动摩擦系数，默认值 *0.1*
 - `spinningFriction` 自旋摩擦系数，默认值 *0.1*
 - `restitution` 弹性系数，默认值 *0.1*
-- `useNodeChains` 是否使用节点链组合刚体，默认值 *true*
 - `useCollisionMatrix` 是否使用碰撞矩阵，默认值 *true*
 - `collisionMatrix`  碰撞矩阵的设置结果，{ index: value } 格式，默认值 *{ "0": 1 }*
+<!-- - `useNodeChains` 是否使用节点链组合刚体，默认值 *true* -->
 
 ### 碰撞矩阵设置
+
+碰撞矩阵用于管理物理元素的分组和掩码，开启`useCollisionMatrix`后会自动设置对应的掩码值。该功能暂时还比较初期，请谨慎使用。
+
+需要注意的是，碰撞矩阵是[物理分组掩码](../../physics/physics-group-mask.md)功能的进一步封装。它与`creator 2d`的分组配置类似，但是有所差别，`creator 2d`的分组配置只负责初始化，而`3d`中还会负责自动更新（未来可能会调整为仅初始化）。
+
+因此，开启`useCollisionMatrix`后将只能通过碰撞矩阵设置掩码值，意味着不能使用`setMask`等相关的API。若要运行时修改碰撞矩阵，请参考[物理系统](../../physics/physics-system.md#部分接口)的`setCollisionGroup`。
 
 ![Physics-collision](./index/physics-collision.png)
 
 #### 分组的概念
 
-碰撞矩阵的识别通过分组管理，每一组格式为 `{ index, name }` 格式，`index` 与 Layers 概念相同，也是从 0 到 31 的位数，而 `name` 是这组的名称。
+在编辑器中，碰撞矩阵分组的存储格式为`{index, name}`，`index` 是从`0`到`31`的位数，而`name`是该组的名称，新项目工程会有一个默认分组：`{index: 0, name: 'DEFAULT'}`。
 
-默认会有一个 Default 分组 `{ index: 0, name: 'DEFAULT' }`
+点击`+`按钮可以新增分组。
 
-点击 `+` 按钮可以新增分组，新增时 `index`, `name` 均不能为空，且不能与现有项重复；新增后分组不可以删除，但可以修改分组的名称。
+**注意：新增时`index`,`name`均不能为空，且不能与现有项重复；新增后分组不可以删除，但可以修改分组的名称**。
 
 ![Physics-collision-add](./index/physics-collision-add.png)
 
-#### 碰撞分组配对
+#### 如何配置
 
-比如新增了一个 water 分组。
+以新增一个`water`分组为例：
 
 ![Physics-collision-demo](./index/physics-collision-demo.png)
 
-这张表里面的行与列分别列出了分组列表里面的项，你可以在这张表里面配置哪一个分组可以对其他的分组进行碰撞检测。
+这张表列出了所有的分组，你可以通过勾选来决定哪两组会进行碰撞检测。
 
-**当DEFAULT 分组 和 water 分组交叉的复选框勾上时，表示两组所在的节点，各自进行碰撞检测时，都会将对方组进行碰撞检测，没有勾上就不会有进行检测**
+**如上图所示，`DEFAULT`和`water`是否会进行碰撞检测将取决于是否选中了对应的复选框**。
 
 根据上面的规则，在这张表里产生的碰撞对有：
 
-DEFAULT - water
+- DEFAULT - water
+- DEFAULT - DEFAULT
 
-DEFAULT - DEFAULT
+而不进行碰撞检测的分组对有：
 
-water - DEFAULT
+- water - water
+
+此外还需要通过刚体组件上的`Group`属性配置到对应的物理元素中：
+
+![rigidbody-group](./index/rigidbody-group.jpg)
 
 ## 骨骼贴图布局设置
 

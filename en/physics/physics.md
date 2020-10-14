@@ -29,8 +29,6 @@ Finally, click the run button, you can see the changes of physical elements in t
 
 ![physics world](img/physics.jpg)
 
-> **Note**: You can see the new preview result on the browser you just ran by clicking the refresh button directly after adjusting the property value of the component.
-
 ### Composition Of Physical Elements
 
 A physical element can be composed of the following ways:

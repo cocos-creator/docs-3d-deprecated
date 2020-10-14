@@ -169,15 +169,19 @@ Example:
 
 ## Physics
 
-![Physics](./index/physics-index.png)
-
 This physics configuration will be take effect only when the **Physics Module** is enabled in the **Engine Module**.
+
+It should be noted that the collision matrix is a further encapsulation of the physical group mask functionality.It is similar to the grouping configuration of `Creator 2D`, but with some differences. The grouping configuration of `Creator 2D` is only responsible for initialization, while the grouping configuration of `Creator 3D` is also responsible for automatic updates (which may be adjusted to be initialization only in the future).
+
+Therefore, after `useCollisionMatrix` is turned on, the mask value can only be set through the collision matrix, meaning that related apis such as `setMask` cannot be used. To modify the collision matrix at runtime, please refer to the [PhysicsSystem](../../physics/physics-system.md#Interfaces) documentation under `setCollisionGroup`.
 
 ![Physics-In-Engine](./index/physics-in-engine.png)
 
 The physical configuration will take effect for both preview and publish environments. It includes parameters like *gravity, friction, kinetic energy transfer, and collision detection*.
 
 ### Property description
+
+![Physics](./index/physics-index.png)
 
 - `gravity` Gravity direction vector, the sign means the positive or negative direction on the axis. **Default:** `{ x: 0, y: -10, z: 0 }`.
 - `allowSleep` Whether to allow rigid bodies to enter sleep state. **Default:** `true`.
@@ -189,19 +193,19 @@ The physical configuration will take effect for both preview and publish environ
 - `rollingFriction` Rolling friction coefficient. **Default:** `0.1`.
 - `spinningFriction` Spin friction coefficient. **Default:** `0.1`.
 - `restitution` Coefficient of elasticity. **Default:** `0.1`.
-- `useNodeChains` Whether to use a node chain to combine rigid bodies. **Default:** `true`.
 - `useCollisionMatrix` Whether to use collision matrix. **Default:** `true`.
 - `collisionMatrix` The setting result of the collision matrix. **Format:** `{ index: value }`, **Default:** `{ "0": 1 }`.
+<!-- - `useNodeChains` Whether to use a node chain to combine rigid bodies. **Default:** `true`. -->
 
 ### Collision Matrix
+
+The collision matrix is used to manage the group and mask of physical elements. The corresponding mask value will be set automatically after `useCollisionMatrix` is turned on.This feature is still in its infancy, so please use it with caution.
 
 ![Physics-collision](./index/physics-collision.png)
 
 #### Grouping concept
 
-The collision matrix is ​​managed by groups. Each group has a format of `{ index, name }`. The concept of `index` is the same as Layers, which also represents the digit position from 0 to 31, and `name` is the name of this group.
-
-There is only one group by default: `{ index: 0, name:'DEFAULT' }`
+In the editor, the grouping format of the collision matrix is `{index, name}`, `index` is the number of bits from `0` to `31`, and `name` is the name of the group. The new project project will have a default grouping: `{index: 0, name:'DEFAULT'}`.
 
 By clicking the `+` button you can add a new group.
 
@@ -209,23 +213,28 @@ By clicking the `+` button you can add a new group.
 
 ![Physics-collision-add](./index/physics-collision-add.png)
 
-#### Collision group pairing
+#### How to configure
 
-In the Group Collision Map section we can control whether collision is allowed for each group with any other groups. The Collision map looks like this:
+Take a new `water` group as an example:
 
 ![Physics-collision-demo](./index/physics-collision-demo.png)
 
-The rows and columns in this table respectively list the items in the group list. Developers can configure which group in this table can perform collision detection on other groups.
+This table lists all the groups, and you can check it to determine which two groups will do the collision detection.
 
-**When the checkboxes where the DEFAULT grouping and water grouping intersect is checked, it means that the nodes of the two groups will be tested for collision.**
+**As shown in the figure above, whether `DEFAULT` and `water` will perform collision detection will be determined by whether the corresponding check box is checked**.
 
 According to the above rules, the collision pairs generated in this table are:
 
-DEFAULT - water
+- DEFAULT - water
+- DEFAULT - DEFAULT
 
-DEFAULT - DEFAULT
+And the grouping pairs that do not perform collision detection include:
 
-water - DEFAULT
+- water - water
+
+In addition, the `Group` property on the rigid body component needs to be configured into the corresponding physical element:
+
+![rigidbody-group](./index/rigidbody-group.jpg)
 
 ## Bone map layout settings
 
