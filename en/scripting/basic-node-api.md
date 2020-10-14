@@ -2,14 +2,14 @@
 
 After obtaining a __Node__ or __Component__ instance through the method introduced in the [Access Node and Component](access-node-component.md) documentation, there are common interfaces that can be used to achieve the various effects needed through the node and component instance and it's operation. 
 
-Please review the [Node](../../../api/zh/classes/Node.html) and the [Component](../../../api/zh/classes/Component.html) API documentation.
+Please review the [Node](../../../api/en/classes/Node.html) and the [Component](../../../api/en/classes/Component.html) API documentation.
 
 ## Node Status and Level Operations
 
 Suppose you are inside a running component script, to access a node inside the current script use `this`. Example:
 
 ```ts
-`this.node`
+this.node
 ```
 
 ### Activating and Deactivating a Node
@@ -17,7 +17,7 @@ Suppose you are inside a running component script, to access a node inside the c
 A node is activated by default. It's activation state can be changed  in code by setting the node's `active` property. Example:
 
 ```ts
-this.node.active = false;`
+this.node.active = false;
 ```
 
 Setting the `active` property and switching the active and closed states of the node in the editor have the same effect. When a node is down, all its components will be disabled. At the same time, all its child nodes and components on the child nodes will also be disabled. It should be noted that when child nodes are disabled, their `active` attributes are not changed, so they will return to their original state when the parent node is reactivated.
@@ -54,16 +54,15 @@ This is valid:
 // method 1
 this.node.parent = parentNode;
 ```
+
 This is also valid:
 ```ts
 // method 2
-this.node.removeFromParent(false);
+this.node.removeFromParent();
 parentNode.addChild(this.node);
 ```
 
 These two methods are equivalent.
-
-> **Note**: `removeFromParent` usually needs to pass in a `false`, otherwise the events and actions bound on the node will be cleared by default.
 
 > **Note**: After creating a new node through the method introduced in the [Create and Destroy Node](create-destroy.md) documentation, it is a **must** to set a parent node for the node to correctly initialize the node.
 
@@ -98,7 +97,7 @@ The above two usages are equivalent.
 
 Example: 
 ```ts
-this.node.setRotation(90,90,90);
+this.node.setRotation(quaternion);
 ```
 
 Or set local rotation by __Euler angle__"
