@@ -65,7 +65,7 @@
     - [Publishing to WeChat Mini Games](editor/publish/publish-wechatgame.md)
       - [WeChat Engine Plugin](editor/publish/wechatgame-plugin.md)
 
-## 进阶使用
+## Advanced
 
 - [Extended Editor](editor/extension/readme.md)
   - [The First Extension](editor/extension/first.md)
@@ -87,8 +87,8 @@
 
 ## Engine Manual
 
-- [功能地图](module-map/index.md)
-  - [图形渲染](module-map/graphics.md)
+- [Function Map](module-map/index.md)
+  - [Graphics Rendering](module-map/graphics.md)
 
 - [Scene and Environment](concepts/scene/index.md)
   - [Coordinate system](concepts/scene/coord.md)
@@ -200,25 +200,25 @@
       - [UIOpacity Reference](ui-system/components/editor/ui-opacity.md)
       - [BlockInputEvents Reference](ui-system/components/editor/block-input-enents.md)
 
-- [脚本指南及事件机制](scripting/index.md)
-  - [脚本创建](scripting/setup.md)
-  - [脚本基础](scripting/basic.md)
-  - [语言支持](scripting/language-support.md)
-  - [ccclass](scripting/ccclass.md)
-  - [属性参数参考](scripting/reference/attributes.md)
-  - [访问节点和其他组件](scripting/access-node-component.md)
-  - [常用节点和组件接口](scripting/basic-node-api.md)
-  - [生命周期回调](scripting/life-cycle-callbacks.md)
-  - [创建和销毁节点](scripting/create-destroy.md)
-  - [加载和切换场景](scripting/scene-managing.md)
-  - [获取和加载资源](scripting/load-assets.md)
-  - [使用计时器](scripting/scheduler.md)
-  - [组件](scripting/component.md)
-  - [组件顺序](scripting/execution-order-component.md)
-  - [事件机制](engine/event/index.md)
-  - [插件脚本](scripting/external-scripts.md)
-  - [添加 Log](scripting/log.md)
-  - [废弃 API](scripting/deprecated.md)
+- [Scripting Guide and Event Mechanism](scripting/index.md)
+   -[Script Creation](scripting/setup.md)
+   -[Scripting Basics](scripting/basic.md)
+   -[Language Support](scripting/language-support.md)
+   -[ccclass](scripting/ccclass.md)
+   -[Attributes](scripting/reference/attributes.md)
+   -[Access Node and Other Components](scripting/access-node-component.md)
+   -[Common Node and Component Interface](scripting/basic-node-api.md)
+   -[Life Cycle Callbacks](scripting/life-cycle-callbacks.md)
+   -[Create and destroy nodes](scripting/create-destroy.md)
+   -[Load and switch scenes](scripting/scene-managing.md)
+   -[Loading Assets](scripting/load-assets.md)
+   -[Scheduler](scripting/scheduler.md)
+   -[Component](scripting/component.md)
+   -[Component Order](scripting/execution-order-component.md)
+   -[Event Mechanism](engine/event/index.md)
+   -[Plugin script](scripting/external-scripts.md)
+   -[Logging](scripting/log.md)
+   -[Deprecated APIs](scripting/deprecated.md)
 
 - [Asset Manual](asset/index.md)
   - [Asset workflow](asset/asset-workflow.md)
@@ -241,7 +241,3 @@
   - [Material](asset/material.md)
   - [Mesh](asset/mesh.md)
   - [Animation assets](asset/anim.md)
-
-- [测试规范](tests/index.md)
-  - [测试流程文档](tests/qa-process.md)
-  - [单元测试](tests/unit-test.md)
