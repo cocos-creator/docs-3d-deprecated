@@ -38,8 +38,6 @@ export default {
 }
 ```
 
-In the actual rendering process, the `sharedCanvas` can be interpreted as content and the `SubContextView` node as a container, and the engine will adopt the adaptation strategy of `SHOW ALL` to render the `sharedCanvas` to the screen to avoid the UI distortion caused by stretching during rendering.
-
 In the actual rendering process, the engine will adopt the **SHOW ALL** adaptation policy to render the sharedCanvas to the `SubContextView` component node to avoid the UI distortion caused by stretching during rendering. For example, in the following two images, we are using `SubContextView` component nodes of different sizes, and the **Open Data Context** texture will not be stretched.
 
 ![](./build-open-data-context/adaption-1.png)
@@ -100,7 +98,7 @@ With this basic information in mind, let's take a look at the **Open Data Contex
     });
     ```
     
-    It is also recommended to send messages to **Open Data Context** with a type message to avoid handling the wrong source, where `res.type === 'engine'` in the code means the message came from the engine in main context.
+    It is also recommended to send messages to **Open Data Context** with a type message to avoid handling the wrong source, where `res.type === 'engine'` in the code means the message comes from the engine in main context.
 
 ## Known issues
 
