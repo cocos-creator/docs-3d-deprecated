@@ -89,15 +89,15 @@ export default {
 
 2. 在开放数据域项目中，如果需要监听来自主域的消息，则需要先判断消息是否来自主域引擎，以微信接口为例：
 
-```js
-wx.onMessage(res => {
-    if (!(res && res.type === 'engine')) {
-        console.log('do something...');
-    }
-});
-```
-
-我们也推荐在向开放域发送消息时，附带上 type 信息以避免处理错误的消息源，这里代码中的 `res.type === 'engine'` 表示消息来源于主域引擎。
+    ```js
+    wx.onMessage(res => {
+        if (!(res && res.type === 'engine')) {
+            console.log('do something...');
+        }
+    });
+    ```
+    
+    我们也推荐在向开放域发送消息时，附带上 type 信息以避免处理错误的消息源，这里代码中的 `res.type === 'engine'` 表示消息来源于主域引擎。
 
 ## 已知问题
 

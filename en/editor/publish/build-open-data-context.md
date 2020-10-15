@@ -92,15 +92,15 @@ With this basic information in mind, let's take a look at the **Open Data Contex
 
 2. In an **Open Data Context Project**, if you need to listen to messages from the primary project, you need to first determine whether the message comes from the primary project engine, using the WeChat interface as an example.
 
-```js
-wx.onMessage(res => {
-    if (!(res && res.type === 'engine')) {
-        console.log('do something...');
-    }
-});
-```
-
-It is also recommended to send messages to **Open Data Context** with a type message to avoid handling the wrong source, where `res.type === 'engine'` in the code means the message came from the engine in main context.
+    ```js
+    wx.onMessage(res => {
+        if (!(res && res.type === 'engine')) {
+            console.log('do something...');
+        }
+    });
+    ```
+    
+    It is also recommended to send messages to **Open Data Context** with a type message to avoid handling the wrong source, where `res.type === 'engine'` in the code means the message came from the engine in main context.
 
 ## Known issues
 
