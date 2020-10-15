@@ -119,8 +119,8 @@ Taking `onUpdate` as an example, the following code eases a position, and then s
 ```typescript
 import { Node, tween, Vec3 } from "cc";
 const nodeArray: Node[] = []; // Replace here with your node array
-const tweenTagertVec3 = new Vec3();
-tween(tweenTagertVec3)
+const tweenTargetVec3 = new Vec3();
+tween(tweenTargetVec3)
     .by(1, new Vec3(1, 1, 1), {
         'onUpdate': (target: Vec3, ratio: number) => {
             for (let i = 0; i < nodeArray.length; i++)
