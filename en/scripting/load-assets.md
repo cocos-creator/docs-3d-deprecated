@@ -128,7 +128,7 @@ loader.loadRes("test assets/image/texture", Texture2D ,(err: any, texture: Textu
 });
 ```
 
-> If a __type__ parameter is specified, an asset of the specified type will be found under the path. When you need to get a "sub-asset" (such as getting the sub-asset __SpriteFrame__ of __ImageAsset__), you need to specify the path of the sub-asset.
+> **Note**: If a __type__ parameter is specified, an asset of the specified type will be found under the path. When you need to get a "sub-asset" (such as getting the sub-asset __SpriteFrame__ of __ImageAsset__), you need to specify the path of the sub-asset.
 
 #### Loading a SpriteFrame from Atlas
 
@@ -158,7 +158,7 @@ Alternatively, you can use `loader.releaseAsset` to release a specific instance 
 loader.releaseAsset(spriteFrame);
 ```
 
-Special note, assets dynamically loaded by using `loader.loadRes` or `loader.loadResDir`, will not be release when scene switching, remain not released by default. Use `setAutoRelease` to change the default behavior on a single asset, to force preserve or release specified asset when scene switching.
+> **Note**: assets dynamically loaded by using `cc.loader.loadRes` or `cc.loader.loadResDir`, will not be release when scene switching, remain not released by default. Use `setAutoRelease` to change the default behavior on a single asset, to force preserve or release specified asset when scene switching.
 
 ```typescript
 loader.setAutoRelease(spriteFrame, true);
@@ -237,9 +237,7 @@ if (index !== -1)
 loader.release(deps);
 ```
 
-**One last note:** JavaScript's garbage collection is deferred.
-
-Imagine a situation where, after you released the `loader's` reference to an asset, the game logic requests the asset again. At this point, garbage collection has not started (the timing of garbage collection is uncontrollable), or somewhere in your game logic still holds a reference to this old asset. This means that this asset still exists in memory, but the `loader` has no access, it will be reloaded. This causes this asset to have two identical copies in memory, wasting memory. This isn't a problem for just one asset, but if there are many similar assets or assets being loaded more than once, may put a strain on the available memory. If your memory runs high please carefully check the game logic for leaks. If not, the garbage collection mechanism will normally reclaim the memory.
+> **Note**: JavaScript's garbage collection is deferred. Imagine a situation where, after you released the `loader's` reference to an asset, the game logic requests the asset again. At this point, garbage collection has not started (the timing of garbage collection is uncontrollable), or somewhere in your game logic still holds a reference to this old asset. This means that this asset still exists in memory, but the `loader` has no access, it will be reloaded. This causes this asset to have two identical copies in memory, wasting memory. This isn't a problem for just one asset, but if there are many similar assets or assets being loaded more than once, may put a strain on the available memory. If your memory runs high please carefully check the game logic for leaks. If not, the garbage collection mechanism will normally reclaim the memory.
 
 ---
 
