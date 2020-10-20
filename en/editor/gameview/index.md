@@ -8,7 +8,7 @@
 
 ![image](./gameviewOpen.png)
 
-To open `GameView` function, just click the `GameView` through the drop-down box of the run mode on the top toolbar in the editor. 
+To open the GameView function, click the GameView in the drop-down box of the run mode, on the top toolbar in the editor.
 
 ## Button operation instructions
 
