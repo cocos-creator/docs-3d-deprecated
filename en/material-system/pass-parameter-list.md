@@ -37,25 +37,22 @@ Default value is in bold, all parameters are case-insensitive.
 | depthStencilState.<br>stencil\*Front/Back   | *\*set above stencil properties for specific side*                              |
 
 ## Switch
-Specifies a power switch for the current pass, if not enabled, the pass with be skipped completely.<br>
-the macro name shouldn't collide with any existing macros inside the shader.<br>
-This property doesn't exist by default, which means the pass is executed unconditionally.
+Specifies a power switch for the current pass, if not enabled, the pass with be skipped completely. The macro name shouldn't collide with any existing macros inside the shader. This property doesn't exist by default, which means the pass is executed unconditionally.
 
 ## Priority
 Specifies the rendering priority of the current pass, the bigger the number, the lower the priority. The default is (128), min is (0), max is (255), arithmetic operations between these constants and integer constants are supported.
 
 ## Stage
-Specifies which render stage the current pass belongs to. For the built-in forward pipeline, the only available stage is 'default'.
+Specifies which render stage the current pass belongs to. For the built-in forward pipeline, the only available stage is `default`.
 
 ## Phase
-Specifies which phase the current pass belongs to. For the built-in forward pipeline, the available phases are 'default', 'forward-add' and 'shadow-caster'.
+Specifies which phase the current pass belongs to. For the built-in forward pipeline, the available phases are `default`, `forward-add` and `shadow-caster`.
 
 ## PropertyIndex
-Specifies the index of the pass to copy runtime property data from. Could be useful in some cases, e.g. the forward-add pass needs the same uniform data as the base pass.<br>
-Once specified, all the properties for the current pass will not be visible on the material inspector.
+Specifies the index of the pass to copy runtime property data from. When two passes need to share the same set of properties, `propertyIndex` can be specified to avoid the need for developers to specify that same set of data multiple times (especially in the material inspector). This could be useful in some cases, e.g. the forward add pass vs. the base pass. Once specified, all the properties for the current pass will not be visible in the material inspector.
 
 ## embeddedMacros
-Specifies additional macro definitions on top of the current shader. Helpful for shader reuse when multiple passes' shader only differs at some macro definition.
+Specifies additional macro definitions on top of the current shader. This is helpful for shader reuse when multiple passes' shader only differs at some macro definition.
 
 ## Properties
 Specifies the public interfaces exposed to material instector and runtime API.<br>

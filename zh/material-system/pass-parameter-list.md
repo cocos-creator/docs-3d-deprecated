@@ -45,13 +45,13 @@
 指定这个 pass 的渲染优先级，数值越小越优先渲染；default 代表默认优先级 (128)，min 代表最小（0），max 代表最大（255），可结合四则运算符指定相对值。
 
 ## Stage
-指定这个 pass 归属于管线的哪个 stage，对默认 forward 管线，只有 default 一个 stage。
+指定这个 pass 归属于管线的哪个 stage，对默认 forward 管线，只有 `default` 一个 stage。
 
 ## Phase
-指定这个 pass 归属于管线的哪个 stage，对默认 forward 管线，可以是 default, forward-add, shadow-caster 几个。
+指定这个 pass 归属于管线的哪个 stage，对默认 forward 管线，可以是 `default`, `forward-add`, `shadow-caster` 几个。
 
 ## PropertyIndex
-指定这个 pass 的运行时 uniform 属性数据要和哪个 pass 保持一致，比如 forward-add 等 pass 需要和 base pass 一致才能保证正确的渲染效果。<br>
+指定这个 pass 的运行时 uniform 属性数据要和哪个 pass 保持一致，比如 forward add 等 pass 需要和 base pass 一致才能保证正确的渲染效果。<br>
 一旦指定了此参数，材质面板上就不再会显示这个 pass 的任何属性。
 
 ## embeddedMacros
