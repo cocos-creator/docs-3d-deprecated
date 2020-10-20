@@ -273,7 +273,7 @@ export class GameManager extends Component {
 
     generateRoad() {
 
-        this.node.removeAllChildren(true);
+        this.node.removeAllChildren();
 
         this._road = [];
         // startPos
