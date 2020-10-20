@@ -2,16 +2,25 @@
 
 Engine and editor expose their functionalities API through modules. Modules are in form of ECMAScript module format.
 
+⚠️ Note, starting from 3.0, you can not access API through global variable `cc`!
+
 ## Engine modules
 
-At present, engine only offers one public module `cc`.
+At present, engine only offers one public module `'cc'`.
 
-Contents of module `cc` is dynamically decided,
+Contents of module `'cc'` is dynamically decided,
 which is relevant with engine modules setting in project settings.
+
+### Example: engine logging
+
+```ts
+import { log } from 'cc';
+log(`Hello world!`);
+```
 
 ## Editor modules
 
-Editor modules are prefixed by `cce.`("cce" is abbreviation of "**C**ocos**C**reator**E**ditor").
+Editor modules are prefixed by `'cce.'`("cce" is abbreviation of "**C**ocos**C**reator**E**ditor").
 
 Except for module `cce.env`, all modules are visible only under editor environments. For example, they are not visible from previewing and after building. Instead, they are visible from scene editor.
 
@@ -28,7 +37,7 @@ Except for module `cce.env`, all modules are visible only under editor environme
 
 ### Build-time constants
 
-Editor module `cc.env` exposes some **constants** that are came from building environment. These constants may present execution environment, debugging level, platform identification and so on. Unlike other editor modules, `cc.env` is visible from non-editor environments.
+Editor module `'cce.env'` exposes some **constants** that are came from building environment. These constants may present execution environment, debugging level, platform identification and so on. Unlike other editor modules, `'cce.env'` is visible from non-editor environments.
 
 Since these constants are declared with `const` qualifier, it's very friendly to code optimization.
 
