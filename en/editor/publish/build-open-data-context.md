@@ -89,7 +89,7 @@ With this basic information in mind, let's take a look at the **Open Data Contex
 
 1. Since the build directory generated after the build of the project is excluded from version control by default by git, if you want to include your custom **Open Data Context** in version control, you can put the `openDataContext` folder (e.g. `build/wechatgame/openDataContext`) into your project's `build-templates` directory. Please refer to [Custom Project Build Process](./custom-project-build-template.md) documentation.
 
-2. In an **Open Data Context Project**, if you need to listen to messages from the main context, you need to first determine whether the message comes from the main context engine, using the WeChat interface as an example.
+2. In an **Open Data Context Project**, if you need to listen to messages from the main context, you need to first determine whether the message comes from the main context engine, using the WeChat interface as an example:
 
     ```js
     wx.onMessage(res => {
@@ -98,8 +98,8 @@ With this basic information in mind, let's take a look at the **Open Data Contex
         }
     });
     ```
-    
-    It is also recommended to send messages to the **Open Data Context** with a `type` message to avoid handling the wrong source, where `res.type === 'engine'` in the code means the message comes from the engine in main context.
+
+    When the main context sends a message to the open data context, it is recommended to include a `type` message to avoid handling the wrong message source. For example, the `res.type === 'engine'` in the above code means that the message comes from the main context engine.
 
 ## Reference documentation
 
