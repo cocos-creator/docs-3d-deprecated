@@ -1,7 +1,6 @@
 # Building Open Data Context Project
 
-Currently, platforms such as **WeChat**, **Baidu**, and **ByteDance Mini Game** have added the concept of **Open Data Context**,
-which is a separate game execution environment, in order to protect their social relationship chain data. The resources, engines, and applications in the **Open Data Context** are completely isolated from the main context, and only in the **Open Data Context** can developers access the relationship chain data through the open interface provided by the platform to implement some features such as leaderboards.
+Currently, platforms such as **WeChat**, **Baidu**, and **ByteDance Mini Game** have added the concept of **Open Data Context**, which is a separate game execution environment, in order to protect their social relationship chain data. The resources, engines, and applications in the **Open Data Context** are completely isolated from the main context, and only in the **Open Data Context** can developers access the relationship chain data through the open interface provided by the platform to implement some features such as leaderboards.
 
 In **Cocos Creator 3.0**, we deprecate the Canvas Renderer module and replaced it with a lightweight front-end Canvas engine based on **XML** + **CSS** designed by WeChat team. The engine is integrated into the **Cocos Creator 3.0**'s built-in **Open Data Context** project template, which allows developers to implement a leaderboard-like feature based on the template with a few basic front-end skills.
 
@@ -15,9 +14,7 @@ The `SubContextView` component contains two main properties, **Design Resolution
 
 ### Design Resolution
 
-If you set the **Design Resolution** of the `SubContextView` component to **640 * 960**, the size of the **sharedCanvas** will be set to **640 * 960** during the component `onLoad` phase. This means that after the build, the **Open Data Context Project** is rendered on an off-screen canvas of **640 * 960**. Then, when customizing the **Open Data Context** (see below), the maximum size of the tag style in `style.js` is **640 * 960**, otherwise the rendered content will be off the canvas. Example:
-
-Translated with www.DeepL.com/Translator (free version)
+If you set the **Design Resolution** of the `SubContextView` component to **640 * 960**, the size of the **sharedCanvas** will be set to **640 * 960** during the component's `onLoad` phase. This means that after the build, the **Open Data Context Project** is rendered on an off-screen canvas of **640 * 960**. Then, when customizing the **Open Data Context** (see below), the maximum size of the tag style in `style.js` is **640 * 960**, otherwise the rendered content will be off the canvas. Example:
 
 ```js
 // style.js
@@ -59,17 +56,17 @@ The **FPS** property is primarily used to set how often the main context will up
 
     ![](./build-open-data-context/generate-template.png)
 
-3. After the build is complete, click the **Open** button at the end of **Buid Path**, you'll see an **openDataContext** folder (e.g. `build/wechatgame/openDataContext`), which is an **Open Data Context** project template built into Cocos Creator, in the distribution folder of the corresponding game platform.
+3. After the build is complete, click the **Folder Icon** button at the end of **Buid Path**, you'll see an **openDataContext** folder (e.g. `build/wechatgame/openDataContext`), which is an **Open Data Context** project template built into Cocos Creator, in the distribution folder of the corresponding game platform.
 
     ![](./build-open-data-context/build-output.png)
 
-    Developers can customize the required **Open Data Context** content based on this template, and the customization methods are described below. When built again, if the **openDataContext** folder exists in the `build` directory, it will be skipped directly and the developer does not have to worry about the customized open data context being overwritten.
+    Developers can customize the required **Open Data Context** content based on this template, and the customization methods are described below. When built again, if the **openDataContext** folder exists in the `build` directory, it will be skipped directly and the developer does not have to worry about the customized **Open Data Context Project** being overwritten.
 
 4. Open the build distribution (e.g. `build/wechatgame`) using the developer tool of the corresponding mini game platformer to open the mini-game project to view the **Open Data Context** content.
 
     ![](./build-open-data-context/show-in-devtool.png)
 
-    **Note**: In the **Open Data Context** of **Baidu** platform, since the image can only load player avatars returned from Baidu, the local avatar image may not be loaded in the generated template project.
+    > **Note**: In the **Open Data Context** of **Baidu** platform, since the image can only load player avatars returned from Baidu, the local avatar image may not be loaded in the generated template project.
 
 ## Customization on Open Data Context Project
 
