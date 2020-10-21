@@ -1,4 +1,4 @@
-# 构建开放数据域工程
+# 开放数据域
 
 目前，**微信**、**百度** 和 **字节跳动** 小游戏这些平台为了保护其社交关系链数据，增加了 **开放数据域** 的概念，这是一个单独的游戏执行环境。开放数据域中的资源、引擎、程序，都和主游戏（主域）完全隔离，开发者只有在开放数据域中才能通过平台提供的开放接口来访问关系链数据，用于实现一些例如排行榜的功能。
 
@@ -74,7 +74,7 @@ export default {
 - [minigame-canvas-engine 快速入门](https://wechat-miniprogram.github.io/minigame-canvas-engine/api/guide.html#%E5%AE%89%E8%A3%85)
 - [doT 模版引擎使用](http://olado.github.io/doT/?spm=a2c6h.12873639.0.0.36f45227oKu0XO)
 
-对这些基础信息有了大致的了解之后，我们来看一下构建后默认生成的开放数据域模版，目录结构如下
+对这些基础信息有了大致的了解之后，我们来看一下构建后默认生成的开放数据域模版，目录结构如下：
 
 ![](./build-open-data-context/folder-structure.png)
 

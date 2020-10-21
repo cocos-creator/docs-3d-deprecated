@@ -1,4 +1,4 @@
-# Building Open Data Context Project
+# Open Data Context
 
 Currently, platforms such as **WeChat**, **Baidu**, and **ByteDance Mini Game** have added the concept of **Open Data Context**, which is a separate game execution environment, in order to protect their social relationship chain data. The resources, engines, and applications in the **Open Data Context** are completely isolated from the main context, and only in the **Open Data Context** can developers access the relationship chain data through the open interface provided by the platform to implement some features such as leaderboards.
 
@@ -8,13 +8,13 @@ In **Cocos Creator 3.0**, we deprecate the Canvas Renderer module and replaced i
 
 Since the **Open Data Context** can only be rendered on the off-screen canvas called **sharedCanvas**, you need a node in your project to act as a container for rendering the **Open Data Context**, and add the `SubContextView` component to that node, which will render the **sharedCanvas** to the container node.
 
-The `SubContextView` component contains two main properties, **Design Resolution** and **FPS**.
+The `SubContextView` component contains two main properties, **Design Resolution Size** and **FPS**.
 
 ![](./build-open-data-context/sub-context-view.png)
 
-### Design Resolution
+### Design Resolution Size
 
-If you set the **Design Resolution** of the `SubContextView` component to **640 * 960**, the size of the **sharedCanvas** will be set to **640 * 960** during the component's `onLoad` phase. This means that after the build, the **Open Data Context Project** is rendered on an off-screen canvas of **640 * 960**. Then, when customizing the **Open Data Context** (see below), the maximum size of the tag style in `style.js` is **640 * 960**, otherwise the rendered content will be off the canvas. Example:
+If you set the **Design Resolution Size** of the `SubContextView` component to **640 * 960**, the size of the **sharedCanvas** will be set to **640 * 960** during the component's `onLoad` phase. This means that after the build, the **Open Data Context Project** is rendered on an off-screen canvas of **640 * 960**. Then, when customizing the **Open Data Context** (see below), the maximum size of the tag style in `style.js` is **640 * 960**, otherwise the rendered content will be off the canvas. Example:
 
 ```js
 // style.js
@@ -52,7 +52,7 @@ The **FPS** property is primarily used to set how often the main context will up
 
 1. Open the project and double-click the scene, then add the `SubContextView` component to the node on which you need to render the **Open Data Context**.
 
-2. After the scene is set, save the scene, and then open the **Build** panel in **Menu -> Project**, select the **WeChat** / **Baidu** / **ByteDance** mini-game platform you want to release, check **Generate Open Data Context Template**, and then click **Build**.
+2. After the scene is set, save the scene, and then open the **Build** panel in **Menu -> Project**, select the **WeChat** / **Baidu** / **ByteDance Mini Game** platform you want to release, check **Generate Open Data Context Template**, and then click **Build**.
 
     ![](./build-open-data-context/generate-template.png)
 
