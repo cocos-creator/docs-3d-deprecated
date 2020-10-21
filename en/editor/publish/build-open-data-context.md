@@ -62,7 +62,7 @@ The **FPS** property is primarily used to set how often the main context will up
 
     Developers can customize the required **Open Data Context** content based on this template, and the customization methods are described below. When built again, if the **openDataContext** folder exists in the `build` directory, it will be skipped directly and the developer does not have to worry about the customized **Open Data Context Project** being overwritten.
 
-4. Open the build distribution (e.g. `build/wechatgame`) using the developer tool of the corresponding mini game platformer to open the mini-game project to view the **Open Data Context** content.
+4. Open the build distribution (e.g. `build/wechatgame`) using the DevTools of the corresponding mini game platformer to open the mini-game project to view the **Open Data Context** content.
 
     ![](./build-open-data-context/show-in-devtool.png)
 
@@ -70,7 +70,7 @@ The **FPS** property is primarily used to set how often the main context will up
 
 ## Customization on Open Data Context Project
 
-Before customizing an **Open Data Context** project, developers need to know some basic information.
+Before customizing an **Open Data Context** project, developers need to know some basic information:
 - [minigame-canvas-engine quick start[zh]](https://wechat-miniprogram.github.io/minigame-canvas-engine/api/guide.html#%E5%AE%89%E8%A3%85)
 - [doT template engine use](http://olado.github.io/doT/?spm=a2c6h.12873639.0.0.36f45227oKu0XO)
 
