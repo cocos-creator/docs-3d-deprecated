@@ -2,27 +2,32 @@
 
 ![index](index/index.png)
 
-**Console** outputs editor or engine information, including *log*, *warnings*, and *errors*. Different types of information will be displayed in different colors.
+**Console** outputs editor or engine information, including **log**, **warnings**, and **errors**. Different types of information will be displayed in different colors.
 
 The colors displayed are as follows:
 
-   - **console.log() output log**: <font color=#b6b6b6>Gray text</font>, the content that developers in the editor and plug-in feel necessary to print to the console.
-   ![log](index/log.png)
+  - **console.log() output log**: gray text, the content that developers in the editor and plug-in feel necessary to print to the console.
+  
+  ![log](index/log.png)
 
-   - **console.warn() output warning**: <font color=#ebbe09>yellow text</font>, the abnormal situation encountered by the program that does not affect the result.
-   ![warn](index/warn.png)
+  - **console.warn() output warning**: yellow text, the abnormal situation encountered by the program that does not affect the result.
+  
+  ![warn](index/warn.png)
 
-   - **console.error() output error**: <font color=#dd3c43>red text</font>, the exception encountered during operation that will affect the result, the severity is the highest.
-   ![error](index/error.png)
+  - **console.error() output error**: red text, the exception encountered during operation that will affect the result, the severity is the highest.
+  
+  ![error](index/error.png)
 
 ## Panel operation
+
 The functions of the top toolbar are:
 
-- Clear all logs in the current console
-- Enter text fuzzy search
-- Whether to convert the input text to regular search
-- Select the type of log to display
+- Clear all logs in the current console.
+- Enter text fuzzy search.
+- Whether to convert the input text to regular search.
+- Select the type of log to display.
 - Open the log file backed up on the disk, and the file data will be reset every time the editor starts.
+
   ![open-log-file](index/open-log-file.png)
 
 ## Parameter Settings
@@ -35,30 +40,31 @@ Some parameters of the console are configured in **Preferences**. Please refer t
 
 In order to facilitate the location of files, nodes or resources, and provide a quick step to the help document, some recognition of the content and adding actions is required. Specific requirements are as follows:
 
-- Redirect links according to url
-- Display pictures according to url
-- Locate Asset resource according to url or uuid
-- Locate the Node node according to uuid
-- Locate the script file according to the disk file path path
-- Output text in the corresponding language
+- Redirect links according to url.
+- Display pictures according to url.
+- Locate Asset resource according to url or uuid.
+- Locate the Node node according to uuid.
+- Locate the script file according to the disk file path path.
+- Output text in the corresponding language.
 
 ### Data Format
 
--`{type[text](url)}`
--`{type(text | url | uuid | path)}`
+- `{type[text](url)}`
+- `{type(text | url | uuid | path)}`
 
-### Data format description:
-- Match the characters in `{}` as a whole;
-- `[text]` is optional for expansion input;
-- When `type` exists, it is not case sensitive;
-- When `type` does not exist, the original data is output;
+### Data format description
+
+- Match the characters in `{}` as a whole.
+- `[text]` is optional for expansion input.
+- When `type` exists, it is not case sensitive.
+- When `type` does not exist, the original data is output.
 
 - `types` has:
-   - `link` external redirect link
-   - ʻImage` display picture
-   - ʻAsset` locates resources
-   - `node` locates the node
-   - ʻI18n` multilingual translation
+   - `link`: external redirect link.
+   - `Image`: display picture.
+   - `Asset`: locates resources.
+   - `node`: locates the node.
+   - `I18n`: multilingual translation.
 
 ### Example
 

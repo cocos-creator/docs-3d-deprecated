@@ -8,8 +8,8 @@ This chapter includes the following:
 
 - [Dashboard](dashboard/index.md)
 - [Hello world!](helloworld/index.md)
-- [Quick start: making your first game](getting-started/first-game/index.md)
-- [Caution](getting-started/attention/index.md)
+- [Quick start: making your first game](first-game/index.md)
+- [Caution](attention/index.md)
 
 ---
 
