@@ -23,16 +23,12 @@ log(`Hello world!`);
 
 除模块 `'cce.env'` 外，所有编辑器模块仅在编辑器环境下有效。例如，预览和构建后的环境中是不能访问编辑器模块的，相反，场景编辑器中则可以访问到。
 
-<table>
-    <tr>
-        <td>模块名称</td>
-        <td>用于</td>
-    </tr>
-    <tr>
-        <td><code>'cce.env'</code></td>
-        <td>访问构建时常量。</td>
-    </tr>
-</table>
+| 模块名称      | 用于           |
+|---------------|----------------|
+| `'cce.env'`   | 访问构建时常量 |
+<!--
+| `'cce.gizmo'` | Gizmo          |
+-->
 
 ### 构建时常量
 
@@ -42,124 +38,38 @@ log(`Hello world!`);
 
 #### 执行环境
 
-<table>
-    <tr><td>名称（类型都为 <code>boolean</code>）</td> <td>含义</td></tr>
-    <tr><td><code>BUILD</code></td> <td>是否正处于构建后的运行中</td></tr>
-    <tr><td><code>PREVIEW</code></td> <td>是否正在预览中运行</td></tr>
-    <tr><td><code>EDITOR</code></td> <td>是否正在编辑器中运行</td></tr>
-</table>
+| 名称（类型都为 `boolean`） | 含义                     |
+|----------------------------|--------------------------|
+| `BUILD`                    | 是否正处于构建后的运行中 |
+| `PREVIEW`                  | 是否正在预览中运行       |
+| `EDITOR`                   | 是否正在编辑器中运行     |
+
 
 #### 调试级别
 
-<table>
-    <tr><td>名称（类型都为 <code>boolean</code>）</td> <td>含义</td></tr>
-    <tr><td><code>DEBUG</code></td> <td>是否处于调试模式<br/>仅当构建时未勾选调试选项的情况下为 <code>false</code>；
-    <br/>其它情况下都为 <code>true</code>
-    </td></tr>
-    <tr><td><code>DEV</code></td> <td>等价于<code> DEBUG || EDITOR || PREVIEW || EDITOR</code></tr>
-</table>
+| 名称（类型都为 `boolean`） | 含义                                                                                |
+|----------------------------|-------------------------------------------------------------------------------------|
+| `DEBUG`                    | 是否处于调试模式。仅当构建时未勾选调试选项的情况下为 `false`，其它情况下都为 `true` |
+| `DEV`                      | 等价于 `DEBUG || EDITOR || PREVIEW || EDITOR`                                       |
+
 
 #### 平台标识
 
 下表列出的常量代表是否正在**某个**或**某一类**平台上运行，类型都为 `boolean`。
 <!-- 下表请按字典序排序 -->
-<table>
-    <tr>
-    <td>名称</td>
-    <td>代表平台</td>
-    <td><code>MINIGAME<br/></code><br/>“小游戏”</td>
-    <td><code>RUNTIME_BASED</code><br/>基于 Cocos Runtime</td>
-    <td><code>SUPPORT_JIT</code><br/>支持 JIT</td>
-    </tr>
-    <!---->
-    <tr>
-    <td><code>HTML5</code></td>
-    <td>Web</td>
-    <td>❌</td> <!-- MINIGAME -->
-    <td>❌</td> <!-- RUNTIME_BASED -->
-    <td>❌</td> <!-- SUPPORT_JIT -->
-    </tr>
-    <!---->
-    <tr>
-    <td><code>NATIVE</code></td>
-    <td>原生平台</td>
-    <td>❌</td> <!-- MINIGAME -->
-    <td>❌</td> <!-- RUNTIME_BASED -->
-    <td>❌</td> <!-- SUPPORT_JIT -->
-    </tr>
-    <!---->
-    <tr>
-    <td><code>ALIPAY</code></td>
-    <td>支付宝小游戏</td>
-    <td>✔️</td> <!-- MINIGAME -->
-    <td>❌</td> <!-- RUNTIME_BASED -->
-    <td>✔️</td> <!-- SUPPORT_JIT -->
-    </tr>
-    <!---->
-    <tr>
-    <td><code>BAIDU</code></td>
-    <td>百度小游戏</td>
-    <td>✔️</td> <!-- MINIGAME -->
-    <td>❌</td> <!-- RUNTIME_BASED -->
-    <td>✔️</td> <!-- SUPPORT_JIT -->
-    </tr>
-    <!---->
-    <tr>
-    <td><code>BYTEDANCE</code></td>
-    <td>抖音小游戏</td>
-    <td>✔️</td> <!-- MINIGAME -->
-    <td>❌</td> <!-- RUNTIME_BASED -->
-    <td>✔️</td> <!-- SUPPORT_JIT -->
-    </tr>
-    <!---->
-    <td><code>WECHAT</code></td>
-    <td>微信小游戏</td>
-    <td>✔️</td> <!-- MINIGAME -->
-    <td>❌</td> <!-- RUNTIME_BASED -->
-    <td>✔️</td> <!-- SUPPORT_JIT -->
-    </tr>
-    <!---->
-    <tr>
-    <td><code>XIAOMI</code></td>
-    <td>小米小游戏</td>
-    <td>✔️</td> <!-- MINIGAME -->
-    <td>❌</td> <!-- RUNTIME_BASED -->
-    <td>✔️</td> <!-- SUPPORT_JIT -->
-    </tr>
-    <!---->
-    <tr><td><code>COCOSPLAY</code></td>
-    <td>即刻玩</td>
-    <td>❌</td> <!-- MINIGAME -->
-    <td>✔️</td> <!-- RUNTIME_BASED -->
-    <td>✔️</td> <!-- SUPPORT_JIT -->
-    </tr>
-    <!---->
-    <tr>
-    <td><code>HUAWEI</code></td>
-    <td>华为快游戏</td>
-    <td>❌</td> <!-- MINIGAME -->
-    <td>✔️</td> <!-- RUNTIME_BASED -->
-    <td>✔️</td> <!-- SUPPORT_JIT -->
-    </tr>
-    <!---->
-    <tr>
-    <td><code>OPPO</code></td>
-    <td>OPPO 快游戏</td>
-    <td>❌</td> <!-- MINIGAME -->
-    <td>✔️</td> <!-- RUNTIME_BASED -->
-    <td>✔️</td> <!-- SUPPORT_JIT -->
-    </tr>
-    <!---->
-    <tr>
-    <td><code>VIVO</code></td>
-    <td>vivo 快游戏</td>
-    <td>❌</td> <!-- MINIGAME -->
-    <td>✔️</td> <!-- RUNTIME_BASED -->
-    <td>✔️</td> <!-- SUPPORT_JIT -->
-    </tr>
-    <!---->
-    <tr>
-</table>
+| 名称        | 代表平台     | `MINIGAME` “小游戏” | `RUNTIME_BASED` 基于 Cocos Runtime | `SUPPORT_JIT` 支持 JIT |
+|-------------|--------------|---------------------|------------------------------------|------------------------|
+| `HTML5`     | Web          | ❌                   | ❌                                  | ❌                      |
+| `NATIVE`    | 原生平台     | ❌                   | ❌                                  | ❌                      |
+| `ALIPAY`    | 支付宝小游戏 | ✔️                   | ❌                                  | ✔️                      |
+| `BAIDU`     | 百度小游戏   | ✔️                   | ❌                                  | ✔️                      |
+| `BYTEDANCE` | 抖音小游戏   | ✔️                   | ❌                                  | ✔️                      |
+| `WECHAT`    | 微信小游戏   | ✔️                   | ❌                                  | ✔️                      |
+| `XIAOMI`    | 小米小游戏   | ✔️                   | ❌                                  | ✔️                      |
+| `COCOSPLAY` | 即刻玩       | ❌                   | ✔️                                  | ✔️                      |
+| `HUAWEI`    | 华为快游戏   | ❌                   | ✔️                                  | ✔️                      |
+| `OPPO`      | OPPO 快游戏  | ❌                   | ✔️                                  | ✔️                      |
+| `VIVO`      | vivo 快游戏  | ❌                   | ✔️                                  | ✔️                      |
 
 #### 示例：调试模式下的输出
 
