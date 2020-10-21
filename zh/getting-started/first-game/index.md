@@ -312,6 +312,11 @@ export class GameManager extends Component {
     // }
 }
 ```
+
+将上面制作好的Cube的prefab拖到GameManager的Inspector的CubePrfb属性上。
+
+![assign cube prefab](./images/assign-cube-prefab.png)
+
 在 GameManager 的 inspector 面板中可以通过修改 roadLength 的值来改变跑道的长度。
 预览可以看到现在自动生成了跑道，不过因为Camera没有跟随 Player移动，所以看不到后面的跑道，我们可以将场景中的Camera设置为 Player 的子节点。
 
@@ -329,7 +334,10 @@ export class GameManager extends Component {
    这个操作生成了一个Canvas节点，一个PlayButton节点和一个Label节点。因为UI组件需要在带有 `Canvas` 的父节点下才能显示，所以编辑器在发现目前场景中没有带这个组件的节点时会自动添加一个。
    创建按钮后，将Label节点上的 `Label` 的String属性从Button改为Play。
 2. 在Canvas底下创建一个名字为StartMenu的空节点，将PlayButton拖到它底下。我们可以通过点击工具栏上的2D/3D按钮![2d-view](./images/2d-view.png)来切换到2D编辑视图下进行UI编辑操作，详细的描述请查阅 [场景编辑](../../editor/scene/index.md)。
-3. 增加一个背景框，在 StartMenu 下新建一个名字为BG的Sprite节点，调节它的位置到 PlayButton 的上方，设置它的宽高为（200，200）,并将它的 SpriteFrame 设置为 `internal/default_ui/default_sprite_splash` 。
+3. 增加一个背景框，在 StartMenu 下新建一个名字为BG的`Sprite`节点，调节它的位置到 PlayButton 的上方，设置它的ContentSize的宽(W)和高(H)为（200，200）,并将它的 SpriteFrame 设置为 `internal/default_ui/default_sprite_splash` 。
+   
+   ![create bg sprite](./images/create-bg-sprite.gif)
+
     ![change spriteFrame](./images/change-spriteFrame.png)
 4. 添加一个名为Title的 `Label` 用于开始菜单的标题，。
    ![add title label](./images/add-label-title.gif)
@@ -576,6 +584,10 @@ export class GameManager extends Component {
 在 cocos 文件中已经包含了一个名为 Cocos 的 Prefab，将它拖到场景中Player下的Body节点中。
 
 ![add cocos prefab](./images/add-cocos-prefab.png)
+
+同时移除原先的胶囊体模型
+
+![remove capsule](./images/remove-capsule.png)
 
 此时会发现模型有些暗，可以加个聚光灯，以突出它锃光瓦亮的脑门。
 
