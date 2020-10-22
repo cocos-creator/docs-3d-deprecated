@@ -64,4 +64,4 @@ Panel information defined in the extension. You can use `Editor.Panel.open('hell
 
 Type `{[name: string]: any}` Optional
 
-Extend existing functions, and customize some other function modules that are open to the outside world. For more information, please refer to the [Contributions](editor/extension/contributions.md) documentation.
+Extend existing functions, and customize some other function modules that are open to the outside world. For more information, please refer to the [Contributions](./contributions.md) documentation.

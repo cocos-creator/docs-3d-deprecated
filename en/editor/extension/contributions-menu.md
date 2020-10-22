@@ -4,7 +4,7 @@ There is a main menu bar at the top of the editor, which can be used in the exte
 
 ## Register
 
-When the extension needs to add a menu, Just fill in the `contributions.menu` object. For example, we add a menu item in the `Extension`:
+When the extension needs to add a menu, just fill in the `contributions.menu` object. For example, we add a menu item in the `Extension`:
 
 ```json5
 {
@@ -27,7 +27,7 @@ When the extension needs to add a menu, Just fill in the `contributions.menu` ob
 }
 ```
 
-Then the editor will add an **Open Hello World** menu in the **Extensio**. After clicking this menu, an openPanel message will be sent to the registered extension. Then trigger the openPanel method in the extension.
+Then the editor will add an **Open Hello World** menu in the **Extension**. After clicking this menu, an openPanel message will be sent to the registered extension. Then trigger the `openPanel` method in the extension.
 
 ### path
 

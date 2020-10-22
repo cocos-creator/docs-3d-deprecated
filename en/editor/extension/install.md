@@ -1,13 +1,13 @@
 # Installation and sharing
 
-**Cocos Creator 3D** will search for and automatically open the extensions under the **Global** and **Project** paths during startup.
+**Cocos Creator 3D** will search for and automatically open the extensions under the `Global` and `Project` paths during startup.
 
-If you plan to apply the extension to all projects, you can put the extension under the **global** path:
+If you plan to apply the extension to all projects, you can put the extension under the `Global` path:
 
 - **Windows** %USERPROFILE%\.CocosCreator\packages
 - **Mac** $HOME/.CocosCreator/packages
 
-If you only want to use this extension in the current project, put it in the **project** path:
+If you only want to use this extension in the current project, put it in the `Project` path:
 
 - $Your project address/packages
 
@@ -38,7 +38,7 @@ hello-world.zip
 
 ## Install Extension Pack
 
-First, find and open the top menu **Extensions --> Extension Manager** button.
+First, find and open the top menu **Extension --> Extension Manager** button.
 
 Then select the **Project** or **Global** tab in the **Extension Manager**, click the **+** button, and select the packaged zip file.
 

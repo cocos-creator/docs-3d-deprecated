@@ -6,7 +6,7 @@ The message needs to be defined in `contributions` before it can be used.
 
 ## View public messages
 
-In the top menu **Developer --> Message List**, the editor presets a message management panel that displays public messages and descriptions of each function definition.
+In the top menu **Developer -> Message List**, the editor presets a **Message Manager** panel that displays public messages and descriptions of each function definition.
 
 ## Define a message
 
@@ -36,7 +36,7 @@ Whether to display this message externally, if true, the basic information of th
 
 Type `{string}` Optional
 
-If public is true, some simple descriptions will be displayed in the message list, supporting `i18n:key` syntax.
+If public is true, some simple descriptions will be displayed in the message list, supporting `i18n: key` syntax.
 
 ### doc
 
@@ -58,7 +58,7 @@ If it is a method on the extension, directly define `methodName`, if you want to
 
 ## Define broadcast message
 
-When developing an extension, you need to send some notifications to other extension after completing an action. If these notifications also need to be displayed on the **Message List** panel, you can define the message like this:：
+When developing an extension, you need to send some notifications to other extension after completing an action. If these notifications also need to be displayed on the **Developer -> Message List** panel, you can define the message like this:：
 
 ```json5
 {

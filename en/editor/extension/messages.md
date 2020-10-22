@@ -82,7 +82,7 @@ In this way, you can more intuitively understand the message processing flow of 
 
 ## Editor and extended open message list
 
-The functions in the editor and the list of messages open to the outside world can be viewed through the **Developer --> Message List** panel. For detailed definition rules, please refer to the [contributions.messages](./contributions-messages.md) documentation.
+The functions in the editor and the list of messages open to the outside world can be viewed through the **Developer -> Message List** panel. For detailed definition rules, please refer to the [contributions.messages](./contributions-messages.md) documentation.
 
 ## Send a message
 
