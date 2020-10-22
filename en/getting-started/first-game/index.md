@@ -341,7 +341,7 @@ export class GameManager extends Component {
 }
 ```
 
-Assign the Cube prefab that made previously to the 'CubePrfb' property in GameManager Inspector.
+Assign the Cube prefab that made previously to the `CubePrfb` property in GameManager Inspector.
 
 ![assign cube prefab](./images/assign-cube-prefab.png)
 
@@ -368,7 +368,7 @@ The __start menu__ is an indispensable part of most any game. Add the game name,
 
   > **Note**: Before proceeding, please read the [Scene Editing](../../editor/scene/index.md) documentation.
 
-3. Add a background frame by creating a `Sprite` node named `BG` under `StartMenu`. Adjust `BG`'s position to above the `PlayButton`, setting the *W(width)* and *H(height)* of `ContentSize` to __(200, 200)__, and setting its __SpriteFrame__ to `internal/default_ui/ default_sprite_splash`.
+3. Add a background frame by creating a `Sprite` node named `BG` under `StartMenu`. Adjust `BG`'s position to above the `PlayButton`, setting the __W(width)__ and __H(height)__ of `ContentSize` to __(200, 200)__, and setting its __SpriteFrame__ to `internal/default_ui/ default_sprite_splash`.
 
     ![create bg sprite](./images/create-bg-sprite.gif)
 
@@ -670,6 +670,8 @@ First, add a variable in the `PlayerController` class that references the model 
 ```
 
 Then, in the __Inspector__, drag the `Cocos` node into this variable.
+
+![assign cocos prefab](./images/assign-cocos-prefab.png)
 
 The jump animation needs to be used in the `jumpByStep` function.
 
