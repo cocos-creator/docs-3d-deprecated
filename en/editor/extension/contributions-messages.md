@@ -1,12 +1,12 @@
 # Message
 
-In the Cocos Creator 3D, All interactions are done through [Message](./messages.md).
+In the **Cocos Creator 3D**, all interactions are done through [Message](./messages.md).
 
-The message needs to be defined in "contributions" before it can be used.
+The message needs to be defined in `contributions` before it can be used.
 
 ## View public messages
 
-In the top menu "Developer" - "Message List", the editor presets a message management panel that displays public messages and descriptions of each function definition.
+In the top menu **Developer --> Message List**, the editor presets a message management panel that displays public messages and descriptions of each function definition.
 
 ## Define a message
 
@@ -28,19 +28,19 @@ In the top menu "Developer" - "Message List", the editor presets a message manag
 
 ### public 
 
-Type {string} Optional
+Type `{string}` Optional
 
 Whether to display this message externally, if true, the basic information of this message will be displayed on the message list interface.
 
 ### description
 
-Type {string} Optional
+Type `{string}` Optional
 
-If public is true, some simple descriptions will be displayed in the message list, supporting i18n:key syntax.
+If public is true, some simple descriptions will be displayed in the message list, supporting `i18n:key` syntax.
 
 ### doc
 
-Type {string} Optional
+Type `{string}` Optional
 
 If public is true, some documents of this message will be displayed, supporting i18n:key syntax.
 
@@ -48,17 +48,17 @@ This document is written and rendered in markdown format.
 
 ### methods
 
-Type {string[]} Optional
+Type `{string[]}` Optional
 
 The method queue triggered by the message.
 
 This is an array of strings. The strings are methods on the extension or panel.
 
-If it is a method on the extension, directly define "methodName", if you want to trigger a method on the panel, you must fill in "panelName.methodName" (panel.methods).
+If it is a method on the extension, directly define `methodName`, if you want to trigger a method on the panel, you must fill in `panelName.methodName` (panel.methods).
 
 ## Define broadcast message
 
-When developing an extension, you need to send some notifications to other extension after completing an action. If these notifications also need to be displayed on the "Message List" panel, you can define the message like this:：
+When developing an extension, you need to send some notifications to other extension after completing an action. If these notifications also need to be displayed on the **Message List** panel, you can define the message like this:：
 
 ```json5
 {

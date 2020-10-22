@@ -1,10 +1,10 @@
 # Extension panel
 
-While implementing a function, it is likely to require UI interaction on the interface. Cocos Creator 3D also provides this ability for extension.
+When implementing a function, it is likely to require UI interaction on the interface. **Cocos Creator 3D** also provides this ability for extensions.
 
 ## Declare the panel in the extension
 
-The panels field can be defined in package.json.
+The panels field can be defined in `package.json`.
 
 ```json
 {

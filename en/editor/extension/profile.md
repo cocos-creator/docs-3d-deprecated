@@ -1,9 +1,8 @@
 # Configuration system
 
-When writing an extension, it may be necessary to save some configurations and provide some configurations for users to customize settings.
-Therefore, a configuration management mechanism is provided in the editor.
+When writing an extension, it may be necessary to save configurations and provide some configurations for users to customize settings. Therefore, a configuration management mechanism is provided in the editor.
 
-## Configuration type
+## Configuration Type
 
 The configuration in the editor is divided into two types:
 
@@ -16,7 +15,7 @@ Store some editor-related function settings. This part is also the main configur
 
 The editor settings are divided into three levels, with priority from high to low:
 
-```
+```sh
 local -> global -> default
 ```
 
@@ -24,11 +23,11 @@ local -> global -> default
 
 Store some project-related configurations, which are allowed and need to be shared between projects.
 
-```
+```sh
 local -> default
 ```
 
-## Register configuration
+## Register Configuration
 
 ```json5
 {
@@ -70,24 +69,23 @@ interface ProfileItem {
 }
 ```
 
-contributions.profile is divided into editor and project configurations. The definitions of these two configurations are object objects.
-The key of the object is the key of the configuration, and the value is the basic information describing the configuration.
+`contributions.profile` is divided into editor and project configurations. The definitions of these two configurations are object objects. The key of the object is the key of the configuration, and the value is the basic information describing the configuration.
 
 ### default
 
-Type {any} optional
+`Type {any} optional`
 
 The default value of the configuration. It can be of any type.
 
 ### message
 
-Type {string} optional
+`Type {string} optional`
 
 When the message is modified, the defined message will be triggered. Used to dynamically update some data when configuration changes.
 
 ### label
 
-Type {string} optional
+`Type {string} optional`
 
 Briefly describe this configuration. Where the configuration can be displayed, this description may be displayed. Support i18n:key format
 

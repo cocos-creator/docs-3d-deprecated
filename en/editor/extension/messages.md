@@ -1,11 +1,11 @@
 # Message system
 
-There are many independently running processes in Cocos Creator 3D, and these processes are isolated from each other.
-So when you need to interact with other functions in the editor, you need to interact through "messages".
+There are many independently running processes in **Cocos Creator 3D**, and these processes are isolated from each other.
+When you need to interact with other functions in the editor, you need to interact through **messages**.
 
-The "message system" in the editor is a function expansion package of IPC (Interprocess Communication). This system bears the burden of communication and interaction in the entire editor.
+The **message system** in the editor is a function expansion package of IPC (Interprocess Communication). This system bears the burden of communication and interaction in the entire editor.
 
-## Message type
+## Message Types
 
 Message interaction is divided into two situations:
 
@@ -14,9 +14,9 @@ Message interaction is divided into two situations:
 
 The first is called ordinary messages, and the second is called broadcast messages.
 
-### General news
+### General News
 
-It can be understood as a kind of external api, for example, "scene editor" defines a "message" API-query-node (query-node)
+It can be understood as a kind of external api, for example, **scene editor** defines a **message** API-query-node (query-node).
 
 ```json5
 {
@@ -31,7 +31,7 @@ It can be understood as a kind of external api, for example, "scene editor" defi
 }
 ```
 
-When writing an extension, you can use this API to send messages:
+When writing an extension, use this API to send messages:
 
 ```javascript
 const info = await Editor.Message.request('scene','query-node', uuid);
@@ -41,9 +41,9 @@ At this time, a promise object will be returned. After await, the info object ob
 
 ### Broadcast message
 
-Broadcast message is a kind of notification to the outside after the operation in a certain function is completed. Take the "scene editor" as an example.
+Broadcast message is a kind of notification to the outside after the operation in a certain function is completed. Take the **scene editor** as an example.
 
-After starting a scene, the "scene editor" informs everyone that the "scene" has been started:
+After starting a scene, the **scene editor** informs everyone that the **scene** has been started:
 
 ```javascript
 Editor.Message.broadcast('scene:ready', sceneUUID);
@@ -64,31 +64,31 @@ It needs to be defined like this in the extension:
 }
 ```
 
-After that, whenever the scene is ready, broadcasting scene:ready will trigger the "initData" method in the "hello-world" extension.
+After that, whenever the scene is ready, broadcasting scene:ready will trigger the `initData` method in the `hello-world` extension.
 
-## Message naming convention
+## Message Naming Conventions
 
-### General news
+### General News
 
-Please use lowercase words and cannot contain special characters. Use "-" to connect between words.
+Please use lowercase words and cannot contain special characters. Use **-** to connect between words.
 
-### Broadcast message
+### Broadcast Message
 
-Cannot contain special characters other than ":". The format is packageName:actionName
+Cannot contain special characters other than **:**. The format is `packageName:actionName`
 
-The packageName is added to prevent naming conflicts. In your own extension, you need to directly indicate which broadcast (action) of which extension is monitored when monitoring.
+The `packageName` is added to prevent naming conflicts. In your own extension, you need to directly indicate which broadcast (action) of which extension is monitored when monitoring.
 
-In this way, you can more intuitively understand the message processing flow of the extension in package.json.
+In this way, you can more intuitively understand the message processing flow of the extension in `package.json`.
 
 ## Editor and extended open message list
 
-The functions in the editor and the list of messages open to the outside world can be viewed through the "Developer"-"Message List" panel. For detailed definition rules, please refer to [contributions.messages](./contributions-messages.md)
+The functions in the editor and the list of messages open to the outside world can be viewed through the **Developer --> Message List** panel. For detailed definition rules, please refer to the [contributions.messages](./contributions-messages.md) documentation.
 
 ## Send a message
 
--Editor.Message.send(pkgName, message, ...args);
--await Editor.Message.request(pkgName, message, ...args);
--Editor.Message.broadcast(`${pkgName}:${actionName}`, ...args);
+- Editor.Message.send(pkgName, message, ...args)
+- await Editor.Message.request(pkgName, message, ...args)
+- Editor.Message.broadcast(`${pkgName}:${actionName}`, ...args)
 
 The send method only sends a message, and does not wait for the return. If you do not need to return data and do not care whether the execution is complete, please use this method.
 
