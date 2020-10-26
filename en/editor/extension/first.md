@@ -50,7 +50,7 @@ Next, define a menu array in contributions to provide basic information of a men
 
 Careful that after the menu is pressed, the triggered action is notified by the message between the extensions, and the message system is the way of interaction between the extensions.
 
-For a detailed `package.json` format definition, please refer to the[Extension](./define.md) documentation.
+For a detailed `package.json` format definition, please refer to the [Extension](./define.md) documentation.
 
 ## Entry program browser.js
 
