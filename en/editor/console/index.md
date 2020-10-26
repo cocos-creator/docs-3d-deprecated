@@ -8,15 +8,15 @@ The colors displayed are as follows:
 
 - **console.log()**: output log, gray text, the content that developers in the editor and plug-in feel necessary to print to the console.
   
-![log](index/log.png)
+  ![log](index/log.png)
 
-- **console.warn() output warning**: yellow text, the abnormal situation encountered by the program that does not affect the result.
+- **console.warn()**: output warning, yellow text, the abnormal situation encountered by the program that does not affect the result.
   
-![warn](index/warn.png)
+  ![warn](index/warn.png)
 
-- **console.error() output error**: red text, the exception encountered during operation that will affect the result, the severity is the highest.
+- **console.error()**: output error, red text, the exception encountered during operation that will affect the result, the severity is the highest.
   
-![error](index/error.png)
+  ![error](index/error.png)
 
 ## Panel operation
 
