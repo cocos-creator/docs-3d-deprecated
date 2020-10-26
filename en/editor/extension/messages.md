@@ -18,7 +18,7 @@ The first is called ordinary messages, and the second is called broadcast messag
 
 It can be understood as a kind of external api, for example, **scene editor** defines a **message** API-query-node (query-node).
 
-```json5
+```json
 {
     "name": "scene",
     "contributions": {
@@ -51,7 +51,7 @@ Editor.Message.broadcast('scene:ready', sceneUUID);
 
 It needs to be defined like this in the extension:
 
-```json5
+```json
 {
     "name": "hello-world",
     "contributions": {

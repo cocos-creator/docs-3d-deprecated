@@ -10,7 +10,7 @@ If the function provides contributions function, you can use these functions whe
 
 In `package.json` the `contribution` field can be defined.
 
-```json5
+```json
 {
     "name": "hello-world",
     "contributions": {}
