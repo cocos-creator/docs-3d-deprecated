@@ -120,114 +120,103 @@
 
 ![资源预览](img/preview.png)
 
-## 扩展 Assets 面板
 
-插件间的扩展，走常规的 \*\* \*\* 流程，Assets 面板支持扩展的位置和功能有限，这是逐步开放的过程，有新的需求可在论坛中反馈，目前支持的扩展有：
+# 扩展 Assets 面板菜单
+
+其他插件扩展 Assets 面板，当前支持扩展的位置和功能有限，这是逐步开放的过程，有新的需求可在论坛中反馈，目前支持的扩展有：
 
 1.  拖入识别
 2.  右击菜单
 
-注入扩展的主要流程为：
+注入扩展的主要流程：
 
 - 新建一个插件
-- 插件 package.json `contributions` 指定 `"assets": "./contributions-assets.js"`
-- `contributions-assets.js` 输出 module.exports
-- module.exports 内容格式为 { Drop, Menu }
+- 插件 package.json 
+
+```json5
+{
+  "name": "extend-assets-menu",
+  "contributions": {
+    "assets": {
+      "drop": [
+        {
+          "type": "my-defined-asset-type-for-drop",
+          "message": "drop-asset"
+        }
+      ],
+      "menu": [
+        {
+          "path": "create",
+          "label": "i18n:extend-assets-menu.menu.createAsset",
+          "message": "create-asset"
+        },
+        {
+          "path": "asset",
+          "label": "i18n:extend-assets-menu.menu.assetCommand",
+          "submenu": [
+            {
+              "label": "extend-assets-menu.menu.runCommand",
+              "message": "asset-command"
+            }
+          ]
+        }
+      ]
+    },
+  }
+}
+
+```
 
 ```typescript
-// onDrop 动作会触发 Message.send('extensionName', 'messageName', asset:IAssetInfo)
+
+/**
+ * 拖入识别
+ * message ipc 返回参数 info: DropCallbackInfo
+ */
 interface DropItem {
   type: string;
-  message: 'messageName';
+  message: string;
 }
 export const Drop: DropItem[] = [];
 
+export interface DropCallbackInfo {
+    type: string;
+    uuid: string;
+}
+
+
 /**
- * 扩展右击菜单
- * Eelectron MenuItem https://www.electronjs.org/docs/api/menu-item
+ * 扩展右击菜单使用 Eelectron MenuItem
+ * https://www.electronjs.org/docs/api/menu-item
  * 
  * path 扩展的区域可选值：
     "create" 位置：创建资源
     "asset" 位置：普通资源的右击菜单
+
     以下尚不支持
-    "db" 位置：DB 根节点的右击菜单
+    "db" 位置：DB 资源 (根节点) 的右击菜单
     "panel" 位置：面板空白区域的右击菜单
     "sort" 位置：面板头部排序按钮的菜单
     "search" 位置：面板头部搜索按钮的菜单
- */
-interface Menu extends MenuItem {
-  path: string; // 扩展的区域
+
+  * message ipc 返回参数 info: MenuCallbackInfo
+  */
+
+  interface Menu extends MenuItem {
+    label: string; // 显示的文字
+    path: string; // 添加的位置
+    message: string; // Message
 }
 export const Menu: Menu;
 
-
-// 其他数据格式说明
-
-interface IAssetInfo extends AssetInfo {
-  additional: IDragAdditional[]; // 追加拖拽可识别的类型
-  fileName: string; // 文件名，不包含后缀
-  fileExt: string; // 后缀，不包含点好
-  isParent: boolean; // 是否是父节点
-  isDB: boolean; // 是否是 DB 根节点
-  isSubAsset: boolean; // 是否是 subAsset, 
-  depth: number; // 树形层级
-  left: number; // 缩进的大小
-  refreshTime: number; // 每次刷新的当前时间戳，目前用于缩略图的刷新
+export interface MenuCallbackInfo {
+    type: string;
+    uuid: string;
 }
 
-interface IDragAdditional {
-  type: string;
-  value: string;
-  name?: string; // 节点或资源名称
-}
-
-interface AssetInfo {
-  // 资源名字
-  name: string;
-  // 资源用于显示的名字
-  displayName: string;
-  source: string;
-  // loader 加载的层级地址
-  path: string;
-  // loader 加载地址会去掉扩展名，这个参数不去掉
-  url: string;
-  // 绝对路径
-  file: string;
-  uuid: string;
-  // 使用的导入器名字
-  importer: string;
-  // 类型
-  type: string;
-  // 是否是文件夹
-  isDirectory: boolean;
-  // 导入资源的 map
-  library: { [key: string]: string };
-  // 子资源 map
-  subAssets: { [key: string]: AssetInfo };
-  // 是否显示
-  visible: boolean;
-  // 是否只读
-  readonly: boolean;
-
-  // 虚拟资源可以实例化成实体的话，会带上这个扩展名
-  instantiation?: string;
-  // 跳转指向资源
-  redirect?: IRedirectInfo;
-  // 继承类型
-  extends?: string[];
-}
-
-interface IRedirectInfo {
-  // 跳转资源的类型
-  type: string;
-  // 跳转资源的 uuid
-  uuid: string;
-}
 ```
 
-细节太多，附上一个 demo 源码，点击下载：
-<a href="img/extend-assets-menu.zip" target="_blank">extend-assets-menu.zip</a>
-
+细节太多，附上一个 demo 源码，<a href="img/extend-assets-menu.zip" target="_blank">点击下载 extend-assets-menu.zip</a>
 
 ![extend-menu](img/extend-menu.png)
 
