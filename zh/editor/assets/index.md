@@ -167,6 +167,16 @@
 
 ```
 
+``` html
+    <ui-drag-item type="my-defined-asset-type-for-drop" additional='[{"type":"my-defined-asset-type-for-drop","value":"xxx"}]'>
+        <ui-label>拖动到 assets 面板，有值</ui-label>
+    </ui-drag-item>
+
+    <ui-drag-item type="my-defined-asset-type-for-drop" >
+        <ui-label>拖动到 assets 面板，无值</ui-label>
+    </ui-drag-item>
+```
+
 ```typescript
 
 /**
@@ -180,8 +190,15 @@ interface DropItem {
 export const Drop: DropItem[] = [];
 
 export interface DropCallbackInfo {
-    type: string;
-    uuid: string;
+    type: string; // 拖什么类型过去
+    values?: IDragAdditional[]; // 可能是拖了多选值
+    to: string; // 到哪个资源 uuid 上
+}
+
+export interface IDragAdditional {
+    type: string; // 资源类型
+    value: string; // 资源 uuid
+    name?: string; // 资源名称
 }
 
 
