@@ -6,7 +6,7 @@ There is a main menu bar at the top of the editor, which can be used in the exte
 
 When the extension needs to add a menu, just fill in the `contributions.menu` object. For example, we add a menu item in the `Extension`:
 
-```json5
+```json
 {
     "name": "hello-world",
     "contributions": {

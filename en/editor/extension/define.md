@@ -2,7 +2,7 @@
 
 The extension package needs to be pre-defined with some basic information that needs to be filled in and stored in the `package.json` file.
 
-```json5
+```json
 {
     "name": "hello-world",
     "version": "1.0.0",

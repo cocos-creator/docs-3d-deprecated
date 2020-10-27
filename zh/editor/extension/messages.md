@@ -18,7 +18,7 @@ Cocos Creator 3D 内有许多独立运行的的进程，这些进程间是相互
 
 可以理解成一种对外的 api，例如 "场景编辑器" 定义好了一个 "消息" API - query-node（查询节点）
 
-```json5
+```json
 {
     "name": "scene",
     "contributions": {
@@ -51,7 +51,7 @@ Editor.Message.broadcast('scene:ready', sceneUUID);
 
 在扩展里需要这样定义:
 
-```json5
+```json
 {
     "name": "hello-world",
     "contributions": {

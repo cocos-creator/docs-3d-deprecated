@@ -4,7 +4,7 @@ The shortcut keys in the editor are managed uniformly by the **Shortcut Key Mana
 
 ## Define
 
-```json5
+```json
 {
     "name": "hello-world",
     "panels": {
