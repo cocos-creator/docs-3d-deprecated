@@ -4,25 +4,25 @@
 
 Cocos Creator 3D 目前支持两种语言进行开发，分别为`JavaScript`和`TypeScript`。
 
-**注：`TypeScript`具有良好的语法分析和类型提示，推荐使用**。
+> **注**：`TypeScript`具有良好的语法分析和类型提示，推荐使用。
 
-以获取`BoxColliderComponent`为例，在`JavaScript`中获取`Collider`组件：
+以获取`BoxCollider`为例，在`JavaScript`中获取`Collider`组件：
 
-1. `this.getComponent('cc.BoxColliderComponent')`
-2. `this.getComponent(cc.BoxColliderComponent)`
+1. `this.getComponent('BoxCollider')`
+2. `this.getComponent(BoxCollider)`
 
 在`TypeScript`中获取`Collider`组件：
 
 1. 上述`JavaScript`使用的方式
-2. **`this.getComponent(BoxColliderComponent)`** (**推荐使用，提示导入时，注意导入位置为`cc`**)
+2. **`this.getComponent(BoxCollider)`** (**推荐使用，提示导入时，注意导入位置为`cc`**)
 
-**注：若无智能导入提示，请检查工作目录是不是在工程的顶层，以及是否使用较新的`VSCode`编辑器**。
+> **注**：若无智能导入提示，请检查工作目录是不是在工程的顶层，以及是否使用较新的`VSCode`编辑器。
 
 ## 碰撞器和触发器
 
 `Collider`组件具有`isTrigger`属性，当`isTrigger`为`true`时，表示为触发器，反之为碰撞器。
 
-**注：关于碰撞器和触发器的区别将在 [物理事件](physics-event.md) 中介绍**。
+> **注**：关于碰撞器和触发器的区别将在 [物理事件](physics-event.md) 中介绍。
 
 ## `Collider`和`RigidBody`的关系
 
@@ -47,7 +47,7 @@ Cocos Creator 3D 目前支持两种语言进行开发，分别为`JavaScript`和
 - 思路二增加了节点耦合，节点更新时，需要更新相应的依赖节点。
 - 思路二在节点链被破坏时，需要维护内容更多，节点链在反复被破坏时需要处理复杂的逻辑。
 
-**注：Cocos Creator 3D 的物理目前使用的是思路一，后续可能会进行调整，请留意版本更新公告**。
+> **注**：Cocos Creator 3D 的物理目前使用的是思路一，后续可能会进行调整，请留意版本更新公告。
 
 ### `Collider`的`attachedRigidbody`属性
 

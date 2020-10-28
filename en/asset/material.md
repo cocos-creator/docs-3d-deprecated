@@ -1,4 +1,4 @@
-## Material resources
+## Material assets
 
 ### Material creation
 
@@ -10,7 +10,7 @@ or
 
 ![material-create-menu](material/material-create-menu.png)
 
-The __Material__ controls the final shading of each model. The __Material__ is composed of __Effects__, and the shading process of an __Effect__ is controlled by the __Material__. The __Material__ itself can also be regarded as a container of __Effect__ resources. The __Material__ can switch the __Effect__ resources to be used at will. The following figure is the __Effect__ resource of the __Material__ we have selected by default.
+The __Material__ controls the final shading of each model. The __Material__ is composed of __Effects__, and the shading process of an __Effect__ is controlled by the __Material__. The __Material__ itself can also be regarded as a container of __Effect__ assets. The __Material__ can switch the __Effect__ assets to be used at will. The following figure is the __Effect__ asset of the __Material__ we have selected by default.
 
 ![default-effect](material/default-effect.png)
 

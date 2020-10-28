@@ -11,4 +11,6 @@
 
 ![camera ortho gizmo](images/camera-ortho-gizmo.png)
 
-## [<-Scene Editor](index.md)
+---
+
+Continue to the [Scene Editor](index.md) documentation.

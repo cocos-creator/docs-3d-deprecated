@@ -7,6 +7,9 @@
 | switch                                      | **\*undefined**, could be any valid macro name that's not defined in the shader |
 | priority                                    | **default**(128), could be any number between max(255) and min(0)               |
 | stage                                       | **default**, could be the name of any registered stage in your runtime pipeline |
+| phase                                       | **default**, could be the name of any registered phase in your runtime pipeline |
+| propertyIndex                               | **\*undefined**, could be any valid pass index                                  |
+| embeddedMacros                              | **\*undefined**, could be an object containing any macro key-value pairs        |
 | properties                                  | *see the following section                                                      |
 | migrations                                  | *see the following section                                                      |
 | primitive                                   | point_list, line_list, line_strip, line_loop,<br>**triangle_list**, triangle_strip, triangle_fan,<br>line_list_adjacency, line_strip_adjacency,<br>triangle_list_adjacency, triangle_strip_adjacency,<br>triangle_patch_adjacency, quad_patch_list, iso_line_list |
@@ -42,7 +45,17 @@
 指定这个 pass 的渲染优先级，数值越小越优先渲染；default 代表默认优先级 (128)，min 代表最小（0），max 代表最大（255），可结合四则运算符指定相对值。
 
 ## Stage
-指定这个 pass 归属于管线的哪个 stage，对 forward 管线，只有 default 一个 stage。
+指定这个 pass 归属于管线的哪个 stage，对默认 forward 管线，只有 `default` 一个 stage。
+
+## Phase
+指定这个 pass 归属于管线的哪个 stage，对默认 forward 管线，可以是 `default`, `forward-add`, `shadow-caster` 几个。
+
+## PropertyIndex
+指定这个 pass 的运行时 uniform 属性数据要和哪个 pass 保持一致，比如 forward add 等 pass 需要和 base pass 一致才能保证正确的渲染效果。<br>
+一旦指定了此参数，材质面板上就不再会显示这个 pass 的任何属性。
+
+## embeddedMacros
+指定在这个 pass 的 shader 基础上额外定义的常量宏。在多个 pass 的 shader 只有宏定义不同时可使用此参数来复用 shader 资源。
 
 ## Properties
 properties 存储着这个 Pass 有哪些可定制的参数需要在 Inspector 上显示，<br>
@@ -58,8 +71,8 @@ offset: { value: [0, 0], target: tilingOffset.zw } # uniform vec4 tilingOffset
 ```js
 // as long as it is a real uniform
 // it doesn't matter whether it is specified in the property list or not
-mat.setProperty('emissive', cc.Color.GREY); // this works
-mat.setProperty('albedo', cc.Color.RED); // directly set uniform
+mat.setProperty('emissive', Color.GREY); // this works
+mat.setProperty('albedo', Color.RED); // directly set uniform
 mat.setProperty('roughness', 0.2); // set certain component
 const h = mat.passes[0].getHandle('offset'); // or just take the handle,
 mat.passes[0].setUniform(h, new Vec2(0.5, 0.5)); // and use Pass.setUniform interface instead

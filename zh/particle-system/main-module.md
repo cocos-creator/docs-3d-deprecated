@@ -1,4 +1,4 @@
-## 主模块(ParticleSystemComponent)
+## 主模块(ParticleSystem)
 ![](particle-system/main.png)
 
 属性|功能

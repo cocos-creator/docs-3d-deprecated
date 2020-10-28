@@ -1,30 +1,33 @@
-# Contributing to this repository
+# Contributions in English
 
-## Contributions in English
+## Using Bold
 
-### Using Bold
-- to note step numbers. 
+- to note step numbers.
   - __Example__: __First__, __Second__, __Third__, etc
-- to designate important Creator Components, Objets, UI Elements. 
+- to designate important Creator Components, Objets, UI Elements.
   - __Example__: __Scene__, __Sprite inspector__, __Sprite__ inspector, __Asset panel__ or __Asset__ panel
 
-### List items
+## List items
+
 - __Example__: *apple*, *orange*, *banana*, and *pear*
 - __Example__:
   - apple
   - orange
   - pear
 
-### Using a single backtick (code wrapper)
+## Using a single backtick (code wrapper)
+
 - designate class names, property names and function names.
   - __Example__: `SpriteComponent`, `onEnable`, `SpriteComponent.spriteFrame`
-- filenames and paths. 
+- filenames and paths.
   - __Example__: `myfile.txt`, `/mypath/myfile.txt`, `/assets/xyz/`
 
-### Using a triple backtick
+## Using a triple backtick
+
 - code blocks
 
-### Tables
+## Tables
+
 Can bold or italics the first colume but bot the second column. __Examples__:
 
 | Properties | Explanation |
@@ -42,9 +45,8 @@ Can bold or italics the first colume but bot the second column. __Examples__:
 | *anisotropy* | Anisotropy value |
 | *minFilter* | Narrowing Filter Algorithm |
 
+## Grammar suggestions
 
-
-### Grammar suggestions
 - __Firstly__ ->  __First__.
 - At present, —> Currently,
 - Cocos Creator 3D —> __Cocos Creator 3D__ (let's bold our product name
@@ -53,10 +55,8 @@ Can bold or italics the first colume but bot the second column. __Examples__:
 - do not use phrases like: "Now let me explain", "he should do this"
 - text like this should be avoided: "If you have never written a program and don’t worry, we will provide all the required code in the tutorial, just copy and paste it to the correct location, and then you can find your programmer partner to solve this part of the work. Let's start creating the script that drives the main character's actions."
 
-### Technical designations
+## Technical designations
+
 - json -> JSON
 - js or JS -> JavaScript
 - ts or TS -> TypeScript
-
- 
-

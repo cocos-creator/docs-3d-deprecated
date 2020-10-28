@@ -10,6 +10,8 @@ This section includes the following:
 -[Scene Structure](scene.md)
 -[Node](node.md)
 -[Skybox](skybox.md)
+-[Global Fog](fog.md)
+-[Shadows](shadow.md)
 
 ---
 

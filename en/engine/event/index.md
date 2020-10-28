@@ -5,7 +5,7 @@
 #### Event monitoring
 
 ```ts
-// The event listener will be triggered every time, you need to 
+// The event listener will be triggered every time, you need to
 // manually cancel the registration
 xxx.on(type, func, target);
 ```
@@ -13,7 +13,7 @@ xxx.on(type, func, target);
 | Property | Description |
 |---|---|
 | *type* | the event registration string. |
-| *func* | the callback for performing event monitoring. | 
+| *func* | the callback for performing event monitoring. |
 | *target* | the event receiving object. |
 
 #### Event cancellation
@@ -21,7 +21,7 @@ xxx.on(type, func, target);
 ```ts
 // Cancel all registered events of this type on the object
 xxx.off(type);
-// Cancel the event of the specified target of the specified 
+// Cancel the event of the specified target of the specified
 // callback on the object
 xxx.off(type, func, target);
 ```
@@ -29,7 +29,7 @@ xxx.off(type, func, target);
 #### Event distribution
 
 ```ts
-// Dispatch parameters can be specified when the event 
+// Dispatch parameters can be specified when the event
 // is dispatched
 xxx.emit(type, ...arg);
 ```
@@ -43,10 +43,10 @@ xxx.emit(type, ...arg);
 *System events* refer to global events, which are monitored and distributed directly from the browser.
 
 ```ts
-cc.systemEvent.on(type, func, target);
+systemEvent.on(type, func, target);
 ```
 
-Currently supported system events are: *touch events*, *mouse events*, *gravity events*, and *key press events*. The global event type can be ontained by using `cc.SystemEventType`.
+Currently supported system events are: *touch events*, *mouse events*, *gravity events*, and *key press events*. The global event type can be ontained by using `SystemEventType`.
 
 | Event Name | Event Type Description |
 | -------------- | ----------- |
@@ -85,8 +85,8 @@ export class example extends Component {
     }
 
     onDestroy(){
-      // In general, for data recovery control, we will 
-      // specify func, and cancel the event when the component 
+      // In general, for data recovery control, we will
+      // specify func, and cancel the event when the component
       // is destroyed
       this.node.off(Node.EventType.TOUCH_CANCEL);
     }

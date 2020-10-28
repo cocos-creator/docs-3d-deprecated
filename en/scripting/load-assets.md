@@ -77,17 +77,17 @@ Although it is intuitive to set assets in the **Attributes Inspector**, the asse
 
 We have example for asset loading, please see these [test-case-3d(AssetLoading)](https://github.com/cocos-creator/test-cases-3d/tree/master/assets/cases/scripting/asset_loading)
 
-There are two points to note when loading assets dynamically. 
+There are two points to note when loading assets dynamically.
 
-__First__, the `resources` folder needs to be created manually inside the `assets` folder and must be located in the __root directory__, like this:
+__First__, the `resources` folder needs to be created manually inside the `resources` folder and must be located in the __root directory__, like this:
 
 ![](load-assets/resources-file-tree.jpg)
 
-All assets that need to be dynamically loaded through a script must be placed in the `resources` folder or its subfolders. 
+All assets that need to be dynamically loaded through a script must be placed in the `resources` folder or its subfolders.
 
-> **Note:** The assets in the folder can refer to other assets outside the folder, and can also be referenced by external scenes or assets. When the project is built, except for the scenes that have been checked in the Build panel, all assets in the `resources` folder, together with the assets outside the `resources` folder that are dependent by necessary assets, other assets will be deleted.
+> **Note**: The assets in the folder can refer to other assets outside the folder, and can also be referenced by external scenes or assets. When the project is built, except for the scenes that have been checked in the Build panel, all assets in the `resources` folder, together with the assets outside the `resources` folder that are dependent by necessary assets, other assets will be deleted.
 
-> **Note:** If an asset is only depended on by other assets and does not need to be loaded directly by `loader.loadRes`, then **please** do not put it in the `resources` folder. Doing so, the size of the **package body** and `settings.js` will be increased, and the useless assets in the `resources` folder will not be automatically removed during the build process. At the same time, during the build process, JSON's automatic merge strategy will also be affected, and it is not possible to merge fragmented JSON as much as possible.
+> **Note**: If an asset is only depended on by other assets and does not need to be loaded directly by `loader.loadRes`, then **please** do not put it in the `resources` folder. Doing so, the size of the **package body** and `settings.js` will be increased, and the useless assets in the `resources` folder will not be automatically removed during the build process. At the same time, during the build process, JSON's automatic merge strategy will also be affected, and it is not possible to merge fragmented JSON as much as possible.
 
 __Second__, The load process of __Cocos Creator 3D__ is always asynchronous. You need to get the loaded assets in the callback function. This is done because there is no other asset preload list except the assets associated with the scene, and dynamically loaded assets that are truly dynamically loaded.
 
@@ -104,7 +104,7 @@ loader.loadRes("test assets/prefab", Prefab , (err: any, prefab: Prefab) => {
 
 // load the AnimationClip
 loader.loadRes("test assets/anim", AnimationClip , (err: any, clip: AnimationClip) => {
-    this.node.getComponent(AnimationComponent).addClip(clip, "anim");
+    this.node.getComponent(Animation).addClip(clip, "anim");
 });
 ```
 
@@ -115,7 +115,7 @@ After the image is set to a spriteframe, texture or other image types, an asset 
 ```typescript
 // load a SpriteFrame，image is ImageAsset，spriteFrame is image/spriteFrame, texture is image/texture
 loader.loadRes("test assets/image/spriteFrame", SpriteFrame ,(err: any, spriteFrame: SpriteFrame) => {
-    this.node.getComponent(SpriteComponent).spriteFrame = spriteFrame;
+    this.node.getComponent(Sprite).spriteFrame = spriteFrame;
 });
 ```
 
@@ -124,11 +124,11 @@ loader.loadRes("test assets/image/spriteFrame", SpriteFrame ,(err: any, spriteFr
 loader.loadRes("test assets/image/texture", Texture2D ,(err: any, texture: Texture2D) => {
     const spriteFrame = new SpriteFrame();
     spriteFrame.texture = texture;
-    this.node.getComponent(SpriteComponent).spriteFrame = spriteFrame;
+    this.node.getComponent(Sprite).spriteFrame = spriteFrame;
 });
 ```
 
-> If a __type__ parameter is specified, an asset of the specified type will be found under the path. When you need to get a "sub-asset" (such as getting the sub-asset __SpriteFrame__ of __ImageAsset__), you need to specify the path of the sub-asset.
+> **Note**: If a __type__ parameter is specified, an asset of the specified type will be found under the path. When you need to get a "sub-asset" (such as getting the sub-asset __SpriteFrame__ of __ImageAsset__), you need to specify the path of the sub-asset.
 
 #### Loading a SpriteFrame from Atlas
 
@@ -139,7 +139,7 @@ For an atlas imported from a third-party tool such as Texturepacker, if you want
 // Note Atlas resource file (plist) usually of the same name and a picture file (PNG) placed in a directory, So should need to in the second parameter specifies the resource type.
 loader.loadRes("test assets/atlas.plist", SpriteAtlas, (err: any, atlas: SpriteAtlas) => {
     const frame = atlas.getSpriteFrame('sheep_run_0');
-    this.node.getComponent(SpriteComponent)..spriteFrame = frame;
+    this.node.getComponent(Sprite)..spriteFrame = frame;
 });
 ```
 
@@ -158,7 +158,7 @@ Alternatively, you can use `loader.releaseAsset` to release a specific instance 
 loader.releaseAsset(spriteFrame);
 ```
 
-Special note, assets dynamically loaded by using `cc.loader.loadRes` or `cc.loader.loadResDir`, will not be release when scene switching, remain not released by default. Use `setAutoRelease` to change the default behavior on a single asset, to force preserve or release specified asset when scene switching.
+> **Note**: assets dynamically loaded by using `cc.loader.loadRes` or `cc.loader.loadResDir`, will not be release when scene switching, remain not released by default. Use `setAutoRelease` to change the default behavior on a single asset, to force preserve or release specified asset when scene switching.
 
 ```typescript
 loader.setAutoRelease(spriteFrame, true);
@@ -174,7 +174,7 @@ loader.loadResDir("test assets", (err: any, assets: Array<Asset>) => {
     // ...
 });
 
-// load the test assets, all SpriteFrame in the directory, 
+// load the test assets, all SpriteFrame in the directory,
 // and get their path
 loader.loadResDir("test assets", SpriteFrame, (err: any, assets: Array<Asset>, urls: Array<string>) => {
     // ...
@@ -192,7 +192,7 @@ loader.load(remoteUrl1, (err: any, image: ImageAsset) => {
     // Use imageAsset to create sprite frame or texture
 });
 
-// Remote URL without image suffix, you must specify the type 
+// Remote URL without image suffix, you must specify the type
 // of remote image file
 const remoteUrl2 = "http://unknown.org/emoji?id=124982374";
 loader.load({url: remoteUrl2, type: 'png'}, (err: any, image: ImageAsset) => {
@@ -228,7 +228,7 @@ const deps = loader.getDependsRecursively('prefabs/sample');
 loader.release(deps);
 
 // If there are some assets in this prefab that are shared with other
-// parts of the scene, you don't want them to be released, you can delete 
+// parts of the scene, you don't want them to be released, you can delete
 // this asset from the dependency list.
 const deps = loader.getDependsRecursively('prefabs/sample');
 const index = deps.indexOf(texture2d._uuid);
@@ -237,9 +237,7 @@ if (index !== -1)
 loader.release(deps);
 ```
 
-**One last note:** JavaScript's garbage collection is deferred.
-
-Imagine a situation where, after you released the `loader's` reference to an asset, the game logic requests the asset again. At this point, garbage collection has not started (the timing of garbage collection is uncontrollable), or somewhere in your game logic still holds a reference to this old asset. This means that this asset still exists in memory, but the `loader` has no access, it will be reloaded. This causes this asset to have two identical copies in memory, wasting memory. This isn't a problem for just one asset, but if there are many similar assets or assets being loaded more than once, may put a strain on the available memory. If your memory runs high please carefully check the game logic for leaks. If not, the garbage collection mechanism will normally reclaim the memory.
+> **Note**: JavaScript's garbage collection is deferred. Imagine a situation where, after you released the `loader's` reference to an asset, the game logic requests the asset again. At this point, garbage collection has not started (the timing of garbage collection is uncontrollable), or somewhere in your game logic still holds a reference to this old asset. This means that this asset still exists in memory, but the `loader` has no access, it will be reloaded. This causes this asset to have two identical copies in memory, wasting memory. This isn't a problem for just one asset, but if there are many similar assets or assets being loaded more than once, may put a strain on the available memory. If your memory runs high please carefully check the game logic for leaks. If not, the garbage collection mechanism will normally reclaim the memory.
 
 ---
 

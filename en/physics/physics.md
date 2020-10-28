@@ -14,8 +14,8 @@ Adding a physical element to the world can be divided int the following steps：
 
 1. Create a new shape `Cube`；
 2. Click `Add Component` on the `Inspector` panel witch is on the right of editor；
-3. Select `BoxColliderComponent` under the `Physics` menu, and adjust the parameters；
-4. add a `RigidBodyComponent` component in order to make it have physical behavior。
+3. Select `BoxCollider` under the `Physics` menu, and adjust the parameters；
+4. add a `RigidBody` component in order to make it have physical behavior。
 
 In this way we get a physical element that has **both a collider and a physical behavior**.
 
@@ -28,8 +28,6 @@ Then, adjust the view of the camera (select the camera and press the shortcut `C
 Finally, click the run button, you can see the changes of physical elements in the scene. The final scene is shown in the following figure:
 
 ![physics world](img/physics.jpg)
-
-> **Note**: You can see the new preview result on the browser you just ran by clicking the refresh button directly after adjusting the property value of the component.
 
 ### Composition Of Physical Elements
 
@@ -45,7 +43,7 @@ Additional physics system will be introduced in more detail through the followin
 
 Module | Description
 ---|---
-[**Physics Options**](physics-item.md) | Introduces the optional options of low-level physics engine in Cocos Creator 3D
+[**Physics Options**](physics-item.md) | Introduces the optional options of low-level physics engine in **Cocos Creator 3D**
 [**Physics System**](physics-system.md) | Introduces the physics system and a series of properties and interfaces of the physics system.
 [**Physics Component**](physics-component.md) | Introduces some physics components and a series of properties on the panel.
 [**Physics Usage**](physics-use.md) | Further introduces the use of physics, events, group masks, etc.

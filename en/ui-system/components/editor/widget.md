@@ -10,14 +10,14 @@ Click the __Add Component__ button at the bottom of the __Inspector__ panel and 
 
 Properties | Function Explanation | Note |
 --      | --        | --
-Top     | Upper border alignment | Once selected, an input field will appear to set the distance between the upper border of the current node and the upper border of the parent object. |
-Bottom  | Lower border alignment | Once selected, an input field will appear to set the distance between the lower border of the current node and the lower border of the parent object. |
-Left    | Left border alignment | Once selected, an input field will appear to set the distance between the left border of the current node and the left border of the parent object. |
-Right   | Right border alignment | Once selected, an input field will appear to set the distance between the right border of the current node and the right border of the parent object. |
-HorizontalCenter | Horizontal center alignment |
-VerticalCenter   | Vertical center alignment |
-Target  | Alignment target | Specifies an alignment target that can only be one of the parent nodes of the current node. The default value is null, and when null, indicates the current parent.<br>If the parent node is the entire scene, it will be aligned to the visible area of the screen (`visibleRect`), and can be used to dock UI elements to the edge of the screen. |
-Align Mode | Specifies the alignment mode of the Widget, which determines when the widget should refresh at runtime | Normally set to __ALWAYS__, only to be initialized and realigned whenever the window size changes.<br>Set to __ONCE__, will only make alignment when the component is enabled.<br>Set to __ON_WINDOW_RESIZE__, will update Widget's alignment every time when the window changes. |
+**Top**     | Upper border alignment | Once selected, an input field will appear to set the distance between the upper border of the current node and the upper border of the parent object. |
+**Bottom**  | Lower border alignment | Once selected, an input field will appear to set the distance between the lower border of the current node and the lower border of the parent object. |
+**Left**   | Left border alignment | Once selected, an input field will appear to set the distance between the left border of the current node and the left border of the parent object. |
+**Right**   | Right border alignment | Once selected, an input field will appear to set the distance between the right border of the current node and the right border of the parent object. |
+**HorizontalCenter** | Horizontal center alignment |
+**VerticalCenter**   | Vertical center alignment |
+**Target**  | Alignment target | Specifies an alignment target that can only be one of the parent nodes of the current node. The default value is null, and when null, indicates the current parent.<br>If the parent node is the entire scene, it will be aligned to the visible area of the screen (`visibleRect`), and can be used to dock UI elements to the edge of the screen. |
+**Align Mode** | Specifies the alignment mode of the Widget, which determines when the widget should refresh at runtime | Normally set to __ALWAYS__, only to be initialized and realigned whenever the window size changes.<br>Set to __ONCE__, will only make alignment when the component is enabled.<br>Set to __ON_WINDOW_RESIZE__, will update Widget's alignment every time when the window changes. |
 
 ## Border alignment
 

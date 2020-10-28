@@ -1,14 +1,14 @@
 # Skeletal animation
 
-__Skeletal Animation__ is a common but special type of animation. Two different systems are provided and each is optimized for different purposes. Seamless switching between these two systems can be as simple as toggle the `useBakedAnimation` switch on `SkeletalAnimationComponent`, even at runtime. when enabled, the pre-baked system will be used, or the real-time calculated system if otherwise.
+__Skeletal Animation__ is a common but special type of animation. Two different systems are provided and each is optimized for different purposes. Seamless switching between these two systems can be as simple as toggle the `useBakedAnimation` switch on `SkeletalAnimation`, even at runtime. when enabled, the pre-baked system will be used, or the real-time calculated system if otherwise.
 
 ## Pre-baked Skeletal Animation System
 
 The dominant purpose of this system is performance, and some sacrifices in expressiveness are also considered acceptable. __Cocos Creator 3D__ has made many low-level optimizations in a targeted manner. The current runtime process is roughly as follows:
   * All animation data will be pre-sampled in advance according to the specified frame rate and baked onto a global-managed joint texture atlas.
   * Depending on whether the operating platform supports floating-point textures, the corresponding texture format will be RGBA32F, or automatically fallback to RGBA8 if not available (The rendering results should be identical, it is only the fail-safe approach for really low-end devices, and shouldn't be of any concern for game developers).
-  * Each __Skeletal Animation Component__ (`SkeletalAnimationComponent`) is responsible for maintaining the current playback progress, stored in the form of UBO (a `vec4`).
-  * Each skinning model component (`SkinningModelComponent`) holds a pre-baked skinning model class (`BakedSkinningModel`). Based on the bounding box information pre-baked in the same way to do frustum culling, update the UBO, and get the current data from the texture atlas on the GPU to complete the skinning.
+  * Each __Skeletal Animation Component__ (`SkeletalAnimation`) is responsible for maintaining the current playback progress, stored in the form of UBO (a `vec4`).
+  * Each skinning model component (`SkinnedMeshRenderer`) holds a pre-baked skinning model class (`BakedSkinningModel`). Based on the bounding box information pre-baked in the same way to do frustum culling, update the UBO, and get the current data from the texture atlas on the GPU to complete the skinning.
 
 ## Real-time calculated Skeletal Animation System
 
@@ -18,7 +18,7 @@ The current runtime process is roughly as follows:
   * All animation data are calculated dynamically according to the current global time.
   * Animation data will be output to the skeleton node tree of the scene.
   * Users and any other system can affect the skin effect by manipulating this node tree.
-  * Each __Skinning Model Component__ (`SkinningModelComponent`) holds a common __Skinning Model__ class (`SkinningModel`). Extract the transformation data from joint node tree, do frustum culling, upload the complete joint transformation information of the current frame to UBO, and complete the skinning in the GPU.
+  * Each __Skinning Model Component__ (`SkinnedMeshRenderer`) holds a common __Skinning Model__ class (`SkinningModel`). Extract the transformation data from joint node tree, do frustum culling, upload the complete joint transformation information of the current frame to UBO, and complete the skinning in the GPU.
 
 This provides the fundamental support for all the following functions:
   * Blendshape support
@@ -28,7 +28,7 @@ This provides the fundamental support for all the following functions:
 
 ## Selection and best practice of two systems
 
-After importing all model resources, all prefabs use the pre-baked system by default to achieve the best performance. It is recommended that you only use the real-time calculated system if you clearly feel that the performance of the pre-baked system cannot reach the standard. Although the two systems can be switched seamlessly at runtime, try to do this as less frequent as possible, because each switch involves the reconstruction of the underlying rendering data.
+After importing all model assets, all prefabs use the pre-baked system by default to achieve the best performance. It is recommended that you only use the real-time calculated system if you clearly feel that the performance of the pre-baked system cannot reach the standard. Although the two systems can be switched seamlessly at runtime, try to do this as less frequent as possible, because each switch involves the reconstruction of the underlying rendering data.
 
 ## Skinning algorithm
 
@@ -44,11 +44,14 @@ It is recommended that projects with higher pursuit of skin animation quality ca
 ## Socket system
 
 If you need to attach some external nodes to the specified joint joints, you need to use the __Socket system__ of the __Skeleton Animation Component__:
-  * Create a new child node directly under the node of `SkeletalAnimationComponent` to be attached to.
-  * Add an array element in the sockets list of the `SkeletalAnimationComponent`. Select the path of the joint to be attached to from the drop-down list (note that the `defaultClip` property of the `SkeletalAnimationComponent` must be a valid clip, the content of the drop-down list depend on this), and specify the target as the child node just created.
-  * This child node becomes a socket node, you can put any node under and it will follow the transformations of the specified joint.
 
-`FBX` or `glTF` resources will be automatically adapted to use this socket system at import time, without any manual interference.
+* Create a new child node directly under the node of `SkeletalAnimation` to be attached to.
+
+* Add an array element in the sockets list of the `SkeletalAnimation`. Select the path of the joint to be attached to from the drop-down list (note that the `defaultClip` property of the `SkeletalAnimation` must be a valid clip, the content of the drop-down list depend on this), and specify the target as the child node just created.
+
+* This child node becomes a socket node, you can put any node under and it will follow the transformations of the specified joint.
+
+`FBX` or `glTF` assets will be automatically adapted to use this socket system at import time, without any manual interference.
 
 ## About Dynamic Instancing
 
@@ -58,7 +61,7 @@ The fundamental problem here is that the joint texture atlass used by each model
 
 The way to distribute all the animation data used at runtime to each joint texture atlases becomes a project-specific information, thus needs developer's input. See the [joint texture layout panel](../../editor/project/joints-texture-layout.md) documentation for more details on how to configure this.
 
-> **Note**: Instancing is only supported under the pre-baked system. Although we do not strictly prohibit instancing under the real-time calculated system (will only trigger some warnings in the editor), there will be problems with the rendering results. Depending on the resource allocation situation at the time, all the instances could be playing the same clip at best, or more often, completely mad rendering results.
+> **Note**: Instancing is only supported under the pre-baked system. Although we do not strictly prohibit instancing under the real-time calculated system (will only trigger some warnings in the editor), there will be problems with the rendering results. Depending on the asset allocation situation at the time, all the instances could be playing the same clip at best, or more often, completely mad rendering results.
 
 > **Note**: For models with instancing turned on in the material, the planar shadow system will also automatically draw using instancing. In particular, the shadow of the skin model has a higher requirement for the layout of the joint texture atlas, because the pipeline state of the shadow is unified, all the animation of the skin model with the shadow turned on needs to be put into the same texture (Compared to when drawing the model itself, only the instances in the same drawcall need to be put into the same texture).
 
@@ -68,6 +71,6 @@ The joint texture uploaded by the GPU on the bottom layer has been globally auto
 
 ![](batched-skinning-model-component.png)
 
-The batch version of the effect is relatively complicated to write, but it can basically be based on the common effects used by the sub-materials, adding some relatively direct preprocessing and interface changes. The built-in resources in the editor (util/batched-unlit) provide a The integrated version of builtin-unlit can be referenced.
+The batch version of the effect is relatively complicated to write, but it can basically be based on the common effects used by the sub-materials, adding some relatively direct preprocessing and interface changes. The built-in assets in the editor (util/batched-unlit) provide a The integrated version of builtin-unlit can be referenced.
 
 > **Note**: Only using the Batched Skinning Model Component under the pre-baked system can guarantee the correctness. Although it can also be used under the real-time calculated system, there **will** be rendering problems when the number of joints after the merger exceeds 30 (the maximum number of Uniform arrays).

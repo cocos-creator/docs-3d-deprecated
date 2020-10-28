@@ -13,7 +13,7 @@ Cocos Creator 3D 的物理事件有触发事件和碰撞事件。
 - 触发器不会与其它触发器或者碰撞器做更精细的检测。
 - 碰撞器与碰撞器会做更精细的检测，并会产生碰撞数据，如碰撞点、法线等。
 
-**注：`isTrigger`属性决定`Collider`组件是否为触发器**。
+> **注**：`isTrigger`属性决定`Collider`组件是否为触发器。
 
 ## 触发事件和碰撞事件
 
@@ -23,14 +23,14 @@ Cocos Creator 3D 的物理事件有触发事件和碰撞事件。
 
 监听触发事件，需要通过注册事件来添加相应的回调：
 
-1. 通过`this.getComponent(ColliderComponent)`获取到`ColliderComponent`
-2. 通过`ColliderComponent`的`on`或者`once`方法注册相应事件的回调
+1. 通过`this.getComponent(Collider)`获取到`Collider`
+2. 通过`Collider`的`on`或者`once`方法注册相应事件的回调
 
 代码示例：
 
 ```ts
 public start () {
-    let Collider = this.getComponent(ColliderComponent);
+    let Collider = this.getComponent(Collider);
     Collider.on('onTriggerStay', this.onTrigger, this);
 }
 
@@ -47,14 +47,14 @@ private onTrigger (event: ITriggerEvent) {
 
 监听碰撞事件，需要通过注册事件来添加相应的回调：
 
-1. 通过 `this.getComponent(ColliderComponent)` 获取到 `ColliderComponent`
-2. 通过 `ColliderComponent` 的 `on` 或者 `once` 方法注册相应事件的回调
+1. 通过 `this.getComponent(Collider)` 获取到 `Collider`
+2. 通过 `Collider` 的 `on` 或者 `once` 方法注册相应事件的回调
 
 代码示例：
 
 ```ts
 public start () {
-    let Collider = this.getComponent(ColliderComponent);
+    let Collider = this.getComponent(Collider);
     Collider.on('onCollisionStay', this.onCollision, this);
 }
 
@@ -63,9 +63,8 @@ private onCollision (event: ICollisionEvent) {
 }
 ```
 
-**注：ColliderComponent 是所有碰撞组件的父类**。
-
-**注：目前碰撞事件以物理元素为单位，所有该元素上的碰撞器组件都会接受到碰撞事件**。
+> **注**：`Collider`是所有碰撞组件的父类。
+> **注**：目前碰撞事件以物理元素为单位，所有该元素上的碰撞器组件都会接受到碰撞事件。
 
 两者的区别
 

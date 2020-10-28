@@ -11,7 +11,7 @@ The general structure of the system is as follows:
 It contains the mathematical calculations and algorithms for calculating the color of each pixel rendered.<br>
 When the [builtin effects](#builtins) are not the best fit for your need,<br>
 writing your own effect can give you all the capabilities to customize the rendering process.<br>
-Detailed syntax instructions can be found [here](effect-syntax.md).
+Detailed syntax instructions can be found in the [Effect Syntax](effect-syntax.md) documentation.
 
 After an effect file is created, the in-editor effect compiler automatically steps in to compile it.<br>
 Also using `builtin-unlit.effect` as an example, the compiler output for this file will look like this:
@@ -108,9 +108,9 @@ console.log(mat.getProperty('cubeMap') === someCubeMap); // true
 These properties are assigned inside the material, which is just an asset by itself, and hasn't connected to any model.
 
 To apply the material on a specific model, it needs to be attached to a `RenderableComponent`.<br>
-Any component that accepts a material parameter (ModelComponent, SkinningModelComponent, etc.) is inherited from it.
+Any component that accepts a material parameter (MeshRenderer, SkinnedMeshRenderer, etc.) is inherited from it.
 ```ts
-const comp = someNode.getComponent(ModelComponent);
+const comp = someNode.getComponent(MeshRenderer);
 comp.material = mat;
 comp.setMaterial(mat, 0); // same as last line
 ```
@@ -121,7 +121,7 @@ comp.setMaterial(someOtherMaterial, 1); // assign to second sub-model
 
 The same `Material` can be attached to multiple `RenderableComponent` too:<br>
 ```ts
-const comp2 = someNode2.getComponent(ModelComponent);
+const comp2 = someNode2.getComponent(MeshRenderer);
 comp2.material = mat; // the same material above
 ```
 

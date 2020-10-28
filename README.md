@@ -58,13 +58,13 @@ npm run build
 
 You can also build the doc for ebook formats (PDF, ePub, mobi), please following this guide:
 
-https://toolchain.gitbook.com/ebook.html
+<https://toolchain.gitbook.com/ebook.html>
 
 If you need to publish to the website, you'd better build it on Mac. If use Windows, some redundant .md file will also generated.
 
 ## Content Editing
 
-The markdown source of this book is in language specific folders [/en](en) and [/zh](zh). Language options are registered in [LANGS.md](LANGS.md) file.
+The markdown source of this book is in language specific folders [/en](en) and [/zh](zh). Language options are registered in the [LANGS.md](LANGS.md) file.
 
 ### Index
 
@@ -74,9 +74,9 @@ In this index file, just write links to each markdown file in a list. Indented l
 
 ```md
 - [Using Editor](getting-started/basics/editor-overview.md)
-	- [Assets](getting-started/basics/editor-panels/assets.md)
-	- [Scene](getting-started/basics/editor-panels/scene.md)
-	- [Node Tree](getting-started/basics/editor-panels/node-tree.md)
+ - [Assets](getting-started/basics/editor-panels/assets.md)
+ - [Scene](getting-started/basics/editor-panels/scene.md)
+ - [Node Tree](getting-started/basics/editor-panels/node-tree.md)
 ```
 
 Will create a toggleable chapter title `Using Editor`. Once clicked all its subs will show up.
@@ -99,6 +99,10 @@ To change HTML templates, change the content in [zh/_layouts](zh/_layouts) and [
 
 If you encounters any typo or content problem please report issue in this repo. Pull requests are welcome!
 
-### Style Guide for Chinese documents
+- **Style Guide for documents**
 
-[中文文档书写规范](https://github.com/cocos-creator/docs-3d/wiki/%E4%B8%AD%E6%96%87%E6%96%87%E6%A1%A3%E4%B9%A6%E5%86%99%E8%A7%84%E8%8C%83)
+  - [中文文档书写规范](https://github.com/cocos-creator/docs-3d/wiki/%E4%B8%AD%E6%96%87%E6%96%87%E6%A1%A3%E4%B9%A6%E5%86%99%E8%A7%84%E8%8C%83)
+
+  - [Contributions in English](./CONTRIBUTING.md)
+
+  - [markdownlint](https://marketplace.visualstudio.com/items?itemName=DavidAnson.vscode-markdownlint)

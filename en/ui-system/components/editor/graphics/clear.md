@@ -6,7 +6,7 @@ The `clear()` function is used to clear all paths.
 
 ```javascript
 update: function (dt) {
-    var ctx = node.getComponent(cc.GraphicsComponent);
+    var ctx = node.getComponent(Graphics);
     ctx.clear();
     ctx.circle(200,200, 200);
     ctx.stroke();

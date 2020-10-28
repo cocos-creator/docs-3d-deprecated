@@ -99,24 +99,24 @@ console.log(mat.getProperty('cubeMap') === someCubeMap); // true
 ```
 这些属性都是在材质资源对象本身内部生效, 还并不涉及场景.
 
-Material 通过挂载到 RenderableComponent 上与场景连接, 所有需要设定材质的 Component (ModelComponent, SkinningModelComponent等) 都继承自它.
+Material 通过挂载到 Renderable 上与场景连接, 所有需要设定材质的 Component (MeshRenderer, SkinnedMeshRenderer等) 都继承自它.
 ```ts
-const comp = someNode.getComponent(ModelComponent);
+const comp = someNode.getComponent(MeshRenderer);
 comp.material = mat;
 comp.setMaterial(mat, 0); // 与上一行作用相同
 ```
-根据子模型的数量, RenderableComponent 也可以引用多个 Material 资源:
+根据子模型的数量, Renderable 也可以引用多个 Material 资源:
 ```ts
 comp.setMaterial(mat, 1); // 赋给第二个 submodel
 ```
 
-同一个 Material 也可挂载到任意多个 RenderableComponent 上, 一般在编辑器中通过拖拽的方式即可自动赋值.<br>
-而当场景中的某个模型的 Material 需要特化的设置, 会在从 RenderableComponent 获取 Material 时自动做拷贝实例化, 创建对应的 MaterialInstance，从而实现独立的定制.
+同一个 Material 也可挂载到任意多个 Renderable 上, 一般在编辑器中通过拖拽的方式即可自动赋值.<br>
+而当场景中的某个模型的 Material 需要特化的设置, 会在从 Renderable 获取 Material 时自动做拷贝实例化, 创建对应的 MaterialInstance，从而实现独立的定制.
 ```ts
-const comp2 = someNode2.getComponent(ModelComponent);
+const comp2 = someNode2.getComponent(MeshRenderer);
 const mat2 = comp2.material; // 拷贝实例化, mat2 是一个 MaterialInstance，接下来对 `mat2` 的修改只会影响 `comp2` 的模型
 ```
-Material 与 MaterialInstance 的最大区别在于，MaterialInstance 从开始就永久地挂载在唯一的 RenderableComponent 上，只会对这个模型生效，而 Material 则无此限制。
+Material 与 MaterialInstance 的最大区别在于，MaterialInstance 从开始就永久地挂载在唯一的 Renderable 上，只会对这个模型生效，而 Material 则无此限制。
 
 对于一个已初始化的材质, 如果希望修改最初的基本信息, 可以直接再次调用 initialize 函数, 重新创建渲染资源.
 ```ts

@@ -8,7 +8,7 @@ The following uses Blender 2.8 as an example to introduce the model import proce
 
 ![blender model](./mesh/blender_model.png)
 
-In [Blender's FBX export options documentation](https://docs.blender.org/manual/en/2.80/addons/io_scene_fbx.html), we choose __up__ as __y up__ and __forward__ as __-z forward__.
+In [Blender's FBX Export Options](https://docs.blender.org/manual/en/2.80/addons/io_scene_fbx.html) documentation, we choose __up__ as __y up__ and __forward__ as __-z forward__.
 
 ![blender export](./mesh/blender_export_fbx_1.png)
 
@@ -36,3 +36,13 @@ During the game development process, the orientation of the model may be used. F
 
   1. In __Cocos Creator 3D__, the __-z-axis__ is used as the forward direction, while in Blender, the forward direction is __+y-axis__, so when making a model, the positive direction of the __y-axis__ should be used as the orientation of the object, and the derived transformation later, in __Cocos Creator 3D__, the __-z-axis__ will be used as the front direction.
   2. If you do not want to change the orientation in the DCC tool, you can try adding a parent node to the imported model in the scene, and then rotate the model so that the initial orientation of the model is the __-z-axis__. All subsequent rotation-related operations are based on the parent. A node is an operation object.
+
+## Artist's production specifications
+
+1. Reasonably formulating a sub-assets name under model assets.(e.g **mesh** or **material**). Each modification of the sub-assets name will result in the loss of the place associated with the sub-assets in the project.
+
+2. When a part of the model needs to be transparent and a part does not need to be transparent, it should be exported into two materials. If it is a material export that is prone to model penetration, you need to manually adjust the material.
+
+3. External asset references, use relative path when exporting. Otherwise, under the cooperation of multiple people, the original asset path will not be recognized, resulting in the model's built-in materials cannot obtain the texture correctly and appear yellow. **Autodesk 3ds Max** export local path is modified as follows:
+
+![relative path](./mesh/relative_path.png)

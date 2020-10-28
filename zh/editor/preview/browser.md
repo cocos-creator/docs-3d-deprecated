@@ -99,7 +99,7 @@ test.js 放置在页面内标识的相对路径（只能在 `preview-template` �
 
 以谷歌浏览器为例，通过功能菜单的 `开发者/开发者工具` 可以打开开发者工具界面，如上图所示。在开发者工具中，我们可以查看运行日志、打断点进行调试、在调用堆栈中查看每一步各个变量的值、甚至进行资源加载和性能分析。
 
-要学习使用开发者工具进行调试，请阅读 [极客学院的 Chrome Dev Tools 使用指南](http://wiki.jikexueyuan.com/project/chrome-devtools/overview.html)，或其他浏览器的开发者工具帮助。
+要学习使用开发者工具进行调试，请阅读 [Chrome Dev Tools 使用指南](https://developers.google.com/web/tools/chrome-devtools?hl=zh-cn)，或其他浏览器的开发者工具帮助。
 
 ## 浏览器兼容性
 

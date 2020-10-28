@@ -9,7 +9,7 @@ The `lineWidth` defines the width of drawing line for [`stroke`](./stroke.md) fu
 ## Example
 
 ```javascript
-var ctx = node.getComponent(cc.GraphicsComponent);
+var ctx = node.getComponent(Graphics);
 ctx.lineWidth = 20;
 ctx.rect(20,20,80,100);
 ctx.stroke();

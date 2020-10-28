@@ -41,15 +41,14 @@ geometry.ray.fromPoints(outRay, Vec3.ZERO, Vec3.UNIT_Z);
 
 3. 用相机构造一条从相机原点到屏幕（或者说相机的近端面）某点发射出的射线：
 
-**注：首先需要获取一个相机组件或者相机实例的引用**。
-
-**注：相机组件和相机实例两者暴露的接口参数顺序不一样**。
+> **注**：首先需要获取一个相机组件或者相机实例的引用。
+> **注**：相机组件和相机实例两者暴露的接口参数顺序不一样。
 
 ```ts
-import { geometry, CameraComponent } from "cc";
+import { geometry, Camera } from "cc";
 const { ray } = geometry;
 // 此处假设已经有 cameraCom 的引用了
-const cameraCom: CameraComponent;
+const cameraCom: Camera;
 // 获得一条途径屏幕坐标（0，0）发射出的一条射线
 const outRay = new ray();
 cameraCom.screenPointToRay(0, 0, outRay);
@@ -59,7 +58,7 @@ cameraCom.screenPointToRay(0, 0, outRay);
 
 Cocos Creator 3D 在`v1.0.1`版本上提供了一套基于物理引擎的射线检测功能。
 
-但需要注意的是，检测的对象是物理碰撞器，在场景面板上与之对应的是碰撞器组件，例如 `BoxColliderComponent`。
+但需要注意的是，检测的对象是物理碰撞器，在场景面板上与之对应的是碰撞器组件，例如 `BoxCollider`。
 
 目前接口由`PhysicsSystem`提供，有以下两类：
 
@@ -80,7 +79,7 @@ Cocos Creator 3D 在`v1.0.1`版本上提供了一套基于物理引擎的射线�
 - 获取 `raycastAll` 的检测结果：`PhysicsSystem.instance.raycastResults`
 - 获取 `raycastClosest` 的检测结果：`PhysicsSystem.instance.raycastClosestResult`
 
-**注：返回对象是只读并且复用的，每次调用检测接口后会更新相应结果**。
+> **注**：返回对象是只读并且复用的，每次调用检测接口后会更新相应结果。
 
 ## 结果存储的信息
 

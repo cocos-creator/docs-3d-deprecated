@@ -2,15 +2,16 @@
 
 Cocos Creator 3D 目前为用户提供了多种碰撞器组件和通用的刚体组件，以及工具类的恒力组件。
 
-注：更多功能组件将会在后续版本持续发布，请留意版本更新公告。
+> **注**：更多功能组件将会在后续版本持续发布，请留意版本更新公告。
 
 ## 碰撞器组件
 
 碰撞器组件用于表示刚体的碰撞体形状，不同的几何形状拥有不同的属性。
 
-**注：以下属性名称的首字母在实际代码中都为小写**。
+> **注**：以下属性名称的首字母在实际代码中都为小写。
+> **注**：目前在`builtin`中只支持盒、球、胶囊体。
 
-### 盒碰撞器组件（BoxColliderComponent）
+### 盒碰撞器组件（BoxCollider）
 
 ![盒碰撞器组件](img/collider-box.jpg)
 
@@ -21,7 +22,7 @@ Cocos Creator 3D 目前为用户提供了多种碰撞器组件和通用的刚体
   **center**  |  本地坐标系下形状的原点
   **size**  |  盒的大小，即长、宽、高
 
-### 球碰撞器组件（SphereColliderComponent）
+### 球碰撞器组件（SphereCollider）
 
 ![球碰撞器组件](img/collider-sphere.jpg)
 
@@ -29,44 +30,70 @@ Cocos Creator 3D 目前为用户提供了多种碰撞器组件和通用的刚体
 ---|---
 **radius** | 球的半径
 
-### 圆柱体碰撞器组件（CylinderColliderComponent）
+### 圆柱碰撞器组件（CylinderCollider）
 
-![圆柱体碰撞器组件](img/collider-cylinder.jpg)
+![圆柱碰撞器组件](img/collider-cylinder.jpg)
 
 属性 | 解释（其它参考盒碰撞器）
 ---|---
-**direction** | 圆柱体延申方向的参考轴
-**height** | 圆柱体的总高度
-**radius** | 圆柱体两端圆面的半径
+**direction** | 圆柱延申方向的参考轴
+**height** | 圆柱的总高度
+**radius** | 圆柱两端圆面的半径
 
-**注：`builtin`暂不支持圆柱体组件**。
+### 胶囊碰撞器组件（CapsuleCollider）
 
-### 胶囊体碰撞器组件（CapsuleColliderComponent）
+![胶囊碰撞器组件](img/collider-capsule.jpg)
 
-![胶囊体碰撞器组件](img/collider-capsule.jpg)
-
-属性 | 解释（其它参考圆柱体和盒碰撞器）
+属性 | 解释（其它参考圆柱和盒碰撞器）
 ---|---
-**cylinderHeight** | 胶囊体中圆柱体的高度
-**radius** | 胶囊体中球体的半径
+**cylinderHeight** | 胶囊中圆柱的高度
+**radius** | 胶囊中球体的半径
 
-**注：`cannon.js`不支持胶囊体组件，建议使用两个球和圆柱体拼凑**。
+> **注**：`cannon.js`不支持胶囊组件，建议使用两个球和圆柱拼凑。
 
-### 网格碰撞器组件（MeshColliderComponent）
+### 圆锥碰撞器组件（ConeCollider）
+
+![圆锥碰撞器组件](img/collider-cone.jpg)
+
+属性 | 解释（其它参考圆柱和盒碰撞器）
+---|---
+**radius** | 圆锥中底面圆的半径
+**height** | 圆锥的高度
+
+### 平面碰撞器组件（PlaneCollider）
+
+![平面碰撞器组件](img/collider-plane.jpg)
+
+属性 | 解释（其它参考盒碰撞器）
+---|---
+**normal** | 平面的法向量
+**constant** | 平面沿着法向量移动的距离
+
+### 网格碰撞器组件（MeshCollider）
 
 ![网格碰撞器组件](img/collider-mesh.jpg)
 
 属性 | 解释（其它参考盒碰撞器）
 ---|---
 **mesh** | 网格碰撞器引用的网格资源，用于初始化网格碰撞体
+**convex** | 是否使用网格的凸包近似，网格顶点数应尽量小于**255**（通过它可以支持任意凸类碰撞体和动力学刚体）
 
-**注：`builtin`暂不支持网格碰撞器组件**。
+> **注**：`cannon.js`对网格碰撞器组件支持程度很差，只允许与球碰撞器产生检测。
+> **注**：`convex`功能目前仅`ammo.js`后端支持。
 
-**注：`cannon.js`对网格碰撞器组件支持程度很差，只允许与球碰撞器产生检测**。
+### 单纯形碰撞器组件（SimplexCollider）
 
-**注：`ammo.js`目前只支持静态网格碰撞体（`mass`为`0`或无`RigidBody`组件的）**。
+![单纯形碰撞器组件](img/collider-simplex.jpg)
 
-## 刚体组件（RigidBodyComponent）
+属性 | 解释（其它参考盒碰撞器）
+---|---
+**shapeType** | 单纯形类型，共有四种：点、线、三角面、四面体
+**vertex0** | 单纯形的顶点0，点（由0组成）
+**vertex1** | 单纯形的顶点1，线（由0、1组成）
+**vertex2** | 单纯形的顶点2，三角面（以此类推）
+**vertex3** | 单纯形的顶点3，四面体
+
+## 刚体组件（RigidBody）
 
 为了更便捷的模拟物理行为，Cocos Creator 3D为用户提供了刚体组件，预览图如下：
 
@@ -74,7 +101,8 @@ Cocos Creator 3D 目前为用户提供了多种碰撞器组件和通用的刚体
 
 属性 | 解释（上图的属性值都是默认值）
 ---|---
-**mass** |  物体的质量（当质量为 0 时代表静态刚体，和不加刚体组件的效果一样）
+**group** |  分组
+**mass** |  质量
 **linearDamping** |  线性阻尼，用于减小物体的线性速率
 **angularDamping** |  角阻尼，用于减小物体的旋转速率
 **isKinematic** |   是否由用户来控制该刚体，而不受物理引擎的影响
@@ -83,7 +111,7 @@ Cocos Creator 3D 目前为用户提供了多种碰撞器组件和通用的刚体
 **linerFactor** | 线性因数，可影响每个轴向的线性速度的变化
 **angularFactor** | 旋转因数，可影响每个轴向的旋转速度的变化
 
-**注：`builtin`暂不支持刚体组件**。
+> **注**：`builtin`中刚体组件暂时无效。
 
 ## 恒力组件（ConstantForce）
 
@@ -98,7 +126,7 @@ Cocos Creator 3D 目前为用户提供了多种碰撞器组件和通用的刚体
 **torque** |  在世界坐标系中对刚体施加的扭矩
 **localTorque** |   在本地坐标系中对刚体施加的扭矩
 
-**注：`builtin`暂不支持恒力组件**。
+> **注**：`builtin`中恒力组件暂时无效。
 
 ---
 

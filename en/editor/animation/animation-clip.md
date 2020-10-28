@@ -1,9 +1,9 @@
-# Edit animation sequence
+# Editing a animation sequence
 
 After the __animation clip__ is attached to the __Node__, click __Enter Animation Edit Mode__ to enter the __animation editing mode__, and then you can create some __animation frame data__ in the __animation clip__.
 
 __First__, it is important to understand about __animation properties__. __Animation properties__ include a __Node's__ own *position*, *rotation* and *other properties*, as well as the __properties__ in a __Component__.
-The __component__ contains the __component's__ __name__ and other properties, such as `cc.SpriteComponent.spriteFrame`. The corresponding blue prism on the property track is the __key frame__.
+The __component__ contains the __component's__ __name__ and other properties, such as `Sprite.spriteFrame`. The corresponding blue prism on the property track is the __key frame__.
 
 __Animation components__ can animate the __node__ and __component__ properties on the __node__ and __child nodes__, including __Properties__ in __user-defined scripts__. This means that various animation requirements can be flexibly implemented. The specific animation implementation depends on different animation needs and different steps. For an example case, please refer to the [official example-3d](https://github.com/cocos-creator/example-3d). This repository mainly introduces some common editing operations and facilitates rapid editing to achieve these effects.
 
@@ -27,13 +27,20 @@ The __animation clip__ defines the position of the data by the name of the node,
 
 - **Clear node data**: right-click the node item of the animation editor, select __Empty Data__, and select __Clear__ after the pop-up window prompts
 
+- **Copy and paste node data**:right-click the node item of the animation editor, select **Copy Node Data**, and then right-click the target node item, select **Paste Node Data**.
+
+![paste-node-data](animation-clip/paste-node-data.gif)
+
+> **Note**: When using **shortcut keys to copy and paste node data**, please **make sure that no attribute track or keyframe is currently selected**. Because when there is a selected attribute track or key frame, the animation data will be copied first.
+> If the paste target node does not exist when the attribute track in the animation data is copied, it will not be created automatically. Please create the required components in advance.
+
 - **Migrating node data**: sometimes we will rename the node after the animation is completed, which will cause problems with the animation data, as shown below:
 
-    ![](./animation-clip/missing_node.png)
+  ![](./animation-clip/missing_node.png)
 
-    At this time, we can right-click on __Migrate Data__ on the missing node, and then click on other nodes to migrate the data. If you do not want to migrate after clicking __Migrate Data__, click directly in the timeline area or click __Cancel__ in the pop-up window after clicking other nodes.
+  Next, right-click on __Migrate Data__ on the missing node, and then click on other nodes to migrate the data. If you do not want to migrate after clicking __Migrate Data__, click directly in the timeline area or click __Cancel__ in the pop-up window after clicking other nodes.
 
-    !(./animation-clip/moving_node.gif)
+  ![](./animation-clip/moving_node.gif)
 
     > **Note**: by default, node data migration will overwrite the data on the target node
 
@@ -64,9 +71,10 @@ In the process of __producing animations__, there are often some __manipulation 
 ### Selecting a key frame
 
 After clicking the __key frame__, the __key frame__ will be selected. At this time, the __key frame__ changes from *blue* to *white*. Currently, there are the following ways to select the __key frame__:
-  - Right-click a __key frame__ to select it, press __Ctrl and right-click__ to select multiple __key frames__.
-  - Drag the frame directly in the __key frame__ area to select the __key frame__.
-  - Press down the mouse in the empty area of the __key frame__ panel and drag to form a selection area to select all __key frames__ inside.
+
+- Right-click a __key frame__ to select it, press __Ctrl and right-click__ to select multiple __key frames__.
+- Drag the frame directly in the __key frame__ area to select the __key frame__.
+- Press down the mouse in the empty area of the __key frame__ panel and drag to form a selection area to select all __key frames__ inside.
 
 ### Add key frame
 
@@ -126,13 +134,14 @@ After selecting multiple __key frames__, adjust the number of interval __key fra
 
 ### Copying/pasting keyframes
 
-- After selecting the __key frame__, follow the normal __shortcut key__ __C/V__ to *copy* and *paste*. Note that the location of the __shortcut key__ __paste__ will start from the current __key frame__.
-- After selecting the __key frame__, __right-click__ on the selected __key frame__, select __Copy Key Frame__, and then __right-click__ elsewhere, select __Paste Key Frame__.
-- After selecting the __key frame__, press the __Alt__ key, hold down and drag on the selected __key frame__. The __key frame__ will be copied to the corresponding position of the move after releasing the mouse.
+- A. After selecting the __key frame__, follow the normal __shortcut key__ __C/V__ to *copy* and *paste*. Note that the location of the __shortcut key__ __paste__ will start from __the current key frame__(The red line position).
+- B. After selecting the __key frame__, __right-click__ on the selected __key frame__, select __Copy Key Frame__, and then __right-click__ elsewhere, select __Paste Key Frame__.
 
     ![](./animation-clip/copy-key frames.gif)
 
-> **Tips**: when copying and pasting a single __key frame__ within a short distance, it is recommended to use __alt + mouse dragging__; for long distance and __multiple key frames__, it is recommended to use the __shortcut key__ to *copy*, and the __right mouse__ button to *paste*.
+The copy and paste of key frame data supports cross-node and cross-clip use.
+
+> Note: There is a difference between A and B. When using the shortcut key to paste the keyframe data, it will be pasted one by one in the order of the copied track data, while right-clicking on the target property track and selecting paste will only pasted on the target property track.Please be sure to copy the correct data to produce unexpected results.
 
 For more about the design of animation sequences and the content of scripting animations, you can refer to the [Animation Clip](./../../engine/animation/animation-clip.md) documentation.
 

@@ -11,16 +11,16 @@
 
 ## 模型分组渲染
 
-分组渲染功能是通过相机组件([CameraComponent](../../editor/components/camera-component.md)) 的 Visibility 属性配合节点的 Layer 属性共同决定。用户可通过代码设置 Visibility 的值来完成分组渲染。所有节点默认都属于 DEFAULT 层，在所有相机都可见。
+分组渲染功能是通过相机组件([Camera](../../editor/components/camera-component.md)) 的 Visibility 属性配合节点的 Layer 属性共同决定。用户可通过代码设置 Visibility 的值来完成分组渲染。所有节点默认都属于 DEFAULT 层，在所有相机都可见。
 
 ## 静态合批
 
 目前静态合批方案为运行时静态合批，通过调用 `BatchingUtility.batchStaticModel` 可进行静态合批。<br>
-该函数接收一个节点，然后将该节点下的所有 `ModelComponent` 里的 `Mesh` 合并成一个，并将其挂到另一个节点下。<br>
-在合批后，将无法改变原有的 `ModelComponent` 的 transform，但可以改变合批后的根节点的 transform。只有满足以下条件的结点才能进行静态合批：
-* 子节点中只能包含 `ModelComponent`；
-* 子节点下的 `ModelComponent` 的 `Mesh` 的顶点数据结构必须一致；
-* 子节点下的 `ModelComponent` 的材质必须相同；
+该函数接收一个节点，然后将该节点下的所有 `MeshRenderer` 里的 `Mesh` 合并成一个，并将其挂到另一个节点下。<br>
+在合批后，将无法改变原有的 `MeshRenderer` 的 transform，但可以改变合批后的根节点的 transform。只有满足以下条件的结点才能进行静态合批：
+* 子节点中只能包含 `MeshRenderer`；
+* 子节点下的 `MeshRenderer` 的 `Mesh` 的顶点数据结构必须一致；
+* 子节点下的 `MeshRenderer` 的材质必须相同；
 
 ## 关于动态合批
 

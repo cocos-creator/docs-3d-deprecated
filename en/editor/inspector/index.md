@@ -70,7 +70,7 @@ For example, the color picker component:
 
 ### Reference type properties
 
-**Reference types** include objects, such as *nodes*, *components*, or *assets*. You can select and assign values ​​by **dragging** or **popping up the resource panel**.
+**Reference types** include objects, such as *nodes*, *components*, or *assets*. You can select and assign values ​​by **dragging** or **popping up the asset panel**.
 
 ![assets-panel](index/assets-panel.png)
 
@@ -90,14 +90,14 @@ When editing a Prefab Node, the header area buttons are: *disassociate*, *associ
 
 ![prefab-menu](index/prefab-menu.png)
 
-1. **Disassociation** refers to disconnecting the prefab node from the resource and turning it into a normal node, the color is no longer green.
-2. **Association** means that a Prefab resource is selected first and then associated with the current Prefab node. The new association between common nodes and Prefab assets can be found in the top menu of the editor **Edit**:
+1. **Disassociation** refers to disconnecting the prefab node from the asset and turning it into a normal node, the color is no longer green.
+2. **Association** means that a Prefab asset is selected first and then associated with the current Prefab node. The new association between common nodes and Prefab assets can be found in the top menu of the editor **Edit**:
 
 ![prefab-edit-menu](index/prefab-edit-menu.png)
 
-3. **Locating assets** refers to locating the Prefab resource on the assets panel and making it flash.
-4. **Restore from resource** means to return an edited Prefab node, along with its child nodes, to the initial state.
-5. **Update to resource** refers to updating the Prefab node data that has been edited to the Prefab resource.
+3. **Locating assets** refers to locating the Prefab asset on the assets panel and making it flash.
+4. **Restore from asset** means to return an edited Prefab node, along with its child nodes, to the initial state.
+5. **Update to asset** refers to updating the Prefab node data that has been edited to the Prefab asset.
 
 ## Editing Assets
 

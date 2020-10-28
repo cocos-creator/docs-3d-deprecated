@@ -14,7 +14,7 @@ There are three ways to **import assets**:
    - If deleted in __Cocos Creator 3D__, it will be deleted in the **file manager of the operating system**.
    - If deleted in the **file manager of the operating system**, it will be deleted in __Cocos Creator 3D__.
 
-## Resource Configuration Information .meta File
+## Asset Configuration Information .meta File
 
 All asset files will generate a **.meta** configuration file with the same name when imported. This configuration file provides the unique identification (**uuid**) of the asset in the project, small image references, cropping data of texture assets, as well as other configuration information. This data is a necessary factor in identifying a legitimate asset that __Cocos Creator 3D__ is using.
 

@@ -11,17 +11,17 @@ Two steps are required to create a terrain:
    
    ![create terrain](./images/create-terrain.png)
 
-2. Click the right mouse button in the __Assets Panel__ and click __Create -> Terrain__ in the pop-up menu to create the necessary terrain resources.
+2. Click the right mouse button in the __Assets Panel__ and click __Create -> Terrain__ in the pop-up menu to create the necessary terrain assets.
    
    ![create terrain asset](./images/createTerrainAsset.png)
 
 ## Using a terrain
-Click on the created terrain node. There is a terrain component in the __Inspector Panel__, and the created terrain resources are assigned to the __Asset__ in the terrain component.
+Click on the created terrain node. There is a terrain component in the __Inspector Panel__, and the created terrain assets are assigned to the __Asset__ in the terrain component.
 
 ![terrain inspector](./images/terrain-inspector.png)
 
 ## Editing a terrain
-After assigning the terrain resources, the editing panel can be accessed from the `Scene`. The terrain editing system includes three major functions: *management of terrains*, *sculpting terrains*, and *painting terrains*. These three functions can be switched between by clicking on the corresponding tabs. It is also possible to switch between each more using the 
+After assigning the terrain assets, the editing panel can be accessed from the `Scene`. The terrain editing system includes three major functions: *management of terrains*, *sculpting terrains*, and *painting terrains*. These three functions can be switched between by clicking on the corresponding tabs. It is also possible to switch between each more using the 
 ![terrain component](./images/toolbar.png) icon on the toolbar.
 
 ![terrain component](./images/terrain-panel.png)

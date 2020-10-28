@@ -32,7 +32,7 @@ ToggleContainer 一般不会单独使用，它需要与 `Toggle` 配合使用来
 这种方法添加的事件回调和使用编辑器添加的事件回调是一样的，都是通过代码添加。首先需要构造一个 `EventHandler` 对象，然后设置好对应的 `target`、`component`、`handler` 和 `customEventData` 参数。
 
 ```ts
-import { _decorator, Component, Event, Node, ToggleContainerComponent, EventHandler } from "cc";
+import { _decorator, Component, Event, Node, ToggleContainer, EventHandler } from "cc";
 const { ccclass, property } = _decorator;
 
 @ccclass("example")
@@ -44,7 +44,7 @@ export class example extends Component {
         containerEventHandler.handler = 'callback';
         containerEventHandler.customEventData = 'foobar';
 
-        const container = this.node.getComponent(ToggleContainerComponent);
+        const container = this.node.getComponent(ToggleContainer);
         container.checkEvents.push(containerEventHandler);
     }
 

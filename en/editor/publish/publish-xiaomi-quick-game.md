@@ -1,10 +1,12 @@
 # Publishing to Xiaomi Quick Games
 
-Starting with v1.0.3, Cocos Creator 3D officially supports the release of games to the **Xiaomi Quick Games**.
+> **Note**: Some platforms only have Chinese documentation available when visiting the platforms website. It may be necessary to use Google Translate in-order to review the documentation.
+
+__Cocos Creator 3D__ officially supports the release of games to the **Xiaomi Quick Games** platform.
 
 ## Environment Configuration
 
-- Install [Node.js](https://nodejs.org/en/download/) 8.1.4 or above, globally:
+- Install [Node.js](https://nodejs.org/en/download/) 8.1.4 or above, globally.
 
 - Make sure the **npm** version that **Node.js** comes with is **5.2.0** minimum. Upgrade the **npm** command as follows:
 
@@ -15,17 +17,17 @@ Starting with v1.0.3, Cocos Creator 3D officially supports the release of games 
   npm install npm@latest -g
   ```
 
-- Download [Xiaomi Quick Game Debugger and Xiaomi Quick Game Runtime Environment](https://forum.cocos.org/t/topic/81887), and install it on your Xiaomi device (recommended MIUI 8.5.0 or above)
+- Download [Xiaomi Quick Game Debugger and Xiaomi Quick Game Runtime Environment](https://forum.cocos.org/t/topic/81887), and install it on your Xiaomi device (recommended MIUI 8.5.0 or above).
 
 ## Release Process
 
 1. Use **Cocos Creator 3D** to open the project that needs to be released. Select **Xiaomi Quick Game** in the **Platform** dropdown of the **Build** panel.
 
-    ![](./publish-xiaomi-quick-game/build.jpg)
+  ![](./publish-xiaomi-quick-game/build.jpg)
 
-    Click on the **xiaomi-quick-game** below to expand the parameter configuration of **Xiaomi Quick Game**.
+  Click on the **xiaomi-quick-game** below to expand the parameter configuration of **Xiaomi Quick Game**.
 
-    ![](./publish-xiaomi-quick-game/xiaomi_options.jpg)
+  ![](./publish-xiaomi-quick-game/xiaomi_options.jpg)
 
 The specific filling rules for the relevant parameter configuration are as follows:
 
@@ -37,20 +39,21 @@ The specific filling rules for the relevant parameter configuration are as follo
 
 - **App Version Name**: is required. **App Version Name** is the real version, such as: **1.0.0**.
 
-- **App Version Number**: is required. **App Version Number** is different from the **App Version Name**, and the **App Version Number** is mainly used to distinguish the version update. Each time when you submit audit, the **App Version Number** is at least 1 higher than the value of the last submitted audit. It must not be equal to or less than the value of the last submitted audit, and it is recommended that the **App Version Number** be recursively incremented by 1 each time when the audit is submitted.<br>
+- **App Version Number**: is required. **App Version Number** is different from the **App Version Name**, and the **App Version Number** is mainly used to distinguish the version update. Each time when you submit audit, the **App Version Number** is at least 1 higher than the value of the last submitted audit. It must not be equal to or less than the value of the last submitted audit, and it is recommended that the **App Version Number** be recursively incremented by 1 each time when the audit is submitted.
+
   > **Note**: The **App Version Number** must be a positive integer.
 
-- **Supported Minimum Platform Version Number**: is required. According to the requirements of Xiaomi Quick Games, this value must be greater than or equal to **1050** at present.
+- **Supported Minimum Platform Version Number**: is required. According to the requirements of Xiaomi Quick Games, this value must be greater than or equal to **1050**.
 
-- **Build Sub Package**: is supported from v1.0.4 onwards and is enabled by default. For details, please refer to **Subpackage rpk** at the end of this document.
+- **Build Sub Package**: is enabled by default. For details, please refer to **Subpackage rpk** at the end of this document.
 
-- **Small Packet Mode**: is optional. The in-package volume of the quick-game contains code and resources that cannot exceed 10M, and resources can be loaded via network requests. **Small Packet Mode** is to help developers keep the script files in the quick game package, other resources are uploaded to the remote server, and downloaded from the remote server as needed. And the download, cache and version management of remote resources, Cocos Creator 3D has already helped the developer. What the developer needs to do is the following steps:
+- **Small Packet Mode**: is optional. The in-package volume of the quick-game contains code and assets that cannot exceed 10M, and assets can be loaded via network requests. **Small Packet Mode** is to help developers keep the script files in the quick game package, other assets are uploaded to the remote server, and downloaded from the remote server as needed. And the download, cache and version management of remote assets, __Cocos Creator 3D__ has already helped the developer. What the developer needs to do is the following steps:
 
   1. When building, check the **Small Packet Mode** and fill in the **Small Packet Mode Server Path**.
 
-  2. **First game resource package into the game package**, this item is optional.
+  2. **First game asset package into the game package**, this item is optional.
 
-      In the Small Packet Mode, due to too many resources on the launch scene, downloading and loading resources for a long time may result in a short black screen when entering the game for the first time. If **First game resource package into the game package** is checked, you can reduce the black screen time when you first enter the game. However, it should be noted that the `res/import` resource does not support split resource downloading at this time, and the entire `import` directory is also packaged into the first package.
+      In the Small Packet Mode, due to too many assets on the launch scene, downloading and loading assets for a long time may result in a short black screen when entering the game for the first time. If **First game asset package into the game package** is checked, you can reduce the black screen time when you first enter the game. However, it should be noted that the `res/import` asset does not support split asset downloading at this time, and the entire `import` directory is also packaged into the first package.
   
       Developers can choose whether to check this item according to their needs. Then click on **Build**.
 
@@ -58,12 +61,15 @@ The specific filling rules for the relevant parameter configuration are as follo
 
       > **Note**: If you are using the command line to compile small packet mode, remember to backup the `build/xiaomi-pack-tools/res` directory, then delete the `build/xiaomi-pack-tools/res` directory, and then perform command line compilation (`npm run build`).
 
-  At this point, the `res` directory will no longer be included in the built-up rpk, and the resources in the `res` directory will be downloaded from the filled **Small Packet Mode Server Path** through the network request.
+  At this point, the `res` directory will no longer be included in the built-up rpk, and the assets in the `res` directory will be downloaded from the filled **Small Packet Mode Server Path** through the network request.
 
-- **Keystore**: when you check the **Keystore**, the default is to build the rpk package with a certificate that comes with Cocos Creator 3D, which is used only for **debugging**. **Note**: When the rpk package is to be used to submit an audit, do not check the **Keystore** to build it.
+- **Keystore**: when you check the **Keystore**, the default is to build the rpk package with a certificate that comes with __Cocos Creator 3D__, which is used only for **debugging**. 
+
+    > **Note**: When the rpk package is to be used to submit an audit, do not check the **Keystore** to build it.
   
-  If you don't check the **Keystore**, you need to configure the signature files **certificate.pem path** and **private.pem path**, where you build a rpk package that you can **publish directly**. The developer can configure two signature files by using the **search icon** button to the right of the input box.<br>
-  **Note**: These two signature files are not recommended to be placed in the `build/xiaomi-quick-game` directory of the release package, otherwise the build directory will be emptied each time when it is built, resulting in file loss.
+  If you don't check the **Keystore**, you need to configure the signature files **certificate.pem path** and **private.pem path**, where you build a rpk package that you can **publish directly**. The developer can configure two signature files by using the **search icon** button to the right of the input box.
+
+    > **Note**: These two signature files are not recommended to be placed in the `build/xiaomi-quick-game` directory of the release package, otherwise the build directory will be emptied each time when it is built, resulting in file loss.
 
   There are two ways to generate a signature file:
 
@@ -80,7 +86,7 @@ The specific filling rules for the relevant parameter configuration are as follo
       openssl req -newkey rsa:2048 -nodes -keyout private.pem   -x509 -days 3650 -out certificate.pem
       ```
 
-      > **Note**: **openssl** can be used directly in the terminal in Linux or Mac environment, and in the Windows environment you need to install `openssl` and configure system environment variables. Restart Creator 3D after the configuration is complete.
+      > **Note**: **openssl** can be used directly in the terminal in Linux or Mac environment, and in the Windows environment you need to install `openssl` and configure system environment variables. Restart __Cocos Creator 3D__ after the configuration is complete.
 
 **2. Build**
 
@@ -123,7 +129,7 @@ Debugging can currently be initiated from the command line.
 
     ```bash
     # Specify to the editor installation directory.
-    cd F:/CocosCreator3D/resources/tools/xiaomi-pack-tools
+    cd F:/CocosCreator3D/assets/tools/xiaomi-pack-tools
     # Automatically opens the debug interface on Chrome.
     npm run debug
     # manually opens the debug interface on Chrome.
@@ -134,10 +140,14 @@ Debugging can currently be initiated from the command line.
 
 Subpackage rpk can be used according to your needs. 
 
-Subpackage loading, that is, splitting the game content into several packages according to certain rules, only downloading the necessary packages when starting up for the first time. This necessary package is called **main package**. And the developer can trigger in the main package to download other sub-packages, which can effectively reduce the time spent on the first boot. To use this function, you need to set [Subpackage Configuration](../../asset/subpackage.md) in Cocos Creator 3D, and the package will be automatically subpackaged when the setting is completed. **Note**: The size of a single subpackage/main package must not exceed **5M**, and the sum of all packages must not exceed **10M**.
+Subpackage loading, that is, splitting the game content into several packages according to certain rules, only downloading the necessary packages when starting up for the first time. This necessary package is called **main package**. And the developer can trigger in the main package to download other sub-packages, which can effectively reduce the time spent on the first boot. To use this function, you need to set [Subpackage Configuration](../../asset/subpackage.md) in __Cocos Creator 3D__, and the package will be automatically subpackaged when the setting is completed. 
+
+> **Note**: The size of a single subpackage/main package must not exceed **5M**, and the sum of all packages must not exceed **10M**.
 
 When the build is complete, an `.rpk` file is generated in the `/build/xiaomi-quick-game/dist` directory.
 
 ## Reference documentation
+
+> **Note**: Some platforms only have Chinese documentation available when visiting the platforms website. It may be necessary to use Google Translate in-order to review the documentation.
 
 - [Xiaomi Quick Game Reference documentation](https://forum.cocos.org/t/topic/81887)

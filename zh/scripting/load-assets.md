@@ -100,7 +100,7 @@ loader.loadRes("test assets/prefab", Prefab , (err: any, prefab: Prefab) => {
 
 // 加载 AnimationClip
 loader.loadRes("test assets/anim", AnimationClip , (err: any, clip: AnimationClip) => {
-    this.node.getComponent(AnimationComponent).addClip(clip, "anim");
+    this.node.getComponent(Animation).addClip(clip, "anim");
 });
 ```
 
@@ -111,7 +111,7 @@ loader.loadRes("test assets/anim", AnimationClip , (err: any, clip: AnimationCli
 ```typescript
 // 加载 SpriteFrame，image 是 ImageAsset，spriteFrame 是 image/spriteFrame，  texture 是 image/texture
 loader.loadRes("test assets/image/spriteFrame", SpriteFrame ,(err: any, spriteFrame: SpriteFrame) => {
-    this.node.getComponent(SpriteComponent).spriteFrame = spriteFrame;
+    this.node.getComponent(Sprite).spriteFrame = spriteFrame;
 });
 ```
 
@@ -120,7 +120,7 @@ loader.loadRes("test assets/image/spriteFrame", SpriteFrame ,(err: any, spriteFr
 loader.loadRes("test assets/image/texture", Texture2D ,(err: any, texture: Texture2D) => {
     const spriteFrame = new SpriteFrame();
     spriteFrame.texture = texture;
-    this.node.getComponent(SpriteComponent).spriteFrame = spriteFrame;
+    this.node.getComponent(Sprite).spriteFrame = spriteFrame;
 });
 ```
 
@@ -135,7 +135,7 @@ loader.loadRes("test assets/image/texture", Texture2D ,(err: any, texture: Textu
 // 注意 atlas 资源文件（plist）通常会和一个同名的图片文件（png）放在一个目录下, 所以需要在第二个参数指定资源类型,且加载时请加载后缀为 .plist 的文件,且需要后缀名
 loader.loadRes("test assets/atlas.plist", SpriteAtlas, (err: any, atlas: SpriteAtlas) => {
     const frame = atlas.getSpriteFrame('sheep_run_0');
-    this.node.getComponent(SpriteComponent).spriteFrame = frame;
+    this.node.getComponent(Sprite).spriteFrame = frame;
 });
 ```
 
@@ -205,7 +205,7 @@ loader.load({url: remoteUrl, type: 'png'}, function () {
 
 **首先最为重要的一点就是：资源之间是互相依赖的。**
 
-比如下图，Prefab 资源中的 Node 包含 SpriteComponent 组件, SpriteComponent 组件依赖于 SpriteFrame，SpriteFrame 资源依赖于 Texture 资源，而 Prefab，SpriteFrame 和 Texture 资源都被 loader 缓存起来了。这样做的好处是，有可能有另一个 SpriteAtlas 资源依赖于同样的一个 SpriteFrame 和 Texture，那么当你手动加载这个 SpriteAtlas 的时候，就不需要再重新请求贴图资源了，loader 会自动使用缓存中的资源。
+比如下图，Prefab 资源中的 Node 包含 Sprite 组件, Sprite 组件依赖于 SpriteFrame，SpriteFrame 资源依赖于 Texture 资源，而 Prefab，SpriteFrame 和 Texture 资源都被 loader 缓存起来了。这样做的好处是，有可能有另一个 SpriteAtlas 资源依赖于同样的一个 SpriteFrame 和 Texture，那么当你手动加载这个 SpriteAtlas 的时候，就不需要再重新请求贴图资源了，loader 会自动使用缓存中的资源。
 
 ![](load-assets/asset-dep.png)
 

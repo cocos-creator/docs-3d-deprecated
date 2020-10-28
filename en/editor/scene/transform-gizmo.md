@@ -80,4 +80,6 @@ Click the **Local/Global** button to toggle between **Local** and **Global**.
 - **Local** : use the rotation of node.
 - **Global** : use the rotation of world space.
 
-## [<-Scene Editor](index.md)
+---
+
+Continue to the [Scene Editor](index.md) documentation.

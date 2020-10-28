@@ -4,7 +4,7 @@ The __ModelComponent__ is used to display a static 3D model. Set the model grid 
 
 Properties | Functions
 --- | ---
-*mesh* | 3D model resources for rendering.
+*mesh* | 3D model assets for rendering.
 *materials* | The material used to render the model, one material corresponds to one submesh in the mesh.
 *shadowCastingMode* | Whether the model casts shadows. The planar shadow system in the scene should be enabled beforehand.
 *visibility* | Used for which camera the model will be rendered, only the camera with the same visibility as the model will render the model.
@@ -17,13 +17,13 @@ The group rendering function is determined by the `Visibility` property of the c
 
 ## Static batching
 
-The current static batching scheme is static batching at run time. Static batching can be performed by calling `BatchingUtility.batchStaticModel`. This function receives a node, and then merges all `Mesh` in `ModelComponent` under that node into one, and hangs it under another node.
+The current static batching scheme is static batching at run time. Static batching can be performed by calling `BatchingUtility.batchStaticModel`. This function receives a node, and then merges all `Mesh` in `MeshRenderer` under that node into one, and hangs it under another node.
 
-After batching, the original transform of `ModelComponent` cannot be changed, but the transform of the root node after batching can be changed. Only nodes that meet the following conditions can be statically batched:
+After batching, the original transform of `MeshRenderer` cannot be changed, but the transform of the root node after batching can be changed. Only nodes that meet the following conditions can be statically batched:
 
-  * The child node can only contain `ModelComponent`.
-  * The vertex data structure of `Mesh` of `ModelComponent` under child nodes must be consistent.
-  * The material of `ModelComponent` under child nodes must be the same.
+  * The child node can only contain `MeshRenderer`.
+  * The vertex data structure of `Mesh` of `MeshRenderer` under child nodes must be consistent.
+  * The material of `MeshRenderer` under child nodes must be the same.
 
 ## About dynamic batching
 
