@@ -30,7 +30,7 @@ local -> default
 
 ## 注册配置
 
-```json5
+```json
 {
     "name": "hello-world",
     "contributions": {

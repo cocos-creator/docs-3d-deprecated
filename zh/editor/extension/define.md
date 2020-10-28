@@ -2,7 +2,7 @@
 
 扩展包需要预先定义好所有功能以及一些基础信息，这些信息都需要填写并存放在 package.json 文件里。
 
-```json5
+```json
 {
     "name": "hello-world",
     "version": "1.0.0",
