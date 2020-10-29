@@ -16,11 +16,11 @@ UI 相机在最初设计的时候优先级是最高的，也就是所有的 3D �
 
 UI 相机与 3D 相机混排的关键因素是在 UI 相机这里。因此，我们在 UI 的根节点，也就是 Canvas 节点上的 Canvas 组件提供了一个叫 `RenderMode` 属性用来区别排序方式。接下来说一下 `RenderMode` 选项的作用：
 
-1. 当选择模式是 `OVERLAY`，则代表 UI 相机始终会往 3D 相机后排，也就是**始终会覆盖在 3D 相机的渲染内容之上**。多个 UI 相机选择此模式，可以通过属性 `Priority` 来进行 UI 相机之间排序。
+ 1. 当选择模式是 `OVERLAY`，则代表 UI 相机始终会往 3D 相机后排，也就是**始终会覆盖在 3D 相机的渲染内容之上**。多个 UI 相机选择此模式，可以通过属性 `Priority` 来进行 UI 相机之间排序。
 
 ![overlay](./priority/overlay.png)
 
-2. 当选择模式是 `INTERSPERSE`，则代表此时他可以与 3D 相机进行混排，UI、3D 相机之间的排序方式也是分别通过设置 Canvas 上的 `Priority` 和 Camera 上的 `Priority` 进行。
+ 2. 当选择模式是 `INTERSPERSE`，则代表此时他可以与 3D 相机进行混排，UI、3D 相机之间的排序方式也是分别通过设置 Canvas/Camera 组件上的 `Priority`。
 
 ![intersperse](./priority/intersperse.png)
 

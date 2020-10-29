@@ -6,7 +6,7 @@ Next, we categorize different alignment workflows according to the categories of
 
 ## Aligning Buttons and Small Elements with the Border
 
-For elements with relatively small areas like a pause menu, in-game gold coins, etc., normally, aligning them by the borders of the screen would be enough. Only a few simple steps are needed:
+For elements with relatively small areas like a pause menu, gold coins in the game, etc., normally, aligning them by the borders of the screen would be enough. Only a few simple steps are needed:
 
 1. Set these elements as child nodes of the Canvas node in __Hierarchy__
 2. Add the Widget component to element nodes
@@ -17,7 +17,7 @@ For elements with relatively small areas like a pause menu, in-game gold coins, 
 
 After setting up the Widget component like this, no matter what the actual screen resolution is, this node element will remain at the bottom left corner of the screen. The distance between the left side of the node's bounding box and left border of the screen remains at 40px. The distance between the bottom of the node's bounding box and the bottom of the screen remains at 30px.
 
-__Note__: The alignment distance provided by the Widget component refers to the border of the bounding box that is located in the same direction as the child node and parent node. For example, `Left` is ticked on in the above example to align the element with the left border, then the distance between the left border of the child node's bounding box and the left border of the parent node's (i.e., Canvas node, whose bounding box is constantly the same size as the screen) bounding box is the set value 40px.
+**__Note__**: The alignment distance provided by the Widget component refers to the border of the bounding box that is located in the same direction as the child node and parent node. For example, `Left` is ticked on in the above example to align the element with the left border, then the distance between the left border of the child node's bounding box and the left border of the parent node's (i.e., Canvas node, whose bounding box is constantly the same size as the screen) bounding box is the set value 40px.
 
 ## Nest Alignment Elements
 
@@ -51,7 +51,7 @@ When simultaneously ticking off the alignment switches in opposite directions, W
 
 ### Create a node whose size is in accordance with the size of screen
 
-Making use of the features of a node that can automatically zoom in/out, we can make the size of the node the same with that of the screen by setting up the Widget component of the node. Therefore, we don't have to put all the UI elements that need to align with the borders of screen under the Canvas node, but group them according to the requirements of function and logic.
+Making use of the features of a node that can automatically zoom in/out, we can make the size of the node the same with that of the screen by setting up the Widget component of the node.
 
 To make such a node, we should first make sure that the size of the parent node of this node remains the same with that of the screen. The Canvas node is the best choice. Next, set up the Widget component of this node according to the following method:
 
@@ -69,17 +69,17 @@ Let's take a look at a real example. Take a child node that has been directly pu
 
 ![percentage](widget-align/percentage.png)
 
-When inputting the margin value when opening alignment direction, Widget can use the pixel unit together with percentage unit according to various needs. For example, input `50%` on the `Left` direction that needs to align with the center line of the screen and input `20px` on the `Right` direction that needs to align with the borders of the screen; when calculating the position and size of the child node at last, all the margins will be positioned after being converted to pixcel distance according to the size of the parent node.
+When inputting the margin value when opening alignment direction, Widget can use the pixel unit together with percentage unit according to various needs. For example, input `50%` on the `Left` direction that needs to align with the center of screen and input `20px` on the `Right` direction that needs to align with the right of screen; when calculating the position and size of the child node at last, all the margins will be positioned after being converted to pixel distance according to the size of the parent node.
 
-Making use of the percentage alignment distance, we can create UI elements that can zoom in/out infinitely according to the size of the screen. Exerting your imagination, fitting a thousand types of Android phones with one set of resources will be a piece of cake!
+Making use of the percentage alignment distance, we can create UI elements that can zoom in/out infinitely according to the size of the screen. Exerting your imagination, fitting a thousand types of phones with one set of resources will be a piece of cake!
 
 ## Update alignment and optimization strategies for every frame at runtime
 
 Widget component is generally used to locate the position of each element when the scene is initialized on the target device, but once the scene is initialized, we often do not need to use the Widget component for alignment. The `alignOnce` property is used to ensure that the Widget component only performs alignment and positioning at initialization, and no longer consumes time for alignment at runtime.
 
-If the `alignOnce` is selected, and the alignment is performed once when the component is initialized, the engine will automatically set the `enabled` property of the Widget component to `false` to disable the automatically update for subsequent every frame to avoid repeated positioning.
+If the alignment mode `alignOnce` is selected, and the alignment is performed once when the component is initialized, the engine will automatically set the `enabled` property of the Widget component to `false` to disable the automatically update for subsequent every frame.
 
-If you need real-time positioning at runtime, you need to manually disable the `alignOnce` (set to `false`). Or when you need to update and align each frame at runtime, manually traverse the Widget that need to be aligned and set their `enabled` property to `true`.
+If you need to change at runtime, you need to manually set the alignment mode to `always`. Or when you need to update and align each frame at runtime, manually traverse the Widget that need to be aligned and set their `enabled` property to `true`.
 
 For scene with many UI elements, ensuring that the `alignOnce` option of the Widget component is enabled can greatly improve the running performance of the scene.
 

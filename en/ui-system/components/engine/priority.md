@@ -22,7 +22,7 @@ The key factor of the mixed sorting of the **UI camera** and the **3D camera** i
 
 ![overlay](./priority/overlay.png)
 
-2. When the selection mode is __INTERSPERSE__, it is possible to mix and sort with the **3D camera**. The sorting method between **UI camera** and the **3D camera** is done by setting __Priority__ on the `Canvas`.
+2. When the selection mode is __INTERSPERSE__, it is possible to mix and sort with the **3D camera**. The sorting method between **UI camera** and the **3D camera** is done by setting __Priority__ on the `Canvas\Camera` component.
 
 ![intersperse](./priority/intersperse.png)
 
