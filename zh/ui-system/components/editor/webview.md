@@ -38,7 +38,7 @@ WebView 的脚本接口请参考 [WebView API](../../../api/zh/classes/WebView.h
 | LOADED         | 表示网页加载已经完毕。   |
 | ERROR          | 表示网页加载出错了。     |
 
-详情可参考 [WebView 事件](../../../api/zh/classes/WebView.html#%E4%BA%8B%E4%BB%B6) 或者参考引擎自带的 example-cases 测试例中的 [10_webview](https://github.com/cocos-creator/example-cases/tree/v2.4.3/assets/cases/02_ui/10_webview)。
+详情可参考 [WebView 事件](../../../api/zh/classes/WebView.html#%E4%BA%8B%E4%BB%B6) 或者参考引擎自带的 test-cases-3d 测试例中的 [22.webview](https://github.com/cocos-creator/test-cases-3d/tree/v3.0/assets/cases/ui/22.webview)。
 
 ## 详细说明
 
@@ -57,7 +57,7 @@ WebView 的脚本接口请参考 [WebView API](../../../api/zh/classes/WebView.h
 
 ```ts
 import { _decorator, Component, WebView } from 'cc';
-const { ccclass, property } = _decorator;
+const { ccclass, type } = _decorator;
 
 @ccclass('cc.MyComponent')
 export class MyComponent extends Component {
@@ -84,11 +84,11 @@ export class MyComponent extends Component {
 
 #### 方法二
 
-通过 `webview.node.on('loaded', ...)` 的方式来添加
+通过 `webview.node.on(WebView.EventType.LOADED, ...)` 的方式来添加
 
 ```ts
 import { _decorator, Component, WebView } from 'cc';
-const { ccclass, property } = _decorator;
+const { ccclass, type } = _decorator;
 
 @ccclass('WebViewCtrl')
 export class WebViewCtrl extends Component {
@@ -96,7 +96,7 @@ export class WebViewCtrl extends Component {
     webview = null;
 
     start () {
-        this.webview.node.on('loaded', this.callback, this);
+        this.webview.node.on(WebView.EventType.LOADED, this.callback, this);
     }
 
     callback (event) {
@@ -108,7 +108,7 @@ export class WebViewCtrl extends Component {
 }
 ```
 
-同样的，你也可以注册 `loading`、`error` 事件，这些事件的回调函数的参数与 `loaded` 的参数一致。
+同样的，你也可以注册 `WebView.EventType.LOADING`、`WebView.EventType.ERROR` 事件，这些事件的回调函数的参数与 `WebView.EventType.LOADED` 的参数一致。
 
 ## 如何与 WebView 内部页面进行交互
 
@@ -116,7 +116,7 @@ export class WebViewCtrl extends Component {
 
 ```ts
 import { _decorator, Component, WebView } from 'cc';
-const { ccclass, property } = _decorator;
+const { ccclass, type } = _decorator;
 
 @ccclass('WebViewCtrl')
 export class WebViewCtrl extends Component {
@@ -141,7 +141,7 @@ export class WebViewCtrl extends Component {
 
 ```ts
 import { _decorator, Component, WebView } from 'cc';
-const { ccclass, property } = _decorator;
+const { ccclass, type } = _decorator;
 
 @ccclass('WebViewCtrl')
 export class WebViewCtrl extends Component {

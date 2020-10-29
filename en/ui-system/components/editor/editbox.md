@@ -121,3 +121,7 @@ export class example extends Component {
 ```
 
 Similarly, you can register events such as `editing-did-ended`, `text-changed`, `editing-return`, etc. The parameters of the callback function for these events are consistent with the parameters of `editing-did-began`.
+
+- [UI Basic Components](base-component.md)
+
+- [UI Renderer Components](render-component.md)

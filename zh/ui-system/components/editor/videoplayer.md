@@ -75,7 +75,7 @@ VideoPlayer 的脚本接口请参考 [VideoPlayer API](../../../api/zh/classes/V
 
 ```ts
 import { _decorator, Component, VideoPlayer } from 'cc';
-const { ccclass, property } = _decorator;
+const { ccclass, type } = _decorator;
 
 @ccclass('cc.MyComponent')
 export class MyComponent extends Component {
@@ -102,12 +102,12 @@ export class MyComponent extends Component {
 
 #### 方法二
 
-通过 `videoplayer.node.on('ready-to-play', ...)` 的方式来添加
+通过 `videoplayer.node.on(VideoPlayer.EventType.READY_TO_PLAY, ...)` 的方式来添加
 
 ```ts
 //假设我们在一个组件的 onLoad 方法里面添加事件处理回调，在 callback 函数中进行事件处理:
 import { _decorator, Component, VideoPlayer } from 'cc';
-const { ccclass, property } = _decorator;
+const { ccclass, type } = _decorator;
 
 @ccclass('VideoPlayerCtrl')
 export class VideoPlayerCtrl extends Component {
@@ -115,7 +115,7 @@ export class VideoPlayerCtrl extends Component {
     videoPlayer = null;
 
     start () {
-        this.videoplayer.node.on('ready-to-play', this.callback, this);
+        this.videoplayer.node.on(VideoPlayer.EventType.READY_TO_PLAY, this.callback, this);
     }
 
     callback (event) {
@@ -159,7 +159,7 @@ export class VideoPlayerCtrl extends Component {
 
 ```ts
 import { _decorator, Node, Component, find, VideoPlayer } from 'cc';
-const { ccclass, property } = _decorator;
+const { ccclass, type } = _decorator;
 
 @ccclass('VideoPlayerCtrl')
 export class VideoPlayerCtrl extends Component {

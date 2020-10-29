@@ -38,7 +38,7 @@ For more information, please refer to the [Component.EventHandler Class](../../.
 | LOADED| WebView is finished loading.
 | ERROR| Errors occurred when loading web pages.
 
-For more information, please refer to the [WebView Events](../../../api/en/classes/WebView.html#events) or [10_webview](https://github.com/cocos-creator/example-cases/tree/v2.4.3/assets/cases/02_ui/10_webview) of the example-cases samples bundled with Creator.
+For more information, please refer to the [WebView Events](../../../api/en/classes/WebView.html#events) or [22.webview](https://github.com/cocos-creator/test-cases-3d/tree/v3.0/assets/cases/ui/22.webview) of the test-cases-3d samples bundled with Creator.
 
 ## Details Explanation
 
@@ -57,7 +57,7 @@ This method uses the same API that editor uses to add an event callback on Butto
 
 ```ts
 import { _decorator, Component, WebView } from 'cc';
-const { ccclass, property } = _decorator;
+const { ccclass, type } = _decorator;
 
 @ccclass('cc.MyComponent')
 export class MyComponent extends Component {
@@ -84,12 +84,12 @@ export class MyComponent extends Component {
 
 #### Method two
 
-Add event callback with `webview.node.on ('loaded', ...)`
+Add event callback with `webview.node.on (WebView.EventType.LOADED, ...)`
 
 ```ts
 // Suppose we add event handling callbacks in the onLoad method of a component and perform event handling in the callback function:
 import { _decorator, Component, WebView } from 'cc';
-const { ccclass, property } = _decorator;
+const { ccclass, type } = _decorator;
 
 @ccclass('WebViewCtrl')
 export class WebViewCtrl extends Component {
@@ -97,7 +97,7 @@ export class WebViewCtrl extends Component {
     webview = null;
 
     start () {
-        this.webview.node.on('loaded', this.callback, this);
+        this.webview.node.on(WebView.EventType.LOADED, this.callback, this);
     }
 
     callback (event) {
@@ -109,7 +109,7 @@ export class WebViewCtrl extends Component {
 }
 ```
 
-Likewise, you can also register `loading`, `error` events, and the parameters of the callback function for these events are consistent with the `loaded` parameters.
+Likewise, you can also register `WebView.EventType.LOADING`, `WebView.EventType.ERROR` events, and the parameters of the callback function for these events are consistent with the `WebView.EventType.LOADED` parameters.
 
 ## How to interact with WebView internal pages
 
@@ -117,7 +117,7 @@ Likewise, you can also register `loading`, `error` events, and the parameters of
 
 ```ts
 import { _decorator, Component, WebView } from 'cc';
-const { ccclass, property } = _decorator;
+const { ccclass, type } = _decorator;
 
 @ccclass('WebViewCtrl')
 export class WebViewCtrl extends Component {
@@ -142,7 +142,7 @@ The current mechanism used by Android and iOS is to determine if the keywords in
 
 ```ts
 import { _decorator, Component, WebView } from 'cc';
-const { ccclass, property } = _decorator;
+const { ccclass, type } = _decorator;
 
 @ccclass('WebViewCtrl')
 export class WebViewCtrl extends Component {

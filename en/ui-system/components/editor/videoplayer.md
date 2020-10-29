@@ -75,7 +75,7 @@ This method uses the same API that editor uses to add an event callback on Butto
 
 ```ts
 import { _decorator, Component, VideoPlayer } from 'cc';
-const { ccclass, property } = _decorator;
+const { ccclass, type } = _decorator;
 
 @ccclass('cc.MyComponent')
 export class MyComponent extends Component {
@@ -102,12 +102,12 @@ export class MyComponent extends Component {
 
 #### Method two
 
-Add event callback with `videoplayer.node.on('ready-to-play', ...)`
+Add event callback with `videoplayer.node.on(VideoPlayer.EventType.READY_TO_PLAY, ...)`
 
 ```ts
 // Suppose we add event handling callbacks in the onLoad method of a component and perform event handling in the callback function:
 import { _decorator, Component, find, VideoPlayer } from 'cc';
-const { ccclass, property } = _decorator;
+const { ccclass, type } = _decorator;
 
 @ccclass('VideoPlayerCtrl')
 export class VideoPlayerCtrl extends Component {
@@ -115,7 +115,7 @@ export class VideoPlayerCtrl extends Component {
     videoPlayer = null;
 
     start () {
-        this.videoplayer.node.on('ready-to-play', this.callback, this);
+        this.videoplayer.node.on(VideoPlayer.EventType.READY_TO_PLAY, this.callback, this);
     }
 
     callback (event) {
@@ -156,7 +156,7 @@ Some mobile browsers or **WebView** do not allow auto-playing of videos and user
 
 ```ts
 import { _decorator, Node, Component, find, VideoPlayer } from 'cc';
-const { ccclass, property } = _decorator;
+const { ccclass, type } = _decorator;
 
 @ccclass('VideoPlayerCtrl')
 export class VideoPlayerCtrl extends Component {
