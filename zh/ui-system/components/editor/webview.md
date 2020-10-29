@@ -1,6 +1,6 @@
 # WebView 组件参考
 
-WebView 是一种显示网页的组件，该组件让你可以在游戏里面集成一个小的浏览器。由于不同平台对于 WebView 组件的授权、API、控制方式都不同，还没有形成统一的标准，所以目前只支持 Web、iOS 和 Android 平台。
+**WebView** 是一种显示网页的组件，该组件让你可以在游戏里面集成一个小的浏览器。由于不同平台对于 WebView 组件的授权、API、控制方式都不同，还没有形成统一的标准，所以目前只支持 Web、iOS 和 Android 平台。
 
 ![webview](./webview/webview.png)
 
@@ -13,9 +13,9 @@ WebView 的脚本接口请参考 [WebView API](../../../api/zh/classes/WebView.h
 | 属性          | 功能说明      |
 | -------------- | -------------- |
 | Url            | 指定一个 URL 地址，这个地址以 http 或者 https 开头，请填写一个有效的 URL 地址。 |
-| Webview Events | WebView 的回调事件，当 webview 在加载网页过程中，加载网页结束后或者加载网页出错时会调用此函数。 |
+| WebView Events | WebView 的回调事件，当 webview 在加载网页过程中，加载网页结束后或者加载网页出错时会调用此函数。 |
 
-**注意**：在 **Webview Events** 属性的 **cc.Node** 中，应该填入的是一个挂载有用户脚本组件的节点，在用户脚本中便可以根据用户需要使用相关的 WebView 事件。
+**注意：** 在 **WebView Events** 属性的 **Node** 中，应该填入的是一个挂载有用户脚本组件的节点，在用户脚本中便可以根据用户需要使用相关的 WebView 事件。
 
 ## WebView 事件
 
@@ -44,16 +44,16 @@ WebView 的脚本接口请参考 [WebView API](../../../api/zh/classes/WebView.h
 
 目前此组件只支持 Web（PC 和手机）、iOS 和 Android 平台（v2.0.0～2.0.6 版本不支持），Mac 和 Windows 平台暂时还不支持，如果在场景中使用此组件，那么在 PC 的模拟器里面预览的时候可能看不到效果。
 
-**注意**:
+**注意：**
 
-- WebView 组件暂时不支持加载指定 HTML 文件或者执行 Javascript 脚本。
-- 如果开发者在项目中未使用到 WebView 相关功能，请确保在 **项目 -> 项目设置 -> 模块设置** 中剔除 WebView 模块，以提高 iOS 的 App Store 机审成功率。如果开发者确实需要使用 WebView（或者添加的第三方 SDK 自带了 WebView），并因此 iOS 的 App Store 机审不通过，仍可尝试通过邮件进行申诉。
+- **WebView** 组件暂时不支持加载指定 HTML 文件或者执行 Javascript 脚本。
+- 如果开发者在项目中未使用到 **WebView** 相关功能，请确保在 **项目 -> 项目设置 -> 模块设置** 中剔除 **WebView** 模块，以提高 iOS 的 App Store 机审成功率。如果开发者确实需要使用 **WebView**（或者添加的第三方 SDK 自带了 **WebView**），并因此 iOS 的 App Store 机审不通过，仍可尝试通过邮件进行申诉。
 
 ### 通过脚本代码添加回调
 
 #### 方法一
 
-这种方法添加的事件回调和使用编辑器添加的事件回调是一样的，通过代码添加，你需要首先构造一个 `cc.Component.EventHandler` 对象，然后设置好对应的 `target`、`component`、`handler` 和 `customEventData` 参数。
+这种方法添加的事件回调和使用编辑器添加的事件回调是一样的，通过代码添加，你需要首先构造一个 `Component.EventHandler` 对象，然后设置好对应的 `target`、`component`、`handler` 和 `customEventData` 参数。
 
 ```ts
 import { _decorator, Component, WebView } from 'cc';
@@ -61,13 +61,13 @@ const { ccclass, property } = _decorator;
 
 @ccclass('cc.MyComponent')
 export class MyComponent extends Component {
-    @property(WebView)
+    @type(WebView)
     webview = null;
 
     start () {
         const eventHandler = new Component.EventHandler();
         eventHandler.target = newTarget; // 这个对象是你的事件处理代码组件所属的节点
-        eventHandler.component = "cc.MyComponent";
+        eventHandler.component = "MyComponent";
         eventHandler.handler = "callback";
         eventHandler.customEventData = "foobar";
         this.webview.webviewEvents.push(eventHandler);
@@ -76,7 +76,7 @@ export class MyComponent extends Component {
     // 注意参数的顺序和类型是固定的
     callback: function(webview, eventType, customEventData) {
         // webview：是一个 webview 组件对象实例
-        // eventType：等于 cc.WebView.EventType enum 里面的值
+        // eventType：等于 WebView.EventType enum 里面的值
         // customEventData：参数就等于你之前设置的 "foobar"
     }
 }
@@ -92,7 +92,7 @@ const { ccclass, property } = _decorator;
 
 @ccclass('WebViewCtrl')
 export class WebViewCtrl extends Component {
-    @property(WebView)
+    @type(WebView)
     webview = null;
 
     start () {
@@ -120,7 +120,7 @@ const { ccclass, property } = _decorator;
 
 @ccclass('WebViewCtrl')
 export class WebViewCtrl extends Component {
-    @property(WebView)
+    @type(WebView)
     webview = null;
 
     start () {
@@ -130,7 +130,7 @@ export class WebViewCtrl extends Component {
 }
 ```
 
-#### 注意: Web 平台上的跨域问题需要自行解决
+#### 注意：Web 平台上的跨域问题需要自行解决
 
 ### WebView 内部页面调用外部的代码
 
@@ -145,7 +145,7 @@ const { ccclass, property } = _decorator;
 
 @ccclass('WebViewCtrl')
 export class WebViewCtrl extends Component {
-    @property(WebView)
+    @type(WebView)
     webview = null;
 
     start () {
@@ -165,7 +165,7 @@ export class WebViewCtrl extends Component {
 }
 ```
 
-因此当你需要通过内部页面交互 WebView 时，应当设置内部页面 URL：`testkey://(后面你想要回调到 WebView 的数据)`。WebView 内部页面代码如下：
+因此当你需要通过内部页面交互 **WebView** 时，应当设置内部页面 URL：`testkey://(后面你想要回调到 WebView 的数据)`。**WebView** 内部页面代码如下：
 
 ```html
 <html>
@@ -205,3 +205,7 @@ export class WebViewCtrl extends Component {
 ```
 
 #### 再强调一遍: Web 平台上的跨域问题需要自行解决
+
+- [其他基础模块参考](base-component.md)
+
+- [渲染模块参考](render-component.md)

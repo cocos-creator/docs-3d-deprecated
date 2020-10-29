@@ -23,3 +23,7 @@ After adding the ProgressBar component, drag a node with the __Sprite__ componen
 Bar Sprite could be its own node, child node or any node that comes with the __Sprite__ component. Also, Bar Sprite can freely choose the `SIMPLE`, `SLICED` or `FILLED` render types.
 
 If the mode of the progress bar is __FILLED__, the __Type__ of __BarSprite__ should to be set to __FILLED__, otherwise a warning will appear.
+
+- [UI Basic Components](base-component.md)
+
+- [UI Renderer Components](render-component.md)

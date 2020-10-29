@@ -107,3 +107,7 @@ export class example extends Component {
 ```
 
 Similarly, you can register events such as `scrolling`, `touch-up`, `scroll-began`, etc. The parameters of the callback function for these events are consistent with the parameters of `scroll-to-top`.
+
+- [UI Basic Components](base-component.md)
+
+- [UI Renderer Components](render-component.md)

@@ -19,3 +19,7 @@ Select a node in the __Hierarchy__ panel, then click the __Add Component__ butto
 > __Note__:
 > 1. After adding the __Mask__ component to a node, all nodes in the sub tree of this node will be affected by __Mask__ during rendering.
 > 2. The `GRAPHICS_STENCIL` simply provides the __graphics__ component, which developers can use to draw custom graphics. But the node click events are still calculated based on the size of the node.
+
+- [UI Basic Components](base-component.md)
+
+- [UI Renderer Components](render-component.md)

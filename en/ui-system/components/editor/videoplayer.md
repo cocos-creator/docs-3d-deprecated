@@ -1,18 +1,18 @@
 # VideoPlayer Component Reference
 
-VideoPlayer is a component for playing videos, you could use this component for playing local video and remote videos.
+**VideoPlayer** is a component for playing videos, you could use this component for playing local video and remote videos.
 
-**Play local video**:
+**Playing local video**:
 
 ![videoplayer](./videoplayer/videoplayer.png)
 
-**Play remote video**:
+**Playing remote video**:
 
 ![videoplayer-remote](./videoplayer/videoplayer-remote.png)
 
-Click **Add Component** at the bottom of **Properties** panel and select **VideoPlayer** from **UI Component** to add the VideoPlayer component to the node.
+Click **Add Component** at the bottom of **Properties** panel and select **VideoPlayer** from **UI Component** to add the **VideoPlayer** component to the node.
 
-For more information about VideoPlayer's scripting interface, please refer to [VideoPlayer API](../../../api/en/classes/VideoPlayer.html).
+For more information about VideoPlayer's scripting interface, please refer to the [VideoPlayer API](../../../api/en/classes/VideoPlayer.html) documentation.
 
 ## VideoPlayer Properties
 
@@ -30,7 +30,7 @@ For more information about VideoPlayer's scripting interface, please refer to [V
 | Stay On Bottom       | Display video below the game view (Only available on web). |
 | Video Player Event   | The video player's callback, it will be triggered when certain event occurs. Please refer to the `VideoPlayer Event` section below or [VideoPlayerEvent API](../../../api/en/classes/VideoPlayer.html#videoplayerevent) for more details. |
 
-**Note**: In **cc.Node** of the **Video Player Event** property, you should fill in a Node that hangs the user script component, and in the user script you can use the relevant VideoPlayer event according to the user's needs.
+**Note:** In **Node** of the **Video Player Event** property, you should fill in a Node that hangs the user script component, and in the user script you can use the relevant VideoPlayer event according to the user's needs.
 
 ## VideoPlayer Event
 
@@ -43,7 +43,7 @@ For more information about VideoPlayer's scripting interface, please refer to [V
 | handler         | Specify a callback, when the video player is about to playing or paused, it will be called. There is a parameter in the callback which indicate the state of played videos.|
 | customEventData | The user specifies that any string is passed in as the last parameter of the event callback |
 
-For more information, please refer to [Component.EventHandler Class](../../../api/en/classes/Component.EventHandler.html).
+For more information, please refer to the [Component.EventHandler Class](../../../api/en/classes/Component.EventHandler.html) documentation.
 
 ### Parameter of VideoPlayerEvent
 
@@ -59,7 +59,7 @@ For more information, please refer to [Component.EventHandler Class](../../../ap
 | ERROR          | Video Trigger Error           |
 | CLICKED        | Video is clicked by the user. (Only supports Web platform.) |
 
-**Note**: On iOS platform, due to the platform limitations, the CLICKED event can't be fired when VideoPlayer is in fullscreen mode. If you want to let the Video played in fullscreen and also fire the CLICKED event properly, you should use a Widget component to hack the VideoPlayer's size.
+**Note:** On iOS platform, due to the platform limitations, the CLICKED event can't be fired when **VideoPlayer** is in fullscreen mode. If you want to let the Video played in fullscreen and also fire the CLICKED event properly, you should use a Widget component to hack the **VideoPlayer's** size.
 
 For more information, please refer to the [VideoPlayer Events](../../../api/en/classes/VideoPlayer.html#events) or [21.video-player](https://github.com/cocos-creator/test-cases-3d/tree/v3.0/assets/cases/ui/21.video-player) of the test-cases-3d samples bundled with Creator.
 
@@ -71,7 +71,7 @@ The supported video types is **mp4** format.
 
 #### Method one
 
-This method uses the same API that editor uses to add an event callback on Button component. You need to construct a `cc.Component.EventHandler` object first, and then set the corresponding `target`, `component`, `handler` and `customEventData` parameters.
+This method uses the same API that editor uses to add an event callback on Button component. You need to construct a `Component.EventHandler` object first, and then set the corresponding `target`, `component`, `handler` and `customEventData` parameters.
 
 ```ts
 import { _decorator, Component, VideoPlayer } from 'cc';
@@ -79,13 +79,13 @@ const { ccclass, property } = _decorator;
 
 @ccclass('cc.MyComponent')
 export class MyComponent extends Component {
-    @property(VideoPlayer)
+    @type(VideoPlayer)
     videoPlayer = null;
 
     start () {
         const eventHandler = new Component.EventHandler();
         eventHandler.target = newTarget;
-        eventHandler.component = "cc.MyComponent";
+        eventHandler.component = "MyComponent";
         eventHandler.handler = "callback";
         eventHandler.customEventData = "foobar";
         this.videoplayer.videoPlayerEvent.push(eventHandler);
@@ -94,7 +94,7 @@ export class MyComponent extends Component {
     // the order of parameters should not change
     callback: function(videoplayer, eventType, customEventData) {
         // videoplayer is a VideoPlayer component instance
-        // eventType is typed as cc.VideoPlayer.EventType 
+        // eventType is typed as VideoPlayer.EventType 
         // customEventData is "foobar"
     }
 }
@@ -111,7 +111,7 @@ const { ccclass, property } = _decorator;
 
 @ccclass('VideoPlayerCtrl')
 export class VideoPlayerCtrl extends Component {
-    @property(VideoPlayer)
+    @type(VideoPlayer)
     videoPlayer = null;
 
     start () {
@@ -129,15 +129,15 @@ export class VideoPlayerCtrl extends Component {
 
 Likewise, you can also register `meta-loaded`, `clicked`, `playing` events, and the parameters of the callback function for these events are consistent with the `ready-to-play` parameters.
 
-About VideoPlayer events, please refer to [VideoPlayer API](../../../api/en/classes/VideoPlayer.html) for details.
+Please refer to the [VideoPlayer API](../../../api/en/classes/VideoPlayer.html) documentation for details on VideoPlayer events..
 
-**Note**: Since the VideoPlayer is a special component, you cannot register `touch` or `mouse` events on the node with VideoPlayer component.
+**Note:** As VideoPlayer is a special component, it cannot register `touch` or `mouse` events on the node with **VideoPlayer** component.
 
 ## How to display a UI upon a video
 
 You can check the **stayOnBottom** property on the VideoPlayer in the **Properties** panel
 
-**Note**:
+**Note:**
 - This feature is only supported on Web.
 - The specific effects are not guaranteed to be consistent, depending on whether each browser supports or restricts.
 - After the **stayOnBottom** is enabled, the `clicked` event in `VideoPlayerEvent` cannot be listened normally.
@@ -148,24 +148,24 @@ For more information, please refer to the [21.video-player](https://github.com/c
 
 ## Support platform
 
-Because different platforms have different authorization, API and control methods for VideoPlayer component. And have not yet formed a unified standard, only **Web**, **iOS**, **Android**, **WeChat Mini Games**, **Facebook Instant Games** and **Google Play Instant** platforms are currently supported.
+Because different platforms have different authorization, API and control methods for **VideoPlayer** component. And have not yet formed a unified standard, only **Web**, **iOS**, **Android**, **WeChat Mini Games**, **Facebook Instant Games** and **Google Play Instant** platforms are currently supported.
 
 #### Questions about autoplay
 
 Some mobile browsers or **WebView** do not allow auto-playing of videos and users need to play the video manually in a touch event.
 
 ```ts
-import { _decorator, Component, find, VideoPlayer } from 'cc';
+import { _decorator, Node, Component, find, VideoPlayer } from 'cc';
 const { ccclass, property } = _decorator;
 
 @ccclass('VideoPlayerCtrl')
 export class VideoPlayerCtrl extends Component {
-    @property(VideoPlayer)
+    @type(VideoPlayer)
     videoPlayer = null;
 
     start () {
         let canvas = find('Canvas');
-        canvas.on('touchstart', this.playVideo, this);
+        canvas.on(Node.EventType.TOUCH_START, this.playVideo, this);
     }
 
     playVideo () {
@@ -173,3 +173,7 @@ export class VideoPlayerCtrl extends Component {
     }
 }
 ```
+
+- [UI Basic Components](base-component.md)
+
+- [UI Renderer Components](render-component.md)

@@ -1,21 +1,21 @@
 # WebView Component Reference
 
-WebView is a component for displaying web pages, you could use this component to embed a mini web browser in your games. Because different platforms have different authorization, API and control methods for WebView component. And have not yet formed a unified standard, only **Web**, **iOS**, and **Android** platforms are currently supported.
+**WebView** is a component for displaying web pages, you could use this component to embed a mini web browser in your games. Because different platforms have different authorization, API and control methods for WebView component. And have not yet formed a unified standard, only **Web**, **iOS**, and **Android** platforms are currently supported.
 
 ![webview](./webview/webview.png)
 
 Click **Add Component** at the bottom of **Properties** panel and select **WebView** from **UI Component** to add the WebView component to the node.
 
-For more information about WebView API, please refer to [WebView API](../../../api/en/classes/WebView.html) for details.
+For more information about WebView API, please refer to [WebView API](../../../api/en/classes/WebView.html) documentation.
 
 ## WebView Properties
 
 | Properties | Function Explanation
 |-------- | ----------- |
 | Url | A given URL to be loaded by the WebView, it should have a http or https prefix.
-| Webview Events | The webview's event callback, it will be triggered when certain webview event occurs.
+| WebView Events | The webview's event callback, it will be triggered when certain webview event occurs.
 
-**Note**: In **cc.Node** of the **Webview Events** property, you should fill in a Node that hangs the user script component, and in the user script you can use the relevant WebView event according to the user's needs.
+**Note:** In **Node** of the **WebView Events** property, you should fill in a Node that hangs the user script component, and in the user script you can use the relevant **WebView** event according to the user's needs.
 
 ## WebView Event
 
@@ -28,7 +28,7 @@ For more information about WebView API, please refer to [WebView API](../../../a
 |Handler| Specify a callback, when the WebView is loading the web pages, or the loading is finished or there are errors occurred. The callback will be called. For more information, please refer to `Parameter of WebViewEvents`.
 | CustomEventData | The user specifies that any string is passed in as the last parameter of the event callback. |
 
-For more information, please refer to [Component.EventHandler Class](../../../api/en/classes/Component.EventHandler.html).
+For more information, please refer to the [Component.EventHandler Class](../../../api/en/classes/Component.EventHandler.html) documentation.
 
 ### Parameter of WebViewEvents
 
@@ -44,16 +44,16 @@ For more information, please refer to the [WebView Events](../../../api/en/class
 
 Currently this component is only available on Web (Both PC and Mobile), iOS and Android (Not supported in the v2.0.0~2.0.6). You can't use it on Mac or Windows which means if you preview WebView on these platforms, there is nothing to show.
 
-**Note**:
+**Note:**
 
 - This component doesn't support load HTML file or execute Javascript.
-- If you don't use WebView related features in your project, please ensure that the WebView module is removed from the **Project -> Project Settings -> Module Config** to help your game approval go as smoothly as possible on iOS App Store. If you really needs to use WebView (or the added third-party SDK comes with WebView), and therefore the game rejected by App Store, you can still try to appeal through email.
+- If you don't use **WebView** related features in your project, please ensure that the **WebView** module is removed from the **Project -> Project Settings -> Module Config** to help your game approval go as smoothly as possible on iOS App Store. If you really needs to use WebView (or the added third-party SDK comes with **WebView**), and therefore the game rejected by App Store, you can still try to appeal through email.
 
 ### Add a callback via script
 
 #### Method one
 
-This method uses the same API that editor uses to add an event callback on Button component. You need to construct a `cc.Component.EventHandler` object first, and then set the corresponding `target`, `component`, `handler` and `customEventData` parameters.
+This method uses the same API that editor uses to add an event callback on Button component. You need to construct a `Component.EventHandler` object first, and then set the corresponding `target`, `component`, `handler` and `customEventData` parameters.
 
 ```ts
 import { _decorator, Component, WebView } from 'cc';
@@ -61,13 +61,13 @@ const { ccclass, property } = _decorator;
 
 @ccclass('cc.MyComponent')
 export class MyComponent extends Component {
-    @property(WebView)
+    @type(WebView)
     webview = null;
 
     start () {
         const eventHandler = new Component.EventHandler();
         eventHandler.target = newTarget; // This node is the one that the component that contains your event handler code belongs to
-        eventHandler.component = "cc.MyComponent";
+        eventHandler.component = "MyComponent";
         eventHandler.handler = "callback";
         eventHandler.customEventData = "foobar";
         this.webview.webviewEvents.push(eventHandler);
@@ -76,7 +76,7 @@ export class MyComponent extends Component {
     // Note that the order and type of parameters are fixed
     callback: function(webview, eventType, customEventData) {
         // here webview is a WebView component instance
-        // here the value of eventType === cc.WebView.EventType enum
+        // here the value of eventType === WebView.EventType enum
         // The customEventData parameter here is equal to the "foobar"
     }
 }
@@ -93,7 +93,7 @@ const { ccclass, property } = _decorator;
 
 @ccclass('WebViewCtrl')
 export class WebViewCtrl extends Component {
-    @property(WebView)
+    @type(WebView)
     webview = null;
 
     start () {
@@ -121,7 +121,7 @@ const { ccclass, property } = _decorator;
 
 @ccclass('WebViewCtrl')
 export class WebViewCtrl extends Component {
-    @property(WebView)
+    @type(WebView)
     webview = null;
 
     start () {
@@ -131,11 +131,11 @@ export class WebViewCtrl extends Component {
 }
 ```
 
-#### Note: Cross domain issues on Web platform need to be resolved by yourself
+#### Note: Cross-domain issues on Web platform need to be resolved by you, the developer.
 
 ### WebView internal pages call external code
 
-At present, the mechanism of Android and IOS is to determine whether the key of URL prefix is the same as that of the URL prefix by intercepting the jump, and then callback if the same.
+The current mechanism used by Android and iOS is to determine if the keywords in the URL prefix are the same, and if they are, then a callback is made.
 
 1. Setting the URL prefix keyword through `setJavascriptInterfaceScheme`
 2. The callback function is set by `setOnJSCallback`, and the function parameter is URL
@@ -146,10 +146,10 @@ const { ccclass, property } = _decorator;
 
 @ccclass('WebViewCtrl')
 export class WebViewCtrl extends Component {
-    @property(WebView)
+    @type(WebView)
     webview = null;
 
-    // Setting in onLoad will make the callback useless, so we must set the cc.WebView callback in the start cycle.
+    // Setting in onLoad will make the callback useless, so we must set the WebView callback in the start cycle.
     start () {
         // Here are the keywords that are agreed with the internal page
         // Please set the scheme with lower case, the native won't identify the uppercase char scheme.
@@ -168,7 +168,7 @@ export class WebViewCtrl extends Component {
 }
 ```
 
-So when you need to interact with WebView through an internal page, you should set the internal page URL: `testkey://(the data you want to callback to WebView later)`. WebView internal page code:
+When you need to interact with **WebView** through an internal page, you should set the internal page URL: `testkey://(the data you want to callback to WebView later)`. **WebView** internal page code:
 
 ```html
 <html>
@@ -207,4 +207,8 @@ Because of the limitations of Web platform, it can not be implemented by this me
 </html>
 ```
 
-#### Stressed once: Cross domain issues on Web platform need to be resolved by yourself
+#### Note: Stressed once more Cross-domain issues on Web platform need to be resolved by you, the developer.
+
+- [UI Basic Components](base-component.md)
+
+- [UI Renderer Components](render-component.md)

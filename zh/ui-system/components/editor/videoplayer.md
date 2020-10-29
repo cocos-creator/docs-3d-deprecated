@@ -30,7 +30,7 @@ VideoPlayer 的脚本接口请参考 [VideoPlayer API](../../../api/zh/classes/V
 | Stay On Bottom       | 永远在游戏视图最底层（该属性仅在 Web 平台生效）|
 | Video Player Event   | 视频播放回调函数，该回调函数会在特定情况被触发，比如播放中，暂时，停止和完成播放。详情见下方的 **VideoPlayer 事件** 章节或者 [VideoPlayerEvent API](../../../api/zh/classes/VideoPlayer.html#videoplayerevent)。|
 
-**注意**：在 **Video Player Event** 属性的 **cc.Node** 中，应该填入的是一个挂载有用户脚本组件的节点，在用户脚本中便可以根据用户需要使用相关的 VideoPlayer 事件。
+**注意：** 在 **Video Player Event** 属性的 **Node** 中，应该填入的是一个挂载有用户脚本组件的节点，在用户脚本中便可以根据用户需要使用相关的 VideoPlayer 事件。
 
 ## VideoPlayer 事件
 
@@ -58,7 +58,7 @@ VideoPlayer 的脚本接口请参考 [VideoPlayer API](../../../api/zh/classes/V
 | ERROR          | 处理视频时触发的错误 |
 | CLICKED        | 表示视频被用户点击了。（只支持 Web 平台）|
 
-**注意**：在 iOS 平台的全屏模式下，点击视频无法发送 CLICKED 事件。如果需要让 iOS 全屏播放并正确接受 CLICKED 事件，
+**注意：** 在 iOS 平台的全屏模式下，点击视频无法发送 CLICKED 事件。如果需要让 iOS 全屏播放并正确接受 CLICKED 事件，
 可以使用 Widget 组件把视频控件撑满。
 
 详情可参考 [VideoPlayer 事件](../../../api/zh/classes/VideoPlayer.html#%E4%BA%8B%E4%BB%B6) 或者参考引擎自带的 test-cases-3d 测试例中的 [21.video-player](https://github.com/cocos-creator/test-cases-3d/tree/v3.0/assets/cases/ui/21.video-player)。
@@ -71,7 +71,7 @@ VideoPlayer 的脚本接口请参考 [VideoPlayer API](../../../api/zh/classes/V
 
 #### 方法一
 
-这种方法添加的事件回调和使用编辑器添加的事件回调是一样的。通过代码添加，首先你需要构造一个 `cc.Component.EventHandler` 对象，然后设置好对应的 `target`、`component`、`handler` 和 `customEventData` 参数。
+这种方法添加的事件回调和使用编辑器添加的事件回调是一样的。通过代码添加，首先你需要构造一个 `Component.EventHandler` 对象，然后设置好对应的 `target`、`component`、`handler` 和 `customEventData` 参数。
 
 ```ts
 import { _decorator, Component, VideoPlayer } from 'cc';
@@ -79,13 +79,13 @@ const { ccclass, property } = _decorator;
 
 @ccclass('cc.MyComponent')
 export class MyComponent extends Component {
-    @property(VideoPlayer)
+    @type(VideoPlayer)
     videoPlayer = null;
 
     start () {
         const eventHandler = new Component.EventHandler();
         eventHandler.target = newTarget; // 这个对象是你的事件处理代码组件所属的节点
-        eventHandler.component = "cc.MyComponent";
+        eventHandler.component = "MyComponent";
         eventHandler.handler = "callback";
         eventHandler.customEventData = "foobar";
         this.videoplayer.videoPlayerEvent.push(eventHandler);
@@ -94,7 +94,7 @@ export class MyComponent extends Component {
     // 注意参数的顺序和类型是固定的
     callback: function(videoplayer, eventType, customEventData) {
         // 这里的 videoplayer 是一个 VideoPlayer 组件对象实例
-        // 这里的 eventType === cc.VideoPlayer.EventType enum 里面的值
+        // 这里的 eventType === VideoPlayer.EventType enum 里面的值
         // 这里的 customEventData 参数就等于你之前设置的 "foobar"
     }
 }
@@ -111,7 +111,7 @@ const { ccclass, property } = _decorator;
 
 @ccclass('VideoPlayerCtrl')
 export class VideoPlayerCtrl extends Component {
-    @property(VideoPlayer)
+    @type(VideoPlayer)
     videoPlayer = null;
 
     start () {
@@ -129,7 +129,7 @@ export class VideoPlayerCtrl extends Component {
 
 同样的，用户也可以注册 `meta-loaded`、`clicked`、`playing` 等事件，这些事件的回调函数的参数与 `ready-to-play` 的参数一致。
 
-**注意**：由于 VideoPlayer 是特殊的组件，所以它无法监听节点上的 **触摸** 和 **鼠标** 事件。
+**注意：** 由于 VideoPlayer 是特殊的组件，所以它无法监听节点上的 **触摸** 和 **鼠标** 事件。
 
 关于完整的 VideoPlayer 的事件列表，可以参考 [VideoPlayer API](../../../api/zh/classes/VideoPlayer.html)。
 
@@ -139,7 +139,7 @@ export class VideoPlayerCtrl extends Component {
 
 ![](videoplayer/stayonbuttom.png)
 
-**注意**：
+**注意：**
 
 - 该功能仅支持 **Web** 平台。
 - 各个浏览器具体效果无法保证一致，跟浏览器是否支持与限制有关。
@@ -158,17 +158,17 @@ export class VideoPlayerCtrl extends Component {
 一些移动端的浏览器或 **WebView** 不允许自动播放视频，用户需要在触摸事件中手动播放视频。
 
 ```ts
-import { _decorator, Component, find, VideoPlayer } from 'cc';
+import { _decorator, Node, Component, find, VideoPlayer } from 'cc';
 const { ccclass, property } = _decorator;
 
 @ccclass('VideoPlayerCtrl')
 export class VideoPlayerCtrl extends Component {
-    @property(VideoPlayer)
+    @type(VideoPlayer)
     videoPlayer = null;
 
     start () {
         let canvas = find('Canvas');
-        canvas.on('touchstart', this.playVideo, this);
+        canvas.on(Node.EventType.TOUCH_START, this.playVideo, this);
     }
 
     playVideo () {
@@ -176,3 +176,7 @@ export class VideoPlayerCtrl extends Component {
     }
 }
 ```
+
+- [其他基础模块参考](base-component.md)
+
+- [渲染模块参考](render-component.md)

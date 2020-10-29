@@ -5,3 +5,7 @@ UIMeshRenderer is a renderer component with a conversion feature that converts 3
 The UIMeshRenderer component is added by selecting the node in the __Hierarchy__ panel with the __MeshRenderer__ or classes inherited from it, then clicking the __Add Component__ button below the __Inspector__ panel and selecting __UI/Model__. And the particles are added to the particle nodes. The usual structure is as below:
 
 ![ui-model-hierachy](uimodel/ui-model-hierarchy.png)
+
+- [UI Basic Components](base-component.md)
+
+- [UI Renderer Components](render-component.md)

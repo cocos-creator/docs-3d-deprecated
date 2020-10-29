@@ -200,6 +200,9 @@
       - [UIMeshRenderer Reference](ui-system/components/editor/ui-model.md)
       - [UIOpacity Reference](ui-system/components/editor/ui-opacity.md)
       - [BlockInputEvents Reference](ui-system/components/editor/block-input-enents.md)
+      - [WebView Reference](ui-system/components/editor/webview.md)
+      - [VideoPlayer Reference](ui-system/components/editor/videoplayer.md)
+      - [SafeArea Reference](ui-system/components/editor/safearea.md)
 
 - [Scripting Guide and Event Mechanism](scripting/index.md)
    - [Script Creation](scripting/setup.md)

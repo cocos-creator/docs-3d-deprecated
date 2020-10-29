@@ -23,3 +23,7 @@ In the previous design, __Canvas__ was last rendered, meaning it could mask the 
 ## Detailed Explanation
 
 If you encounter errors in UI rendering, such as **flickering**, **unwanted artifacts** or **other graphical oddness** please refer to the [Engine priority](../engine/priority.md) documentation.
+
+- [UI Basic Components](base-component.md)
+
+- [UI Renderer Components](render-component.md)
