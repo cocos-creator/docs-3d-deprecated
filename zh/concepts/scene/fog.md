@@ -85,7 +85,3 @@ Layered Fog 在现实中还是比较常见的，高耸入云的山脉和建筑�
 Layered Fog 的示例效果图如下：
 
 ![image](./fog/layerfog.png)
-
----
-
-继续前往 [阴影](shadow.md) 说明文档。

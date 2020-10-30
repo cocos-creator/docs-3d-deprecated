@@ -76,7 +76,3 @@ skybox 组件属性如下：
 4. 最后，将完成的 CubeMap 资源拖入到 skybox 组件的 **Envmap** 属性框中，这样就完成了 CubeMap 的应用。
 
     ![CubeMap](skybox/cubemap-show.png)
-
----
-
-继续前往 [全局雾效](fog.md) 说明文档。

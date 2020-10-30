@@ -63,7 +63,3 @@ ShadowMap 是以光源为视点来渲染场景的。从光源位置出发，场�
 ShadowMap 在开启了物体 **MeshRenderer** 组件上的 **ReceiveShadow** 后，就会接收并显示其它物体产生的阴影效果。
 
 ShadowMap 一般用于要求光影效果比较真实，且较为复杂的场景。但不足之处在于如果不移动光源，那么之前生成的 Shadow Map 就可以重复使用，而一旦移动了光源，那么就需要重新计算新的 ShadowMap。
-
----
-
-继续前往 [场景](index.md) 说明文档。
