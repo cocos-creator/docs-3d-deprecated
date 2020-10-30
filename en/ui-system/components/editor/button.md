@@ -124,3 +124,6 @@ There are two ways to add a callback through the script.
         }
     }
     ```
+- [UI Basic Components](base-component.md)
+
+- [UI Renderer Components](render-component.md)

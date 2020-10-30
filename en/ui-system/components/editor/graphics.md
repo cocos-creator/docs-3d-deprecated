@@ -35,3 +35,7 @@ Select a node in the __Hierarchy__ panel, then click the __Add Component__ butto
 | [*stroke*](graphics/stroke.md) () | Stroke the path as lines |
 | [*fill*](graphics/fill.md) () | Close and fill a path's inner surface |
 | [*clear*](graphics/clear.md) () | Erase any previously drawn content. |
+
+- [UI Basic Components](base-component.md)
+
+- [UI Renderer Components](render-component.md)

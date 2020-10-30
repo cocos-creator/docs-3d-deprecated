@@ -12,3 +12,7 @@ Select a node in the __Hierarchy__ panel, then click the __Add Component__ butto
 | -------------- | ----------- |
 | *Color* | The outline color |
 | *Width* | The outline width |
+
+- [UI Basic Components](base-component.md)
+
+- [UI Renderer Components](render-component.md)

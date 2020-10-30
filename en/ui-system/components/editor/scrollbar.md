@@ -20,3 +20,7 @@ Click the __Add Component__ button at the bottom of the __Inspector__ panel and 
 The ScrollBar normally is used together with `ScrollView` instead of being used alone. Also, ScrollBar needs to assign a `Sprite` component, i.e. `Handle` in the Inspector panel.
 
 Normally we will also designate a background image to ScrollBar. This can be used to indicate the length or width of the whole ScrollBar.
+
+- [UI Basic Components](base-component.md)
+
+- [UI Renderer Components](render-component.md)
