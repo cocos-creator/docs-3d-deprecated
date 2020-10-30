@@ -1,8 +1,8 @@
 # Communicate with the panel
 
-In general, our interaction model is dominated by "extension process" and "panel" for data presentation. To the traditional Web, the "plug-in" function is the server side, and the "panel" function is the browser on the client's computer.
+In general, our interaction model is dominated by "extension process" and "panel" for data presentation. Similarly to the traditional Web, the "plug-in" function is the server side, and the "panel" function is the browser on the client's computer.
 
-In this case, there is usually no direct data sent to the panel, some of the majority is some state synchronization, using broadcast broadcast can be.
+In this case, there is usually no direct data sent to the panel, the majority is some state synchronization, just using "broadcast" to broadcast.
 
 But for simple extensions, or extensions to the browser environment, the actual functionality may be on the panel, and a request needs to be sent to the panel.
 
