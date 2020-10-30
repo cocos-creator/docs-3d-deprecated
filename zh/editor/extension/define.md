@@ -2,7 +2,7 @@
 
 扩展包需要预先定义好所有功能以及一些基础信息，这些信息都需要填写并存放在 package.json 文件里。
 
-```json5
+```json
 {
     "name": "hello-world",
     "version": "1.0.0",
@@ -64,5 +64,5 @@
 
 类型 {[name: string]: any} 可选
 
-扩展已经存在的功能，能够在定制一些其他功能模块对外开放的功能。详细信息请参看 [扩展已有功能](editor/extension/contributions.md)
+扩展已经存在的功能，能够在定制一些其他功能模块对外开放的功能。详细信息请参看 [扩展已有功能](./contributions.md)
 

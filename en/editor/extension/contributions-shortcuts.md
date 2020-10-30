@@ -1,10 +1,10 @@
 # Shortcuts
 
-The shortcut keys in the editor are managed uniformly by the "Shortcut Key Manager". Each shortcut key needs to be bound to a message. When the shortcut key is pressed, the bound message is triggered.
+The shortcut keys in the editor are managed uniformly by the **Shortcut Key Manager**. Each shortcut key needs to be bound to a message. When the shortcut key is pressed, the bound message is triggered.
 
 ## Define
 
-```json5
+```json
 {
     "name": "hello-world",
     "panels": {
@@ -31,34 +31,34 @@ The shortcut keys in the editor are managed uniformly by the "Shortcut Key Manag
 }
 ```
 
-"contributions.messages" For details, please refer to [Message](./contributions-messages.md)
+For details, please refer to the [Message](./contributions-messages.md) documentation.
 
-"contributions.shortcuts" Parameter Description:
+`contributions.shortcuts` Parameter Description:
 
 ### message
 
-Type {string} Required
+Type `{string}` Required
 
 The message bound to the shortcut key is sent when the shortcut key is triggered.
 
 ### when(experimental)
 
-Type {string} Optional
+Type `{string}` Optional
 
 **Experimental feature, this functional syntax may be adjusted**
 
 This shortcut will only be triggered under certain conditions.
 
-"panel.hello-world" will only take effect when the hello-world panel gets the focus.
+`panel.hello-world` will only take effect when the `hello-world` panel gets the focus.
 
 ### win
 
-Type {string} Required
+Type `{string}` Required
 
 On the windows platform, the monitored button.
 
 ### mac
 
-Type {string} Required
+Type `{string}` Required
 
 On MacOS, monitor keystrokes.

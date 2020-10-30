@@ -1,6 +1,6 @@
 # Extend existing functionality
 
-Cocos Creator 3D supports contributions between extensions.
+**Cocos Creator 3D** supports contributions between extensions.
 
 When we are writing an extension, we can query whether the existing functions in the editor provide the function of receiving external contributions.
 
@@ -8,16 +8,16 @@ If the function provides contributions function, you can use these functions whe
 
 ## Contribution data definition
 
-In package.JSON you can define a contribution field.
+In `package.json` the `contribution` field can be defined.
 
-```json5
+```json
 {
     "name": "hello-world",
     "contributions": {}
 }
 ```
 
-contributions Definition Specification:
+`contributions` definition:
 
 ```typescript
 interface contributions {

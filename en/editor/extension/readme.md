@@ -1,7 +1,6 @@
 # Extended editor
 
 This chapter focuses on some of the editor extensions.
-You can navigate to the sections that interest you.
 
 - [The First Extension](./first.md)
 - [Install And Share](./install.md)
