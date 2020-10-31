@@ -2,6 +2,8 @@
 
 在 3D 世界中，光与影一直都是极其重要的组成部分，它们能够丰富整个环境，质量好的阴影可以达到以假乱真的效果，并且使得整个世界具有立体感。
 
+Creator 3D 目前支持 **Planar** 和 **ShadowMap** 两种阴影类型。
+
 ![shadow](shadow/shadowExample.png)
 
 ## 开启阴影
@@ -22,9 +24,9 @@
 
 ## shadows 类型
 
-目前阴影类型包括 **Planar** 和 **ShadowMap** 两种，可在 shadows 组件的 **Type** 属性中设置。
+阴影类型可在 shadows 组件的 **Type** 属性中设置。
 
-### Planar
+### Planar shadow
 
 Planar 阴影类型一般用于较为简单的场景。
 

@@ -49,7 +49,7 @@ skybox 组件属性如下：
 
 #### 修改 Camera 的 Clear Flag
 
-若 **场景编辑器** 中天空盒的环境贴图已经可以正确显示，但是在项目运行之后仍然显示异常，此时就需要修改 Camera 组件的 **ClearFlag** 为 **SKYBOX**：
+若 **场景编辑器** 中天空盒的环境贴图已经可以正确显示，但是在项目运行之后仍然没有生效，此时就需要修改 Camera 组件的 **ClearFlag** 为 **SKYBOX**：
 
 ![](skybox/skybox-camera.png)
 

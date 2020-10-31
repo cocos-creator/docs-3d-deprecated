@@ -10,7 +10,7 @@
 
 世界坐标系也叫做绝对坐标系，在 Cocos Creator 3D 游戏开发中表示场景空间内的统一坐标体系，「世界」就用来表示我们的游戏场景。
 
-Creator 3D 的世界坐标系采用的是笛卡尔右手坐标系，当原点在 **左下角**，x 向右，y 向上，z 向外。
+Creator 3D 的世界坐标系采用的是笛卡尔右手坐标系，默认 x 向右，y 向上，z 向外。
 
 ![right hand](coord/right_hand.png)
 
@@ -27,9 +27,9 @@ Creator 3D 中的 **节点（Node）** 之间可以有父子关系的层级结�
 
 当场景中包含不同层级的节点时，会按照以下的流程确定每个节点在世界坐标系下的位置：
 
-1. 从场景根级别开始处理每个节点，上图中 NodeA 就是一个根级别节点。首先根据 NodeA 的 **位置（Position）** 属性，在世界坐标系中确定 NodeA 的本地坐标系原点位置（和 `Position` 位置一致）。
-2. 接下来处理 NodeA 的所有直接子节点，也就是上图中的 NodeB（以及其他和 NodeB 平级的节点）。根据 NodeB 的 `Position` 属性，在 NodeA 的本地坐标系中确定 NodeB 在场景空间中的坐标系原点位置。
-3. 之后不管有多少级节点，都继续按照层级高低依次处理，每个节点都使用父节点的坐标系和自身位置锚点属性来确定在场景空间中的位置。
+1. 从场景根级别开始处理每个节点，上图中 NodeA 就是一个根级别节点。首先根据 NodeA 的 **位置（Position）** 属性，在世界坐标系中确定 NodeA 的本地坐标系原点位置（也就是 `Position`）。
+2. 接下来处理 NodeA 的所有直接子节点，也就是上图中的 NodeB（以及其他和 NodeB 平级的节点）。根据 NodeB 的 `Position` 属性，在 NodeA 的本地坐标系中确定 NodeB 在世界坐标系中的位置。
+3. 之后不管有多少级节点，都继续按照层级高低依次处理，每个节点都使用父节点的坐标系和自身位置属性来确定在世界坐标系中的位置。
 
 ## 变换属性
 
@@ -45,9 +45,13 @@ Creator 3D 中的 **节点（Node）** 之间可以有父子关系的层级结�
 
 ![position](coord/position-nodeB.png)
 
-上图中节点 NodeA 的位置是 `(50, 50, 50)`，其子节点 NodeB 的位置是 `(0, 2, 0)`，可以看出来子节点 NodeB 的 `Position` 是以父节点 NodeA 的 `Position` 为坐标系原点的。
+上图中节点 NodeA 的世界坐标是 `(50, 50, 50)`，子节点 NodeB 的本地坐标是 `(0, 2, 0)`，此时若将 NodeB 移动到场景根目录，可以看到 NodeB 的世界坐标变成了 `(50, 52, 50)`：
 
-如果父节点 NodeA 改变位置，子节点 NodeB 也会跟着改变位置（世界坐标系），但是子节点 NodeB 的 `Position` 属性不会发生变化，因为子节点 NodeB 在以父节点 NodeA 的 `Position` 为原点的本地坐标系中没有发生变化。
+![position](coord/position-nodeB-world.png)
+
+由此可见，子节点 NodeB 的 `Position` 是以父节点 NodeA 的 `Position` 为坐标系原点的。
+
+如果父节点 NodeA 改变 `Position`，子节点 NodeB 也会跟着改变位置（世界坐标系），但是子节点 NodeB 的 `Position` 属性不会发生变化，因为子节点 NodeB 在以父节点 NodeA 的 `Position` 为原点的本地坐标系中没有发生变化。
 
 在 **场景编辑器** 中，可以随时使用 [移动变换工具](../../editor/scene/transform-gizmo.md#%E7%A7%BB%E5%8A%A8%E5%8F%98%E6%8D%A2%E5%B7%A5%E5%85%B7) 来改变节点位置。
 
