@@ -4,7 +4,7 @@
 
 ## Create LabelAtlas Asset
 
-In **Assets** panel right-click on a folder, and click the following context menu item **Create -> Label Atlas**. It will create a **LabelAtlas.labelatlas** asset.
+In **Assets Panel**  right-click on a folder, and click the following context menu item **Create -> Label Atlas**. It will create a **LabelAtlas.labelatlas** asset.
 
 ![create label atlas](label-atlas/create-label-atlas.png)
 
@@ -14,7 +14,7 @@ Before using **LabelAtlas** asset, you need some configurations. eg, configure a
 
 ## Configuration of LabelAtlas asset
 
-After selecting an **LabelAtlas** asset in the **Assets** panel, the **Properties** panel will display all configurable properties for the **LabelAtlas** asset.
+After selecting an **LabelAtlas** asset in the **Assets Panel**, the **Property Inspector** panel will display all configurable properties for the **LabelAtlas** asset.
 
 | Properties       | Description
 | --------------   | -----------
@@ -23,7 +23,7 @@ After selecting an **LabelAtlas** asset in the **Assets** panel, the **Propertie
 | Item Height      | Specify the height of each character
 | Start Char       | Specify the start char, even if the start char is a *space*, you also need insert a space. |
 
-When the configuration is complete, click the tick button at the top right of the **Properties** to save the settings.
+When the configuration is complete, click the tick button at the top right of the **Property Inspector** panel to save the settings.
 
 ![save label atlas](label-atlas/save-label-atlas.png)
 
