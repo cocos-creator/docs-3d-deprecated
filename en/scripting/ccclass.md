@@ -17,146 +17,146 @@ When you need the corresponding `ccclass`, you can find it by its `ccclass` name
 
 - When the `ccclass` is a component class, `Node` can find the component by its `ccclass` name.
 
-## cc 属性
+## ccattributes
 
-当装饰器 [property](#property) 应用在 cc 类的属性或访问器上时，此属性称为 cc 属性。
-与 cc 类类似，cc 属性注入了额外的信息以控制 Cocos Creator 3D 对该属性的序列化、编辑器对该属性的展示等。
+When the decorator [property](#property) is applied to a property or accessor of the `ccclass`, this property is called a `ccproperty`.
+Similar to the `ccclass`, the `ccattribute` injects additional information to control the serialization of the attribute in **Cocos Creator 3D** and the display of the attribute in the editor.
 
 ### property
 
-cc 属性的各种特性是通过 `property()` 的 cc 属性选项参数来指定的。
+Various characteristics of the `ccattribute` are specified by the `ccattribute` option parameter of `property()`.
 
-#### cc 类型
+#### cctype
 
-选项 `type` 指定了属性的 cc 类型。
+The option `type` specifies the `cctype` of the attribute.
 
-可以通过以下几种形式的参数指定类型：
+The type can be specified by the following parameters:
 
-- 构造函数。
-构造函数所指定的类型就直接作为属性的 cc 类型。
-注意，当 Javascript 内置构造函数 `Number`、`String`、`Boolean`
-用作 cc 类型时将给出警告，并且将
-分别视为 cc 类型 `CCFloat`、`CCString`、`CCBoolean`。
+- Constructor.
+  The type specified by the constructor is directly used as the `cctype` of the attribute.
 
-- Cocos Creator 3D 内置属性类型标识。
-`CCInteger`、`CCFloat`、`CCBoolean`、`CCString` 是内置属性类型标识。
-`CCInteger` 声明类型为 **Cocos Creator 3D 整数**；
-`CCFloat` 声明类型为 **Cocos Creator 3D 浮点数**；
-`CCString` 声明类型为 **Cocos Creator 3D 字符串**；
-`CCBoolean` 声明类型为 **Cocos Creator 3D 布尔值**。
+  > **Note**: when Javascript built-in constructors `Number`, `String`, `Boolean` A warning will be given when used as a `cctype`, and they are regarded as `cctype`s `CCFloat`, `CCString`, and `CCBoolean` respectively.
 
-- 数组。
-通过将构造函数、Cocos Creator 3D 内置属性类型标识或数组作为数组元素时，
-属性被指定为 **Cocos Creator 3D 数组**。
-例如 `[CCInteger]` 就将类型声明为元素为Cocos Creator 3D 整数的 Cocos Creator 3D 数组。
+- Cocos Creator 3D built-in attribute type identification. 
 
-若属性未指定 cc 类型，Cocos Creator 3D 将从属性的默认值或初始化式的求值结果推导其 cc 类型：
-- 若值的类型是 Javascript 原始类型 `number`、`string`、`boolean`，
-则其 cc 类型分别为 Cocos Creator 3D 浮点数、Cocos Creator 3D 字符串、Cocos Creator 3D 布尔值。
-- 否则，若值是对象类型，则相当于使用对象的构造函数指定了 cc 类型；
-- 否则，属性的 cc 类型是**未定义**的。
+  - `CCInteger`, `CCFloat`, `CCBoolean`, and `CCString` are built-in attribute type identifiers.
+  - `CCInteger` declares the type as **Cocos Creator 3D integer**.
+  - `CCFloat` declares the type as **Cocos Creator 3D floating point number**.
+  - `CCString` declares the type as **Cocos Creator 3D string**.
+  - `CCBoolean` declares the type as **Cocos Creator 3D Boolean**.
 
-一般地，仅需要在以下情况中需要显式地声明 cc 类型：
-- 当需要将属性显示为整数时；
-- 当属性的实际值可能是多个类型时。
+- Array.
 
-关于 cc 类型如何影响 cc 属性以及对未定义 cc 类型的属性的处理，见：
+  When using the constructor, Cocos Creator 3D built-in property type identification or array as the array element, the properties are specified as **Cocos Creator 3D** array. For example, `[CCInteger]` declares the type as a **Cocos Creator 3D** array whose elements are **Cocos Creator 3D** integers.
 
-- [属性类型](#属性参数)
-- [序列化参数](#serializable参数)
+If the attribute does not specify the `cctype`, **Cocos Creator 3D** will derive its `cctype` from the default value of the attribute or the evaluation result of the initialization formula:
 
-为了方便，额外提供了以下装饰器以快速声明 cc 类型：
+  - If the value type is Javascript primitive type `number`, `string`, `boolean`, the `cctype`s are **Cocos Creator 3D** floating point numbers, **Cocos Creator 3D** strings, and **Cocos Creator 3D** Boolean values.
+  - Otherwise, if the value is an object type, it is equivalent to using the object's constructor to specify the `cctype`.
+  - Otherwise, the `cctype` of the attribute is **undefined**.
 
-|  	| 等价于 	|
-|----------	|----------------------	|
-| @type(t) 	| @property(t) 	|
-| @integer 	| @property(CCInteger) 	|
-| @float 	| @property(CCFloat) 	|
-| @string 	| @property(CCString) 	|
-| @boolean 	| @property(CCBoolean) 	|
+Generally, you only need to explicitly declare the `cctype` in the following situations:
 
-下列代码演示了不同 cc 类型 的 cc 属性的声明：
+  - When the attribute needs to be displayed as an integer.
+  - When the actual value of the attribute may be of multiple types.
+
+For how the `cctype` affects the cc attribute and the treatment of attributes that do not define the `cctype`, see:
+
+  - [Attribute Type](#AttributeParameters)
+  - [Serialization parameter](#serializableparameter)
+
+For convenience, the following decorators are additionally provided to quickly declare the `cctype`:
+
+| Type | Equivalent to |
+|---------- |---------------------- |
+| @type(t) | @property(t) |
+| @integer | @property(CCInteger) |
+| @float | @property(CCFloat) |
+| @string | @property(CCString) |
+| @boolean | @property(CCBoolean) |
+
+The following code demonstrates the declaration of `ccattributes` of different `cctype`s:
 
 ```ts
 import { _decorator, CCInteger, Node } from "cc";
 const { ccclass, property, integer, float, boolean, string, type } = _decorator;
 @ccclass
 class MyClass {
-    @integer // 声明属性 _id 的 cc 类型为 Cocos 整数
+    @integer // Declare that the cc type of the attribute _id is a Cocos integer
     private _id = 0;
 
-    @type(Node) // 声明属性 _targetNode 的 cc 类型为 Node
+    @type(Node) // Declare that the cc type of the attribute _targetNode is Node
     private _targetNode: Node | null = null;
 
-    @type([Node]) // 声明属性 _children 的 cc 类型为 Node 数组
+    @type([Node]) // declare the cc type of the attribute _children as a Node array
     private _children: Node[] = [];
 
     @property
-    private _count = 0; // 未声明 cc 类型，从初始化式的求值结果推断为 Cocos 浮点数
+    private _count = 0; // the cc type is not declared, and it is inferred from the evaluation result of the initializer as a Cocos floating point number
 
-    @type(String) // 警告：不应该使用构造函数 String
-                      // 等价于 CCString
+    @type(String) // Warning: Constructor should not be used String
+                // equivalent to CCString
     private _name: string = '';
 
     @property
-    private _children2 = []; // 未声明 cc 类型，从初始化式的求值结果推断为：元素为未定义的 Cocos 数组
+    private _children2 = []; // The cc type is not declared, inferred from the evaluation result of the initializer: the element is an undefined Cocos array
 }
 ```
 
-#### 默认值
+#### Defaults
 
-选项 `default` 指定了 cc 属性的默认值。
+The option `default` specifies the default value of the cc attribute.
 
-### 构造函数
+### Constructor
 
-#### 通过 constructor 定义
+#### Defined by constructor
 
-CCClass 的构造函数使用 `constructor` 定义，为了保证反序列化能始终正确运行，`constructor` **不允许**定义**构造参数**。
+The constructor of `CCClass` is defined by `constructor`. To ensure that deserialization can always run correctly, `constructor` **is not allowed to define **constructor parameters**.
 
-> 开发者如果确实需要使用构造参数，可以通过 `arguments` 获取，但要记得如果这个类会被序列化，必须保证构造参数都缺省的情况下仍然能 new 出对象。
+> **Note**: If developers really need to use construction parameters, they can get them through `arguments`, but remember that if this class will be serialized, you must ensure that the object can still be new when the construction parameters are all default.
 
-## 判断类型
+## Judging the type
 
-### 判断实例
+### Judgment example
 
-需要做类型判断时，可以用 TypeScript 原生的 `instanceof`：
+When you need to make type judgments, you can use **TypeScript** native `instanceof`:
 
 ```typescript
 class Sub extends Base {
 
 }
 let sub = new Sub();
-console.log(sub instanceof Sub);  //true
-console.log(sub instanceof Base);  //true
+console.log(sub instanceof Sub);  // true
+console.log(sub instanceof Base);  // true
 
 let base = new Base();
 console.log(base instanceof Sub);  // false
 ```
 
-## 成员
+## Members
 
-### 实例变量
+### Instance variables
 
-在构造函数中定义的实例变量不能被序列化，也不能在 **属性检查器** 中查看。
+The instance variables defined in the constructor cannot be serialized, nor can they be viewed in the **Property Inspector**.
 
 ```typescript
-class Sprite{
-    //声明变量
+class Sprite {
+    // Declare variables
     url: string;
     id: number;
     constructor() {
-        //赋值
+        // assignment
         this.url = "";
         this.id = 0;
     }
 }
 ```
 
-> 如果是私有的变量，建议在变量名前面添加下划线 `_` 以示区分。
+> **Note**: If it is a private variable, it is recommended to add an underscore `_` in front of the variable name to distinguish it.
 
-### 实例方法
+### Example Method
 
-实例方法请在原型对象中声明：
+Please declare the instance method in the prototype object:
 
 ```typescript
 class Sprite{
@@ -164,19 +164,19 @@ class Sprite{
     constructor() {
         this.text = "this is sprite"
     }
-    // 声明一个名叫 "print" 的实例方法
+    // Declare an instance method named "print"
     print(){
         console.log(this.text);
     }
 }
 let obj = new Sprite();
-// 调用实例方法
+// call instance method
 obj.print();
 ```
 
-### 静态变量和静态方法
+### Static variables and static methods
 
-静态变量或静态方法可以用 `statics` 声明：
+Static variables or static methods can be declared with `static`:
 
 ```typescript
 class Sprite{
@@ -187,7 +187,7 @@ class Sprite{
 }
 ```
 
-静态成员会被子类继承，继承时会将父类的静态变量**浅拷贝**给子类，因此：
+Static members will be inherited by subclasses. When inheriting, the static variables of the parent class will be **shallowly copied** to the subclass. Therefore:
 
 ```typescript
 class Object{
@@ -197,10 +197,10 @@ class Object{
 class Sprite extends Object{
 
 }
-console.log(Sprite.count);    // 结果是 11，因为 count 继承自 Object 类
+console.log(Sprite.count);    // The result is 11 because count inherits from the Object class
 
 Sprite.range.w = 200;
-console.log(Object.range.w);  // 结果是 200，因为 Sprite.range 和 Object.range 指向同一个对象
+console.log(Object.range.w);  // The result is 200, because Sprite.range and Object.range point to the same object
 ```
 
 如果你不需要考虑继承，私有的静态成员也可以直接定义在类的外面：
