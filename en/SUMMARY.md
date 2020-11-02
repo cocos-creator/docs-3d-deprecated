@@ -234,6 +234,7 @@
     - [Compressed textures](asset/compress-texture.md)
     - [Atlas](asset/atlas.md)
     - [Auto Atlas](asset/auto-atlas.md)
+    - [Label Atlas](asset/label-atlas.md)
     - [Render-texture](asset/render-texture.md)
   - [Prefab](asset/prefab.md)
   - [Scripting](asset/script.md)

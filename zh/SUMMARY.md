@@ -212,6 +212,7 @@
     - [压缩纹理](asset/compress-texture.md)
     - [图集资源](asset/atlas.md)
     - [自动图集资源](asset/auto-atlas.md)
+    - [艺术数字资源](asset/label-atlas.md)
     - [渲染纹理](asset/render-texture.md)
   - [预制资源](asset/prefab.md)
   - [脚本资源](asset/script.md)
