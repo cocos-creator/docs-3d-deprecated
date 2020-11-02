@@ -147,9 +147,11 @@ pass.setUniform(hColor, color);
 
 ## Builtins
 编辑器内置了几种常见类型的材质，无光照的 unlit、基于物理光照的 standard、skybox、粒子、sprite 等；<br>
-这里列一下最常用的 standard 各项参数的意义和用法：
+作为一个快速的参考，下面是 `builtin-standard` 材质各着色参数的组装流程：
 
-![Standard](builtin-standard.png)
+![Standard](standard-material-graph.png)
+
+下面是对应参数和宏定义的完整列表：
 
 | Property | Info |
 |:--------:|:----:|
@@ -160,9 +162,9 @@ pass.setUniform(hColor, color);
 | alphaThreshold | 启用 alpha test 后的测试阈值，<br>输出 alpha 值低于此值的像素会被 discard 掉 |
 | normalMap | 法线贴图，用于增加表面细节 |
 | normalStrenth | 法线贴图强度，控制凹凸质感的强弱 |
-| pbrMap | PBR 材质参数贴图：环境遮挡、粗糙度和金属度<br>采样结果会和常数项相乘<br>每种属性具体的来源通道由 XX_CHANNEL 宏定义决定 |
-| metallicRoughnessMap | 独立的粗糙度和金属度贴图<br>采样结果会和常数项相乘<br>每种属性具体的来源通道由 XX_CHANNEL 宏定义决定 |
-| occlusionMap | 独立的环境遮挡贴图<br>采样结果会和常数项相乘<br>每种属性具体的来源通道由 XX_CHANNEL 宏定义决定 |
+| pbrMap | PBR 材质参数贴图：环境遮挡、粗糙度和金属度<br>采样结果会和常数项相乘 |
+| metallicRoughnessMap | 独立的粗糙度和金属度贴图<br>采样结果会和常数项相乘 |
+| occlusionMap | 独立的环境遮挡贴图<br>采样结果会和常数项相乘 |
 | occlusion | 环境遮挡常数 |
 | roughness | 粗糙度常数 |
 | metallic | 金属度常数 |
@@ -174,12 +176,8 @@ pass.setUniform(hColor, color);
 
 | Macro | Info |
 |:-----:|:----:|
-| USE_BATCHING | 是否启用动态合批？ |
-| USE_SKINNING | 是否启用顶点蒙皮？ **对蒙皮模型必须启用** |
-| ANIMATION_BAKED | 是否使用预烘焙的蒙皮动画？ |
-| ROUGHNESS_CHANNEL | 指定粗糙度的数据来源通道，默认为 r 通道 |
-| METALLIC_CHANNEL | 指定金属度的数据来源通道，默认为 g 通道 |
-| AO_CHANNEL | 指定 AO 的数据来源通道，默认为 b 通道 |
+| USE_BATCHING | 是否启用动态 VB 合并式合批？ |
+| USE_INSTANCING | 是否启用动态 instancing？ |
 | HAS_SECOND_UV | 是否存在第二套 UV？ |
 | ALBEDO_UV | 指定采样漫反射贴图使用的 uv，默认为第一套 |
 | EMISSIVE_UV | 指定采样自发光贴图使用的 uv，默认为第一套 |
@@ -188,5 +186,7 @@ pass.setUniform(hColor, color);
 | USE_ALPHA_TEST | 是否开启透明测试（镂空效果）？ |
 | USE_ALBEDO_MAP | 是否使用漫反射贴图？ |
 | USE_NORMAL_MAP | 是否使用法线贴图？ |
-| USE_PBR_MAP | 是否使用 PBR 材质参数贴图？ |
+| USE_PBR_MAP | 是否使用 PBR 参数三合一贴图？（**按 glTF 标准，RGB 通道必须分别对应遮挡、粗糙和金属度**） |
+| USE_METALLIC_ROUGHNESS_MAP | 是否使用金属粗糙二合一贴图？（**按 glTF 标准，GB 通道必须分别对应粗糙和金属度**） |
+| USE_OCCLUSION_MAP | 是否使用遮挡贴图？（**按 glTF 标准，只会使用 R 通道**） |
 | USE_EMISSIVE_MAP | 是否使用自发光贴图？ |
