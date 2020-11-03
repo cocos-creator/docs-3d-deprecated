@@ -1,20 +1,20 @@
 # LabelAtlas Asset
 
-**LabelAtlas** asset is a user defined asset, it's used for configuring LabelAtlas.
+**LabelAtlas** asset is a user-defined asset, it's used for configuring a **LabelAtlas**.
 
 ## Create LabelAtlas Asset
 
-In **Assets Panel**  right-click on a folder, and click the following context menu item **Create -> Label Atlas**. It will create a **LabelAtlas.labelatlas** asset.
+In the **Assets Panel** right-click on a folder, and click the context menu item **Create -> Label Atlas**. It will create a **LabelAtlas.labelatlas** asset.
 
 ![create label atlas](label-atlas/create-label-atlas.png)
 
-Before using **LabelAtlas** asset, you need some configurations. eg, configure a pre-drawn picture that contains the font style, as shown below:
+Before using the **LabelAtlas** asset, it needs some configuration. Configure a pre-drawn picture that contains the font style, as shown below:
 
 ![](label-atlas/raw_texture_file.png)
 
 ## Configuration of LabelAtlas asset
 
-After selecting an **LabelAtlas** asset in the **Assets Panel**, the **Property Inspector** panel will display all configurable properties for the **LabelAtlas** asset.
+After selecting a **LabelAtlas** asset in the **Assets Panel**, the **Property Inspector** panel will display all configurable properties for the **LabelAtlas** asset.
 
 | Properties       | Description
 | --------------   | -----------
@@ -29,4 +29,4 @@ When the configuration is complete, click the tick button at the top right of th
 
 ## Using LabelAtlas asset
 
-It's quite simple to use the **LabelAtlas** asset. You just need setup a new Label component and drag the **LabelAtlas** asset to the **Font** attribute of the Label component. Please refer to [Label Component](../ui-system/components/editor/label.md) for details.
+It's quite simple to use the **LabelAtlas** asset. You just need setup a new Label component and drag the **LabelAtlas** asset to the **Font** attribute of the Label component. Please refer to the [Label Component](../ui-system/components/editor/label.md) documentation for details.
