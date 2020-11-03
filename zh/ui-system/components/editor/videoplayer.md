@@ -135,7 +135,13 @@ export class VideoPlayerCtrl extends Component {
 
 ## 如何实现 UI 在 VideoPlayer 上渲染
 
-可通过 **属性检查器** 中勾选 VideoPlayer 组件上的 **stayOnBottom** 属性。
+可通过以下三个步骤实现 UI 在 VideoPlayer 上显示：
+
+1. 确保 **项目设置** Macro Config 中的 **ENABLE_TRANSPARENT_CANVAS** 为勾选状态（设置 Canvas 背景支持 alpha 通道）
+
+![](videoplayer/ENABLE_TRANSPARENT_CANVAS.png)
+
+2. 可通过 **属性检查器** 中勾选 VideoPlayer 组件上的 **stayOnBottom** 属性。
 
 ![](videoplayer/stayonbuttom.png)
 
