@@ -4,6 +4,10 @@
 
 ![spot light](spot-light.jpg)
 
+To use the `Spotlights`,please refer to the [Spotlights API](https://docs.cocos.com/creator3d/api/en/classes/component_light.spotlight.html).
+
+## Spotlights Properties
+
 | Parameter | Description |
 |:-------:|:---:|
 | Color | Light source color |

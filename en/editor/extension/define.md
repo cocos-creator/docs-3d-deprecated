@@ -20,7 +20,7 @@ The extension package needs to be pre-defined with some basic information that n
         }
     },
 
-    "contributes": {}
+    "contributions": {}
 }
 ```
 
@@ -60,7 +60,7 @@ Type `{[name: string]: PanelInfo}` Optional
 
 Panel information defined in the extension. You can use `Editor.Panel.open('hello-world.list');` to open the defined panel. For more information, please refer to the [Panel](./panel.md) documentation.
 
-## contributes
+## contributions
 
 Type `{[name: string]: any}` Optional
 

@@ -8,6 +8,8 @@ The __Camera__'s visual range is composed of __6__ planes forming a **Frustum**,
 
 ![camera view](camera/camera-view.gif)
 
+To use the `Camera`,please refer to the [Camera API](https://docs.cocos.com/creator3d/api/en/classes/component_camera.camera.html).
+
 ## Camera components
 
 The __Camera Component__ is an important functional component that we use to present a __Scene__.

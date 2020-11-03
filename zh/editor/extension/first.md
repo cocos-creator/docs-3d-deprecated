@@ -4,8 +4,9 @@
 
 ## 创建并安装扩展
 
-找到 ~/.CocosEditor3D/packages Windows 用户为 C:\Users\${你的用户名}\.CocosEditor3D\packages），或者 ${你的项目路径}/packages 文件夹，如果文件夹不存在，则新建这个文件夹。
-在这个文件夹里新创建一个空的文件夹，并命名为 "hello-world"，并在文件夹内创建 browser.js 和 package.json 两个文件。
+找到 **~/.CocosEditor3D/packages** Windows 用户为 **C:\Users\${你的用户名}\.CocosEditor3D\packages）**，或者 **${你的项目路径}/packages** 文件夹，如果文件夹不存在，则新建这个文件夹。
+
+在这个文件夹里新创建一个空的文件夹，并命名为 "hello-world"，并在文件夹内创建 `browser.js` 和 `package.json` 两个文件。
 扩展所在目录的结构大致如下：
 
 ```
@@ -44,7 +45,7 @@ hello-world
 ```
 
 现在需要在 contributions 内定义一个 messages 对象，这是编辑器消息注册的方法。
-这个消息可以绑定一个或多个的扩展内内定义的方法。
+这个消息可以绑定一个或多个的扩展内定义的方法。
 更多定义数据请参考 [消息通信](./contributions-messages.md)
 
 然后需要在 contributions 内再定义一个 menu 数组，向 menu 组件提供一个菜单的基础信息。

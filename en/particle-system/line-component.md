@@ -11,3 +11,5 @@ Properties | Features
 **tile** | Number of texture tiles.
 **offset** | The offset of the texture coordinates.
 **color** | The color of the line segment. If a gradient color is used, it indicates the color gradient along the direction of the line segment.
+
+To use the `Line`, please refer to the [Line API](https://docs.cocos.com/creator3d/api/en/classes/particle.line.html).

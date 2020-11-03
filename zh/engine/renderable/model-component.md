@@ -1,11 +1,17 @@
 # 模型组件
 
-模型组件用于显示一个静态的3D模型。通过mesh设置模型网格，通过material改变模型外观。
+模型组件用于显示一个静态的 3D 模型。通过 mesh 设置模型网格，通过 material 改变模型外观。
+
+普通模型的组件接口请参考 [MeshRenderer API](https://docs.cocos.com/creator3d/api/zh/classes/model.meshrenderer.html)。
+
+蒙皮模型的组件接口请参考 [SkinnedMeshRenderer API](https://docs.cocos.com/creator3d/api/zh/classes/model.skinnedmeshrenderer.html)
+
+## MeshRenderer 属性
 
 属性 | 功能
 --- | ---
 **mesh** | 用于渲染的3D模型资源。
-**materials** | 用于渲染模型的材质，一个材质对应mesh中的一个submesh。
+**materials** | 用于渲染模型的材质，一个材质对应mesh中的一个 submesh。
 **shadowCastingMode** | 指定当前模型是否会投射阴影，需要先在场景中启用平面阴影系统。
 **visibility** | 用于模型会被哪个摄像机渲染，只有visibility与模型相同的摄像机才会渲染该模型。
 

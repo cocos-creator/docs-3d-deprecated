@@ -6,6 +6,8 @@ Widget is a frequently used UI layout component. It can automatically align the 
 
 Click the __Add Component__ button at the bottom of the __Inspector__ panel and select __UI/Widget__ to add the Widget component to the node.
 
+To use the `Widget`, please refer to the [Widget API](https://docs.cocos.com/creator3d/api/en/classes/ui.widget.html) documentation and the [widget](https://github.com/cocos-creator/test-cases-3d/tree/master/assets/cases/ui/04.widget) scene of the test-cases-3d project.
+
 ## Widget Properties
 
 Properties | Function Explanation | Note |
@@ -75,6 +77,29 @@ To make sure you can update node's position or size during runtime:
 
 1. Set __Align Mode__ property of Widget to `ONCE`, so it will only align during onEnable process.
 2. Use Widget's API to update node's position and size, for example updating Widget's `top`, `bottom`, `left`, `right` instead of node's `x`, `y`, `width`, `height`.
+
+### Modify the alignment distance through script code
+
+```ts
+import { _decorator, Component, Widget } from 'cc';
+const { ccclass, property } = _decorator;
+
+@ccclass('Example')
+export class Example extends Component {
+    start () {
+        const widget = this.getComponent(Widget);
+        // Set the default alignment unit to px
+        widget!.bottom = 50;
+        widget!.top = 50;
+
+        // The alignment unit is%
+        widget!.isAbsoluteTop = false;
+        widget!.isAbsoluteBottom = false;
+        widget!.bottom = 0.1; // 10%
+        widget!.top = 0.1; // 10%
+    }
+}
+```
 
 - [UI Basic Components](base-component.md)
 
