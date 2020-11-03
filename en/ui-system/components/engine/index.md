@@ -1,6 +1,6 @@
 # UI Architecture
 
-The UI rendering is based on tree structure. The **Canvas** node (a node with `Canvas component`) is the root of UI. **All ui nodes must be under the Canvas node to be rendered**. The `UITransform` is the necessary condition that each UI node must have for a click or alignment strategy, etc. to take effect.
+The UI rendering is based on a tree structure. The **Canvas** node (a node with `Canvas component`) is the root of UI. **All ui nodes must be under the Canvas node to be rendered**. The `UITransform` is the necessary condition that each UI node must have for a click or alignment strategy, etc. to take effect.
 
 The UI supports 2D & 3D camera hybrid sorting. Control the sorting by switching the rendering mode and adjusting the `priority` property on the component.
 

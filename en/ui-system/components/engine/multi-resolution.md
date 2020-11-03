@@ -1,6 +1,6 @@
 # Auto fit for multi-resolution
 
-**Cocos Creator 3D** still provides the solution about adapting to screens with various resolutions with one set of assets. Generally speaking, we realize the adaptation scheme for multi-resolution through the following technology:
+**Cocos Creator 3D** still provides the solution to adapting to screens with various resolutions with one set of assets. Generally speaking, we realize the adaptation scheme for multi-resolution through the following technology:
 
 - __Canvas__ component immediately obtains the actual resolution of the device screen and appropriately adjusts the size of all the render elements in the scene.
 - __Widget__ component add to UI nodes. It can align the element with different referential positions of the target node(e.g.
