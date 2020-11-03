@@ -1,6 +1,6 @@
 ﻿# Life cycle callbacks
 
-__Cocos Creator 3D__ provides life cycle callback functions for component scripts. As long as the user defines a specific callback function, __Cocos Creator 3D__ will automatically execute related scripts in a specific period, and the user does not need to call them manually.
+__Cocos Creator__ provides life cycle callback functions for component scripts. As long as the user defines a specific callback function, __Cocos Creator__ will automatically execute related scripts in a specific period, and the user does not need to call them manually.
 
 The life cycle callback functions currently provided to users mainly include:
 

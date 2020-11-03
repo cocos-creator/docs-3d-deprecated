@@ -1,6 +1,6 @@
 # Physics Events
 
-The __physics event system__ in __Cocos Creator 3D__ includes *trigger events* and *collision events*.
+The __physics event system__ in __Cocos Creator__ includes *trigger events* and *collision events*.
 
 ## Triggers And Colliders
 

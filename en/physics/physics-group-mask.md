@@ -1,6 +1,6 @@
 # Groups And Masks
 
-In __Cocos Creator 3D__, some physics components (there are currently __rigid body components__ and __collider components__) provide interfaces for __Groups and Masks__.
+In __Cocos Creator__, some physics components (there are currently __rigid body components__ and __collider components__) provide interfaces for __Groups and Masks__.
 
 ## How does it work?
 

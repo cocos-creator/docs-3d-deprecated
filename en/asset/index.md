@@ -1,6 +1,6 @@
 # About Assets
 
-This section will introduce the overall workflow of the assets in __Cocos Creator 3D__ in detail, and explain the use of various types of assets and items that may require attention.
+This section will introduce the overall workflow of the assets in __Cocos Creator__ in detail, and explain the use of various types of assets and items that may require attention.
 
 ## Assets Manager
 
@@ -10,11 +10,11 @@ The **Assets Manager** is an important tool for accessing and managing assets, d
 
 - **Assets Workflow** - the general Assets workflow including importing assets, synchronizing assets, locating assets, etc. can be found in the [Assets Workflow](asset-workflow.md) documentation.
 - **Getting and Loading assets** - detailed instructions for getting and loading assets can be found in the [Getting and Loading assets](load-assets.md) documentation.
-- **Sub-package loading of assets** - for game sub-packaging of small game platforms, __Cocos Creator 3D__ provides developers with sub-package loading functions. For detailed instructions, please read the [Subpackage Loading](subpackage.md) documentation.
+- **Sub-package loading of assets** - for game sub-packaging of small game platforms, __Cocos Creator__ provides developers with sub-package loading functions. For detailed instructions, please read the [Subpackage Loading](subpackage.md) documentation.
 
 ## Common Assets type workflow
 
-Next we will introduce the main **Asset** types and related workflows in __Cocos Creator 3D__:
+Next we will introduce the main **Asset** types and related workflows in __Cocos Creator__:
 
 - [Scene assets](scene.md)
 - [Image Assets](image.md)

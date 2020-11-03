@@ -2,13 +2,13 @@
 
 __Skybox__, in video games, is a cube that wraps the entire scene. The __Skybox__ can render the atmosphere of the entire environment and express the environment of the entire scene. The __Skybox__ is also a very important part in the __PBR-based workflow__.
 
-The __Skybox__ in __Cocos Creator 3D__, is shown below:
+The __Skybox__ in __Cocos Creator__, is shown below:
 
 ![skybox](skybox/Skybox.png)
 
 ## Enabling Skybox
 
-Enabling the __Skybox__ effect in __Cocos Creator 3D__, takes just one step:
+Enabling the __Skybox__ effect in __Cocos Creator__, takes just one step:
 
   - The __Skybox__ panel is on the Scene node's __Properties panel__. Check the *Enabled* property to enable the __Skybox__.
   ![Open skybox](skybox/SkyboxPanel.jpg)
@@ -17,7 +17,7 @@ Enabling the __Skybox__ effect in __Cocos Creator 3D__, takes just one step:
 
 ## Modify the environment map of the Skybox
 
-Modifying the environment map of the __Skybox__ in __Cocos Creator 3D__ is done by setting a asset of type __TextureCube__. Importing from a asset into a __TextureCube__ and setting it into a __Skybox__ can be done in the following steps:
+Modifying the environment map of the __Skybox__ in __Cocos Creator__ is done by setting a asset of type __TextureCube__. Importing from a asset into a __TextureCube__ and setting it into a __Skybox__ can be done in the following steps:
 
 1. Import picture assets.
     > **Note**: This example is of a panorama. Creating a `CubeMap` is covered later in this documentation.
@@ -33,7 +33,7 @@ Modifying the environment map of the __Skybox__ in __Cocos Creator 3D__ is done 
 After completing the above steps, you should be able to see the newly replaced environment map in the editor scene.
 
 ## Confirm setting the SkyIllum parameter
-If the skybox doesn't show in the __Scene Editor__ after completing the previous step, it is highly likely that the SkyIllum parameter setting is too low. Check the parameter of `ambient -> SkyIllum` in the __Inspector Panel__ of the scene node. Generally speaking, if SkyIllum < 300, the skybox texture is not very visible. SkyIllum is 5000 is probably the light intensity of the moon at night. For a newly created __Cocos Creator 3D__ project, the default SkyIllum is 20000.
+If the skybox doesn't show in the __Scene Editor__ after completing the previous step, it is highly likely that the SkyIllum parameter setting is too low. Check the parameter of `ambient -> SkyIllum` in the __Inspector Panel__ of the scene node. Generally speaking, if SkyIllum < 300, the skybox texture is not very visible. SkyIllum is 5000 is probably the light intensity of the moon at night. For a newly created __Cocos Creator__ project, the default SkyIllum is 20000.
 
 ## Modify the Clear Flag of Camera
 After completing the above steps, although the skybox can be displayed correctly in the __Scene Editor__, it is still not visible when running. At this time, you need to modify the __Clear Flag__ of __Camera__ to `SKYBOX`, as shown below
@@ -60,7 +60,7 @@ __CubeMap__ is a kind of environment map asset for a __Skybox__. It is composed 
 
 ### Making and applying a CubeMap
 
-To make a __CubeMap__ in __Cocos Creator 3D__ and set it to a __Skybox__, follow these steps:
+To make a __CubeMap__ in __Cocos Creator__ and set it to a __Skybox__, follow these steps:
 
 1. Import the six texture map assets prepared in advance, and set these texture assets to the __Texture__ type.
 

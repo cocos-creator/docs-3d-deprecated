@@ -1,6 +1,6 @@
 # Physics Material
 
-In __Cocos Creator 3D__, the physics material is a __asset__, which records the surface information of the object. This is used to calculate the friction and elastic force of the colliding object.
+In __Cocos Creator__, the physics material is a __asset__, which records the surface information of the object. This is used to calculate the friction and elastic force of the colliding object.
 
 ## Properties of Materials
 

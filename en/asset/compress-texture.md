@@ -1,10 +1,10 @@
 # Compress texture
 
-**Cocos Creator 3D** can set the compression method required for textures directly in the editor, and then automatically compress the textures when the project is released. For the web platform, multiple image formats can be exported at the same time, and the engine will automatically download the appropriate format according to different browsers.
+**Cocos Creator** can set the compression method required for textures directly in the editor, and then automatically compress the textures when the project is released. For the web platform, multiple image formats can be exported at the same time, and the engine will automatically download the appropriate format according to different browsers.
 
 ## Configure compressed texture
 
-**Cocos Creator 3D** supports importing images in multiple formats (see the table below for details), but in an actual running game, we do not recommend using the original images as assets to load. For example, on a mobile platform, only 80% or less of the original image quality may be required, or a `.png` without the transparent channel can be converted into a `.jpg`, which can reduce the storage space required.
+**Cocos Creator** supports importing images in multiple formats (see the table below for details), but in an actual running game, we do not recommend using the original images as assets to load. For example, on a mobile platform, only 80% or less of the original image quality may be required, or a `.png` without the transparent channel can be converted into a `.jpg`, which can reduce the storage space required.
 
 | Image format | Android | iOS | Mini Game | Web  | Mac & Windows |
 | ------- | -------- | ------ | ----- | ------ | ------ |
@@ -16,7 +16,7 @@
 | ETC2 | Partially Supported | Not Supported | Not Supported | Supported Android  | Not Supported |
 | ASTC | Partially Supported  | Partially Supported | Not Supported | Partially Supported  | Mac Supported |
 
-By default, **Cocos Creator 3D** outputs the original image during build. If you need to compress an image during the build process, you can select this image in the **Assets Panel** and then manage it in the **Inspector** to edit the compress texture format of the image.
+By default, **Cocos Creator** outputs the original image during build. If you need to compress an image during the build process, you can select this image in the **Assets Panel** and then manage it in the **Inspector** to edit the compress texture format of the image.
 
 ![compress-texture](compress-texture/compress-texture.png)
 
@@ -32,7 +32,7 @@ If you want to use compressed textures, you need to turn on the **compressed tex
 
 ![compress-texture-build](compress-texture/compress-build.png)
 
-When **Cocos Creator 3D** builds the image, it will find whether the current image has been already configured to use compressed textures. If not, it will output the original image.
+When **Cocos Creator** builds the image, it will find whether the current image has been already configured to use compressed textures. If not, it will output the original image.
 
 If the configuration of the compressed texture is founded, the image will be compressed according to the configuration.The compress texture configuration in the project settings is divided into different platforms, and the support of in the actual platform is also difference. **builder** will make certain elimination and priority selection of the configured texture format according to the **actual build platform**and the current **image texture transparency channel**. You can refer to the following example to understand this rule.
 

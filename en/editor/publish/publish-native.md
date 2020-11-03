@@ -1,6 +1,6 @@
 # Publishing to native
 
-**Cocos Creator 3D** officially supports the native platform since v1.0.3, click the **Project -> Build** in the main menu to open the **Build** panel.
+**Cocos Creator** officially supports the native platform since v1.0.3, click the **Project -> Build** in the main menu to open the **Build** panel.
 
 There are four native platforms, which include **Android**, **iOS**, **Mac** and **Windows**. The options to release games on iOS, Mac and Windows will only appear on those operating systems. This means it isn't possible to publish, for example, a game to iOS from a Windows computer. Currently, all native platforms are packaged together, you can configure the parameters of each native platform in the **Build** panel, and all native platform release packages can be generated in one build.
 
@@ -51,7 +51,7 @@ Let's review the concept of the source-code engine:
 > - The first time the source-code engine builds and compiles a project, it takes a long time to compile C++ code, depending on the configuration of the computer, which may take 5~20 minutes. After the same project has been compiled once, the time required for the next recompile is greatly shortened.
 > - The projects built by the source-code engine, compiled and run using native development environment (such as Android Studio, Xcode, etc. IDE), and also can be debugged and error captured.
 
-The **Cocos Creator 3D** installation directory under `resources/3d/cocos2d-x-lite` already contains the **Cocos2d-x** source-code engine.
+The **Cocos Creator** installation directory under `resources/3d/cocos2d-x-lite` already contains the **Cocos2d-x** source-code engine.
 
 #### Polyfills
 

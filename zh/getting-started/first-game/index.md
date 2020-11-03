@@ -1,22 +1,22 @@
 # 快速上手：制作第一个游戏
 
-Cocos Creator 3D编辑器的强大之处就是可以让开发者快速的制作游戏原型。
+Cocos Creator编辑器的强大之处就是可以让开发者快速的制作游戏原型。
 
 下面我们将跟随教程制作一款名叫 **一步两步** 的魔性小游戏。这款游戏考验玩家的反应能力，根据路况选择是要跳一步还是跳两步，“一步两步，一步两步，一步一步似爪牙似魔鬼的步伐”。
 
 可以在 [这里](https://gameall3d.github.io/MindYourStep_Tutorial/index.html) 体验一下游戏的完成形态。
 
 ## 新建项目
-如果您还不了解如何获取和启动 Cocos Creator 3D，请阅读 [安装和启动](../install/index.md) 一节。
+如果您还不了解如何获取和启动 Cocos Creator，请阅读 [安装和启动](../install/index.md) 一节。
 
-1. 首先启动 Cocos Creator 3D，然后新建一个名为 **MindYourStep** 的项目，如果不知道如何创建项目，请阅读 [Hello World!](../helloworld/index.md)。
+1. 首先启动 Cocos Creator，然后新建一个名为 **MindYourStep** 的项目，如果不知道如何创建项目，请阅读 [Hello World!](../helloworld/index.md)。
 
 2. 新建项目后会看到如下的编辑器界面：
 
 ![main window](./images/main-window.png)
 
 ## 创建游戏场景
-在 Cocos Creator 3D 中，**游戏场景（Scene）** 是开发时组织游戏内容的中心，也是呈现给玩家所有游戏内容的载体。游戏场景中一般会包括以下内容：
+在 Cocos Creator 中，**游戏场景（Scene）** 是开发时组织游戏内容的中心，也是呈现给玩家所有游戏内容的载体。游戏场景中一般会包括以下内容：
 - 场景物体
 - 角色
 - UI
@@ -70,7 +70,7 @@ Cocos Creator 3D编辑器的强大之处就是可以让开发者快速的制作�
 
    ![create player script](./images/create-player-script.gif)
 
-**注意：** Cocos Creator 3D 中脚本名称就是组件的名称，这个命名是大小写敏感的！如果组件名称的大小写不正确，将无法正确通过名称使用组件！
+**注意：** Cocos Creator 中脚本名称就是组件的名称，这个命名是大小写敏感的！如果组件名称的大小写不正确，将无法正确通过名称使用组件！
 
 #### 编写脚本代码
 在打开的 PlayerController 脚本里已经有了预先设置好的一些代码块，如下所示：
@@ -97,7 +97,7 @@ export class PlayerController extends Component {
     // }
 }
 ```
-这些代码就是编写一个组件（脚本）所需的结构。具有这样结构的脚本就是 Cocos Creator 3D 中的 **组件（Component）**，他们能够挂载到场景中的节点上，提供控制节点的各种功能，更详细的脚本信息可以查看 [脚本](../../scripting/index.md)。
+这些代码就是编写一个组件（脚本）所需的结构。具有这样结构的脚本就是 Cocos Creator 中的 **组件（Component）**，他们能够挂载到场景中的节点上，提供控制节点的各种功能，更详细的脚本信息可以查看 [脚本](../../scripting/index.md)。
 
 我们在脚本中添加对鼠标事件的监听，然后让Player动起来，将PlayerController中代码做如下修改。
 ```ts
@@ -875,7 +875,7 @@ export class GameManager extends Component {
 ```
 
 ## 总结
-恭喜您完成了用 Cocos Creator 3D 制作的第一个游戏！在 [这里](https://github.com/cocos-creator/tutorial-mind-your-step-3d) 可以下载完整的工程，希望这篇快速入门教程能帮助您了解 Cocos Creator 3D 游戏开发流程中的基本概念和工作流程。如果您对编写和学习脚本编程不感兴趣，也可以直接从完成版的项目工程中把写好的脚本复制过来使用。
+恭喜您完成了用 Cocos Creator 制作的第一个游戏！在 [这里](https://github.com/cocos-creator/tutorial-mind-your-step-3d) 可以下载完整的工程，希望这篇快速入门教程能帮助您了解 Cocos Creator 游戏开发流程中的基本概念和工作流程。如果您对编写和学习脚本编程不感兴趣，也可以直接从完成版的项目工程中把写好的脚本复制过来使用。
 
 接下来您还可以继续完善游戏的各方各面，以下是一些推荐的改进方向：
 - 为游戏增加难度，当角色在原地停留1秒就算失败

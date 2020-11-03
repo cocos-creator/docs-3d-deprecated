@@ -4,7 +4,7 @@ __Currently__, model files in __FBX__ and __glTF__ formats. For how to export th
 
 ## Model importing
 
-After importing into the editor, from the outside, the corresponding model asset file can be obtained in the __Assets Panel__. It's directory structure is as follows: 
+After importing into the editor, from the outside, the corresponding model asset file can be obtained in the __Assets Panel__. It's directory structure is as follows:
 
   - The structure of a model file without animations is as follows:
 
@@ -61,7 +61,7 @@ The above image is all the animation asset information under the current model, 
 
 ## About glTF
 
-Currently, the glTF 2.0 specification is supported, but the following features are unavailable until __Cocos Creator 3D__ __v1.1__:
+Currently, the glTF 2.0 specification is supported, but the following features are unavailable until __Cocos Creator__ __v1.1__:
 
   - sparse accessor
   - morph target

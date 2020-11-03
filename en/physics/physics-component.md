@@ -1,6 +1,6 @@
 # Physics Component
 
-__Cocos Creator 3D__ currently provides users with a variety of __collider components__, common __rigid body components__, as well as __tool-type constant force components__.
+__Cocos Creator__ currently provides users with a variety of __collider components__, common __rigid body components__, as well as __tool-type constant force components__.
 
 ## Collider Component
 
@@ -93,7 +93,7 @@ Properties | Description (Other reference box colliders)
 
 ## RigidBody
 
-In order to more easily simulate physical behavior, __Cocos Creator 3D__ provides users with __rigid body components__.
+In order to more easily simulate physical behavior, __Cocos Creator__ provides users with __rigid body components__.
 
 ![RigidBody](img/rigid-body.jpg)
 

@@ -17,7 +17,7 @@ The general particle system will consist of the following parts:
 4. Particle class, which stores the properties of particles.
 5. The particle system class manages the above modules.
 
-The __Cocos Creator 3D__ particle system organizes functions in modules, including the following modules:
+The __Cocos Creator__ particle system organizes functions in modules, including the following modules:
 
 Module | Description
 ---|---

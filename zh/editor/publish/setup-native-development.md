@@ -1,6 +1,6 @@
 # 安装配置原生开发环境
 
-除了内置的 Web 版游戏发布功能外，Cocos Creator 3D 使用基于 cocos2d-x 引擎的 JSB 技术实现跨平台发布原生应用。在使用 Cocos Creator 3D 打包发布到原生平台之前，我们需要先配置好 cocos2d-x 相关的开发环境。
+除了内置的 Web 版游戏发布功能外，Cocos Creator 使用基于 cocos2d-x 引擎的 JSB 技术实现跨平台发布原生应用。在使用 Cocos Creator 打包发布到原生平台之前，我们需要先配置好 cocos2d-x 相关的开发环境。
 
 ## Android 平台相关依赖
 
@@ -28,7 +28,7 @@ java -version
 
 ### 下载安装 Android Studio
 
-Cocos Creator 3D 不支持 Eclipse 的 ANT 构建，需要使用 Android Studio 作为安卓平台的构建工具，并在 Android Studio 里下载所需的 SDK 和 NDK 包。首先请 [安装 Android Studio](http://www.android-studio.org/)。
+Cocos Creator 不支持 Eclipse 的 ANT 构建，需要使用 Android Studio 作为安卓平台的构建工具，并在 Android Studio 里下载所需的 SDK 和 NDK 包。首先请 [安装 Android Studio](http://www.android-studio.org/)。
 
 ### 下载发布 Android 平台所需的 SDK 和 NDK
 
@@ -39,7 +39,7 @@ Cocos Creator 3D 不支持 Eclipse 的 ANT 构建，需要使用 Android Studio 
 3. 在 **Android SDK Build-Tools** 里，选择最新的 build tools 版本。
 4. 勾选 **Android SDK Platform-Tools**, **Android SDK Tools** 和 **Android Support Library**
 5. 勾选 **NDK**，建议使用的版本为 **r17 - r19**。
-6. 记住窗口上方所示的 Android SDK Location 指示的目录，稍后我们需要在 Cocos Creator 3D 里填写这个 SDK 所在位置。
+6. 记住窗口上方所示的 Android SDK Location 指示的目录，稍后我们需要在 Cocos Creator 里填写这个 SDK 所在位置。
 7. 点击 **OK**，根据提示完成安装。
 
 ![sdk manager](setup-native-development/sdk-manager.jpg)
@@ -57,7 +57,7 @@ Cocos2d-x 自带的编译工具 Cocos Console 需要以下运行环境：
 
 ## 配置原生发布环境路径
 
-下载安装好开发环境依赖后，让我们回到 Cocos Creator 3D 中配置构建发布原生平台的环境路径。在主菜单中选择 `Cocos Creator 3D -> 偏好设置`，打开偏好设置窗口：
+下载安装好开发环境依赖后，让我们回到 Cocos Creator 中配置构建发布原生平台的环境路径。在主菜单中选择 `Cocos Creator -> 偏好设置`，打开偏好设置窗口：
 
 ![preference](setup-native-development/sdk.jpg)
 
@@ -82,7 +82,7 @@ Cocos2d-x 自带的编译工具 Cocos Console 需要以下运行环境：
 
     请检查 NDK 和 Android SDK 的架构和版本是否和测试用的 Android 系统相对应，另外可以尝试使用本文所用的 NDK 和 Android SDK 版本来测试。
 
-最后，如果依然打包失败，可以尝试创建一个标准的 Cocos2d-x 工程，并尝试编译，如果 Cocos2d-x 工程可以编译，而 Cocos Creator 3D 无法打包，请将 bug 通过 [论坛](https://forum.cocos.org/c/3D) 反馈给我们。
+最后，如果依然打包失败，可以尝试创建一个标准的 Cocos2d-x 工程，并尝试编译，如果 Cocos2d-x 工程可以编译，而 Cocos Creator 无法打包，请将 bug 通过 [论坛](https://forum.cocos.org/c/3D) 反馈给我们。
 
 ---
 

@@ -1,7 +1,7 @@
 {
   "name": "docs-3d",
   "version": "1.0.0",
-  "description": "This repository is for hosting Cocos Creator 3D documents.",
+  "description": "This repository is for hosting Cocos Creator documents.",
   "main": "index.js",
   "dependencies": {
     "commander": "^2.12.2",

@@ -1,6 +1,6 @@
 # Physics Introduction
 
-__Cocos Creator 3D__ currently supports the lightweight collision detection system `builtin` and the physics engine `cannon.js` with physical simulation, and the `asm.js`/`wasm` version `ammo.js` of the powerful physics engine `bullet`, also we provides users with efficient component-based workflow and convenient methods of use.
+__Cocos Creator__ currently supports the lightweight collision detection system `builtin` and the physics engine `cannon.js` with physical simulation, and the `asm.js`/`wasm` version `ammo.js` of the powerful physics engine `bullet`, also we provides users with efficient component-based workflow and convenient methods of use.
 
 ## Physics World And Elements
 
@@ -43,7 +43,7 @@ Additional physics system will be introduced in more detail through the followin
 
 Module | Description
 ---|---
-[**Physics Options**](physics-item.md) | Introduces the optional options of low-level physics engine in **Cocos Creator 3D**
+[**Physics Options**](physics-item.md) | Introduces the optional options of low-level physics engine in **Cocos Creator**
 [**Physics System**](physics-system.md) | Introduces the physics system and a series of properties and interfaces of the physics system.
 [**Physics Component**](physics-component.md) | Introduces some physics components and a series of properties on the panel.
 [**Physics Usage**](physics-use.md) | Further introduces the use of physics, events, group masks, etc.

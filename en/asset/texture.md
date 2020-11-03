@@ -8,7 +8,7 @@ ___Texture assets__ can be generated from __ImageAsset__. Some common image form
 
 __Texture2D__ is a type of __texture asset__ that is usually used for rendering of __3D models__, such as *reflection maps*, *ambient light mask maps*, etc. in model materials.
 
-__Texture2D__ in __Cocos Creator 3D__:
+__Texture2D__ in __Cocos Creator__:
 
 ![Texture2D](texture/Texture2D.jpg)
 
@@ -16,7 +16,7 @@ __Texture2D__ in __Cocos Creator 3D__:
 
 ### Adjusting the Properties of a Texture2D
 
-When importing an __ImageAsset__, it will be set to __Texture2D__ by default. At this same time, one or more sub-assets will be generated on the original asset. Click the arrow in front of the original asset to see all the sub-assets. Example: 
+When importing an __ImageAsset__, it will be set to __Texture2D__ by default. At this same time, one or more sub-assets will be generated on the original asset. Click the arrow in front of the original asset to see all the sub-assets. Example:
 
 ![View Sub-assets](texture/SubAssets.gif)
 
@@ -50,13 +50,13 @@ The usage scenario is mainly in the __Editor__ environment and for __dynamic acq
 
 ## TextureCube
 
-__TextureCube__ is a cube texture, which can be used to set the scene's [Skybox](../concepts/scene/skybox.md). It can be obtained by setting the __panorama__ __ImageAsset__ to the __TextureCube__ type. It can also be obtained by making __CubeMap__ assets. 
+__TextureCube__ is a cube texture, which can be used to set the scene's [Skybox](../concepts/scene/skybox.md). It can be obtained by setting the __panorama__ __ImageAsset__ to the __TextureCube__ type. It can also be obtained by making __CubeMap__ assets.
 
-__TextureCube__ obtained from a __panorama__ in __Cocos Creator 3D__:
+__TextureCube__ obtained from a __panorama__ in __Cocos Creator__:
 
 ![Panorama](texture/Panorama.jpg)
 
-__TextureCube__ obtained by making a __CubeMap__ in __Cocos Creator 3D__:
+__TextureCube__ obtained by making a __CubeMap__ in __Cocos Creator__:
 
 ![CubeMap](../concepts/scene/skybox/Cubemap.jpg)
 

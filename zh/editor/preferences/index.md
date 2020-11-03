@@ -1,6 +1,6 @@
 # 偏好设置
 
-**偏好设置** 面板中提供了编辑器的个性化设置，要打开 **偏好设置** 面板，请从主菜单的 `Cocos Creator 3D -> 偏好设置` 菜单进入。
+**偏好设置** 面板中提供了编辑器的个性化设置，要打开 **偏好设置** 面板，请从主菜单的 `Cocos Creator -> 偏好设置` 菜单进入。
 
 设置可以分成下列几部分：
 
@@ -47,7 +47,7 @@
 
 这个分类用于设置构建发布到原生平台（iOS, Android, Mac, Windows）时，所需的开发环境路径。
 
--   使用内置 JavaScript 引擎：是否使用 Cocos Creator 3D 安装路径下自带的 engine 路径作为 JavaScript 引擎路径。这个引擎用于场景编辑器里场景的渲染，内置组件的声明和其他 Web 环境下的引擎模块。
+-   使用内置 JavaScript 引擎：是否使用 Cocos Creator 安装路径下自带的 engine 路径作为 JavaScript 引擎路径。这个引擎用于场景编辑器里场景的渲染，内置组件的声明和其他 Web 环境下的引擎模块。
 
 -   自定义 JavaScript 引擎路径：除了使用自带的 engine，您也可以前往 [engine 仓库](https://github.com/cocos-creator/engine) 来克隆或 fork 一份引擎到本地的任意位置进行定制，然后取消勾选 使用内置 JavaScript 引擎，然后设置 JavaScript 引擎路径 到您定制好的引擎路径，就可以在编辑器中使用这份定制后的引擎了。
 

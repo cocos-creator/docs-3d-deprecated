@@ -80,7 +80,7 @@ export class test extends Component {
 
 ## Get other nodes and their components
 
-It is usually not enough to only have access to the node's own components, and scripts usually require interaction between multiple nodes. For example, a cannon that automatically aims at the player needs to constantly obtain the latest position of the player. __Cocos Creator 3D__ provides some different methods to obtain other nodes or components.
+It is usually not enough to only have access to the node's own components, and scripts usually require interaction between multiple nodes. For example, a cannon that automatically aims at the player needs to constantly obtain the latest position of the player. __Cocos Creator__ provides some different methods to obtain other nodes or components.
 
 ### Use the Property Inspector to set the node
 

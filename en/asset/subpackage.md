@@ -1,12 +1,12 @@
 # Sub-package loading
 
-As a game becomes more complex, it can get larger in size. This leaves the developer needing to balance out the package size. __Cocos Creator 3D__ supports **Sub-package loading**, which supports both the loading  __code__ and **assets**. __Sub-package loading__ currently only supports various __instant game platforms__, such as __WeChat Mini Games__.
+As a game becomes more complex, it can get larger in size. This leaves the developer needing to balance out the package size. __Cocos Creator__ supports **Sub-package loading**, which supports both the loading  __code__ and **assets**. __Sub-package loading__ currently only supports various __instant game platforms__, such as __WeChat Mini Games__.
 
 __Sub-package loading__, is the splitting the game content into several packages according to certain rules. Only the necessary packages are downloaded when first started. This necessary package is called the **main package**. The __main package__ can trigger the download of other __sub-packages__, which can effectively reduce the time taken for the first startup.
 
 ## Configuration method
 
-__Cocos Creator 3D's__ __sub-packaging__ is configured __folder by folder__. When a folder is selected, the related configuration options of the folder will appear in the **Properties Inspector**:
+__Cocos Creator's__ __sub-packaging__ is configured __folder by folder__. When a folder is selected, the related configuration options of the folder will appear in the **Properties Inspector**:
 
 ![sub-package](./subpackage/subpackage.jpg)
 
@@ -27,7 +27,7 @@ The role of **sub-packaing** will only be reflected after the project is built. 
 When building and publishing, all the **code** and **assets** in the **cases/01_graphics** sub-package folder will be processed as follows:
 
   - **Code**: all code in the **cases/01_graphics** folder will be merged into an entry script file named **01_graphics/game.js**, and these codes will be removed from the main package .
-  
+
   - **Assets**: will move the **cases/01_graphics** sub-package assets from the **res/raw-assets** folder in the release package directory to **sub-packages/01_graphics** in the release package directory under __contents__.
 
 ## Loading child packages

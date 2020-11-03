@@ -1,13 +1,13 @@
 ## Operating environment
 
-The APIs for the __Cocos Creator 3D__ engine all exist in the module `cc`. They can be imported it using standard ES6 module import syntax. Example:
+The APIs for the __Cocos Creator__ engine all exist in the module `cc`. They can be imported it using standard ES6 module import syntax. Example:
 
 ```ts
 import {
     Component, // Import class Component
     _decorator, // mport namespace _decorator
 } from "cc";
-import * as cc from "cc"; // Import the entire Cocos Creator 3D module as a namespace Cocos Creator 3D
+import * as cc from "cc"; // Import the entire Cocos Creator module as a namespace Cocos Creator
 
 @_decorator.ccclass("MyComponent")
 export class MyComponent extends Component {
@@ -17,15 +17,15 @@ export class MyComponent extends Component {
 
 ## Reserved identifier `cc`
 
-Due to historical reasons, `cc` is an identifier reserved for __Cocos Creator 3D__. Its behavior is *equivalent to* having defined an object named `cc` at the top of any module. Therefore, developers should not use `cc` as the name of any **global** object. Example:
+Due to historical reasons, `cc` is an identifier reserved for __Cocos Creator__. Its behavior is *equivalent to* having defined an object named `cc` at the top of any module. Therefore, developers should not use `cc` as the name of any **global** object. Example:
 
 ```ts
-/* const cc = {}; // Every Cocos Creator 3D script is equivalent to an implicit definition here */
+/* const cc = {}; // Every Cocos Creator script is equivalent to an implicit definition here */
 
-import * as cc from "cc"; // Error: Namespace import name cc is reserved by Cocos Creator 3D
+import * as cc from "cc"; // Error: Namespace import name cc is reserved by Cocos Creator
 
 const cc = { x: 0 };
-console.log(cc.x); // Error: The global object name cc is reserved by Cocos Creator 3D
+console.log(cc.x); // Error: The global object name cc is reserved by Cocos Creator
 
 function f () {
     const cc = { x: 0 };

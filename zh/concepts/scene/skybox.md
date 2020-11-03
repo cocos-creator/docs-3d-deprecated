@@ -2,12 +2,12 @@
 
 游戏中的天空盒是一个包裹整个场景的立方体，天空盒可以很好的渲染整个环境的气氛，并表达整个场景的环境，在基于 PBR 的工作流中天空盒也是非常重要的部分。
 
- Cocos Creator 3D 中的天空盒，如下图所示：
+ Cocos Creator 中的天空盒，如下图所示：
 ![skybox](skybox/Skybox.png)
 
 ## 开启天空盒
 
-在 Cocos Creator 3D 中开启天空盒的效果，只需要以下一步：
+在 Cocos Creator 中开启天空盒的效果，只需要以下一步：
 
 - Skybox 的面板处于 Scene 节点的属性面板上，将 Enabled 属性勾选上便开启了天空盒
 ![开启 skybox](skybox/SkyboxPanel.jpg)
@@ -16,7 +16,7 @@
 
 ## 修改天空盒的环境贴图
 
-在 Cocos Creator 3D 中修改天空盒的环境贴图，是通过设置 TextureCube 类型的资源。
+在 Cocos Creator 中修改天空盒的环境贴图，是通过设置 TextureCube 类型的资源。
 而从资源导入到设置为 TextureCube ，并且设置到 Skybox 中，可以分为以下几步：
 
 1. 导入图片资源。（**注：此处以全景图为示例，下面有制作 CubeMap 的介绍方法**。）
@@ -29,7 +29,7 @@
 
 ## 确认 SkyIllum 参数
 
-如果完成上一步之后，场景编辑器里并没有正确显示出天空盒的贴图，那么很有可能是 SkyIllum 参数设太低了。请检查一下 Scene 节点的属性面板里 ambient -> SkyIllum 参数。一般而言,SkyIllum < 300 就不太看得出天空盒贴图了，SkyIllum = 5000 大概是月夜的光照强度。对于新建的 Cocos Creator 3D 项目，默认的 SkyIllum = 20000。
+如果完成上一步之后，场景编辑器里并没有正确显示出天空盒的贴图，那么很有可能是 SkyIllum 参数设太低了。请检查一下 Scene 节点的属性面板里 ambient -> SkyIllum 参数。一般而言,SkyIllum < 300 就不太看得出天空盒贴图了，SkyIllum = 5000 大概是月夜的光照强度。对于新建的 Cocos Creator 项目，默认的 SkyIllum = 20000。
 
 ## 修改 Camera 的 Clear Flag
 
@@ -37,7 +37,7 @@
 
 ![修改摄像机的 Clear Flag 为 SKYBOX](skybox/SkyboxCamera.jpg)
 
-这样就完成了 Cocos Creator 3D 中设置天空盒的所有步骤。
+这样就完成了 Cocos Creator 中设置天空盒的所有步骤。
 
 
 ## Skybox 面板
@@ -59,7 +59,7 @@ CubeMap （立方体贴图）是天空盒的一种环境贴图资源，它由立
 
 ### 制作与应用 CubeMap
 
-在 Cocos Creator 3D 中制作一张 CubeMap 并且设置到 Skybox 中，只需要以下步骤：
+在 Cocos Creator 中制作一张 CubeMap 并且设置到 Skybox 中，只需要以下步骤：
 
 1. 导入预先准备好的六张贴图资源，并将这些贴图资源设置为 Texture 类型。
 

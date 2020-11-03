@@ -1,6 +1,6 @@
 # Hello World project
 
-This is the very first __Cocos Creator 3D__ project, and it aims to demonstrate the following:
+This is the very first __Cocos Creator__ project, and it aims to demonstrate the following:
   - Creating a project
   - Understanding the project directory
   - Creating an object

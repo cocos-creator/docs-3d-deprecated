@@ -1,6 +1,6 @@
 # 缓动系统
 
-为了全面兼容和保持 Cocos Creator 2D 缓动系统的使用体验，在`v1.1`版本 Cocos Creator 3D 移植了所有的 Cocos Creator 2D 功能实现。
+为了全面兼容和保持 Cocos Creator 2D 缓动系统的使用体验，在`v1.1`版本 Cocos Creator 移植了所有的 Cocos Creator 2D 功能实现。
 
 **注：`action`已经被废弃了，请使用`tween`**;
 

@@ -1,6 +1,6 @@
 # Components
 
-__Cocos Creator 3D__ includes the following __Components__：
+__Cocos Creator__ includes the following __Components__：
 
 - [AudioSource](../../audio-system/overview.md)
 - [MeshRenderer](../../engine/renderable/model-component.md)

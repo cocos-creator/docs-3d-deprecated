@@ -8,7 +8,7 @@
 ## Texture2D
 
 Texture2D 是纹理资源的一种，通常用于 3D 模型的渲染，如模型材质中的反射贴图、环境光遮罩贴图等等。
-在 Cocos Creator 3D 中的 Texture2D:
+在 Cocos Creator 中的 Texture2D:
 
 ![Texture2D](texture/Texture2D.jpg)
 **注：texture 类型即为 Texture2D 资源**。
@@ -51,11 +51,11 @@ Texture2D 是使用范围非常广泛的资源，在属性面板上任何标记�
 
 TextureCube 为立方体纹理，可用于设置场景的[天空盒](../concepts/scene/skybox.md)，可以通过设置全景图 ImageAsset 为 TextureCube 类型获得，也可以通过制作 CubeMap 资源获得，在场景的天空盒章节有详细的使用和制作方式。
 
-在 Cocos Creator 3D 中通过全景图获得的 TextureCube:
+在 Cocos Creator 中通过全景图获得的 TextureCube:
 
 ![全景图](texture/Panorama.jpg)
 
-在 Cocos Creator 3D 中通过制作 CubeMap 获得的 TextureCube:
+在 Cocos Creator 中通过制作 CubeMap 获得的 TextureCube:
 
 ![CubeMap](../concepts/scene/skybox/Cubemap.jpg)
 

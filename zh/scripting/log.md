@@ -4,7 +4,7 @@
 
 ## Log 信息机制和背景
 
-目前 Cocos Creator 3d 中的 Log 信息是以一个错误信息表形式独立于引擎存储的，具体存储在 engine 目录下的 `EngineErrorMap.md` 中。而在引擎代码中，不允许直接以字符串形式写日志、警告、错误等信息，必须以下面三个 API 来书写：
+目前 Cocos Creator 中的 Log 信息是以一个错误信息表形式独立于引擎存储的，具体存储在 engine 目录下的 `EngineErrorMap.md` 中。而在引擎代码中，不允许直接以字符串形式写日志、警告、错误等信息，必须以下面三个 API 来书写：
 
 ```
 import { logID, warnID, errorID } from 'core/platform/debug';

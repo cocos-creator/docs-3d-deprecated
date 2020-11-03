@@ -2,7 +2,7 @@
 
 Open main menu's **Project -> Build** to open the **Build** panel.
 
-**Cocos Creator 3D** provides page templates for two kinds of Web platforms. From the pop up menu of **Platform**, you can choose **Web Mobile** or **Web Desktop**. The major difference is that in **Web Mobile**, the image will cover the whole browser window by default, while in **Web Desktop**, you are allowed to designate the resolution of image, which doesn't change when you zoom on the browser window.
+**Cocos Creator** provides page templates for two kinds of Web platforms. From the pop up menu of **Platform**, you can choose **Web Mobile** or **Web Desktop**. The major difference is that in **Web Mobile**, the image will cover the whole browser window by default, while in **Web Desktop**, you are allowed to designate the resolution of image, which doesn't change when you zoom on the browser window.
 
 ## Build Options
 
@@ -41,7 +41,7 @@ The image above shows the preview of Web Mobile, you can see that the game view 
 
 ### Browser Compatibility
 
-The desktop browsers tested during the **Cocos Creator 3D** development process include: **Chrome**, **Firefox**, **Safari (Mac)**, **QQ browser**, **360 browser**. Other browsers as long as the kernel version is high enough to work properly, for some browsers do not open IE6 compatibility mode.
+The desktop browsers tested during the **Cocos Creator** development process include: **Chrome**, **Firefox**, **Safari (Mac)**, **QQ browser**, **360 browser**. Other browsers as long as the kernel version is high enough to work properly, for some browsers do not open IE6 compatibility mode.
 
 Browsers tested on mobile devices include: **Safari (iOS)**, **Chrome**, **QQ browser**, **UC browser** and **WeChat built-in WebView**.
 

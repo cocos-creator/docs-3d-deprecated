@@ -35,16 +35,16 @@ Currently, when using the command line to build, except for the required build o
 
   If no parameters are specified after `--build`, then the parameters used in the **Build** panel, such as platforms, templates, and so on, will be used as default parameters. If additional parameter settings are specified, the default parameters will be overwritten with the specified parameters. The available parameters are:
 
-    - `configPath`: Parameter file path. If define `configPath`, then __Cocos Creator 3D__ will load this file as a build parameter in the `JSON` file format. This parameter can be modified by yourself or exported directly from the **Build** panel.
-    
+    - `configPath`: Parameter file path. If define `configPath`, then __Cocos Creator__ will load this file as a build parameter in the `JSON` file format. This parameter can be modified by yourself or exported directly from the **Build** panel.
+
     - `includedModules`: Package modules for custom engines. Only the required modules are packaged.
-      
+
       > **Note**: The pass is an array of module `entry` fields, see [this documentation](https://github.com/cocos-creator/engine/blob/3d-v1.0.0/scripts/module-division/division-config.json) for details.
 
     - `taskName`: Build task name, the name of the release folder generated after the build.
     - `name`: Game name
     - `platform`: Required, the platform needs to be built.
-    - `buildPath`: The game's release path, the default release path is in the `build` under the project folder. 
+    - `buildPath`: The game's release path, the default release path is in the `build` under the project folder.
     - `startScene`: The uuid of the main scene (the participating scene will use the build option parameters in the **Build** panel from the last build), and the first scene from the **Included Scenes** will be used if not specified.
     - `scenes`: Information about the scenes involved in the build, which defaults to all scenes when not specified.
     - `debug`: Whether or not debug mode, the default is `false`.
@@ -71,6 +71,6 @@ After the build plugin system is opened to the public, the configuration paramet
 
 ## Publishing using Jenkins
 
-**Cocos Creator 3D** still needs the GUI environment when running from the command line. If the Jenkins server can not run **Cocos Creator 3D** from the command line, a solution is running Jenkins in agent mode, so it can interact with the operating systems window server. For more details please review this [Stack Overflow post]( https://stackoverflow.com/questions/13966595/build-unity-project-with-jenkins-failed).
+**Cocos Creator** still needs the GUI environment when running from the command line. If the Jenkins server can not run **Cocos Creator** from the command line, a solution is running Jenkins in agent mode, so it can interact with the operating systems window server. For more details please review this [Stack Overflow post]( https://stackoverflow.com/questions/13966595/build-unity-project-with-jenkins-failed).
 
 If the Jenkins server can not compile under Windows, specify a local user for the Jenkins service in the Windows **Control Panel -> Administrative Tools -> Services**, and then restart the computer. You don't need to set up a master-slave mode separately.

@@ -2,7 +2,7 @@
 ## cc 类
 
 将装饰器 [ccclass](#ccclass) 应用在类上时，此类称为 cc 类。
-cc 类注入了额外的信息以控制 Cocos Creator 3D 对该类对象的序列化、编辑器对该类对象的展示等。
+cc 类注入了额外的信息以控制 Cocos Creator 对该类对象的序列化、编辑器对该类对象的展示等。
 
 ### ccclass
 
@@ -24,7 +24,7 @@ cc 类的各种特性是通过 `ccclass(name)` 的 cc 类选项参数来指定�
 ## cc 属性
 
 当装饰器 [property](#property) 应用在 cc 类的属性或访问器上时，此属性称为 cc 属性。
-与 cc 类类似，cc 属性注入了额外的信息以控制 Cocos Creator 3D 对该属性的序列化、编辑器对该属性的展示等。
+与 cc 类类似，cc 属性注入了额外的信息以控制 Cocos Creator 对该属性的序列化、编辑器对该属性的展示等。
 
 ### property
 
@@ -42,21 +42,21 @@ cc 属性的各种特性是通过 `property()` 的 cc 属性选项参数来指�
 用作 cc 类型时将给出警告，并且将
 分别视为 cc 类型 `CCFloat`、`CCString`、`CCBoolean`。
 
-- Cocos Creator 3D 内置属性类型标识。
+- Cocos Creator 内置属性类型标识。
 `CCInteger`、`CCFloat`、`CCBoolean`、`CCString` 是内置属性类型标识。
-`CCInteger` 声明类型为 **Cocos Creator 3D 整数**；
-`CCFloat` 声明类型为 **Cocos Creator 3D 浮点数**；
-`CCString` 声明类型为 **Cocos Creator 3D 字符串**；
-`CCBoolean` 声明类型为 **Cocos Creator 3D 布尔值**。
+`CCInteger` 声明类型为 **Cocos Creator 整数**；
+`CCFloat` 声明类型为 **Cocos Creator 浮点数**；
+`CCString` 声明类型为 **Cocos Creator 字符串**；
+`CCBoolean` 声明类型为 **Cocos Creator 布尔值**。
 
 - 数组。
-通过将构造函数、Cocos Creator 3D 内置属性类型标识或数组作为数组元素时，
-属性被指定为 **Cocos Creator 3D 数组**。
-例如 `[CCInteger]` 就将类型声明为元素为Cocos Creator 3D 整数的 Cocos Creator 3D 数组。
+通过将构造函数、Cocos Creator 内置属性类型标识或数组作为数组元素时，
+属性被指定为 **Cocos Creator 数组**。
+例如 `[CCInteger]` 就将类型声明为元素为Cocos Creator 整数的 Cocos Creator 数组。
 
-若属性未指定 cc 类型，Cocos Creator 3D 将从属性的默认值或初始化式的求值结果推导其 cc 类型：
+若属性未指定 cc 类型，Cocos Creator 将从属性的默认值或初始化式的求值结果推导其 cc 类型：
 - 若值的类型是 Javascript 原始类型 `number`、`string`、`boolean`，
-则其 cc 类型分别为 Cocos Creator 3D 浮点数、Cocos Creator 3D 字符串、Cocos Creator 3D 布尔值。
+则其 cc 类型分别为 Cocos Creator 浮点数、Cocos Creator 字符串、Cocos Creator 布尔值。
 - 否则，若值是对象类型，则相当于使用对象的构造函数指定了 cc 类型；
 - 否则，属性的 cc 类型是**未定义**的。
 

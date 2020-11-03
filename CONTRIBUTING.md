@@ -49,7 +49,7 @@ Can bold or italics the first colume but bot the second column. __Examples__:
 
 - __Firstly__ ->  __First__.
 - At present, —> Currently,
-- Cocos Creator 3D —> __Cocos Creator 3D__ (let's bold our product name
+- Cocos Creator —> __Cocos Creator__ (let's bold our product name
 - **Note**: —> > **Note**:
 - Related Reference Links —> Reference documentation
 - do not use phrases like: "Now let me explain", "he should do this"

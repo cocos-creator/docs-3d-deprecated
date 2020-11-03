@@ -25,7 +25,7 @@
 
 ## 发布流程
 
-一、使用 Cocos Creator 3D 打开需要发布的项目工程，在 **构建发布** 面板的 **发布平台** 中选择 **vivo Mini Game**。
+一、使用 Cocos Creator 打开需要发布的项目工程，在 **构建发布** 面板的 **发布平台** 中选择 **vivo Mini Game**。
 
 ![](./vivo-mini-game/build_options.jpg)
 

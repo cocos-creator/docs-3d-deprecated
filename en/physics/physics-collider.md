@@ -19,7 +19,7 @@ The `Collider` component has an `isTrigger` attribute. When `isTrigger` is `true
 
 ## The relationship between `Collider` and `RigidBody`
 
-The `Collider` and `RigidBody` components are meant to serve physical elements, and control a part of the attributes on the physical elements respectively. This also means that to understand the relationship between them, you need to first understand how the physical elements in __Cocos Creator 3D__ are composed.
+The `Collider` and `RigidBody` components are meant to serve physical elements, and control a part of the attributes on the physical elements respectively. This also means that to understand the relationship between them, you need to first understand how the physical elements in __Cocos Creator__ are composed.
 
 ### How Elements Are Composed
 
@@ -40,7 +40,7 @@ These two ideas have their pros and cons:
 - Idea 2 adds the coupling of node. When a node is updated, the corresponding dependent node needs to be updated.
 - When the node chain is destroyed, more content needs to be maintained, and the node chain needs to deal with complex logic when it is repeatedly destroyed in Idea 2.
 
-> **Note**: the physics engine in __Cocos Creator 3D__ is currently using idea 1, which may be adjusted in the future.
+> **Note**: the physics engine in __Cocos Creator__ is currently using idea 1, which may be adjusted in the future.
 
 ### `attachedRigidbody` property of `Collider`
 

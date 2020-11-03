@@ -3,7 +3,7 @@
 Before creating an __Animation__, you must first add an __Animation Component__ to the node, and mount the clip file for the component before editing. Before that, it is necessary to first understand the related concepts of an __Animation Clip__ and __Animation Component__.
 
 ## Animation Component
-__Cocos Creator 3D__ is a component structure, and __Animation__ is no exception. It is also a component on the node. Only after adding an __Animation Component__ to the node can the node be given the ability to participate in the animation. Therefore, after clicking on the relevant node, if the node does not have an __Animation Component__, the **Add Animation Component** button will be displayed on the interface of the __Animation Editor__, __click__ to __add__.
+__Cocos Creator__ is a component structure, and __Animation__ is no exception. It is also a component on the node. Only after adding an __Animation Component__ to the node can the node be given the ability to participate in the animation. Therefore, after clicking on the relevant node, if the node does not have an __Animation Component__, the **Add Animation Component** button will be displayed on the interface of the __Animation Editor__, __click__ to __add__.
 
 ![](./animation/add-component.jpg)
 

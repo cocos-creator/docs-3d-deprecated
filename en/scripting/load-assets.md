@@ -1,6 +1,6 @@
 # Obtaining and Loading assets
 
-__Cocos Creator 3D__ uses the same asset management mechanism as __Cocos Creator__. In this section, we will introduce:
+__Cocos Creator__ uses the same asset management mechanism as __Cocos Creator__. In this section, we will introduce:
 
   - Declaration of asset attributes
   - How to set assets in the **Property Inspector**
@@ -10,7 +10,7 @@ __Cocos Creator 3D__ uses the same asset management mechanism as __Cocos Creator
 
 ## Declaration of asset attributes
 
-In __Cocos Creator 3D__, all types that inherit from `Asset` are collectively called __assets__, such as` Texture2D`, `SpriteFrame`,` AnimationClip`, `Prefab`, etc. Loading assets is unified and interdependent assets can be automatically preloaded.
+In __Cocos Creator__, all types that inherit from `Asset` are collectively called __assets__, such as` Texture2D`, `SpriteFrame`,` AnimationClip`, `Prefab`, etc. Loading assets is unified and interdependent assets can be automatically preloaded.
 
 > For example: when the engine is loading the scene, it will automatically load the assets associated with the scene first. If these assets are associated with other assets, the other will be loaded first, and the scene loading will end after all loading is completed.
 
@@ -89,11 +89,11 @@ All assets that need to be dynamically loaded through a script must be placed in
 
 > **Note**: If an asset is only depended on by other assets and does not need to be loaded directly by `loader.loadRes`, then **please** do not put it in the `resources` folder. Doing so, the size of the **package body** and `settings.js` will be increased, and the useless assets in the `resources` folder will not be automatically removed during the build process. At the same time, during the build process, JSON's automatic merge strategy will also be affected, and it is not possible to merge fragmented JSON as much as possible.
 
-__Second__, The load process of __Cocos Creator 3D__ is always asynchronous. You need to get the loaded assets in the callback function. This is done because there is no other asset preload list except the assets associated with the scene, and dynamically loaded assets that are truly dynamically loaded.
+__Second__, The load process of __Cocos Creator__ is always asynchronous. You need to get the loaded assets in the callback function. This is done because there is no other asset preload list except the assets associated with the scene, and dynamically loaded assets that are truly dynamically loaded.
 
 ### Loading Asset Dynamically
 
-__Cocos Creator 3D__ provides `loader.loadRes` API to specifically load those assets located in the assets directory. Unlike `loader.load`, `loadRes` can only load a single asset at a time. When calling, you only need to pass in the path of the relative assets, and the end of the path **cannot** include the file extension.
+__Cocos Creator__ provides `loader.loadRes` API to specifically load those assets located in the assets directory. Unlike `loader.load`, `loadRes` can only load a single asset at a time. When calling, you only need to pass in the path of the relative assets, and the end of the path **cannot** include the file extension.
 
 ```typescript
 // load the Prefab
@@ -183,7 +183,7 @@ loader.loadResDir("test assets", SpriteFrame, (err: any, assets: Array<Asset>, u
 
 ## Loading remote and local device assets
 
-__Cocos Creator 3D__ supports loading remote texture assets. This is a friendly approach for loading textures that need to be requested from the server, such as user avatars. It should be noted that this requires developers to call `loader.load` directly. At the same time, if the user downloads the assets to the local device storage in other ways, they also need to use the same API to load. The APIs such as `loadRes` above are only applicable to the assets in the application package and the hot-updated local assets. Here is the usage of this API:
+__Cocos Creator__ supports loading remote texture assets. This is a friendly approach for loading textures that need to be requested from the server, such as user avatars. It should be noted that this requires developers to call `loader.load` directly. At the same time, if the user downloads the assets to the local device storage in other ways, they also need to use the same API to load. The APIs such as `loadRes` above are only applicable to the assets in the application package and the hot-updated local assets. Here is the usage of this API:
 
 ```typescript
 // remote url of image asset

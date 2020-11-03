@@ -4,7 +4,7 @@ __Skeletal Animation__ is a common but special type of animation. Two different 
 
 ## Pre-baked Skeletal Animation System
 
-The dominant purpose of this system is performance, and some sacrifices in expressiveness are also considered acceptable. __Cocos Creator 3D__ has made many low-level optimizations in a targeted manner. The current runtime process is roughly as follows:
+The dominant purpose of this system is performance, and some sacrifices in expressiveness are also considered acceptable. __Cocos Creator__ has made many low-level optimizations in a targeted manner. The current runtime process is roughly as follows:
   * All animation data will be pre-sampled in advance according to the specified frame rate and baked onto a global-managed joint texture atlas.
   * Depending on whether the operating platform supports floating-point textures, the corresponding texture format will be RGBA32F, or automatically fallback to RGBA8 if not available (The rendering results should be identical, it is only the fail-safe approach for really low-end devices, and shouldn't be of any concern for game developers).
   * Each __Skeletal Animation Component__ (`SkeletalAnimation`) is responsible for maintaining the current playback progress, stored in the form of UBO (a `vec4`).

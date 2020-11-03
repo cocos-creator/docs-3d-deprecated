@@ -1,6 +1,6 @@
 # 消息通信
 
-Cocos Creator 3D 内，所有的交互都是通过 [消息系统](./messages.md)。
+Cocos Creator 内，所有的交互都是通过 [消息系统](./messages.md)。
 
 而消息也需要在 "contributions" 里定义后才能使用。
 

@@ -2,7 +2,7 @@
 
 ## TypeScript
 
-__Cocos Creator 3D__ uses [babel](https://babeljs.io/) instead of [tsc](https://www.typescriptlang.org/) to compile __TypeScript__ scripts. In particular, the [@babel/plugin-transform-typescript](https://babeljs.io/docs/en/babel-plugin-transform-typescript) plugin is used. For this reason, TypeScript support has certain limitations. 
+__Cocos Creator__ uses [babel](https://babeljs.io/) instead of [tsc](https://www.typescriptlang.org/) to compile __TypeScript__ scripts. In particular, the [@babel/plugin-transform-typescript](https://babeljs.io/docs/en/babel-plugin-transform-typescript) plugin is used. For this reason, TypeScript support has certain limitations.
 
 Some important considerations are listed below.
 For a complete description, see [@babel/plugin-transform-typescript](https://babeljs.io/docs/en/babel-plugin-transform-typescript).
@@ -19,11 +19,11 @@ For a complete description, see [@babel/plugin-transform-typescript](https://bab
 However, there are exceptions, please refer to the [Module Analysis](####ModuleAnalysis) documentation.
 
 Developers can still use `tsconfig.json` in the project to cooperate with the IDE to implement type checking and other functions.
-In-order to make the IDE’s TypeScript checking function compatible with __Cocos Creator 3D__'s behavior, pay extra attention to some things, please referto the [tsconfig](./tsconfig.md) documentation.
+In-order to make the IDE’s TypeScript checking function compatible with __Cocos Creator__'s behavior, pay extra attention to some things, please referto the [tsconfig](./tsconfig.md) documentation.
 
 #### Module Analysis
 
-__Cocos Creator 3D__ uses the __NodeJS__ module analysis algorithm.
+__Cocos Creator__ uses the __NodeJS__ module analysis algorithm.
 It is equivalent to the following `tsconfig.json`:
 
 ```json

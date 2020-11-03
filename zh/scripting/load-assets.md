@@ -1,6 +1,6 @@
 # 获取和加载资源
 
-Cocos Creator 3D 采用与 Cocos Creator 统一的资源管理机制，在本篇教程，我们将介绍
+Cocos Creator 采用与 Cocos Creator 统一的资源管理机制，在本篇教程，我们将介绍
 
 - 资源属性的声明
 - 如何在 **属性检查器** 里设置资源
@@ -10,7 +10,7 @@ Cocos Creator 3D 采用与 Cocos Creator 统一的资源管理机制，在本篇
 
 ## 资源属性的声明
 
-在 Cocos Creator 3D 中，所有继承自 `Asset` 的类型都统称资源，如 `Texture2D`, `SpriteFrame`, `AnimationClip`, `Prefab` 等。它们的加载是统一并且自动化的，相互依赖的资源能够被自动预加载。
+在 Cocos Creator 中，所有继承自 `Asset` 的类型都统称资源，如 `Texture2D`, `SpriteFrame`, `AnimationClip`, `Prefab` 等。它们的加载是统一并且自动化的，相互依赖的资源能够被自动预加载。
 
 > 例如，当引擎在加载场景时，会先自动加载场景关联到的资源，这些资源如果再关联其它资源，其它也会被先被加载，等加载全部完成后，场景加载才会结束。
 
@@ -85,11 +85,11 @@ export class test extends Component {
 >
 > 如果一份资源仅仅是被 resources 中的其它资源所依赖，而不需要直接被 `loader.loadRes` 调用，那么 **请不要** 放在 resources 文件夹里。否则会增大包体和 settings.ts 的大小，并且项目中无用的资源，将无法在构建的过程中自动剔除。同时在构建过程中，JSON 的自动合并策略也将受到影响，无法尽可能将零碎的 JSON 合并起来。
 
-第二个要注意的是 Cocos Creator 3D 的资源动态加载都是 **异步** 的，需要在回调函数中获得载入的资源。这么做是因为除了场景关联的资源，没有另外的资源预加载列表，动态加载的资源是真正的动态加载。
+第二个要注意的是 Cocos Creator 的资源动态加载都是 **异步** 的，需要在回调函数中获得载入的资源。这么做是因为除了场景关联的资源，没有另外的资源预加载列表，动态加载的资源是真正的动态加载。
 
 ### 动态加载 Asset
 
-Cocos Creator 3D 提供了 `loader.loadRes` 这个 API 来专门加载那些位于 resources 目录下的 Asset。和 `loader.load` 不同的是，loadRes 一次只能加载单个 Asset。调用时，你只要传入相对 resources 的路径即可，并且路径的结尾处 **不能** 包含文件扩展名。
+Cocos Creator 提供了 `loader.loadRes` 这个 API 来专门加载那些位于 resources 目录下的 Asset。和 `loader.load` 不同的是，loadRes 一次只能加载单个 Asset。调用时，你只要传入相对 resources 的路径即可，并且路径的结尾处 **不能** 包含文件扩展名。
 
 ```typescript
 // 加载 Prefab
@@ -178,7 +178,7 @@ loader.loadResDir("test assets", SpriteFrame, function (err, assets, urls) {
 
 ## 加载远程资源和设备资源
 
-在目前的 Cocos Creator 3D中，我们支持加载远程贴图资源，这对于加载用户头像等需要向服务器请求的贴图很友好，需要注意的是，这需要开发者直接调用 `loader.load`。同时，如果用户用其他方式下载了资源到本地设备存储中，也需要用同样的 API 来加载，上文中的 `loadRes` 等 API 只适用于应用包内的资源和热更新的本地资源。下面是这个 API 的用法：
+在目前的 Cocos Creator中，我们支持加载远程贴图资源，这对于加载用户头像等需要向服务器请求的贴图很友好，需要注意的是，这需要开发者直接调用 `loader.load`。同时，如果用户用其他方式下载了资源到本地设备存储中，也需要用同样的 API 来加载，上文中的 `loadRes` 等 API 只适用于应用包内的资源和热更新的本地资源。下面是这个 API 的用法：
 
 ```typescript
 // 远程 url 带图片后缀名

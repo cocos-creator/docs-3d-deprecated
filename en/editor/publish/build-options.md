@@ -14,7 +14,7 @@ In release mode, the `uuid` of the asset, the built engine script and the projec
 
 ### Replace Splash screen
 
-Mouse over this option and an **Edit** button will appear. Click this button and the panel will open. The first time you use this feature you need to fill out a questionnaire before opening the Replace Splash screen panel. There will be some project-based information in the questionnaire, and we hope to gather more information on games developed using **Cocos Creator 3D**, as well as more support programs in the future that developers will hopefully be able to fill out truthfully.
+Mouse over this option and an **Edit** button will appear. Click this button and the panel will open. The first time you use this feature you need to fill out a questionnaire before opening the Replace Splash screen panel. There will be some project-based information in the questionnaire, and we hope to gather more information on games developed using **Cocos Creator**, as well as more support programs in the future that developers will hopefully be able to fill out truthfully.
 
 ![](build-options/splash-setting.jpg)
 

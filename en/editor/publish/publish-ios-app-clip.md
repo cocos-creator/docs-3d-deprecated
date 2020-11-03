@@ -2,7 +2,7 @@
 
 Starting from the v1.2.1 version, the Xcode project built on the iOS platform already includes the **App Clip** compilation target. After constructing resources through this process, the **App Clip** application can be run and/or published.
 
-**Cocos Creator 3D** also supports embedding the game into other Xcode projects by way of **App Clip**. For example, after using other game engines to **generate** iOS project files, the **Cocos Creator 3D** project can be embedded in it through this construction process. It is convenient for players to easily experience the application through **App Clip**.
+**Cocos Creator** also supports embedding the game into other Xcode projects by way of **App Clip**. For example, after using other game engines to **generate** iOS project files, the **Cocos Creator** project can be embedded in it through this construction process. It is convenient for players to easily experience the application through **App Clip**.
 
 ## Environment Requirements
 
@@ -11,7 +11,7 @@ Starting from the v1.2.1 version, the Xcode project built on the iOS platform al
 
 ## Release Process
 
-Using **Cocos Creator 3D**, open the project that needs to be released. Open the **Build and Release** panel from the **Project** menu, and select **iOS App Clip**.
+Using **Cocos Creator**, open the project that needs to be released. Open the **Build and Release** panel from the **Project** menu, and select **iOS App Clip**.
 
 ![App Clip build configuration](./app-clip/ui-build.png)
 
@@ -42,7 +42,7 @@ Next, **Embed Xcodeproj Target**,　the path does not need to be set, just leave
 
 ### Embed App Clip into Other iOS Projects
 
-If you want to embed the **Cocos Creator 3D** target in other iOS projects, you need to specify the above two paths at the same time.
+If you want to embed the **Cocos Creator** target in other iOS projects, you need to specify the above two paths at the same time.
 
 Where **App Clip Resources Path** can be specified as the same level directory or subdirectory of **Embed Xcodeproj Target** to facilitate the management of resource files.
 
