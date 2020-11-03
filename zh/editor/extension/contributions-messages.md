@@ -10,7 +10,7 @@ Cocos Creator 3D 内，所有的交互都是通过 [消息系统](./messages.md)
 
 ## 定义一条消息
 
-```json5
+```json
 {
     "name": "hello-world",
     "contributions": {
@@ -60,7 +60,7 @@ Cocos Creator 3D 内，所有的交互都是通过 [消息系统](./messages.md)
 
 开发一个扩展的额时候，完成一个动作后需要向其他功能发送一些通知，这些通知也需要显示在 "消息列表" 面板上的话，可以这样定义消息：
 
-```json5
+```json
 {
     "name": "hello-world",
     "contributions": {

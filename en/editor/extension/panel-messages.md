@@ -6,11 +6,11 @@ The most common example is that a panel is dragged and docked to the main window
 
 At this time, a certain degree of data interaction is required with the extended main body.
 
-Before reading this chapter, you need to have a certain degree of understanding of [Message System](./messages.md).
+Before reading this chapter, please review the [Message System](./messages.md) documentation.
 
 ## Define the method of extending the top and panel
 
-First, we define a package.json:
+**First**, define a `package.json`:
 
 ```json
 {
@@ -35,7 +35,7 @@ First, we define a package.json:
 }
 ```
 
-Then define the extended main file browser.js:
+**Second**, define the extended main file `browser.js`:
 
 ```javascript
 exports.methods = {
@@ -54,7 +54,7 @@ exports.load = function() {};
 exports.unload = function() {};
 ```
 
-Then define the main file of the panel:
+**Last**, define the main file of the panel:
 
  ```javascript
  exports.ready = async () => {
@@ -75,9 +75,9 @@ Then define the main file of the panel:
 
  ## Send a message
 
- After we define the extension and the panels in the extension, we can try to trigger these messages.
+ After defining the extension and the panels in the extension, we can try to trigger these messages.
 
- Press ctrl(cmd) + shift + i to open the console. Open the panel in the console:
+ Press **ctrl(cmd) + shift + i** to open the console. Open the panel in the console:
 
  ```javascript
  // default can be omitted, if the panel name is not default, you need to fill in'hello-world.xxx'
@@ -86,13 +86,13 @@ Then define the main file of the panel:
 
 After opening the panel, the console will print out a sentence:
 
-```
+```sh
 undefined, undefined
 ```
 
-This is because the data has not yet been submitted. Let's close this panel and open it again. At this time, the console prints out the data:
+This is because the data has not yet been submitted. Now, close this panel and open it again. At this time, the console prints out the data:
 
- ```
+ ```sh
 1, 0
  ```
 
@@ -113,5 +113,3 @@ const subTab = await Editor.Message.send('hello-world','query','subTab');
 ```
 
 Query the data just saved, initialize the interface, and print to the console.
-
-So far, we have completed the interaction between the panel and the expansion process.

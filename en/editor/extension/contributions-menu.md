@@ -4,10 +4,9 @@ There is a main menu bar at the top of the editor, which can be used in the exte
 
 ## Register
 
-When the extension needs to add a menu, Just fill in the "contributions.menu" object.
-For example, we add a menu item in the "Extension":
+When the extension needs to add a menu, just fill in the `contributions.menu` object. For example, we add a menu item in the `Extension`:
 
-```json5
+```json
 {
     "name": "hello-world",
     "contributions": {
@@ -28,12 +27,11 @@ For example, we add a menu item in the "Extension":
 }
 ```
 
-Then the editor will add an "Open Hello World" menu in the "Extension".
-After clicking this menu, an openPanel message will be sent to the registered extension. Then trigger the openPanel method in the extension.
+Then the editor will add an **Open Hello World** menu in the **Extension**. After clicking this menu, an openPanel message will be sent to the registered extension. Then trigger the `openPanel` method in the extension.
 
 ### path
 
-Type {string} Required
+Type `{string}` Required
 
 Search path of the top menu:
 
@@ -43,23 +41,23 @@ Search path of the top menu:
 - i18n:menu.extension
 - i18n:menu.develop
 
-You can also fill in multi-level menus, such as "i18n:extension/Hello World".
+You can also fill in multi-level menus, such as `i18n:extension/Hello World`.
 
 ### label
 
-Type {string} Required
+Type `{string}` Required
 
 The name of the menu item.
-Supports "i18n:key" syntax.
+Supports `i18n:key` syntax.
 
 ### icon
 
-Type {string} Optional
+Type `{string}` Optional
 
 Menu icon, passing in an icon relative path.
 
 ### message
 
-Type {string} Optional
+Type `{string}` Optional
 
 Message triggered after menu click.

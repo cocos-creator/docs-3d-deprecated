@@ -301,7 +301,7 @@ export class GameManager extends Component {
 
     generateRoad() {
 
-        this.node.removeAllChildren(true);
+        this.node.removeAllChildren();
 
         this._road = [];
         // startPos
@@ -341,6 +341,10 @@ export class GameManager extends Component {
 }
 ```
 
+Assign the Cube prefab that made previously to the `CubePrfb` property in GameManager Inspector.
+
+![assign cube prefab](./images/assign-cube-prefab.png)
+
 The length of the road can be changed by modifying the value of `roadLength` in the __Properties__ panel for the `GameManager`.
 
 When previewing, the road is now automatically generated, however, because the __Camera__ does not follow the `Player`, the road behind cannot be seen. Changing the __Camera__ in the __Scene__ to be a child node of the `Player` can help solve this.
@@ -364,7 +368,9 @@ The __start menu__ is an indispensable part of most any game. Add the game name,
 
   > **Note**: Before proceeding, please read the [Scene Editing](../../editor/scene/index.md) documentation.
 
-3. Add a background frame by creating a Sprite node named `BG` under `StartMenu`. Adjust `BG`'s position to above the `PlayButton`, setting the *width* and *height* to __(200, 200)__, and setting its __SpriteFrame__ to `internal/default_ui/ default_sprite_splash`.
+3. Add a background frame by creating a `Sprite` node named `BG` under `StartMenu`. Adjust `BG`'s position to above the `PlayButton`, setting the __W(width)__ and __H(height)__ of `ContentSize` to __(200, 200)__, and setting its __SpriteFrame__ to `internal/default_ui/ default_sprite_splash`.
+
+    ![create bg sprite](./images/create-bg-sprite.gif)
 
     ![change spriteFrame](./images/change-spriteFrame.png)
 
@@ -645,6 +651,10 @@ A prefab called `Cocos` has been included in the cocos file, drag it to the `Bod
 
 ![add cocos prefab](./images/add-cocos-prefab.png)
 
+Remove the `Capsule` model at the same time.
+
+![remove capsule](./images/remove-capsule.png)
+
 The model is a little dark and a spotlight can be added to highlight its shiny brain.
 
 ![add cocos light](./images/cocos-add-light.png)
@@ -660,6 +670,8 @@ First, add a variable in the `PlayerController` class that references the model 
 ```
 
 Then, in the __Inspector__, drag the `Cocos` node into this variable.
+
+![assign cocos prefab](./images/assign-cocos-prefab.png)
 
 The jump animation needs to be used in the `jumpByStep` function.
 

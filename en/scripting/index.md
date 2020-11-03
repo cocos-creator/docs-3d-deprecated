@@ -5,6 +5,7 @@ __Cocos Creator 3D__ scripts are used to implement user-defined (game) behaviors
 - [Script Creation](./setup.md)
 - [Script Basics](./basic.md)
 - [Language Support](./language-support.md)
+- [Modules](./modules/index.md)
 - [Script Execution Order](./execution-order-general.md)
 - [ccclass](./ccclass.md)
 - [Access Node and Other Components](./access-node-component.md)

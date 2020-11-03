@@ -8,7 +8,7 @@ Cocos Creator 3D 支持各个扩展间互相提供数据(contributions)。
 
 contributions 功能，统一在 package.json 里的 contributions 字段定义。
 
-```json5
+```json
 {
     "name": "hello-world",
     "contributions": {}

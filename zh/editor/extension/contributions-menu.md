@@ -7,7 +7,7 @@
 当扩展插件需要添加菜单的时候，只需要填写 contributions.menu 对象。
 例如我们在 "扩展" 菜单里增加一个菜单项：
 
-```json5
+```json
 {
     "name": "hello-world",
     "contributions": {

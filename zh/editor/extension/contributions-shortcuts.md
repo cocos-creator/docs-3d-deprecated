@@ -4,7 +4,7 @@
 
 ## 定义快捷键
 
-```json5
+```json
 {
     "name": "hello-world",
     "panels": {
