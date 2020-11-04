@@ -137,7 +137,7 @@ Please refer to the [VideoPlayer API](../../../api/en/classes/VideoPlayer.html) 
 
 You can display a UI upon a video in two steps:
 
-1. Make sure the **ENABLE_TRANSPARENT_CANVAS** Macro Config is checked in the **Project Settings**.
+1. Make sure the **ENABLE_TRANSPARENT_CANVAS** checkbox is checked. It can be found in the **Macro Config** page in **Project Settings**
 
 ![](videoplayer/ENABLE_TRANSPARENT_CANVAS.png)
 
