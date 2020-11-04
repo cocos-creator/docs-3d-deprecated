@@ -135,7 +135,13 @@ Please refer to the [VideoPlayer API](../../../api/en/classes/VideoPlayer.html) 
 
 ## How to display a UI upon a video
 
-You can check the **stayOnBottom** property on the VideoPlayer in the **Properties** panel
+You can display a UI upon a video in two steps:
+
+1. Make sure the **ENABLE_TRANSPARENT_CANVAS** checkbox is checked. It can be found in the **Macro Config** page in **Project Settings**
+
+![](videoplayer/ENABLE_TRANSPARENT_CANVAS.png)
+
+2. Check the **stayOnBottom** property on the **VideoPlayer** in the **Properties** panel.
 
 **Note:**
 - This feature is only supported on Web.
