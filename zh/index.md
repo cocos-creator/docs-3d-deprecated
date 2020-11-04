@@ -31,7 +31,7 @@
   - [快速入门](getting-started/index.md)
   - [面板介绍](editor/index.md)
   - [项目预览调试](editor/preview/index.md)
-  - [游戏视图调试](editor/gameview/index.md)
+  - [预览窗口调试](editor/gameview/index.md)
   - [粒子编辑器](particle-system/editor/index.md)
   - [动画系统](editor/animation/index.md)
   - [地形系统](editor/terrain/index.md)
