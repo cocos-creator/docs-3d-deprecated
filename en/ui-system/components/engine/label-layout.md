@@ -42,7 +42,7 @@ __Relation of label size and line height__:
 
 ## Overflow
 
-The __Overflow__ property determines the array of labels in the bounding box when the content of labels is increased. There are four modes: __NONE__, __CLAMP__, __SHRINK__, and __RESIZE_HEIGHT__. Only in the latter three modes can the size of the bounding box be adjusted through the __Rectangle Transform Tool__ in the upper left corner of the editor or modifying the __Size__ size in the __Inspector__ panel or add the __Widget__ component.
+The __Overflow__ property determines the array of labels in the bounding box when the content of labels is increased. There are four modes: __NONE__, __CLAMP__, __SHRINK__, and __RESIZE_HEIGHT__. Only in the latter three modes can the size of the bounding box be adjusted through the __Rectangle Transform Tool__ (or click the keyboard button **T**) in the upper left corner of the editor or modifying the __Size__ in the __Inspector__ panel or add the __Widget__ component.
 
 __NONE__ mode will automatically fix the size of the bounding box according to the text size, line height, etc.
 
@@ -56,9 +56,9 @@ When in Clamp mode, labels will firstly be rendered according to the requirement
 
 ![](label-layout/shrink.png)
 
-When in auto shrink mode, if labels exceed the bounding box when being rendered according to the original size, the size of the labels will be automatically shrunk to display all the labels.
+When in auto shrink mode, if labels exceed the bounding box when being rendered according to the original size, the size of the labels will be automatically shrink to display all the labels.
 
-Attention! Auto shrink mode will not zoom in on labels to adapt to bounding box.
+**Attention!** Auto shrink mode will not zoom in on labels to adapt to bounding box.
 
 ### Resize Height
 
@@ -88,7 +88,7 @@ When the width of the bounding box is changing from the left picture to the righ
 
 ### Auto Wrap in Auto shrink mode
 
-Similar to clamp mode, labels will be wrapped in priority when labels exceed the width of the bounding box in auto shrink mode. Only when the width and length of the bounding box are exceeded will the labels be automatically shrunk to adapt to the bounding box.
+Similar to clamp mode, labels will be wrapped in priority when labels exceed the width of the bounding box in auto shrink mode. Only when the width and length of the bounding box are exceeded will the labels be automatically shrink to adapt to the bounding box.
 
 ![](label-layout/shrink_wrap.png)
 

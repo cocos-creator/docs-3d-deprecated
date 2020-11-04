@@ -56,11 +56,11 @@ Now let's create an empty node and add `ItemList` component. We can find `Items`
 
 ![item list](list-with-data/itemlist.png)
 
-We have our data ready for now, you can also type in more data entries as you wish. If you're making a game with lots of data, please consider using more specialized data source like Excel and database. It's easy to convert such data sources to JSON for the engine.
+We have our data ready for now, you can also type in more data entries as you wish. If you're making a game with lots of data, please consider using more specialized data source like Excel and database. It's easy to convert such data sources to JSON for Cocos Creator.
 
 ## Make the view for data: Prefab as template
 
-Now move on to the **view** to visualize data, we can use [Prefab](../../../asset/prefab.md) to do this job. Let's create a prefab that looks like this:
+Now move on to the **view** to visualize data, we also need a template resource that can be used to instantiate each item at runtime. We can use [Prefab](../../../asset/prefab.md) to do this job. Let's create a prefab that looks like this:
 
 ![item template](list-with-data/item-template.png)
 
@@ -140,7 +140,7 @@ All steps have been completed. Now `itemList` node should look like this:
 
 ## Preview
 
-Running preview of the scene will get the result like this (the acutal look depends on how your template was setup and your data):
+Running preview of the scene will get the result like this (the actual look depends on how your template was setup and your data):
 
 ![result](list-with-data/result.png)
 
