@@ -22,7 +22,7 @@ When you need the corresponding `ccclass`, you can find it by its `ccclass` name
 When the decorator [property](#property) is applied to a property or accessor of the `ccclass`, this property is called a `ccproperty`.
 Similar to the `ccclass`, the `ccattribute` injects additional information to control the serialization of the attribute in **Cocos Creator 3D** and the display of the attribute in the editor.
 
-### property
+### Property
 
 Various characteristics of the `ccattribute` are specified by the `ccattribute` option parameter of `property()`.
 
@@ -109,15 +109,15 @@ The option `default` specifies the default value of the cc attribute.
 
 ### Constructor
 
-#### Defined by constructor
+#### Defined By Constructor
 
 The constructor of `CCClass` is defined by `constructor`. To ensure that deserialization can always run correctly, `constructor` **is not allowed to define **constructor parameters**.
 
 > **Note**: If developers really need to use construction parameters, they can get them through `arguments`, but remember that if this class will be serialized, you must ensure that the object can still be new when the construction parameters are all default.
 
-## Judging the type
+## Judging The Type
 
-### Judgment example
+### Judgment Example
 
 When you need to make type judgments, you can use **TypeScript** native `instanceof`:
 
@@ -125,6 +125,7 @@ When you need to make type judgments, you can use **TypeScript** native `instanc
 class Sub extends Base {
 
 }
+
 let sub = new Sub();
 console.log(sub instanceof Sub);  // true
 console.log(sub instanceof Base);  // true
@@ -135,7 +136,7 @@ console.log(base instanceof Sub);  // false
 
 ## Members
 
-### Instance variables
+### Instance Variables
 
 The instance variables defined in the constructor cannot be serialized, nor can they be viewed in the **Property Inspector**.
 
@@ -169,12 +170,13 @@ class Sprite{
         console.log(this.text);
     }
 }
+
 let obj = new Sprite();
 // call instance method
 obj.print();
 ```
 
-### Static variables and static methods
+### Static Variables and Static Methods
 
 Static variables or static methods can be declared with `static`:
 
@@ -194,23 +196,26 @@ class Object{
     static count= 11;
     static range: { w: 100, h: 100 }
 }
+
 class Sprite extends Object{
 
 }
+
 console.log(Sprite.count);    // The result is 11 because count inherits from the Object class
 
 Sprite.range.w = 200;
 console.log(Object.range.w);  // The result is 200, because Sprite.range and Object.range point to the same object
 ```
 
-如果你不需要考虑继承，私有的静态成员也可以直接定义在类的外面：
+If you don't need to consider inheritance, private static members can also be defined directly outside the class:
 
 ```typescript
-// 局部方法
+// local method
 doLoad(sprite){
     // ...
 };
-// 局部变量
+
+// local variables
 let url = "foo.png";
 
 class Sprite{
@@ -221,11 +226,11 @@ class Sprite{
 };
 ```
 
-## 继承
+## Inheritance
 
-### 父构造函数
+### Parent Constructor
 
-请注意，不论子类是否有定义构造函数，子类实例化前父类的构造函数都会被自动调用。
+Please note that regardless of whether the subclass has a constructor defined, the constructor of the parent class will be automatically called before the subclass is instantiated.
 
 ```typescript
 class Node {
@@ -237,20 +242,20 @@ class Node {
 class Sprite extends Node{
     constructor() {
         super();
-        // 子构造函数被调用前，父构造函数已经被调用过，所以 this.name 已经被初始化过了
+        // Before the child constructor is called, the parent constructor has been called, so this.name has been initialized
         console.log(this.name);    // "node"
-        // 重新设置 this.name
+        // reset this.name
         this.name = "sprite";
     }
 }
+
 let obj = new Sprite();
 console.log(obj.name);    // "sprite"
 ```
 
+### Rewrite
 
-### 重写
-
-所有成员方法都是虚方法，子类方法可以直接重写父类方法：
+All member methods are virtual methods, and child methods can directly override parent methods:
 
 ```typescript
 class Shape{
@@ -258,22 +263,24 @@ class Shape{
         return "shape";
     }
 };
+
 class Rect extends Shape{
     getName () {
         return "rect";
     }
 };
+
 let obj = new Rect();
 console.log(obj.getName());    // "rect"
 ```
 
-## 属性
+## Attributes
 
-属性是特殊的实例变量，能够显示在 **属性检查器** 中，也能被序列化。
+Attributes are special instance variables that can be displayed in the **Attribute Inspector** and can also be serialized.
 
-### 属性和构造函数
+### Properties and Constructors
 
-属性**不用**在构造函数里定义，在构造函数被调用前，属性已经被赋为默认值了，可以在构造函数内访问到。如果属性的默认值无法在定义 CCClass 时提供，需要在运行时才能获得，你也可以在构造函数中重新给属性赋**默认**值。
+The attribute **not required** is defined in the constructor. Before the constructor is called, the attribute has been assigned a default value and can be accessed in the constructor. If the default value of the attribute cannot be provided when defining the `ccclass` and needs to be obtained at runtime, you can also re-assign the default value to the attribute in the constructor.
 
 ```typescript
 class Sprite {
@@ -285,73 +292,73 @@ class Sprite {
 }
 ```
 
-不过要注意的是，属性被反序列化的过程紧接着发生在构造函数执行**之后**，因此构造函数中只能获得和修改属性的默认值，还无法获得和修改之前保存（序列化）的值。
+However, it should be noted that the process of property deserialization occurs immediately after the execution of the **constructor**, so the default value of the property can only be obtained and modified in the **constructor**, and it cannot be obtained and saved before the modification (serialization ) value.
 
-### 属性参数
+### Attribute Parameters
 
-#### default参数
+#### Default Parameter
 
-`default` 用于声明属性的默认值，声明了默认值的属性会被 CCClass 实现为成员变量。默认值只有在**第一次创建**对象的时候才会用到，也就是说修改默认值时，并不会改变已添加到场景里的组件的当前值。
+`default` is used to declare the default value of the attribute. The attribute with the default value will be implemented as a member variable by `ccclass`. The default value is only used when the object is created for the first time, which means that when the default value is modified, the current value of the component that has been added to the scene will not be changed.
 
-> 当你在编辑器中添加了一个组件以后，再回到脚本中修改一个默认值的话，**属性检查器** 里面是看不到变化的。因为属性的当前值已经序列化到了场景中，不再是第一次创建时用到的默认值了。如果要强制把所有属性设回默认值，可以在 **属性检查器** 的组件菜单中选择 Reset。
+> **Note**: After you add a component to the editor, go back to the script to modify a default value, there is no change in the **Property Inspector**. Because the current value of the property has been serialized into the scene, it is no longer the default value used when it was first created. If you want to force all properties to be reset to default values, you can select Reset in the component menu of the **Property Inspector**.
 
-`default` 允许设置为以下几种值类型：
+`default` can be set to the following value types:
 
-1. 任意 number, string 或 boolean 类型的值
-2. `null` 或 `undefined`
-3. 继承自 `ValueType` 的子类，如 `Vec3`, `Color` 或 `Rect` 的实例化对象：
+1. Any number, string or boolean type value
+2. `null` or ʻundefined`
+3. Subclasses inherited from `ValueType`, such as instantiated objects of `Vec3`, `Color` or `Rect`:
     ```typescript
     @property({type:Vec3})
     private pos = null;
     ```
-4. 空数组 `[]` 或空对象 `{}`
+4. Empty array `[]` or empty object `{}`
 
-#### visible参数
+#### Visible Parameter
 
-默认情况下，是否显示在 **属性检查器** 取决于属性名是否以下划线 `_` 开头。如果以下划线开头，则默认不显示在 **属性检查器**，否则默认显示。
+By default, whether it is displayed in the **Property Inspector** depends on whether the attribute name starts with an underscore `_`. If it starts with an underscore, it will not be displayed in the **Property Inspector** by default, otherwise it will be displayed by default.
 
-如果要强制显示在 **属性检查器**，可以设置 `visible` 参数为 true:
+If you want to force it to be displayed in the **Property Inspector**, you can set the `visible` parameter to true:
 
 ```typescript
 @property({visible:true})
     private _num = 0;
 ```
 
-如果要强制隐藏，可以设置 `visible` 参数为 false:
+If you want to force hiding, you can set the `visible` parameter to false:
 
 ```typescript
 @property({visible:false})
     private num = 0;
 ```
 
-#### serializable参数
+#### Serializable Parameters
 
-指定了 `default` 默认值的属性默认情况下都会被序列化，序列化后就会将编辑器中设置好的值保存到场景等资源文件中，并且在加载场景时自动还原之前设置好的值。如果不想序列化，可以设置`serializable: false`。
+Attributes with a default value of `default` will be serialized by default. After serialization, the values set in the editor will be saved to resource files such as scenes, and the previously set values will be automatically restored when the scene is loaded . If you don't want to serialize, you can set `serializable: false`.
 
 ```typescript
 @property({serializable:false})
     private num = 0;
 ```
 
-#### type参数
+#### Type Parameter
 
-当 `default` 不能提供足够详细的类型信息时，为了能在 **属性检查器** 显示正确的输入控件，就要用 `type` 显式声明具体的类型：
+When `default` cannot provide enough detailed type information, in order to display the correct input control in the **Property Inspector**, you must use `type` to explicitly declare the specific type:
 
-- 当默认值为 null 时，将 type 设置为指定类型的构造函数，这样 **属性检查器** 才知道应该显示一个 Node 控件。
+- When the default value is null, set type to the constructor of the specified type, so that the **Property Inspector** knows that a Node control should be displayed.
 
     ```typescript
     @property({type:Node})
     private enemy = null;
     ```
 
-- 当默认值为数值（number）类型时，将 type 设置为 `cc.Integer`，用来表示这是一个整数，这样属性在 **属性检查器** 里就不能输入小数点。
+- When the default value is a number type, set the type to `cc.Integer` to indicate that this is an integer, so that the attribute cannot be entered in the decimal point in the **Property Inspector**.
 
     ```typescript
     @property({type:CCInteger})
     private num = 0;
     ```
 
-- 当默认值是一个枚举（`Enum`）时，由于枚举值本身其实也是一个数字（number），所以要将 type 设置为枚举类型，才能在 **属性检查器** 中显示为枚举下拉框。
+- When the default value is an enumeration (`Enum`), since the enumeration value itself is actually a number, the type must be set to the enumeration type to be displayed in the **Property Inspector** enumerate the drop-down box.
 
     ```typescript
     enum A{
@@ -368,9 +375,9 @@ class Sprite {
     }
     ```
 
-#### override参数
+#### Override Parameters
 
-所有属性都将被子类继承，如果子类要覆盖父类同名属性，需要显式设置 override 参数，否则会有重名警告：
+All properties will be inherited by the subclass. If the subclass wants to override the property with the same name of the parent class, you need to explicitly set the override parameter, otherwise there will be a duplicate name warning:
 
 ```typescript
 @property({type:CCString,tooltip:"my id",override:true})
@@ -383,15 +390,15 @@ private get name(){
 }
 ```
 
-更多参数内容请查阅 [属性参数](./reference/attributes.md)。
+For more parameters, please refer to the [Property Parameters](./reference/attributes.md) documentation.
 
-## GetSet 方法
+## get/set methods
 
-在属性中设置了 get 或 set 以后，访问属性的时候，就能触发预定义的 get 或 set 方法。
+After the `get` or `set` is set in the property, when the property is accessed, the predefined `get` or `set` method can be triggered.
 
 ### get
 
-在属性中设置 get 方法：
+Set the `get` method in the properties:
 
 ```typescript
 @property({type:CCInteger})
@@ -401,8 +408,9 @@ private get num(){
 }
 ```
 
-get 方法可以返回任意类型的值。<br>
-这个属性同样能显示在 **属性检查器** 中，并且可以在包括构造函数内的所有代码里直接访问。
+The get method can return any type of value.
+
+This property can also be displayed in the **Property Inspector** and can be directly accessed in all codes including the constructor.
 
 ```typescript
 class Sprite{
@@ -419,10 +427,7 @@ class Sprite{
 };
 ```
 
-请注意：
-
-- 设定了 get 以后，这个属性就不能被序列化，也不能指定默认值，但仍然可附带除了 `default`, `serializable` 外的大部分参数。
-
+> **Note**: After get is set, this property cannot be serialized, nor can it be assigned a default value, but most parameters except `default` and `serializable` can still be attached.
     ```typescript
     @property({type:CCInteger,tooltip: "The width of sprite"})
     private _width = 0;
@@ -431,8 +436,7 @@ class Sprite{
     }
     ```
 
-- get 属性本身是只读的，但返回的对象并不是只读的。用户使用代码依然可以修改对象内部的属性，例如：
-
+> **Note**: The `get` property itself is read-only, but the returned object is not read-only. Users can still modify the internal properties of the object using code, for example:
     ```typescript
     @property
     _num=0;
@@ -448,7 +452,7 @@ class Sprite{
 
 ### set
 
-在属性中设置 set 方法：
+Set the `set` method in the properties:
 
 ```typescript
 @property({type:CCInteger})
@@ -458,21 +462,23 @@ class Sprite{
     }
 ```
 
-set 方法接收一个传入参数，这个参数可以是任意类型。
+The `set` method receives an incoming parameter, which can be of any type.
 
-set 一般和 get 一起使用：
+`set` is generally used with `get`:
 
 ```typescript
 @property
 _width=0;
+
 private get width(){
     return this._width;
 }
+
 set(value){
     this._width = value;
 }
-
 ```
 
-> 如果没有和 get 一起定义，则 set 自身不能附带任何参数。<br>
-> 和 get 一样，设定了 set 以后，这个属性就不能被序列化，也不能指定默认值。
+> **Note**: If it is not defined together with `get`, the `set` itself cannot be accompanied by any parameters.
+
+> **Note**: Like `get`, after `set` is set, this property cannot be serialized, nor can it be assigned a default value.
