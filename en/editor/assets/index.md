@@ -1,96 +1,114 @@
-# Explorer
+# Asset Manager
 
-The **Asset Manager** panel is an important tool used to access and manage project assets. When starting to make a game, **importing assets** is usually a necessary step. You can use the __Hello World__ template project as a starting point when creating a new project. After you create and open a new project, various types of assets are visible in the **Explorer** panel.
+  The **Explorer Panel** is an important tool we use to access and manage project assets. When starting a game, **importing assets** is usually a necessary step. You can use the template project when creating a new project. The project will be opened automatically after the new step is completed. The default layout includes the **Explorer** panel, which contains two asset libraries, referred to as DB, `assets` and `internal`. `internal` belongs to the default built-in assets, which can be copied, but cannot be modified directly.
 
-  ![Panel Overview](img/thumb.gif)
+  Panel operation preview:
 
-## Explorer Panel introduction
+  ![Panel operation preview](img/thumb.gif)
 
-The **Explorer** panel is the main panel. It has a *heads-up menu area*, *a central tree list area*, and a *bottom information display area*.
+## Panel Introduction
 
-- The functions of the *heads-up menu area* are: *New asset button*, *Sort by button*, *Search type button*, *Search box*, *Fold or expand all button*, and *Refresh list button*
-- The *central tree list area* mainly reflects the hierarchical relationship of assets. The root node is the asset root folder corresponding to the file manager of the operating system. The editor calls an __asset database__ *(DB for short)*, and is located in the project folder. It belongs to the project asset; __Internal DB__ comes with the editor and provides some built-in necessary assets. It is a **read-only** asset. It cannot be *added*, *deleted*, *modified*, but **can** be *directly referenced* or *copied*.
-- The *bottom display area* is the URL of the asset after the asset is selected, such as `db://assets`
-- The __right-click__ menu of the panel is also an important function. The contents of the __right-click__ menu in different locations are different, and the unavailable menus are grayed out.
-- The shortcut of the panel currently supports the operation of assets:
+The **Explorer** contains the `head menu area` and the `tree list area` on the panel:
+
+- The functions of the `head menu area` are: **New Resource Button**, **Sorting Method Button**, **Search Filter**, **Search Box**, **All Collapse or Expand Button** , **Refresh list button**
+- The `tree list area` mainly reflects the relationship between assets. The root node such as `assets` is similar to the file manager in the operating system. The editor is called a DB.
+   * `Assets` is a project asset, which is empty by default in a new project;
+   * `Internal` is a built-in asset. It is a read-only asset and cannot be added, deleted or modified, but it can be used as a asset template and copied to Assets DB for pasting, that is, a new project asset is created.
+   * Panels and nodes have right-click menu events, which are important operating functions. The grayed-out menus are not available.
+- Panel shortcuts currently support asset operations:
 
     - **Copy**: Ctrl or Cmd + C
     - **Paste**: Ctrl or Cmd + V
-    - **Copy**: Ctrl or Cmd + D, Ctrl + drag asset
+    - **Clone**: Ctrl or Cmd + D, Ctrl + drag assets
     - **Delete**: Delete
     - **Up and down selection**: up and down arrows
-    - **Folder folding**: left arrow or Backspace
-    - **Expand the folder**: right arrow or Enter
-    - **Multi-select**: Ctrl or Cmd + click
-    - **Multi-select**: Shift + click
+    - **Folder folding**: left arrow
+    - **Folder expansion**: right arrow
+    - **Multiple selection**: Ctrl or Cmd + click
+    - **Multiple selection**: Shift + click
     - **Rename**: Enter/F2
-    - **Cancel Rename**: Esc
+    - **Cancel input**: Esc
 
-## New assets
+## New Assets
 
-__Click__ the **New Asset button** when adding a asset. An **input box** will appear. The name of the asset is required. If the input is empty, the asset will not be created. If there is no selected item in the tree list, it will be newly created on the root node of `Asset DB` by default; if there are multiple selected items, it will be newly created in the first selected item at this time.
+__Click__ the **New Asset button** when adding a asset, or right-click menu of a folder, you can enter into creating asset.
 
-In addition, there is a **New** entry in the __right-click__ menu of the folder.
+![New Resource](img/create.png)
 
-New asset:
+When a new asset is added to the folder, an **input box** will appear first. It is required to fill in the name of the new asset. The name cannot be empty.
 
-  ![New Resource](img/create.png)
+## Selecting Assets
 
-__Right-click__ on the new asset in the menu:
+You can use the following operations to select assets in the list:
 
-  ![New asset by right-clicking the menu](img/context-menu.png)
+- Single click to select assets
+- The keyboard up and down arrows can switch the selected asset up and down
+- Hold **Ctrl** or **Cmd** + click to select multiple assets
+- Hold **Shift** + click to select multiple assets
 
+## Dragging Resources
 
-## Selecting an asset
+Assets can also be added by dragging:
 
-In the __Asset List__, you can use the following operations to select assets:
+- Move the asset, drag the asset from one folder in the tree list to another folder. At this time, the location box of a target folder will follow the change.
+- Drag out assets to the **Scene Panel** or **Level Panel** to generate nodes. Currently, `cc.Prefab`, `cc.Mesh`, `cc.SpriteFrame` assets are supported.
+- Drag files from **System File Manager** to the list to import assets.
+- Drag in the node and drag the node from the **Level Panel** to a folder in the **Assets Panel** to save the node as a `cc.Prefab` asset, see the [Prefab](../../asset/prefab.md) documentation.
 
-- __Click__ to __Select Assets__.
-- The __up__ and __down__ arrows on the keyboard can be used to select.
-- Hold down __Ctrl__ or __Cmd + click__ to select multiple assets.
-- Hold down __Shift + click__ to select multiple assets.
+ ![dragging Resources](img/drag.png)
 
-## Moving an asset
+## Deleting Assets
 
-The assets are moved by dragging the tree nodes:
+The **Delete** option is located in the right-click menu, or the shortcut key **Delete**, which supports batch deletion after multiple selections. After the asset is deleted, it is kept in the **system recycle bin**, and can be deleted if necessary reduction.
 
-- **Move the asset**: the asset is dragged from one folder in the tree list to another folder. An orange frame will indicate the range of the folder to which the new location belongs.
-- **Drag out assets**: you can drag *.prefab*, *.gltf*, *.mesh*, *.fbx* assets to the **Scene Panel** or the **Hierarchy Manager** to generate nodes.
-- **Drag the asset**: drag the node from the **Explorer Panel** to a folder in the list. You can save the node as a `.prefab` asset. Please see the[Prefab Asset](../../asset/prefab.md) documentation. From the file manager of the **operating system**, drag the file to the list to realize the asset import.
+## Selecting All In The Folder
 
-  ![Mobile Resources](img/drag.png)
+Right-click **Select All** in the menu to select all sub-assets in the folder.
 
-## Deleting an asset
+## Searching In Folders
 
-Right-click **Delete** in the menu, or use the keyboards **Delete** key, which supports deleting assets in batches after multiple selections. After the assets are deleted, you can restore them in the **Recycle Bin of the operating system**.
+Right-click **Search in Folder** in the menu to narrow the search scope.
 
-## Re-importing assets
+## Displaying In The File Manager
 
-__Right-click__ **Re-import Resource** in the menu to update the data generated to the **Library** and support batch re-importing.
+Right-click **Show in File Manager** in the menu to locate the system directory where the asset is located.
 
-## Sorting assets
+## Re-importing Assets
 
-The **Sort by button** in the top menu has __2__ sorting methods: *Sort by name*, and *Sort by type*. The sorting method has a memory, and the next time you open the editor, the saved sorting method will be preserved.
+Right-click **Reimport Resources** in the menu to update the corresponding assets in `./library` in the project, and these generated data can be recognized by the editor and engine; support multiple selections and batch reimport.
 
-  ![Sort asset](img/sort-type.png)
+## Sorting Assets
 
-## Searching for assets
+There are 2 sorting methods in the **Sort Method Button** in the header menu: **Sort by Name**, **Sort by Type**. The sorting method is memorized, and the saved sorting method will be kept when the editor is opened next time.
 
-The **Search Type button** in the top menu has __3__ sorting methods: *Search Name*, *Search UUID*, and *Search Type*. Where *Search Type* is the *Import type* of the search asset, not the suffix type of the asset.
+## Searching Assets
 
-  ![Search Resources](img/search-type.png)
+The search function is a combined function that can limit the search type and specify the search field.
 
-The **Search box** changes the instant search. You can select the asset in the search results, after clearing the search content, the selected asset will be relocated within the window to achieve the purpose of locating the asset by searching.
+- **Limited search type** is a major premise. **This point requires special attention**, which may cause the tree list to be empty. The button is highlighted to indicate that the function is enabled.
+- Multiple selections are possible, select `All` in the type to return to the normal tree list.
+- There are 3 ways to specify the search field: **Search Name**, **Search UUID**, **Search Path**. Among them, **UUID** and **PATH PATH** can output data from the last item of the right-click menu.
+- **Search box** changes instantly.
+- Select the asset in the search results, clear the search, the window will relocate to the asset, to achieve the purpose of finding the asset through search; in addition, double-click the folder in the search result to quickly locate the folder in the tree.
 
-  ![Search Resources](img/search.png)
+ ![Enable filtering](img/search-type.png)
+
+ ![Multi-select filter type](img/search-types.png)
 
 ## Collapsing assets
 
-The **Fold or expand all button**  is an easy way to retract the view range and find assets easily. The parent node in the tree supports shortcut keys. First select the asset, and then perform keyboard operations:
+- `Head menu area` **All collapse or expand buttons** are global.
+- The triangle icon of the tree node, you can press the `alt` key to expand or collapse all sub-assets.
 
-- __Folder folding__: __left arrow__ or __backspace__
-- __Expand the folder__: __right arrow__ or __Eenter/return__ key
+## Renaming Assets
 
-## Renaming an asset
+- Select an asset.
+- Shortcut key `F2`, shortcut key `Enter`, enter name modification
+- Shortcut key `Esc` to cancel rename
+- In addition, the initial name of the Typescript asset will be treated as its `className`, and the `className` cannot be repeated.
 
-Select a asset, use either the __shortcut key F2__ or by a __right-click__ and selecting **Rename** to modify the name. The name cannot be empty. Use the **shortcut key Esc** will cancel the rename. The name of the script cannot start with a number and cannot be the same as an existing script file.
+## Big Picture Preview
+
+In addition, it can be used in conjunction with the Assets Preview panel to click on a folder to display the sub-assets of the big picture arranged by type, which is more intuitive for picture assets.
+
+![Resource preview](img/preview.png)
