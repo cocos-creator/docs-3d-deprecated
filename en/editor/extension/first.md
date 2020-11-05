@@ -10,7 +10,7 @@ The structure of the directory where the extension is located is roughly as foll
 
 ```
 hello-world
-  |--main.js
+  |--browser.js
   |--package.json
 ```
 
@@ -44,7 +44,7 @@ To continue the operation just now, fill in the content in the newly created `pa
 ```
 
 Now, it is needed to define a messages object in contributions, which is the method of editor message registration. This message can be bound to one or more methods defined in the extension.
-For more definition data, please refer to the [Message](contributions-messages.md) documentation.
+For more definition data, please refer to the [Message](./contributions-messages.md) documentation.
 
 Next, define a menu array in contributions to provide basic information of a menu to the menu component. Finally bind this menu to a message. For more details, please refer to the [Menu](./contributions-menu.md) documentation.
 
@@ -75,7 +75,7 @@ exports.load = {};
 exports.unload = {};
 ```
 
-This entry program will be loaded during the startup of **Cocos Creator 3D**. The methods defined in methods will be used as the operation interface, which can be called across extensions through [messages](messages.md) or communicate with the panel.
+This entry program will be loaded during the startup of **Cocos Creator 3D**. The methods defined in methods will be used as the operation interface, which can be called across extensions through [messages](./messages.md) or communicate with the panel.
 
 ## Run extension
 
