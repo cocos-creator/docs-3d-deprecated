@@ -57,7 +57,7 @@ cameraCom.screenPointToRay(0, 0, outRay);
 
 ## Interface Introduction
 
-__Cocos Creator 3D__ provides a set of ray detection functions based on the physics engine in the `v1.0.1` version.
+__Cocos Creator__ provides a set of ray detection functions based on the physics engine in the `v1.0.1` version.
 
 However, it should be noted that the detected object is a physics collider, and the corresponding collider component on the inspector panel, such as `BoxCollider`.
 

@@ -1,6 +1,6 @@
 # Script Assets
 
-In __Cocos Creator 3D__, scripts are also part of the __Asset__.
+In __Cocos Creator__, scripts are also part of the __Asset__.
 
 For a detailed introduction to __scripting__, please refer to the [Scripting Guide](../scripting/index.md) documentation.
 

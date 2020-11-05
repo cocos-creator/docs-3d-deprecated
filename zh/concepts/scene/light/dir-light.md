@@ -1,6 +1,6 @@
 # 主方向光（Main Directional Light）
 
-Cocos Creator 3D 中只有一个主方向光，主方向光可以理解为场景中的主导性光源，通常是室外场景的太阳光。主方向光还会影响阴影的投影。
+Cocos Creator 中只有一个主方向光，主方向光可以理解为场景中的主导性光源，通常是室外场景的太阳光。主方向光还会影响阴影的投影。
 
 ![main dir light](dir-light.jpg)
 

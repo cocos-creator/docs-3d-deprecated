@@ -11,7 +11,7 @@ Let's take an inventory interface as example, we need following data structure t
 - Item name
 - Item price
 
-We will introduce how to define a data class and generate those data in __Inspector__ panel. If you're not familiar with component system of __Cocos Creator 3D__, please start with [Workflow of script development](../../../scripting/index.md) documentation.
+We will introduce how to define a data class and generate those data in __Inspector__ panel. If you're not familiar with component system of __Cocos Creator__, please start with [Workflow of script development](../../../scripting/index.md) documentation.
 
 ### Custom data class
 

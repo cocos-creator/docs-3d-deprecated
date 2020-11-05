@@ -56,7 +56,7 @@ cameraCom.screenPointToRay(0, 0, outRay);
 
 ## 接口介绍
 
-Cocos Creator 3D 在`v1.0.1`版本上提供了一套基于物理引擎的射线检测功能。
+Cocos Creator 在`v1.0.1`版本上提供了一套基于物理引擎的射线检测功能。
 
 但需要注意的是，检测的对象是物理碰撞器，在场景面板上与之对应的是碰撞器组件，例如 `BoxCollider`。
 

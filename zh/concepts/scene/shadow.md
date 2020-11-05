@@ -2,14 +2,14 @@
 
 在 3D 世界中，光与影一直都是极其重要的组成部分，它们能够丰富整个环境，质量好的阴影可以达到以假乱真的效果，并且使得整个世界具有立体感。
 
-以下为 Cocos Creator 3D 的阴影示例：
+以下为 Cocos Creator 的阴影示例：
 ![shadow](shadow/shadowExample.png)
 
 ## 开启阴影
 
-Cocos Creator 3D 目前支持 shadow Map 和 planer Shadow 两种阴影模式供开发者使用。
+Cocos Creator 目前支持 shadow Map 和 planer Shadow 两种阴影模式供开发者使用。
 
-* 在 Cocos Creator 3D 中开启 Planar Shadow 需要三步：
+* 在 Cocos Creator 中开启 Planar Shadow 需要三步：
 
     1. 在层级管理器上选择 Scene 节点，可以看到以下面板，将 shadows 的 Enabled 属性勾选上。
 ![开启 shadow 所处位置](shadow/shadows.png)
@@ -22,7 +22,7 @@ Cocos Creator 3D 目前支持 shadow Map 和 planer Shadow 两种阴影模式供
 
     **注：Planar Shadow 只会投射在阴影面上，调节方向光角度可以调节阴影的投射**。
 
-* 在 Cocos Creator 3D 中开启 Shadow Map 需要四步：
+* 在 Cocos Creator 中开启 Shadow Map 需要四步：
 
     1. 在层级管理器上选择 Scene 节点，可以看到以下面板，将 shadows 的 Enabled 属性勾选上。
 ![开启 shadow 所处位置](shadow/shadows.png)

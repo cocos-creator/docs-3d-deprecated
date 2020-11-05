@@ -1,6 +1,6 @@
 # Quick start: making your first game.
 
-The power of the __Cocos Creator 3D__ editor is that it allows developers to quickly prototype games.
+The power of the __Cocos Creator__ editor is that it allows developers to quickly prototype games.
 
 Let's follow a guided tutorial to make a magical game named **Mind Your Step**. This game tests the player's reaction ability, and chooses whether to jump one step or two steps according to traffic conditions.
 
@@ -9,18 +9,18 @@ You can try out the completed the game [here](https://gameall3d.github.io/MindYo
 ![](images/cocos-play.gif)
 
 ## New Project
-If you still don’t know how to download and run __Cocos Creator 3D__, please review the [Installation and Starting](../install/index.md) documentation.
+If you still don’t know how to download and run __Cocos Creator__, please review the [Installation and Starting](../install/index.md) documentation.
 
 To start a new project:
 
-  1. Start __Cocos Creator 3D__ and then create a new project named **MindYourStep**. If you don’t know how to create a project, please read the [Hello World!](../helloworld/index.md) documentation.
+  1. Start __Cocos Creator__ and then create a new project named **MindYourStep**. If you don’t know how to create a project, please read the [Hello World!](../helloworld/index.md) documentation.
 
   2. After creating a new project, you should see the following editor interface:
 
   ![main window](./images/main-window.png)
 
 ## Creating a game scene
-In __Cocos Creator 3D__, **Scene** is the center for organizing game content during development and the container for presenting all game content to players. The game scene will generally include the following components:
+In __Cocos Creator__, **Scene** is the center for organizing game content during development and the container for presenting all game content to players. The game scene will generally include the following components:
 
   - Scene objects
   - Roles
@@ -86,7 +86,7 @@ It is necessary for the main character to be affected when the mouse moves. To d
 
    ![create player script](./images/create-player-script.gif)
 
-> **Note:** The name of the script in __Cocos Creator 3D__ is the name of the component. This name is case sensitive! If the capitalization of the component name is incorrect, the component cannot be used correctly by the name!
+> **Note:** The name of the script in __Cocos Creator__ is the name of the component. This name is case sensitive! If the capitalization of the component name is incorrect, the component cannot be used correctly by the name!
 
 #### Writing script code
 There are already some pre-set code blocks in the `PlayerController` script. Example:
@@ -114,7 +114,7 @@ export class PlayerController extends Component {
 }
 ```
 
-This code is the structure needed to write a __component__. Scripts with this structure are **Components in Cocos Creator 3D**. They can be attached to nodes in a __Scene__ and provide various functionality for controlling nodes. For detailed information review the [Script]( ../../scripting/index.md) documentation.
+This code is the structure needed to write a __component__. Scripts with this structure are **Components in Cocos Creator**. They can be attached to nodes in a __Scene__ and provide various functionality for controlling nodes. For detailed information review the [Script]( ../../scripting/index.md) documentation.
 
 Monitoring of mouse events needs to be added in the script to let the `Player` node move. Modify the code in `PlayerController` as follows:
 
@@ -952,9 +952,9 @@ export class GameManager extends Component {
 
 ## The end!
 
-__Congratulations on completing your first game made with Cocos Creator 3D!__
+__Congratulations on completing your first game made with Cocos Creator!__
 
-The complete project can be downloaded on our [GitHub](https://github.com/cocos-creator/tutorial-mind-your-step-3d). The hope is this quick start tutorial will help you understand the Cocos Creator 3D game development process, basic concepts and workflow.
+The complete project can be downloaded on our [GitHub](https://github.com/cocos-creator/tutorial-mind-your-step-3d). The hope is this quick start tutorial will help you understand the Cocos Creator game development process, basic concepts and workflow.
 
 Next, you can continue to improve all aspects of the game. Here are some ideas for improvement:
   - Increase the difficulty of the game, when the character stays in place for 1 second it fails.

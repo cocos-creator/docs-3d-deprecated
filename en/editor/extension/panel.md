@@ -1,6 +1,6 @@
 # Extension panel
 
-When implementing a function, it is likely to require UI interaction on the interface. **Cocos Creator 3D** also provides this ability for extensions.
+When implementing a function, it is likely to require UI interaction on the interface. **Cocos Creator** also provides this ability for extensions.
 
 ## Declare the panel in the extension
 

@@ -1,6 +1,6 @@
 # Spherical Lighting
 
-__Cocos Creator 3D__ uses spherical light instead of **point lighting**, because physical light sources in the real world have light source size attributes.
+__Cocos Creator__ uses spherical light instead of **point lighting**, because physical light sources in the real world have light source size attributes.
 
 ![sphere light](sphere-light.jpg)
 

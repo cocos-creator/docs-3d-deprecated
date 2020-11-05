@@ -1,6 +1,6 @@
 # Installation and sharing
 
-**Cocos Creator 3D** will search for and automatically open the extensions under the `Global` and `Project` paths during startup.
+**Cocos Creator** will search for and automatically open the extensions under the `Global` and `Project` paths during startup.
 
 If you plan to apply the extension to all projects, you can put the extension under the `Global` path:
 

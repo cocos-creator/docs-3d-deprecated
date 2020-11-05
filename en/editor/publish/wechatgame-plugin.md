@@ -2,13 +2,13 @@
 
 > **Note**: Some platforms only have Chinese documentation available when visiting the platforms website. It may be necessary to use Google Translate in-order to review the documentation.
 
-The **Game Engine Plugin** is a new feature added to **WeChat v7.0.7**, which has the official version of the __Cocos Creator 3D__ engine built in. If the plugin is enabled in the first game the player experiences, all games that also have the plugin enabled do not need to download the __Cocos Creator 3D__ engine again, just use the same version of the engine directly from the public plugin library, or incremental update the engine.
+The **Game Engine Plugin** is a new feature added to **WeChat v7.0.7**, which has the official version of the __Cocos Creator__ engine built in. If the plugin is enabled in the first game the player experiences, all games that also have the plugin enabled do not need to download the __Cocos Creator__ engine again, just use the same version of the engine directly from the public plugin library, or incremental update the engine.
 
-For example, when a player has played an A game developed using __Cocos Creator 3D__ v1.0.2, and the A game already enabled this plugin. Then he played the B Game, also developed by v1.0.2, and would not have needed to redownload the __Cocos Creator 3D__ engine if the B game had also enabled this plugin. Even if the B Game is developed using __Cocos Creator 3D__ v1.0.3, WeChat only needs to incremental update the difference between the two engine versions. This will drastically reduce the download counts of mini games, and improve the startup speed of mini games by 0.5-2s for a better user experience.
+For example, when a player has played an A game developed using __Cocos Creator__ v1.0.2, and the A game already enabled this plugin. Then he played the B Game, also developed by v1.0.2, and would not have needed to redownload the __Cocos Creator__ engine if the B game had also enabled this plugin. Even if the B Game is developed using __Cocos Creator__ v1.0.3, WeChat only needs to incremental update the difference between the two engine versions. This will drastically reduce the download counts of mini games, and improve the startup speed of mini games by 0.5-2s for a better user experience.
 
 ## How to use
 
-__Cocos Creator 3D__ has supported this feature since **v1.0.2**. Simply check the **Separate Engine** option in the **Build** panel, and then build and release as normal, without additional manual operation. (This feature is only available when the built-in engine is used and the build is in non-debug mode.)
+__Cocos Creator__ has supported this feature since **v1.0.2**. Simply check the **Separate Engine** option in the **Build** panel, and then build and release as normal, without additional manual operation. (This feature is only available when the built-in engine is used and the build is in non-debug mode.)
 
 ![](./wechatgame-plugin/build-options.jpg)
 

@@ -20,7 +20,7 @@
 ![terrain inspector](./images/terrain-inspector.png)
 
 ## 编辑
-赋值完地形资源后可在`Scene`中弹出编辑面板,Cocos Creator 3D中的地形编辑主要包括三大功能：管理（Manage），雕刻（Sculpt），描绘（Paint）。可以通过点击三个Tab标签页来进行三个功能的切换。
+赋值完地形资源后可在`Scene`中弹出编辑面板,Cocos Creator 中的地形编辑主要包括三大功能：管理（Manage），雕刻（Sculpt），描绘（Paint）。可以通过点击三个Tab标签页来进行三个功能的切换。
 
 ![terrain component](./images/terrain-panel.png)
 

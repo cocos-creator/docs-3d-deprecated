@@ -34,7 +34,7 @@ In general game development, the necessary UI elements are usually *Sprite*, *La
 
 When our interface is finished, you may find out how the display effects of iPhone7 and iPhoneX are different. This is actually a problem with the device resolution we mentioned above. When you design at the design resolution and publish at the device resolution, because the device resolution of different mobile phones may be different, the problem of pixel deviation may occur. Therefore, you also need to do screen adaptation.
 
-As you can see on the __Project -> Project Setting -> General -> Default canvas setting__ page of the menu bar, there are two other options, __Fit Width__ and __Fit Height__. According to the screen adaptation rules provided by **Cocos Creator 3D**, and combined with the Widget component, you can easily adapt to different devices. Please refer to the [Multi-Resolution Adaptation](multi-resolution.md) documentation for details.
+As you can see on the __Project -> Project Setting -> General -> Default canvas setting__ page of the menu bar, there are two other options, __Fit Width__ and __Fit Height__. According to the screen adaptation rules provided by **Cocos Creator**, and combined with the Widget component, you can easily adapt to different devices. Please refer to the [Multi-Resolution Adaptation](multi-resolution.md) documentation for details.
 
 ## UI Rules Introduction
 

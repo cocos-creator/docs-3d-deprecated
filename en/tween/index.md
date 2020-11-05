@@ -1,6 +1,6 @@
 # Tweening
 
-In order to be fully compatible with and maintain the experience of the __Cocos Creator 2D__ easing system, all the __Cocos Creator 2D__ functions are transplanted in __Cocos Creator 3D__.
+In order to be fully compatible with and maintain the experience of the __Cocos Creator 2D__ easing system, all the __Cocos Creator 2D__ functions are transplanted in __Cocos Creator__.
 
 > **Note**: `action` has been abandoned, please use `tween`.
 

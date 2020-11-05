@@ -7,16 +7,16 @@ The runtime environment of the **WeChat Mini Game** is an extension of the **WeC
 On the engine side, in order to make the developers' workload as easy as possible, our main tasks for developers include the following:
 
 - The engine framework adapts to the WeChat Mini Game API, pure game logic level, developers do not need any additional modifications.
-- The **Cocos Creator 3D** editor provides a fast packaging process, released directly as a **WeChat Mini Game**, and automatically evokes the **WeChat DevTools**.
+- The **Cocos Creator** editor provides a fast packaging process, released directly as a **WeChat Mini Game**, and automatically evokes the **WeChat DevTools**.
 - Automatically load remote assets, cache assets, and cache asset version control.
 
 In addition, the game submission, review and release process of the **WeChat Mini Game** is no different from the **WeChat Mini Program**. Please refer to the [WeChat Mini Game Developer](https://developers.weixin.qq.com/minigame/en/dev/guide/) documentation.
 
-## Publishing WeChat Mini Games with Cocos Creator 3D
+## Publishing WeChat Mini Games with Cocos Creator
 
 1. Download the **WeChat DevTools** on [WeChat Official Document](https://developers.weixin.qq.com/miniprogram/en/dev/devtools/download.html)
 
-2. Set the **WeChatGame App Path** in **Cocos Creator 3D -> Preferences -> [Native Develop](../../editor/preferences/index.md)**.
+2. Set the **WeChatGame App Path** in **Cocos Creator -> Preferences -> [Native Develop](../../editor/preferences/index.md)**.
 
     ![](./publish-wechatgame/preference.png)
 
@@ -45,7 +45,7 @@ In addition, the game submission, review and release process of the **WeChat Min
 Options | Optional or not | Default | Explanation
 - | - | - | -
 **appid** | Required | `wx6ac3f5090a6b99c5` | The appid of the WeChat Mini Games, it will be written to `project.config.json` file.
-**Remote server address** | Optional | Empty | The remote server address. assets will then be obtained from this address. 
+**Remote server address** | Optional | Empty | The remote server address. assets will then be obtained from this address.
 **Open data context root** | Optional | Empty | If an Open Data Context exists, use this root to specify the relative path of the Open Data Context folder in the build directory so that the directory is not overwritten or modified during the build.
 **Orientation** | Required | `landscape` | Device orientation, it will be written to `game.json` file.
 **Build Sub Package** | Optional | Enabled | Whether to enable the Subpackage function.
@@ -62,7 +62,7 @@ In a **WeChat Mini Game** environment, asset management is the most special part
 
 4. You cannot download script files from a remote server.
 
-This brings up two key issues, home page loading speed and remote asset caching and version management. For the home page loading speed, we recommend that developers only save the script file in the **WeChat Mini Game** package, and all other assets are downloaded from the remote server. As for downloading, caching and version management of remote assets, **Cocos Creator 3D** has done the job for developers. 
+This brings up two key issues, home page loading speed and remote asset caching and version management. For the home page loading speed, we recommend that developers only save the script file in the **WeChat Mini Game** package, and all other assets are downloaded from the remote server. As for downloading, caching and version management of remote assets, **Cocos Creator** has done the job for developers.
 
 In the **WeChat Mini Game** environment, we provide a `wxDownloader` object, and after setting the `REMOTE_SERVER_ROOT` property to it, the logic of the engine to download assets becomes:
 
@@ -106,7 +106,7 @@ In addition to pure game content, the **WeChat Mini Game** environment actually 
 
 ## WeChat Mini Games Known issues
 
-__Cocos Creator 3D__'s adaptation of **WeChat Mini Games** has not been completely implemented. The following modules are still not supported:
+__Cocos Creator__'s adaptation of **WeChat Mini Games** has not been completely implemented. The following modules are still not supported:
 
   - VideoPlayer
   - WebView

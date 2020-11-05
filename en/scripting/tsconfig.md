@@ -2,9 +2,9 @@
 
 The *majority* of compilation options in `tsconfig.json` in the project do not affect the compilation of `Typescript`.
 
-Therefore, some options need to configured carefully to make the IDE's inspection function consistent with the compilation behavior in __Cocos Creator 3D__.
+Therefore, some options need to configured carefully to make the IDE's inspection function consistent with the compilation behavior in __Cocos Creator__.
 
----- 
+----
 
 The following options should **not** be modified explicitly:
 
@@ -28,7 +28,7 @@ Script code:
 const myModule = require("path-to-module");
 ```
 
-It will not cause an error in the IDE (using `tsc` as a checker) because `compilerOptions.module` is set to `cjs`. However, the implicit `compilerOptions.module` in __Cocos Creator 3D__ is `es2015`,
+It will not cause an error in the IDE (using `tsc` as a checker) because `compilerOptions.module` is set to `cjs`. However, the implicit `compilerOptions.module` in __Cocos Creator__ is `es2015`,
 therefore, it may prompt errors such as __required undefine__ at runtime.
 
 Script code:
@@ -37,7 +37,7 @@ Script code:
 const mySet = new Set();
 ```
 
-This is legal in __Cocos Creator 3D__, but the IDE may report an error: **Because `compilerOptions.target` is set to `es5`: ES6 introduced `Set`.**
+This is legal in __Cocos Creator__, but the IDE may report an error: **Because `compilerOptions.target` is set to `es5`: ES6 introduced `Set`.**
 
 ----
 
@@ -50,9 +50,9 @@ as using an IDE (such as Visual Studio Code), the corresponding error prompt wil
 
 ----
 
-For most projects, some options in `tsconfig` are fixed. For example, `compilerOptions.target`, `compilerOptions.module` and __Cocos Creator 3D__ type declarations, file location, etc.
+For most projects, some options in `tsconfig` are fixed. For example, `compilerOptions.target`, `compilerOptions.module` and __Cocos Creator__ type declarations, file location, etc.
 
-Due to the good design of `tsc`, the `extends` option allows `tsconfig.json` to be cascadable. __Cocos Creator 3D__ supports this, therefore, the fixed `tsconfig` option is placed under `{project path}/tmp/tsconfig.cocos.json` and managed by __Cocos Creator 3D__.
+Due to the good design of `tsc`, the `extends` option allows `tsconfig.json` to be cascadable. __Cocos Creator__ supports this, therefore, the fixed `tsconfig` option is placed under `{project path}/tmp/tsconfig.cocos.json` and managed by __Cocos Creator__.
 
 Therefore, `tsconfig.json` under the project root path can be configured as follows to share these fixed options:
 

@@ -12,6 +12,6 @@ Select <font color=#A52A2A>__New Project__</font> from the __tab bar__. __Next__
 <img src="index/new.png" width="100%" height="100%"/>
 
 ### Getting Help
-Select <font color=#A52A2A>__Help__</font> from the __tab bar__ to help you get an initial understanding of __Cocos Creator 3D__.
+Select <font color=#A52A2A>__Help__</font> from the __tab bar__ to help you get an initial understanding of __Cocos Creator__.
 <img src="index/help.png" width="100%" height="100%"/>
 

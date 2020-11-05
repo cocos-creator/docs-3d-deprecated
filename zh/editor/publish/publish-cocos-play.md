@@ -1,6 +1,6 @@
 # 发布到 Cocos Play（即刻玩）
 
-Cocos Creator 3D 从 **v1.0.3** 版本开始正式支持将游戏发布到 Cocos Play。
+Cocos Creator 从 **v1.0.3** 版本开始正式支持将游戏发布到 Cocos Play。
 
 ## 发布流程
 
@@ -10,7 +10,7 @@ Cocos Creator 3D 从 **v1.0.3** 版本开始正式支持将游戏发布到 Cocos
 
 ### 构建
 
-一、使用 Cocos Creator 3D 打开需要发布的项目工程，在 **构建发布** 面板的 **发布平台** 中选择 **Cocos Play**，然后点击 **构建**。
+一、使用 Cocos Creator 打开需要发布的项目工程，在 **构建发布** 面板的 **发布平台** 中选择 **Cocos Play**，然后点击 **构建**。
 
 ![](publish-cocos-play/build.jpg)
 

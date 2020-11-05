@@ -1,10 +1,10 @@
 # Images
 
-__Image__ assets are generally created using image processing software (such as __Photoshop__, __Paint__ on Windows, etc) and output into file formats that __Cocos Creator 3D__ can use, currently including `.jpg` and `.png`.
+__Image__ assets are generally created using image processing software (such as __Photoshop__, __Paint__ on Windows, etc) and output into file formats that __Cocos Creator__ can use, currently including `.jpg` and `.png`.
 
 ## Importing image assets
 
-After importing images into __Cocos Creator 3D__, they can be seen in **Assets Panel**.
+After importing images into __Cocos Creator__, they can be seen in **Assets Panel**.
 
 ![](texture/imported.png)
 

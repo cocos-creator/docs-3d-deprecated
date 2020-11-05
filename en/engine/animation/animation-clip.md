@@ -46,7 +46,7 @@ This behavior is like a file system path, so each element is called a __target p
 
 When the target path is `string`/`number`, this indicates the attribute addressed to the upper-level object, which itself specifies the attribute name. Otherwise, the target path must be an object that implements the interface `animation.TargetPath`.
 
-__Cocos Creator 3D__ has the following built-in classes that implement the self-interface `animation.TargetPath`:
+__Cocos Creator__ has the following built-in classes that implement the self-interface `animation.TargetPath`:
   - `animation.HierarchyPath` treats the upper-level object as a node and addresses it to one of its child nodes;
   - `animation.ComponentPath` treats the upper-level object as a node and addresses it to one of its components.
 
@@ -192,7 +192,7 @@ If the sampling time point is exactly equal to the time point of a key frame, th
 
 Otherwise, when the sampling time is between two frames, the resulting value should be affected by the two frames of data at the same time. The ratio of the sampling time point to the time interval of two key frames (`[0,1]`) reflects the degree of influence.
 
-__Cocos Creator 3D__ allows this ratio to be mapped to another ratio to achieve different __gradient__ effects. These mapping methods are called **gradient methods**. After the ratio is determined, the final result value is calculated according to the specified **interpolation method**. Both the **gradient** and **interpolation** methods affect the smoothness of the animation.
+__Cocos Creator__ allows this ratio to be mapped to another ratio to achieve different __gradient__ effects. These mapping methods are called **gradient methods**. After the ratio is determined, the final result value is calculated according to the specified **interpolation method**. Both the **gradient** and **interpolation** methods affect the smoothness of the animation.
 
 #### Gradient method
 
@@ -214,11 +214,11 @@ The following lists several commonly used gradient methods.
 #### Curve value and interpolation method
 
 Some **interpolation** algorithms require additional data to be stored in the curve value of each frame. Therefore, the value type of the curve value and the target attribute are not necessarily the same.
-For numeric types or value types, **Cocos Creator 3D** provides several general interpolation methods. Also, custom interpolation method can be defined.
+For numeric types or value types, **Cocos Creator** provides several general interpolation methods. Also, custom interpolation method can be defined.
 
 When the `interpolate` property of the curve data is `true`, the curve will try to use the **interpolation** function:
   - If the type of curve value is `number`, `Number`, **linear interpolation** will be applied;
-   - If the curve value inherits from `ValueType`, the `lerp` function of `ValueType` will be called to complete the **interpolation**. Most of the value types built into **Cocos Creator 3D** implement its `lerp` as **linear interpolation**.
+   - If the curve value inherits from `ValueType`, the `lerp` function of `ValueType` will be called to complete the **interpolation**. Most of the value types built into **Cocos Creator** implement its `lerp` as **linear interpolation**.
   - If the curve value is [interpolable](https://docs.cocos.com/creator3d/api/en/interfaces/animation.ilerpable.html), the curve value's `lerp` function will be called to complete the **interpolation** <sup id="a2">[2](#f2)</sup>.
 
 If the curve value does not satisfy any of the above conditions, or when the `interpolate` property of the curve data is `false`,
@@ -345,4 +345,4 @@ For more **looping** modes, see [WrapMode](https://docs.cocos.com/creator3d/api/
 
 <b id="f1">1</b>The node of the __Animation Clip__ is the node attached to the __Animation Component__ that guides the use of the __Animation State__ object of the __Animation Clip__. [↩](#a1)
 
-<b id="f2">2</b> For numerical values, quaternions, and various vectors, __Cocos Creator 3D__ provides corresponding interpolable classes to implement [cubic spline interpolation](https://en.wikipedia.org/wiki/Spline_interpolation). [↩](#a2)
+<b id="f2">2</b> For numerical values, quaternions, and various vectors, __Cocos Creator__ provides corresponding interpolable classes to implement [cubic spline interpolation](https://en.wikipedia.org/wiki/Spline_interpolation). [↩](#a2)

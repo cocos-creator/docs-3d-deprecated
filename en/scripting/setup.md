@@ -2,7 +2,7 @@
 
 ## Creating component scripts
 
-In __Cocos Creator 3D__, scripts are also part of resources. You can add and select **TypeScript** to create a component script by clicking the **Create** button in the **Resource Editor**. Example:
+In __Cocos Creator__, scripts are also part of resources. You can add and select **TypeScript** to create a component script by clicking the **Create** button in the **Resource Editor**. Example:
 
 ![create-script](setup/create-script.png)
 
@@ -37,7 +37,7 @@ export class NewScript extends Component {
 
 Users can choose their favorite text-editing tools (such as: *Vim*, *Sublime Text*, *Web Storm*, *VSCode*...) for script editing according to their own needs, please go to [Settings](#defaultscripteditingtoolconfiguration) to set.
 
-By double-clicking the script resource, the script editor directly opens to allow for editing. When the script is edited and saved, **Cocos Creator 3D** will automatically detect the changes to the script and compile it quickly.
+By double-clicking the script resource, the script editor directly opens to allow for editing. When the script is edited and saved, **Cocos Creator** will automatically detect the changes to the script and compile it quickly.
 
 Before writing code, please read [Basics of Scripting](basic.md) documentation to learn more about scripts.
 

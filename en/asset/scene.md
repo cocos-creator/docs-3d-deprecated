@@ -1,6 +1,6 @@
 # Scene Assets
 
-In __Cocos Creator 3D__, the __Scene__ is the cornerstone for organizing game content during development, and presenting all game content to the players. The __Scene__ itself is a file, also considered a game asset, and saves most of the game's information.
+In __Cocos Creator__, the __Scene__ is the cornerstone for organizing game content during development, and presenting all game content to the players. The __Scene__ itself is a file, also considered a game asset, and saves most of the game's information.
 
 ## Creating a Scene
 

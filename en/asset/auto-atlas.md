@@ -1,6 +1,6 @@
 # Auto Atlas
 
-**Auto Atlas Assets** is the picture-combining method that comes as part of __Cocos Creator 3D__. You can pack a specified series of images into a __sprite sheet__. This capability is very similar to the function of __Texture Packer__.
+**Auto Atlas Assets** is the picture-combining method that comes as part of __Cocos Creator__. You can pack a specified series of images into a __sprite sheet__. This capability is very similar to the function of __Texture Packer__.
 
 ## Creating Auto Atlas Assets
 
@@ -36,7 +36,7 @@ The results are divided into:
 
 ## Generating an Atlas
 
-When inside the editor or previewing the project __Cocos Creator 3D__ is directly using the split **SpriteFrame** assets, only after you build the project with the option **AutoAtlas** enabled, the **Atlas** asset will be generated and be used instead of all split assets.
+When inside the editor or previewing the project __Cocos Creator__ is directly using the split **SpriteFrame** assets, only after you build the project with the option **AutoAtlas** enabled, the **Atlas** asset will be generated and be used instead of all split assets.
 
 In general, after **Atlas** asset is generated, the **Texture2D** assets and **Image** assets related by the original split assets will be deleted in the package. The following two special cases will have special process:
 

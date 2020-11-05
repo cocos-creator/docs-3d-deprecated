@@ -1,6 +1,6 @@
 # 发布到小米快游戏
 
-Cocos Creator 3D 从 v1.0.3 版本开始正式支持将游戏发布到小米快游戏。
+Cocos Creator 从 v1.0.3 版本开始正式支持将游戏发布到小米快游戏。
 
 ## 环境配置
 
@@ -10,14 +10,14 @@ Cocos Creator 3D 从 v1.0.3 版本开始正式支持将游戏发布到小米快�
   ```bash
   # 查看 npm 版本
   npm -v
-  # 若 npm 版本在 5.2.0 以下，可使用以下升级命令升级 npm 
+  # 若 npm 版本在 5.2.0 以下，可使用以下升级命令升级 npm
   npm install npm@latest -g
   ```
 - 下载 [小米快游戏调试器和小米快游戏运行环境](https://forum.cocos.org/t/topic/81887)，并安装到小米手机上（MIUI 8.5.0 或以上版本）。
 
 ## 发布流程
 
-一、使用 Cocos Creator 3D 打开需要发布的项目工程，在 **构建发布** 面板的 **发布平台** 中选择 **小米快游戏**。
+一、使用 Cocos Creator 打开需要发布的项目工程，在 **构建发布** 面板的 **发布平台** 中选择 **小米快游戏**。
 
 ![](./publish-xiaomi-quick-game/build.jpg)
 

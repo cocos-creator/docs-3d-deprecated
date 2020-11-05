@@ -1,6 +1,6 @@
 # 引擎定制工作流程
 
-Cocos Creator 3D 的引擎部分包括 JavaScript、Cocos2d-x-lite 和 adapter 三个部分(暂不支持Cocos2d-x-lite 和 adapter 引擎定制)。引擎在 github 上开源。地址在：
+Cocos Creator 的引擎部分包括 JavaScript、Cocos2d-x-lite 和 adapter 三个部分(暂不支持Cocos2d-x-lite 和 adapter 引擎定制)。引擎在 github 上开源。地址在：
 
 - JavaScript 引擎：<https://github.com/cocos-creator/engine>
 
@@ -21,7 +21,7 @@ Cocos Creator 3D 的引擎部分包括 JavaScript、Cocos2d-x-lite 和 adapter �
 
 ### 1.1 获取 JS 引擎
 
-如果您仅需基于当前的版本做一些调整，那么在 Cocos Creator 3D 内置的引擎基础上修改就可以了。点击 Creator 3D 编辑器右上方的 **打开程序安装路径**，然后将内置的 **engine** 目录拷贝到本地其他路径。
+如果您仅需基于当前的版本做一些调整，那么在 Cocos Creator 内置的引擎基础上修改就可以了。点击 Creator 3D 编辑器右上方的 **打开程序安装路径**，然后将内置的 **engine** 目录拷贝到本地其他路径。
 
 ![](engine-customization/open-engine.png)
 
@@ -49,7 +49,7 @@ npm install
 npm run build
 ```
 
-也可以在 Cocos Creator 3D 中通过 `开发者 -> 编译引擎` 选项进行编译。
+也可以在 Cocos Creator 中通过 `开发者 -> 编译引擎` 选项进行编译。
 
 ![](engine-customization/build.png)
 
@@ -57,7 +57,7 @@ npm run build
 
 ![](engine-customization/bin.png)
 
-### 1.4 在 Cocos Creator 3D 中使用定制版引擎
+### 1.4 在 Cocos Creator 中使用定制版引擎
 
 通过 `项目 -> 项目设置` 面板的 **引擎设置** 选项卡，设置本地定制后的 JavaScript 引擎路径。
 

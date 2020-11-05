@@ -50,7 +50,7 @@ animationClip.curves = [{ // 组件上的属性曲线
 表示寻址到上一级对象的属性，其本身就指定了属性名。
 否则，目标路径必须是实现接口 `animation.TargetPath` 的对象。
 
-Cocos Creator 3D 内置了以下几个实现自接口 `animation.TargetPath` 的类：
+Cocos Creator 内置了以下几个实现自接口 `animation.TargetPath` 的类：
 - `animation.HierarchyPath` 将上一级的对象视为结点，并寻址到它的某个子结点；
 - `animation.ComponentPath` 将上一级的对象视为结点，并寻址到它的某个组件。
 
@@ -190,8 +190,8 @@ class MyValueProxy implements animation.ValueProxyFactory {
 若采样时间点恰好就等于某一关键帧的时间点，则使用该关键帧上的动画数据。
 否则——当采样时间点居于两帧之间时，结果值应同时受两帧数据的影响，
 采样时间点在两处关键帧的时刻区间上的比例（`[0,1]`）反应了影响的程度。
-Cocos Creator 3D 允许将该比例映射为另一个比例，以实现不同的“渐变”效果。
-这些映射方式，在 Cocos Creator 3D中称为**渐变方式**。
+Cocos Creator 允许将该比例映射为另一个比例，以实现不同的“渐变”效果。
+这些映射方式，在 Cocos Creator中称为**渐变方式**。
 在比例确定之后，根据指定的**插值方式**计算出最终的结果值。
 渐变方式和插值方式都影响着动画的平滑度。
 
@@ -217,13 +217,13 @@ Cocos Creator 3D 允许将该比例映射为另一个比例，以实现不同的
 
 有些插值算法需要每一帧的曲线值中存储额外的数据，因此，
 曲线值与目标属性的值类型不一定相同。
-对于数值类型或值类型，Cocos Creator 3D 提供了几种通用的插值方式；
+对于数值类型或值类型，Cocos Creator 提供了几种通用的插值方式；
 同时，也可以定义自己的插值方式。
 
 当曲线数据的 `interpolate` 属性为 `true` 时，曲线将尝试使用插值函数：
 - 若曲线值的类型为 `number`、`Number`，将应用线性插值；
 - 否则，若曲线值继承自 `ValueType`，将调用 `ValueType` 的 `lerp` 函数完成插值，
-Cocos Creator 3D 内置的大多数值类型都将其 `lerp` 实现为线性插值；
+Cocos Creator 内置的大多数值类型都将其 `lerp` 实现为线性插值；
 - 否则，若曲线值是[可插值的](https://docs.cocos.com/creator3d/api/zh/interfaces/animation.ilerpable.html)，将调用曲线值的 `lerp` 函数完成插值<sup id="a2">[2](#f2)</sup>。
 
 若曲线值不满足上述任何条件，或当曲线数据的 `interpolate` 属性为 `false`时，

@@ -1,6 +1,6 @@
 # 图集资源（Atlas）
 
-图集（Atlas）也称作 Sprite Sheet，是游戏开发中常见的一种美术资源。图集是通过专门的工具将多张图片合并成一张大图，并通过 **plist** 等格式的文件索引的资源。可供 Cocos Creator 3D 使用的图集资源由 **plist** 和 **png** 文件组成。下面就是一张图集使用的图片文件：
+图集（Atlas）也称作 Sprite Sheet，是游戏开发中常见的一种美术资源。图集是通过专门的工具将多张图片合并成一张大图，并通过 **plist** 等格式的文件索引的资源。可供 Cocos Creator 使用的图集资源由 **plist** 和 **png** 文件组成。下面就是一张图集使用的图片文件：
 
 ![atlas sheep](atlas/sheep_atlas.png)
 

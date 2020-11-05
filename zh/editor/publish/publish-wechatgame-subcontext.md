@@ -1,6 +1,6 @@
 # 接入微信小游戏的开放数据域
 
-> 注意： Creator Creator 3D 现不支持子域构建，请使用 Cocos Creator 来构建子域，详情可以参考对应文档 [接入微信小游戏的开放数据域](https://docs.cocos.com/creator/manual/zh/publish/publish-wechatgame-sub-domain.html)，这里的文档会适当跟进但具体还请参考 Cocos Creator 3D 相关版本的对应文档。
+> 注意： Creator Creator 3D 现不支持子域构建，请使用 Cocos Creator 来构建子域，详情可以参考对应文档 [接入微信小游戏的开放数据域](https://docs.cocos.com/creator/manual/zh/publish/publish-wechatgame-sub-domain.html)，这里的文档会适当跟进但具体还请参考 Cocos Creator 相关版本的对应文档。
 
 微信小游戏为了保护其社交关系链数据，增加了 **开放数据域** 的概念，这是一个单独的游戏执行环境。开放数据域中的资源、引擎、程序，都和主游戏完全隔离，开发者只有在开放数据域中才能访问微信提供的 `wx.getFriendCloudStorage()` 和 `wx.getGroupCloudStorage()` 两个 API，用于实现一些例如排行榜的功能。由于开放数据域只能在离屏画布 sharedCanvas 上渲染，因此需要我们把 sharedCanvas 绘制到主域上。
 

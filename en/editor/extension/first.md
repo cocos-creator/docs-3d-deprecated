@@ -1,6 +1,6 @@
 # First Extension
 
-Through this article, we will learn to create a **Cocos Creator 3D** extension and execute a custom script through the extension.
+Through this article, we will learn to create a **Cocos Creator** extension and execute a custom script through the extension.
 
 ## Create and Install Extension
 
@@ -16,9 +16,9 @@ hello-world
 
 ## Define the Description File package.json
 
-Every extension needs a package.json file to describe the purpose of the extension. Only after the description file `package.json` is fully defined, the **Cocos Creator 3D** editor can know the specific functions defined in this extension, loading entry and other information.
+Every extension needs a package.json file to describe the purpose of the extension. Only after the description file `package.json` is fully defined, the **Cocos Creator** editor can know the specific functions defined in this extension, loading entry and other information.
 
-Although the definition of many fields in `package.json` is similar to that of `node.js`'s npm package, they are obviously customized for different products and services. So the npm module downloaded from the npm community cannot be directly put into **Cocos Creator 3D** to become an extension, but we can use the modules in the npm community in the **Cocos Creator 3D** extension.
+Although the definition of many fields in `package.json` is similar to that of `node.js`'s npm package, they are obviously customized for different products and services. So the npm module downloaded from the npm community cannot be directly put into **Cocos Creator** to become an extension, but we can use the modules in the npm community in the **Cocos Creator** extension.
 
 To continue the operation just now, fill in the content in the newly created `package.json` file:
 
@@ -75,11 +75,11 @@ exports.load = {};
 exports.unload = {};
 ```
 
-This entry program will be loaded during the startup of **Cocos Creator 3D**. The methods defined in methods will be used as the operation interface, which can be called across extensions through [messages](./messages.md) or communicate with the panel.
+This entry program will be loaded during the startup of **Cocos Creator**. The methods defined in methods will be used as the operation interface, which can be called across extensions through [messages](./messages.md) or communicate with the panel.
 
 ## Run extension
 
-Now, we can open **Cocos Creator 3D**, find and open the **Extension --> Extension Manager** at the top, and select the extension location (global or project) on the panel.
+Now, we can open **Cocos Creator**, find and open the **Extension --> Extension Manager** at the top, and select the extension location (global or project) on the panel.
 
 Next, find the **Refresh** button at the top and click to manually update the extended list information at that location. Then the extension list will show the extensions that have been found, we can start, close, or restart the corresponding extensions in the list control.
 

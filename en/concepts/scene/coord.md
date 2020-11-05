@@ -2,7 +2,7 @@
 
 ## World coordinate system
 
-__Cocos Creator 3D's__ world coordinate system uses a __Cartesian right-handed__ coordinate system with the origin occuring at the __lower left corner__, __x__ to the __right__, __y__ to the __top__, and __z__ to the __outside__.
+__Cocos Creator's__ world coordinate system uses a __Cartesian right-handed__ coordinate system with the origin occuring at the __lower left corner__, __x__ to the __right__, __y__ to the __top__, and __z__ to the __outside__.
 
 ![right hand](coord/right_hand.png)
 

@@ -1,6 +1,6 @@
 # Setup Native Development Environment
 
-Apart from publishing games to the Web, **Cocos Creator 3D** uses JSB technology based on the **Cocos2d-x** engine for the cross-platform release of native games. Before using **Cocos Creator 3D** to bundle and publish games to native platforms, you need to configure related **Cocos2d-x** development environment first.
+Apart from publishing games to the Web, **Cocos Creator** uses JSB technology based on the **Cocos2d-x** engine for the cross-platform release of native games. Before using **Cocos Creator** to bundle and publish games to native platforms, you need to configure related **Cocos2d-x** development environment first.
 
 ## Android platform dependencies
 
@@ -28,7 +28,7 @@ On Windows platform, please confirm if `JAVA_HOME` is included in your environme
 
 ### Download and install Android Studio
 
-**Cocos Creator 3D** does not support **Eclipse's ANT** build, we need to use **Android Studio** as an Android platform's build tool and you should download the required SDK and NDK packages in **Android Studio**. First install [Android Studio](https://developer.android.com/studio#downloads).
+**Cocos Creator** does not support **Eclipse's ANT** build, we need to use **Android Studio** as an Android platform's build tool and you should download the required SDK and NDK packages in **Android Studio**. First install [Android Studio](https://developer.android.com/studio#downloads).
 
 ### Download the SDK and NDK required to publish the Android platform
 
@@ -39,7 +39,7 @@ After installing **Android Studio**, refer to the official documentation and ope
 3. In the **Android SDK Build-Tools**, select the latest build Tools version.
 4. Check the **Android SDK Platform-Tools** and **Android SDK Tools**. If you need to install the **Android Support Library**, please refer to the official [Android Documentation](https://developer.android.com/topic/libraries/support-library/setup).
 5. Check the **NDK** and the recommended version is **r17 ~ r19**.
-6. Take note of the path of **Android SDK Location** on top of the **SDK Manager** window. Later we need to fill in the location of the SDK in **Cocos Creator 3D**.
+6. Take note of the path of **Android SDK Location** on top of the **SDK Manager** window. Later we need to fill in the location of the SDK in **Cocos Creator**.
 7. Click **OK** and follow the prompts to complete the installation.
 
 ![sdk manager](setup-native-development/sdk-manager.jpg)
@@ -58,7 +58,7 @@ Please install the following running environment:
 
 ## Configure Native Develop environments path
 
-Next, let's go back to Cocos Creator 3D to configure the environmental path of the native platform. Choose **CocosCreator 3D -> Preferences** in the main menu, and open the **Preferences** panel:
+Next, let's go back to Cocos Creator to configure the environmental path of the native platform. Choose **CocosCreator 3D -> Preferences** in the main menu, and open the **Preferences** panel:
 
 ![preference](setup-native-development/sdk.jpg)
 

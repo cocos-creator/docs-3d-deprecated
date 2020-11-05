@@ -1,6 +1,6 @@
 # Message
 
-In the **Cocos Creator 3D**, all interactions are done through [Message](./messages.md).
+In the **Cocos Creator**, all interactions are done through [Message](./messages.md).
 
 The message needs to be defined in `contributions` before it can be used.
 
@@ -26,7 +26,7 @@ In the top menu **Developer -> Message List**, the editor presets a **Message Ma
 }
 ```
 
-### public 
+### public
 
 Type `{string}` Optional
 
