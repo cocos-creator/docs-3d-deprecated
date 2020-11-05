@@ -1,6 +1,6 @@
 ## ccclass
 
-When the decorator [ccclass](#ccclass) is applied to a class, the class is called `ccclass`. The `ccclass` injects additional information to control __Cocos Creator 3D__'s serialization of this kind of object along with the editor's display of this kind of object, etc.
+When the decorator [ccclass](#ccclass) is applied to a class, the class is called `ccclass`. The `ccclass` injects additional information to control __Cocos Creator 3D__'s serialization of this kind of object along with the editor's display for these types of objects.
 
 ### ccclass
 
@@ -427,7 +427,7 @@ class Sprite{
 };
 ```
 
-> **Note**: After get is set, this property cannot be serialized, nor can it be assigned a default value, but most parameters except `default` and `serializable` can still be attached.
+> **Note**: As get accessor is used, this property cannot be serialized, nor can it be assigned a default value, but most parameters except `default` and `serializable` can still be attached.
     ```typescript
     @property({type:CCInteger,tooltip: "The width of sprite"})
     private _width = 0;
@@ -436,7 +436,7 @@ class Sprite{
     }
     ```
 
-> **Note**: The `get` property itself is read-only, but the returned object is not read-only. Users can still modify the internal properties of the object using code, for example:
+> **Note**: The `get` accessor is read-only, but the returned object is not read-only. Users can still modify the internal properties of the object using code, for example:
     ```typescript
     @property
     _num=0;
