@@ -164,9 +164,11 @@ pass.setUniform(hColor, color);
 Although the material system itself doesn't make any assumptions on the content,<br>
 there are some built-in effects written on top of the system, provided for common usage:<br>
 unlit, physically-based (standard), skybox, particle, sprite, etc.<br>
-For a quick reference, here are all the properties and macros of the standard effect：
+For a quick reference, here is how each shading term in `builtin-standard` will be assembled from input data：
 
-![Standard](builtin-standard.png)
+![Standard](standard-material-graph.png)
+
+here are the complete list of properties and macros for it:
 
 | Property | Info |
 |:--------:|:----:|
@@ -177,9 +179,9 @@ For a quick reference, here are all the properties and macros of the standard ef
 | alphaThreshold | test threshold for discarding pixels,<br>any pixel with target channel value lower than this threshold will be discarded |
 | normalMap | normal map texture, enhancing surface details |
 | normalStrenth | strenth of the normal map, the bigger the bumpier |
-| pbrMap | PBR parameter all-in-one texture: occlusion, roughness and metallic<br>sample result will be multiplied by the matching constants<br>source channel specified by `XX_CHANNEL` macros |
-| metallicRoughnessMap | metallic and roughness texture<br>sample result will be multiplied by the matching constants<br>source channel specified by `XX_CHANNEL` macros |
-| occlusionMap | independent occlusion texture<br>sample result will be multiplied by the matching constants<br>source channel specified by `XX_CHANNEL` macros |
+| pbrMap | PBR parameter all-in-one texture: occlusion, roughness and metallic<br>sample result will be multiplied by the matching constants |
+| metallicRoughnessMap | metallic and roughness texture<br>sample result will be multiplied by the matching constants |
+| occlusionMap | independent occlusion texture<br>sample result will be multiplied by the matching constants |
 | occlusion | occlusion constant |
 | roughness | roughness constant |
 | metallic | metallic constant |
@@ -191,12 +193,8 @@ Accordingly, these are the available macros：
 
 | Macro | Info |
 |:-----:|:----:|
-| USE_BATCHING | is dynamic batching enabled? |
-| USE_SKINNING | is vertex skinning enabled? **necessary for skinning models** |
-| ANIMATION_BAKED | is baked skinning animation enabled? |
-| OCCLUSION_CHANNEL | specifies the occlusion source channel, default to R channel |
-| ROUGHNESS_CHANNEL | specifies the roughness source channel, default to G channel |
-| METALLIC_CHANNEL | specifies the metallic source channel, default to B channel |
+| USE_BATCHING | should dynamic VB-merging-style batching be enabled? |
+| USE_INSTANCING | should dynamic instancing be enabled? |
 | HAS_SECOND_UV | is the second UV set present? |
 | ALBEDO_UV | specifies the uv set to use when sampling albedo texture, default to the first set |
 | EMISSIVE_UV | specifies the uv set to use when sampling emissive texture, default to the first set |
@@ -205,5 +203,7 @@ Accordingly, these are the available macros：
 | USE_ALPHA_TEST | is alpha test enabled? |
 | USE_ALBEDO_MAP | is albedo texture enabled? |
 | USE_NORMAL_MAP | is normal map enabled? |
-| USE_PBR_MAP | is PBR parameter texture enabled? |
+| USE_PBR_MAP | is PBR parameter texture enabled?<br>**occlusion** has to be in **red** channel,<br>**roughness** has to be in the **green** channel,<br>**metallic** has to be in the **blue** channel, as per glTF spec |
+| USE_METALLIC_ROUGHNESS_MAP | is metallic-roughness texture enabled?<br>**roughness** has to be in the **green** channel,<br>**metallic** has to be in the **blue** channel, as per glTF spec |
+| USE_OCCLUSION_MAP | is occlusion texture enabled?<br>only the **red** channel will be used, as per glTF spec |
 | USE_EMISSIVE_MAP | is emissive texture enabled? |
