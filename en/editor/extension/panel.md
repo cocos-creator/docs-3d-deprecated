@@ -19,7 +19,7 @@ The panels field can be defined in `package.json`.
         "list": {
             "title": "world list",
             "type": "simple",
-            "main": "./panels/default.js",
+            "main": "./panels/list.js",
             "icon": "./static/list.png",
 
             "flags": {},
@@ -68,3 +68,39 @@ interface PanelSize {
     'min-height'?: number;
 }
 ```
+
+## Panel
+
+The panel entry file was defined above when we registered it
+
+```javascript
+// Listen for panel events
+exports.linsteners = {
+    // The hook triggered when the panel is displayed
+    show() {},
+    // The hook triggered when the panel is hidden
+    hide() {},
+};
+
+// The contents of the panel
+exports.template = '<div>Hello</div>';
+// Styles on the panel
+exports.style = 'div { color: yellow; }';
+// Quick selector
+exports.$ = {
+    elem: 'div',
+};
+
+// The hook function that is triggered when the panel starts
+exports.ready = function() {
+    this.$.elem.innerHTML = 'Hello World';
+};
+
+// A function that fires when the panel is ready to close, and returns false terminates the panel
+exports.beforeClose = function() {};
+
+// The hook function after the panel is closed
+exports.close = function() {};
+```
+
+In addition, we have defined a list panel, and we also need to write a list.js file in the above format
