@@ -58,8 +58,8 @@ exports.unload = function() {};
 
  ```javascript
  exports.ready = async () => {
-    const tab = await Editor.Message.send('hello-world', 'query', 'tab');
-    const subTab = await Editor.Message.send('hello-world', 'query', 'subTab');
+    const tab = await Editor.Message.request('hello-world', 'query', 'tab');
+    const subTab = await Editor.Message.request('hello-world', 'query', 'subTab');
 
     // 打印查询到的数据
     console.log(tab, subTab):
