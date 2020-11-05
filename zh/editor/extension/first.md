@@ -10,7 +10,7 @@
 
 ```
 hello-world
-  |--main.js
+  |--browser.js
   |--package.json
 ```
 
@@ -45,7 +45,7 @@ hello-world
 
 现在需要在 contributions 内定义一个 messages 对象，这是编辑器消息注册的方法。
 这个消息可以绑定一个或多个的扩展内内定义的方法。
-更多定义数据请参考 [消息通信](contributions-messages.md)
+更多定义数据请参考 [消息通信](./contributions-messages.md)
 
 然后需要在 contributions 内再定义一个 menu 数组，向 menu 组件提供一个菜单的基础信息。
 最后将这个菜单绑定到一条的消息。更详细的请参考：[扩展主菜单](./contributions-menu.md)
@@ -77,7 +77,7 @@ exports.load = {};
 exports.unload = {};
 ```
 
-这份入口程序会在 Cocos Creator 3D 的启动过程中被加载。methods 内定义的方法，将会作为操作的接口，通过 [消息系统](messages.md) 跨扩展调用，或者是和面板通信。
+这份入口程序会在 Cocos Creator 3D 的启动过程中被加载。methods 内定义的方法，将会作为操作的接口，通过 [消息系统](./messages.md) 跨扩展调用，或者是和面板通信。
 
 ## 运行扩展
 
