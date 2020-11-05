@@ -6,9 +6,7 @@ __ProgressBar__ is usually used to show the progress of a certain operation in t
 
 Click the __Add Component__ button at the bottom of the __Inspector__ panel and select __UI/ProgressBar__ to add the __ProgressBar__ component to the node.
 
-To use the `Progress`, please refer to the [progress](https://github.com/cocos-creator/test-cases-3d/tree/master/assets/cases/ui/11.progress) scene of the test-cases-3d project.
-
-Api can refer to [Mask API](https://docs.cocos.com/creator3d/api/en/classes/ui.progressbar.html).
+To use `Progress`, please refer to the [Mask API](https://docs.cocos.com/creator3d/api/en/classes/ui.progressbar.html) documentation and the [progress](https://github.com/cocos-creator/test-cases-3d/tree/master/assets/cases/ui/11.progress) scene of the test-cases-3d project.
 
 ## ProgressBar Properties
 

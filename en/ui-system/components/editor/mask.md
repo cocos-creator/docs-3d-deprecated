@@ -8,7 +8,7 @@ Select a node in the __Hierarchy__ panel, then click the __Add Component__ butto
 
 > __Note__: The Mask component cannot be added to a node with other renderer components such as __Sprite__, __Label__, etc.
 
-To use the `Mask`, please refer to the [Mask API](https://docs.cocos.com/creator3d/api/en/classes/ui.mask-1.html) documentation and the [mask](https://github.com/cocos-creator/test-cases-3d/tree/master/assets/cases/ui/08.mask) scene of the test-cases-3d project.
+To use `Mask`, please refer to the [Mask API](https://docs.cocos.com/creator3d/api/en/classes/ui.mask-1.html) documentation and the [mask](https://github.com/cocos-creator/test-cases-3d/tree/master/assets/cases/ui/08.mask) scene of the test-cases-3d project.
 
 ## Mask Properties
 
@@ -29,7 +29,7 @@ To use the `Mask`, please refer to the [Mask API](https://docs.cocos.com/creator
 
 ![mask](mask/mask-ellipse.png)
 
-It can also be set by code at runtime.
+It can also be set by code at runtime. Example:
 
 ``` ts
     const mask = this.getComponent(Mask);
@@ -41,7 +41,7 @@ It can also be set by code at runtime.
 
 ![mask](mask/mask-graphics.png)
 
-It can also be set by code at runtime.
+It can also be set by code at runtime. Example:
 
 ``` ts
     const mask = this.getComponent(Mask);
@@ -62,7 +62,7 @@ It can also be set by code at runtime.
 
 ![mask](mask/mask-image.png)
 
-It can also be set by code at runtime.
+It can also be set by code at runtime. Example:
 
 ``` ts
     const mask = this.getComponent(Mask);

@@ -8,7 +8,7 @@ __Note__: All the first layer child node containing the Toggle component will au
 
 Click the __Add Component__ button at the bottom of the __Inspector__ panel and select __UI/ToggleContainer__ to add the ToggleContainer component to the node.
 
-To use the `ToggleContainer`, please refer to the [ToggleContainer API](https://docs.cocos.com/creator3d/api/en/classes/ui.togglecontainer.html) documentation and the [toggleContainer](https://github.com/cocos-creator/test-cases-3d/tree/master/assets/cases/ui/09.toggle) scene of the test-cases-3d project.
+To use `ToggleContainer`, please refer to the [ToggleContainer API](https://docs.cocos.com/creator3d/api/en/classes/ui.togglecontainer.html) documentation and the [toggleContainer](https://github.com/cocos-creator/test-cases-3d/tree/master/assets/cases/ui/09.toggle) scene of the test-cases-3d project.
 
 ## ToggleContainer Properties
 

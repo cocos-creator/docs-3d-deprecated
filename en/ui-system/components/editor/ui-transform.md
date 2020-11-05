@@ -4,7 +4,7 @@ The UITransform component defines the rectangle information on the UI, including
 
 Click the __Add Component__ button at the bottom of the __Inspector__ panel and select __UITransform__ from __UI__ to add the UITransform component to the node.
 
-Api can refer to [UITransform API](https://docs.cocos.com/creator3d/api/en/classes/ui.uitransform.html).
+Please refer to the [UITransform API](https://docs.cocos.com/creator3d/api/en/classes/ui.uitransform.html).
 
 ## UITransform Properties
 
@@ -14,7 +14,7 @@ Api can refer to [UITransform API](https://docs.cocos.com/creator3d/api/en/class
 | AnchorPoint | The anchor position of UI rectangle.
 | Priority | The priority of UI nodes, sorted in the parent node. The order of the Canvas node is not affected by this property.
 
-### change the size and anchor point through script
+### change the size and anchor point in script. Example:
 
 ```ts
 import { _decorator, Component, Node, UITransform } from 'cc';

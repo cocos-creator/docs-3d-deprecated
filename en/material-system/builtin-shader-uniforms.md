@@ -1,6 +1,6 @@
 ## Built-in Shader Uniforms
 
-To use these built-in shader variables, you need to include the corresponding chunks first.
+To use built-in shader variables, you need to include the corresponding chunks first.
 All currently available built-in uniforms, grouped by the chunks they are located:
 
 ### cc-local.chunk

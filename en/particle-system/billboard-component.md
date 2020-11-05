@@ -9,4 +9,4 @@ Properties | Features
 **rotation** | The angle of rotation of the billboard around the center point.
 **texture** | The texture displayed on the billboard.
 
-To use the `Billboard`, please refer to the [Billboard API](https://docs.cocos.com/creator3d/api/en/classes/particle.billboard.html).
+To use `Billboard`, please refer to the [Billboard API](https://docs.cocos.com/creator3d/api/en/classes/particle.billboard.html).

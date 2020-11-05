@@ -6,7 +6,7 @@ Widget is a frequently used UI layout component. It can automatically align the 
 
 Click the __Add Component__ button at the bottom of the __Inspector__ panel and select __UI/Widget__ to add the Widget component to the node.
 
-To use the `Widget`, please refer to the [Widget API](https://docs.cocos.com/creator3d/api/en/classes/ui.widget.html) documentation and the [widget](https://github.com/cocos-creator/test-cases-3d/tree/master/assets/cases/ui/04.widget) scene of the test-cases-3d project.
+To use `Widget`, please refer to the [Widget API](https://docs.cocos.com/creator3d/api/en/classes/ui.widget.html) documentation and the [widget](https://github.com/cocos-creator/test-cases-3d/tree/master/assets/cases/ui/04.widget) scene of the test-cases-3d project.
 
 ## Widget Properties
 
@@ -78,7 +78,7 @@ To make sure you can update node's position or size during runtime:
 1. Set __Align Mode__ property of Widget to `ONCE`, so it will only align during onEnable process.
 2. Use Widget's API to update node's position and size, for example updating Widget's `top`, `bottom`, `left`, `right` instead of node's `x`, `y`, `width`, `height`.
 
-### Modify the alignment distance through script code
+### Modify the alignment distance in script code. Example:
 
 ```ts
 import { _decorator, Component, Widget } from 'cc';
