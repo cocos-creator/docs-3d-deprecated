@@ -54,7 +54,7 @@ The method queue triggered by the message.
 
 This is an array of strings. The strings are methods on the extension or panel.
 
-If it is a method on the extension, directly define `methodName`, if you want to trigger a method on the panel, you must fill in `panelName.methodName`. For example, the `ready` method of the scene manager is `scene:ready`.
+If it is a method on the extension, directly define `methodName`, if you want to trigger a method on the panel, you must fill in `panelName.methodName` (panel.methods).
 
 ## Define broadcast message
 

@@ -58,8 +58,8 @@ exports.unload = function() {};
 
  ```javascript
  exports.ready = async () => {
-    const tab = await Editor.Message.request('hello-world','query','tab');
-    const subTab = await Editor.Message.request('hello-world','query','subTab');
+    const tab = await Editor.Message.send('hello-world','query','tab');
+    const subTab = await Editor.Message.send('hello-world','query','subTab');
 
     // Print the queried data
     console.log(tab, subTab):

@@ -41,7 +41,7 @@ Search path of the top menu:
 - i18n:menu.extension
 - i18n:menu.develop
 
-You can also fill in multi-level menus, such as `i18n:menu.extension/Hello World`.
+You can also fill in multi-level menus, such as `i18n:extension/Hello World`.
 
 ### label
 
