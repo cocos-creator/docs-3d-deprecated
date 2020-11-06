@@ -1,19 +1,19 @@
 # Asset Manager
 
-  The **Explorer Panel** is an important tool we use to access and manage project assets. When starting a game, **importing assets** is usually a necessary step. You can use the template project when creating a new project. The project will be opened automatically after the new step is completed. The default layout includes the **Explorer** panel, which contains two asset libraries, referred to as DB, `assets` and `internal`. `internal` belongs to the default built-in assets, which can be copied, but cannot be modified directly.
+The **Assets Panel** is an important tool we use to access and manage project assets. When starting a game, **importing assets** is usually a necessary step. You can use the template project when creating a new project. The project will be opened automatically after the new step is completed. The default layout includes the **Assets Panel**, which contains two asset libraries, referred to as DB, `assets` and `internal`. `internal` belongs to the default built-in assets, which can be copied, but cannot be modified directly. `internal` assets are also shared by all projects.
 
-  Panel operation preview:
+Panel operation preview:
 
-  ![Panel operation preview](img/thumb.gif)
+![Panel operation preview](img/thumb.gif)
 
-## Panel Introduction
+## Asset Panel Introduction
 
-The **Explorer** contains the `head menu area` and the `tree list area` on the panel:
+The **Assets Panel** contains the `head menu area` and the `tree list area` on the panel:
 
 - The functions of the `head menu area` are: **New Resource Button**, **Sorting Method Button**, **Search Filter**, **Search Box**, **All Collapse or Expand Button** , **Refresh list button**
-- The `tree list area` mainly reflects the relationship between assets. The root node such as `assets` is similar to the file manager in the operating system. The editor is called a DB.
-   * `Assets` is a project asset, which is empty by default in a new project;
-   * `Internal` is a built-in asset. It is a read-only asset and cannot be added, deleted or modified, but it can be used as a asset template and copied to Assets DB for pasting, that is, a new project asset is created.
+- The `tree list area` mainly reflects the relationship between assets. The root node such as `assets` and `internal` are asset mounts, each mount is similar to the file manager in the operating system. The editor is called a `DB`.
+   * `assets` is the project asset mount, which is empty by default in a new project.
+   * `internal` is the built-in asset mount. It is a read-only asset and cannot be added, deleted or modified, but it can be directly referenced by your project. You can also copy any internal asset to the project `assets` mount as a template, then modify it as you wish.
    * Panels and nodes have right-click menu events, which are important operating functions. The grayed-out menus are not available.
 - Panel shortcuts currently support asset operations:
 
@@ -51,9 +51,9 @@ You can use the following operations to select assets in the list:
 Assets can also be added by dragging:
 
 - Move the asset, drag the asset from one folder in the tree list to another folder. At this time, the location box of a target folder will follow the change.
-- Drag out assets to the **Scene Panel** or **Level Panel** to generate nodes. Currently, `cc.Prefab`, `cc.Mesh`, `cc.SpriteFrame` assets are supported.
+- Drag out assets to the **Scene Panel** or **Hierarchy Panel** to generate nodes. Currently, `cc.Prefab`, `cc.Mesh`, `cc.SpriteFrame` assets are supported.
 - Drag files from **System File Manager** to the list to import assets.
-- Drag in the node and drag the node from the **Level Panel** to a folder in the **Assets Panel** to save the node as a `cc.Prefab` asset, see the [Prefab](../../asset/prefab.md) documentation.
+- Drag in the node and drag the node from the **Hierarchy Panel** to a folder in the **Assets Panel** to save the node as a `cc.Prefab` asset, see the [Prefab](../../asset/prefab.md) documentation.
 
  ![dragging Resources](img/drag.png)
 
