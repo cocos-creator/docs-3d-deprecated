@@ -1,6 +1,6 @@
 # 节点和组件
 
-Cocos Creator 3D 的工作流程是以组件式开发为核心的，组件式架构也称作 **组件 — 实体系统**（或 [Entity-Component System](https://en.wikipedia.org/wiki/Entity_component_system)），简单来说，就是以组合而非继承的方式进行实体的构建。
+Cocos Creator 3D 的工作流程是以组件式开发为核心的，组件式架构也称作 **实体 — 组件架构**（Entity-Component System），简单来说，就是以组合而非继承的方式进行游戏中各种元素的构建。
 
 在 Cocos Creator 3D 中，**节点（Node）** 是承载组件的实体，我们通过将具有各种功能的 **组件（Component）** 挂载到节点上，来让节点具有各式各样的表现和功能。接下来我们看看如何在场景中创建节点和添加组件。
 
@@ -77,4 +77,4 @@ Cocos Creator 3D 的工作流程是以组件式开发为核心的，组件式架
 
 上面的例子中，我们先是将 MeshRenderer 组件和节点组合，有了可以指定渲染材质的网格资源，接下来我们通过修改节点属性，能够对这个模型进行缩放和旋转等不同方式的显示。现在我们又为这个节点添加了 DirectionalLight 组件，让节点可以根据平行光源的不同状态展现不同的效果。这就是 Cocos Creator 3D 中组件式开发的工作流程，我们可以用这样的方式将不同的功能组合在一个节点上，实现更多复杂目标。
 
-需要注意的是，一个节点上只能添加一个 UI 渲染组件，渲染组件包括 **Sprite**、**Label**、**Graphics**、**Mask**、**RichText**、**UIStaticBatch** 等。
+需要注意的是，一个节点上只能添加一个渲染组件，渲染组件包括 **MeshRenderer**、**Sprite**、**Label**、**Graphics**、**Mask**、**RichText**、**UIStaticBatch** 等。

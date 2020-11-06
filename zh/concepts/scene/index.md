@@ -6,7 +6,8 @@
 
 ## 场景结构
 
-Cocos Creator 在组件系统上实现了 3D 场景结构。场景通过 RenderScene 表现，Component 引用了 RenderScene 中维护的模型（Model）、相机（Camera）、灯光（Light）等元素。这些元素通过 Node 关联在一起，RenderScene 中更新元素的各种 Transform，也是通过 Node 来实现。
+Cocos Creator 通过节点树和节点组件系统实现了自由的场景结构。其中 Node 负责管理节点树的父子关系以及空间矩阵变换 Transform，这样可以轻松地在场景中管理和摆放所有的实体节点。<br>
+组件系统赋予了节点各种各样的高级功能，比如模型渲染（MeshRenderer 组件）、动画（Animation 组件）、光源（Light 组件）、地形（Terrain 组件）等。其中 3D 场景中的必要元素是 Camera 组件，Camera 组件代表的是游戏中的玩家视角，没有 Camera 就什么也看不见。因而在创建场景时，Creator 会默认创建一个挂载了 Camera 组件的节点。
 
 ## 场景制作相关工作流程
 
