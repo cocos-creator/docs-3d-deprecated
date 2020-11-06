@@ -1,7 +1,7 @@
 
 ## 组件
 
-所有继承自 [Component]() 的类都称为组件类，
+所有继承自 [Component](../../../api/zh/classes/component.component-1.html) 的类都称为组件类，
 其对象称为组件，实现了 Cocos Creator 3D EC 系统中的组件概念。
 
 组件类必须是 cc 类。
