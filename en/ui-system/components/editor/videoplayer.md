@@ -12,7 +12,7 @@
 
 Click **Add Component** at the bottom of **Properties** panel and select **VideoPlayer** from **UI Component** to add the **VideoPlayer** component to the node.
 
-For more information about VideoPlayer's scripting interface, please refer to the [VideoPlayer API](../../../api/en/classes/VideoPlayer.html) documentation.
+For more information about VideoPlayer's scripting interface, please refer to the [VideoPlayer API](https://docs.cocos.com/creator3d/api/en/classes/VideoPlayer.html) documentation.
 
 ## VideoPlayer Properties
 
@@ -21,7 +21,7 @@ For more information about VideoPlayer's scripting interface, please refer to th
 | Resource Type        | The resource type of videoplayer, REMOTE for remote url and LOCAL for local file path. |
 | Remote URL           | Displayed when Resource Type is REMOTE, feed it with a remote video URL. |
 | Clip                 | Displayed when Resource Type is LOCAL, feed it with a local video path. |
-| Play On Awake        | Whether the video start playing automatically after loaded? |     
+| Play On Awake        | Whether the video start playing automatically after loaded? |
 | Current Time         | The current playback time of the now playing item in seconds, you could also change the start playback time. |
 | Volume               | The volume of the video. (0.0 ~ 1.0) |
 | Mute                 | Mutes the VideoPlayer. Mute sets the volume=0, Un-Mute restore the original volume. |
@@ -94,7 +94,7 @@ export class MyComponent extends Component {
     // the order of parameters should not change
     callback: function(videoplayer, eventType, customEventData) {
         // videoplayer is a VideoPlayer component instance
-        // eventType is typed as VideoPlayer.EventType 
+        // eventType is typed as VideoPlayer.EventType
         // customEventData is "foobar"
     }
 }

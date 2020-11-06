@@ -6,7 +6,7 @@
 
 Click **Add Component** at the bottom of **Properties** panel and select **WebView** from **UI Component** to add the WebView component to the node.
 
-For more information about WebView API, please refer to [WebView API](../../../api/en/classes/WebView.html) documentation.
+For more information about WebView API, please refer to [WebView API](https://docs.cocos.com/creator3d/api/en/classes/WebView.html) documentation.
 
 ## WebView Properties
 
@@ -197,7 +197,7 @@ Because of the limitations of Web platform, it can not be implemented by this me
 </body>
 <script>
     function onClick () {
-        // The parent here is actually the window of the WebView layer, 
+        // The parent here is actually the window of the WebView layer,
         // so that you can access the function defined in CC
         parent.cc.TestCode();
         // If TestCode is defined on window, then

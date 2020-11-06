@@ -7,6 +7,8 @@ __Cocos Creator__ is a component structure, and __Animation__ is no exception. I
 
 ![](./animation/add-component.jpg)
 
+To use `Animation`, please refer to the [Animation API](https://docs.cocos.com/creator3d/api/en/classes/animation.animation-1.html).
+
 ## Clip Animation clip
 An __Animation Clip__ is a piece of declaration data for an animation. If we mount it on an __Animation Component__, we can apply this animation data to a node. An __Animation Component__ can mount multiple __Animation Clips__. It is not possible to edit animations on nodes without clips. After clicking on the relevant nodes, if the node has only __Animation Components__, but no clip files, the __Animation Editor__ will display the **Create Clip File** button, __click__ to create and assign to the component. In the animation editing mode, you can also switch to edit different __Animation Clips__ through the clip option in the lower left corner of the __Animation Editor__.
 

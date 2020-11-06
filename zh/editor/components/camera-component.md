@@ -8,6 +8,8 @@
 
 ![camera view](camera/camera-view.gif)
 
+相机组件接口请参考 [Camera API](https://docs.cocos.com/creator3d/api/zh/classes/component_camera.camera.html)。
+
 ## 相机组件
 
 相机组件是我们用来呈现场景画面的重要功能组件。

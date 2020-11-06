@@ -10,6 +10,8 @@ For more information about BBCode, please refer to the __BBCode format__ section
 
 Click the __Add Component__ button at the bottom of the __Inspector__ panel and select __RichText__ from __UI -> Render__ to add the RichText component to the node.
 
+To use `RichText`, please refer to the [RichText API](https://docs.cocos.com/creator3d/api/en/classes/ui.richtext.html) documentation and the [richText](https://github.com/cocos-creator/test-cases-3d/tree/master/assets/cases/ui/07.richtext) scene of the test-cases-3d project.
+
 ## RichText Properties
 
 | Properties       | Function Explanation  |
@@ -65,7 +67,7 @@ When the height or width of the SpriteFrame changes, The `align` attribute may n
 | --------- | ----------- | ------- | ------ |
 | height    | Specify the SpriteFrame height size, the size should be a integer.| `<img src='foo' height=50 />` | If you only assign height the SpriteFrame will auto keep aspect-ratio
 | width     | Specify the SpriteFrame width size, the size should be a integer.| `<img src='foo' width=50 />` | You can use both Height and Width `<img src='foo' width=20 height=30 />`
-| align     | Specify the SpriteFrame alignment in line, the value should be `bottom`, `top` or `center`.| `<img src='foo' align=center />` | Default SpriteFrame alignment will be bottom 
+| align     | Specify the SpriteFrame alignment in line, the value should be `bottom`, `top` or `center`.| `<img src='foo' align=center />` | Default SpriteFrame alignment will be bottom
 
 To support custom image layout, the `offset` attribute can be used to fine-tune the position of the specified SpriteFrame in the RichText component. When setting the `offset` attribute, keep in mind that the value must be an integer, and it will cause the image to overlap the text if it is not set properly.
 

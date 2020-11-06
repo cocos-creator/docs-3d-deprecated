@@ -4,6 +4,10 @@
 
 ![spot light](spot-light.jpg)
 
+聚光灯组件接口请参考 [Spot Light API](https://docs.cocos.com/creator3d/api/zh/classes/component_light.spotlight.html)。
+
+## 聚光灯属性
+
 | 参数名称 | 说明 |
 |:-------:|:---:|
 | Color | 光源颜色 |

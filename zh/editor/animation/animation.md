@@ -8,6 +8,8 @@
 
 ![](./animation/add-component.jpg)
 
+动画组件接口请参考 [MeshRenderer API](https://docs.cocos.com/creator3d/api/zh/classes/animation.animation-1.html)。
+
 ## Clip 动画剪辑
 
 动画剪辑就是一份动画的声明数据，我们将它挂载到 Animation 组件上，就能够将这份动画数据应用到节点上，一个动画组件可以挂载多份动画剪辑。在没有 clip 的节点上是不能够编辑动画的，点击相关节点后，如果节点只有 Animation 组件却没有 clip 文件，动画编辑器将会显示 **`创建 clip 文件`** 按钮，点击即可创建并赋给组件。在动画编辑模式下亦可以通过动画编辑器左下角的 clip 选项来切换编辑不同的动画剪辑。

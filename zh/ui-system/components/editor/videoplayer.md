@@ -12,7 +12,7 @@ VideoPlayer 是一种视频播放组件，可通过该组件播放本地和远�
 
 点击 **属性检查器** 下面的 **添加组件** 按钮，然后从 **UI 组件** 中选择 **VideoPlayer**，即可添加 VideoPlayer 组件到节点上。
 
-VideoPlayer 的脚本接口请参考 [VideoPlayer API](../../../api/zh/classes/VideoPlayer.html)。
+VideoPlayer 的脚本接口请参考 [VideoPlayer API](https://docs.cocos.com/creator3d/api/zh/classes/VideoPlayer.html)。
 
 ## VideoPlayer 属性
 
@@ -21,7 +21,7 @@ VideoPlayer 的脚本接口请参考 [VideoPlayer API](../../../api/zh/classes/V
 | Resource Type        | 视频来源的类型，目前支持本地（LOCAL）视频和远程（REMOTE）视频 URL |
 | Remote URL           | 当 Resource Type 为 REMOTE 时显示的字段，填入远程视频的 URL |
 | Clip                 | 当 Resource Type 为 LOCAL 时显示的字段，拖拽本地视频的资源到此处来使用 |
-| Play On Awake        | 视频加载后是否自动开始播放？|     
+| Play On Awake        | 视频加载后是否自动开始播放？|
 | Current Time         | 指定从哪个时间点开始播放视频 |
 | Volume               | 视频的音量（0.0 ~ 1.0）|
 | Mute                 | 是否静音视频。静音时设置音量为 0，取消静音时恢复原来的音量 |
