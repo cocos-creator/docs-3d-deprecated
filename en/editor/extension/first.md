@@ -79,10 +79,10 @@ This entry program will be loaded during the startup of **Cocos Creator 3D**. Th
 
 ## Run extension
 
-Now, we can open **Cocos Creator 3D**, find and open the **Extension --> Extension Manager** at the top, and select the extension location (global or project) on the panel.
+Open **Cocos Creator 3D**, find and open the **Extension/Extension Manager** at the top, and select the extension location (global or project) on the panel.
 
 Next, find the **Refresh** button at the top and click to manually update the extended list information at that location. Then the extension list will show the extensions that have been found, we can start, close, or restart the corresponding extensions in the list control.
 
-If the extension has been started, a Develop menu will appear in the top menu area with a test menu item. After clicking, the message will be triggered according to the definition, and the corresponding method in the extension will be executed according to the message definition, and then the log information of `Hello World` will be printed out on the console.
+If the extension has been started, a **Develop** menu will appear in the top menu area with a `tester` menu item. After clicking, the message will be triggered according to the definition, and the corresponding method in the extension will be executed according to the message definition, and then the log information of `Hello World` will be printed out on the console.
 
 Congratulations you have written your first simple editor extension.
