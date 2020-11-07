@@ -93,7 +93,7 @@ A smooth data transition would be much desired during the process, which leads t
 After an effect with migrations is successfully compiled, all the dependent material assets will be immediately updated,<br>
 new property will be automatically migrated/generated from existing data using specified rules.<br>
 
-> **Note**: Please do remember to backup your project before doing any migration attemps!
+> **Note**: Please remember to backup your project before doing any migration attemps!
 
 For a existing effect, declares the following migration rules:
 ```yaml
@@ -161,8 +161,8 @@ Then the migration is guaranteed to execute, regardless of the existing data.<br
 > **Note**: Migration in force mode will execute in every database event, which is basically every mouse click in editor. So use it as a quick-and-dirty test measure, and be sure not to submit effect files with force mode migrations into version control.
 
 Again here are the bottomline rules about preventing potential data losses:<br>
-* Property removal will happen iff you specify the `removeImmediately` entry explicitly.
-* Property override will happen iff you end the `formerlySerializedAs` entry with `!` (force mode)
+* Property removal will happen if, and only if, you specify the `removeImmediately` entry explicitly.
+* Property override will happen if, and only if, you end the `formerlySerializedAs` entry with `!` (force mode)
 
 ## Property Parameter List
 All parameters are optional, with its default value in bold.
