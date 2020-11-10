@@ -1,8 +1,8 @@
-# Communicate with the panel
+# Communicate with the Panel
 
-In general, our interaction model is dominated by "extension process" and "panel" for data presentation. Similarly to the traditional Web, the "plug-in" function is the server side, and the "panel" function is the browser on the client's computer.
+In general, the interaction model is dominated by __extension process__ and __panel__ for data presentation. Similarly to the traditional Web, the __plug-in__ function is the server side, and the __panel__ function is the browser on the client's computer.
 
-In this case, there is usually no direct data sent to the panel, the majority is some state synchronization, just using "broadcast" to broadcast.
+In this case, there is usually no direct data sent to the panel, the majority is some state synchronization, just using __broadcast__ to broadcast.
 
 But for simple extensions, or extensions to the browser environment, the actual functionality may be on the panel, and a request needs to be sent to the panel.
 
@@ -10,7 +10,7 @@ Some level of understanding of the [Message System](./messages.md) is required b
 
 ## Define methods on extensions and panels
 
-First we define the file: package.json
+First we define the file: `package.json`
 
 ```json
 {
@@ -31,11 +31,10 @@ First we define the file: package.json
 }
 ```
 
-The method name defined by methods in messages.console is 'default.console'.
-Represents a console method issued to the Default panel.
-(To send to the plug-in process, fill in methdName directly)
+The method name defined by methods in `messages.console` is `default.console`. Represents a console method issued to the `default` panel.
+(to send to the plug-in process, fill in `methdName` directly)
 
-Then define the panel.js file of the panel:
+Then define the `panel.js` file of the panel:
 
 ```javascript
 exports.template = '';
@@ -56,15 +55,14 @@ exports.close = function() {};
 
 Once we have defined the extension and the panels within the extension, we can try to trigger these messages.
 
-Press CTRL (CMD) + Shift + I to open the console. Open the panel in the console:
+Press __CTRL (CMD) + Shift + I__ to open the console. Open the panel in the console:
 
  ```javascript
  Editor.Panel.open('hello-world');
  Editor.Message.send('hello-world', 'console', 'log');
  ```
 
-When the Hello World plug-in receives a message, it passes it to the methods.console in panell.js for processing.
+When the __Hello World__ plug-in receives a message, it passes it to the `methods.console` in `panel.js` for processing.
 
-So it prints a string "log" on the console
+The result is printing a string to the __log__ on the console.
 
-At this point, we have completed an interaction with the panel.
