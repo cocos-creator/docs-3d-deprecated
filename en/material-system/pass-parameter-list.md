@@ -91,9 +91,9 @@ Ideally the public interface of an effect should always be backward-compatible,<
 but occasionally introducing breaking changes might become the only option as the project iterate.<br>
 A smooth data transition would be much desired during the process, which leads to the migration system:<br>
 After an effect with migrations is successfully compiled, all the dependent material assets will be immediately updated,<br>
-new property will be automatically generated from existing data using specified rules.<br>
-The migration process will not delete any data, and if the new data is visible in inspector, flag the source data as `deprecated`.<br>
-If the new property already exists, no migration will be performed to prevent accidental data override. (except in force mode)
+new property will be automatically migrated/generated from existing data using specified rules.<br>
+
+> **Note**: Please remember to backup your project before doing any migration attemps!
 
 For a existing effect, declares the following migration rules:
 ```yaml
@@ -134,7 +134,13 @@ And after the next save operation on this material: (say the content is actually
   "newFloat": 0.5
 }
 ```
-We are just using the `w` channel here, while in fact arbitrary shuffle is supported too:
+Of course if you want to delete the obsolete data automatically at import-time, you can declare another entry just for this:
+```yaml
+oldVec4: { removeImmediately: true }
+```
+This would come in handy when you have lots of stale material in the code base, and confirmed that this property is completely redundant.
+
+Besides, while we are just using the `w` channel here, arbitrary shuffling is supported too:
 ```yaml
     newColor: { formerlySerializedAs: someOldColor.yxx }
 ```
@@ -153,6 +159,10 @@ If `newFloat` property already exists before migration, nothing will happen, unl
 Then the migration is guaranteed to execute, regardless of the existing data.<br>
 
 > **Note**: Migration in force mode will execute in every database event, which is basically every mouse click in editor. So use it as a quick-and-dirty test measure, and be sure not to submit effect files with force mode migrations into version control.
+
+Again here are the bottomline rules about preventing potential data losses:<br>
+* Property removal will happen if, and only if, you specify the `removeImmediately` entry explicitly.
+* Property override will happen if, and only if, you end the `formerlySerializedAs` entry with `!` (force mode)
 
 ## Property Parameter List
 All parameters are optional, with its default value in bold.
