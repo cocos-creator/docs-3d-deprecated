@@ -37,7 +37,3 @@ There are two ways to add a particle system module:
    - You can also add a particle system component through the left-level hierarchy manager __right-click-> Create -> Effects-> Particle System__, as shown below:
 
    ![](particle-system/new_ParticleSystemComponent_node.png)
-
----
-
-Continue to the [Particle System Module](module.md) documentation。

@@ -10,7 +10,7 @@ This is the very first __Cocos Creator__ project, and it aims to demonstrate the
 
 ## Creating a New Project
 
-In the __Dashboard__ panel, click the __New__ button in the lower right corner and select __Creator 3D__ in the pop-up menu.
+In the __Dashboard__ panel, click the __New__ button in the lower right corner and select __Creator__ in the pop-up menu.
 
 <img src="index/dashboard.png"/>
 

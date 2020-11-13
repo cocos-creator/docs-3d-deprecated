@@ -54,7 +54,3 @@ Please refer to the following table: <br>
 Light sources in the real world have real physical dimensions. At the same time, the size of the light source also affects the intensity of the light source.
 
 ![light bulb size](light-bulb-size.png)
-
----
-
-Continue to the [Direct Direction Light](dir-light.md) documentation.

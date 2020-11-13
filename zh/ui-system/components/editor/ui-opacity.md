@@ -9,8 +9,8 @@
 也可以通过代码设置透明度：
 
 ```ts
-    const opacityComp = this.getComponent(UIOpacity);
-    opacityComp.opacity = 157;
+const opacityComp = this.getComponent(UIOpacity);
+opacityComp.opacity = 157;
 ```
 
 遮罩的组件接口请参考 [UIOpacity API](https://docs.cocos.com/creator3d/api/zh/classes/ui.uiopacity.html)。
@@ -21,8 +21,4 @@
 
 | 属性  |   功能说明           |
 | -------------- | ----------- |
-| Opacity           | 透明度。|
-
-- [其他基础模块参考](base-component.md)
-
-- [渲染模块参考](render-component.md)
+| Opacity           | 透明度 |

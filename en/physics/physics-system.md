@@ -6,7 +6,7 @@ The physics system is used to manage all physics related functions. Currently, i
 
 When the physics world iterates, physical calculations will be made on physical elements, such as calculating whether each object collides and the force of the object. When the calculation is completed, the physics system will update the physics world to the scene world, so that the game objects will generate corresponding physical behaviors.
 
-The current physics execution flow of __Coccos Creator 3D__: **trigger physics events** -> **sync scene data to physics** -> **physics world iteration** -> **sync physics data to scene**.
+The current physics execution flow of __Coccos Creator__: **trigger physics events** -> **sync scene data to physics** -> **physics world iteration** -> **sync physics data to scene**.
 
 > **Note**: There is only a single physical world, and the functional support of the multi-physics world will be discussed later.
 
@@ -43,7 +43,3 @@ Property | Signature | Description
 **setCollisionGroup** | `(g1:number, g2:number, collision=true)=>void` | Sets whether collisions occur between `g1` and `g2`.
 **resetCollisionMatrix** | `(mask=0xffffffff)=>void` | Reset the mask corresponding to all groups of the collision matrix to the given value
 **resetAccumulator** | `(time=0)=>void` | Reset the accumulator of time to given value
-
----
-
-Continue to the [physics component](physics-component.md) documentation.

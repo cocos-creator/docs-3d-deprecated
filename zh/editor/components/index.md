@@ -15,7 +15,3 @@ Cocos Creator 中包括以下功能组件：
 - [ParticleSystem](../../particle-system/main-module.md)
 - [物理组件](../../physics/physics-component.md)
 - [UI组件](../../ui-system/components/editor/index.md)
-
----
-
-继续前往 [AudioSource](../../audio-system/overview.md) 说明文档。

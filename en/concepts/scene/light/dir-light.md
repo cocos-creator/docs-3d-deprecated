@@ -14,7 +14,3 @@ To use `Main Directional Light`, please refer to the [Main Directional Light API
 | Use Color Temperature | Whether to enable color temperature |
 | Color Temperature | Color Temperature |
 | Illumiance | Illumination, unit **lux (*lx*)** of **nits** |
-
----
-
-Continue to the [Sphere light](sphere-light.md) documentation.

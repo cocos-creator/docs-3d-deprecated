@@ -24,7 +24,3 @@ Particle System Gizmo is used for the visualization of the [ShapeModule](../part
 `Cone Gizmo` shows the shape of cone, you can edit the radius,angle,height of cone by dragging the control quad.
 
 ![particle cone gizmo](images/particle-cone-gizmo.png)
-
----
-
-Continue to the [Scene Editor](index.md) documentation.

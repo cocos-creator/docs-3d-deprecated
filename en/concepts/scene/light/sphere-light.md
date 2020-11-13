@@ -18,7 +18,3 @@ To use `Spherical Lighting`, please refer to the [Spherical Lighting API](https:
 | Term | Selected unit for light intensity <br> Spherical light supports two unit system: **luminous power** and **luminance** |
 | LuminousPower | Luminous power in **lumens (*lm*)** <br> When __Term__ is specified as __LUMINOUS_POWER__, lumen is used to indicate the light intensity |
 | Luminance | Brightness, unit **Candela per square meter (*cd/m<sup>2</ sup>*)** <br>When __Term__ is specified as __LUMINANCE__, brightness is used to indicate light intensity |
-
----
-
-Continue to the [Spotlight](spot-light.md) documentation.

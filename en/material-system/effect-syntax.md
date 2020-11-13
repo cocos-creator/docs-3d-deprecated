@@ -48,10 +48,10 @@ This section will introduce the 'domain-specific' extended features,<br>
 all of which will be processed immediately at resource compile-time.<br>
 Also feel free to look around the built-in effects, which are always excellent concrete examples.
 
-On top of GLSL, several c-style extensions are naturally introduced：
+On top of GLSL, several c-style extensions are naturally introduced:
 
 ### Chunk Include
-Just like the `include` directive in C/C++, you can include other shader chunks：
+Just like the `include` directive in C/C++, you can include other shader chunks:
 ```c
 #include <cc-global>
 #include "../headers/my-shading-algorithm.chunk"
@@ -95,7 +95,7 @@ For these special usages, you'll have to explicitly declare the macro, using mac
 | range   | A two-element array,<br>specifying minimum and maximum value, both inclusive | [0, 3] | For macros with bounded range<br>The bound should be as tight as possible |
 | options | An arbitrary-length array,<br>specifying every possible options | nothing | For macros with discrete, explicit choices |
 
-Declarations for the above case are：
+Declarations for the above case are:
 
 ```glsl
 #pragma define LAYERS range([4, 5])
@@ -275,7 +275,7 @@ This might sound overly-strict at first, but it's for a few good reasons:
 
 __First__, UBO is a much better basic unit to efficiently reuse data, so discrete declaration is no longer an option.
 __Second__, currently many platforms, including WebGL 2.0 only support one platform-independent memory layout, namely **std140**, and it has many restrictions<sup id="a3">[3](#f3)</sup>:
-* All vec3 members will be aligned to vec4：
+* All vec3 members will be aligned to vec4:
 ```glsl
 uniform ControversialType {
   vec3 v3_1; // offset 0, length 16 [IMPLICIT PADDING!]

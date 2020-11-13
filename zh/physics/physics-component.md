@@ -146,8 +146,4 @@ Cocos Creator 目前为用户提供了多种碰撞器组件和通用的刚体组
 
 恒力组件接口请参考 [ConstantForce API](https://docs.cocos.com/creator3d/api/zh/classes/physics.constantforce.html)。
 
-> **注**：`builtin`中恒力组件暂时无效。
-
----
-
-继续前往 [物理使用](physics-use.md) 说明文档。
+> **注**：`builtin` 中恒力组件暂时无效。

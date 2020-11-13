@@ -22,9 +22,3 @@ PageViewIndicator 的脚本接口请参考 [PageViewIndicator API](https://docs.
 ## 详细说明
 
 PageViewIndicator 一般不会单独使用，它需要与 `PageView` 配合使用，可以通过相关属性，来进行创建相对应页面的数量的标记，当你滑动到某个页面的时，PageViewIndicator 就会高亮它对应的标记。
-
----
-
-- [其他基础模块参考](base-component.md)
-
-- [渲染模块参考](render-component.md)

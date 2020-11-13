@@ -164,7 +164,7 @@ pass.setUniform(hColor, color);
 Although the material system itself doesn't make any assumptions on the content,<br>
 there are some built-in effects written on top of the system, provided for common usage:<br>
 unlit, physically-based (standard), skybox, particle, sprite, etc.<br>
-For a quick reference, here is how each shading term in `builtin-standard` will be assembled from input data：
+For a quick reference, here is how each shading term in `builtin-standard` will be assembled from input data:
 
 ![Standard](standard-material-graph.png)
 
@@ -189,7 +189,7 @@ here are the complete list of properties and macros for it:
 | emissiveMap | emissive color texture, if present, will be multiplied by the `emissive` property,<br>so remember to set `emissive` property more close to white<br>(default black) for this to take effect |
 | emissiveScale | emissive scaling factor<br>weighting the whole emissive factor before the final output |
 
-Accordingly, these are the available macros：
+Accordingly, these are the available macros:
 
 | Macro | Info |
 |:-----:|:----:|

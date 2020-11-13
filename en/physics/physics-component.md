@@ -6,8 +6,8 @@ __Cocos Creator__ currently provides users with a variety of __collider componen
 
 The __collider component__ is used to represent the shape of the __collision body__ of a __rigid body__. Different geometric shapes have different properties.
 
-> **Note**：The following property names are all lowercase in the actual code.
-> **Note**：Currently only box, sphere and capsule are supported in `builtin`.
+> **Note**: The following property names are all lowercase in the actual code.
+> **Note**: Currently only box, sphere and capsule are supported in `builtin`.
 
 ### BoxCollider
 
@@ -145,7 +145,3 @@ Properties | Description
 To use `ConstantForce`, please refer to the [ConstantForce API](https://docs.cocos.com/creator3d/api/en/classes/physics.constantforce.html).
 
 > **Note**: `builtin` does not currently support ConstantForce components*.
-
----
-
-Continue to the [using physics](physics-use.md) documentation.

@@ -13,11 +13,11 @@ Mask 用于规定子节点可渲染的范围，默认带有 Mask 组件的节点
 ## Mask 属性
 
 | 属性  |   功能说明           |
-| -------------- | ----------- |
+| :------------- | :---------- |
 | Type           | 遮罩类型。包括 **RECT**、**ELLIPSE**、**GRAPHICS_STENCIL**、**IMAGE_STENCIL** 四种类型。|
-| Segments      | 椭圆遮罩的曲线细分数，只在遮罩类型设为 **ELLIPSE** 时生效 |
+| Segments       | 椭圆遮罩的曲线细分数，只在遮罩类型设为 **ELLIPSE** 时生效 |
 | Inverted       | 反向遮罩
-| SpriteFrame       | 图片遮罩所使用图片
+| SpriteFrame    | 图片遮罩所使用图片
 
 ### Type
 
@@ -32,9 +32,9 @@ Mask 用于规定子节点可渲染的范围，默认带有 Mask 组件的节点
 可以在运行时通过代码设置
 
 ``` ts
-    const mask = this.getComponent(Mask);
-    mask.type = Mask.Type.ELLIPSE;
-    mask.segments = 32;
+const mask = this.getComponent(Mask);
+mask.type = Mask.Type.ELLIPSE;
+mask.segments = 32;
 ```
 
 #### GRAPHICS_STENCIL 自定义图形遮罩
@@ -44,18 +44,18 @@ Mask 用于规定子节点可渲染的范围，默认带有 Mask 组件的节点
 可以在运行时通过代码设置
 
 ``` ts
-    const mask = this.getComponent(Mask);
-    mask.type = Mask.Type.GRAPHICS_STENCIL;
-    const g = mask.graphics;
-    g.lineWidth = 10;
-    g.fillColor.fromHEX('#ff0000');
-    g.moveTo(-40, 0);
-    g.lineTo(0, -80);
-    g.lineTo(40, 0);
-    g.lineTo(0, 80);
-    g.close();
-    g.stroke();
-    g.fill();
+const mask = this.getComponent(Mask);
+mask.type = Mask.Type.GRAPHICS_STENCIL;
+const g = mask.graphics;
+g.lineWidth = 10;
+g.fillColor.fromHEX('#ff0000');
+g.moveTo(-40, 0);
+g.lineTo(0, -80);
+g.lineTo(40, 0);
+g.lineTo(0, 80);
+g.close();
+g.stroke();
+g.fill();
 ```
 
 #### IMAGE_STENCIL 自定义图片遮罩
@@ -65,10 +65,10 @@ Mask 用于规定子节点可渲染的范围，默认带有 Mask 组件的节点
 可以在运行时通过代码设置
 
 ``` ts
-    const mask = this.getComponent(Mask);
-    mask.type = Mask.Type.IMAGE_STENCIL;
-    mask.spriteFrame = this.spriteFrame;
-    mask.alphaThreshold = 0.1;
+const mask = this.getComponent(Mask);
+mask.type = Mask.Type.IMAGE_STENCIL;
+mask.spriteFrame = this.spriteFrame;
+mask.alphaThreshold = 0.1;
 ```
 
 **注意**：
@@ -79,10 +79,6 @@ Mask 用于规定子节点可渲染的范围，默认带有 Mask 组件的节点
 
 3. **IMAGE_STENCIL** 类型默认需要一个图片资源，如果没有设置的话，相当于没有遮罩。
 
-4. 在当前版本以及之前版本上，由于底层渲染架构原因，Mask 在编辑器下的所有子节点的渲染内容都看不见，解决方法是，在编辑器下调整 Mask 节点的 layer 为 default 即可，不会影响运行时数据。
+4. 在当前版本以及之前版本上，由于底层渲染架构原因，Mask 在编辑器下的所有子节点的渲染内容都看不见。
 
----
-
-- [其他渲染模块参考](render-component.md)
-
-- [基础模块参考](base-component.md)
+    **解决方法**：在编辑器下调整 Mask 节点的 layer 为 default 即可，不会影响运行时数据。

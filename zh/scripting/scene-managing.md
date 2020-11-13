@@ -1,6 +1,6 @@
 # 加载和切换场景
 
-在 Cocos Creator 中，我们使用场景文件名（不包含扩展名）来索引指代场景。并通过以下接口进行加载和切换操作：
+在 Cocos Creator 3.0 中，我们使用场景文件名（不包含扩展名）来索引指代场景。并通过以下接口进行加载和切换操作：
 
 ```ts
 director.loadScene("MyScene");
@@ -43,15 +43,10 @@ director.preloadScene("table", function () {
 });
 ```
 
-之后在合适的时间调用 `loadScene`, 就可以真正切换场景。
+之后在合适的时间调用 `loadScene`，就可以真正切换场景。
 
 ```ts
 director.loadScene("table");
 ```
 
 就算预加载还没完成，你也可以直接调用 `director.loadScene`，预加载完成后场景就会启动。
-
-
----
-
-继续前往 [获取和加载资源](load-assets.md) 说明文档。

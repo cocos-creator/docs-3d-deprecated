@@ -247,6 +247,3 @@ export class AnyScript extends Component {
     }
 }
 ```
----
-
-Continue to the [Common nodes and component interfaces](basic-node-api.md) documentation.

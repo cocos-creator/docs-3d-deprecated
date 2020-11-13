@@ -9,8 +9,8 @@ The method of use is as follows:
 You can also set transparency by code. Example:
 
 ```ts
-    const opacityComp = this.getComponent(UIOpacity);
-    opacityComp.opacity = 157;
+const opacityComp = this.getComponent(UIOpacity);
+opacityComp.opacity = 157;
 ```
 
 To use `UIOpacity`, please refer to the [UIOpacity API](https://docs.cocos.com/creator3d/api/en/classes/ui.uiopacity.html) documentation and the [UIOpacity](https://github.com/cocos-creator/test-cases-3d/tree/master/assets/cases/ui/other/opacity) scene of the test-cases-3d project.
@@ -20,7 +20,3 @@ To use `UIOpacity`, please refer to the [UIOpacity API](https://docs.cocos.com/c
 | Properties | Function Description |
 | -------- | ----------- |
 | Opacity        | transparency |
-
-- [UI Basic Components](base-component.md)
-
-- [UI Renderer Components](render-component.md)

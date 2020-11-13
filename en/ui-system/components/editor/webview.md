@@ -46,7 +46,7 @@ Currently this component is only available on Web (Both PC and Mobile), iOS and 
 
 **Note:**
 
-- This component doesn't support load HTML file or execute Javascript.
+- This component doesn't support load HTML file or execute JavaScript.
 - If you don't use **WebView** related features in your project, please ensure that the **WebView** module is removed from the **Project -> Project Settings -> Module Config** to help your game approval go as smoothly as possible on iOS App Store. If you really needs to use WebView (or the added third-party SDK comes with **WebView**), and therefore the game rejected by App Store, you can still try to appeal through email.
 
 ### Add a callback via script
@@ -208,7 +208,3 @@ Because of the limitations of Web platform, it can not be implemented by this me
 ```
 
 #### Note: Stressed once more Cross-domain issues on Web platform need to be resolved by you, the developer.
-
-- [UI Basic Components](base-component.md)
-
-- [UI Renderer Components](render-component.md)

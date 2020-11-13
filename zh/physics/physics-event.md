@@ -23,8 +23,8 @@ Cocos Creator 的物理事件有触发事件和碰撞事件。
 
 监听触发事件，需要通过注册事件来添加相应的回调：
 
-1. 通过`this.getComponent(Collider)`获取到`Collider`
-2. 通过`Collider`的`on`或者`once`方法注册相应事件的回调
+1. 通过 `this.getComponent(Collider)` 获取到 `Collider`
+2. 通过 `Collider` 的 `on` 或者 `once` 方法注册相应事件的回调
 
 代码示例：
 
@@ -66,12 +66,8 @@ private onCollision (event: ICollisionEvent) {
 > **注**：`Collider`是所有碰撞组件的父类。
 > **注**：目前碰撞事件以物理元素为单位，所有该元素上的碰撞器组件都会接受到碰撞事件。
 
-两者的区别
+触发事件和碰撞事件两者的区别：
 
 - 触发事件由触发器生成，碰撞事件根据碰撞数据生成。
 - 触发事件可以由触发器和另一个触发器或者另一个碰撞器产生。
 - 碰撞事件需要由两个碰撞器产生，并且至少有一个动力学刚体。
-
----
-
-继续前往 [分组和掩码](physics-group-mask.md) 说明文档。

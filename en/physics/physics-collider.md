@@ -79,7 +79,3 @@ The `Collider` component provides two properties to `get` and `set`. These are `
 2. Under the premise of shared state, obtaining `material` will generate a new material instance to ensure that only the current collision body references the material, so that the modification will not affect other collision bodies, and then it will be in the non-shared state.
 
 3. Obtaining `sharedMaterial` does not generate a new one, but directly returns a reference.
-
----
-
-Continue to the [physics material](physics-material.md) documentation.

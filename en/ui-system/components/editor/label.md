@@ -51,7 +51,3 @@ To use `Label`, please refer to the [Label API](https://docs.cocos.com/creator3d
 ## Use font assets
 
 By dragging the __TTF__ font asset and __BMFont__ font asset into the `Font` property in the __Inspector__ panel, the __Label__ component can alter the rendering font type. If you want to stop using a font file, you can use the system font again by checking __UseSystemFont__.
-
-- [UI Basic Components](base-component.md)
-
-- [UI Renderer Components](render-component.md)

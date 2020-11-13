@@ -36,7 +36,3 @@ export class Example extends Component {
         uiTransform.anchorY = 0.5;
     }
 }
-
-- [UI Basic Components](base-component.md)
-
-- [UI Renderer Components](render-component.md)

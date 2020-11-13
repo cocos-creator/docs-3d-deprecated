@@ -7,7 +7,7 @@
 
 ## 开启阴影
 
-Cocos Creator 目前支持 shadow Map 和 planer Shadow 两种阴影模式供开发者使用。
+Cocos Creator 3.0 目前支持 shadow Map 和 planer Shadow 两种阴影模式供开发者使用。
 
 * 在 Cocos Creator 中开启 Planar Shadow 需要三步：
 
@@ -69,7 +69,3 @@ Cocos Creator 目前支持 shadow Map 和 planer Shadow 两种阴影模式供开
 **OrthoSize**       | 设置主光源阴影相机的正交视口大小
 **ShadowMapSize**   | 设置阴影纹理大小
 **Aspect**          | 设置主光源阴影相机的正交视口长宽比
-
----
-
-继续前往 [场景](index.md) 说明文档。

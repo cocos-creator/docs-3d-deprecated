@@ -31,7 +31,3 @@ Sometimes some custom curve data required by the project needs to be reused, it 
 The custom curve saved in the preset is the same as the preset curve of other libraries, click to apply. At the same time, when the mouse moves over the curve, a __delete icon__ will appear. __Click__ to __delete__ the corresponding curve data.
 
 For more about the design of animation curve and script control code, please refer to the [Animation Curve](./../../engine/animation/animation-clip.md) documentation.
-
----
-
-Continue to the [Add Animation Events](animation-event.md) documentation.

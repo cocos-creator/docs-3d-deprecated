@@ -10,7 +10,3 @@ The relationship between __EC structure__ and __3D__ scene structure is shown in
 ![ec & scene](scene/ecs-scene.jpg)
 
 The entire __3D__ scene structure is encapsulated under __Component__, and the organizational relationship is established through __Node__. This is completely transparent relationship between __EC structure__ and a __3D__ scene.
-
----
-
-Continue to the [Node](node.md) documentation.

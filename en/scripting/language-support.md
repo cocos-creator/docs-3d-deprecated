@@ -2,7 +2,7 @@
 
 ## TypeScript
 
-__Cocos Creator__ uses [babel](https://babeljs.io/) instead of [tsc](https://www.typescriptlang.org/) to compile __TypeScript__ scripts. In particular, the [@babel/plugin-transform-typescript](https://babeljs.io/docs/en/babel-plugin-transform-typescript) plugin is used. For this reason, TypeScript support has certain limitations.
+Cocos Creator 3.0 uses [babel](https://babeljs.io/) instead of [tsc](https://www.typescriptlang.org/) to compile __TypeScript__ scripts. In particular, the [@babel/plugin-transform-typescript](https://babeljs.io/docs/en/babel-plugin-transform-typescript) plugin is used. For this reason, TypeScript support has certain limitations.
 
 Some important considerations are listed below.
 For a complete description, see [@babel/plugin-transform-typescript](https://babeljs.io/docs/en/babel-plugin-transform-typescript).
@@ -27,12 +27,14 @@ __Cocos Creator__ uses the __NodeJS__ module analysis algorithm.
 It is equivalent to the following `tsconfig.json`:
 
 ```json
-{"compilerOptions": {
+{
+  "compilerOptions": {
     "moduleResolution": "node"
-}}
+  }
+}
 ```
 
-Typescript's path mapping function is also supported. The following `tsconfig.json` options will be read and retain the same semantics as `tsc`:
+TypeScript's path mapping function is also supported. The following `tsconfig.json` options will be read and retain the same semantics as `tsc`:
 
-  - [compilerOptions.baseUrl](https://www.typescriptlang.org/docs/handbook/module-resolution.html#base-url)
-  - [compilerOptions.paths](https://www.typescriptlang.org/docs/handbook/module-resolution.html#path-mapping)
+- [compilerOptions.baseUrl](https://www.typescriptlang.org/docs/handbook/module-resolution.html#base-url)
+- [compilerOptions.paths](https://www.typescriptlang.org/docs/handbook/module-resolution.html#path-mapping)

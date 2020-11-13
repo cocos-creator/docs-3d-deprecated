@@ -37,26 +37,34 @@ Default value is in bold, all parameters are case-insensitive.
 | depthStencilState.<br>stencil\*Front/Back   | *\*set above stencil properties for specific side*                              |
 
 ## Switch
+
 Specifies a power switch for the current pass, if not enabled, the pass with be skipped completely. The macro name shouldn't collide with any existing macros inside the shader. This property doesn't exist by default, which means the pass is executed unconditionally.
 
 ## Priority
+
 Specifies the rendering priority of the current pass, the bigger the number, the lower the priority. The default is (128), min is (0), max is (255), arithmetic operations between these constants and integer constants are supported.
 
 ## Stage
+
 Specifies which render stage the current pass belongs to. For the built-in forward pipeline, the only available stage is `default`.
 
 ## Phase
+
 Specifies which phase the current pass belongs to. For the built-in forward pipeline, the available phases are `default`, `forward-add` and `shadow-caster`.
 
 ## PropertyIndex
+
 Specifies the index of the pass to copy runtime property data from. When two passes need to share the same set of properties, `propertyIndex` can be specified to avoid the need for developers to specify that same set of data multiple times (especially in the material inspector). This could be useful in some cases, e.g. the forward add pass vs. the base pass. Once specified, all the properties for the current pass will not be visible in the material inspector.
 
 ## embeddedMacros
+
 Specifies additional macro definitions on top of the current shader. This is helpful for shader reuse when multiple passes' shader only differs at some macro definition.
 
 ## Properties
+
 Specifies the public interfaces exposed to material instector and runtime API.<br>
-It can be a direct mapping to shader uniforms, or specific channels of the uniform：
+It can be a direct mapping to shader uniforms, or specific channels of the uniform:
+
 ```yaml
 albedo: { value: [1, 1, 1, 1] } # uniform vec4 albedo
 roughness: { value: 0.8, target: pbrParams.g } # uniform vec4 pbrParams
@@ -64,7 +72,9 @@ offset: { value: [0, 0], target: tilingOffset.zw } # uniform vec4 tilingOffset
 # say there is another uniform, vec4 emissive, that doesn't appear here
 # so it will be assigned a default value of [0, 0, 0, 0] and will not appear in the inspector
 ```
+
 Runtime reference is straightforward:
+
 ```js
 // as long as it is a real uniform
 // it doesn't matter whether it is specified in the property list or not
@@ -74,9 +84,11 @@ mat.setProperty('roughness', 0.2); // set certain component
 const h = mat.passes[0].getHandle('offset'); // or just take the handle,
 mat.passes[0].setUniform(h, new Vec2(0.5, 0.5)); // and use Pass.setUniform interface instead
 ```
+
 Shader uniforms that are not in the `properties` list will be given a [default value](#default-values).
 
 For quick setup and experiment, the `__metadata__` feature is provided, which will be the 'base class' for all other properties:
+
 ```yaml
 properties:
   __metadata__: { editor: { visible: false } }
@@ -84,9 +96,11 @@ properties:
   b: { editor: { type: color } }
   c: { editor: { visible: true } }
 ```
+
 Here `a` and `b` will no longer appear in the inspector, while `c` stays visible.
 
 ## Migrations
+
 Ideally the public interface of an effect should always be backward-compatible,<br>
 but occasionally introducing breaking changes might become the only option as the project iterate.<br>
 A smooth data transition would be much desired during the process, which leads to the migration system:<br>
@@ -96,6 +110,7 @@ new property will be automatically migrated/generated from existing data using s
 > **Note**: Please remember to backup your project before doing any migration attemps!
 
 For a existing effect, declares the following migration rules:
+
 ```yaml
 migrations:
   # macros: # macros follows the same rule as properties, without the component-wise features
@@ -103,7 +118,9 @@ migrations:
   properties:
     newFloat: { formerlySerializedAs: oldVec4.w }
 ```
+
 Say we have a dependent material, with the following data:
+
 ```json
 {
   "oldVec4": {
@@ -115,7 +132,9 @@ Say we have a dependent material, with the following data:
   }
 }
 ```
+
 After the effect is compiled, the material will be automatically updated to:
+
 ```json
 {
   "oldVec4": {
@@ -128,34 +147,37 @@ After the effect is compiled, the material will be automatically updated to:
   "newFloat": 0.5
 }
 ```
+
 And after the next save operation on this material: (say the content is actually not changed)
+
 ```json
 {
   "newFloat": 0.5
 }
 ```
-Of course if you want to delete the obsolete data automatically at import-time, you can declare another entry just for this:
-```yaml
-oldVec4: { removeImmediately: true }
-```
-This would come in handy when you have lots of stale material in the code base, and confirmed that this property is completely redundant.
 
-Besides, while we are just using the `w` channel here, arbitrary shuffling is supported too:
+We are just using the `w` channel here, while in fact arbitrary shuffle is supported too:
+
 ```yaml
-    newColor: { formerlySerializedAs: someOldColor.yxx }
+newColor: { formerlySerializedAs: someOldColor.yxx }
 ```
+
 Or even based on a target macro:
+
 ```yaml
-    occlusion: { formerlySerializedAs: pbrParams.<OCCLUSION_CHANNEL|z> }
+occlusion: { formerlySerializedAs: pbrParams.<OCCLUSION_CHANNEL|z> }
 ```
+
 This means the new `occlusion` data will be extracted from `pbrParams` data,<br>
 the specific channel depend on the `OCCLUSION_CHANNEL` macro of current pass,<br>
 and default to channel `z` if macro data not present.
 
 If `newFloat` property already exists before migration, nothing will happen, unless in force mode:
+
 ```yaml
-    newFloat: { formerlySerializedAs: oldVec4.w! }
+newFloat: { formerlySerializedAs: oldVec4.w! }
 ```
+
 Then the migration is guaranteed to execute, regardless of the existing data.<br>
 
 > **Note**: Migration in force mode will execute in every database event, which is basically every mouse click in editor. So use it as a quick-and-dirty test measure, and be sure not to submit effect files with force mode migrations into version control.
@@ -165,6 +187,7 @@ Again here are the bottomline rules about preventing potential data losses:<br>
 * Property override will happen if, and only if, you end the `formerlySerializedAs` entry with `!` (force mode)
 
 ## Property Parameter List
+
 All parameters are optional, with its default value in bold.
 
 | Param                     | Options                              |
@@ -192,6 +215,7 @@ All parameters are optional, with its default value in bold.
 | editor.<br>deprecated     | true, **false**, *\*for any material using this effect,<br> delete the existing data for this property after next saving* |
 
 ## Default Values
+
 | Type        | Default Value / Options                  |
 |:-----------:|:----------------------------------------:|
 | int         | 0                                        |

@@ -27,7 +27,3 @@ __Effects__ are created in a similar way to `Materials`.
 The created __Effect__ is a __PBR Effect__ by default.
 
 ![effect-show](material/effect-show.png)
-
----
-
-Continue to the [Effect writing format and syntax](../material-system/effect-syntax.md) documentation.

@@ -68,7 +68,7 @@ The specific filling rules for the relevant parameter configuration are as follo
 
   At this point, the `res` directory will no longer be included in the built-up rpk, and the assets in the `res` directory will be downloaded from the filled **Small Packet Mode Server Path** through the network request.
 
-- **Keystore**: when you check the **Keystore**, the default is to build the rpk package with a certificate that comes with Creator 3D, which is used only for **debugging**. 
+- **Keystore**: when you check the **Keystore**, the default is to build the rpk package with a certificate that comes with Creator, which is used only for **debugging**. 
 
   > **Note**: When the rpk package is to be used to submit an audit, do not check the **Keystore** to build it.
   
@@ -87,7 +87,7 @@ The specific filling rules for the relevant parameter configuration are as follo
       openssl req -newkey rsa:2048 -nodes -keyout private.pem   -x509 -days 3650 -out certificate.pem
       ```
 
-      > **Note**: **openssl** can be used directly in the terminal in Linux or Mac environment, and in the Windows environment you need to install `openssl` and configure system environment variables. Restart Creator 3D after the configuration is complete.
+      > **Note**: **openssl** can be used directly in the terminal in Linux or Mac environment, and in the Windows environment you need to install `openssl` and configure system environment variables. Restart Creator after the configuration is complete.
 
 **2. Build**
 

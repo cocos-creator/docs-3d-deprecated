@@ -55,7 +55,3 @@ When using __Grid__ layout, the __Start Axis__ is very important.
 - When choosing __VERTICAL__, it will fill an entire column before a new column is started.
 
 > __Node__: If the __Layout__'s configuration is set in runtime, the results need to be updated until the next frame, unless you manually call `updateLayout` API.
-
-- [UI Basic Components](base-component.md)
-
-- [UI Renderer Components](render-component.md)

@@ -6,13 +6,9 @@ A __Scene__ is an abstract collection of environmental factors in a game. It is 
 
 This section includes the following:
 
--[Coordinate system](coord.md)
--[Scene Structure](scene.md)
--[Node](node.md)
--[Skybox](skybox.md)
--[Global Fog](fog.md)
--[Shadows](shadow.md)
-
----
-
-Continue to the [Coordinate System](coord.md) documentation.
+- [Coordinate system](coord.md)
+- [Scene Structure](scene.md)
+- [Node](node.md)
+- [Skybox](skybox.md)
+- [Global Fog](fog.md)
+- [Shadows](shadow.md)

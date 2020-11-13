@@ -10,7 +10,3 @@ __Nodes__ have the following characteristics:
   - Components can be added to __Nodes__ to associate multiple components with __Nodes__
 
 In short, __Nodes__ are the basic means of organizing the structure of any game. We can classify multiple elements through __Nodes__, and perform hierarchical operations on __Nodes__, or perform batch operations on a group of __Nodes__, such as: *transform*, *delete*, or hiding and showing them as needed, etc.
-
----
-
-Continue to the [Skybox](skybox.md) documentation.
