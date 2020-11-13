@@ -86,7 +86,7 @@ It is necessary for the main character to be affected when the mouse moves. To d
 
    ![create player script](./images/create-player-script.gif)
 
-> **Note:** The name of the script in __Cocos Creator 3D__ is the name of the component. This name is case sensitive! If the capitalization of the component name is incorrect, the component cannot be used correctly by the name!
+> **Note**: The name of the script in __Cocos Creator 3D__ is the name of the component. This name is case sensitive! If the capitalization of the component name is incorrect, the component cannot be used correctly by the name!
 
 #### Writing script code
 There are already some pre-set code blocks in the `PlayerController` script. Example:
