@@ -344,7 +344,7 @@ function createMyCurve (): IPropertyCurveData {
 |---|---|
 | WrapMode.Normal | 播放到结尾后停止。 |
 | WrapMode.Loop | 循环播放。 |
-| WrapMode.PingPng | 从动画开头播放到结尾后，从结尾开始反向播放到开头，如此循环 |
+| WrapMode.PingPong | 从动画开头播放到结尾后，从结尾开始反向播放到开头，如此循环 |
 
 对于更多的循环模式，见 [WrapMode](https://docs.cocos.com/creator3d/api/zh/enums/animation.wrapmode.html)。
 
