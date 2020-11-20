@@ -20,26 +20,26 @@
 
 > **注意**：获取物理系统实例：`PhysicsSystem.instance`
 
-属性 | 解释
----|---
-**enable** | 是否开启物理系统，默认为 `true`
-**gravity** | 物理世界的重力值，默认为 `(0, -10, 0)`
-**allowSleep** | 是否允许物理系统自动休眠，默认为 `true`
-**maxSubSteps** | 每帧模拟的最大子步数，默认为 `2`
-**fixedTimeStep** | 每次子步进消耗的时间，默认为 `1/60`
-**sleepThreshold** | 进入休眠的默认速度临界值
-**autoSimulation** | 是否开启自动模拟，默认为 `true`
-**defaultMaterial** | 获取默认物理材质（只读）
-**raycastResults** | 获取 `raycast` 的检测结果（只读）
-**raycastClosestResult** | 获取 `raycastClosest` 的检测结果（只读）
-**useCollisionMatrix** | 是否使用碰撞矩阵
-**collisionMatrix** | 获取碰撞矩阵
+| 属性 | 说明 |
+| :--- | :--- |
+| **enable** | 是否开启物理系统，默认为 `true` |
+| **gravity** | 物理世界的重力值，默认为 `(0, -10, 0)` |
+| **allowSleep** | 是否允许物理系统自动休眠，默认为 `true` |
+| **maxSubSteps** | 每帧模拟的最大子步数，默认为 `2` |
+| **fixedTimeStep** | 每次子步进消耗的时间，默认为 `1/60` |
+| **sleepThreshold** | 进入休眠的默认速度临界值 |
+| **autoSimulation** | 是否开启自动模拟，默认为 `true` |
+| **defaultMaterial** | 获取默认物理材质（只读） |
+| **raycastResults** | 获取 `raycast` 的检测结果（只读） |
+| **raycastClosestResult** | 获取 `raycastClosest` 的检测结果（只读） |
+| **useCollisionMatrix** | 是否使用碰撞矩阵 |
+| **collisionMatrix** | 获取碰撞矩阵 |
 
 ## 部分接口
 
-接口 | 签名 | 解释
----|---|---
-isCollisionGroup | `(g1: number, g2: number) => boolean` | 两分组是否会产生碰撞？
-setCollisionGroup | `(g1: number, g2: number, collision = true) => void` | 设置两分组是否产生碰撞
-resetCollisionMatrix | `(mask = 0xffffffff) => void` | 重置碰撞矩阵所有分组对应掩码为给定值
-resetAccumulator | `(time = 0) => void` | 重置累计的时间总量（可以考虑在切换场景时进行重置）
+| 接口 | 签名 | 说明 |
+| :--- | :--- | :--- |
+| isCollisionGroup | `(g1: number, g2: number) => boolean` | 两分组是否会产生碰撞？ |
+| setCollisionGroup | `(g1: number, g2: number, collision = true) => void` | 设置两分组是否产生碰撞 |
+| resetCollisionMatrix | `(mask = 0xffffffff) => void` | 重置碰撞矩阵所有分组对应掩码为给定值 |
+| resetAccumulator | `(time = 0) => void` | 重置累计的时间总量（可以考虑在切换场景时进行重置） |

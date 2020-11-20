@@ -20,7 +20,7 @@
         {name: 'quadOut', fx: quadOutFx},
         {name: 'quadInOut', fx: makeOutIn(quadInFx, quadOutFx)},
         {name: 'quadOutIn', fx: ((k) => k)},
-        ];
+    ];
 
     window.initializeEasingMethodsExample = (parent) => {
         const table = parent.appendChild(document.createElement('table'));
@@ -74,7 +74,8 @@
         if (!easingMethodsExampleInitialized) {
             easingMethodsExampleInitialized = true;
             initializeEasingMethodsExample(panel);
-        } else {
+        }
+        else {
             panel.hidden = !panel.hidden;
         }
     };

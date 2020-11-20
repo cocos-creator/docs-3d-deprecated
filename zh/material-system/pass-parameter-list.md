@@ -1,65 +1,27 @@
 # Pass 可选配置参数
 
-默认值为加粗项，所有参数不区分大小写。
+Pass 中的参数主要分为开发者可自定义的 effect 参数和引擎提供的 PipelineStates 参数两部分内容，本文主要介绍 PipelineStates 相关的参数，所有参数不区分大小写。
 
-| Name                                        | Options                                                                         |
-|:-------------------------------------------:|:-------------------------------------------------------------------------------:|
-| switch                                      | **\*undefined**, could be any valid macro name that's not defined in the shader |
-| priority                                    | **default**(128), could be any number between max(255) and min(0)               |
-| stage                                       | **default**, could be the name of any registered stage in your runtime pipeline |
-| phase                                       | **default**, could be the name of any registered phase in your runtime pipeline |
-| propertyIndex                               | **\*undefined**, could be any valid pass index                                  |
-| embeddedMacros                              | **\*undefined**, could be an object containing any macro key-value pairs        |
-| properties                                  | *see the following section                                                      |
-| migrations                                  | *see the following section                                                      |
-| primitive                                   | point_list, line_list, line_strip, line_loop,<br>**triangle_list**, triangle_strip, triangle_fan,<br>line_list_adjacency, line_strip_adjacency,<br>triangle_list_adjacency, triangle_strip_adjacency,<br>triangle_patch_adjacency, quad_patch_list, iso_line_list |
-| dynamics                                    | **[]**, an array containing any of the following:<br>viewport, scissor, line_width, depth_bias, blend_constants,<br>depth_bounds, stencil_write_mask, stencil_compare_mask |
-| rasterizerState.<br>cullMode                | front, **back**, none                                                           |
-| depthStencilState.<br>depthTest             | **true**, false                                                                 |
-| depthStencilState.<br>depthWrite            | **true**, false                                                                 |
-| depthStencilState.<br>depthFunc             | never, **less**, equal, less_equal, greater, not_equal, greater_equal, always   |
-| blendState.targets[i].<br>blend             | true, **false**                                                                 |
-| blendState.targets[i].<br>blendEq           | **add**, sub, rev_sub                                                           |
-| blendState.targets[i].<br>blendSrc          | **one**, zero, src_alpha_saturate,<br>src_alpha, one_minus_src_alpha,<br>dst_alpha, one_minus_dst_alpha,<br>src_color, one_minus_src_color,<br>dst_color, one_minus_dst_color,<br>constant_color, one_minus_constant_color,<br>constant_alpha, one_minus_constant_alpha |
-| blendState.targets[i].<br>blendDst          | one, **zero**, src_alpha_saturate,<br>src_alpha, one_minus_src_alpha,<br>dst_alpha, one_minus_dst_alpha,<br>src_color, one_minus_src_color,<br>dst_color, one_minus_dst_color,<br>constant_color, one_minus_constant_color,<br>constant_alpha, one_minus_constant_alpha |
-| blendState.targets[i].<br>blendSrcAlpha     | **one**, zero, src_alpha_saturate,<br>src_alpha, one_minus_src_alpha,<br>dst_alpha, one_minus_dst_alpha,<br>src_color, one_minus_src_color,<br>dst_color, one_minus_dst_color,<br>constant_color, one_minus_constant_color,<br>constant_alpha, one_minus_constant_alpha |
-| blendState.targets[i].<br>blendDstAlpha     | one, **zero**, src_alpha_saturate,<br>src_alpha, one_minus_src_alpha,<br>dst_alpha, one_minus_dst_alpha,<br>src_color, one_minus_src_color,<br>dst_color, one_minus_dst_color,<br>constant_color, one_minus_constant_color,<br>constant_alpha, one_minus_constant_alpha |
-| blendState.targets[i].<br>blendAlphaEq      | **add**, sub, rev_sub                                                           |
-| blendState.targets[i].<br>blendColorMask    | **all**, none, r, g, b, a, rg, rb, ra, gb, ga, ba, rgb, rga, rba, gba           |
-| blendState.<br>blendColor                   | **0** or **[0, 0, 0, 0]**                                                       |
-| depthStencilState.<br>stencilTest           | true, **false**                                                                 |
-| depthStencilState.<br>stencilFunc           | never, less, equal, less_equal, greater, not_equal, greater_equal, **always**   |
-| depthStencilState.<br>stencilReadMask       | **0xffffffff** or **[1, 1, 1, 1]**                                              |
-| depthStencilState.<br>stencilWriteMask      | **0xffffffff** or **[1, 1, 1, 1]**                                              |
-| depthStencilState.<br>stencilFailOp         | **keep**, zero, replace, incr, incr_wrap, decr, decr_wrap, invert               |
-| depthStencilState.<br>stencilZFailOp        | **keep**, zero, replace, incr, incr_wrap, decr, decr_wrap, invert               |
-| depthStencilState.<br>stencilPassOp         | **keep**, zero, replace, incr, incr_wrap, decr, decr_wrap, invert               |
-| depthStencilState.<br>stencilRef            | **1** or **[0, 0, 0, 1]**                                                       |
-| depthStencilState.<br>stencil\*Front/Back   | *\*set above stencil properties for specific side*                              |
-
-## Switch
-指定这个 pass 的执行依赖于哪个 define，它不应与使用到的 shader 中定义的任何 define 重名。<br>
-这个字段默认是不存在的，意味着这个 pass 是无条件执行的。
-
-## Priority
-指定这个 pass 的渲染优先级，数值越小越优先渲染；default 代表默认优先级 (128)，min 代表最小（0），max 代表最大（255），可结合四则运算符指定相对值。
-
-## Stage
-指定这个 pass 归属于管线的哪个 stage，对默认 forward 管线，只有 `default` 一个 stage。
-
-## Phase
-指定这个 pass 归属于管线的哪个 stage，对默认 forward 管线，可以是 `default`, `forward-add`, `shadow-caster` 几个。
-
-## PropertyIndex
-指定这个 pass 的运行时 uniform 属性数据要和哪个 pass 保持一致，比如 forward add 等 pass 需要和 base pass 一致才能保证正确的渲染效果。<br>
-一旦指定了此参数，材质面板上就不再会显示这个 pass 的任何属性。
-
-## embeddedMacros
-指定在这个 pass 的 shader 基础上额外定义的常量宏。在多个 pass 的 shader 只有宏定义不同时可使用此参数来复用 shader 资源。
+| 参数名 | 说明 | 默认值  | 备注 |
+| :---- | :-- | :----- | :--- |
+| switch         | 指定这个 pass 的执行依赖于哪个 define。可以是任意有效的宏名称，但不应与使用到的 shader 中定义的任何 define 重名 | 未定义 | 这个字段默认是不存在的，意味着这个 pass 是无条件执行的 |
+| priority       | 指定这个 pass 的渲染优先级，数值越小渲染优先级越高，取值范围为 **0 ~ 255** | 128 | 可结合四则运算符指定相对值 |
+| stage          | 指定这个 pass 归属于管线的哪个 stage。可以是运行时管线中任何注册的 Stage 名称 | **default** | 对于默认的 forward 管线，只有 `default` 一个 stage |
+| phase          | 指定这个 pass 归属于管线的哪个 phase。可以是运行时管线中任何注册的 Phase 名称 | **default** | 对于默认的 forward 管线，可以是 `default`、`forward-add` 或者 `shadow-caster`  |
+| propertyIndex  | 指定这个 pass 运行时的 uniform 属性数据要和哪个 pass 保持一致，例如 forward add 等 pass 需要和 base pass 一致才能保证正确的渲染效果。可以是任意有效的 pass 索引 | 未定义 | 一旦指定了此参数，材质面板上就不会再显示这个 pass 的任何属性。 |
+| embeddedMacros | 指定在这个 pass 的 shader 基础上额外定义的常量宏，可以是一个包含任意宏键值对的对象 | 未定义 | 只有当宏定义不同时才能在多个 pass 中使用此参数来复用 shader 资源 |
+| properties     | Properties 存储着这个 pass 中需要显示在 **属性检查器** 上的可定制的参数 |                 | 详见下文 **Properties** 部分的介绍    |
+| migrations     | 迁移旧的材质数据  |           | 详见下文 **Migrations** 部分的介绍                                                     |
+| primitive      | 创建材质顶点数据    | **triangle_list** | 可选项包括：point_list、line_list、line_strip、line_loop<br>**triangle_list**、triangle_strip、triangle_fan<br>line_list_adjacency、line_strip_adjacency<br>triangle_list_adjacency、triangle_strip_adjacency<br>triangle_patch_adjacency、quad_patch_list、iso_line_list |
+| dynamics      | 补充说明 | **[]** | 数组，包括：viewport、scissor、line_width、depth_bias、blend_constants、depth_bounds、stencil_write_mask、stencil_compare_mask |
+| RasterizerState   | 补充说明 |  | 详见下文 **RasterizerState** 部分的介绍 |
+| DepthStencilState | 补充说明 |  | 详见下文 **DepthStencilState** 部分的介绍    |
+| BlendState        | 材质混合状态 | **false** | 详见下文 **BlendState** 部分的介绍 |
 
 ## Properties
-properties 存储着这个 Pass 有哪些可定制的参数需要在 Inspector 上显示，<br>
-这些参数可以是 shader 中的某个 uniform 的完整映射，也可以是具体某个分量的映射 (使用 target 参数)：
+
+Properties 存储着这个 Pass 中需要显示在 **属性检查器** 上的可定制的参数，这些参数可以是 shader 中某个 uniform 的完整映射，也可以是具体某个分量的映射（使用 target 参数）：
+
 ```yaml
 albedo: { value: [1, 1, 1, 1] } # uniform vec4 albedo
 roughness: { value: 0.8, target: pbrParams.g } # uniform vec4 pbrParams
@@ -67,7 +29,9 @@ offset: { value: [0, 0], target: tilingOffset.zw } # uniform vec4 tilingOffset
 # say there is another uniform, vec4 emissive, that doesn't appear here
 # so it will be assigned a default value of [0, 0, 0, 0] and will not appear in the inspector
 ```
+
 运行时可以这样使用：
+
 ```js
 // as long as it is a real uniform
 // it doesn't matter whether it is specified in the property list or not
@@ -77,9 +41,11 @@ mat.setProperty('roughness', 0.2); // set certain component
 const h = mat.passes[0].getHandle('offset'); // or just take the handle,
 mat.passes[0].setUniform(h, new Vec2(0.5, 0.5)); // and use Pass.setUniform interface instead
 ```
-未指定的 uniform 将由引擎在运行时根据自动分析出的数据类型给予[默认初值](#default-values)。
+
+未指定的 uniform 将由引擎在运行时根据自动分析出的数据类型给予 [默认初值](#default-values)。
 
 为方便声明各 property 子属性，可以直接在 properties 内声明 `__metadata__` 项，所有 property 都会继承它声明的内容，如：
+
 ```yaml
 properties:
   __metadata__: { editor: { visible: false } }
@@ -87,25 +53,56 @@ properties:
   b: { editor: { type: color } }
   c: { editor: { visible: true } }
 ```
-这样 uniform a 和 b 已声明的各项参数都不受影响，但全部不会显示在 inspector 上（visible 为 false），而 uniform c 还会正常显示。
+
+这样 uniform `a` 和 `b` 已声明的各项参数都不会受到影响，但都不会显示在 **属性检查器** 中（visible 为 false），而 uniform `c` 仍会正常显示。
+
+### Property 参数列表
+
+Property 中可配置的参数如下表所示，任何可配置的字段如果和默认值相同都可以省掉。
+
+| 参数 | 默认值 | 可选项  | 备注 |
+| :--- | :---- | :---- | :-- |
+| target   | **undefined** | undefined | 任意有效的 uniform 通道，可指定连续的单个或多个，但不可随机重排 |
+| value    |                 |  | 详见下文 **Default Values** 部分的介绍      |
+| sampler.<br>minFilter | **linear** | none, point, linear, anisotropic |    |
+| sampler.<br>magFilter | **linear** | none, point, linear, anisotropic |    |
+| sampler.<br>mipFilter | **none**   | none, point, linear, anisotropic |    |
+| sampler.<br>addressU  | **wrap**   | wrap, mirror, clamp, border      |    |
+| sampler.<br>addressV  | **wrap**   | wrap, mirror, clamp, border      |    |
+| sampler.<br>addressW  | **wrap**   | wrap, mirror, clamp, border      |    |
+| sampler.<br>maxAnisotropy | **16** | 16                               |    |
+| sampler.<br>cmpFunc       | **never**           | never, less, equal, less_equal, greater, not_equal, greater_equal, always |    |
+| sampler.<br>borderColor   | **[0, 0, 0, 0]**    | [0, 0, 0, 0]           |    |
+| sampler.<br>minLOD        | **0** | 0  |    |
+| sampler.<br>maxLOD        | **0** | 0  | Remember to override this when enabling mip filter |
+| sampler.<br>mipLODBias    | **0** | 0  |    |
+| editor.<br>displayName    | **\*property name** | \*property name     | 任意字符串 |
+| editor.<br>type           | **vector** | vector, color                |      |
+| editor.<br>visible        | **true**   | true, false                  |      |
+| editor.<br>tooltip        | **\*property name** | \*property name     | 任意字符串 |
+| editor.<br>range          | **undefined** | undefined, [ min, max, [step] ]  |   |
+| editor.<br>deprecated     | **false**  | true, false | For any material using this effect, delete the existing data for this property after next saving |
 
 ## Migrations
-一般来说使用材质资源时希望底层的 effect 接口能始终向前兼容，但依然有时面对新的需求最好的解决方案是含有一定 breaking change 的，<br>
-这时为了保持项目中已有的材质资源数据不受影响，或至少能够更平滑的升级，可以使用 effect 的迁移系统，<br>
-在 effect 导入成功后会 **立即更新工程内所有** 依赖于此 effect 的材质资源，<br>
-对每个材质资源，尝试寻找所有指定旧参数数据（包括 property 和宏定义两类），复制或迁移到新属性名下。<br>
 
-> 注意：使用迁移功能前请一定先备份项目工程，以免丢失数据！
+一般情况下，在使用材质资源时都希望底层的 effect 接口能始终向前兼容，但有时面对新的需求最好的解决方案依然是含有一定 breaking change 的，这时为了保持项目中已有的材质资源数据不受影响，或者至少能够更平滑地升级，就可以使用 effect 的迁移系统。
 
-对于一个现有 effect，声明如下迁移字段：
+在 effect 导入成功后会 **立即更新工程内所有** 依赖于此 effect 的材质资源，对每个材质资源，会尝试寻找所有指定的旧参数数据（包括 **property** 和 **宏定义** 两类），然后将其复制或迁移到新属性中。
+
+**注意**：使用迁移功能前请一定先备份好项目工程，以免丢失数据！
+
+对于一个现有的 effect，迁移字段声明如下：
+
 ```yaml
 migrations:
   # macros: # macros follows the same rule as properties, without the component-wise features
-  #   USE_MIAN_TEXTURE: { formerlySerializedAs: USE_MAIN_TEXTURE }
+  # USE_MIAN_TEXTURE: { formerlySerializedAs: USE_MAIN_TEXTURE }
   properties:
     newFloat: { formerlySerializedAs: oldVec4.w }
 ```
-对于一个依赖于这个 effect，并在对应 pass 持有这样的属性的材质：
+
+对于一个依赖于这个 effect，并在对应 pass 中持有属性的材质：
+
 ```json
 {
   "oldVec4": {
@@ -117,7 +114,9 @@ migrations:
   }
 }
 ```
-在 effect 重新导入后，这些数据会被立即转换成：
+
+在 effect 导入成功后，这些数据会被立即转换成：
+
 ```json
 {
   "oldVec4": {
@@ -130,81 +129,104 @@ migrations:
   "newFloat": 0.5
 }
 ```
-在编辑器内重新编辑并保存这个材质资源后会变成（假设 effect 和 property 数据本身并没有改变）：
+
+在 **编辑器** 内重新编辑并保存这个材质资源后会变成（假设 effect 和 property 数据本身并没有改变）：
+
 ```json
 {
   "newFloat": 0.5
 }
 ```
+
 当然如果希望在导入时就直接删除旧数据，可以再加一条迁移信息来专门指定这点：
+
 ```yaml
 oldVec4: { removeImmediately: true }
 ```
-这在项目有大量旧材质，又能够确定这个属性的数据已经完全冗余时会比较有用。
+
+这对于在项目有大量旧材质，又能够确定这个属性的数据已经完全冗余时会比较有用。
 
 更多地，注意这里的通道指令只是简单的取 `w` 分量，事实上还可以做任意的 shuffle：
+
 ```yaml
-    newColor: { formerlySerializedAs: someOldColor.yxx }
+newColor: { formerlySerializedAs: someOldColor.yxx }
 ```
+
 甚至基于某个宏定义：
+
 ```yaml
-    occlusion: { formerlySerializedAs: pbrParams.<OCCLUSION_CHANNEL|z> }
+occlusion: { formerlySerializedAs: pbrParams.<OCCLUSION_CHANNEL|z> }
 ```
-这里声明了新的 occlusion 属性会从旧的 `pbrParams` 中获取，而具体的分量取决于 OCCLUSION_CHANNEL 宏定义，且如材质资源中未定义此宏，默认取 `z` 通道。<br>
+
+这里声明了新的 occlusion 属性会从旧的 `pbrParams` 中获取，而具体的分量取决于 `OCCLUSION_CHANNEL` 宏定义。并且如果材质资源中未定义这个宏，则默认取 `z` 通道。<br>
 但如果某个材质在迁移升级前就已经存着 `newFloat` 字段的数据，则不会对其做任何修改，除非指定为强制更新模式：
+
 ```yaml
-    newFloat: { formerlySerializedAs: oldVec4.w! }
+newFloat: { formerlySerializedAs: oldVec4.w! }
 ```
-这会强制更新所有材质的属性，无论这个操作是否会覆盖数据。
 
-> 注意：强制更新操作会在编辑器的每次资源事件中都执行（几乎对应每一次鼠标点击，相对高频），因此只是一个快速测试和调试的手段，一定不要将处于强制更新模式的 effect 提交版本控制。
+强制更新模式会强制更新所有材质的属性，无论这个操作是否会覆盖数据。
 
-再次总结一下为防止数据丢失设置的相关规则：
-* 为避免有效旧数据丢失，只要没有显式指定 removeImmediately 规则，就不会在导入期自动删除旧数据；
-* 为避免有效新数据被覆盖，如果没有指定为强制更新模式，对于那些既有旧数据，又有对应的新数据的材质，不会做任何迁移操作。
+**注意**：强制更新操作会在编辑器的每次资源事件中都执行（几乎对应每一次鼠标点击，相对高频），因此只是一个快速测试和调试的手段，一定不要将处于强制更新模式的 effect 提交到版本控制。
 
-## Property Param List
-同样地，任何可配置字段如与默认值相同都可以省掉。
+再次总结一下为防止数据丢失所设置的相关规则：
+- 为避免有效旧数据丢失，只要没有显式指定 `removeImmediately` 规则，就不会在导入时自动删除旧数据；
+- 为避免有效的新数据被覆盖，如果没有指定为强制更新模式，对于那些既有旧数据，又有对应的新数据的材质，不会做任何迁移操作。
 
-| Param                     | Options                              |
-|:-------------------------:|:------------------------------------:|
-| target                    | **undefined**, (any valid uniform components, no random swizzle) |
-| value                     | *\*see the next section*             |
-| sampler.<br>minFilter     | none, point, **linear**, anisotropic |
-| sampler.<br>magFilter     | none, point, **linear**, anisotropic |
-| sampler.<br>mipFilter     | **none**, point, linear, anisotropic |
-| sampler.<br>addressU      | **wrap**, mirror, clamp, border      |
-| sampler.<br>addressV      | **wrap**, mirror, clamp, border      |
-| sampler.<br>addressW      | **wrap**, mirror, clamp, border      |
-| sampler.<br>maxAnisotropy | **16**                               |
-| sampler.<br>cmpFunc       | **never**, less, equal, less_equal, greater, not_equal, greater_equal, always |
-| sampler.<br>borderColor   | **[0, 0, 0, 0]**                     |
-| sampler.<br>minLOD        | **0**                                |
-| sampler.<br>maxLOD        | **0**, *\*remember to override this when enabling mip filter* |
-| sampler.<br>mipLODBias    | **0**                                |
-| editor                    | *\*see the next section*             |
-| editor.<br>displayName    | (any string), **\*property name**    |
-| editor.<br>type           | **vector**, color                    |
-| editor.<br>visible        | **true**, false                      |
-| editor.<br>tooltip        | (any string), **\*property name**    |
-| editor.<br>range          | **undefined**, [ min, max, [step] ]  |
-| editor.<br>deprecated     | true, **false**, *\*for any material using this effect,<br> delete the existing data for this property after next saving* |
+## RasterizerState
+
+| 参数名      | 说明 | 默认值  | 可选项 |
+| :--------- | :-- | :----- | :--- |
+| cullMode | 补充说明 | **back** | front, back, none  |
+
+## DepthStencilState
+
+| 参数名      | 说明 | 默认值  | 可选项 |
+| :--------- | :-- | :----- | :--- |
+| depthTest        | 补充说明   | **true** | true, false                                                                 |
+| depthWrite       | 补充说明   | **true** |true, false                                                                  |
+| depthFunc        | 补充说明   | **less** | never, less, equal, less_equal, greater, not_equal, greater_equal, always   |
+| stencilTest      | 补充说明   | **false**  | true, false                                                               |
+| stencilFunc      | 补充说明   | **always** | never, less, equal, less_equal, greater, not_equal, greater_equal, always |
+| stencilReadMask  | 补充说明   | **0xffffffff** | 0xffffffff, `[1, 1, 1, 1]`                                            |
+| stencilWriteMask | 补充说明   | **0xffffffff** | 0xffffffff, `[1, 1, 1, 1]`                                            |
+| stencilFailOp    | 补充说明   | **keep** | keep, zero, replace, incr, incr_wrap, decr, decr_wrap, invert               |
+| stencilZFailOp   | 补充说明   | **keep** | keep, zero, replace, incr, incr_wrap, decr, decr_wrap, invert               |
+| stencilPassOp    | 补充说明   | **keep** | keep, zero, replace, incr, incr_wrap, decr, decr_wrap, invert               |
+| stencilRef       | 补充说明   | **1**    | 1, `[0, 0, 0, 1]`                                                           |
+| stencil\*Front/Back | 补充说明  |        | **\*set above stencil properties for specific side**                        |
+
+## BlendState
+
+| 参数名      | 说明 | 默认值  | 可选项 |
+| :--------- | :--- | :----- | :--- |
+| BlendColor | 补充说明 | **0** | 0, `[0, 0, 0, 0]`  |
+| Targets    | 补充说明 | **false** | **false** | true, false  |
+| targets[i].<br>blend          | 补充说明 | **false** | true, false                                                               |
+| targets[i].<br>blendEq        | 补充说明 | **add** | add, sub, rev_sub                                                           |
+| targets[i].<br>blendSrc       | 补充说明 | **one** | one, zero, src_alpha_saturate,<br>src_alpha, one_minus_src_alpha,<br>dst_alpha, one_minus_dst_alpha,<br>src_color, one_minus_src_color,<br>dst_color, one_minus_dst_color,<br>constant_color, one_minus_constant_color,<br>constant_alpha, one_minus_constant_alpha |
+| targets[i].<br>blendDst       | 补充说明 | **zero** | one, zero, src_alpha_saturate,<br>src_alpha, one_minus_src_alpha,<br>dst_alpha, one_minus_dst_alpha,<br>src_color, one_minus_src_color,<br>dst_color, one_minus_dst_color,<br>constant_color, one_minus_constant_color,<br>constant_alpha, one_minus_constant_alpha |
+| targets[i].<br>blendSrcAlpha  | 补充说明 | **one** | one, zero, src_alpha_saturate,<br>src_alpha, one_minus_src_alpha,<br>dst_alpha, one_minus_dst_alpha,<br>src_color, one_minus_src_color,<br>dst_color, one_minus_dst_color,<br>constant_color, one_minus_constant_color,<br>constant_alpha, one_minus_constant_alpha |
+| targets[i].<br>blendDstAlpha  | 补充说明 | **zero** | one, zero, src_alpha_saturate,<br>src_alpha, one_minus_src_alpha,<br>dst_alpha, one_minus_dst_alpha,<br>src_color, one_minus_src_color,<br>dst_color, one_minus_dst_color,<br>constant_color, one_minus_constant_color,<br>constant_alpha, one_minus_constant_alpha |
+| targets[i].<br>blendAlphaEq   | 补充说明 | **add** | add, sub, rev_sub                                                           |
+| targets[i].<br>blendColorMask | 补充说明 | **all** | all, none, r, g, b, a, rg, rb, ra, gb, ga, ba, rgb, rga, rba, gba           |
 
 ## Default Values
-| Type        | Default Value / Options                  |
-|:-----------:|:----------------------------------------:|
-| int         | 0                                        |
-| ivec2       | [0, 0]                                   |
-| ivec3       | [0, 0, 0]                                |
-| ivec4       | [0, 0, 0, 0]                             |
-| float       | 0                                        |
-| vec2        | [0, 0]                                   |
-| vec3        | [0, 0, 0]                                |
-| vec4        | [0, 0, 0, 0]                             |
-| sampler2D   | black, grey, white, normal, **default**  |
-| samplerCube | black-cube, white-cube, **default-cube** |
 
-对于 defines：<br>
-boolean 类型默认值为 false。<br>
-number 类型默认值为 0，默认取值范围 [0, 3]。<br>
-string 类型默认值为 options 数组第一个元素。
+| 类型        |  默认值 | 可选项   |
+| :---------- | :----- | :------ |
+| int         |  | 0                                        |
+| ivec2       |  | [0, 0]                                   |
+| ivec3       |  | [0, 0, 0]                                |
+| ivec4       |  | [0, 0, 0, 0]                             |
+| float       |  | 0                                        |
+| vec2        |  | [0, 0]                                   |
+| vec3        |  | [0, 0, 0]                                |
+| vec4        |  | [0, 0, 0, 0]                             |
+| sampler2D   | **default**      | black, grey, white, normal, default  |
+| samplerCube | **default-cube** | black-cube, white-cube, default-cube |
+
+对于 defines：
+- boolean 类型默认值为 false。
+- number 类型默认值为 0，默认取值范围为 [0, 3]。
+- string 类型默认值为 options 数组第一个元素。

@@ -69,7 +69,7 @@ export function setDefaultLogTimes (times: number): void;
 ## 使用示例
 
 ```typescript
-// 对于替换参数不兼容的API，通过合适的自定义功能进行适配
+// 对于替换参数不兼容的 API，通过合适的自定义功能进行适配
 replaceProperty(Animation.prototype, 'Animation.prototype', [
     {
         name: 'removeClip',
