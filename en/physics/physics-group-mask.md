@@ -57,7 +57,7 @@ const group = 1 << 2;
 Collider.removeGroup(group);
 ```
 
-> **Note**: it is recommended to fix in a group, you can use the node's `layer` property as a group.
+> **Note**: it is recommended to fix in a group.
 
 > **Note**: the receiving parameters of the above methods are all decimal numbers. For easy understanding, binary explanation is used here. Developers can also directly input decimal numbers for group operation after they are familiar**.
 
@@ -103,7 +103,7 @@ Here is a simple example of usage:
 
 ### Defining a Group
 
-**Method 1**: Defined in an `object`
+**Method 1**: Defined in an __object__
 
 ```ts
 export const PHY_GROUP = {
@@ -112,7 +112,7 @@ export const PHY_GROUP = {
 };
 ```
 
-**Method 2**: Defined in an `enum` (TypeScript only)
+**Method 2**: Defined in an __enum__ (__TypeScript only__)
 
 ```ts
 enum PHY_GROUP {
@@ -121,11 +121,9 @@ enum PHY_GROUP {
 };
 ```
 
-> **Note**: you can consider to reuse the preset layers in `Layer`.
+In order to be able to set up groups on the panel, you need to register the defined groups to the editor `Enum(PHY_GROUP)` through the __Enum__ function exported by the __cc__ module.
 
-In order to be able to set up groups on the panel, you need to register the defined groups to the editor `Enum(PHY_GROUP)` through the `Enum` function exported by the `cc` module.
-
-> **Note**: for historical reasons, the `Enum` function has special treatment for `-1`. If you are not familiar with it, do not define an attribute with a value of `-1`.
+> **Note**: for historical reasons, the __Enum__ function has special treatment for `-1`. If you are not familiar with it, do not define an attribute with a value of `-1`.
 
 ### Using a Mask
 
@@ -146,6 +144,4 @@ By executing `(value >>> 0).toString(2)` in the running environment of JavaScrip
 
 The collision matrix is a further encapsulation of the packet mask configuration, which provides a more unified management and makes it easier to initialize the packet mask configuration without writing any code, and can be configured directly in the editor's project Settings.
 
-However, it should be noted that when the collision matrix is turned on, the mask value can only be updated through the interface related to the collision matrix, and the interface related to `setMask` above will be invalid.
-
-For details, please refer to the [collision matrix Settings](../editor/project/index.md#CollisionMatrix) documentation and the [interface related to the collision matrix](physics-system.md#Interfaces) documentation.
+For details, please refer to the [collision matrix Settings](../editor/project/index.md#CollisionMatrix) documentation.

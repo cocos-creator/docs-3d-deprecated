@@ -6,8 +6,6 @@ The physics system is used to manage all physics related functions. Currently, i
 
 When the physics world iterates, physical calculations will be made on physical elements, such as calculating whether each object collides and the force of the object. When the calculation is completed, the physics system will update the physics world to the scene world, so that the game objects will generate corresponding physical behaviors.
 
-The current physics execution flow of __Coccos Creator 3.0__: **trigger physics events** -> **sync scene data to physics** -> **physics world iteration** -> **sync physics data to scene**.
-
 > **Note**: there is only a single physical world, and the functional support of the multi-physics world will be discussed later.
 
 Scene World and Physics World:
@@ -30,16 +28,12 @@ The properties of the physics system can only be set through the code for the ti
 | **sleepThreshold** | The default speed threshold for going to sleep, the default is `0.1` |
 | **autoSimulation** | Automatic simulation, the default is `true` |
 | **defaultMaterial** | Get the default physics material (read only) |
-| **raycastResults** | Gets the raycast test results (read only) |
-| **raycastClosestResult** | Gets the raycastClosest test result (read only) |
-| **useCollisionMatrix** | Whether to use a collision matrix, the default is `false` |
-| **collisionMatrix** | Gets the collision matrix |
+| **raycastResults** | Gets the __raycast__ test results (read only) |
+| **raycastClosestResult** | Gets the __raycastClosest__ test result (read only) |
+| **collisionMatrix** | Gets the collision matrix (It`s used only for initialization) |
 
 ## Interfaces
 
 | Property | Signature | Description |
-| :--- | :--- | :--- |
-| **isCollisionGroup** | `(g1:number, g2:number)=>boolean` | Are collisions between `g1` and `g2`? |
-| **setCollisionGroup** | `(g1:number, g2:number, collision=true)=>void` | Sets whether collisions occur between `g1` and `g2` |
-| **resetCollisionMatrix** | `(mask=0xffffffff)=>void` | Reset the mask corresponding to all groups of the collision matrix to the given value |
+| ---|---|---
 | **resetAccumulator** | `(time=0)=>void` | Reset the accumulator of time to given value |

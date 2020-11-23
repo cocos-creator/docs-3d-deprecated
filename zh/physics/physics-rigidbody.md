@@ -32,17 +32,17 @@ const rigidBody = this.getComponent(RigidBody);
 
 目前刚体类型包括 **STATIC**、**DYNAMIC** 和 **KINEMATIC** 三种。
 
-- **STATIC**：静态刚体，`Mass = 0` 或者只有碰撞组件的物理元素。例如可用于质量巨大无比的石头。
-- **DYNAMIC**：动力学刚体，`Mass > 0` 且 `isKinematic = false`。可以 **受到力的作用**。
-- **KINEMATIC**：运动学刚体，`Mass > 0` 且 `isKinematic = true`。由开发者来控制刚体的位移和旋转，而不是受物理引擎的影响。
+- **STATIC**，表示静态刚体，可用于描述静止的建筑物，若物体需要持续运动，应设置为 **KINEMATIC** 类型；
+- **DYNAMIC**，表示动力学刚体，能够**受到力的作用**，请通过**物理规律**来运动物体，并且请保证质量大于 0；
+- **KINEMATIC**，表示运动学刚体，通常用于表达电梯这类平台运动的物体，请通过 **Transfrom** 控制物体运动；
 
 ## 刚体质心
 
-目前质心固定在刚体组件绑定的节点上，质心和碰撞体是相对关系。通过调整形状的偏移 `center`，可以使质心在形状上进行偏移。
+目前质心固定在刚体组件绑定的节点上，质心和碰撞体是相对关系。通过调整形状的偏移 __center__，可以使质心在形状上进行偏移。
 
 ![质心](img/center-of-mass.jpg)
 
-> **注意**：为了使碰撞体更方便的贴合模型，未来可能会增加改变质心的方法，以及动态计算质心的机制。
+> **注**：为了使碰撞体更贴合模型，未来会增加改变质心的方法，以及动态计算质心的机制。
 
 ## 休眠和唤醒
 
@@ -68,7 +68,11 @@ if (rigidBody.isSleeping) {
 
 ## 让刚体运动起来
 
-让刚体运动，需要改变刚体的速度，目前改变刚体的速度有以下几种方式：
+针对不同的类型，让刚体运动的方式不同：
+
+对于静态刚体，应当尽可能保持物体静止，但仍然可以通过 __Transform__ 来改变物体的位置。
+对于运动学刚体，应当通过改变 __Transform__ 使其运动。
+对于动力学刚体，需要改变其速度，有以下几种方式：
 
 ### 通过重力
 
@@ -80,7 +84,7 @@ if (rigidBody.isSleeping) {
 
 `applyForce (force: Vec3, relativePoint?: Vec3)`
 
-根据牛顿第二定律 **F = m * a**，对刚体的某个点施加力会产生加速度，随着时间变化，速度会随加速度变化，就会使得刚体运动起来。
+根据牛顿第二定律，可对刚体某点上施加力来改变物体的原有状态。
 
 ```ts
 rigidBody.applyForce(new Vec3(200, 0, 0));
@@ -88,7 +92,9 @@ rigidBody.applyForce(new Vec3(200, 0, 0));
 
 ### 通过扭矩
 
-力与冲量也可以只对旋转轴产生影响，使刚体发生转动，这样的力叫做扭矩。刚体组件提供了 `applyTorque` 接口，签名为：
+力与冲量也可以只对旋转轴产生影响，使刚体发生转动，这样的力叫做扭矩。
+
+刚体组件提供了 `applyTorque` 接口，签名为：
 
 `applyTorque (torque: Vec3)`
 
@@ -100,7 +106,7 @@ rigidBody.applyForce(new Vec3(200, 0, 0));
 
 `applyImpulse (impulse: Vec3, relativePoint?: Vec3)`
 
-根据动量守恒的方程式 `F * Δt = m * Δv`，对刚体的某个点施加冲量，速度就会产生变化，刚体就会运动起来。
+根据动量守恒，对刚体某点施加冲量，由于物体质量恒定，从而使刚体改变原有状态。
 
 ```ts
 rigidBody.applyImpulse(new Vec3(5, 0, 0));
@@ -120,8 +126,6 @@ rigidBody.applyImpulse(new Vec3(5, 0, 0));
   rigidBody.setLinearVelocity(new Vec3(5, 0, 0));
   ```
 
-- 旋转速度
-
   刚体组件提供了 `setAngularVelocity` 接口，可用于改变旋转速度，签名为：
   
   `setAngularVelocity (value: Vec3)`
@@ -138,21 +142,17 @@ rigidBody.applyImpulse(new Vec3(5, 0, 0));
 
 休眠刚体时，会将刚体所有的力和速度清空，使刚体停下来。
 
-> **注意**：目前施加力、冲量、改变速度、分组和掩码会重新唤醒刚体。
-
 ### 通过阻尼
 
-刚体组件提供了 `linearDamping` 和 `angularDamping` 属性：
+刚体组件提供了 __linearDamping__ 和 __angularDamping__ 属性：
 
 - `linearDamping` 属性用于设置线性阻尼。
 
 - `angularDamping` 属性用于设置旋转阻尼。
 
-阻尼参数的范围可以在 0 到无穷之间，0 意味着没有阻尼，无穷意味着满阻尼。一般情况下阻尼的值是在 0 ～ 0.1 之间。
+阻尼参数的范围建议在 __0__ 到 __1__ 之间，__0__ 意味着没有阻尼，__1__ 意味着满阻尼。
 
-### 通过固定旋转
-
-刚体组件提供了 `fixedRotation` 属性，默认为 `false`。设置 `fixedRotation = true` 可以固定刚体，使其不会产生旋转。
+> **注**：执行部分接口，例如施加力或冲量、改变速度、分组和掩码会尝试唤醒刚体。
 
 ### 通过因子
 
@@ -164,5 +164,6 @@ rigidBody.applyImpulse(new Vec3(5, 0, 0));
 因子是 `Vec3` 的类型，相应分量的数值用于缩放相应轴向的速度变化，默认值都为 **1**，表示缩放为 **1** 倍，即无缩放。
 
 **注意**：
-1. 将因子某分量值设置为 **0**，可以固定某个轴向的移动或旋转，如果要完全固定旋转，请用 `fixedRotation`。
-2. 在物理引擎 `cannon,js` 和 `ammo.js` 中，因子作用的物理量不同，在 `cannon` 中是作用于速度，在 `ammo` 中则是作用于力。
+
+1. 将因子某分量值设置为`0`，可以固定某个轴向的移动或旋转。
+2. 在 __cannon__ 和 __ammo__ 后端中，因子作用的物理量不同，__cannon__ 中作用于速度，__ammo__ 中作用于力。

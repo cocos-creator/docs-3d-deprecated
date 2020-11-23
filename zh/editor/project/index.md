@@ -170,74 +170,9 @@ interface ICompressPresetItem {
 
 <!-- native 引擎设置的修改主要影响的是构建原生项目时使用 cocos2dx 引擎模板，修改后可以实时生效。 -->
 
-## Physics 物理设置
+## 物理配置
 
-在项目设置的引擎模块中 Physics 选项被勾选时，物理配置生效。
-
-![Physics-In-Engine](./index/physics-in-engine.png)
-
-物理配置将会在项目预览和项目发布时使用，会影响到重力，摩擦力，动能传递，检测碰撞等方面的物理效果。
-
-### 属性说明
-
-![Physics](./index/physics-index.png)
-
-- `gravity` 重力矢量，正负数值体现了在坐标轴上的方向性，默认值 `{ x: 0, y: -10, z: 0 }`
-- `allowSleep` 是否允许刚体进入休眠状态，默认值 `true`
-- `sleepThreshold` 进入休眠的默认速度临界值，默认值 `0.1`，最小值 `0`
-- `autoSimulation` 是否开启自动模拟
-- `fixedTimeStep` 每步模拟消耗的固定时间，默认值 `1/60`，最小值 `0`
-- `maxSubSteps` 每步模拟的最大子步数，默认值 `1`，最小值 `0`
-- `friction` 摩擦系数，默认值 `0.5`
-- `rollingFriction` 滚动摩擦系数，默认值 `0.1`
-- `spinningFriction` 自旋摩擦系数，默认值 `0.1`
-- `restitution` 弹性系数，默认值 `0.1`
-- `useCollisionMatrix` 是否使用碰撞矩阵，默认值 `true`
-- `collisionMatrix`  碰撞矩阵的设置结果，`{ index: value }` 格式，默认值 `{ "0": 1 }`
-<!-- - `useNodeChains` 是否使用节点链组合刚体，默认值 *true* -->
-
-### 碰撞矩阵设置
-
-碰撞矩阵用于管理物理元素的分组和掩码，开启 `useCollisionMatrix` 后会自动设置对应的掩码值。该功能暂时还比较初期，请谨慎使用。
-
-需要注意的是，碰撞矩阵是 [物理分组掩码](../../physics/physics-group-mask.md) 功能的进一步封装。它与 Creator v2.x 的分组配置类似，但是有所差别。Creator v2.x 的分组配置只负责初始化，而 Creator 3.0 中还会负责自动更新（未来可能会调整为仅初始化）。
-
-因此，开启 `useCollisionMatrix` 后将只能通过碰撞矩阵设置掩码值，意味着不能使用 `setMask` 等相关的 API。若要运行时修改碰撞矩阵，请参考 [物理系统](../../physics/physics-system.md#部分接口) 的 `setCollisionGroup`。
-
-![Physics-collision](./index/physics-collision.png)
-
-#### 分组的概念
-
-在编辑器中，碰撞矩阵分组的存储格式为 `{index, name}`，`index` 是从 `0` 到 `31` 的位数，而 `name` 是该组的名称，新项目工程会有一个默认分组：`{index: 0, name: 'DEFAULT'}`。
-
-点击 **+** 按钮可以新增分组。
-
-**注意**：新增时 `index`、`name` 均不能为空，且不能与现有项重复。新增后分组不可以删除，但可以修改分组的名称。
-
-![Physics-collision-add](./index/physics-collision-add.png)
-
-#### 如何配置
-
-以新增一个 `water` 分组为例：
-
-![Physics-collision-demo](./index/physics-collision-demo.png)
-
-这张表列出了所有的分组，你可以通过勾选来决定哪两组会进行碰撞检测。
-
-**如上图所示，`DEFAULT` 和 `water` 是否会进行碰撞检测将取决于是否选中了对应的复选框**。
-
-根据上面的规则，在这张表里产生的碰撞对有：
-
-- DEFAULT - water
-- DEFAULT - DEFAULT
-
-而不进行碰撞检测的分组对有：
-
-- water - water
-
-此外还需要通过刚体组件上的 `Group` 属性配置到对应的物理元素中：
-
-![rigidbody-group](./index/rigidbody-group.jpg)
+用于配置物理的各项参数，请参考[这里](physics-configs.md)。
 
 ## 骨骼贴图布局设置
 

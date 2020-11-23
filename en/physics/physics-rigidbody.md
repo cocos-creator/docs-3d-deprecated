@@ -32,9 +32,9 @@ const rigidBody = this.getComponent(RigidBody);
 
 Rigid bodies are generally divided into three types, **STATIC**, **DYNAMIC**, and **KINEMATIC**.
 
-- **STATIC**, which means a static rigid body, like a stone with a huge mass, specifically a mass with a mass of `0`, or only physical elements with collision components.
-- **DYNAMIC**, which means that a dynamic rigid body can **be subjected to forces**, specifically those with a mass greater than `0` and `isKinematic` being `false`.
-- **KINEMATIC**, which means kinematic rigid body, the user controls the movement of the rigid body, specifically the mass is greater than `0` and `isKinematic` is `true`.
+- **STATIC**, which means a static rigid body, Used to describe a building at rest. If the object needs to keep moving, it should be set to __KINEMATIC__ type.
+- **DYNAMIC**, which means that a dynamic rigid body can **be subjected to forces**. Move the object through **the laws of physics**, and make sure the mass is greater than 0.
+- **KINEMATIC**, which means kinematic rigid body, Usually used to express the motion of the object such as the elevator platform, please control the motion of the object through the __Transform__.
 
 ## Center Of Mass
 
@@ -149,10 +149,6 @@ The RigidBody component provides `linearDamping` and `angularDamping` properties
 
 The range of the damping parameter is from 0 to infinity, where 0 means no damping and infinity means full damping. Generally, the value of damping is between 0 ~ 0.1.
 
-### By Fixed Rotation
-
-The RigidBody component provides the `fixedRotation` property. The default is `false`. Setting it to `true` can be used to fix the rigid body so that it does not rotate.
-
 ### By Factor
 
 The RigidBody component provides the `linearFactor` and `angularFactor` properties:
@@ -163,5 +159,5 @@ The RigidBody component provides the `linearFactor` and `angularFactor` properti
 The factor is the type of `Vec3`. The value of the corresponding component is used to scale the speed change of the corresponding axis. The default value is `1`, which means that the scaling is `1` times, that is, no effect.
 
 > **Note**:<br>
-> 1. Set a certain component value of the factor to `0`, you can fix a certain axis of movement or rotation, if you want to completely fix the rotation, please use `fixedRotation`.
+> 1. Set a certain component value of the factor to `0`, you can fix a certain axis of movement or rotation.
 > 2. In the physics engines `cannon.js` and `ammo.js`, the factors act on different physical quantities, in `cannon.js` on speed and in `ammo.js` on force.
