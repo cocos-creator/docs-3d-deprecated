@@ -1,8 +1,8 @@
-# Compose Panel
+# Creating a Custom Panel
 
-The definition of the panel can be found by reading the [package.json](./panel.md) documentation. 
+How a compose panel is defnined can be found by reading the [package.json](./panel.md) documentation. 
 
-Identify the main entry file in the panel definition and fill in its content:
+Identify the main entry file in the panel definition and fill in its content. Example:
 
 ```javascript
 'use strict';
@@ -28,7 +28,7 @@ exports.close = async function() {};
 
 ## Template
 
-An HTML string, for example:
+An HTML string. Example:
 
 ```javascript
 exports.template = `
@@ -41,7 +41,7 @@ exports.template = `
 `;
 ```
 
-It is possible to read an HTML file directly:
+It is possible to read an HTML file directly. Example:
 
 ```javascript
 const {readFileSync} = require('fs');
@@ -49,13 +49,13 @@ const {join} = require('path');
 exports.template = readFileSync(join(__dirname,'../static/default.html'),'utf8');
 ```
 
-When the template is defined, when the panel is opened, the content of the template will be automatically rendered on the interface.
+The template is defined, when the panel is opened, the content of the template will be automatically rendered on the interface.
 
 In addition, the editor also provides some custom elements, please refer to the [UI](./editor/extension/ui.md) documentation.
 
 ## Style
 
-With HTML, customize some styles. Style is a string like template. Example:
+With HTML, it is possible to customize some styles. Style is a string style template. Example:
 
 ```javascript
 exports.style = `
@@ -82,7 +82,7 @@ exports.$ = {
 };
 ```
 
-First define the selector. After the template is rendered, the editor will automatically call document.querySelector to find the corresponding element and hang it on `this.$`. Example:
+First, define the selector. After the template is rendered, the editor will automatically call `document.querySelector` to find the corresponding element and hang it on `this.$`. Example:
 
 ```javascript
 exports.ready = function() {
@@ -95,7 +95,7 @@ exports.ready = function() {
 
 The method defined on the panel. The external functions of the panel need to be encapsulated into methods and provided externally in units of functions. Messages can also directly trigger the methods on the panel. For details, please refer to the [Message Communication](./contributions-messages.md) documentation.
 
-This object is full of functions, please do not attach other types of objects here.
+This object is full of functions, do not attach other types of objects here. Example:
 
 ```javascript
 exports.methods = {
@@ -107,7 +107,7 @@ exports.methods = {
 
 ## Listeners
 
-After the basic layout is completed, it is sometimes necessary to update the status on some panels according to some situations. It is necessary to use the listeners function.
+After the basic layout is completed, it is sometimes necessary to update the status on some panels according to some situations. It is necessary to use the listeners function. Example:
 
 ```javascript
 exports.listeners = {
@@ -137,9 +137,9 @@ exports.listeners = {
 
 When the panel tries to be closed, this function will be triggered. `BeforeClose` can be an async function that can be used for asynchronous judgment. If it returns `false`, the current closing operation will be terminated.
 
-Please do not execute the actual destruction and close-related logic code in this function. This step is just for inquiry. Please put the actual destruction in the close function.
+Do not execute the actual destruction and close-related logic code in this function. This step is just for inquiry. Please put the actual destruction in the close function.
 
-**Please use with caution** If the judgment is wrong, the editor or panel window may not close normally.
+> **Note**: **Please use with caution**, if the judgment is wrong, the editor or panel window may not close normally.
 
 ## Close
 
