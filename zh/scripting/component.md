@@ -1,8 +1,7 @@
+# 组件
 
-## 组件
-
-所有继承自 [Component]() 的类都称为组件类，
-其对象称为组件，实现了 Cocos Creator EC 系统中的组件概念。
+所有继承自 [Component](https://docs.cocos.com/creator3d/api/zh/classes/component.component-1.html) 的类都称为组件类，
+其对象称为组件，实现了 Cocos Creator 3.0 EC 系统中的组件概念。
 
 组件类必须是 cc 类。
 
@@ -15,7 +14,7 @@ class MyComponent extends Component {
 }
 ```
 
-### 组件的创建和销毁
+## 组件的创建和销毁
 
 组件的生命周期完全由结点操控。
 与普通类对象不同，组件不能由构造函数创建：

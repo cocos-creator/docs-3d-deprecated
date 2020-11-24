@@ -18,15 +18,15 @@ UI 相机与 3D 相机混排的关键因素是在 UI 相机这里。因此，我
 
  1. 当选择模式是 `OVERLAY`，则代表 UI 相机始终会往 3D 相机后排，也就是**始终会覆盖在 3D 相机的渲染内容之上**。多个 UI 相机选择此模式，可以通过属性 `Priority` 来进行 UI 相机之间排序。
 
-![overlay](./priority/overlay.png)
+    ![overlay](./priority/overlay.png)
 
  2. 当选择模式是 `INTERSPERSE`，则代表此时他可以与 3D 相机进行混排，UI、3D 相机之间的排序方式也是分别通过设置 Canvas/Camera 组件上的 `Priority`。
 
-![intersperse](./priority/intersperse.png)
+    ![intersperse](./priority/intersperse.png)
 
 ### 注意事项
 
-排序是一个很简单的功能，但是最终的呈现却是根据不同平台提供的渲染能力来的。因此，在这里说明一下，如果遇到了 UI 渲染出错，花屏，闪屏等现象，首先要检查的就是场景里所有相机（Camera 和 Canvas）的 **ClearFlag**，确保  **场景里必须有一个相机要执行 Solid_Color 清屏操作**。
+排序是一个很简单的功能，但是最终的呈现却是根据不同平台提供的渲染能力来的。因此，在这里说明一下，如果遇到了 UI 渲染出错，花屏，闪屏等现象，首先要检查的就是场景里所有相机（Camera 和 Canvas）的 **ClearFlag**，确保 **场景里必须有一个相机要执行 Solid_Color 清屏操作**。
 
 具体如何设置 **ClearFlag**，可参考以下几种情况：
 
@@ -36,7 +36,8 @@ UI 相机与 3D 相机混排的关键因素是在 UI 相机这里。因此，我
   - 3D 场景层：**ClearFlag** 属性设置为 `Depth_Only`。
   - 2D UI 层：若有模型，**ClearFlag** 属性设置为 `Depth_Only` 以避免出现模型闪屏或者穿透的情况。若没有模型，**ClearFlag** 属性可设置为 `Dont_Clear` 或 `Depth_Only`。
 
-![sort](./priority/sort.png)
+  ![sort](./priority/sort.png)
+
 ---
 
 #### [UI 结构介绍](index.md)
