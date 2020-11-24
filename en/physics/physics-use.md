@@ -10,8 +10,3 @@ Module | Description
 [**Physics Event**](physics-event.md) | Introduced the physics events in **Cocos Creator**
 [**Group Mask**](physics-group-mask.md) | Introduces the use of group and mask in physics filter detection
 [**Raycast Detection**](physics-raycast.md) | Introduces the ray detection function of the physics collider
----
-
-Continue to the [Collision Components](physics-collider.md) documentation.
-
-Or go back to [Physics Introduction](physics.md) documentation.

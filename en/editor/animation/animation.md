@@ -27,7 +27,3 @@ __Exiting edit mode__:
 - __Press__, **Ctrl/Cmd+E**
 
 For more details, refer to the [Animation System Design](./../../engine/animation/index.md) and the [Script Control](./../../engine/animation/animation-componentofAnimation).md) documentation.
-
----
-
-Continue to the [Animation Editor](animation-editor.md) documentation.

@@ -12,7 +12,7 @@ Note that although the **audioClip** asset itself also has direct interface impl
 
 ## Audio related event
 
-All **AudioClip** asset objects are one EventTarget：
+All **AudioClip** asset objects are one EventTarget:
 
 * The `started` event is sent when the audio starts to actually play.
 

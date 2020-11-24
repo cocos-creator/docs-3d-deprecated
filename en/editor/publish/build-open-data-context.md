@@ -79,7 +79,7 @@ With this basic information in mind, let's take a look at the **Open Data Contex
 ![](./build-open-data-context/folder-structure.png)
 
 - **render/dataDemo.js**: Simulates some random data of the leaderboards, where the developer can request the relational chain data from the platform and pass it to the **doT template engine** to generate relevant XML text
-- **render/style.js**: To record CSS style text information，refer to [Style documentation [zh]](https://wechat-miniprogram.github.io/minigame-canvas-engine/api/style.html#%E5%B8%83%E5%B1%80)
+- **render/style.js**: To record CSS style text information, refer to [Style documentation [zh]](https://wechat-miniprogram.github.io/minigame-canvas-engine/api/style.html#%E5%B8%83%E5%B1%80)
 - **render/template.js**: To record XML text information, the project uses the template engine to generate XML text by default. Refer to [Tag documentation [zh]](https://wechat-miniprogram.github.io/minigame-canvas-engine/api/tags.html#%E6%A0%87%E7%AD%BE%E5%88%97%E8%A1%A8).
 - **render/avatar.png**: Header images for display in **Open Data Context** project template, can be deleted.
 - **engine.js**: source code of Canvas engine

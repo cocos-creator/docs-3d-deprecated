@@ -10,8 +10,3 @@
 [**物理事件**](physics-event.md) | 介绍了 Cocos Creator 中的物理事件
 [**分组掩码**](physics-group-mask.md) | 介绍了物理过滤检测中分组掩码的使用
 [**射线检测**](physics-raycast.md) | 介绍了对物理碰撞器的射线检测功能
----
-
-继续前往 [碰撞组件](physics-collider.md) 说明文档。
-
-或者回到 [物理简介](physics.md)。

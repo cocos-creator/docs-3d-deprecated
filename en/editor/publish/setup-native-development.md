@@ -58,7 +58,7 @@ Please install the following running environment:
 
 ## Configure Native Develop environments path
 
-Next, let's go back to Cocos Creator to configure the environmental path of the native platform. Choose **CocosCreator 3D -> Preferences** in the main menu, and open the **Preferences** panel:
+Next, let's go back to Cocos Creator to configure the environmental path of the native platform. Choose **CocosCreator -> Preferences** in the main menu, and open the **Preferences** panel:
 
 ![preference](setup-native-development/sdk.jpg)
 
@@ -84,4 +84,4 @@ We have received lots of feedback about native packing in the public beta, and s
 
     Please check if the architecture and version of NDK and Android SDK correspond to the phone's Android system. In addition you can try to use the NDK and Android SDK version used in this article to test.
 
-In the end, if building still fails, please send a question to the [Forum](https://discuss.cocos2d-x.org/) with the Creator 3D version, the build log file in the Build panel, and a demo that reproduces the problem.
+In the end, if building still fails, please send a question to the [Forum](https://discuss.cocos2d-x.org/) with the Creator version, the build log file in the Build panel, and a demo that reproduces the problem.

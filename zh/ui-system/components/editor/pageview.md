@@ -13,7 +13,7 @@ PageView 是一种页面视图容器.
 ## PageView 属性
 
 | 属性                     | 功能说明 |
-| --------------           | ----------- |
+| :-------------           | :---------- |
 | SizeMode                 | 页面视图中每个页面大小类型，目前有 Unified 和 Free 类型。<!--详情可参考 [SizeMove API](../../../api/zh/enums/PageView.SizeMode.html) -->  |
 | Content                  | 它是一个节点引用，用来创建 PageView 的可滚动内容 |
 | Direction                | 页面视图滚动方向 |
@@ -39,7 +39,7 @@ PageViewIndicator 是可选的，该组件是用来显示页面的个数和标�
 ![pageview-event](./pageview/pageview-event.png)
 
 | 属性            | 功能说明 |
-| --------------  | ----------- |
+| :-------------  | :---------- |
 | Target          | 带有脚本组件的节点 |
 | Component       | 脚本组件名称 |
 | Handler         | 指定一个回调函数，当 PageView 的事件发生的时候会调用此函数 |
@@ -72,8 +72,8 @@ const { ccclass, property } = _decorator;
 export class example extends Component {
     onLoad(){
         const pageChangedEventHandler = new EventHandler();
-        pageChangedEventHandler.target = this.node; //这个 node 节点是你的事件处理代码组件所属的节点
-        pageChangedEventHandler.component = 'example';//这个是代码文件名
+        pageChangedEventHandler.target = this.node; // 这个 node 节点是你的事件处理代码组件所属的节点
+        pageChangedEventHandler.component = 'example'; // 这个是代码文件名
         pageChangedEventHandler.handler = 'callback';
         pageChangedEventHandler.customEventData = 'foobar';
 
@@ -82,7 +82,7 @@ export class example extends Component {
     }
 
     callback(event: Event, customEventData: string){
-        //这里 event 是一个 Touch Event 对象，你可以通过 event.target 取到事件的发送节点
+        // 这里 event 是一个 Touch Event 对象，你可以通过 event.target 取到事件的发送节点
         const node = event.target as Node;
         const pageview = node.getComponent(PageView);
         console.log(customEventData); // foobar
@@ -105,15 +105,9 @@ export class example extends Component {
         this.pageView.node.on('page-turning', this.callback, this);
     }
 
-    callback(pageView: PageView){
+    callback(pageView: PageView) {
         // 回调的参数是 pageView 组件
         // 另外，注意这种方式注册的事件，也无法传递 customEventData
     }
 }
 ```
-
----
-
-- [其他基础模块参考](base-component.md)
-
-- [渲染模块参考](render-component.md)

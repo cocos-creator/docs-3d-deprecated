@@ -4,9 +4,9 @@ In the panel **Project -> Project Settings -> Module Options** of the Editor, yo
 
 ![Physics Engine Options](img/physics-module.jpg)
 
-> **Note**: The default is `cannon.js` physics engine。
+> **Note**: The default is `cannon.js` physics engine.
 
-> **Note**: The physics engine can be switched at will during development。
+> **Note**: The physics engine can be switched at will during development.
 
 ## Collision Detection:`builtin`
 
@@ -35,7 +35,3 @@ If you don't need to use any physics related components and interfaces, you can 
 > **Note**: If it is unchecked, the project will not be able to use physics related components and interfaces, otherwise an error will be reported during runtime.
 
 <!-- ## Expand the physical backend -->
-
----
-
-Continue to the [physics system](physics-system.md) documentation.

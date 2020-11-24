@@ -51,11 +51,11 @@ UI 自定义材质是拓展 UI 表现和提升 UI 自身能力的最佳实践，
 5. 如果用户希望对自定义材质进行 uniform 赋值操作，可通过获取 Sprite 上的 material 来进行操作，我们提供了不同的接口以应对不同的操作情况，如下代码所示：**（请一定注意看不同接口的注释说明！）**
 
     ```ts
-        let spriteComp = this.node.getComponent(Sprite);
-        // 通过 sharedMaterial 方法获取到的为 共享材质资源，针对 material 进行的操作将会影响到所有使用此材质的渲染对象
-        let material = spriteComp.sharedMaterial;
+    let spriteComp = this.node.getComponent(Sprite);
+    // 通过 sharedMaterial 方法获取到的为 共享材质资源，针对 material 进行的操作将会影响到所有使用此材质的渲染对象
+    let material = spriteComp.sharedMaterial;
 
-        // 通过 material 方法获取到的为 当前渲染组件使用的材质试例，针对 material Instance 进行的操作只会对当前组件产生影响
-        let materialInstance = spriteComp.material;
+    // 通过 material 方法获取到的为 当前渲染组件使用的材质试例，针对 material Instance 进行的操作只会对当前组件产生影响
+    let materialInstance = spriteComp.material;
 
     ```

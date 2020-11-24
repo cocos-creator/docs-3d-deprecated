@@ -205,7 +205,3 @@ export class WebViewCtrl extends Component {
 ```
 
 #### 再强调一遍: Web 平台上的跨域问题需要自行解决
-
-- [其他基础模块参考](base-component.md)
-
-- [渲染模块参考](render-component.md)

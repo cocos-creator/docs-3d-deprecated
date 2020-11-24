@@ -57,8 +57,8 @@ parentNode.addChild(this.node);
 
 ### 索引节点的子节点
 
-`this.node.children` 将返回节点的所有子节点数组。<br>
-`this.node.childrenCount` 将返回节点的子节点数量。
+- `this.node.children`：返回节点的所有子节点数组。
+- `this.node.childrenCount`：返回节点的子节点数量。
 
 **注意** 以上两个 API 都只会返回节点的直接子节点，不会返回子节点的子节点。
 
@@ -66,29 +66,28 @@ parentNode.addChild(this.node);
 
 ### 更改节点位置
 
-使用 `setPosition` 方法：
+有以下两种方法：
 
-`this.node.setPosition(100, 50, 100);`<br>
-`this.node.setPosition(new Vec3(100,50,100));`
+1. 使用 `setPosition` 方法：
 
-设置 `position` 变量：
+    - `this.node.setPosition(100, 50, 100);`
+    - `this.node.setPosition(new Vec3(100, 50, 100));`
 
-`this.node.position = new Vec3(100,50,100);`
+2. 设置 `position` 变量：
 
-以上两种用法等价。
+    `this.node.position = new Vec3(100, 50, 100);`
 
 ### 更改节点旋转
 
-`this.node.setRotation(90,90,90);`
+`this.node.setRotation(90, 90, 90);`
 
-或通过欧拉角设置本地旋转
+或通过欧拉角设置本地旋转：
 
-`this.node.setRotationFromEuler(90,90,90);`
+`this.node.setRotationFromEuler(90, 90, 90);`
 
 ### 更改节点缩放
 
-`this.node.setScale(2,2,2);`
-
+`this.node.setScale(2, 2, 2);`
 
 ## 常用组件接口
 
@@ -99,7 +98,3 @@ parentNode.addChild(this.node);
 - `update(deltaTime: number)`：作为组件的成员方法，在组件的 `enabled` 属性为 `true` 时，其中的代码会每帧执行
 - `onLoad()`：组件所在节点进行初始化时（节点添加到节点树时）执行
 - `start()`：会在该组件第一次 `update` 之前执行，通常用于需要在所有组件的 `onLoad` 初始化完毕后执行的逻辑
-
----
-
-更多组件成员方法请继续参考 [生命周期回调](life-cycle-callbacks.md) 文档。

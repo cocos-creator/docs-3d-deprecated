@@ -1,6 +1,6 @@
 # Components
 
-__Cocos Creator__ includes the following __Components__：
+__Cocos Creator__ includes the following __Components__:
 
 - [AudioSource](../../audio-system/overview.md)
 - [MeshRenderer](../../engine/renderable/model-component.md)
@@ -17,7 +17,3 @@ __Cocos Creator__ includes the following __Components__：
 - [SphereCollider](../../physics/physics-component.md#spherecollidercomponent)
 - [RigidBody](../../physics/physics-component.md#RigidBody)
 - [UI Components](../../ui-system/components/editor/index.md)
-
----
-
-Continue to the [AudioSource](../../audio-system/overview.md) documentation.

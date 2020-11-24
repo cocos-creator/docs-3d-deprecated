@@ -12,7 +12,3 @@
 - [天空盒](skybox.md)
 - [全局雾](fog.md)
 - [阴影](shadow.md)
-
----
-
-继续前往 [坐标系](coord.md) 说明文档。

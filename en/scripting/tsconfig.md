@@ -1,10 +1,8 @@
 # tsconfig.json
 
-The *majority* of compilation options in `tsconfig.json` in the project do not affect the compilation of `Typescript`.
+The **majority** of compilation options in `tsconfig.json` in the project do not affect the compilation of **TypeScript**.
 
 Therefore, some options need to configured carefully to make the IDE's inspection function consistent with the compilation behavior in __Cocos Creator__.
-
-----
 
 The following options should **not** be modified explicitly:
 

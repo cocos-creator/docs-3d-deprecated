@@ -11,7 +11,3 @@ __Cocos Creator's__ world coordinate system uses a __Cartesian right-handed__ co
 The __origin__ of the __screen coordinate system__ is the __bottom left__ corner of the screen, with __x__ to the __right__ and __y__ to the __top__.
 
 ![screen coord](coord/sscoord-01.png)
-
----
-
-Continue to the [Scene Structure](scene.md) documentation.

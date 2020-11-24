@@ -13,8 +13,8 @@ Toggle 的组件接口请参考 [Toggle API](https://docs.cocos.com/creator3d/ap
 ## Toggle 属性
 
 | 属性           | 功能说明     |
-| -------------- | -----------   |
-| isChecked      | 布尔类型，如果这个设置为 true，则 check mark 组件会处于 enabled 状态，否则处于 disabled 状态。
+| :------------- | :----------   |
+| isChecked      | 布尔类型，如果这个设置为 true，则 check mark 组件会处于 enabled 状态，否则处于 disabled 状态。 |
 | checkMark      | Sprite 类型，Toggle 处于选中状态时显示的图片  |
 | Check Events   | 列表类型，默认为空，用户添加的每一个事件由节点引用，组件名称和一个响应函数组成。详情见下方的 **Toggle 事件** 部分  |
 
@@ -24,7 +24,7 @@ Toggle 的组件接口请参考 [Toggle API](https://docs.cocos.com/creator3d/ap
 
 事件结构参考：[组件事件结构](./button.md#组件事件结构)。
 
-Toggle 的事件回调有二个参数，第一个参数是 Toggle 本身, 第二个参数是 customEventData。
+Toggle 的事件回调有二个参数，第一个参数是 Toggle 本身，第二个参数是 customEventData。
 
 ## 详细说明
 
@@ -87,9 +87,3 @@ export class example extends Component {
     }
 }
 ```
-
----
-
-- [其他基础模块参考](base-component.md)
-
-- [渲染模块参考](render-component.md)

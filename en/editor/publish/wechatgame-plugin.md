@@ -8,7 +8,7 @@ For example, when a player has played an A game developed using __Cocos Creator_
 
 ## How to use
 
-__Cocos Creator__ has supported this feature since **v1.0.2**. Simply check the **Separate Engine** option in the **Build** panel, and then build and release as normal, without additional manual operation. (This feature is only available when the built-in engine is used and the build is in non-debug mode.)
+Simply check the **Separate Engine** option in the **Build** panel, and then build and release as normal, without additional manual operation. (This feature is only available when the built-in engine is used and the build is in non-debug mode.)
 
 ![](./wechatgame-plugin/build-options.jpg)
 
@@ -30,7 +30,7 @@ __Q:__ When the engine plugin is enabled, prompt "Code package unpacking failed"
 __A:__ The default appid in the **Build** panel is a common test id, and according to WeChat's rules, you need to fill in the **appid** applied for yourself to test the engine plugin.
 
 __Q:__ When the engine plugin is enabled, prompt "Unauthorized plugin, `Add plugin`" in the WeChat DevTools?<br/>
-__A:__ Click the `Add plugin` in the prompt, then select add CocosCreator3D plugin and recompile. If prompt "There are no plugins to add" when you add the plugin, you can select the **Clear Cache -> Clear All** option in the WeChat DevTools and try again.
+__A:__ Click the `Add plugin` in the prompt, then select add **CocosCreator** plugin and recompile. If prompt "There are no plugins to add" when you add the plugin, you can select the **Clear Cache -> Clear All** option in the WeChat DevTools and try again.
 
 ## Reference documentation
 

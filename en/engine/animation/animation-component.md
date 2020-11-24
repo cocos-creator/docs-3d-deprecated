@@ -36,8 +36,7 @@ animationComponent.play('walk');
 animationComponent.crossFade('run', 0.3); // Smoothly switch from walking animation to running animation in 0.3 seconds
 ```
 
-The `crossFade()` fade-in and fade-out mechanism makes it possible for more than one animation state to play at the same time.
-Therefore, the __animation component__ has no concept of the *current animation*.
+The `crossFade()` fade-in and fade-out mechanism makes it possible for more than one animation state to play at the same time. Therefore, the __animation component__ has no concept of the **current animation**.
 
 The __animation component__ still provides `pause()`, `resume()` and `stop()` methods. These calls pause, continue, and stop all __animation states__ that are playing, however, they also pause, resume, and stop switching animations.
 
@@ -72,6 +71,7 @@ When the __animation component__'s `playOnLoad` is `true`, it will automatically
 You can add events for each time point of the animation.
 
 The `events` of an `AnimationClip` contains all event descriptions for the animation, and each event description has the following properties:
+
 ```ts
 {
     frame: number;

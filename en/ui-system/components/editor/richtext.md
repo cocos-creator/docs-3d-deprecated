@@ -102,10 +102,6 @@ Since the RichText component is assembled from multiple Label nodes, the number 
 
 ## Detailed Explanation
 
-The __RichText__ component is implemented in the Javascript layer and uses the Label node as the rendering part. All the layout logic goes also in Javascript layer. This means if you create a very complex __RichText__, it will end up with many label node created under the hook. And all these label node are using system font for rendering.
+The __RichText__ component is implemented in the JavaScript layer and uses the Label node as the rendering part. All the layout logic goes also in JavaScript layer. This means if you create a very complex __RichText__, it will end up with many label node created under the hook. And all these label node are using system font for rendering.
 
 So, you should avoid modifying the __RichText__ content frequently in your game's main loop, which can lead to lower performance. Also, try to use the normal Label component instead of the __RichText__ component if you can, and BMFont is the most efficient.
-
-- [UI Basic Components](base-component.md)
-
-- [UI Renderer Components](render-component.md)

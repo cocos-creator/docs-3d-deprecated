@@ -8,7 +8,7 @@ In __Cocos Creator__, scripts are also part of resources. You can add and select
 
 A simple component script may look like this example:
 
-```typeScript
+```typescript
 import { _decorator, Component, Node } from 'cc';
 const { ccclass, property } = _decorator;
 
@@ -56,7 +56,3 @@ If all goes well, you will see your script displayed in the **Property Inspector
 ## Default script editing tool configuration
 
 ![add-defaut-script-config](setup/add-defaut-script-config.png)
-
----
-
-Continue to the [Basics of Scripting](basic.md) documentation.
