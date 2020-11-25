@@ -333,7 +333,7 @@ The table below represents several commonly used **looping** modes:
 | :--- | :--- |
 | **WrapMode.Normal** | Stop after playing to the end. |
 | **WrapMode.Loop** | Loop playback. |
-| **WrapMode.PingPng** | After playing from the beginning to the end of the animation, play backwards from the end to the beginning, and so on. |
+| **WrapMode.PingPong** | After playing from the beginning to the end of the animation, play backwards from the end to the beginning, and so on |
 
 For more **looping** modes, see [WrapMode](https://docs.cocos.com/creator3d/api/en/enums/animation.wrapmode.html).
 

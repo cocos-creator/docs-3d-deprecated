@@ -218,7 +218,7 @@
    - [Loading Assets](scripting/load-assets.md)
    - [Scheduler](scripting/scheduler.md)
    - [Component](scripting/component.md)
-   - [Component Order](scripting/execution-order-component.md)
+   - [Component Execution Order](scripting/execution-order-component.md)
    - [Event Mechanism](engine/event/index.md)
    - [Plugin script](scripting/external-scripts.md)
    - [Logging](scripting/log.md)

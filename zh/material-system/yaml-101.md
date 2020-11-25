@@ -145,7 +145,7 @@ CCEffect %{
 
 ## 参考链接
 
-- https://en.wikipedia.org/wiki/YAML
-- https://yaml.org/spec/1.2/spec.html
+- <https://en.wikipedia.org/wiki/YAML>
+- <https://yaml.org/spec/1.2/spec.html>
 
 <b id="f1">[1]</b> 标准 YAML 并不支持制表符，但在解析 effect 数据时，我们会先尝试把其中所有的制表符替换为 2 个空格，以避免偶然插入制表符带来的琐碎的麻烦。但整体上，请一定尽量避免插入制表符来确保编译无误。[↩](#a1)<br>

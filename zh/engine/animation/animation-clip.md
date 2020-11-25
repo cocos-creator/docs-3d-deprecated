@@ -24,7 +24,7 @@ animationClip.curves = [{ // 组件上的属性曲线
         'value',
     ],
     data: {
-        keys: 0, // 索引至 AnimationClip.keys，即 [ 0.3, 0.6, 0.9]
+        keys: 0, // 索引至 AnimationClip.keys，即 [ 0.3, 0.6, 0.9 ]
         values: [ 0.0, 0.5, 1.0 ],
     },
 }];
@@ -324,7 +324,7 @@ function createMyCurve (): IPropertyCurveData {
 | :--- | :--- |
 | WrapMode.Normal  | 播放到结尾后停止 |
 | WrapMode.Loop    | 循环播放 |
-| WrapMode.PingPng | 从动画开头播放到结尾后，从结尾开始反向播放到开头，如此循环往复 |
+| WrapMode.PingPong | 从动画开头播放到结尾后，从结尾开始反向播放到开头，如此循环往复 |
 
 对于更多的循环模式，请参考 [WrapMode](https://docs.cocos.com/creator3d/api/zh/enums/animation.wrapmode.html)。
 

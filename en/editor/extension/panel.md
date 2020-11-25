@@ -4,7 +4,7 @@ When implementing a function, it is likely to require UI interaction on the inte
 
 ## Declare the panel in the extension
 
-The panels field can be defined in `package.json`.
+The panels field can be defined in `package.json`. Example:
 
 ```json
 {
@@ -29,7 +29,7 @@ The panels field can be defined in `package.json`.
 }
 ```
 
-This field is an object, defined as follows:
+This field is an object, defined as the following:
 
 ```typescript
 // panels definition
@@ -71,7 +71,7 @@ interface PanelSize {
 
 ## Panel
 
-The panel entry file was defined above when we registered it
+The panel entry file was defined above when we registered it. Example:
 
 ```javascript
 // Listen for panel events
@@ -103,4 +103,4 @@ exports.beforeClose = function() {};
 exports.close = function() {};
 ```
 
-In addition, we have defined a list panel, and we also need to write a list.js file in the above format
+In addition, we have defined a list panel, and we also need to write a `list.js` file in the above format.

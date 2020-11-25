@@ -13,3 +13,7 @@ For other UI components, you can manually select the node in the __Hierarchy__, 
 ## Component Catalog
 
 UI components are mainly divided into the following two types:
+
+- [UI Renderer Components](render-component.md)
+
+- [UI Basic Components](base-component.md)

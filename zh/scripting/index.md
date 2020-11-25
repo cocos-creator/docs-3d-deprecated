@@ -17,7 +17,7 @@ Cocos Creator 脚本用于实现用户定义的（游戏）行为。
 - [获取和加载资源](./load-assets.md)
 - [使用计时器](./scheduler.md)
 - [组件](./component.md)
-- [组件顺序](./execution-order-component.md)
+- [组件执行顺序](./execution-order-component.md)
 - [属性参数参考](./reference/attributes.md)
 - [插件脚本](./external-scripts.md)
 - [CCClass 进阶参考](./ccclass.md)

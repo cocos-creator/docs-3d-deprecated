@@ -67,7 +67,7 @@ Cocos Creator 从 v1.0.2 版本开始正式支持将游戏发布到华为快游�
 - **密钥库**
 
   勾选 **使用调试密钥库** 时，表示默认使用的是 Creator 自带的证书构建 rpk 包，仅用于 **调试** 时使用。
-  >**注意**：若 rpk 包要用于提交审核，则构建时不要勾选该项。
+  > **注意**：若 rpk 包要用于提交审核，则构建时不要勾选该项。
 
   如果不勾选 **密钥库**，则需要配置签名文件 **certificate.pem 路径** 和 **private.pem 路径**，此时构建出的是可以 **直接发布** 的 rpk 包。用户可通过输入框右边的按钮来配置两个签名文件。
 
@@ -84,7 +84,7 @@ Cocos Creator 从 v1.0.2 版本开始正式支持将游戏发布到华为快游�
       openssl req -newkey rsa:2048 -nodes -keyout private.pem -x509 -days 3650 -out certificate.pem
       ```
 
-      >**注意**：openssl 工具在 linux 或 Mac 环境下可在终端直接打开。而在 Windows 环境下则需要安装 openssl 工具并且配置系统环境变量，配置完成后需重启 Creator。
+      > **注意**：openssl 工具在 linux 或 Mac 环境下可在终端直接打开。而在 Windows 环境下则需要安装 openssl 工具并且配置系统环境变量，配置完成后需重启 Creator。
 
 二、**构建发布**
 

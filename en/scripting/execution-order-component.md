@@ -1,4 +1,4 @@
-# Script execution order
+# Component Execution Order
 
 ## Use a unified control script to initialize other scripts
 
@@ -99,7 +99,6 @@ export class CompB extends Component {
         console.log('CompB update!');
     }
 }
-
 ```
 
 When `CompA` is above `CompB` on the inspector panel, the output may be this way:
@@ -141,7 +140,6 @@ export class Player extends Component {
         console.log('Player onLoad!');
     }
 }
-
 ```
 
 ```ts
@@ -157,7 +155,6 @@ export class Menu extends Component {
         console.log('Menu onLoad!');
     }
 }
-
 ```
 
 > **Note**: the smaller the `executionOrder`, the earlier the component will be executed relative to other components. The `executionOrder` defaults to `0`, so if it is set to a negative number, it will execute before other default components. 

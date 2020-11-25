@@ -68,6 +68,6 @@ Sprite 组件支持以下几种渲染模式：
 
 ---
 
-### [**其他渲染模块参考**](render-component.md)
+- [其他渲染模块参考](render-component.md)
 
-### [**基础模块参考**](base-component.md)
+- [基础模块参考](base-component.md)
