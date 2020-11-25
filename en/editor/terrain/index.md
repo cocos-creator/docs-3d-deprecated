@@ -17,7 +17,7 @@ Two steps are required to create a terrain:
 
 ## Terrain component properties
 
-| 参数 | 描述 |
+| Parameter | Description |
 | :-----| ----: |
 | Asset | Terrain asset |
 | EffectAsset | Terrain effect asset |
