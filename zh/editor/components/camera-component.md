@@ -4,7 +4,7 @@
 
 ![camera](camera/camera.png)
 
-相机的可视范围是通过 6 个平面组成一个 **视锥体（Frustum）** 构成， **近裁剪面（Near Plane）** 和 **远裁剪面（Far Plane）** 用于控制近处和远处的可视距离与范围，同时它们也构成了视口的大小。
+相机的可视范围是通过 6 个平面组成一个 **视锥体（Frustum）** 构成，**近裁剪面（Near Plane）** 和 **远裁剪面（Far Plane）** 用于控制近处和远处的可视距离与范围，同时它们也构成了视口的大小。
 
 ![camera view](camera/camera-view.gif)
 

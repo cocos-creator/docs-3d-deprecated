@@ -31,8 +31,8 @@ After the configuration is complete, you can click the **Preview** button to pre
 
 The results are divided into:
 
-- __Packed Textures:__ Display the packaged atlas pictures and picture-related information. If there are multiple pictures to be generated, they will be listed below in the **Inspector** panel.
-- __Unpacked Textures:__ Display the broken image assets that cannot be packed into the atlas. The cause may be that the size of these broken image assets is larger than the size of the atlas assets. At this time, the configuration or fragmentation of the following atlas may need to be adjusted. The size of the figure is increased.
+- __Packed Textures__: Display the packaged atlas pictures and picture-related information. If there are multiple pictures to be generated, they will be listed below in the **Inspector** panel.
+- __Unpacked Textures__: Display the broken image assets that cannot be packed into the atlas. The cause may be that the size of these broken image assets is larger than the size of the atlas assets. At this time, the configuration or fragmentation of the following atlas may need to be adjusted. The size of the figure is increased.
 
 ## Generating an Atlas
 

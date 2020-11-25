@@ -16,7 +16,7 @@
 
 ## 半球（Hemisphere）
 
-**半球Gizmo** 显示了半球的大小，同时可以使用方块控制点来编辑半球的半径。
+**半球 Gizmo** 显示了半球的大小，同时可以使用方块控制点来编辑半球的半径。
 
 ![particle hemisphere gizmo](images/particle-hemisphere-gizmo.png)
 

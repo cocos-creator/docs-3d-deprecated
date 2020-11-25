@@ -1,18 +1,18 @@
 # Texture Map Assets
 
-**Texture mapping** assets are assets used for procedural sampling, such as **textures on models** and the **UI on Sprites**. When the UI or model are rendered, the corresponding texture is sampled, then filled on the model grid, plus a series of processing such as lighting to render the entire scene.
+__Texture mapping__ assets are assets used for procedural sampling, such as __textures on models__ and the __UI on Sprites__. When the UI or model are rendered, the corresponding texture is sampled, then filled on the model grid, plus a series of processing such as lighting to render the entire scene.
 
-___Texture assets__ can be generated from __ImageAsset__. Some common image formats, including `.png`, `.jpeg`, etc. can be used in __ImageAsset__.
+__Texture assets__ can be generated from __ImageAsset__. Some common image formats, including `.png`, `.jpeg`, etc. can be used in __ImageAsset__.
 
 ## Texture2D
 
-__Texture2D__ is a type of __texture asset__ that is usually used for rendering of __3D models__, such as **reflection maps**, **ambient light mask maps**, etc. in model materials.
+__Texture2D__ is a type of __texture asset__ that is usually used for rendering of __3D models__, such as __reflection maps__, __ambient light mask maps__, etc. in model materials.
 
 __Texture2D__ in __Cocos Creator__:
 
 ![Texture2D](texture/Texture2D.jpg)
 
-> **Note**: the texture type is a **Texture2D** asset.
+> __Note__: the texture type is a __Texture2D__ asset.
 
 ### Adjusting the Properties of a Texture2D
 
@@ -32,12 +32,12 @@ The following describes the properties of the panel:
 
 | Properties | Explanation |
 | --- | --- |
-| **anisotropy** | Anisotropy value |
-| **minFilter** | Narrowing Filter Algorithm |
-| **magFilter** | Magnification Filter Algorithm |
-| **mipFilter** | Multi-level texture filtering algorithm |
-| **wrapS** | S (U) direction texture addressing mode |
-| **wrapT** | T (V) direction texture addressing mode |
+| __anisotropy__ | Anisotropy value |
+| __minFilter__ | Narrowing Filter Algorithm |
+| __magFilter__ | Magnification Filter Algorithm |
+| __mipFilter__ | Multi-level texture filtering algorithm |
+| __wrapS__ | S (U) direction texture addressing mode |
+| __wrapT__ | T (V) direction texture addressing mode |
 
 ### Using Texture2D
 
@@ -58,6 +58,6 @@ __TextureCube__ obtained from a __panorama__ in __Cocos Creator__:
 
 __TextureCube__ obtained by making a __CubeMap__ in __Cocos Creator__:
 
-![CubeMap](../../../concepts/scene/skybox/Cubemap.jpg)
+![CubeMap](../concepts/scene/skybox/Cubemap_Inspector.png)
 
-To learn more about the use of **TextureCube** and **CubeMaps**, please refer to the [Skybox](../concepts/scene/skybox.md) documentation.
+To learn more about the use of __TextureCube__ and __CubeMaps__, please refer to the [Skybox](../concepts/scene/skybox.md) documentation.

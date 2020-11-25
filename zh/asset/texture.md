@@ -56,6 +56,6 @@ TextureCube 为立方体纹理，可用于设置场景的 [天空盒](../concept
 
 在 Cocos Creator 中通过制作 CubeMap 获得的 TextureCube：
 
-![CubeMap](../../../concepts/scene/skybox/Cubemap.jpg)
+![CubeMap](../concepts/scene/skybox/cubemap-properties.png)
 
 更多关于 TextureCube 的使用与制作 CubeMap 的方式，请参考 [天空盒](../concepts/scene/skybox.md)。

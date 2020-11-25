@@ -14,7 +14,7 @@ After selecting **Configure as a sub-package**, click **OK** in the upper right.
 
 > **Note**: when configured as a __sub-package__, only native assets, such as *pictures* and *audio*, will eventually be placed in the __sub-package__. __Prefabs__, __AnimationClip__ and other __JSON__ type assets will still be placed in the **main package**.
 
-> **Note**: nesting of __sub-packages__ should be avoided as much as possible. For example, after __folder A__ is selected as a __sub-package__, __folder B__ under __ folder A__ is also selected as a __sub-package__. If there is nesting, the parent folder will not package the content in the child folders.
+> **Note**: nesting of __sub-packages__ should be avoided as much as possible. For example, after __folder A__ is selected as a __sub-package__, __folder B__ under __folder A__ is also selected as a __sub-package__. If there is nesting, the parent folder will not package the content in the child folders.
 
 ## Constructing
 

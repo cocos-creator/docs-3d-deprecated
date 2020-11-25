@@ -16,7 +16,7 @@ When you need the corresponding `ccclass`, you can find it by its `ccclass` name
 
 - When the `ccclass` is a component class, `Node` can find the component by its `ccclass` name.
 
-## cc Attributes
+## ccattributes
 
 When the decorator [property](#property) is applied to a property or accessor of the `ccclass`, this property is called a `ccproperty`.
 
@@ -26,7 +26,7 @@ Similar to the `ccclass`, the `ccattribute` injects additional information to co
 
 Various characteristics of the `ccattribute` are specified by the `ccattribute` option parameter of `property()`.
 
-### cc type
+### cctype
 
 The option `type` specifies the `cctype` of the attribute. The type can be specified by the following parameters:
 
@@ -72,7 +72,7 @@ For convenience, the following decorators are additionally provided to quickly d
 | @string | @property(CCString) |
 | @boolean | @property(CCBoolean) |
 
-The following code demonstrates the declaration of `cc` attributes of different `cctype`s:
+The following code demonstrates the declaration of `ccattributes` of different `cctype`s:
 
 ```ts
 import { _decorator, CCInteger, Node } from "cc";
@@ -157,13 +157,13 @@ class Sprite {
 Please declare the instance method in the prototype object:
 
 ```typescript
-class Sprite{
+class Sprite {
     text: string;
     constructor() {
         this.text = "this is sprite"
     }
     // Declare an instance method named "print"
-    print(){
+    print() {
         console.log(this.text);
     }
 }
@@ -178,9 +178,9 @@ obj.print();
 Static variables or static methods can be declared with `static`:
 
 ```typescript
-class Sprite{
-    static count=0;
-    static getBounds(){
+class Sprite {
+    static count = 0;
+    static getBounds() {
 
     }
 }
@@ -189,12 +189,12 @@ class Sprite{
 Static members will be inherited by subclasses. When inheriting, the static variables of the parent class will be **shallowly copied** to the subclass. Therefore:
 
 ```typescript
-class Object{
-    static count= 11;
+class Object {
+    static count = 11;
     static range: { w: 100, h: 100 }
 }
 
-class Sprite extends Object{
+class Sprite extends Object {
 
 }
 
@@ -208,14 +208,14 @@ If you don't need to consider inheritance, private static members can also be de
 
 ```typescript
 // local method
-doLoad(sprite){
+doLoad(sprite) {
     // ...
 };
 
 // local variables
 let url = "foo.png";
 
-class Sprite{
+class Sprite {
     load() {
         this.url = url;
         doLoad(this);
@@ -232,11 +232,11 @@ Please note that regardless of whether the subclass has a constructor defined, t
 ```typescript
 class Node {
     name: string;
-    constructor(){
+    constructor() {
         this.name = "node";
     }
 }
-class Sprite extends Node{
+class Sprite extends Node {
     constructor() {
         super();
         // Before the child constructor is called, the parent constructor has been called, so this.name has been initialized
@@ -255,13 +255,13 @@ console.log(obj.name);    // "sprite"
 All member methods are virtual methods, and child methods can directly override parent methods:
 
 ```typescript
-class Shape{
+class Shape {
     getName() {
         return "shape";
     }
 };
 
-class Rect extends Shape{
+class Rect extends Shape {
     getName () {
         return "rect";
     }
@@ -284,7 +284,7 @@ class Sprite {
     constructor() {
         this.num = 1;
     }
-    @property({type:CCInteger})
+    @property({ type: CCInteger })
     private num = 0;
 }
 ```
@@ -306,7 +306,7 @@ However, it should be noted that the process of property deserialization occurs 
 3. Subclasses inherited from `ValueType`, such as instantiated objects of `Vec3`, `Color` or `Rect`:
 
     ```typescript
-    @property({type:Vec3})
+    @property({ type: Vec3 })
     private pos = null;
     ```
 
@@ -319,14 +319,14 @@ By default, whether it is displayed in the **Inspector** panel depends on whethe
 If you want to force it to be displayed in the **Inspector** panel, you can set the `visible` parameter to true:
 
 ```typescript
-@property({visible:true})
+@property({ visible: true })
     private _num = 0;
 ```
 
 If you want to force hiding, you can set the `visible` parameter to false:
 
 ```typescript
-@property({visible:false})
+@property({ visible: false })
     private num = 0;
 ```
 
@@ -335,7 +335,7 @@ If you want to force hiding, you can set the `visible` parameter to false:
 Attributes with a default value of `default` will be serialized by default. After serialization, the values set in the editor will be saved to resource files such as scenes, and the previously set values will be automatically restored when the scene is loaded. If you don't want to serialize, you can set `serializable: false`.
 
 ```typescript
-@property({serializable:false})
+@property({ serializable: false })
     private num = 0;
 ```
 
@@ -346,31 +346,29 @@ When `default` cannot provide enough detailed type information, in order to disp
 - When the default value is null, set type to the constructor of the specified type, so that the **Inspector** panel knows that a Node control should be displayed.
 
     ```typescript
-    @property({type:Node})
+    @property({ type: Node })
     private enemy = null;
     ```
 
 - When the default value is a number type, set the type to `cc.Integer` to indicate that this is an integer, so that the attribute cannot be entered in the decimal point in the **Inspector** panel.
 
     ```typescript
-    @property({type:CCInteger})
+    @property({ type: CCInteger })
     private num = 0;
     ```
 
 - When the default value is an enumeration (`Enum`), since the enumeration value itself is actually a number, the type must be set to the enumeration type to be displayed in the **Inspector** panel enumerate the drop-down box.
 
     ```typescript
-    enum A{
+    enum A {
         c,
         d
     }
     Enum(A);
     @ccclass("test")
     export class test extends Component {
-
-        @property({type:A})
+        @property({ type: A })
         accx:A=A.c;
-
     }
     ```
 
@@ -379,12 +377,12 @@ When `default` cannot provide enough detailed type information, in order to disp
 All properties will be inherited by the subclass. If the subclass wants to override the property with the same name of the parent class, you need to explicitly set the override parameter, otherwise there will be a duplicate name warning:
 
 ```typescript
-@property({type:CCString,tooltip:"my id",override:true})
+@property({ type: CCString, tooltip: "my id", override: true })
 private _id = "";
 
-@property({displayName:"Name",override:true})
+@property({ displayName: "Name", override: true })
 private _name = null;
-private get name(){
+private get name() {
     return this._name;
 }
 ```
@@ -400,9 +398,9 @@ After the `get` or `set` is set in the property, when the property is accessed, 
 Set the `get` method in the properties:
 
 ```typescript
-@property({type:CCInteger})
+@property({ type: CCInteger })
 private _num = 0;
-private get num(){
+private get num() {
     return this._num;
 }
 ```
@@ -412,51 +410,53 @@ The get method can return any type of value.
 This property can also be displayed in the **Inspector** panel and can be directly accessed in all codes including the constructor.
 
 ```typescript
-class Sprite{
+class Sprite {
     _width: number;
     constructor() {
         this._width = 128;
         console.log(this.width);    // 128
     }
-    @property({type:CCInteger})
+    @property({ type: CCInteger })
     private width = 0;
-    private get width(){
+    private get width() {
         return this._width;
     }
 };
 ```
 
-> **Note**: as get accessor is used, this property cannot be serialized, nor can it be assigned a default value, but most parameters except `default` and `serializable` can still be attached.
-    ```typescript
-    @property({type:CCInteger,tooltip: "The width of sprite"})
-    private _width = 0;
-    private get width(){
-        return this._width;
-    }
-    ```
+As get accessor is used, this property cannot be serialized, nor can it be assigned a default value, but most parameters except `default` and `serializable` can still be attached.
 
-> **Note**: the `get` accessor is read-only, but the returned object is not read-only. Users can still modify the internal properties of the object using code, for example:
-    ```typescript
-    @property
-    _num=0;
+```typescript
+@property({ type: CCInteger, tooltip: "The width of sprite" })
+private _width = 0;
+private get width() {
+    return this._width;
+}
+```
 
-    private get num(){
-        return this._num;
-    }
+The `get` accessor is read-only, but the returned object is not read-only. Users can still modify the internal properties of the object using code, for example:
 
-    start(){
-        consolo.log(this.num);
-    }
-    ```
+```typescript
+@property
+_num = 0;
+
+private get num() {
+    return this._num;
+}
+
+start() {
+    consolo.log(this.num);
+}
+```
 
 ### set
 
 Set the `set` method in the properties:
 
 ```typescript
-@property({type:CCInteger})
+@property({ type: CCInteger })
     private _width = 0;
-    set(value){
+    set(value) {
         this._width = value
     }
 ```
@@ -467,13 +467,13 @@ The `set` method receives an incoming parameter, which can be of any type.
 
 ```typescript
 @property
-_width=0;
+_width = 0;
 
-private get width(){
+private get width() {
     return this._width;
 }
 
-set(value){
+set(value) {
     this._width = value;
 }
 ```

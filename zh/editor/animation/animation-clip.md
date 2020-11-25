@@ -17,11 +17,11 @@ Animation（动画） 组件可以以动画方式驱动所在节点和子节点�
 
 **real time**：动画从开始播放到结束，真正持续的时间，对应编辑器右下角括号内的数字。
 
-**wrap mode**：循环模式，具体配置效果请参见 [循环模式](./../../engine/animation-clip.md#循环模式)
+**wrap mode**：循环模式，具体配置效果请参见 [循环模式](../../engine/animation/animation-clip.md#循环模式)。
 
 在编辑器面板上的对应控件修改对应属性后，焦点离开后即生效。
 
-更多关于动画序列的设计部分以及脚本编写动画的内容，可以参见 [动画剪辑](./../../engine/animation/animation-clip.md)。
+更多关于动画序列的设计部分以及脚本编写动画的内容，可以参见 [动画剪辑](../../engine/animation/animation-clip.md)。
 
 ## 节点数据常见操作
 

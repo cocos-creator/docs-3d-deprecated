@@ -160,7 +160,7 @@ interface ICompressPresetItem {
 - 可自定义 0 到 19 个 Layers，当您把输入框清空时即删除原先的设置。
 - 后 12 个 Layers 是引擎内置的，不可修改。
 - 目前使用的位置有：
-  1. 编辑 node 节点时， inspector 面板上的 Layer 属性;
+  1. 编辑 node 节点时，inspector 面板上的 Layer 属性;
 
   ![Layers-node](./index/layers-node.png)
 

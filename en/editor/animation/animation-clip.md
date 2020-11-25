@@ -17,7 +17,7 @@ __Animation components__ can animate the __node__ and __component__ properties o
 
 **real time**: the actual duration of the animation from the beginning to the end of the animation, corresponding to the number in the parenthesis in the lower right corner of the editor.
 
-**wrap mode**: **Loop mode**, please refer to the [Cycle Mode](./../../engine/animation-clip.md#CycleMode) documentation for specific configuration effects.
+**wrap mode**: **Loop mode**, please refer to the [Cycle Mode](../../engine/animation/animation-clip.md#CycleMode) documentation for specific configuration effects.
 
 Changes to properties take effect after the focus leaves the control.
 

@@ -137,7 +137,7 @@ console.log(base instanceof Sub);  // false
 在构造函数中定义的实例变量不能被序列化，也不能在 **属性检查器** 中查看。
 
 ```typescript
-class Sprite{
+class Sprite {
     //声明变量
     url: string;
     id: number;
@@ -156,7 +156,7 @@ class Sprite{
 实例方法请在原型对象中声明：
 
 ```typescript
-class Sprite{
+class Sprite {
     text: string;
     constructor() {
         this.text = "this is sprite"
@@ -284,7 +284,7 @@ class Sprite {
         this.num = 1;
     }
 
-    @property({type:CCInteger})
+    @property({ type: CCInteger })
     private num = 0;
 }
 ```

@@ -31,11 +31,11 @@ In __Cocos Creator__, **Scene** is the center for organizing game content during
 
 When the player runs the game, the game scene will be loaded. After the game scene is loaded, scripts of the included components will be automatically run. Apart from __assets__, game scenes are the foundation of all content creation. Now, to create a new __Scene__:
 
-1. In the ___Asset__ panel, click to select the __assets__ directory, click the __+__ button in the upper left corner, select the folder, and name it __Scenes__. Example:
+1. In the __Asset__ panel, click to select the __assets__ directory, click the __+__ button in the upper left corner, select the folder, and name it __Scenes__. Example:
 
     ![create scene](./images/create-folder.png)
 
-2. Click the __Scenes__ directory first (the following pictures create some common folders in advance), click the right mouse button, and select **Scene Files** from the pop-up menu. Example:
+2. Click the __Scenes__ directory first (the following pictures create some common folders in advance), click the right mouse button, and select __Scene Files__ from the pop-up menu. Example:
 
     ![create scene](./images/create-scene.png)
 

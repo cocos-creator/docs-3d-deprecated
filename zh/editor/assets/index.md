@@ -29,7 +29,7 @@
   - 多选：Ctrl 或者 Cmd + 点击
   - 全选：Ctrl 或者 Cmd + A
   - 多选：Shift + 点击
-  - 重命名： Enter/F2
+  - 重命名：Enter/F2
   - 取消输入：Esc
 
 ### 新建资源
