@@ -15,6 +15,16 @@ Two steps are required to create a terrain:
    
    ![create terrain asset](./images/createTerrainAsset.png)
 
+## Terrain component properties
+
+| 参数 | 描述 |
+| :-----| ----: |
+| Asset | Terrain asset |
+| EffectAsset | Terrain effect asset |
+| ReceiveShadow | Accept the shadow |
+| UseNormalMap | Use normal map |
+| UsePBR | Use physical materials |
+
 ## Using a terrain
 Click on the created terrain node. There is a terrain component in the __Inspector Panel__, and the created terrain assets are assigned to the __Asset__ in the terrain component.
 

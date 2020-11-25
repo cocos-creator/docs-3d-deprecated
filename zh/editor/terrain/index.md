@@ -14,6 +14,17 @@
    
    ![create terrain asset](./images/createTerrainAsset.png)
 
+## 地形组件属性
+
+| 参数 | 描述 |
+| :-----| ----: |
+| Asset | 地形资源 |
+| EffectAsset | 地形特效资源 |
+| ReceiveShadow | 是否接受阴影 |
+| UseNormalMap | 是否使用法线贴图 |
+| UsePBR | 是否使用物理材质 |
+
+
 ## 使用
 点击创建后的地形节点,此时在`Inspector`中存在地形组件,把已经创建好的地形资源赋予地形组件中的`Asset`中。
 
