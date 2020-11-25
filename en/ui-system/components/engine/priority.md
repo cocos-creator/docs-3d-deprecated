@@ -10,7 +10,7 @@ For example:
 
 ![priority.png](priority/priority.png)
 
-Therefore，the overall rendering order in the figure above is __B -> b1 -> C -> A -> a1 -> a2__, and the rendering state on the screen is __a2 -> a1 -> A -> C -> b1 -> B__.
+Therefore, the overall rendering order in the figure above is __B -> b1 -> C -> A -> a1 -> a2__, and the rendering state on the screen is __a2 -> a1 -> A -> C -> b1 -> B__.
 
 ## 2. Mixed camera sorting
 
@@ -20,11 +20,11 @@ The key factor of the mixed sorting of the **UI camera** and the **3D camera** i
 
 1. When the selection mode is __OVERLAY__, it means that the **UI camera** will always be behind the 3D camera, which means __will always cover the rendering content of the 3D camera__. Multiple UI cameras select this mode, and you can use the attribute __Priority__ to sort between UI cameras.
 
-![overlay](./priority/overlay.png)
+    ![overlay](./priority/overlay.png)
 
-2. When the selection mode is __INTERSPERSE__, it is possible to mix and sort with the **3D camera**. The sorting method between **UI camera** and the **3D camera** is done by setting __Priority__ on the `Canvas`.
+2. When the selection mode is __INTERSPERSE__, it is possible to mix and sort with the **3D camera**. The sorting method between **UI camera** and the **3D camera** is done by setting __Priority__ on the `Canvas\Camera` component.
 
-![intersperse](./priority/intersperse.png)
+    ![intersperse](./priority/intersperse.png)
 
 ## Detailed Explanation
 

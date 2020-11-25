@@ -1,6 +1,6 @@
 # Scripting
 
-__Cocos Creator 3D__ scripts are used to implement user-defined (game) behaviors.
+__Cocos Creator__ scripts are used to implement user-defined (game) behaviors.
 
 - [Script Creation](./setup.md)
 - [Script Basics](./basic.md)

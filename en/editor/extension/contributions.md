@@ -1,6 +1,6 @@
 # Extend existing functionality
 
-**Cocos Creator 3D** supports contributions between extensions.
+**Cocos Creator** supports contributions between extensions.
 
 When we are writing an extension, we can query whether the existing functions in the editor provide the function of receiving external contributions.
 

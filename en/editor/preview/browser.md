@@ -115,8 +115,4 @@ To learn more about using DevTools, please read the [Chrome Dev Tools User Guide
 
 ## Browser compatibility
 
-The desktop browsers tested during __Cocos Creator 3D__ development include: Chrome, Firefox (Firefox), other browsers can be used as long as the kernel version is high enough. Please do not enable IE6 compatibility mode. Browsers tested on mobile devices include: *Safari (iOS)*, *Chrome*, *QQ browser*, *UC browser*, and *WeChat built-in Webview*.
-
----
-
-Continue to the [Introduction To Preview Process And Common Error Handling](preview-guid.md) documentation.
+The desktop browsers tested during __Cocos Creator__ development include: Chrome, Firefox (Firefox), other browsers can be used as long as the kernel version is high enough. Please do not enable IE6 compatibility mode. Browsers tested on mobile devices include: **Safari (iOS)**, **Chrome**, **QQ browser**, **UC browser**, and **WeChat built-in Webview**.

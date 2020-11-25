@@ -1,4 +1,5 @@
 # Transform Gizmo
+
 We mainly use the **Transform Tool** on the toolbar which is in the left top of main window to arrange the node in the scene.
 
 ## Move transform tool
@@ -13,11 +14,12 @@ Gizmo refers to a controller that can interactive with mouse and appears in cert
 
 ![position gizmo](images/position-gizmo.png)
 
-When the move transform tool is active：
+When the move transform tool is active:
 - Press **red, green, blue** arrow and drag mouse, then the node will be moved on the **x, y, z** axis.
 - Press **red, green, blue** plane and drag mouse, then the node will be moved freely on **y-z, x-z, x-y** plane.
 
 ## Rotate transform tool
+
 Click the second button on the tool bar located at the main window's top left corner or press the keyboard shortcut **E** in scene editor and you can activate **Rotate transform tool**.
 
 ![rotation tool](images/rotation-tool.png)
@@ -30,6 +32,7 @@ When the move transform tool is active:
 - Press **red, green, blue** circle and drag mouse, then the node will be rotated on the **x, y, z** axis.
 
 ## Scale transform tool
+
 Click the third button on the tool bar located at main window's top left corner or press the keyboard shortcut **R** in the scene editor and you can activate **scale transform tool**.
 
 ![scale tool](images/scale-tool.png)
@@ -40,9 +43,10 @@ The gizmo of scale transform tool is made up of red,green,blue cube align the th
 
 When the scale transform tool is active:
 - Press **red, green, blue** cube and drag mouse, then the node will be scaled on the **x, y, z** axis.
-- Press **gray** cube and drag mouse，then the node will be scaled on all the **x, y, z** axis at the same time.
+- Press **gray** cube and drag mouse, then the node will be scaled on all the **x, y, z** axis at the same time.
 
 ## Rect transform tool
+
 Click the fourth button on the tool bar located at the main window's top left corner or press the keyboard shortcut **T** in scene editor and you can activate **rect transform tool**.
 
 ![rect tool](images/rect-tool.png)
@@ -51,7 +55,7 @@ The gizmo of rect transform tool is made up of four conner control point, four e
 
 ![rect gizmo](images/rect-gizmo.png)
 
-Whe the rect transform tool is active：
+When the rect transform tool is active:
 - Drag any conner control point of the gizmo so you can change the attributes of width and height in node size while the opposite angles end points position keep the same.
 - Drag any side control point of the gizmo so you can change the attributes of width and height in node size while the opposite sides position keep the same.
 
@@ -70,16 +74,12 @@ Transform Gizmo Based Point Configure is used to set the position and rotation o
 
 Click the **Pivot/Center** button to toggle between **Pivot** and **Center**.
 
-- **Pivot** : use the world position of node.
+- **Pivot**: use the world position of node.
 - **Center**: use the center position of all selected nodes.
 
 ### Rotation
 
 Click the **Local/Global** button to toggle between **Local** and **Global**.
 
-- **Local** : use the rotation of node.
-- **Global** : use the rotation of world space.
-
----
-
-Continue to the [Scene Editor](index.md) documentation.
+- **Local**: use the rotation of node.
+- **Global**: use the rotation of world space.

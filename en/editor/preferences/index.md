@@ -20,7 +20,7 @@ General page are mainly configured for some basic data related to the editor.
 
     When hovering close to the value of the property name, the cursor will turn into ![mouse cursor](https://docs.cocos.com/creator/manual/en/getting-started/basics/editor-panels/preferences/mouse-cursor.jpg) such a shape, then Drag the mouse, can also according to a continuous increase or decrease the value of step amplitude.
 
-    The above two ways to modify the value，the default step is **0.1**, spin step says each time you click the step button or drag the mouse to change the step amplitude. For example, if you mainly use numbers to integers in the script, you can take the step size is set to **1**, can be adjusted more easily.
+    The above two ways to modify the value, the default step is **0.1**, spin step says each time you click the step button or drag the mouse to change the step amplitude. For example, if you mainly use numbers to integers in the script, you can take the step size is set to **1**, can be adjusted more easily.
 
 ## Native Develop
 
@@ -28,7 +28,7 @@ General page are mainly configured for some basic data related to the editor.
 
 This page is used to set the path of the development environment required when the game is published to the native platform (iOS, Android, Mac, Windows).
 
-- **Use Builtin JS Engine**: Whether to use the engine path that comes with the __Cocos Creator 3D__ installation path as the JavaScript engine path.This engine is used for scene rendering in the scene panel of editor, declaration of built-in components, and engine modules in other Web environments such as `preview` or `publish`.
+- **Use Builtin JS Engine**: Whether to use the engine path that comes with the __Cocos Creator__ installation path as the JavaScript engine path.This engine is used for scene rendering in the scene panel of editor, declaration of built-in components, and engine modules in other Web environments such as `preview` or `publish`.
 
 - **Custom JS Engine**: In addition to using the built-in engine, you can also go to [engine repository](https://github.com/cocos-creator/engine) to clone or fork a copy of the engine to the local anywhere, then uncheck `Use Builtin JS Engine`, then set the JavaScript engine path to your customized engine path. You can use the editor to customize your engine.
 
@@ -44,7 +44,7 @@ This category is used to set the default open mode for assets.
 
 ![edit](./index/edit.jpg)
 
-- **Script Editor**：You can use the executable file of any external text editing tool as the opening method when you double-click the script file in `Assets`.
+- **Script Editor**: You can use the executable file of any external text editing tool as the opening method when you double-click the script file in `Assets`.
 
 - **Picture Editor**: Similar to the above option, used here to set when `Assets`, double-click the picture file, open the picture with the default application path.
 
@@ -54,7 +54,7 @@ The plugin allows directly registering configuration items into preferences. The
 
 ## Laboratory
 
-About Laboratory：
+About Laboratory:
 
 1. The laboratory provides some new technical solutions or experimental features, you can turn each feature on with the on/off switch.
 

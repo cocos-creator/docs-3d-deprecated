@@ -16,15 +16,15 @@
 获得组件所在的节点很简单，只要在组件方法里访问 `this.node` 变量：
 
 ```ts
-    start(){
-        let node = this.node;
-        node.setPosition(0.0,0.0,0.0);
-    }
+start() {
+    let node = this.node;
+    node.setPosition(0.0, 0.0, 0.0);
+}
 ```
 
 ## 获得其它组件
 
-你会经常需要获得同一个节点上的其它组件，这就要用到 `getComponent` 这个 API，它会帮你查找你要的组件。
+如果你经常需要获得同一个节点上的其它组件，这就要用到 `getComponent` 这个 API，它会帮你查找你要的组件。
 
 ```ts
 import { _decorator, Component, Label } from "cc";
@@ -34,7 +34,7 @@ const { ccclass, property } = _decorator;
 export class test extends Component {
     private label: any = null
 
-    start(){
+    start() {
         this.label = this.getComponent(Label);
         let text = this.name + 'started';
         // Change the text in Label Component
@@ -43,18 +43,18 @@ export class test extends Component {
 }
 ```
 
-你也可以为 `getComponent` 传入一个类名。对用户定义的组件而言，类名就是脚本的文件名，并且**区分大小写**。例如 "SinRotate.ts" 里声明的组件，类名就是 "SinRotate"。
+你也可以为 `getComponent` 传入一个类名。对用户定义的组件而言，类名就是脚本的文件名，并且 **区分大小写**。例如 "SinRotate.ts" 里声明的组件，类名就是 "SinRotate"。
 
 ```ts
-    let rotate = this.getComponent("SinRotate");
+let rotate = this.getComponent("SinRotate");
 ```
 
 在节点上也有一个 `getComponent` 方法，它们的作用是一样的：
 
 ```ts
-    start() {
-        console.log( this.node.getComponent(Label) === this.getComponent(Label) );  // true
-    }
+start() {
+    console.log( this.node.getComponent(Label) === this.getComponent(Label) );  // true
+}
 ```
 
 如果在节点上找不到你要的组件，`getComponent` 将返回 null，如果你尝试访问 null 的值，将会在运行时抛出 "TypeError" 这个错误。因此如果你不确定组件是否存在，请记得判断一下：
@@ -65,7 +65,7 @@ const { ccclass, property } = _decorator;
 
 @ccclass("test")
 export class test extends Component {
-    private label: any =null;
+    private label: any = null;
 
     start() {
         this.label = this.getComponent(Label);
@@ -81,7 +81,7 @@ export class test extends Component {
 
 ## 获得其它节点及其组件
 
-仅仅能访问节点自己的组件通常是不够的，脚本通常还需要进行多个节点之间的交互。例如，一门自动瞄准玩家的大炮，就需要不断获取玩家的最新位置。Cocos Creator 3D提供了一些不同的方法来获得其它节点或组件。
+仅仅能访问节点自己的组件通常是不够的，脚本通常还需要进行多个节点之间的交互。例如，一门自动瞄准玩家的大炮，就需要不断获取玩家的最新位置。Cocos Creator 提供了一些不同的方法来获得其它节点或组件。
 
 ### 利用属性检查器设置节点
 
@@ -95,8 +95,8 @@ const { ccclass, property } = _decorator;
 
 @ccclass("Cannon")
 export class Cannon extends Component {
-    // 声明Player属性
-    @property({type:Node})
+    // 声明 Player 属性
+    @property({ type: Node })
     private player = null;
 }
 
@@ -121,7 +121,7 @@ const { ccclass, property } = _decorator;
 @ccclass("Cannon")
 export class Cannon extends Component {
 
-    @property({type:Node})
+    @property({ type: Node })
     private player = null;
 
     start() {
@@ -143,16 +143,16 @@ import { Player } from "Player";
 
 @ccclass("Cannon")
 export class Cannon extends Component {
-    @property({type:Player})
+    @property({ type: Player })
     private player = null;
 
-    start(){
+    start() {
         let PlayerComp = this.player;
     }
 }
 ```
 
-你还可以将属性的默认值由 `null` 改为数组`[]`，这样你就能在 **属性检查器** 中同时设置多个对象。<br>
+你还可以将属性的默认值由 `null` 改为数组 `[]`，这样你就能在 **属性检查器** 中同时设置多个对象。<br>
 不过如果需要在运行时动态获取其它对象，还需要用到下面介绍的查找方法。
 
 ### 查找子节点
@@ -212,8 +212,8 @@ const { ccclass, property } = _decorator;
 @ccclass("Global")
 export class Global extends Component {
 
-    public static backNode:any=null;
-    public static backLabel:any=null;
+    public static backNode: any = null;
+    public static backLabel: any = null;
 }
 ```
 
@@ -228,9 +228,9 @@ import{Global}from "./Global";
 
 @ccclass("Back")
 export class Back extends Component {
-    onLoad(){
-        Global.backNode=this.node;
-        Global.backLabel=this.getComponent(Label);
+    onLoad() {
+        Global.backNode = this.node;
+        Global.backLabel = this.getComponent(Label);
     }
 }
 ```
@@ -246,10 +246,7 @@ import{Global}from "./Global";
 export class AnyScript extends Component {
     start () {
         var text = "Back";
-        Global.backLabel.string=text;
+        Global.backLabel.string = text;
     }
 }
 ```
----
-
-继续前往 [常用节点和组件接口](basic-node-api.md)。

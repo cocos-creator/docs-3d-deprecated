@@ -1,6 +1,6 @@
 # Groups And Masks
 
-In __Cocos Creator 3D__, some physics components (there are currently __rigid body components__ and __collider components__) provide interfaces for __Groups and Masks__.
+In __Cocos Creator__, some physics components (there are currently __rigid body components__ and __collider components__) provide interfaces for __Groups and Masks__.
 
 ## How does it work?
 
@@ -22,7 +22,7 @@ The formula `(1 & 2) && (2 & 3)` is __false__, so here `A` will not be detected 
 
 Here according to the mask value of `B` is `2`, we can know that the detectable group of `B` is `1`, and the group of `A` is `0`, so it is not detected.
 
-> **Note**: The expression depends on bit operation, the bit operation of `javascript` is limited to `32` bits, and the last bit is the sign bit. To avoid exceeding the operation range, it is recommended that the range of the group is `[0, 31 )`.
+> **Note**: The expression depends on bit operation, the bit operation of JavaScript is limited to `32` bits, and the last bit is the sign bit. To avoid exceeding the operation range, it is recommended that the range of the group is `[0, 31 )`.
 
 ## Groups
 
@@ -112,7 +112,7 @@ export const PHY_GROUP = {
 };
 ```
 
-**Method 2**: Defined in an `enum` (`typescript only`)
+**Method 2**: Defined in an `enum` (TypeScript only)
 
 ```ts
 enum PHY_GROUP {
@@ -149,7 +149,3 @@ The collision matrix is a further encapsulation of the packet mask configuration
 However, it should be noted that when the collision matrix is turned on, the mask value can only be updated through the interface related to the collision matrix, and the interface related to `setMask` above will be invalid.
 
 For details, please refer to the [collision matrix Settings](../editor/project/index.md#CollisionMatrix) documentation and the [interface related to the collision matrix](physics-system.md#Interfaces) documentation.
-
----
-
-Continue to the [Raycast detection](physics-raycast.md) documentation.

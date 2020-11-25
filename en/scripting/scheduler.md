@@ -1,6 +1,6 @@
 # Scheduler
 
-__Cocos Creator 3D__ provides a powerful, flexible and convenient timer component.
+__Cocos Creator__ provides a powerful, flexible and convenient timer component.
 
 ## Using the Scheduler
 

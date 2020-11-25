@@ -6,7 +6,9 @@ Widget (对齐挂件) 是一个很常用的 UI 布局组件。它能使当前节
 
 点击 **属性检查器** 下面的 **添加组件** 按钮，然后选择 **UI/Widget** 即可添加 Widget 组件到节点上。
 
-<!-- 对齐挂件的脚本接口请参考 [Widget API](../../../api/zh/classes/Widget.html)。 -->
+对齐挂件的脚本接口请参考 [Widget API](https://docs.cocos.com/creator3d/api/zh/classes/ui.widget.html)。
+
+关于使用可以参考 test-cases-3d 里的 [Widget](https://github.com/cocos-creator/test-cases-3d/tree/master/assets/cases/ui/04.widget) 相关。
 
 ## 选项
 
@@ -75,8 +77,25 @@ Align Mode | 指定 widget 的对齐方式，用于决定运行时 widget 应何
 1. 确保 **Widget** 组件的 **Align Mode** 属性设置为 **ONCE**，该属性只会负责在组件初始化（onEnable）时进行一次对齐，而不会每帧再进行一次对齐。可以在初始化时自动完成对齐，然后就可以通过 API 或动画系统对 UI 进行移动变换了。
 2. 通过调用 **Widget** 组件的对齐边距 API，包括 **top**、 **bottom**、 **left**、 **right**，直接修改 Widget 所在节点的位置或某一轴向的拉伸。这些属性也可以在动画编辑器中添加相应关键帧，保证对齐的同时实现各种丰富的 UI 动画。
 
----
+### 通过脚本代码修改对齐距离
 
-- [其他基础模块参考](base-component.md)
+```ts
+import { _decorator, Component, Widget } from 'cc';
+const { ccclass, property } = _decorator;
 
-- [渲染模块参考](render-component.md)
+@ccclass('Example')
+export class Example extends Component {
+    start () {
+        const widget = this.getComponent(Widget);
+        // 设置默认对齐单位是 px
+        widget!.bottom = 50;
+        widget!.top = 50;
+
+        // 设置对齐单位是 %
+        widget!.isAbsoluteTop = false;
+        widget!.isAbsoluteBottom = false;
+        widget!.bottom = 0.1; // 10%
+        widget!.top = 0.1; // 10%
+    }
+}
+```

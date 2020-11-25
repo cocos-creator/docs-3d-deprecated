@@ -1,6 +1,6 @@
 # Message
 
-In the **Cocos Creator 3D**, all interactions are done through [Message](./messages.md).
+In the **Cocos Creator**, all interactions are done through [Message](./messages.md).
 
 The message needs to be defined in `contributions` before it can be used.
 
@@ -26,7 +26,7 @@ In the top menu **Developer -> Message List**, the editor presets a **Message Ma
 }
 ```
 
-### public 
+### public
 
 Type `{string}` Optional
 
@@ -54,11 +54,11 @@ The method queue triggered by the message.
 
 This is an array of strings. The strings are methods on the extension or panel.
 
-If it is a method on the extension, directly define `methodName`, if you want to trigger a method on the panel, you must fill in `panelName.methodName` (panel.methods).
+If it is a method on the extension, directly define `methodName`, if you want to trigger a method on the panel, you must fill in `panelName.methodName`. For example, the `ready` method of the scene manager is `scene:ready`.
 
 ## Define broadcast message
 
-When developing an extension, you need to send some notifications to other extension after completing an action. If these notifications also need to be displayed on the **Developer -> Message List** panel, you can define the message like this:：
+When developing an extension, you need to send some notifications to other extension after completing an action. If these notifications also need to be displayed on the **Developer -> Message List** panel, you can define the message like this:
 
 ```json
 {

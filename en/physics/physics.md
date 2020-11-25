@@ -1,6 +1,6 @@
 # Physics Introduction
 
-__Cocos Creator 3D__ currently supports the lightweight collision detection system `builtin` and the physics engine `cannon.js` with physical simulation, and the `asm.js`/`wasm` version `ammo.js` of the powerful physics engine `bullet`, also we provides users with efficient component-based workflow and convenient methods of use.
+__Cocos Creator__ currently supports the lightweight collision detection system `builtin` and the physics engine `cannon.js` with physical simulation, and the `asm.js`/`wasm` version `ammo.js` of the powerful physics engine `bullet`, also we provides users with efficient component-based workflow and convenient methods of use.
 
 ## Physics World And Elements
 
@@ -10,12 +10,12 @@ Elements in the physics world can be divided into **rigid body**. We can adding 
 
 ### Adding a Physical Element
 
-Adding a physical element to the world can be divided int the following steps：
+Adding a physical element to the world can be divided int the following steps:
 
 1. Create a new shape `Cube`；
 2. Click `Add Component` on the `Inspector` panel witch is on the right of editor；
 3. Select `BoxCollider` under the `Physics` menu, and adjust the parameters；
-4. add a `RigidBody` component in order to make it have physical behavior。
+4. add a `RigidBody` component in order to make it have physical behavior.
 
 In this way we get a physical element that has **both a collider and a physical behavior**.
 
@@ -43,11 +43,7 @@ Additional physics system will be introduced in more detail through the followin
 
 Module | Description
 ---|---
-[**Physics Options**](physics-item.md) | Introduces the optional options of low-level physics engine in **Cocos Creator 3D**
+[**Physics Options**](physics-item.md) | Introduces the optional options of low-level physics engine in **Cocos Creator**
 [**Physics System**](physics-system.md) | Introduces the physics system and a series of properties and interfaces of the physics system.
 [**Physics Component**](physics-component.md) | Introduces some physics components and a series of properties on the panel.
 [**Physics Usage**](physics-use.md) | Further introduces the use of physics, events, group masks, etc.
-
----
-
-Continue to the [Physics Options](physics-item.md) documentation。

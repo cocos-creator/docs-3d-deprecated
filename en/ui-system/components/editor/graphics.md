@@ -2,9 +2,11 @@
 
 The __Graphics__ component provides a series of drawing functions that reference the Web canvas's drawing APIs.
 
-![](graphics/graphics.png)
+![graphics](graphics/graphics.png)
 
 Select a node in the __Hierarchy__ panel, then click the __Add Component__ button at the bottom of the __Inspector__ panel and select __Graphics__ from __UI -> Render__. Then you can add the __Graphics__ component to the node.
+
+To use graphics, please refer to the [graphics API](https://docs.cocos.com/creator3d/api/en/classes/ui.graphics-1.html) documentation and the [graphics](https://github.com/cocos-creator/test-cases-3d/tree/master/assets/cases/ui/14.graphics) scene of the test-cases-3d project.
 
 ## Graphic Properties
 
@@ -15,7 +17,7 @@ Select a node in the __Hierarchy__ panel, then click the __Add Component__ butto
 | [*LineJoin*](graphics/lineJoin.md)       | LineJoin determines how two connecting segments (of lines, arcs or curves) with non-zero lengths in a shape are joined together. |
 | [*MiterLimit*](graphics/miterLimit.md)   | Sets or returns the maximum miter length.  |
 | [*StrokeColor*](graphics/strokeColor.md) | Stroke color. Sets or returns the color used for the stroke. |
-<!-- [LineWidth](graphics/lineWidth.md): Current line width. -->
+| [*LineWidth*](graphics/lineWidth.md): Current line width.
 
 ## Graphics API
 
@@ -35,3 +37,26 @@ Select a node in the __Hierarchy__ panel, then click the __Add Component__ butto
 | [*stroke*](graphics/stroke.md) () | Stroke the path as lines |
 | [*fill*](graphics/fill.md) () | Close and fill a path's inner surface |
 | [*clear*](graphics/clear.md) () | Erase any previously drawn content. |
+
+### Modify the drawing pattern through script code
+
+``` ts
+import { _decorator, Component, Graphics } from 'cc';
+const { ccclass, property } = _decorator;
+
+@ccclass('Example')
+export class Example extends Component {
+    start () {
+        const g = this.getComponent(Graphics);
+        g.lineWidth = 10;
+        g.fillColor.fromHEX('#ff0000');
+        g.moveTo(-40, 0);
+        g.lineTo(0, -80);
+        g.lineTo(40, 0);
+        g.lineTo(0, 80);
+        g.close();
+        g.stroke();
+        g.fill();
+    }
+}
+```

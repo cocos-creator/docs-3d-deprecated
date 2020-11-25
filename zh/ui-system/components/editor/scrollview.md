@@ -8,12 +8,14 @@ ScrollView 是一种带滚动功能的容器，它提供一种方式可以在有
 
 点击 **属性检查器** 下面的 **添加组件** 按钮，然后选择 **UI/ScrollView** 即可添加 ScrollView 组件到节点上。
 
-<!-- 滚动视图的脚本接口请参考 [ScrollView API](../../../api/zh/classes/ScrollView.html)。 -->
+滚动视图的脚本接口请参考 [ScrollView API](https://docs.cocos.com/creator3d/api/zh/classes/ui.scrollview.html)。
+
+关于使用可以参考 test-cases-3d 里的 [scrollView](https://github.com/cocos-creator/test-cases-3d/tree/master/assets/cases/ui/06.scrollView) 相关。
 
 ## ScrollView 属性
 
-| 属性                 | 功能说明                                                                                         |
-| --------------       | -----------                                                                                    |
+| 属性                  | 功能说明     |
+| :----------  | :---------  |
 | content              | 它是一个节点引用，用来创建 ScrollView 的可滚动内容，通常这可能是一个包含一张巨大图片的节点。                 |
 | Horizontal           | 布尔值，是否允许横向滚动。                                                                          |
 | Vertical             | 布尔值，是否允许纵向滚动。                                                                          |
@@ -96,18 +98,12 @@ export class example extends Component {
         this.scrollview.node.on('scroll-to-top', this.callback, this);
     }
 
-    callback(scrollView: ScrollView){
+    callback(scrollView: ScrollView) {
         // 回调的参数是 ScrollView 组件，注意这种方式注册的事件，无法传递 customEventData
     }
 }
 ```
 
-同样的，你也可以注册 `scrolling`, `touch-up`, `scroll-began` 等事件，这些事件的回调函数的参数与 `scroll-to-top` 的参数一致。
+同样的，你也可以注册 `scrolling`、`touch-up`、`scroll-began` 等事件，这些事件的回调函数的参数与 `scroll-to-top` 的参数一致。
 
 <!-- 关于完整的 ScrollView 的事件列表，可以参考 ScrollView 的 API 文档 [ScrollView API](../../../api/zh/classes/ScrollView.html)。 -->
-
----
-
-- [其他基础模块参考](base-component.md)
-
-- [渲染模块参考](render-component.md)

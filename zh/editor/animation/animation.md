@@ -4,9 +4,11 @@
 
 ## Animation 组件
 
-之前我们了解到 Cocos Creator 3D 是组件式的结构,那么 Animation 也不例外，它也是节点上的一个组件，只有为节点添加动画组件后，才能赋予节点参与到动画的的能力。因而点击相关节点后，如果节点没有动画组件，动画编辑器的界面上将会显示 **`添加 Animation 组件`** 按钮，点击即可添加。
+之前我们了解到 Cocos Creator 是组件式的结构,那么 Animation 也不例外，它也是节点上的一个组件，只有为节点添加动画组件后，才能赋予节点参与到动画的的能力。因而点击相关节点后，如果节点没有动画组件，动画编辑器的界面上将会显示 **`添加 Animation 组件`** 按钮，点击即可添加。
 
 ![](./animation/add-component.jpg)
+
+动画组件接口请参考 [MeshRenderer API](https://docs.cocos.com/creator3d/api/zh/classes/animation.animation-1.html)。
 
 ## Clip 动画剪辑
 
@@ -27,7 +29,3 @@
 - Ctrl / Cmd + E
 
 更多细节参见 Animation 的[系统设计](./../../engine/animation/index.md)以及 Animation 的[脚本控制](./../../engine/animation/animation-component.md)。
-
----
-
-继续前往 [熟悉动画编辑器面板](animation-editor.md) 说明文档。

@@ -4,6 +4,8 @@
 
 点击 **属性检查器** 下面的 **添加组件** 按钮，然后选择 **UI/UITransform** 即可添加 UITransform 组件到节点上。
 
+UITransform 脚本接口请参考 [Mask API](https://docs.cocos.com/creator3d/api/zh/classes/ui.uitransform.html)。
+
 ## UITransform 属性介绍
 
 | 属性 |   功能说明
@@ -14,6 +16,26 @@
 
 ---
 
-- [其他基础模块参考](base-component.md)
+### 通过脚本代码修改节点尺寸和锚点
 
-- [渲染模块参考](render-component.md)
+```ts
+import { _decorator, Component, Node, UITransform } from 'cc';
+const { ccclass, property } = _decorator;
+
+@ccclass('Example')
+export class Example extends Component {
+
+    start () {
+        const uiTransform = this.getComponent(UITransform);
+        // 方法一
+        uiTransform.setContentSize(200, 120);
+        uiTransform.setAnchorPoint(0, 0.5);
+
+        // 方法二
+        uiTransform.width = 200;
+        uiTransform.height = 120;
+        uiTransform.anchorX = 0;
+        uiTransform.anchorY = 0.5;
+    }
+}
+```

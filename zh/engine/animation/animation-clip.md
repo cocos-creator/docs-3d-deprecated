@@ -5,71 +5,65 @@
 
 ## 动画曲线
 
-动画曲线描述了某一对象上某一属性值随着时间的变化。
-在内部，动画曲线存储了一系列时间点，每个时间点都对应着一个（曲线）值，称为一帧，或关键帧。
-当动画系统运作时，动画组件根据当前动画状态计算出指定时间点应有的（结果）值并赋值给对象，完成属性变化；这一计算过程称为采样。
+动画曲线描述了某一对象上某一属性值随着时间的变化。在内部，动画曲线存储了一系列时间点，每个时间点都对应着一个（曲线）值，称为一帧，或关键帧。当动画系统运作时，动画组件根据当前动画状态计算出指定时间点应有的（结果）值并赋值给对象，完成属性变化，这一计算过程称为采样。
 
-以下代码片段演示了如何程序化地创建动画剪辑。
+以下代码片段演示了如何程序化地创建动画剪辑：
+
 ```ts
 import { AnimationClip, animation, js } from "cc";
 const animationClip = new AnimationClip();
-animationClip.duration = 1.0; // 整个动画剪辑的周期。任何帧时间都不应该大于此属性。
+animationClip.duration = 1.0; // 整个动画剪辑的周期，任何帧时间都不应该大于此属性
 animationClip.keys = [ [ 0.3, 0.6, 0.9 ] ]; // 该动画剪辑所有曲线共享的帧时间
 animationClip.curves = [{ // 组件上的属性曲线
-    modifiers: [ // 目标是当前结点的
-        // "Body" 子结点的
+    modifiers: [ // 目标是当前节点的
+        // Body 子节点的
         new animation.HierarchyPath('Body'),
-        // `MyComponent`的
+        // MyComponent 的
         new animation.ComponentPath(js.getClassName(MyComponent)),
-        // `value` 属性
+        // value 属性
         'value',
     ],
     data: {
-        keys: 0, // 索引至 `AnimationClip.keys`, 即 [ 0.3, 0.6, 0.9]
+        keys: 0, // 索引至 AnimationClip.keys，即 [ 0.3, 0.6, 0.9 ]
         values: [ 0.0, 0.5, 1.0 ],
     },
 }];
 ```
 
-上述动画剪辑包含了一条曲线以控制 "Body" 子结点的 `MyComponent` 组件的 `value` 属性，曲线有三帧，使得 `value` 属性在 0.3 秒时变为 0.5，在0.6 秒时变为 0.5，在 0.9 秒时变为 1.0。
+上述动画剪辑包含了一条曲线以控制 "Body" 子节点的 `MyComponent` 组件的 `value` 属性，曲线有三帧，使得 `value` 属性在 0.3 秒时变为 0.5，在 0.6 秒时变为 0.5，在 0.9 秒时变为 1.0。
 
-注意，曲线的帧时间是以引用方式索引到 `AnimationClip.keys` 数组中的。
-如此一来，多条曲线可以共享帧时间。这将带来额外的性能优化。
+**注意**：曲线的帧时间是以引用方式索引到 `AnimationClip.keys` 数组中的。如此一来，多条曲线可以共享帧时间。这将带来额外的性能优化。
 
 ### 目标对象
 
-动画曲线的目标可以是任意 JavaScript 对象。
-`modifiers` 字段指定了在 _运行时_ 如何从当前结点对象寻址到目标对象。
+动画曲线的目标可以是任意 JavaScript 对象。`modifiers` 字段指定了在 **运行时** 如何从当前节点对象寻址到目标对象。
 
-`modifiers` 是一个数组，
-它的每一个元素表达了如何从上一级的对象寻址到另一个对象，
-最后一个元素寻址到的对象就作为曲线的目标对象。
-这种行为就好像文件系统的路径，因此每个元素都被称为“目标路径”。
+`modifiers` 是一个数组，它的每一个元素都表达了如何从上一级的对象寻址到另一个对象，最后一个元素寻址到的对象就作为曲线的目标对象。这种行为就好像文件系统的路径，因此每个元素都被称为“目标路径”。
 
-当目标路径是`string` / `number` 时，
-表示寻址到上一级对象的属性，其本身就指定了属性名。
-否则，目标路径必须是实现接口 `animation.TargetPath` 的对象。
+当目标路径是 `string` 或者 `number` 时，表示寻址到上一级对象的属性，其本身就指定了属性名。否则，目标路径必须是实现接口 `animation.TargetPath` 的对象。
 
-Cocos Creator 3D 内置了以下几个实现自接口 `animation.TargetPath` 的类：
-- `animation.HierarchyPath` 将上一级的对象视为结点，并寻址到它的某个子结点；
-- `animation.ComponentPath` 将上一级的对象视为结点，并寻址到它的某个组件。
+Cocos Creator 内置了以下几个实现自接口 `animation.TargetPath` 的类：
+- `animation.HierarchyPath` 将上一级的对象视为节点，并寻址到它的某个子节点；
+- `animation.ComponentPath` 将上一级的对象视为节点，并寻址到它的某个组件。
 
 目标路径可以任意组合，只要它们具有正确的含义：
+
 ```ts
 // 目标对象是
 modifiers: [
-    // "nested_1" 子结点的 "nested_2" 子结点的 "nested_3" 子结点的
+    // "nested_1" 子节点的 "nested_2" 子节点的 "nested_3" 子节点的
     new animation.HierarchyPath('nested_1/nested_2/nested_3'),
-    // `BlahBlahComponent` 组件的
+    // BlahBlahComponent 组件的
     new animation.ComponentPath(js.getClassName(BlahBlahComponent)),
-    // `names` 属性的
+    // names 属性的
     'names',
     // 第一个元素
     0,
 ]
 ```
 
-当你的目标对象不是一个属性，而是必须从一个方法返回时，自定义目标路径就很有用：
+当目标对象不是一个属性，而是必须从一个方法返回时，自定义目标路径就很有用：
+
 ```ts
 class BlahBlahComponent extends Component {
     public getName(index: number) { return _names[index]; }
@@ -78,9 +72,9 @@ class BlahBlahComponent extends Component {
 
 // 目标对象是
 modifiers: [
-    // "nested_1" 子结点的 "nested_2" 子结点的 "nested_3" 子结点的
+    // "nested_1" 子节点的 "nested_2" 子节点的 "nested_3" 子节点的
     new animation.HierarchyPath('nested_1/nested_2/nested_3'),
-    // `BlahBlahComponent` 组件的
+    // BlahBlahComponent 组件的
     new animation.ComponentPath(js.getClassName(BlahBlahComponent)),
     // 第一个 "name"
     {
@@ -88,7 +82,9 @@ modifiers: [
     },
 ]
 ```
-如果希望你的自定义目标路径是可序列化的，将它们声明为类：
+
+如果希望自定义目标路径是可序列化的，可以将它们声明为类：
+
 ```ts
 @ccclass
 class MyPath implements animation.TargetPath {
@@ -102,9 +98,9 @@ class MyPath implements animation.TargetPath {
 
 // 目标对象是
 modifiers: [
-    // "nested_1" 子结点的 "nested_2" 子结点的 "nested_3" 子结点的
+    // "nested_1" 子节点的 "nested_2" 子节点的 "nested_3" 子节点的
     new animation.HierarchyPath('nested_1/nested_2/nested_3'),
-    // `BlahBlahComponent` 组件的
+    // BlahBlahComponent 组件的
     new animation.ComponentPath(js.getClassName(BlahBlahComponent)),
     // 第一个 "name"
     new MyPath(0),
@@ -117,14 +113,10 @@ modifiers: [
 
 当采样出值后，默认情况下将使用赋值操作符 `=` 将值设置给目标对象。
 
-然而有时候，你并不能用赋值操作符来完成设置。
-例如，当你想设置材质对象的 Uniform 时，你就无法通过赋值操作符来完成。
-因为材质对象仅提供了 `setUniform(uniformName, value)` 方法来改变 uniform。
+然而有时候，并不能用赋值操作符来完成设置。例如，当想要设置材质对象的 Uniform 时，就无法通过赋值操作符来完成。因为材质对象仅提供了 `setUniform(uniformName, value)` 方法来改变 uniform。对于这种情况，曲线字段 `valueAdapter` 提供了一种机制，可以自定义将值设置到目标对象。
 
-对于这种情况，曲线字段 `valueAdapter` 提供了一种机制使你自定义如何
-将值设置到目标对象。
+示例：
 
-示例如下：
 ```ts
 class BlahBlahComponent {
     public setUniform(index: number, value: number) { /* */ }
@@ -146,7 +138,8 @@ class BlahBlahComponent {
 };
 ```
 
-如果希望你的“自定义赋值”是可序列化的，将它们声明为类：
+如果希望“自定义赋值”是可序列化的，那么可以将它们声明为类：
+
 ```ts
 @ccclass
 class MyValueProxy implements animation.ValueProxyFactory {
@@ -166,14 +159,14 @@ class MyValueProxy implements animation.ValueProxyFactory {
 }
 ```
 
-`animation.UniformProxyFactory` 就是这样一种“自定义赋值”的类，
-它实现了设置材质的 uniform 值：
+`animation.UniformProxyFactory` 就是这样一种“自定义赋值”的类，它实现了设置材质的 uniform 值：
+
 ```ts
 { // 目标对象是
     modifiers: [
-        // `MeshRenderer` 组件的
+        // MeshRenderer 组件的
         new animation.ComponentPath(js.getClassName(MeshRenderer)),
-        // `sharedMaterials` 属性的
+        // sharedMaterials 属性的
         'sharedMaterials',
         // 第一个材质
         0,
@@ -187,26 +180,23 @@ class MyValueProxy implements animation.ValueProxyFactory {
 
 ### 采样
 
-若采样时间点恰好就等于某一关键帧的时间点，则使用该关键帧上的动画数据。
-否则——当采样时间点居于两帧之间时，结果值应同时受两帧数据的影响，
-采样时间点在两处关键帧的时刻区间上的比例（`[0,1]`）反应了影响的程度。
-Cocos Creator 3D 允许将该比例映射为另一个比例，以实现不同的“渐变”效果。
-这些映射方式，在 Cocos Creator 3D中称为**渐变方式**。
-在比例确定之后，根据指定的**插值方式**计算出最终的结果值。
-渐变方式和插值方式都影响着动画的平滑度。
+若采样时间点恰好就等于某一关键帧的时间点，则使用该关键帧上的动画数据。否则当采样时间点居于两帧之间时，结果值会同时受两帧数据的影响，采样时间点在两处关键帧的时刻区间上的比例（`[0,1]`）则反应了影响的程度。
+
+Cocos Creator 允许将该比例映射为另一个比例，以实现不同的“渐变”效果。这些映射方式，在 Creator 中称为 **渐变方式**。在比例确定之后，根据指定的 **插值方式** 计算出最终的结果值。
+
+**渐变方式和插值方式都影响着动画的平滑度。**
 
 #### 渐变方式
 
-可以为每一帧指定渐变方式，也可以为所有帧指定统一的渐变方式。
-渐变方式可以是内置渐变方式的名称或贝塞尔控制点。
+可以为每一帧指定渐变方式，也可以为所有帧指定统一的渐变方式。渐变方式可以是内置渐变方式的名称或贝塞尔控制点。
 
-以下列出了几种常用的渐变方式。
-- `linear` 保持原有比例，即线性渐变；当未指定渐变方式时默认使用这种方式；
-- `constant` 始终使用比例 0，即不进行渐变；与插值方式 `Step` 类似；
-- `quadIn` 渐变由慢到快。
-- `quadOut` 渐变由快到慢。
-- `quadInOut` 渐变由慢到快再到慢。
-- `quadOutIn` 渐变由快到慢再到快。
+以下列出了几种常用的渐变方式：
+- `linear`：保持原有比例，即线性渐变，当未指定渐变方式时默认使用这种方式；
+- `constant`：始终使用比例 0，即不进行渐变；与插值方式 `Step` 类似；
+- `quadIn`：渐变由慢到快；
+- `quadOut`：渐变由快到慢；
+- `quadInOut`：渐变由慢到快再到慢；
+- `quadOutIn`：渐变由快到慢再到快；
 - `IBezierControlPoints`
 
 <script src="./easing-method-example.js"> </script>
@@ -215,19 +205,14 @@ Cocos Creator 3D 允许将该比例映射为另一个比例，以实现不同的
 
 #### 曲线值与插值方式
 
-有些插值算法需要每一帧的曲线值中存储额外的数据，因此，
-曲线值与目标属性的值类型不一定相同。
-对于数值类型或值类型，Cocos Creator 3D 提供了几种通用的插值方式；
-同时，也可以定义自己的插值方式。
+有些插值算法需要每一帧的曲线值中存储额外的数据，因此曲线值与目标属性的值类型不一定相同。对于数值类型或值类型，Cocos Creator 提供了几种通用的插值方式。同时，也可以定义自己的插值方式。
 
 当曲线数据的 `interpolate` 属性为 `true` 时，曲线将尝试使用插值函数：
 - 若曲线值的类型为 `number`、`Number`，将应用线性插值；
-- 否则，若曲线值继承自 `ValueType`，将调用 `ValueType` 的 `lerp` 函数完成插值，
-Cocos Creator 3D 内置的大多数值类型都将其 `lerp` 实现为线性插值；
-- 否则，若曲线值是[可插值的](https://docs.cocos.com/creator3d/api/zh/interfaces/animation.ilerpable.html)，将调用曲线值的 `lerp` 函数完成插值<sup id="a2">[2](#f2)</sup>。
+- 若曲线值继承自 `ValueType`，将调用 `ValueType` 的 `lerp` 函数完成插值，Cocos Creator 内置的大多数值类型都将其 `lerp` 实现为线性插值；
+- 若曲线值是 [可插值的](https://docs.cocos.com/creator3d/api/zh/interfaces/animation.ilerpable.html)，将调用曲线值的 `lerp` 函数完成插值<sup id="a2">[2](#f2)</sup>。
 
-若曲线值不满足上述任何条件，或当曲线数据的 `interpolate` 属性为 `false`时，
-将不会进行插值操作 --- 永远使用前一帧的曲线值作为结果。
+若曲线值不满足上述任何条件，或当曲线数据的 `interpolate` 属性为 `false`时，将不会进行插值操作，而是永远使用前一帧的曲线值作为结果。
 
 ```ts
 import { AnimationClip, color, IPropertyCurveData, SpriteFrame, v3 } from "cc";
@@ -271,7 +256,7 @@ const spriteCurve: IPropertyCurveData = {
 };
 ```
 
-下列代码展示了如何自定义插值算法：
+以下代码展示了如何自定义插值算法：
 
 ```ts
 import { ILerpable, IPropertyCurveData, Quat, quat, Vec3, v3, vmath } from "cc";
@@ -285,7 +270,7 @@ class MyCurveValue implements ILerpable {
         this.rotation = rotation;
     }
 
-    /** 将调用此方法进行插值。
+    /** 将调用此方法进行插值
      * @param this 起始曲线值
      * @param to 目标曲线值
      * @param t 插值比率，取值范围为 [0, 1]
@@ -300,8 +285,8 @@ class MyCurveValue implements ILerpable {
         );
     }
 
-    /** 此方法在不插值时调用。
-      * 它是可选的，若未定义此方法，则使用曲线值本身（即 `this`）作为结果值。
+    /** 此方法在不插值时调用
+      * 它是可选的，若未定义此方法，则使用曲线值本身（即 this）作为结果值
       */
     getNoLerp () {
         return this;
@@ -331,23 +316,17 @@ function createMyCurve (): IPropertyCurveData {
 }
 ```
 
-渐变方式和插值方式都影响着动画的平滑度。
-
-
 ## 循环模式
 
-可以通过设置 `AnimationClip.wrapMode` 为动画剪辑设置不同的循环模式。
+可以通过设置 `AnimationClip.wrapMode` 为动画剪辑设置不同的循环模式。以下列出了几种常用的循环模式：
 
-以下列出出了几种常用的循环模式：
+| `AnimationClip.wrapMode` | 说明 |
+| :--- | :--- |
+| WrapMode.Normal  | 播放到结尾后停止 |
+| WrapMode.Loop    | 循环播放 |
+| WrapMode.PingPong | 从动画开头播放到结尾后，从结尾开始反向播放到开头，如此循环往复 |
 
-| AnimationClip.wrapMode | 效果 |
-|---|---|
-| WrapMode.Normal | 播放到结尾后停止。 |
-| WrapMode.Loop | 循环播放。 |
-| WrapMode.PingPng | 从动画开头播放到结尾后，从结尾开始反向播放到开头，如此循环 |
+对于更多的循环模式，请参考 [WrapMode](https://docs.cocos.com/creator3d/api/zh/enums/animation.wrapmode.html)。
 
-对于更多的循环模式，见 [WrapMode](https://docs.cocos.com/creator3d/api/zh/enums/animation.wrapmode.html)。
-
-<b id="f1">1</b> 动画剪辑的所在结点是指引用该动画剪辑的动画状态对象所在动画组件所附加的结点。 [↩](#a1)
-
+<b id="f1">1</b> 动画剪辑的所在节点是指引用该动画剪辑的动画状态对象所在动画组件所附加的节点。 [↩](#a1)<br>
 <b id="f2">2</b> 对于数值、四元数以及各种向量，Cocos 提供了相应的可插值类以实现[三次样条插值](https://en.wikipedia.org/wiki/Spline_interpolation)。 [↩](#a2)

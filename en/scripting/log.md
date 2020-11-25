@@ -3,7 +3,7 @@
 This document mainly explains how to add new Log messages (including *log*, *warning*, and *error*) to the internal code of the engine according to the correct specifications.
 
 ## Log Information Mechanism and Background
-Currently, the **Log** information in Cocos Creator 3d is stored in the form of an error message table independent of the engine, which is stored in the `EngineErrorMap.md` under the engine directory. In the engine code, it is not allowed to write logs, warnings, errors and other information directly in the form of strings. It must be written in the following three APIs:
+Currently, the **Log** information in Cocos Creator is stored in the form of an error message table independent of the engine, which is stored in the `EngineErrorMap.md` under the engine directory. In the engine code, it is not allowed to write logs, warnings, errors and other information directly in the form of strings. It must be written in the following three APIs:
 
 ```
 import {logID, warnID, errorID} from'core/platform/debug';

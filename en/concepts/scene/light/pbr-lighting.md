@@ -19,7 +19,7 @@ These three important parameters affect the performance of the light source in t
 
 ## Luminous power
 
-**Luminous power** is what we usually call the light sources intensity. __Cocos Creator 3D__ uses **photometric units** to measure light source intensity: 
+**Luminous power** is what we usually call the light sources intensity. __Cocos Creator__ uses **photometric units** to measure light source intensity:
 - **Luminous Power:** Unit **Lumens (*lm*)**<br>
    Describes the total amount of light emitted by the light source from all directions. Changing the size of the light source will not affect the lighting effect of the scene.
 - **Luminance:** Unit **Candela per square meter (*cd/m<sup>2</sup>* or *nits*)**<br>
@@ -29,7 +29,7 @@ These three important parameters affect the performance of the light source in t
 
 ![light power](light-power.jpg)
 
-In the real world, because the important physical parameters describing light sources are different, we usually use **luminous power** and **luminance** to describe light sources that illuminate areas commonly used in life. 
+In the real world, because the important physical parameters describing light sources are different, we usually use **luminous power** and **luminance** to describe light sources that illuminate areas commonly used in life.
 
 ---
 
@@ -54,7 +54,3 @@ Please refer to the following table: <br>
 Light sources in the real world have real physical dimensions. At the same time, the size of the light source also affects the intensity of the light source.
 
 ![light bulb size](light-bulb-size.png)
-
----
-
-Continue to the [Direct Direction Light](dir-light.md) documentation.

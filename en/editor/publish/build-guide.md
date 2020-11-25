@@ -4,7 +4,7 @@ The build process is mainly divided into two parts, the **General Build Process*
 
 ## General build Process
 
-The general build process for **Cocos Creator 3D** consists of the following:
+The general build process for **Cocos Creator** consists of the following:
 
 1. Initialization of build parameters
 2. Prepare build data

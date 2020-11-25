@@ -1,6 +1,6 @@
 # 发布到原生平台
 
-Cocos Creator 3D 自 v1.0.3 起正式支持原生平台，点击菜单栏的 **项目 -> 构建发布** 选项，打开构建发布面板，参照文档配置完项目信息后即可打包。
+Cocos Creator 自 v1.0.3 起正式支持原生平台，点击菜单栏的 **项目 -> 构建发布** 选项，打开构建发布面板，参照文档配置完项目信息后即可打包。
 
 支持的原生平台包括 Android、iOS、Mac、Windows 四个，其中 iOS、Mac 和 Windows 的选项只能在相应的操作系统中才会出现，目前原生平台是集合在一起打包的，可以在同一界面上配置各个原生平台的参数选项，打包一次即可生成所有原生平台的项目包。
 
@@ -49,7 +49,7 @@ jsval_to_string(cx, returnParam, &url);
 > - 源码引擎初次构建和编译某个工程时需要很长的时间编译 C++ 代码，视电脑配置而定，这个时间可能在 5~20 分钟。对于同一个项目，已经编译过一次之后，下次再编译需要的时间会大大缩短。
 > - 源码引擎构建出的工程，使用原生开发环境编译和运行（如 Android Studio、Xcode 等 IDE），是可以进行调试和错误捕获的。
 
-目前 Cocos Creator 3D 安装目录下已经包含了自带的 Cocos2d-x 源码引擎，在安装目录下的 resources/3d/cocos2d-x-lite 文件夹内可以查看到。
+目前 Cocos Creator 安装目录下已经包含了自带的 Cocos2d-x 源码引擎，在安装目录下的 resources/3d/cocos2d-x-lite 文件夹内可以查看到。
 
 #### Polyfills
 
@@ -83,7 +83,7 @@ jsval_to_string(cx, returnParam, &url);
 
 #### 密钥库
 
-Android 要求所有 APK 必须先使用证书进行数字签署，然后才能安装。Cocos Creator 3D 提供了默认的密钥库，勾选 **使用调试密钥库** 就是使用默认密钥库，若用户需要自定义密钥库可去掉 **使用调试密钥库** 勾选。具体请参考 [官方文档](https://developer.android.google.cn/studio/publish/app-signing?hl=zh-cn)
+Android 要求所有 APK 必须先使用证书进行数字签署，然后才能安装。Cocos Creator 提供了默认的密钥库，勾选 **使用调试密钥库** 就是使用默认密钥库，若用户需要自定义密钥库可去掉 **使用调试密钥库** 勾选。具体请参考 [官方文档](https://developer.android.google.cn/studio/publish/app-signing?hl=zh-cn)
 
 #### Orientation 屏幕方向
 

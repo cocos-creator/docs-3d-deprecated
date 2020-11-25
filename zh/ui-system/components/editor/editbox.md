@@ -6,12 +6,14 @@ EditBox 是一种文本输入组件，该组件让你可以轻松获取用户输
 
 点击 **属性检查器** 下面的 **添加组件** 按钮，然后从 **UI/EditBox** 即可添加 EditBox 组件到节点上。
 
-<!-- EditBox 的脚本接口请参考 [EditBox API](...api/zh/classes/EditBox.html)。 -->
+EditBox 的脚本接口请参考 [EditBox API](https://docs.cocos.com/creator3d/api/zh/classes/ui.editbox.html)。
+
+关于使用可以参考 test-cases-3d 里的 [mask](https://github.com/cocos-creator/test-cases-3d/tree/master/assets/cases/ui/12.editbox) 相关。
 
 ## EditBox 属性
 
 | 属性                   | 功能说明                                                                       |
-| --------------         | -----------                                                                  |
+| :-------------         | :----------                                                                  |
 | BackgroundImage      | 输入框背景节点上挂载的 Sprite 组件对象  |
 | FontColor            | 输入框文本的颜色 |
 | FontSize             | 输入框文本的字体大小 |
@@ -118,10 +120,4 @@ export class example extends Component {
 }
 ```
 
-同样的，你也可以注册 `editing-did-ended`, `text-changed` 和 `editing-return` 事件，这些事件的回调函数的参数与 `editing-did-began` 的参数一致。
-
----
-
-- [其他基础模块参考](base-component.md)
-
-- [渲染模块参考](render-component.md)
+同样的，你也可以注册 `editing-did-ended`、`text-changed` 和 `editing-return` 事件，这些事件的回调函数的参数与 `editing-did-began` 的参数一致。

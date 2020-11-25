@@ -1,12 +1,14 @@
 # 相机
 
-游戏中的相机是用来捕捉场景画面的主要工具。我们通过调节相机相关参数来控制可视范围的大小，在 Cocos Creator 3D 编辑器中相机呈如下表示：
+游戏中的相机是用来捕捉场景画面的主要工具。我们通过调节相机相关参数来控制可视范围的大小，在 Cocos Creator 编辑器中相机呈如下表示：
 
 ![camera](camera/camera.png)
 
 相机的可视范围是通过 6 个平面组成一个 **视锥体（Frustum）** 构成， **近裁剪面（Near Plane）** 和 **远裁剪面（Far Plane）** 用于控制近处和远处的可视距离与范围，同时它们也构成了视口的大小。
 
 ![camera view](camera/camera-view.gif)
+
+相机组件接口请参考 [Camera API](https://docs.cocos.com/creator3d/api/zh/classes/component_camera.camera.html)。
 
 ## 相机组件
 

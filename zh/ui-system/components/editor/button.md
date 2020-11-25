@@ -8,20 +8,20 @@ Button 组件可以响应用户的点击操作，当用户点击 Button 时，Bu
 
 点击 **属性检查器** 下面的 **添加组件** 按钮，然后从 **添加 UI 组件** 中选择 **Button**，即可添加 Button 组件到节点上。
 
-<!-- 按钮的脚本接口请参考 [Button API](../../../api/zh/classes/Button.html)。 -->
+按钮的脚本接口请参考 [Button API](https://docs.cocos.com/creator3d/api/zh/classes/ui.button.html)。
 
 ## Button 属性
 
 | 属性                 | 功能说明             |
-| --------------       | -----------        |
+| :-------------       | :----------        |
 | Target               | Node 类型，当 Button 发生 Transition 的时候，会相应地修改 Target 节点的 SpriteFrame，颜色或者 Scale。                      |
-| interactable         | 布尔类型，设为 false 时，则 Button 组件进入禁用状态。                                                                    |
-| Transition           | 枚举类型，包括 NONE, COLOR，SPRITE 和 SCALE。每种类型对应不同的 Transition 设置。详情见下方的 **Button Transition** 部分。    |
+| Interactable         | 布尔类型，设为 false 时，则 Button 组件进入禁用状态。                                                                    |
+| Transition           | 枚举类型，包括 NONE、COLOR、SPRITE 和 SCALE。每种类型对应不同的 Transition 设置。详情见下方的 **Button Transition** 部分。    |
 | Click Event          | 列表类型，默认为空，用户添加的每一个事件由节点引用，组件名称和一个响应函数组成。详情见下方的 **Button 点击事件** 部分。                 |
 
 ### Button Transition
 
-Button 的 Transition 用来指定当用户点击 Button 时的状态表现。目前主要有 NONE，COLOR，SPRITE 和 SCALE。
+Button 的 Transition 用来指定当用户点击 Button 时的状态表现。目前主要有 NONE、COLOR、SPRITE 和 SCALE。
 
 ![transition](button/transition.png)
 
@@ -30,7 +30,7 @@ Button 的 Transition 用来指定当用户点击 Button 时的状态表现。�
 ![color-transition](button/color-transition.png)
 
 | 属性            | 功能说明                         |
-| -------------- | -----------                     |
+| :------------- | :----------                     |
 | Normal         | Button 在 Normal 状态下的颜色。    |
 | Pressed        | Button 在 Pressed 状态下的颜色。   |
 | Hover          | Button 在 Hover 状态下的颜色。     |
@@ -42,7 +42,7 @@ Button 的 Transition 用来指定当用户点击 Button 时的状态表现。�
 ![sprite-transition](button/sprite-transition.png)
 
 | 属性            | 功能说明                                 |
-| -------------- | -----------                             |
+| :------------- | :----------                             |
 | Normal         | Button 在 Normal 状态下的 SpriteFrame。   |
 | Pressed        | Button 在 Pressed 状态下的 SpriteFrame。  |
 | Hover          | Button 在 Hover 状态下的 SpriteFrame。    |
@@ -53,9 +53,9 @@ Button 的 Transition 用来指定当用户点击 Button 时的状态表现。�
 ![scaleTransition](button/scaleTransition.png)
 
 | 属性            | 功能                                                                                       |
-| -------------- | -----------                                                                                |
+| :------------- | :----------                                                                                |
 | Duration       | Button 状态切换需要的时间间隔。                                                                |
-| ZoomScale      | 当用户点击按钮后，按钮会缩放到一个值，这个值等于 Button 原始 scale * zoomScale, zoomScale 可以为负数  |
+| ZoomScale      | 当用户点击按钮后，按钮会缩放到一个值，这个值等于 Button 原始 **scale * zoomScale**，zoomScale 可以为负数  |
 
 ### Button 点击事件
 
@@ -66,7 +66,7 @@ Button 目前只支持 Click 事件，即当用户点击并释放 Button 时才�
 ![button-event](button/button-event.png)
 
 | 属性             | 功能说明                                           |
-| --------------  | -----------                                       |
+| :-------------  | :----------                                       |
 | Target          | 带有脚本组件的节点。                                  |
 | Component       | 脚本组件名称。                                       |
 | Handler         | 指定一个回调函数，当用户点击 Button 并释放时会触发此函数。 |
@@ -123,14 +123,8 @@ export class example extends Component {
         this.button.node.on('click', this.callback, this);
     }
 
-    callback(button: Button){
+    callback(button: Button) {
         // 注意这种方式注册的事件，无法传递 customEventData
     }
 }
 ```
-
----
-
-- [其他基础模块参考](base-component.md)
-
-- [渲染模块参考](render-component.md)

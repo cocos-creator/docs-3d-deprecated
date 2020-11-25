@@ -13,27 +13,25 @@ The following code snippet demonstrates how to create __Animation Clips__ progra
 ```ts
 import { AnimationClip, animation, js } from "cc";
 const animationClip = new AnimationClip();
-animationClip.duration = 1.0; // The cycle of the entire animation
-// clip. No frame time should be greater than this attribute.
-animationClip.keys = [ [ 0.3, 0.6, 0.9 ] ]; // Frame time shared by
-//  all curves of this animation clip
-animationClip.curves = [{ // he property curve on the component
+animationClip.duration = 1.0; // The cycle of the entire animation clip, no frame time should be greater than this attribute.
+animationClip.keys = [ [ 0.3, 0.6, 0.9 ] ]; // Frame time shared by all curves of this animation clip
+animationClip.curves = [{ // The property curve on the component
     modifiers: [ // The target is the current node
         //  "Body" child node
         new animation.HierarchyPath('Body'),
-        // `MyComponent`
+        // 'MyComponent'
         new animation.ComponentPath(js.getClassName(MyComponent)),
-        // `value` attribute
+        // 'value' attribute
         'value',
     ],
     data: {
-        keys: 0, // Index to `AnimationClip.keys`, ie [0.3, 0.6, 0.9]
+        keys: 0, // Index to 'AnimationClip.keys', ie [0.3, 0.6, 0.9]
         values: [ 0.0, 0.5, 1.0 ],
     },
 }];
 ```
 
-The above __Animation Clip__ contains a curve to control the `value` property of the `MyComponent` component of the *Body* sub-node. The curve has three frames, so that the `value` property becomes 0.5 at 0.3 seconds and 0.5 at 0.6 seconds and then becomes 1.0 at 0.9 seconds.
+The above __Animation Clip__ contains a curve to control the `value` property of the `MyComponent` component of the **Body** sub-node. The curve has three frames, so that the `value` property becomes 0.5 at 0.3 seconds and 0.5 at 0.6 seconds and then becomes 1.0 at 0.9 seconds.
 
 > **Note**: the frame time of the curve is indexed into the `AnimationClip.keys` array by reference. Multiple curves can share the frame time. This **will** bring additional performance optimizations.
 
@@ -41,14 +39,13 @@ The above __Animation Clip__ contains a curve to control the `value` property of
 
 The __target__ of the __Animation Curve__ can be any JavaScript object. The `modifiers` field specifies how _runtime_ addresses the current node object to the target object.
 
-`modifiers` is an array, each element of it expresses how to address from the object at the upper level to another object. The object addressed by the last element is the target object of the curve.
-This behavior is like a file system path, so each element is called a __target path__.
+`modifiers` is an array, each element of it expresses how to address from the object at the upper level to another object. The object addressed by the last element is the target object of the curve. This behavior is like a file system path, so each element is called a __target path__.
 
 When the target path is `string`/`number`, this indicates the attribute addressed to the upper-level object, which itself specifies the attribute name. Otherwise, the target path must be an object that implements the interface `animation.TargetPath`.
 
-__Cocos Creator 3D__ has the following built-in classes that implement the self-interface `animation.TargetPath`:
-  - `animation.HierarchyPath` treats the upper-level object as a node and addresses it to one of its child nodes;
-  - `animation.ComponentPath` treats the upper-level object as a node and addresses it to one of its components.
+__Cocos Creator__ has the following built-in classes that implement the self-interface `animation.TargetPath`:
+- `animation.HierarchyPath` treats the upper-level object as a node and addresses it to one of its child nodes;
+- `animation.ComponentPath` treats the upper-level object as a node and addresses it to one of its components.
 
 Target paths can be combined arbitrarily, as long as they have the correct meaning:
 
@@ -57,9 +54,9 @@ Target paths can be combined arbitrarily, as long as they have the correct meani
 modifiers: [
     // "nested_1" child node "nested_2" child node "nested_3" child node
     new animation.HierarchyPath('nested_1/nested_2/nested_3'),
-    // `BlahBlahComponent` component
+    // 'BlahBlahComponent' component
     new animation.ComponentPath(js.getClassName(BlahBlahComponent)),
-    // of the `names` attribute
+    // of the 'names' attribute
     'names',
     // The first element
     0,
@@ -78,9 +75,9 @@ class BlahBlahComponent extends Component {
 modifiers: [
     // "nested_1" child node "nested_2" child node "nested_3" child node
     new animation.HierarchyPath('nested_1/nested_2/nested_3'),
-    // `BlahBlahComponent` component
+    // 'BlahBlahComponent' component
     new animation.ComponentPath(js.getClassName(BlahBlahComponent)),
-    // of the `names` attribute
+    // of the 'names' attribute
     {
         get: (target: BlahBlahComponent) => target.getName(0),
     },
@@ -104,9 +101,9 @@ class MyPath implements animation.TargetPath {
 modifiers: [
     "nested_1" child node "nested_2" child node "nested_3" child node
     new animation.HierarchyPath('nested_1/nested_2/nested_3'),
-    // `BlahBlahComponent` component
+    // 'BlahBlahComponent' component
     new animation.ComponentPath(js.getClassName(BlahBlahComponent)),
-    // // of the `names` attribute
+    // of the 'names' attribute
     new MyPath(0),
 ]
 ```
@@ -172,9 +169,9 @@ class MyValueProxy implements animation.ValueProxyFactory {
 ```ts
 { // the target object
     modifiers: [
-        // `MeshRenderer` Component
+        // 'MeshRenderer' Component
         new animation.ComponentPath(js.getClassName(MeshRenderer)),
-        // `sharedMaterials` attribute
+        // 'sharedMaterials' attribute
         'sharedMaterials',
         // The first material
         0,
@@ -192,20 +189,20 @@ If the sampling time point is exactly equal to the time point of a key frame, th
 
 Otherwise, when the sampling time is between two frames, the resulting value should be affected by the two frames of data at the same time. The ratio of the sampling time point to the time interval of two key frames (`[0,1]`) reflects the degree of influence.
 
-__Cocos Creator 3D__ allows this ratio to be mapped to another ratio to achieve different __gradient__ effects. These mapping methods are called **gradient methods**. After the ratio is determined, the final result value is calculated according to the specified **interpolation method**. Both the **gradient** and **interpolation** methods affect the smoothness of the animation.
+__Cocos Creator__ allows this ratio to be mapped to another ratio to achieve different __gradient__ effects. These mapping methods are called **gradient methods**. After the ratio is determined, the final result value is calculated according to the specified **interpolation method**. Both the **gradient** and **interpolation** methods affect the smoothness of the animation.
 
 #### Gradient method
 
 You can specify the **gradient** method for each frame, or you can specify a uniform gradient method for all frames. The **gradient** method can be the name of the built-in **gradient** method or the **Bezier control** point.
 
 The following lists several commonly used gradient methods.
-  - `linear` keeps the original ratio, that is, linear gradient; this method is used by default when no gradient method is specified.
-  - `constant` always uses a scale of 0, i.e. no gradient; similar to the interpolation method `Step`;
-  - The gradient of `quadIn` changes from slow to fast.
-  - The gradient of `quadOut` changes from fast to slow.
-  - The gradient of `quadInOut` changes from slow to fast to slow again.
-  - The gradient of `quadOutIn` changes from fast to slow to fast.
-  - `IBezierControlPoints`
+- `linear` keeps the original ratio, that is, linear gradient; this method is used by default when no gradient method is specified.
+- `constant` always uses a scale of 0, i.e. no gradient; similar to the interpolation method `Step`;
+- The gradient of `quadIn` changes from slow to fast.
+- The gradient of `quadOut` changes from fast to slow.
+- The gradient of `quadInOut` changes from slow to fast to slow again.
+- The gradient of `quadOutIn` changes from fast to slow to fast.
+- `IBezierControlPoints`
 
 <script src="./easing-method-example.js"> </script>
 <button onclick="onEasingMethodExampleButtonClicked()">Expand comparison</button>
@@ -214,15 +211,14 @@ The following lists several commonly used gradient methods.
 #### Curve value and interpolation method
 
 Some **interpolation** algorithms require additional data to be stored in the curve value of each frame. Therefore, the value type of the curve value and the target attribute are not necessarily the same.
-For numeric types or value types, **Cocos Creator 3D** provides several general interpolation methods. Also, custom interpolation method can be defined.
+For numeric types or value types, **Cocos Creator** provides several general interpolation methods. Also, custom interpolation method can be defined.
 
 When the `interpolate` property of the curve data is `true`, the curve will try to use the **interpolation** function:
-  - If the type of curve value is `number`, `Number`, **linear interpolation** will be applied;
-   - If the curve value inherits from `ValueType`, the `lerp` function of `ValueType` will be called to complete the **interpolation**. Most of the value types built into **Cocos Creator 3D** implement its `lerp` as **linear interpolation**.
-  - If the curve value is [interpolable](https://docs.cocos.com/creator3d/api/en/interfaces/animation.ilerpable.html), the curve value's `lerp` function will be called to complete the **interpolation** <sup id="a2">[2](#f2)</sup>.
+- If the type of curve value is `number`, `Number`, **linear interpolation** will be applied;
+- If the curve value inherits from `ValueType`, the `lerp` function of `ValueType` will be called to complete the **interpolation**. Most of the value types built into **Cocos Creator** implement its `lerp` as **linear interpolation**.
+- If the curve value is [interpolable](https://docs.cocos.com/creator3d/api/en/interfaces/animation.ilerpable.html), the curve value's `lerp` function will be called to complete the **interpolation** <sup id="a2">[2](#f2)</sup>.
 
-If the curve value does not satisfy any of the above conditions, or when the `interpolate` property of the curve data is `false`,
-there will be no interpolation operation. Always use the curve value of the previous frame as the result.
+If the curve value does not satisfy any of the above conditions, or when the `interpolate` property of the curve data is `false`, there will be no interpolation operation. Always use the curve value of the previous frame as the result.
 
 ```ts
 import { AnimationClip, color, IPropertyCurveData, SpriteFrame, v3 } from "cc";
@@ -252,7 +248,7 @@ const vec3Curve: IPropertyCurveData = {
 const colorCuve: IPropertyCurveData = {
     keys: 0,
     values: [ color(255), color(128), color(61), color(0) ],
-    interpolate: false, // 不进行插值
+    interpolate: false, // No interpolation
 };
 
 // No interpolation (because SpriteFrame cannot interpolate)
@@ -327,22 +323,19 @@ function createMyCurve (): IPropertyCurveData {
 }
 ```
 
-Both the **gradient** and **interpolation** methods affect the smoothness of the animation.
-
 ## Loop Mode
 
 You can set different **loop modes** for __Animation Clips__ by setting `AnimationClip.wrapMode()`.
 
 The table below represents several commonly used **looping** modes:
 
-| AnimationClip.wrapMode | Effects |
-|---|---|
+| AnimationClip.wrapMode | Description |
+| :--- | :--- |
 | **WrapMode.Normal** | Stop after playing to the end. |
 | **WrapMode.Loop** | Loop playback. |
-| **WrapMode.PingPng** | After playing from the beginning to the end of the animation, play backwards from the end to the beginning, and so on |
+| **WrapMode.PingPong** | After playing from the beginning to the end of the animation, play backwards from the end to the beginning, and so on |
 
 For more **looping** modes, see [WrapMode](https://docs.cocos.com/creator3d/api/en/enums/animation.wrapmode.html).
 
-<b id="f1">1</b>The node of the __Animation Clip__ is the node attached to the __Animation Component__ that guides the use of the __Animation State__ object of the __Animation Clip__. [↩](#a1)
-
-<b id="f2">2</b> For numerical values, quaternions, and various vectors, __Cocos Creator 3D__ provides corresponding interpolable classes to implement [cubic spline interpolation](https://en.wikipedia.org/wiki/Spline_interpolation). [↩](#a2)
+<b id="f1">1</b>The node of the __Animation Clip__ is the node attached to the __Animation Component__ that guides the use of the __Animation State__ object of the __Animation Clip__. [↩](#a1)<br>
+<b id="f2">2</b> For numerical values, quaternions, and various vectors, Cocos Creator provides corresponding interpolable classes to implement [cubic spline interpolation](https://en.wikipedia.org/wiki/Spline_interpolation). [↩](#a2)

@@ -8,10 +8,12 @@ __ScrollView__ is a container with a scroll function. It provides a way to brows
 
 Click the __Add Component__ button at the bottom of the __Inspector__ panel and select __UI/ScrollView__ to add the ScrollView component to the node.
 
+To use `ScrollView`, please refer to the [ScrollView API](https://docs.cocos.com/creator3d/api/en/classes/ui.scrollview.html) documentation and the [scrollView](https://github.com/cocos-creator/test-cases-3d/tree/master/assets/cases/ui/06.scrollView) scene of the test-cases-3d project.
+
 ## ScrollView Properties
 
 | Properties           | Function Explanation  |
-| --------------       | -----------           |
+| :-------------       | :----------           |
 | BounceDuration       | Floating point number, the time duration for bounce back. The value range is __0-10__ |
 | Brake                | Floating point number, the deceleration coefficient after scrolling. The value range is __0-1__. If set to 1, then the scrolling will stop immediately, if set to 0, then the scrolling will continue until the content border |
 | CancelInnerEvents    | If it is set to true, then the scroll behavior will cancel the touch events registered on the child node. The default setting is true |
@@ -100,7 +102,7 @@ export class example extends Component {
         this.scrollview.node.on('scroll-to-top', this.callback, this);
     }
 
-    callback(scrollView: ScrollView){
+    callback(scrollView: ScrollView) {
         // The callback parameter is the ScrollView component, note that events registered this way cannot pass customEventData.
     }
 }

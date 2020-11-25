@@ -1,6 +1,6 @@
 # Quick start: making your first game.
 
-The power of the __Cocos Creator 3D__ editor is that it allows developers to quickly prototype games.
+The power of the __Cocos Creator__ editor is that it allows developers to quickly prototype games.
 
 Let's follow a guided tutorial to make a magical game named **Mind Your Step**. This game tests the player's reaction ability, and chooses whether to jump one step or two steps according to traffic conditions.
 
@@ -9,18 +9,20 @@ You can try out the completed the game [here](https://gameall3d.github.io/MindYo
 ![](images/cocos-play.gif)
 
 ## New Project
-If you still don’t know how to download and run __Cocos Creator 3D__, please review the [Installation and Starting](../install/index.md) documentation.
+
+If you still don’t know how to download and run __Cocos Creator__, please review the [Installation and Starting](../install/index.md) documentation.
 
 To start a new project:
 
-  1. Start __Cocos Creator 3D__ and then create a new project named **MindYourStep**. If you don’t know how to create a project, please read the [Hello World!](../helloworld/index.md) documentation.
+1. Start __Cocos Creator__ and then create a new project named **MindYourStep**. If you don’t know how to create a project, please read the [Hello World!](../helloworld/index.md) documentation.
 
-  2. After creating a new project, you should see the following editor interface:
+2. After creating a new project, you should see the following editor interface:
 
-  ![main window](./images/main-window.png)
+    ![main window](./images/main-window.png)
 
 ## Creating a game scene
-In __Cocos Creator 3D__, **Scene** is the center for organizing game content during development and the container for presenting all game content to players. The game scene will generally include the following components:
+
+In __Cocos Creator__, **Scene** is the center for organizing game content during development and the container for presenting all game content to players. The game scene will generally include the following components:
 
   - Scene objects
   - Roles
@@ -29,44 +31,46 @@ In __Cocos Creator 3D__, **Scene** is the center for organizing game content dur
 
 When the player runs the game, the game scene will be loaded. After the game scene is loaded, scripts of the included components will be automatically run. Apart from __assets__, game scenes are the foundation of all content creation. Now, to create a new __Scene__:
 
-  1. In the **Explorer**, click to select the **assets** directory, click the __+__ button in the upper left corner, select the folder, and name it __Scenes__. Example:
+1. In the **Explorer**, click to select the **assets** directory, click the __+__ button in the upper left corner, select the folder, and name it __Scenes__. Example:
 
-   ![create scene](./images/create-folder.png)
+    ![create scene](./images/create-folder.png)
 
-  2. Click the __Scenes__ directory first (the following pictures create some common folders in advance), click the right mouse button, and select **Scene Files** from the pop-up menu. Example:
+2. Click the __Scenes__ directory first (the following pictures create some common folders in advance), click the right mouse button, and select **Scene Files** from the pop-up menu. Example:
 
-   ![create scene](./images/create-scene.png)
+    ![create scene](./images/create-scene.png)
 
-  3. We created a __Scene__ file named __New Scene__. After the creation, the name of the scene file __New Scene__ will be in the edit state. Rename it from __New Scene__ to __Main__.
+3. We created a __Scene__ file named __New Scene__. After the creation, the name of the scene file __New Scene__ will be in the edit state. Rename it from __New Scene__ to __Main__.
 
-  4. Double-click __Main__ to open this __Scene__ in **Scene Editor** and **Hierarchy Manager**.
+4. Double-click __Main__ to open this __Scene__ in **Scene Editor** and **Hierarchy Manager**.
 
 ## Adding a road
+
 Our main character needs to run from left to right on a road composed of cubes (blocks). Let's make the road by using a built-in cube.
 
-  1. Right click on __Scene Node__ in the **Hierarchy Manager**, then choose __Create --> 3D Object --> Cube__
+1. Right click on __Scene Node__ in the **Hierarchy Manager**, then choose __Create --> 3D Object --> Cube__
 
-  ![create cube](./images/create-cube.gif)
+    ![create cube](./images/create-cube.gif)
 
-  2. Clone the cube to make two more cube with the shortcut key __Ctrl+D__.
+2. Clone the cube to make two more cube with the shortcut key __Ctrl+D__.
 
-  3. Assign the __Cubes__ each a unique position:
+3. Assign the __Cubes__ each a unique position:
     - First one at position __(0, -1.5, 0)__.
     - Second one at position __(1, -1.5, 0)__.
     - Third one at position __(2, -1.5, 0)__.
 
     The result is as follows:
 
-   ![create ground](./images/add-ground-base.png)
+    ![create ground](./images/add-ground-base.png)
 
 ## Add a main character
 
 ### Create a main character node
+
 __First__, create an empty node named `Player`.
 
 __Second__, create a __Model Component__ named `Body` under the `Player` node. For convenience, let's use the built-in __Capsule__ model as the body of our main character.
 
-  ![create player node](./images/create-player.gif)
+![create player node](./images/create-player.gif)
 
 The advantage of being divided into two nodes is that we can use the script to control the `Player` node to move the main character in the horizontal direction, and do some vertical animations on the `Body` node (such as falling after jumping in place), the two are superimposed to form a jumping animation.
 
@@ -74,21 +78,24 @@ __Third__, set the `Player` node to the `(0, 0, 0)` position so that it can stan
 
 The effect is as follows:
 
-   ![create player](./images/create-player.png)
+![create player](./images/create-player.png)
 
 ### Writing a script for the main character
+
 It is necessary for the main character to be affected when the mouse moves. To do this a custom script needs to be written.
 
 #### Creating a script
+
 1. If you have not yet created a `Scripts` folder, right-click the **assets** folder in the __Explorer__ panel, select **New -> Folder**, and rename the newly created folder to `Scripts`.
 2. Right-click the `Scripts` folder and select **New -> TypeScript** to create a new, blank __TypeScript__ script. For __TypeScript__ information, you can view the [TypeScript Official Website](https://www.typescriptlang.org/).
 3. Change the name of the newly created script to `PlayerController` and the double-click the script to open the code editor (in, for example, __VSCode__).
 
-   ![create player script](./images/create-player-script.gif)
+    ![create player script](./images/create-player-script.gif)
 
-> **Note:** The name of the script in __Cocos Creator 3D__ is the name of the component. This name is case sensitive! If the capitalization of the component name is incorrect, the component cannot be used correctly by the name!
+    > **Note**: The name of the script in __Cocos Creator 3.0__ is the name of the component. This name is case sensitive! If the capitalization of the component name is incorrect, the component cannot be used correctly by the name!
 
 #### Writing script code
+
 There are already some pre-set code blocks in the `PlayerController` script. Example:
 
 ```ts
@@ -114,7 +121,7 @@ export class PlayerController extends Component {
 }
 ```
 
-This code is the structure needed to write a __component__. Scripts with this structure are **Components in Cocos Creator 3D**. They can be attached to nodes in a __Scene__ and provide various functionality for controlling nodes. For detailed information review the [Script]( ../../scripting/index.md) documentation.
+This code is the structure needed to write a __component__. Scripts with this structure are **Components in Cocos Creator**. They can be attached to nodes in a __Scene__ and provide various functionality for controlling nodes. For detailed information review the [Script]( ../../scripting/index.md) documentation.
 
 Monitoring of mouse events needs to be added in the script to let the `Player` node move. Modify the code in `PlayerController` as follows:
 
@@ -196,19 +203,20 @@ export class PlayerController extends Component {
 
 __Next__, attach the `PlayerController` component to the `Player` node. Select the `Player` node in the **Hierarchy Manager**, then click the **Add Component** button in the **Property Inspector**, select **Custom Script Component- > PlayerController** to the `Player` node to add the `PlayerController` component.
 
-  ![add player controller comp](./images/add-player-controller.png)
+![add player controller comp](./images/add-player-controller.png)
 
 In-order to see the object at runtime, we need to adjust some parameters of the __Camera__ in the scene, set the __position__ to __(0, 0, 13)__, and set the __ClearColor__ to __(50, 90, 255, 255)__:
 
-  ![camera setting](./images/camera-setting.png)
+![camera setting](./images/camera-setting.png)
 
 __Now__, click the __Play__ button. Once running, click the left and right mouse buttons on the opened web page, you can see the following screen:
 
-  ![player move](./images/player-move.gif)
+![player move](./images/player-move.gif)
 
 For additional details please refer to the [Project Preview Debugging](../../editor/preview/index.md) documentation.
 
 ### Adding character animations
+
 The `Player` can be moved in a horizontal direction. This is a start, but not good enough. `Player` must become more life-like. This effect can be achieved by adding a vertical animation to the character.
 
 > **Note**: Before proceeding, please read the [Animation Editor](../../editor/animation/index.md) documentation.
@@ -217,36 +225,39 @@ After reading and understanding the capabilities of the __Animation Editor__ cha
 
 1. Locate the **Animation Editor**, at the bottom of the editor alongside the __Assets Preview__ and the **Console** panels. Select the `Body` node in the __Scene__ and click to add an __Animation Component__ and then click again tp create a new __Animation Clip__. Give this new __Animation Clip__ a name of `oneStep`.
 
-   ![player move](./images/add-animation.gif)
+    ![player move](./images/add-animation.gif)
 
 2. Enter __animation editing mode__ in-order to add the __position attribute__. Next, add three __key frames__ with position values ​​of __(0, 0, 0)__, __(0, 0.5, 0)__, __(0, 0, 0)__.
 
-   ![add keyframe](./images/add-keyframe.gif)
+    ![add keyframe](./images/add-keyframe.gif)
 
-> **Note**: Remember to save the animation before exiting the animation editing mode, otherwise the animation will be lost.
+    > **Note**: Remember to save the animation before exiting the animation editing mode, otherwise the animation will be lost.
 
 3. __Animation Clips__ can also be created using the **Explorer** panel. Next, Create a __Clip__ named `twoStep` and add it to the __AnimationComponent__ on `Body`.
 
-   ![add animation from assets](./images/add-animation-from-assets.gif)
+    ![add animation from assets](./images/add-animation-from-assets.gif)
 
-> **Note**: The panel layout was adjusted for recording convenience.
+    > **Note**: The panel layout was adjusted for recording convenience.
 
 4. Enter the __animation editing mode__, select and edit the `twoStep` clip. Similar to the second step, add three key frames at positions __(0, 0, 0)__, __(0, 1, 0)__, __(0, 0, 0)__.
 
-   ![edit second clip](./images/edit-second-clip.png)
+    ![edit second clip](./images/edit-second-clip.png)
 
 5. Reference the __AnimationComponent__ in the` PlayerController` Component, as different animations need to be played according to the number of steps `Player` jumped.
 
-   First, reference the __AnimationComponent__ on the `Body` in the `PlayerController` component.
-   ```ts
-      @property({type: Animation})
-      public BodyAnim: Animation = null;
-   ```
-   Then in the **Property Inspector**, drag the `Animation` to the `Body` variable.
+    First, reference the __AnimationComponent__ on the `Body` in the `PlayerController` component.
+   
+    ```ts
+    @property({type: Animation})
+    public BodyAnim: Animation = null;
+    ```
+   
+    Then in the **Property Inspector**, drag the `Animation` to the `Body` variable.
 
     ![drag to animComp](./images/drag-to-animComp.gif)
 
     Add the animation playback code to the jump function `jumpByStep`:
+
     ```ts
     if (step === 1) {
         this.BodyAnim.play('oneStep');
@@ -255,26 +266,30 @@ After reading and understanding the capabilities of the __Animation Editor__ cha
     }
     ```
 
-   Click the __Play__ button. When playing, click the left and right mouse buttons, you can see the new jump effect in action:
+    Click the __Play__ button. When playing, click the left and right mouse buttons, you can see the new jump effect in action:
 
-      ![preview with jump](./images/preview-with-jump.gif)
+    ![preview with jump](./images/preview-with-jump.gif)
 
 ## Upgrading the road
+
 In-order to make the gameplay longer and more enjoyable, we need a long stretch of road to let the `Player` run all the way to the right. Copying a bunch of cubes in the __Scene__ and editing the position of each cube to form the road is not a wise practice. We can, however, complete this by using a script to automatically create the road pieces.
 
-### A "Game Manager" can help.
+### A "Game Manager" can help
+
 Most games have a __manager__, which is mainly responsible for the management of the entire game life-cycle. You can put the code for the dynamic creation of the road in this same manager. Create a node named `GameManager` in the __Scene__. Next, create a TypesScript file named `GameManager` in `assets/Scripts` and add it to the `GameManager` node.
 
 ### Making a Prefab
+
 For a node that needs to be generated repeatedly, it can be saved as a **Prefab (prefabricated)** resource. This means it can be used as a template when we dynamically generate other nodes of this same type.
 
 > **Note**: Before proceeding, please read the [Prefab Resources](../../asset/prefab.md) documentation.
 
 It is necesssary to make the basic element `cube` of the road into a __Prefab__, after which all three cubes in the __Scene__ can be deleted.
 
-   ![create cube prefab](./images/create-cube-prefab.gif)
+![create cube prefab](./images/create-cube-prefab.gif)
 
 ### Adding the automatic road creation
+
 A very long road is needed. The ideal method is to dynamically increase the length of the road, so that the `Player` can run forever. First, generate a fixed-length road with a length that is arbitrary. To do so, replace the code in the `GameManager` script with the following code:
 
 ```ts
@@ -349,24 +364,25 @@ The length of the road can be changed by modifying the value of `roadLength` in 
 
 When previewing, the road is now automatically generated, however, because the __Camera__ does not follow the `Player`, the road behind cannot be seen. Changing the __Camera__ in the __Scene__ to be a child node of the `Player` can help solve this.
 
-  ![drag camera to player](./images/drag-camera-to-player.gif)
+![drag camera to player](./images/drag-camera-to-player.gif)
 
 Now, the __Camera__ will follow the Player's movement.
 
 ## Adding a start menu
+
 The __start menu__ is an indispensable part of most any game. Add the game name, game introduction, production staff and other information here. Creating a simple start menu starts with some basic steps:
 
 1. Add a button called `Play`
 
     ![create button](./images/create-button.gif)
 
-  This operation creates a `Canvas` node, a `PlayButton` node, and a `Label` node. Because the UI component needs to be displayed under the parent node with `Canvas`, the editor will automatically add one when it finds that there is not a node with this component in the current __Scene__. After creating the button, change the `String` property of `cc.Label` on the `Label` node from `Button` to `Play.`
+    This operation creates a `Canvas` node, a `PlayButton` node, and a `Label` node. Because the UI component needs to be displayed under the parent node with `Canvas`, the editor will automatically add one when it finds that there is not a node with this component in the current __Scene__. After creating the button, change the `String` property of `cc.Label` on the `Label` node from `Button` to `Play.`
 
 2. Create an empty node named `StartMenu` under `Canvas` and drag `PlayButton` under it. We can switch to the 2D editing view for UI editing operations by clicking the 2D/3D button on the toolbar.
 
-  > **Note**: 2D View is this toolbar button ![2d-view](./images/2d-view.png).
+    > **Note**: 2D View is this toolbar button ![2d-view](./images/2d-view.png).
 
-  > **Note**: Before proceeding, please read the [Scene Editing](../../editor/scene/index.md) documentation.
+    > **Note**: Before proceeding, please read the [Scene Editing](../../editor/scene/index.md) documentation.
 
 3. Add a background frame by creating a `Sprite` node named `BG` under `StartMenu`. Adjust `BG`'s position to above the `PlayButton`, setting the __W(width)__ and __H(height)__ of `ContentSize` to __(200, 200)__, and setting its __SpriteFrame__ to `internal/default_ui/ default_sprite_splash`.
 
@@ -376,24 +392,24 @@ The __start menu__ is an indispensable part of most any game. Add the game name,
 
 4. Add a __Label__ called `Title` for the title of the start menu.
 
-   ![add title label](./images/add-label-title.gif)
+    ![add title label](./images/add-label-title.gif)
 
 5. Modify the text for `Title` and adjust it's *position*, *text size* and *color*.
 
-   ![modify title](./images/title-inspector.png)
+    ![modify title](./images/title-inspector.png)
 
 6. Adjust the position of the `PlayButton`. The layout of a simple __start menu__ is complete.
 
-   ![modify title](./images/start-menu.png)
+    ![modify title](./images/start-menu.png)
 
 7. Add game state logic, generally it can be divided into three states:
-   - **Init**: display the game menu and initialize some resources.
-   - **Playing**: hide the game menu, players can operate the game.
-   - **End**: end the game and display the ending menu.
+    - **Init**: display the game menu and initialize some resources.
+    - **Playing**: hide the game menu, players can operate the game.
+    - **End**: end the game and display the ending menu.
 
-   Use an enum type to represent these states.
+    Use an enum type to represent these states.
 
-   ```ts
+    ```ts
     enum BlockType{
         BT_NONE,
         BT_STONE,
@@ -404,7 +420,7 @@ The __start menu__ is an indispensable part of most any game. Add the game name,
         GS_PLAYING,
         GS_END,
     };
-   ```
+    ```
 
     Add a private variable that represents the current state to the `GameManager` script
 
@@ -494,11 +510,12 @@ The __start menu__ is an indispensable part of most any game. Add the game name,
 Now, preview the scene by clicking the `Play` button to start the game.
 
 ## Adding game end logic
+
 The game character is just running forward, with no purpose. Adding game rules to make the game play more challenging would make the game more playable and give it a purpose.
 
 1. The character needs to send a message at the end of each jump. This message should record how many steps the character jumped and its current position. This can be done in `PlayerController`.
 
-   ```ts
+    ```ts
     private _curMoveIndex = 0;
     // ...
     jumpByStep(step: number) {
@@ -506,21 +523,21 @@ The game character is just running forward, with no purpose. Adding game rules t
 
         this._curMoveIndex += step;
     }
-   ```
+    ```
 
-   Send a message at the end of each jump:
-   ```ts
+    Send a message at the end of each jump:
+    ```ts
     onOnceJumpEnd() {
         this._isMoving = false;
         this.node.emit('JumpEnd', this._curMoveIndex);
     }
-   ```
+    ```
 
 2. Monitor the character's jumping end event in `GameManager`, and judge the winning or losing of the game, according to the rules.
 
-  Increase the failure and ending logic to judge how the game is being played.If `Player` jumps to an empty square or exceeds the maximum length value, the game will end:
+    Increase the failure and ending logic to judge how the game is being played.If `Player` jumps to an empty square or exceeds the maximum length value, the game will end:
 
-   ```ts
+    ```ts
     checkResult(moveIndex: number) {
         if (moveIndex <= this.roadLength) {
             // Jump to the empty square
@@ -531,11 +548,11 @@ The game character is just running forward, with no purpose. Adding game rules t
             this.curState = GameState.GS_INIT;
         }
     }
-   ```
+    ```
 
-   Monitor the character's jump message and call a function to decide:
+    Monitor the character's jump message and call a function to decide:
 
-   ```ts
+    ```ts
     start () {
         this.curState = GameState.GS_INIT;
         this.playerCtrl.node.on('JumpEnd', this.onPlayerJumpEnd, this);
@@ -545,43 +562,45 @@ The game character is just running forward, with no purpose. Adding game rules t
     onPlayerJumpEnd(moveIndex: number) {
         this.checkResult(moveIndex);
     }
-   ```
+    ```
 
-   If you preview playing the game now, there will be a logic error when restarting the game. This is because we did not reset the `_curMoveIndex` property value in `PlayerController` when the game restarts. To fix this, add a reset function in `PlayerController`.
+    If you preview playing the game now, there will be a logic error when restarting the game. This is because we did not reset the `_curMoveIndex` property value in `PlayerController` when the game restarts. To fix this, add a reset function in `PlayerController`.
 
-   ```ts
+    ```ts
     reset() {
         this._curMoveIndex = 0;
     }
-   ```
+    ```
 
-   Call `reset()` in the `init` function of `GameManager` to reset the properties of `PlayerController`.
-   ```ts
+    Call `reset()` in the `init` function of `GameManager` to reset the properties of `PlayerController`.
+  
+    ```ts
     init() {
         \\ ...
         this.playerCtrl.reset();
     }
-   ```
+    ```
 
 ## Step counting display
+
 We can display the current number of steps jumped in the interface. Perhaps watching the continuous growth of steps during the jump will be very fulfilling to the player.
 
 1. Create a new label named `Steps` under __Canvas__, adjust the *position*, *font size* and *other properties*.
 
-   ![steps label](./images/steps-label.png)
+    ![steps label](./images/steps-label.png)
 
 2. Reference the `Steps` label in `GameManager`
 
-   ```ts
+    ```ts
     @property({type: Label})
     public stepsLabel: Label = null;
-   ```
+    ```
 
-   ![steps label to game manager](./images/add-steps-to-game-manager.png)
+    ![steps label to game manager](./images/add-steps-to-game-manager.png)
 
 3. Update the current `Step` data to appear in new `Steps` Label. A game ending interface has yet to be created, for now, reset the number of steps to __0__ when restarting playing.
 
-   ```ts
+    ```ts
     set curState (value: GameState) {
         switch(value) {
             case GameState.GS_INIT:
@@ -601,7 +620,7 @@ We can display the current number of steps jumped in the interface. Perhaps watc
         }
         this._curState = value;
     }
-   ```
+    ```
 
     Update the `Steps` Label in a function that responds to the character jumping. It should make sense that recording the number of `Steps` would take place after each and every jump for accuracy.
 
@@ -613,6 +632,7 @@ We can display the current number of steps jumped in the interface. Perhaps watc
     ```
 
 ## Lights and shadows
+
 Where there is light, there will be a shadow. Light and shadows create a 3D world where light and dark intersect. Next, let's add a simple shadow to the character.
 
 ### Turning on shadows
@@ -630,6 +650,7 @@ A patch of shadow can be seen in the in the __Scene__ editor. However, this shad
 ![player shadow](./images/player-shadow-scene.png)
 
 ### Adjusting the light
+
 When creating a new scene, a `DirectionalLight` will be added __by default__, and the shadow will be calculated from this parallel light. The direction of this parallel light can be adjusted in-order to display the shadow in another position.
 
 In the **Hierarchy Manager**, click to select the `Main Light` node and adjust the `Rotation` parameter to __(-10, 17, 0)__.
@@ -641,12 +662,15 @@ Preview the game and you can see this effect:
 ![player shadow preview](./images/player-shadow-preview.png)
 
 ## Adding a character model
+
 Using the capsule body as the character is a bit shabby, we can change this to make a Cocos character.
 
 ### Importing model resources
+
 Copy the `cocos` folder under the `assets` directory in [Project Engineering](https://github.com/cocos-creator/tutorial-mind-your-step-3d) to the `assets` directory of your own project.
 
 ### Adding to the scene
+
 A prefab called `Cocos` has been included in the cocos file, drag it to the `Body` node under `Player` in the scene.
 
 ![add cocos prefab](./images/add-cocos-prefab.png)
@@ -660,13 +684,14 @@ The model is a little dark and a spotlight can be added to highlight its shiny b
 ![add cocos light](./images/cocos-add-light.png)
 
 ### Adding a jumping animation
+
 When previewing the game, the character will initially have a standby animation, but a jumping animation needs to be used during a jump.
 
 First, add a variable in the `PlayerController` class that references the model animation:
 
 ```ts
-    @property({type: SkeletalAnimation})
-    public CocosAnim: SkeletalAnimation = null;
+@property({type: SkeletalAnimation})
+public CocosAnim: SkeletalAnimation = null;
 ```
 
 Then, in the __Inspector__, drag the `Cocos` node into this variable.
@@ -718,6 +743,7 @@ When previewing, the results are as follows:
 ![cocos play](./images/cocos-play.gif)
 
 ## Final Code
+
 The final code for `PlayerController.ts` should look like this:
 
 ```ts
@@ -952,18 +978,18 @@ export class GameManager extends Component {
 
 ## The end!
 
-__Congratulations on completing your first game made with Cocos Creator 3D!__
+__Congratulations on completing your first game made with Cocos Creator!__
 
-The complete project can be downloaded on our [GitHub](https://github.com/cocos-creator/tutorial-mind-your-step-3d). The hope is this quick start tutorial will help you understand the Cocos Creator 3D game development process, basic concepts and workflow.
+The complete project can be downloaded on our [GitHub](https://github.com/cocos-creator/tutorial-mind-your-step-3d). The hope is this quick start tutorial will help you understand the Cocos Creator game development process, basic concepts and workflow.
 
 Next, you can continue to improve all aspects of the game. Here are some ideas for improvement:
-  - Increase the difficulty of the game, when the character stays in place for 1 second it fails.
-  - Change to infinite runway, dynamically delete the runway that has been run, and extend the runway behind.
-  - Add game sound effects.
-  - Add an end menu interface to the game, and count the number of jumping steps and time spent by the player.
-  - Replace characters and runways with prettier assets.
-  - Can add some pickable items to guide players to "make mistakes"
-  - Add some particle special effects, such as trailing when the character moves, dust when landing
-  - Add two operation buttons for touch screen devices instead of left and right mouse button operation
+- Increase the difficulty of the game, when the character stays in place for 1 second it fails.
+- Change to infinite runway, dynamically delete the runway that has been run, and extend the runway behind.
+- Add game sound effects.
+- Add an end menu interface to the game, and count the number of jumping steps and time spent by the player.
+- Replace characters and runways with prettier assets.
+- Can add some pickable items to guide players to "make mistakes"
+- Add some particle special effects, such as trailing when the character moves, dust when landing
+- Add two operation buttons for touch screen devices instead of left and right mouse button operation
 
 Lastly, why not share this game with your friends? You can publish the completed game to a server of your choice using the [Publishing Workflow](../../editor/publish/index.md) documentation.

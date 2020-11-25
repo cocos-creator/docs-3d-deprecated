@@ -1,16 +1,16 @@
 ﻿# 生命周期回调
 
-Cocos Creator 3D为组件脚本提供了生命周期的回调函数。用户只要定义特定的回调函数，Creator 3D就会在特定的时期自动执行相关脚本，用户不需要手工调用它们。
+Cocos Creator 为组件脚本提供了生命周期的回调函数。开发者只需要定义特定的回调函数，Creator 就会在特定的时期自动执行相关脚本，开发者不需要手工调用它们。
 
 目前提供给用户的生命周期回调函数主要有：
 
- - onLoad
- - start
- - update
- - lateUpdate
- - onDestroy
- - onEnable
- - onDisable
+- onLoad
+- start
+- update
+- lateUpdate
+- onDestroy
+- onEnable
+- onDisable
 
 ## onLoad
 
@@ -84,6 +84,7 @@ export class updatetest extends Component {
 ## lateUpdate
 
 `update` 会在所有动画更新前执行，但如果我们要在动效（如动画、粒子、物理等）更新之后才进行一些额外操作，或者希望在所有组件的 `update` 都执行完之后才进行其它操作，那就需要用到 `lateUpdate` 回调。
+
 ```ts
 import { _decorator, Component, Node } from "cc";
 const { ccclass, property } = _decorator;
@@ -108,8 +109,3 @@ export class lateupdatetest extends Component {
 ## onDestroy
 
 当组件或者所在节点调用了 `destroy()`，则会调用 `onDestroy` 回调，并在当帧结束时统一回收组件。
-
-
----
-
-继续前往 [创建和销毁节点](create-destroy.md)。

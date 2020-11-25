@@ -16,14 +16,16 @@ Layout 是一种容器组件，容器能够开启自动布局功能，自动按�
 
 点击 **属性检查器** 下面的 **添加组件** 按钮，然后选择 **UI/Layout** 即可添加 Layout 组件到节点上。
 
-<!-- 布局的脚本接口请参考 [Layout API](...api/zh/classes/Layout.html)。 -->
+布局的组件接口请参考 [Layout API](https://docs.cocos.com/creator3d/api/zh/classes/ui.layout.html)。
+
+关于使用可以参考 test-cases-3d 里的 [layout](https://github.com/cocos-creator/test-cases-3d/tree/master/assets/cases/ui/05.layout) 相关。
 
 ## Layout 属性
 
-| 属性                 | 功能说明                                                                                                                                           |
-| --------------       | -----------                                                                                                                                        |
-| Type                 | 布局类型，支持 NONE, HORIZONTAL，VERTICAL 和 GRID。详情请参考 [自动布局](../engine/auto-layout.md)。                                                                                                |
-| ResizeMode           | 缩放模式，支持 NONE，CHILDREN 和 CONTAINER。                                                                                                        |
+| 属性                 | 功能说明     |
+| :-----------------  | :--------- |
+| Type                 | 布局类型，支持 NONE、HORIZONTAL、VERTICAL 和 GRID。详情请参考 [自动布局](../engine/auto-layout.md)。                                                                                                |
+| ResizeMode           | 缩放模式，支持 NONE、CHILDREN 和 CONTAINER。                                                                                                        |
 | PaddingLeft          | 排版时，子物体相对于容器左边框的距离。                                                                                                            |
 | PaddingRight         | 排版时，子物体相对于容器右边框的距离。                                                                                                            |
 | PaddingTop           | 排版时，子物体相对于容器上边框的距离。                                                                                                            |
@@ -50,12 +52,6 @@ Layout 是一种容器组件，容器能够开启自动布局功能，自动按�
 
 - 设置为 CONTAINER 则容器的大小会随着子物体的大小变化。
 
-在使用网格布局时，当 **Start Axis** 设置为 HORIZONTAL 时, 将在新行开始之前填充整行。设置为 VERTICAL 时, 它将在新列开始之前填充整个列。
+在使用网格布局时，当 **Start Axis** 设置为 HORIZONTAL 时，将在新行开始之前填充整行。设置为 VERTICAL 时，它将在新列开始之前填充整个列。
 
 **注意**：Layout 设置后的结果需要到下一帧才会更新，除非你设置完以后手动调用 `updateLayout` API。
-
----
-
-### [**其他基础模块参考**](base-component.md)
-
-### [**渲染模块参考**](render-component.md)

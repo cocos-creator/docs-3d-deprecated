@@ -1,8 +1,8 @@
 # Importing models exported from DCC tools
-Currently, most __Digital Content Creation (DCC)__ tools (__3DS Max__, __Maya__, __Blender__) can export models in __FBX__ and __glTF__ formats. These formats, exported by these tools, can be well received in __Cocos Creator 3D__.
+Currently, most __Digital Content Creation (DCC)__ tools (__3DS Max__, __Maya__, __Blender__) can export models in __FBX__ and __glTF__ formats. These formats, exported by these tools, can be well received in __Cocos Creator__.
 
 ## Exporting FBX
-Because the coordinate system of the DCC tool and the game engine's coordinate system are not necessarily the same, some transformations are required when exporting a model to get the desired result in the engine. For example, __Blender's__ coordinate system is __x-axis right__, __y-axis outward__, __z-axis right-hand__ coordinate system, and __Cocos Creator 3D__ is __x-axis right__, __y-axis__, __z-axis right-hand__ coordinate system, so rotation is required to make the axes consistent.
+Because the coordinate system of the DCC tool and the game engine's coordinate system are not necessarily the same, some transformations are required when exporting a model to get the desired result in the engine. For example, __Blender's__ coordinate system is __x-axis right__, __y-axis outward__, __z-axis right-hand__ coordinate system, and __Cocos Creator__ is __x-axis right__, __y-axis__, __z-axis right-hand__ coordinate system, so rotation is required to make the axes consistent.
 
 The following uses Blender 2.8 as an example to introduce the model import process. First we create a model in Blender.
 
@@ -12,7 +12,7 @@ In [Blender's FBX Export Options](https://docs.blender.org/manual/en/2.80/addons
 
 ![blender export](./mesh/blender_export_fbx_1.png)
 
-Imported into __Cocos Creator 3D__, you can see that the nodes are rotated by __-90__ on the __x-axis__ in order to combine the __axis__ with __Cocos Creator 3D__. The axes are aligned.
+Imported into __Cocos Creator__, you can see that the nodes are rotated by __-90__ on the __x-axis__ in order to combine the __axis__ with __Cocos Creator__. The axes are aligned.
 
 ![blender export c3d](./mesh/blender_model_c3d.png)
 
@@ -20,7 +20,7 @@ If you don't want this rotation value, Blender's FBX export plugin provides an e
 
 ![blender export bake](./mesh/blender_export_bake.png)
 
-You can see that the rotation data is gone in __Cocos Creator 3D__.
+You can see that the rotation data is gone in __Cocos Creator__.
 
 ![blender export bake c3d](./mesh/blender_model_bake_c3d.png)
 
@@ -34,7 +34,7 @@ Please read ther following documents:
 ## Possible issues
 During the game development process, the orientation of the model may be used. For example, if you want some objects to face the player (using the `LookAt()` method), you need to consider the initial orientation of the model. Here are two methods to adjust the initial orientation of the model.
 
-  1. In __Cocos Creator 3D__, the __-z-axis__ is used as the forward direction, while in Blender, the forward direction is __+y-axis__, so when making a model, the positive direction of the __y-axis__ should be used as the orientation of the object, and the derived transformation later, in __Cocos Creator 3D__, the __-z-axis__ will be used as the front direction.
+  1. In __Cocos Creator__, the __-z-axis__ is used as the forward direction, while in Blender, the forward direction is __+y-axis__, so when making a model, the positive direction of the __y-axis__ should be used as the orientation of the object, and the derived transformation later, in __Cocos Creator__, the __-z-axis__ will be used as the front direction.
   2. If you do not want to change the orientation in the DCC tool, you can try adding a parent node to the imported model in the scene, and then rotate the model so that the initial orientation of the model is the __-z-axis__. All subsequent rotation-related operations are based on the parent. A node is an operation object.
 
 ## Artist's production specifications

@@ -1,6 +1,6 @@
 # 物理材质
 
-在 Cocos Creator 3D 中物理材质是一种资源，它记录了物体的表面信息，这些信息用来计算碰撞物体受到的摩擦力和弹力等。
+在 Cocos Creator 中物理材质是一种资源，它记录了物体的表面信息，这些信息用来计算碰撞物体受到的摩擦力和弹力等。
 
 ## 属性
 
@@ -56,7 +56,3 @@ collider.material = newPmtl;
 collider.material.friction = 0.1;
 collider.material.restitution = 0.1;
 ```
-
----
-
-继续前往 [刚体组件](physics-rigidbody.md) 说明文档。

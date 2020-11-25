@@ -1,10 +1,14 @@
 # Billboard Component
 
-The billboard component is used to render a box that always faces the camera.
+The Billboard component is used to render a box that always faces the camera.
 
-Properties | Features
----|---
-**height** | The height of billboard.
-**width** | The width of billboard.
-**rotation** | The angle of rotation of the billboard around the center point.
-**texture** | The texture displayed on the billboard.
+![](particle-system/billboard.png)
+
+| Properties | Description |
+| :---| :--- |
+| **Texture** | The texture displayed on the billboard. |
+| **Height** | The height of billboard. |
+| **Width** | The width of billboard. |
+| **Rotation** | The angle of rotation of the billboard around the center point. |
+
+To use `Billboard`, please refer to the [Billboard API](https://docs.cocos.com/creator3d/api/en/classes/particle.billboard.html).

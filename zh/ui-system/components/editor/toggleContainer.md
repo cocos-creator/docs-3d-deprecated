@@ -8,20 +8,22 @@ ToggleContainer 不是一个可见的 UI 组件，它可以用来修改一组 To
 
 点击 **属性检查器** 下面的 **添加组件** 按钮，然后选择 **UI/ToggleContainer** 即可添加 ToggleContainer 组件到节点上。
 
-<!-- ToggleContainer 的脚本接口请参考 [ToggleContainer API](../../../api/zh/classes/ToggleContainer.html)。 -->
+ToggleContainer 的组件接口请参考 [ToggleContainer API](https://docs.cocos.com/creator3d/api/zh/classes/ui.togglecontainer.html)。
+
+关于使用可以参考 test-cases-3d 里的 [toggleContainer](https://github.com/cocos-creator/test-cases-3d/tree/master/assets/cases/ui/09.toggle) 相关。
 
 ## ToggleContainer 属性
 
-| 属性 |   功能说明
-| -------------- | ----------- |
-| AllowSwitchOff | 如果这个设置为 true， 那么 toggle 按钮在被点击的时候可以反复地被选中和未选中。
-| CheckEvents | 选中事件。列表类型，默认为空，用户添加的每一个事件由节点引用，组件名称和一个响应函数组成。
+| 属性 | 功能说明 |
+| :------------- | :---------- |
+| AllowSwitchOff | 如果这个设置为 true， 那么 toggle 按钮在被点击的时候可以反复地被选中和未选中。 |
+| CheckEvents | 选中事件。列表类型，默认为空，用户添加的每一个事件由节点引用，组件名称和一个响应函数组成。 |
 
 ## ToggleContainer 事件
 
-事件结构参考：[组件事件结构](./button.md#组件事件结构)      |
+事件结构参考：[组件事件结构](./button.md#组件事件结构)
 
-ToggleContainer 的事件回调有二个参数，第一个参数是 Toggle 本身, 第二个参数是 customEventData。
+ToggleContainer 的事件回调有二个参数，第一个参数是 Toggle 本身，第二个参数是 customEventData。
 
 ## 详细说明
 
@@ -48,14 +50,9 @@ export class example extends Component {
         container.checkEvents.push(containerEventHandler);
     }
 
-    callback(event: Event, customEventData: string){
-        //这里 event 是一个 Touch Event 对象，你可以通过 event.target 取到事件的发送节点
+    callback(event: Event, customEventData: string) {
+        // 这里 event 是一个 Touch Event 对象，你可以通过 event.target 取到事件的发送节点
         // 这里的 customEventData 参数就等于之前设置的 'foobar'
     }
 }
 ```
----
-
-- [其他基础模块参考](base-component.md)
-
-- [渲染模块参考](render-component.md)

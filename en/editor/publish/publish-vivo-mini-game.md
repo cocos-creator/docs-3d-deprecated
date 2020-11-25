@@ -28,7 +28,7 @@
 
 ## Release Process
 
-1. Use **Cocos Creator 3D** to open the project that needs to be released. Select **vivo Mini Game** in the **Platform** dropdown of the **Build** panel.
+1. Use **Cocos Creator** to open the project that needs to be released. Select **vivo Mini Game** in the **Platform** dropdown of the **Build** panel.
 
     ![](./vivo-mini-game/build_options.jpg)
 
@@ -52,14 +52,14 @@ The specific filling rules for the relevant parameter configuration are as follo
 
 - **Build Sub Package**: is supported by v1.0.4 onwards and is enabled by **default**. For details, please refer to **Subpackage Loading** at the end of this document.
 
-- **Small Packet Mode**: is optional. The in-package volume of the mini-game contains code and assets that cannot exceed 10M, and assets can be loaded via network requests. **Small Packet Mode** is to help developers keep the script files in the mini game package, other assets are uploaded to the remote server, and downloaded from the remote server as needed. And the download, cache and version management of remote assets, **Cocos Creator 3D** has already helped the developer. What the developer needs to do is the following steps:
+- **Small Packet Mode**: is optional. The in-package volume of the mini-game contains code and assets that cannot exceed 10M, and assets can be loaded via network requests. **Small Packet Mode** is to help developers keep the script files in the mini game package, other assets are uploaded to the remote server, and downloaded from the remote server as needed. And the download, cache and version management of remote assets, **Cocos Creator** has already helped the developer. What the developer needs to do is the following steps:
 
   1. When building, check the **Small Packet Mode** and fill in the **Small Packet Mode Server Path**.
 
   2. **First game asset package into the game package**, this item is optional.
 
       In the **Small Packet Mode**, due to too many assets on the launch scene, downloading and loading assets for a long time may result in a short black screen when entering the game for the first time. If **First game asset package into the game package** is checked, you can reduce the black screen time when you first enter the game. However, it should be noted that the `res/import` asset does not support split asset downloading at this time, and the entire `import` directory is also packaged into the first package.
-  
+
       Developers can choose whether to check this item according to their needs and then click **Build**.
 
   3. After the build is complete, click the **Open** button after the **Build Path** to upload the `res` directory under the release path to the small packet mode server. For example, if the default release path is `build`, the **Build Task Name** is `vivo-mini-game`, you need to upload the `/build/vivo-mini-game/res` directory.
@@ -68,7 +68,7 @@ The specific filling rules for the relevant parameter configuration are as follo
 
   At this point, the `res` directory will no longer be included in the built-up rpk, and the assets in the `res` directory will be downloaded from the filled **Small Packet Mode Server Path** through the network request.
 
-- **Keystore**: when you check the **Keystore**, the default is to build the rpk package with a certificate that comes with Creator 3D, which is used only for **debugging**. 
+- **Keystore**: when you check the **Keystore**, the default is to build the rpk package with a certificate that comes with Creator, which is used only for **debugging**. 
 
   > **Note**: When the rpk package is to be used to submit an audit, do not check the **Keystore** to build it.
   
@@ -87,7 +87,7 @@ The specific filling rules for the relevant parameter configuration are as follo
       openssl req -newkey rsa:2048 -nodes -keyout private.pem   -x509 -days 3650 -out certificate.pem
       ```
 
-      > **Note**: **openssl** can be used directly in the terminal in Linux or Mac environment, and in the Windows environment you need to install `openssl` and configure system environment variables. Restart Creator 3D after the configuration is complete.
+      > **Note**: **openssl** can be used directly in the terminal in Linux or Mac environment, and in the Windows environment you need to install `openssl` and configure system environment variables. Restart Creator after the configuration is complete.
 
 **2. Build**
 

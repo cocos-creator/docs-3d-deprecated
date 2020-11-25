@@ -1,5 +1,5 @@
 # Light Gizmo
-For more information about the light of __Cocos Creator 3D__, you can read the [Light Introduction](../../concepts/scene/light.md) documentation.
+For more information about the light of __Cocos Creator__, you can read the [Light Introduction](../../concepts/scene/light.md) documentation.
 
 ## Directional Light
 `Directional Light Gizmo` shows the direction of the directional light.
@@ -12,10 +12,6 @@ For more information about the light of __Cocos Creator 3D__, you can read the [
 ![sphere light gizmo](images/sphere-light-gizmo.png)
 
 ## Spot Light
-`Spot Light Gizmo` shows the color, area and spot angle of spot light，you can edit the area and angle of light by dragging the control quad.
+`Spot Light Gizmo` shows the color, area and spot angle of spot light, you can edit the area and angle of light by dragging the control quad.
 
 ![spot light gizmo](images/spot-light-gizmo.png)
-
----
-
-Continue to the [Scene Editor](index.md) documentation.

@@ -1,6 +1,6 @@
 # 精灵帧资源（SpriteFrame）
 
-Cocos Creator 3D SpriteFrame 是 UI 渲染基础图形的容器。其本身管理图像的裁剪和九宫格信息，默认持有一个与其同级的 Texture2D 资源引用。
+Cocos Creator SpriteFrame 是 UI 渲染基础图形的容器。其本身管理图像的裁剪和九宫格信息，默认持有一个与其同级的 Texture2D 资源引用。
 
 ## 导入精灵帧资源
 

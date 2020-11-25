@@ -1,6 +1,6 @@
 # 组件
 
-Cocos Creator 3D 中包括以下功能组件：
+Cocos Creator 中包括以下功能组件：
 
 - [AudioSource](../../audio-system/overview.md)
 - [MeshRenderer](../../engine/renderable/model-component.md)
@@ -14,8 +14,4 @@ Cocos Creator 3D 中包括以下功能组件：
 - [Line](../../particle-system/line-component.md)
 - [ParticleSystem](../../particle-system/main-module.md)
 - [物理组件](../../physics/physics-component.md)
-- [UI组件](../../ui-system/components/editor/index.md)
-
----
-
-继续前往 [AudioSource](../../audio-system/overview.md) 说明文档。
+- [UI 组件](../../ui-system/components/editor/index.md)

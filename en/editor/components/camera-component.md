@@ -1,12 +1,14 @@
 # Camera
 
-The __Camera__ in a game is the main tool used to capture __Scenes__. The visible range of the __Camera__ is controlled by adjusting camera-related parameters. The __Camera__ is represented as follows in the __Cocos Creator 3D__ editor:
+The __Camera__ in a game is the main tool used to capture __Scenes__. The visible range of the __Camera__ is controlled by adjusting camera-related parameters. The __Camera__ is represented as follows in the __Cocos Creator__ editor:
 
 ![camera](camera/camera.jpg)
 
 The __Camera__'s visual range is composed of __6__ planes forming a **Frustum**, a **Near Plane**, and a **Far Plane** to control the visible distance and range of near and far distance, at the same time, they also constitute the size of the viewport.
 
 ![camera view](camera/camera-view.gif)
+
+To use `Camera`, please refer to the [Camera API](https://docs.cocos.com/creator3d/api/en/classes/component_camera.camera.html).
 
 ## Camera components
 

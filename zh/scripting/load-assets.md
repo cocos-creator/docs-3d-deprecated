@@ -1,6 +1,6 @@
 # 获取和加载资源
 
-Cocos Creator 3D 采用与 Cocos Creator 统一的资源管理机制，在本篇教程，我们将介绍
+Cocos Creator 3.0 采用与 Cocos Creator v2.x 统一的资源管理机制，在本篇教程，我们将介绍：
 
 - 资源属性的声明
 - 如何在 **属性检查器** 里设置资源
@@ -10,7 +10,7 @@ Cocos Creator 3D 采用与 Cocos Creator 统一的资源管理机制，在本篇
 
 ## 资源属性的声明
 
-在 Cocos Creator 3D 中，所有继承自 `Asset` 的类型都统称资源，如 `Texture2D`, `SpriteFrame`, `AnimationClip`, `Prefab` 等。它们的加载是统一并且自动化的，相互依赖的资源能够被自动预加载。
+在 Cocos Creator 3.0 中，所有继承自 `Asset` 的类型都统称资源，如 `Texture2D`、`SpriteFrame`、`AnimationClip`、`Prefab` 等。它们的加载是统一并且自动化的，相互依赖的资源能够被自动预加载。
 
 > 例如，当引擎在加载场景时，会先自动加载场景关联到的资源，这些资源如果再关联其它资源，其它也会被先被加载，等加载全部完成后，场景加载才会结束。
 
@@ -65,51 +65,53 @@ export class test extends Component {
 这样就能在脚本里直接拿到设置好的资源：
 
 ```typescript
-    start () {
-        let spriteFrame = this.spriteFrame;
-        let texture = this.texture;
-    }
+start () {
+    let spriteFrame = this.spriteFrame;
+    let texture = this.texture;
+}
 ```
 
 在 **属性检查器** 里设置资源虽然很直观，但资源只能在场景里预先设好，没办法动态切换。如果需要动态切换，你需要看看下面的内容。
 
 ## 动态加载
 
-关于资源加载,我们提供了各类型资源加载的案例,可参考:[test-case-3d(AssetLoading)](https://github.com/cocos-creator/test-cases-3d/tree/master/assets/cases/scripting/asset_loading)
+关于资源加载，我们提供了各类型资源加载的案例，可参考：[test-case-3d（AssetLoading）](https://github.com/cocos-creator/test-cases-3d/tree/master/assets/cases/scripting/asset_loading)
 
-动态加载资源要注意两点，一是所有需要通过脚本动态加载的资源，都必须放置在 `resources` 文件夹或它的子文件夹下。`resources` 需要在 assets 文件夹中手工创建，并且必须位于 assets 的根目录，就像这样：
+动态加载资源要注意以下两点：
 
-![asset-in-properties-null](load-assets/resources-file-tree.png)
+1. 所有需要通过脚本动态加载的资源，都必须放置在 `resources` 文件夹或它的子文件夹下。`resources` 需要在 assets 文件夹中手工创建，并且必须位于 assets 的根目录，就像这样：
 
-> **resources** 文件夹中的资源，可以引用文件夹外部的其它资源，同样也可以被外部场景或资源引用到。项目构建时，除了已在 **构建发布** 面板勾选的场景外，**resources** 文件夹中的所有资源，连同它们关联依赖的 **resources** 文件夹外部的资源，都会被导出。
->
-> 如果一份资源仅仅是被 resources 中的其它资源所依赖，而不需要直接被 `loader.loadRes` 调用，那么 **请不要** 放在 resources 文件夹里。否则会增大包体和 settings.ts 的大小，并且项目中无用的资源，将无法在构建的过程中自动剔除。同时在构建过程中，JSON 的自动合并策略也将受到影响，无法尽可能将零碎的 JSON 合并起来。
+    ![asset-in-properties-null](load-assets/resources-file-tree.png)
 
-第二个要注意的是 Cocos Creator 3D 的资源动态加载都是 **异步** 的，需要在回调函数中获得载入的资源。这么做是因为除了场景关联的资源，没有另外的资源预加载列表，动态加载的资源是真正的动态加载。
+    > **resources** 文件夹中的资源，可以引用文件夹外部的其它资源，同样也可以被外部场景或资源引用到。项目构建时，除了已在 **构建发布** 面板勾选的场景外，**resources** 文件夹中的所有资源，连同它们关联依赖的 **resources** 文件夹外部的资源，都会被导出。
+    >
+    > 如果一份资源仅仅是被 resources 中的其它资源所依赖，而不需要直接被 `loader.loadRes` 调用，那么 **请不要** 放在 resources 文件夹里。否则会增大包体和 settings.ts 的大小，并且项目中无用的资源，将无法在构建的过程中自动剔除。同时在构建过程中，JSON 的自动合并策略也将受到影响，无法尽可能将零碎的 JSON 合并起来。
+
+2. Cocos Creator 3.0 的资源动态加载都是 **异步** 的，需要在回调函数中获得载入的资源。这么做是因为除了场景关联的资源，没有另外的资源预加载列表，动态加载的资源是真正的动态加载。
 
 ### 动态加载 Asset
 
-Cocos Creator 3D 提供了 `loader.loadRes` 这个 API 来专门加载那些位于 resources 目录下的 Asset。和 `loader.load` 不同的是，loadRes 一次只能加载单个 Asset。调用时，你只要传入相对 resources 的路径即可，并且路径的结尾处 **不能** 包含文件扩展名。
+Cocos Creator 提供了 `loader.loadRes` 这个 API 来专门加载那些位于 resources 目录下的 Asset。和 `loader.load` 不同的是，loadRes 一次只能加载单个 Asset。调用时，你只要传入相对 resources 的路径即可，并且路径的结尾处 **不能** 包含文件扩展名。
 
 ```typescript
 // 加载 Prefab
-loader.loadRes("test assets/prefab", Prefab , (err: any, prefab: Prefab) => {
+loader.loadRes("test assets/prefab", Prefab, (err: any, prefab: Prefab) => {
     const newNode = instantiate(prefab);
     this.node.addChild(newNode);
 });
 
 // 加载 AnimationClip
-loader.loadRes("test assets/anim", AnimationClip , (err: any, clip: AnimationClip) => {
+loader.loadRes("test assets/anim", AnimationClip, (err: any, clip: AnimationClip) => {
     this.node.getComponent(Animation).addClip(clip, "anim");
 });
 ```
 
 #### 加载 SpriteFrame 或 Texture2D
 
-图片设置为 sprite-frame 或 texture 或其他图片类型后，将会在 **资源管理器** 中生成一个对应类型的资源。但如果直接加载 `test assets/image`，得到的类型将会是 ImageAsset。你必须在图片路径之后加入资源类型，才能加载到图片生成的 对应资源的子资源, 如果不确定对应资源的路径可以在运行或预览时到settings.js中查看：
+图片设置为 sprite-frame 或 texture 或其他图片类型后，将会在 **资源管理器** 中生成一个对应类型的资源。但如果直接加载 `test assets/image`，得到的类型将会是 ImageAsset。你必须在图片路径之后加入资源类型，才能加载到图片生成的 对应资源的子资源，如果不确定对应资源的路径可以在运行或预览时到 `settings.js` 中查看：
 
 ```typescript
-// 加载 SpriteFrame，image 是 ImageAsset，spriteFrame 是 image/spriteFrame，  texture 是 image/texture
+// 加载 SpriteFrame，image 是 ImageAsset，spriteFrame 是 image/spriteFrame，texture 是 image/texture
 loader.loadRes("test assets/image/spriteFrame", SpriteFrame ,(err: any, spriteFrame: SpriteFrame) => {
     this.node.getComponent(Sprite).spriteFrame = spriteFrame;
 });
@@ -132,7 +134,7 @@ loader.loadRes("test assets/image/texture", Texture2D ,(err: any, texture: Textu
 
 ```typescript
 // 加载 SpriteAtlas（图集），并且获取其中的一个 SpriteFrame
-// 注意 atlas 资源文件（plist）通常会和一个同名的图片文件（png）放在一个目录下, 所以需要在第二个参数指定资源类型,且加载时请加载后缀为 .plist 的文件,且需要后缀名
+// 注意 atlas 资源文件（plist）通常会和一个同名的图片文件（png）放在一个目录下，所以需要在第二个参数指定资源类型，且加载时请加载后缀为 .plist 的文件，且需要后缀名
 loader.loadRes("test assets/atlas.plist", SpriteAtlas, (err: any, atlas: SpriteAtlas) => {
     const frame = atlas.getSpriteFrame('sheep_run_0');
     this.node.getComponent(Sprite).spriteFrame = frame;
@@ -154,7 +156,7 @@ loader.releaseRes("test assets/anim");
 loader.releaseAsset(spriteFrame);
 ```
 
-特别说明, 使用 `loader.loadRes` 或 `loader.loadResDir` 动态加载的资源，不受场景设置的影响，默认不自动释放,可以使用 `setAutoRelease` 来改变单个资源的默认行为,强制在切换场景时保留或者释放指定资源。
+特别说明：使用 `loader.loadRes` 或 `loader.loadResDir` 动态加载的资源，不受场景设置的影响，默认不自动释放，可以使用 `setAutoRelease` 来改变单个资源的默认行为，强制在切换场景时保留或者释放指定资源。
 
 ```typescript
 loader.setAutoRelease(spriteFrame, true);
@@ -178,7 +180,7 @@ loader.loadResDir("test assets", SpriteFrame, function (err, assets, urls) {
 
 ## 加载远程资源和设备资源
 
-在目前的 Cocos Creator 3D中，我们支持加载远程贴图资源，这对于加载用户头像等需要向服务器请求的贴图很友好，需要注意的是，这需要开发者直接调用 `loader.load`。同时，如果用户用其他方式下载了资源到本地设备存储中，也需要用同样的 API 来加载，上文中的 `loadRes` 等 API 只适用于应用包内的资源和热更新的本地资源。下面是这个 API 的用法：
+目前 Cocos Creator 支持加载远程贴图资源，这对于加载用户头像等需要向服务器请求的贴图很友好，需要注意的是，这需要开发者直接调用 `loader.load`。同时，如果用户用其他方式下载了资源到本地设备存储中，也需要用同样的 API 来加载，上文中的 `loadRes` 等 API 只适用于应用包内的资源和热更新的本地资源。下面是这个 API 的用法：
 
 ```typescript
 // 远程 url 带图片后缀名
@@ -205,7 +207,7 @@ loader.load({url: remoteUrl, type: 'png'}, function () {
 
 **首先最为重要的一点就是：资源之间是互相依赖的。**
 
-比如下图，Prefab 资源中的 Node 包含 Sprite 组件, Sprite 组件依赖于 SpriteFrame，SpriteFrame 资源依赖于 Texture 资源，而 Prefab，SpriteFrame 和 Texture 资源都被 loader 缓存起来了。这样做的好处是，有可能有另一个 SpriteAtlas 资源依赖于同样的一个 SpriteFrame 和 Texture，那么当你手动加载这个 SpriteAtlas 的时候，就不需要再重新请求贴图资源了，loader 会自动使用缓存中的资源。
+比如下图，Prefab 资源中的 Node 包含 Sprite 组件，Sprite 组件依赖于 SpriteFrame，SpriteFrame 资源依赖于 Texture 资源，而 Prefab，SpriteFrame 和 Texture 资源都被 loader 缓存起来了。这样做的好处是，有可能有另一个 SpriteAtlas 资源依赖于同样的一个 SpriteFrame 和 Texture，那么当你手动加载这个 SpriteAtlas 的时候，就不需要再重新请求贴图资源了，loader 会自动使用缓存中的资源。
 
 ![](load-assets/asset-dep.png)
 
@@ -234,7 +236,3 @@ loader.release(deps);
 想象一种情况，当你释放了 loader 对某个资源的引用之后，由于考虑不周的原因，游戏逻辑再次请求了这个资源。此时垃圾回收还没有开始（垃圾回收的时机不可控），或者你的游戏逻辑某处，仍然持有一个对于这个旧资源的引用，那么意味着这个资源还存在内存中，但是 loader 已经访问不到了，所以会重新加载它。这造成这个资源在内存中有两份同样的拷贝，浪费了内存。如果只是一个资源还好，但是如果类似的资源很多，甚至不止一次被重复加载，这对于内存的压力是有可能很高的。如果观察到游戏使用的内存曲线有这样的异常，请仔细检查游戏逻辑，是否存在泄漏，如果没有的话，垃圾回收机制是会正常回收这些内存的。
 
 以上就是管理资源依赖和释放时需要注意的细节，这部分的功能和 API 设计还没有完全定案，我们还是希望尽力给大家带来尽可能方便的引擎 API，所以后续也会尝试一些其他的办法提升友好度，届时会更新这篇文档。
-
----
-
-继续前往 [事件系统](..\engine\event\index.md) 说明文档。

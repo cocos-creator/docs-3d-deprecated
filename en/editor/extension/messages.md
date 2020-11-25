@@ -1,6 +1,6 @@
 # Message system
 
-There are many independently running processes in **Cocos Creator 3D**, and these processes are isolated from each other.
+There are many independently running processes in **Cocos Creator**, and these processes are isolated from each other.
 When you need to interact with other functions in the editor, you need to interact through **messages**.
 
 The **message system** in the editor is a function expansion package of IPC (Interprocess Communication). This system bears the burden of communication and interaction in the entire editor.
@@ -16,7 +16,7 @@ The first is called ordinary messages, and the second is called broadcast messag
 
 ### General News
 
-It can be understood as a kind of external api, for example, **scene editor** defines a **message** API-query-node (query-node).
+It can be understood as a kind of external api, for example, **scene editor** defines a **message** API `query-node`.
 
 ```json
 {

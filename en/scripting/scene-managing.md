@@ -1,6 +1,6 @@
 # Loading and Switching Scenes
 
-__Cocos Creator 3D__ uses the scene's file name (without extension) to index the scene. Loading and switching scenes is performed using the `loadScene()` API. Example:
+__Cocos Creator__ uses the scene's file name (without extension) to index the scene. Loading and switching scenes is performed using the `loadScene()` API. Example:
 
 ```ts
 director.loadScene("MyScene");
@@ -55,7 +55,3 @@ director.loadScene("table");
 ```
 
 > **Note**: if the preloading is not complete, you can also call `director.loadScene()` directly, and the scene will start after the preloading is complete.
-
----
-
-Continue to the [Loading Assets](load-assets.md) documentation.

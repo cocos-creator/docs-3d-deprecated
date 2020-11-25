@@ -1,6 +1,6 @@
 # 扩展已有的功能
 
-Cocos Creator 3D 支持各个扩展间互相提供数据(contributions)。
+Cocos Creator 支持各个扩展间互相提供数据(contributions)。
 
 我们在编写一个扩展的时候，可以查询编辑器内已有功能是否提供了对外接收 contributions 的功能。如果对应功能提供该功能，则能够在编写扩展的时候使用这些功能。
 

@@ -6,7 +6,9 @@ ProgressBar（进度条）经常被用于在游戏中显示某个操作的进度
 
 点击 **属性检查器** 下面的 **添加组件** 按钮，然后选择 **UI/ProgressBar** 即可添加 ProgressBar 组件到节点上。
 
-<!-- 进度条的脚本接口请参考[ProgressBar API](../../../api/zh/classes/ProgressBar.html)。 -->
+进度条的脚本接口请参考[ProgressBar API](https://docs.cocos.com/creator3d/api/zh/classes/ui.progressbar.html)。
+
+关于使用可以参考 test-cases-3d 里的 [progress](https://github.com/cocos-creator/test-cases-3d/tree/master/assets/cases/ui/11.progress) 相关。
 
 ## ProgressBar 属性
 
@@ -25,9 +27,3 @@ ProgressBar（进度条）经常被用于在游戏中显示某个操作的进度
 Bar Sprite 可以是自身节点，子节点，或者任何一个带有 **Sprite** 组件的节点。另外，Bar Sprite 可以自由选择 Simple、Sliced 和 Filled 渲染模式。
 
 进度条的模式选择 **FILLED** 的情况下，Bar Sprite 的 **Type** 也需要设置为 **FILLED**，否则会报警告。<!--详细使用说明请查阅[ProgressBar UI 控件介绍](../ui/ui-components.md#progressbar-)。-->
-
----
-
-- [其他基础模块参考](base-component.md)
-
-- [渲染模块参考](render-component.md)

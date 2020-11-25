@@ -17,7 +17,7 @@ The general particle system will consist of the following parts:
 4. Particle class, which stores the properties of particles.
 5. The particle system class manages the above modules.
 
-The __Cocos Creator 3D__ particle system organizes functions in modules, including the following modules:
+The __Cocos Creator__ particle system organizes functions in modules, including the following modules:
 
 Module | Description
 ---|---
@@ -37,7 +37,3 @@ There are two ways to add a particle system module:
    - You can also add a particle system component through the left-level hierarchy manager __right-click-> Create -> Effects-> Particle System__, as shown below:
 
    ![](particle-system/new_ParticleSystemComponent_node.png)
-
----
-
-Continue to the [Particle System Module](module.md) documentation。

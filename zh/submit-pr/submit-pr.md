@@ -1,11 +1,11 @@
 # 如何向 Cocos 提交代码
 
-和 Cocos2d-x-lite 一样，Cocos Creator 3D 也是一个开源引擎，连同范例、文档都是开源的。<br>
+和 Cocos2d-x-lite 一样，Cocos Creator 也是一个开源引擎，连同范例、文档都是开源的。<br>
 在你开发游戏的过程中，当发现了引擎、文档或者范例不够完善的地方，如果仅仅是向官方团队提出建议，官方团队可能会因为人力资源的紧张而无法及时跟进。在此我们欢迎所有用户主动向我们提交 PR，帮助 Cocos 越做越好。引擎有 Bug？提 PR！范例难看？提 PR！API 注释不清晰？提 PR！文档有错别字？提 PR！想要把你的宝贵修改贡献给游戏社区？提 PR！以下几个是目前官方比较常用的开源仓库，这些仓库都可以提交 PR。
 
-JavaScript 引擎：<https://github.com/cocos-creator/engine/tree/3d><br>
-Cocos2d-x-lite 引擎：<https://github.com/cocos-creator/cocos2d-x-lite><br>
-jsb-adapter：<https://github.com/cocos-creator-packages/jsb-adapter>
+- **JavaScript 引擎**：<https://github.com/cocos-creator/engine/tree/3d><br>
+- **Cocos2d-x-lite 引擎**：<https://github.com/cocos-creator/cocos2d-x-lite><br>
+- **jsb-adapter**：<https://github.com/cocos-creator-packages/jsb-adapter>
 
 下面让我们来看一下，如何从零开始在 GitHub 上向 Cocos 提交代码。
 
@@ -27,7 +27,7 @@ jsb-adapter：<https://github.com/cocos-creator-packages/jsb-adapter>
 
 GitKraken 是比较常用的 Git 客户端工具。如果不使用 GitKraken 的话，Git 操作全部要通过命令行操作完成，比较麻烦。下面以 Windows 版本为例进行演示。
 
-1、下载 [GitKraken](https://www.gitkraken.com/) 并解压缩，进行安装。
+首先需要下载 [GitKraken](https://www.gitkraken.com/) 并解压缩，进行安装。
 
 ![GitKraken install](submit-pr/sourcetree_install.png)
 
@@ -115,13 +115,13 @@ Fork 完成后，会自动跳转到你的 GitHub 仓库页面，可以看到已�
 
 针对文档本身的问题，建议通过 GitHub issue 进行反馈，下面我们简单演示一下。在提交问题之前请先确认：
 
-- 文档版本和 Creator 3D 版本是否一致
+- 文档版本和 Creator 版本是否一致
 - 操作步骤是否正确
 - 是否是文档本身的问题，例如代码错误或者根据文档步骤执行出现异常等。
 
 若以上问题都是确定的，那么，有以下两种提交方式：
 
-1、可在 creator 3D 官方文档的右下方点击 **提交反馈** 进入提交 issue 界面。
+1、可点击 Creator 官方文档右下方的 **提交反馈** 按钮，进入提交 issue 界面。
 
 ![issue](submit-pr/issue.png)
 
@@ -130,4 +130,4 @@ Fork 完成后，会自动跳转到你的 GitHub 仓库页面，可以看到已�
 2、或者也可以进入官方仓库 [docs-3d](https://github.com/cocos-creator/docs-3d)，选择 **Issue -> New issue** 进入提交 issue 界面，填写内容并提交。
 
 本次提交 pr 和提交 issue 的教程到这里就结束了，若有不理解或者有误的地方请根据上述步骤向我们反馈。<br>
-有些人可能会问，为什么要这么麻烦的提交问题。其实，正确的提交问题可以节省很多的沟通成本，而且有些问题可能在初步排查的时候就可以解决了，或者会发现只是由于自己粗心大意导致的。而官方节省下来的人力就可以更好的去服务于 Creator 3D ，让 Creator 3D 能更好地为游戏开发者服务。 
+有些人可能会问，为什么要这么麻烦的提交问题。其实，正确的提交问题可以节省很多的沟通成本，而且有些问题可能在初步排查的时候就可以解决了，或者会发现只是由于自己粗心大意导致的。而官方节省下来的人力就可以更好的去服务于 Creator，让 Creator 能更好地为游戏开发者服务。 

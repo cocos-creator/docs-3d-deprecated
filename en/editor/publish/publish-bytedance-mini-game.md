@@ -6,7 +6,7 @@
 
 The game submission, review and release process of a mini-game needs to comply with the requirements and standard processes of the Byte official specification. For specific information, please refer to the links at the end of this document.
 
-## Publishing to ByteDance with Cocos Creator 3D
+## Publishing to ByteDance with Cocos Creator
 
 1. Download the **ByteDance DevTools** on [ByteDance Official Website](https://microapp.bytedance.com/docs/zh-CN/mini-game/develop/developer-instrument/developer-instrument-update-and-download).
 
@@ -29,7 +29,7 @@ The game submission, review and release process of a mini-game needs to comply w
 Options | Optional or not | Default | Explanation
 - | - | - | -
 **appid** | Required | `testId` | The appid of the ByteDance Mini Games, it will be written to `project.config.json` file.
-**Remote server address** | Optional | Empty | The remote server address. Resources will then be obtained from this address. 
+**Remote server address** | Optional | Empty | The remote server address. Resources will then be obtained from this address.
 **Open data context root** | Optional | Empty | If an Open Data Context exists, use this root to specify the relative path of the Open Data Context folder in the build directory so that the directory is not overwritten or modified during the build.
 **Orientation** | Required | `landscape` | Device orientation, it will be written to `game.json` file.
 
@@ -45,7 +45,7 @@ In a **ByteDance Mini Game** environment, asset management is the most special p
 
 4. You cannot download script files from a remote server.
 
-This brings up two key issues, home page loading speed and remote asset caching and version management. For the home page loading speed, we recommend that developers only save the script file in the **ByteDance Mini Game** package, and all other assets are downloaded from the remote server. As for downloading, caching and version management of remote assets, Cocos Creator 3D has done the job for developers.
+This brings up two key issues, home page loading speed and remote asset caching and version management. For the home page loading speed, we recommend that developers only save the script file in the **ByteDance Mini Game** package, and all other assets are downloaded from the remote server. As for downloading, caching and version management of remote assets, Cocos Creator has done the job for developers.
 
 Specifically, developers need to do the following:
 

@@ -1,13 +1,13 @@
 # Physics Component
 
-__Cocos Creator 3D__ currently provides users with a variety of __collider components__, common __rigid body components__, as well as __tool-type constant force components__.
+__Cocos Creator__ currently provides users with a variety of __collider components__, common __rigid body components__, as well as __tool-type constant force components__.
 
 ## Collider Component
 
 The __collider component__ is used to represent the shape of the __collision body__ of a __rigid body__. Different geometric shapes have different properties.
 
-> **Note**：The following property names are all lowercase in the actual code.
-> **Note**：Currently only box, sphere and capsule are supported in `builtin`.
+> **Note**: The following property names are all lowercase in the actual code.
+> **Note**: Currently only box, sphere and capsule are supported in `builtin`.
 
 ### BoxCollider
 
@@ -20,6 +20,8 @@ The __collider component__ is used to represent the shape of the __collision bod
   **center** | The origin of the shape in the local coordinate system
   **size** | The size of the box, ie length, width, height
 
+To use `BoxCollider`, please refer to the [BoxCollider API](https://docs.cocos.com/creator3d/api/en/classes/physics.boxcollider.html).
+
 ### SphereCollider
 
 ![SphereCollider](img/collider-sphere.jpg)
@@ -27,6 +29,8 @@ The __collider component__ is used to represent the shape of the __collision bod
 Properties | Description (Other reference box colliders)
 ---|---
 **radius** | Radius of the sphere
+
+To use `SphereCollider`, please refer to the [SphereCollider API](https://docs.cocos.com/creator3d/api/en/classes/physics.spherecollider.html).
 
 ### CylinderCollider
 
@@ -38,6 +42,8 @@ Properties | Description (Other reference box colliders)
 **height** | The total height of the cylinder
 **radius** | The radius of the circular surfaces at both ends of the cylinder
 
+To use `CylinderCollider`, please refer to the [CylinderCollider API](https://docs.cocos.com/creator3d/api/en/classes/physics.cylindercollider.html).
+
 ### CapsuleCollider
 
 ![CapsuleCollider](img/collider-capsule.jpg)
@@ -46,6 +52,8 @@ Properties | Description（Other reference cylinders and box colliders）
 ---|---
 **cylinderHeight** | The height of the cylinder in the capsule
 **radius** | The radius of the sphere in the capsule
+
+To use `CapsuleCollider`, please refer to the [CapsuleCollider API](https://docs.cocos.com/creator3d/api/en/classes/physics.capsulecollider.html).
 
 > **Note**: `cannon.js` does not support capsule components. It is recommended to use two spheres and cylinders and piece them together.
 
@@ -58,6 +66,8 @@ Properties | Description（Other reference cylinders and box colliders）
 **radius** | The radius of the circle of the underside of the cone
 **height** | The height of the cone
 
+To use `ConeCollider`, please refer to the [ConeCollider API](https://docs.cocos.com/creator3d/api/en/classes/physics.conecollider.html).
+
 ### PlaneCollider
 
 ![PlaneCollider](img/collider-plane.jpg)
@@ -67,6 +77,8 @@ Properties | Description (Other reference box colliders)
 **normal** | The normal vector to the plane
 **constant** | The distance that the plane moves along the normal vector
 
+To use `PlaneCollider`, please refer to the [PlaneCollider API](https://docs.cocos.com/creator3d/api/en/classes/physics.planecollider.html).
+
 ### MeshCollider
 
 ![MeshCollider](img/collider-mesh.jpg)
@@ -75,6 +87,8 @@ Properties | Description (Other reference box colliders)
 ---|---
 **mesh** | The mesh asset referenced by the mesh collider, used to initialize the mesh collision volume
 **convex** | Whether used the convex hull of the mesh is approximated, the number of vertices of the mesh should be less than 255 (through which any convex collider and dynamic rigid body can be supported).
+
+To use `MeshCollider`, please refer to the [MeshCollider API](https://docs.cocos.com/creator3d/api/en/classes/physics.meshcollider.html).
 
 > **Note**: `cannon.js` has poor support for the mesh collider component, and only allows detection with the sphere collider.
 > **Note**: Currently only `ammo.js` backend supports `convex` functionality.
@@ -91,9 +105,11 @@ Properties | Description (Other reference box colliders)
 **vertex2** | Vertex 2 of the simplex, triangular face (consisting of 0,1,2)
 **vertex3** | Vertex 3 of the simplex, tetrahedron (consisting of 0,1,2,3)
 
+To use `SimplexCollider`, please refer to the [SimplexCollider API](https://docs.cocos.com/creator3d/api/en/classes/physics.simplexcollider.html).
+
 ## RigidBody
 
-In order to more easily simulate physical behavior, __Cocos Creator 3D__ provides users with __rigid body components__.
+In order to more easily simulate physical behavior, __Cocos Creator__ provides users with __rigid body components__.
 
 ![RigidBody](img/rigid-body.jpg)
 
@@ -108,6 +124,8 @@ Properties | Description (The property values ​​in the above picture are all
 **fixedRotation** | Whether it is necessary to fix the object's rotation during collision
 **linerFactor** | Linear factor, which can affect the change of linear velocity in each axis
 **angularFactor** | Rotation factor, which can affect the change of the rotation speed of each axis
+
+To use `RigidBody`, please refer to the [MeshRenderer API](https://docs.cocos.com/creator3d/api/en/classes/physics.rigidbody.html).
 
 > **Note**: `builtin` does not currently support `RigidBody`.
 
@@ -124,8 +142,6 @@ Properties | Description
 **torque** | Torque applied to the rigid body in the world coordinate system
 **localTorque** | Torque applied to the rigid body in the local coordinate system
 
-> **Note**: `builtin` does not currently support Hengli components*.
+To use `ConstantForce`, please refer to the [ConstantForce API](https://docs.cocos.com/creator3d/api/en/classes/physics.constantforce.html).
 
----
-
-Continue to the [using physics](physics-use.md) documentation.
+> **Note**: `builtin` does not currently support ConstantForce components*.

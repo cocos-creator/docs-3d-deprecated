@@ -1,6 +1,6 @@
 # Animation overview
 
-__Cocos Creator 3D__ has a built-in general animation system to realize animation based on key frames.
+__Cocos Creator__ has a built-in general animation system to realize animation based on key frames.
 
 __Animation Clips__ are assets that contain animation information. __Animation Clips__ can be reused, and their state is saved in an object called an __Animation State__.
 __Animation State__ can *play*, *pause*, *stop*, and *change* the animation.

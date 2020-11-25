@@ -1,10 +1,10 @@
 # The Animation system
 
-This chapter will introduce the __Animation System__ of __Cocos Creator 3D__. In addition to *standard displacement*, *rotation*, *zoom animation* and *sequence frame animation*, this __Animation System__ also supports *arbitrary component properties* and *user-defined properties*.  Plus the time of arbitrary editing curves and innovative mobile trajectory editing functions enable content producers to create delicate, yet, dynamic effects without writing a line of code.
+This chapter will introduce the __Animation System__ of __Cocos Creator__. In addition to *standard displacement*, *rotation*, *zoom animation* and *sequence frame animation*, this __Animation System__ also supports *arbitrary component properties* and *user-defined properties*.  Plus the time of arbitrary editing curves and innovative mobile trajectory editing functions enable content producers to create delicate, yet, dynamic effects without writing a line of code.
 
 ![animation cover](index/main.gif)
 
-> **Note**: __Cocos Creator 3D__'s built-in __Animation Editor__ is suitable for making less complex animations that need to be linked with logic, such as __UI animations__.
+> **Note**: __Cocos Creator__'s built-in __Animation Editor__ is suitable for making less complex animations that need to be linked with logic, such as __UI animations__.
 
 - [About Animation](animation.md)
 - [Familiar with animation editor](animation-editor.md)

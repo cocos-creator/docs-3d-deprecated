@@ -2,7 +2,7 @@
 
 > **Note**: Some platforms only have Chinese documentation available when visiting the platforms website. It may be necessary to use Google Translate in-order to review the documentation.
 
-__Cocos Creator 3D__ officially supports the release of games to the **OPPO Mini Games**. 
+__Cocos Creator__ officially supports the release of games to the **OPPO Mini Games**.
 
 ## Environment Configuration
 
@@ -14,7 +14,7 @@ __Cocos Creator 3D__ officially supports the release of games to the **OPPO Mini
 
 ## Release Process
 
-1. Use **Cocos Creator 3D** to open the project that needs to be released. Select **OPPO Mini Game** in the **Platform** dropdown of the **Build** panel.
+1. Use **Cocos Creator** to open the project that needs to be released. Select **OPPO Mini Game** in the **Platform** dropdown of the **Build** panel.
 
     ![](./oppo-mini-game/build_options.jpg)
 
@@ -36,14 +36,14 @@ The specific filling rules for the relevant parameter configuration are as follo
 
 - **Supported Minimum Platform Version Number**: is required. According to the requirements for OPPO Mini Games, this value must be greater than or equal to **1031**.
 
-- **Small Packet Mode**: is optional. The in-package volume of the mini-game contains code and assets that cannot exceed 10M, and assets can be loaded via network requests. **Small Packet Mode** is to help users keep the script files in the mini game package, other assets are uploaded to the remote server, and downloaded from the remote server as needed. And the download, cache and version management of remote assets, **Cocos Creator 3D** has already helped the developer. What the developer needs to do is the following steps:
+- **Small Packet Mode**: is optional. The in-package volume of the mini-game contains code and assets that cannot exceed 10M, and assets can be loaded via network requests. **Small Packet Mode** is to help users keep the script files in the mini game package, other assets are uploaded to the remote server, and downloaded from the remote server as needed. And the download, cache and version management of remote assets, **Cocos Creator** has already helped the developer. What the developer needs to do is the following steps:
 
   1. When building, check the **Small Packet Mode** and fill in the **Small Packet Mode Server Path**.
 
   2. **First game asset package into the game package**, this item is optional.
 
       In the **Small Packet Mode**, due to too many assets on the launch scene, downloading and loading assets for a long time may result in a short black screen when entering the game for the first time. If **First game asset package into the game package** is checked, you can reduce the black screen time when you first enter the game. However, it should be noted that the `res/import` asset does not support split asset downloading at this time, and the entire `import` directory is also packaged into the first package.
-  
+
       Developers can choose whether to check this item according to their needs. Then click on **Build**.
 
   3. After the build is complete, click the **Open** button after the **Build Path** to upload the `res` directory under the release path to the small packet mode server. For example, if the default release path is `build`, the **Build Task Name** is `oppo-mini-game`, you need to upload the `/build/oppo-mini-game/res` directory.
@@ -52,7 +52,7 @@ The specific filling rules for the relevant parameter configuration are as follo
 
 - **Build Sub Package**: this option is enabled by default. For details, please refer to **Subpackage** at the end of this document.
 
-- **Keystore**: when you check the **Keystore**, the default is to build the rpk package with a certificate that comes with Creator 3D, which is used only for **debugging**. 
+- **Keystore**: when you check the **Keystore**, the default is to build the rpk package with a certificate that comes with Creator, which is used only for **debugging**. 
 
   > **Note**: When the rpk package is to be used to submit an audit, do not check the **Keystore** to build it.
   
@@ -71,7 +71,7 @@ The specific filling rules for the relevant parameter configuration are as follo
       openssl req -newkey rsa:2048 -nodes -keyout private.pem   -x509 -days 3650 -out certificate.pem
       ```
 
-      > **Note**: **openssl** can be used directly in the terminal in **Linux** or **Mac** environment, and in the **Windows** environment you need to install `openssl` and configure system environment variables. Restart **Cocos Creator 3D** after the configuration is complete.
+      > **Note**: **openssl** can be used directly in the terminal in **Linux** or **Mac** environment, and in the **Windows** environment you need to install `openssl` and configure system environment variables. Restart **Cocos Creator** after the configuration is complete.
 
 **2. Build**
 
@@ -89,7 +89,7 @@ Copy the generated mini-game **rpk** file to the `/sdcard/games/` directory on y
 
 **4. Subpackage rpk**
 
-Subpackage loading, that is, splitting the game content into several packages according to certain rules, only downloading the necessary packages when starting up for the first time. This necessary package is called **main package**, and the developer can trigger in the main package to download other sub-packages, which can effectively reduce the time spent on the first boot. To use this function, you need to set [Subpackage Configuration](../../asset/subpackage.md) in **Cocos Creator 3D**, and the package will be automatically subpackaged when the setting is completed.
+Subpackage loading, that is, splitting the game content into several packages according to certain rules, only downloading the necessary packages when starting up for the first time. This necessary package is called **main package**, and the developer can trigger in the main package to download other sub-packages, which can effectively reduce the time spent on the first boot. To use this function, you need to set [Subpackage Configuration](../../asset/subpackage.md) in **Cocos Creator**, and the package will be automatically subpackaged when the setting is completed.
 
 After the build is complete, the subpackage directory is in the `dist` directory. <br>
 In this case, you need to create a new **subPkg** directory in the **sdcard** directory of the Android device, and then copy the **.rpk** file in the `dist` directory to the **subPkg** directory.

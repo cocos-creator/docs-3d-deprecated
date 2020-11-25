@@ -1,5 +1,6 @@
-# Hello World项目
-第一个Cocos Creator 3D项目, 为您展示:
+# Hello World 项目
+
+第一个 Cocos Creator 项目，为您展示:
 - 创建项目
 - 了解工程目录
 - 创建一个物体
@@ -9,7 +10,7 @@
 
 ## 新建项目
 
-在Dashboard面板中，点击右下角<font color=#A52A2A>新建</font>按钮，在弹出菜单中选中Creator 3D。
+在 Dashboard 面板中，点击右下角<font color=#A52A2A>新建</font>按钮，在弹出菜单中选中 Creator。
 <img src="index/dashboard.png"/>
 
 选择空的模板，设置项目路径，点击下方的<font color=#A52A2A>创建</font>按钮。
@@ -21,6 +22,7 @@
 <img src="index/engine.png"/>
 
 ## 工程目录
+
 通常情况的我们只需要关心<font color=#A52A2A>assets</font>(资源目录)
 
 - assets(资源目录)
@@ -51,16 +53,16 @@
 
 ## 修改Camera
 
-- 选择Camera对象
+- 选择 Camera 对象
 <br/>在层级管理器面板，选择Camera，场景编辑器会选中它，并显示Gizmo。</br>
 <img src="index/select.png"/>
 
-- 修改Camera位置
+- 修改 Camera 位置
 <br/>在场景编辑器里，拖动Gizmo, 使Camera能够看到创建的正方体。</br>
 <img src="index/move.png"/>
 
-- 修改Camera背景颜色
-<br/>在属性检查器面板，点击Color属性，选择黑色为背景色。</br>
+- 修改 Camera 背景颜色
+<br/>在属性检查器面板，点击 Color 属性，选择黑色为背景色。</br>
 <img src="index/property.png"/>
 
 ## 添加脚本
@@ -86,7 +88,7 @@
 
 <br/>
 - 添加代码
-    <br/>添加start()函数，并输出Hello world</br>
+    <br/>添加 start() 函数，并输出 Hello world</br>
 
 ```ts
 import { _decorator, Component, Node } from 'cc';

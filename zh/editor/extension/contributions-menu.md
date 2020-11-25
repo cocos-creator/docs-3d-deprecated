@@ -42,7 +42,7 @@
 - i18n:menu.extension
 - i18n:menu.develop
 
-也可以填写多级菜单，例如 i18n:extension/Hello World
+也可以填写多级菜单，例如 i18n:menu.extension/Hello World
 
 ### label
 
