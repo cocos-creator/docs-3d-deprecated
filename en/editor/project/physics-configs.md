@@ -21,7 +21,7 @@ Physical configuration is used to configure various commonly used properties.
 
 ## Collision Matrix
 
-The collision matrix is used to manage the group and mask of physical elements, It is used to initialize groups and masks of physical elements.
+The collision matrix is used to initialize groups and masks of physical elements.
 
 ![Physics-collision](./index/physics-collision.png)
 

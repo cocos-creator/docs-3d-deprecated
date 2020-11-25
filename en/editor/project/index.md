@@ -171,7 +171,7 @@ For more instructions, please refer to [Camera Component introduction](./../comp
 
 ## Physics
 
-Used to configure the parameters of the physics，For details, please refer to the [Physics Configs](physics-configs.md);
+Used to configure the parameters of the physics environment. For details, please refer to the [Physics Configs](physics-configs.md) documentation.
 
 ## Bone map layout settings
 
