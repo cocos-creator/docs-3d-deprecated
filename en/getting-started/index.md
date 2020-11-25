@@ -10,7 +10,3 @@ This chapter includes the following:
 - [Hello world!](helloworld/index.md)
 - [Quick start: making your first game](first-game/index.md)
 - [Caution](attention/index.md)
-
----
-
-Continue to the [Dashboard](dashboard/index.md) documentation.

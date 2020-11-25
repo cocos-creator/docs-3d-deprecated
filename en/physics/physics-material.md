@@ -56,7 +56,3 @@ Because of the design of [Material Sharing](physics-collider.md##PhysicsMaterial
 collider.material.friction = 0.1;
 collider.material.restitution = 0.1;
 ```
-
----
-
-Continue to the [rigid body component](physics-rigidbody.md) documentation.

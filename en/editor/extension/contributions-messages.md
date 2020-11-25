@@ -58,7 +58,7 @@ If it is a method on the extension, directly define `methodName`, if you want to
 
 ## Define broadcast message
 
-When developing an extension, you need to send some notifications to other extension after completing an action. If these notifications also need to be displayed on the **Developer -> Message List** panel, you can define the message like this:：
+When developing an extension, you need to send some notifications to other extension after completing an action. If these notifications also need to be displayed on the **Developer -> Message List** panel, you can define the message like this:
 
 ```json
 {

@@ -14,7 +14,3 @@ __Cocos Creator__ supports three types of light sources:
 - [Directional Light](light/dir-light.md)
 - [Spherical Light](light/sphere-light.md)
 - [Spotlights](light/spot-light.md)
-
----
-
-Continue to the [Physically Based Lighting](light/pbr-lighting.md) documentation.

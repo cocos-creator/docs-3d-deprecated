@@ -13,7 +13,7 @@ EditBox 的脚本接口请参考 [EditBox API](https://docs.cocos.com/creator3d/
 ## EditBox 属性
 
 | 属性                   | 功能说明                                                                       |
-| --------------         | -----------                                                                  |
+| :-------------         | :----------                                                                  |
 | BackgroundImage      | 输入框背景节点上挂载的 Sprite 组件对象  |
 | FontColor            | 输入框文本的颜色 |
 | FontSize             | 输入框文本的字体大小 |
@@ -120,10 +120,4 @@ export class example extends Component {
 }
 ```
 
-同样的，你也可以注册 `editing-did-ended`, `text-changed` 和 `editing-return` 事件，这些事件的回调函数的参数与 `editing-did-began` 的参数一致。
-
----
-
-- [其他基础模块参考](base-component.md)
-
-- [渲染模块参考](render-component.md)
+同样的，你也可以注册 `editing-did-ended`、`text-changed` 和 `editing-return` 事件，这些事件的回调函数的参数与 `editing-did-began` 的参数一致。

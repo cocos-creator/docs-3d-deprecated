@@ -14,16 +14,16 @@ ToggleContainer 的组件接口请参考 [ToggleContainer API](https://docs.coco
 
 ## ToggleContainer 属性
 
-| 属性 |   功能说明
-| -------------- | ----------- |
-| AllowSwitchOff | 如果这个设置为 true， 那么 toggle 按钮在被点击的时候可以反复地被选中和未选中。
-| CheckEvents | 选中事件。列表类型，默认为空，用户添加的每一个事件由节点引用，组件名称和一个响应函数组成。
+| 属性 | 功能说明 |
+| :------------- | :---------- |
+| AllowSwitchOff | 如果这个设置为 true， 那么 toggle 按钮在被点击的时候可以反复地被选中和未选中。 |
+| CheckEvents | 选中事件。列表类型，默认为空，用户添加的每一个事件由节点引用，组件名称和一个响应函数组成。 |
 
 ## ToggleContainer 事件
 
-事件结构参考：[组件事件结构](./button.md#组件事件结构)      |
+事件结构参考：[组件事件结构](./button.md#组件事件结构)
 
-ToggleContainer 的事件回调有二个参数，第一个参数是 Toggle 本身, 第二个参数是 customEventData。
+ToggleContainer 的事件回调有二个参数，第一个参数是 Toggle 本身，第二个参数是 customEventData。
 
 ## 详细说明
 
@@ -50,14 +50,9 @@ export class example extends Component {
         container.checkEvents.push(containerEventHandler);
     }
 
-    callback(event: Event, customEventData: string){
-        //这里 event 是一个 Touch Event 对象，你可以通过 event.target 取到事件的发送节点
+    callback(event: Event, customEventData: string) {
+        // 这里 event 是一个 Touch Event 对象，你可以通过 event.target 取到事件的发送节点
         // 这里的 customEventData 参数就等于之前设置的 'foobar'
     }
 }
 ```
----
-
-- [其他基础模块参考](base-component.md)
-
-- [渲染模块参考](render-component.md)

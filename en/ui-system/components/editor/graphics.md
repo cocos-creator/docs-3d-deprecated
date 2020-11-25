@@ -60,7 +60,3 @@ export class Example extends Component {
     }
 }
 ```
-
-- [UI Basic Components](base-component.md)
-
-- [UI Renderer Components](render-component.md)

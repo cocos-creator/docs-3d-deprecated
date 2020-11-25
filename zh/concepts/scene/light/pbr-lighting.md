@@ -52,7 +52,3 @@
 真实世界中的光源都具有真实的物理尺寸，同时，光源大小也影响了光源强度。
 
 ![light bulb size](light-bulb-size.png)
-
----
-
-继续前往 [主方向光](dir-light.md) 说明文档。

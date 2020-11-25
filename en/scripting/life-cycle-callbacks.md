@@ -108,7 +108,3 @@ When the `enabled` attribute of the component changes from `true` to `false`, or
 ## onDestroy()
 
 When the component or the node where it calls `destroy()`, the `onDestroy()` callback will be called, and the component will be recycled when the frame ends.
-
----
-
-Continue to [Create and Destroy Nodes](create-destroy.md) documentation.

@@ -29,7 +29,3 @@
 - Ctrl / Cmd + E
 
 更多细节参见 Animation 的[系统设计](./../../engine/animation/index.md)以及 Animation 的[脚本控制](./../../engine/animation/animation-component.md)。
-
----
-
-继续前往 [熟悉动画编辑器面板](animation-editor.md) 说明文档。

@@ -10,7 +10,3 @@ For more information about the collider of __Cocos Creator__, you can read the [
 `Sphere Collider Gizmo` shows the size of sphere, you can edit the radius of sphere by dragging the control quad.
 
 ![sphere collider gizmo](images/sphere-collider-gizmo.png)
-
----
-
-Continue to the [Scene Editor](index.md) documentation.

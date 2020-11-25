@@ -2,7 +2,7 @@
 
 ## 框架说明
 
-为了更友好和便利的维护废弃`API` ，将通过三个函数来实现：
+为了更友好和便利的维护废弃 `API`，将通过三个函数来实现：
 
 - `markAsWarning` 对给予对象上的属性中嵌入一个警告，给予对象需要存在该属性。
 
@@ -69,7 +69,7 @@ export function setDefaultLogTimes (times: number): void;
 ## 使用示例
 
 ```typescript
-// 对于替换参数不兼容的API，通过合适的自定义功能进行适配
+// 对于替换参数不兼容的 API，通过合适的自定义功能进行适配
 replaceProperty(Animation.prototype, 'Animation.prototype', [
     {
         name: 'removeClip',

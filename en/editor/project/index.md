@@ -171,7 +171,7 @@ Example:
 
 This physics configuration will be take effect only when the **Physics Module** is enabled in the **Engine Module**.
 
-It should be noted that the collision matrix is a further encapsulation of the physical group mask functionality.It is similar to the grouping configuration of `Creator 2D`, but with some differences. The grouping configuration of `Creator 2D` is only responsible for initialization, while the grouping configuration of `Creator 3D` is also responsible for automatic updates (which may be adjusted to be initialization only in the future).
+It should be noted that the collision matrix is a further encapsulation of the physical group mask functionality.It is similar to the grouping configuration of `Creator 2D`, but with some differences. The grouping configuration of `Creator 2D` is only responsible for initialization, while the grouping configuration of `Creator` is also responsible for automatic updates (which may be adjusted to be initialization only in the future).
 
 Therefore, after `useCollisionMatrix` is turned on, the mask value can only be set through the collision matrix, meaning that related apis such as `setMask` cannot be used. To modify the collision matrix at runtime, please refer to the [PhysicsSystem](../../physics/physics-system.md#Interfaces) documentation under `setCollisionGroup`.
 
@@ -183,19 +183,19 @@ The physical configuration will take effect for both preview and publish environ
 
 ![Physics](./index/physics-index.png)
 
-- `gravity` Gravity direction vector, the sign means the positive or negative direction on the axis. **Default:** `{ x: 0, y: -10, z: 0 }`.
-- `allowSleep` Whether to allow rigid bodies to enter sleep state. **Default:** `true`.
-- `sleepThreshold` The maximum speed threshold for entering sleep. **Default:** `0.1`，**Min:** `0`.
+- `gravity` Gravity direction vector, the sign means the positive or negative direction on the axis. **Default**: `{ x: 0, y: -10, z: 0 }`.
+- `allowSleep` Whether to allow rigid bodies to enter sleep state. **Default**: `true`.
+- `sleepThreshold` The maximum speed threshold for entering sleep. **Default**: `0.1`, **Min**: `0`.
 - `autoSimulation` Whether to enable automatic simulation.
-- `fixedTimeStep` Fixed time step between each simulation. **Default:** `1/60`, **Min:** `0`.
-- `maxSubSteps` Maximum number of substeps per simulation step. **Default:** `1`, **Min:** `0`.
-- `friction` Coefficient of friction. **Default:** `0.5`.
-- `rollingFriction` Rolling friction coefficient. **Default:** `0.1`.
-- `spinningFriction` Spin friction coefficient. **Default:** `0.1`.
-- `restitution` Coefficient of elasticity. **Default:** `0.1`.
-- `useCollisionMatrix` Whether to use collision matrix. **Default:** `true`.
-- `collisionMatrix` The setting result of the collision matrix. **Format:** `{ index: value }`, **Default:** `{ "0": 1 }`.
-<!-- - `useNodeChains` Whether to use a node chain to combine rigid bodies. **Default:** `true`. -->
+- `fixedTimeStep` Fixed time step between each simulation. **Default**: `1/60`, **Min**: `0`.
+- `maxSubSteps` Maximum number of substeps per simulation step. **Default**: `1`, **Min**: `0`.
+- `friction` Coefficient of friction. **Default**: `0.5`.
+- `rollingFriction` Rolling friction coefficient. **Default**: `0.1`.
+- `spinningFriction` Spin friction coefficient. **Default**: `0.1`.
+- `restitution` Coefficient of elasticity. **Default**: `0.1`.
+- `useCollisionMatrix` Whether to use collision matrix. **Default**: `true`.
+- `collisionMatrix` The setting result of the collision matrix. **Format**: `{ index: value }`, **Default**: `{ "0": 1 }`.
+<!-- - `useNodeChains` Whether to use a node chain to combine rigid bodies. **Default**: `true`. -->
 
 ### Collision Matrix
 

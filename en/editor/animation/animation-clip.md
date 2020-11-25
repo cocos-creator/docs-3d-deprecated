@@ -144,7 +144,3 @@ The copy and paste of key frame data supports cross-node and cross-clip use.
 > **Note**: There is a difference between A and B. When using the shortcut key to paste the keyframe data, it will be pasted one by one in the order of the copied track data, while right-clicking on the target property track and selecting paste will only pasted on the target property track.Please be sure to copy the correct data to produce unexpected results.
 
 For more about the design of animation sequences and the content of scripting animations, you can refer to the [Animation Clip](./../../engine/animation/animation-clip.md) documentation.
-
----
-
-Continue to the [Making a Frame Animation](sprite-animation.md) documentation.

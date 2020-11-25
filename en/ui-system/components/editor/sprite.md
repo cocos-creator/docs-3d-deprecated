@@ -63,7 +63,3 @@ Under both the `HORIZONTAL` and `VERTICAL` fill types, the values set by `Fill S
 The `Fill Start` in the `RADIAL` type only determines the orientation of the starting fill, when `Fill Start` is set to 0, start filling from the x axis positive direction.
 
 `Fill Range` determines the total amount of padding, which fills the entire circle when `Fill Range` is set to 1. A counter anticlockwise fill when `Fill Range` is positive, and is filled clockwise when negative.
-
-- [UI Basic Components](base-component.md)
-
-- [UI Renderer Components](render-component.md)

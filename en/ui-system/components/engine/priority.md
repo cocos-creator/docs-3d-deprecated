@@ -10,7 +10,7 @@ For example:
 
 ![priority.png](priority/priority.png)
 
-Therefore，the overall rendering order in the figure above is __B -> b1 -> C -> A -> a1 -> a2__, and the rendering state on the screen is __a2 -> a1 -> A -> C -> b1 -> B__.
+Therefore, the overall rendering order in the figure above is __B -> b1 -> C -> A -> a1 -> a2__, and the rendering state on the screen is __a2 -> a1 -> A -> C -> b1 -> B__.
 
 ## 2. Mixed camera sorting
 

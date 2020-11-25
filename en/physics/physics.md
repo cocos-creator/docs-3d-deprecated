@@ -10,12 +10,12 @@ Elements in the physics world can be divided into **rigid body**. We can adding 
 
 ### Adding a Physical Element
 
-Adding a physical element to the world can be divided int the following steps：
+Adding a physical element to the world can be divided int the following steps:
 
 1. Create a new shape `Cube`；
 2. Click `Add Component` on the `Inspector` panel witch is on the right of editor；
 3. Select `BoxCollider` under the `Physics` menu, and adjust the parameters；
-4. add a `RigidBody` component in order to make it have physical behavior。
+4. add a `RigidBody` component in order to make it have physical behavior.
 
 In this way we get a physical element that has **both a collider and a physical behavior**.
 
@@ -47,7 +47,3 @@ Module | Description
 [**Physics System**](physics-system.md) | Introduces the physics system and a series of properties and interfaces of the physics system.
 [**Physics Component**](physics-component.md) | Introduces some physics components and a series of properties on the panel.
 [**Physics Usage**](physics-use.md) | Further introduces the use of physics, events, group masks, etc.
-
----
-
-Continue to the [Physics Options](physics-item.md) documentation。

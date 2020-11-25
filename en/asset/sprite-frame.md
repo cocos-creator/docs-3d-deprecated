@@ -31,7 +31,8 @@ loader.loadRes(url, ImageAsset,(err: any, imageAsset) => {
 });
 ```
 
-__Method 2__:（load SpriteFrame)：
+__Method 2__:（load SpriteFrame):
+
 ```typescript
 const self = this;
 const url = 'test_assets/test_altas/content/spriteFrame';

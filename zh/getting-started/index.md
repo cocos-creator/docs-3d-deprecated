@@ -10,7 +10,3 @@
 - [Hello world!](helloworld/index.md)
 - [快速上手：制作第一个游戏](first-game/index.md)
 - [注意事项](attention/index.md)
-
----
-
-继续前往 [Dashboard](dashboard/index.md) 说明文档。

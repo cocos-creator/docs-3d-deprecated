@@ -52,7 +52,7 @@ The specific filling rules for the relevant parameter configuration are as follo
 
 - **Build Sub Package**: this option is enabled by default. For details, please refer to **Subpackage** at the end of this document.
 
-- **Keystore**: when you check the **Keystore**, the default is to build the rpk package with a certificate that comes with Creator 3D, which is used only for **debugging**. 
+- **Keystore**: when you check the **Keystore**, the default is to build the rpk package with a certificate that comes with Creator, which is used only for **debugging**. 
 
   > **Note**: When the rpk package is to be used to submit an audit, do not check the **Keystore** to build it.
   

@@ -27,7 +27,3 @@ If you drag multiple textures to the __Attribute Track__ at the same time, the b
 ## Arranging and modifying key frame intervals
 
 The __interval frame number__ of __frame animation__ is usually fixed. Sometimes after adding multiple textures, if you want to adjust the interval number, you can fill in the desired __interval frame number__ at the top of the __toolbar__ Then select the __key frame__ to be arranged, __click__ __Arrange__ button on the __toolbar__ ![Spacing-btn](sprite-animation/spacing-btn.png) or __right-click__ on the selected __key frame__ and __select__ __Arrange selected key frames__.
-
----
-
-Continue to the [Editing Animation Curves](animation-curve.md) documentation.

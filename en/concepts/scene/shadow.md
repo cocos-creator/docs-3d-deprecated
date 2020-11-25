@@ -69,7 +69,3 @@ The following describes all the properties of the panel:
 | **OrthoSize**       | Set the ortho viewport size of the main light source shadow camera |
 | **ShadowMapSize**   | Set the shadow map size |
 | **Aspect**          | Set the ortho viewport aspect ratio of the main light source shadow camera |
-
----
-
-Continue to the [Scene](index.md) documentation.

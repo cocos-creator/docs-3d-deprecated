@@ -55,7 +55,3 @@ director.loadScene("table");
 ```
 
 > **Note**: if the preloading is not complete, you can also call `director.loadScene()` directly, and the scene will start after the preloading is complete.
-
----
-
-Continue to the [Loading Assets](load-assets.md) documentation.

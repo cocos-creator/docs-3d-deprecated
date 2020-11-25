@@ -13,7 +13,7 @@ Slider 是一个滑动器组件。
 ## Slider 属性
 
 | 属性           | 功能说明                                                 |
-| -------------- | -----------                                            |
+| :------------- | :----------                                            |
 | handle         | 滑块按钮部件，可以通过该按钮进行滑动调节 Slider 数值大小       |
 | direction      | 滑动器的方向，分为横向和竖向                                |
 | progress       | 当前进度值，该数值的区间是 0-1 之间                         |
@@ -83,14 +83,8 @@ export class example extends Component {
        this.toggle.node.on('toggle', this.callback, this);
     }
 
-    callback(slider: SliderComponent){
+    callback(slider: SliderComponent) {
         // 回调的参数是 slider 组件，注意这种方式注册的事件，无法传递 customEventData
     }
 }
 ```
-
----
-
-- [其他基础模块参考](base-component.md)
-
-- [渲染模块参考](render-component.md)

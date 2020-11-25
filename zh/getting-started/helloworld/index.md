@@ -1,6 +1,6 @@
 # Hello World 项目
 
-第一个 Cocos Creator 项目, 为您展示:
+第一个 Cocos Creator 项目，为您展示:
 - 创建项目
 - 了解工程目录
 - 创建一个物体
@@ -10,7 +10,7 @@
 
 ## 新建项目
 
-在 Dashboard 面板中，点击右下角<font color=#A52A2A>新建</font>按钮，在弹出菜单中选中 Creator 3D。
+在 Dashboard 面板中，点击右下角<font color=#A52A2A>新建</font>按钮，在弹出菜单中选中 Creator。
 <img src="index/dashboard.png"/>
 
 选择空的模板，设置项目路径，点击下方的<font color=#A52A2A>创建</font>按钮。
@@ -22,6 +22,7 @@
 <img src="index/engine.png"/>
 
 ## 工程目录
+
 通常情况的我们只需要关心<font color=#A52A2A>assets</font>(资源目录)
 
 - assets(资源目录)

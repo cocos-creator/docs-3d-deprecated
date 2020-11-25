@@ -101,7 +101,7 @@ export class CompB extends Component {
 }
 ```
 
-When `CompA` is above `CompB` on the inspector panel, the output may be this way：
+When `CompA` is above `CompB` on the inspector panel, the output may be this way:
 
 ```
 CompA onLoad!
@@ -112,7 +112,7 @@ CompA update!
 CompB update!
 ```
 
-When the component sequence `CompA` is above `CompB`, the output may be this way：
+When the component sequence `CompA` is above `CompB`, the output may be this way:
 
 ```
 CompB onLoad!
@@ -160,5 +160,3 @@ export class Menu extends Component {
 > **Note**: the smaller the `executionOrder`, the earlier the component will be executed relative to other components. The `executionOrder` defaults to `0`, so if it is set to a negative number, it will execute before other default components. 
 
 > **Note**: `executionOrder` is only valid for `onLoad`, `onEnable`, `start`, `update` and `lateUpdate`, but not valid for `onDisable` and `onDestroy`.
-
----

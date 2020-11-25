@@ -72,7 +72,7 @@ The specific filling rules for the relevant parameter configuration are as follo
 
 - **Keystore**
 
-  When you check the **Keystore**, the default is to build the **rpk** package with a certificate that comes with Creator 3D. This certificate is used only for **debugging**.
+  When you check the **Keystore**, the default is to build the **rpk** package with a certificate that comes with Creator. This certificate is used only for **debugging**.
   
   > **Note**: When the **rpk** package is to be used to submit an audit, do not check the **Keystore** to build it.
   

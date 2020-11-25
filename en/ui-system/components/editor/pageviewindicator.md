@@ -20,7 +20,3 @@ To use `PageView`, please refer to the [PageView API](https://docs.cocos.com/cre
 ## Detailed Explanation
 
 __PageviewIndicator__ is not used alone, it needs to be used with `PageView` to create a tag of the number of pages corresponding to the page. When you slide to a page, __PageviewIndicator__ will highlight its corresponding mark.
-
-- [UI Basic Components](base-component.md)
-
-- [UI Renderer Components](render-component.md)

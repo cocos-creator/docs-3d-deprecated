@@ -23,11 +23,11 @@ It has already been mentioned that the JavaScript content between the two proces
 
 The extension has a complete nodejs environment, which makes it easy to use a large number of tools on the npm market. Used to complete the function you want.
 
-If you need to interact with other functions, you need to open the corresponding operation message for the corresponding function. In extensions, use the [messages](messages.md) to trigger, query, and process the functions or data in the editor. The open message list can be viewed in the top menu **Developer --> Message List** panel.
+If you need to interact with other functions, you need to open the corresponding operation message for the corresponding function. In extensions, use the [messages](messages.md) to trigger, query, and process the functions or data in the editor. The open message list can be viewed in the top menu **Developer -> Message List** panel.
 
 In addition, you can also use some tools to facilitate the development of extensions, such as:
 
-1. Use typescript to develop extensions. After compiling into js, ​​fill the compiled js into package.json for the editor to run.
+1. Use TypeScript to develop extensions. After compiling into js, ​​fill the compiled js into `package.json` for the editor to run.
 2. After the template rendering in the panel is completed, use vue to bind the data to facilitate interactive development of the panel.
 
 The extension only agrees to the entrance, during which a large number of external libraries can be used to optimize the development process.
