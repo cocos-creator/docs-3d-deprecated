@@ -4,7 +4,7 @@
 
 If you want to implement a custom shading effect in the engine, you need to write your own custom Effect. We recommend editing effect files using __Visual Studio Code__ with the official **Cocos Effect** plugin from the marketplace.
 
-**Note**: This document is targeted at Technical Artists or Graphics developers. If you are a design artist who needs specific shader customizations, please contact your Technical Artist or Programmer for support.
+> **Note**: this document is targeted at Technical Artists or Graphics developers. If you are a design artist who needs specific shader customizations, please contact your Technical Artist or Programmer for support.
 
 ## Framework Syntax
 
@@ -24,7 +24,7 @@ const mat = new cc.Material();
 mat.initialize({ effectName: 'builtin-standard' }); // now `mat` is a valid standard material
 ```
 
-**Note**: The builtin effects of the editor are located directly inside the `assets/effects` folder in the internal database, so the effect names don't contain a path.
+> **Note**: the builtin effects of the editor are located directly inside the `assets/effects` folder in the internal database, so the effect names don't contain a path.
 
 Select the material in the **Assets** panel, and then you can see all currently available effect names in the `Effect` property drop-down list in the **Inspector** panel.
 
@@ -114,7 +114,7 @@ Declarations for the above case are:
 The first line declares a macro named `LAYERS`, with possible range of [4, 5].<br>
 The second line declares a macro named `METALLIC_SOURCE`, with four possible options: 'r', 'g', 'b', 'a'.<br>
 
-**Note**: every tag accepts a single parameter, in the syntax of YAML.
+> **Note**: every tag accepts a single parameter, in the syntax of YAML.
 
 ### Functional Macros
 
@@ -229,7 +229,7 @@ vec4 frag () {
 
 Under the framework writing your own surface shader or even shading algorithm becomes staightforward.
 
-**Note**: the `CCFragOutput` function should not be overriden, unless using custom render pipelines.
+> **Note**: the `CCFragOutput` function should not be overriden, unless using custom render pipelines.
 
 ### Custom Instancing Attribute
 
@@ -242,10 +242,10 @@ Dynamic instancing is a very flexible batching framework, whcih allows user-defi
 #endif
 ```
 
-**Note**:
-- the actual data format can be specified using compiler hint `format` tag, which accepts a single parameter in the form of `GFXFormat` enum name<sup id="a2">[2](#f2)</sup>. 32-bytes float type will be assumed if the tag is omitted.
-- All instanced properties are input attributes of the vertex shader, so if some property is needed in fragment shader, you need to pass it as varyings;
-- Make sure the code works for all branches, regardless of the actual state of `USE_INSTANCING`.
+> **Note**:
+> - the actual data format can be specified using compiler hint `format` tag, which accepts a single parameter in the form of `GFXFormat` enum name<sup id="a2">[2](#f2)</sup>. 32-bytes float type will be assumed if the tag is omitted.
+> - All instanced properties are input attributes of the vertex shader, so if some property is needed in fragment shader, you need to pass it as varyings;
+> - Make sure the code works for all branches, regardless of the actual state of `USE_INSTANCING`.
 
 The instanced property value will be initialized to all zeros by default. Use the `setInstancedAttribute` on `MeshRenderer` to assign new values:
 
@@ -254,7 +254,7 @@ const comp = node.getComponent(MeshRenderer);
 comp.setInstancedAttribute('a_instanced_color', [100, 150, 200, 255]); // should match the specified format
 ```
 
-**Note**: The instanced properties will be reset to all zeros whenever creating a new PSO (the most common case is when assigning a new material).
+> **Note**: the instanced properties will be reset to all zeros whenever creating a new PSO (the most common case is when assigning a new material).
 
 ### WebGL 1 fallback Support
 

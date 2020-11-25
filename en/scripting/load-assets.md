@@ -3,7 +3,7 @@
 __Cocos Creator__ uses the same asset management mechanism as __Cocos Creator__. In this section, we will introduce:
 
   - Declaration of asset attributes
-  - How to set assets in the **Property Inspector**
+  - How to set assets in the **Inspector** panel
   - Loading assets dynamically
   - Loading remote assets and device assets
   - Dependence and releasing assets
@@ -30,9 +30,9 @@ export class test extends Component {
 }
 ```
 
-## How to set Assets in the Property inspector
+## How to set Assets in the Inspector panel
 
-As long as the type is defined in the script, you can easily set the __asset__ directly in the __Property inspector__. Suppose, we create a script like this:
+As long as the type is defined in the script, you can easily set the __asset__ directly in the __Inspector__ panel. Suppose, we create a script like this:
 
 ```typescript
 //test.ts
@@ -50,11 +50,11 @@ export class test extends Component {
 }
 ```
 
-After adding it to a node, it looks like this in the **Property Inspector**:
+After adding it to a node, it looks like this in the **Inspector** panel:
 
 ![asset-in-properties-null](load-assets/asset-in-inspector-null.png)
 
-__Next__, we drag a __Texture__ and a __SpriteFrame__ from the **Assets Panel** into the corresponding properties of the **Property Inspector**:
+__Next__, we drag a __Texture__ and a __SpriteFrame__ from the **Assets** panel into the corresponding properties of the **Inspector** panel:
 
 ![asset-in-properties-dnd](load-assets/asset-in-inspector-dnd.png)
 
@@ -85,9 +85,9 @@ __First__, the `resources` folder needs to be created manually inside the `resou
 
 All assets that need to be dynamically loaded through a script must be placed in the `resources` folder or its subfolders.
 
-> **Note**: The assets in the folder can refer to other assets outside the folder, and can also be referenced by external scenes or assets. When the project is built, except for the scenes that have been checked in the Build panel, all assets in the `resources` folder, together with the assets outside the `resources` folder that are dependent by necessary assets, other assets will be deleted.
+> **Note**: the assets in the folder can refer to other assets outside the folder, and can also be referenced by external scenes or assets. When the project is built, except for the scenes that have been checked in the Build panel, all assets in the `resources` folder, together with the assets outside the `resources` folder that are dependent by necessary assets, other assets will be deleted.
 
-> **Note**: If an asset is only depended on by other assets and does not need to be loaded directly by `loader.loadRes`, then **please** do not put it in the `resources` folder. Doing so, the size of the **package body** and `settings.js` will be increased, and the useless assets in the `resources` folder will not be automatically removed during the build process. At the same time, during the build process, JSON's automatic merge strategy will also be affected, and it is not possible to merge fragmented JSON as much as possible.
+> **Note**: if an asset is only depended on by other assets and does not need to be loaded directly by `loader.loadRes`, then **please** do not put it in the `resources` folder. Doing so, the size of the **package body** and `settings.js` will be increased, and the useless assets in the `resources` folder will not be automatically removed during the build process. At the same time, during the build process, JSON's automatic merge strategy will also be affected, and it is not possible to merge fragmented JSON as much as possible.
 
 __Second__, The load process of __Cocos Creator__ is always asynchronous. You need to get the loaded assets in the callback function. This is done because there is no other asset preload list except the assets associated with the scene, and dynamically loaded assets that are truly dynamically loaded.
 
@@ -97,38 +97,38 @@ __Cocos Creator__ provides `loader.loadRes` API to specifically load those asset
 
 ```typescript
 // load the Prefab
-loader.loadRes("test assets/prefab", Prefab , (err: any, prefab: Prefab) => {
+loader.loadRes("test assets/prefab", Prefab, (err: any, prefab: Prefab) => {
     const newNode = instantiate(prefab);
     director.getScene().addChild(newNode);
 });
 
 // load the AnimationClip
-loader.loadRes("test assets/anim", AnimationClip , (err: any, clip: AnimationClip) => {
+loader.loadRes("test assets/anim", AnimationClip, (err: any, clip: AnimationClip) => {
     this.node.getComponent(Animation).addClip(clip, "anim");
 });
 ```
 
 #### Loading a SpriteFrame or a Texture2D
 
-After the image is set to a spriteframe, texture or other image types, an asset of the corresponding type will be generated in the **Assets Panel**. But if you load `test assets/image` directly, the resulting type will be an **ImageAsset**. You must add the asset type, after the image path, in-order to load the sub-asset of the corresponding asset generated by the image. If you are not sure about the path of the corresponding asset, you can view it in `settings.js` when running or previewing:
+After the image is set to a spriteframe, texture or other image types, an asset of the corresponding type will be generated in the **Assets** panel. But if you load `test assets/image` directly, the resulting type will be an **ImageAsset**. You must add the asset type, after the image path, in-order to load the sub-asset of the corresponding asset generated by the image. If you are not sure about the path of the corresponding asset, you can view it in `settings.js` when running or previewing:
 
 ```typescript
 // load a SpriteFrame, image is ImageAsset, spriteFrame is image/spriteFrame, texture is image/texture
-loader.loadRes("test assets/image/spriteFrame", SpriteFrame ,(err: any, spriteFrame: SpriteFrame) => {
+loader.loadRes("test assets/image/spriteFrame", SpriteFrame, (err: any, spriteFrame: SpriteFrame) => {
     this.node.getComponent(Sprite).spriteFrame = spriteFrame;
 });
 ```
 
 ```typescript
 // load a texture
-loader.loadRes("test assets/image/texture", Texture2D ,(err: any, texture: Texture2D) => {
+loader.loadRes("test assets/image/texture", Texture2D, (err: any, texture: Texture2D) => {
     const spriteFrame = new SpriteFrame();
     spriteFrame.texture = texture;
     this.node.getComponent(Sprite).spriteFrame = spriteFrame;
 });
 ```
 
-> **Note**: If a __type__ parameter is specified, an asset of the specified type will be found under the path. When you need to get a "sub-asset" (such as getting the sub-asset __SpriteFrame__ of __ImageAsset__), you need to specify the path of the sub-asset.
+> **Note**: if a __type__ parameter is specified, an asset of the specified type will be found under the path. When you need to get a "sub-asset" (such as getting the sub-asset __SpriteFrame__ of __ImageAsset__), you need to specify the path of the sub-asset.
 
 #### Loading a SpriteFrame from Atlas
 
@@ -209,7 +209,7 @@ There are still some restrictions on using manual asset loading. The ones that h
 
 After loading the assets, all assets will be temporarily cached in the `loader` to avoid sending meaningless http requests when the assets are repeatedly loaded. Of course, the cached content will occupy memory, and some assets may no longer be needed by the user. If you want to release them, here are some things to note when doing asset releasing.
 
-**First and foremost:** assets are interdependent. __For example__, in the figure below, the __Node__ in the __Prefab__ asset contains the __Sprite component__. The __Sprite component__ depends on the __SpriteFrame__, the __SpriteFrame__ asset depends on the __Texture asset__, and as mentioned the __Prefab__ , __SpriteFrame__, and __Texture__ assets are cached by the `loader`. The advantage of this is that there may be another __SpriteAtlas__ asset that depends on the same __SpriteFrame__ and __Texture__. In this case, when you manually load this __SpriteAtlas__, you do not need to re-request the __texture asset__, the loader will automatically use the assets in the cache.
+**First and foremost:** assets are interdependent. __For example__, in the figure below, the __Node__ in the __Prefab__ asset contains the __Sprite component__. The __Sprite component__ depends on the __SpriteFrame__, the __SpriteFrame__ asset depends on the __Texture asset__, and as mentioned the __Prefab__, __SpriteFrame__, and __Texture__ assets are cached by the `loader`. The advantage of this is that there may be another __SpriteAtlas__ asset that depends on the same __SpriteFrame__ and __Texture__. In this case, when you manually load this __SpriteAtlas__, you do not need to re-request the __texture asset__, the loader will automatically use the assets in the cache.
 
 ![](load-assets/asset-dep.png)
 

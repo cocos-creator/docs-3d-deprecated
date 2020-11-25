@@ -49,19 +49,19 @@ systemEvent.on(type, func, target);
 
 | 事件名            | 事件类型说明      |
 | :--------------  | :-----------    |
-| TOUCH_START      | 手指开始触摸事件。           |
-| TOUCH_MOVE       | 当手指在屏幕上移动时。        |
-| TOUCH_END        | 手指结束触摸事件。 |
-| TOUCH_CANCEL     | 当手指在目标节点区域外离开屏幕时。  |
-| MOUSE_DOWN       | 当鼠标按下时触发一次。         |
-| MOUSE_MOVE       | 当鼠标在目标节点在目标节点区域中移动时，不论是否按下。 |
-| MOUSE_UP         | 当鼠标从按下状态松开时触发一次。 |
-| MOUSE_WHEEL      | 鼠标滚动事件。       |
-| MOUSE_ENTER      | 当鼠标移入目标节点区域时，不论是否按下。  |
-| MOUSE_LEAVE      | 当鼠标移出目标节点区域时，不论是否按下。   |
-| KEY_DOWN         | 当按下按键时触发的事件。 |
-| KEY_UP | 当松开按键时触发的事件。       |
-| DEVICEMOTION     | 重力感应。      |
+| TOUCH_START      | 手指开始触摸事件          |
+| TOUCH_MOVE       | 当手指在屏幕上移动时       |
+| TOUCH_END        | 手指结束触摸事件|
+| TOUCH_CANCEL     | 当手指在目标节点区域外离开屏幕时 |
+| MOUSE_DOWN       | 当鼠标按下时触发一次        |
+| MOUSE_MOVE       | 当鼠标在目标节点在目标节点区域中移动时，不论是否按下|
+| MOUSE_UP         | 当鼠标从按下状态松开时触发一次|
+| MOUSE_WHEEL      | 鼠标滚动事件      |
+| MOUSE_ENTER      | 当鼠标移入目标节点区域时，不论是否按下 |
+| MOUSE_LEAVE      | 当鼠标移出目标节点区域时，不论是否按下  |
+| KEY_DOWN         | 当按下按键时触发的事件|
+| KEY_UP | 当松开按键时触发的事件      |
+| DEVICEMOTION     | 重力感应     |
 
 关于 `KEY` 事件获取的键值列表，详情可参考 API 的 `Macro`。
 
@@ -91,11 +91,11 @@ export class example extends Component {
 
 | 事件名             | 事件类型说明    |
 | :---------------- | :-----------  |
-| TRANSFORM_CHANGED | 节点改变位置、旋转或缩放事件。   |
+| TRANSFORM_CHANGED | 节点改变位置、旋转或缩放事件  |
 | POSITION_PART     | 节点位置改变事件。统一由 `TRANSFORM_CHANGED` 监听，派发后判断类型。|
-| ROTATION_PART     | 节点旋转事件。统一由 `TRANSFORM_CHANGED` 监听，派发后判断类型。   |
-| SCALE_PART        | 节点缩放事件。统一由 `TRANSFORM_CHANGED` 监听，派发后判断类型。  |
-| SIZE_CHANGED      | 当节点尺寸改变时触发的事件。       |
-| ANCHOR_CHANGED    | 当节点锚点改变时触发的事件。                                  |
-| CHILD_ADDED       | 节点子类添加。       |
-| CHILD_REMOVED     | 节点子类移除。       |
+| ROTATION_PART     | 节点旋转事件。统一由 `TRANSFORM_CHANGED` 监听，派发后判断类型  |
+| SCALE_PART        | 节点缩放事件。统一由 `TRANSFORM_CHANGED` 监听，派发后判断类型 |
+| SIZE_CHANGED      | 当节点尺寸改变时触发的事件      |
+| ANCHOR_CHANGED    | 当节点锚点改变时触发的事件                                 |
+| CHILD_ADDED       | 节点子类添加      |
+| CHILD_REMOVED     | 节点子类移除      |

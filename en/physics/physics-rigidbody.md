@@ -42,7 +42,7 @@ Currently the center of mass is fixed to the node to which the RigidBody compone
 
 ![center-of-mass](img/center-of-mass.jpg)
 
-> **Note**: In order to make it easier to fit collider shape to the model, methods for changing mass centers may be added in the future, as well as methods for dynamically calculating mass centers mechanism.
+> **Note**: in order to make it easier to fit collider shape to the model, methods for changing mass centers may be added in the future, as well as methods for dynamically calculating mass centers mechanism.
 
 ## Sleeping or Waking the Rigid Body
 
@@ -138,7 +138,7 @@ rigidBody.setAngularVelocity(new Vec3(5, 0, 0));
 
 When sleeping the rigid body, all the force and speed of the rigid body will be emptied, which will stop the rigid body.
 
-> **Note**: Currently application of force or impulse, and changing the speed will wake up the rigid body again, and subsequent adjustments may be made, please pay attention to the version update announcement.
+> **Note**: currently application of force or impulse, and changing the speed will wake up the rigid body again, and subsequent adjustments may be made, please pay attention to the version update announcement.
 
 ### By Damping
 
@@ -162,6 +162,6 @@ The RigidBody component provides the `linearFactor` and `angularFactor` properti
 
 The factor is the type of `Vec3`. The value of the corresponding component is used to scale the speed change of the corresponding axis. The default value is `1`, which means that the scaling is `1` times, that is, no effect.
 
-**Note**:
-1. Set a certain component value of the factor to `0`, you can fix a certain axis of movement or rotation, if you want to completely fix the rotation, please use `fixedRotation`.
-2. In the physics engines `cannon.js` and `ammo.js`, the factors act on different physical quantities, in `cannon.js` on speed and in `ammo.js` on force.
+> **Note**:<br>
+> 1. Set a certain component value of the factor to `0`, you can fix a certain axis of movement or rotation, if you want to completely fix the rotation, please use `fixedRotation`.
+> 2. In the physics engines `cannon.js` and `ammo.js`, the factors act on different physical quantities, in `cannon.js` on speed and in `ammo.js` on force.

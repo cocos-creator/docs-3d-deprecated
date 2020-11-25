@@ -1,6 +1,6 @@
 # 项目设置
 
-项目设置面板通过主菜单的 `项目 -> 项目设置` 菜单打开，这里包括所有特定项目相关的设置,这些设置将会影响到整个游戏项目的预览、构建等。这些设置会保存在项目的 `settings / packages` 文件夹里。如果需要在不同开发者之间同步项目设置，请将 settings 目录加入到版本控制。
+通过点击主菜单的 **项目 -> 项目设置** 打开 **项目设置** 面板，这里包括所有特定项目相关的设置，这些设置将会影响到整个游戏项目的预览、构建等。这些设置会保存在项目的 `settings / packages` 文件夹里。如果需要在不同开发者之间同步项目设置，请将 settings 目录加入到版本控制。
 
 ## 通用设置
 
@@ -26,13 +26,13 @@
 
 ## 压缩纹理预设配置
 
-> 编辑器自 v1.2 起，将压缩纹理配置的使用方式修改为在项目设置里配置预设，图片资源处选择预设的方式。旧版本的项目在升级上来后，编辑器将会自动扫描项目内的所有压缩纹理配置情况，整理出几个预设，由于是自动扫描的，在名称的生成可能不会是项目想要的，可以自行在此处修改。
+在 Creator 3.0，压缩纹理修改为在 **项目设置** 中配置预设，图片资源处选择预设的方式。旧版本的项目在升级上来后，编辑器将会自动扫描项目内的所有压缩纹理配置情况，整理出几个预设，由于是自动扫描的，在名称的生成可能不会是项目想要的，可以自行在此处修改。
 
 用于添加压缩纹理预设配置，在对应图片资源处可以直接选择此处的压缩纹理预设来快速添加。同时添加完预设后，也可以直接修改预设来达到批量更新配置的使用需求。项目设置允许用户添加多个压缩纹理配置，每个压缩纹理配置允许再针对不同的平台大类来制定配置细则。
 
 目前大致设置以下几个平台大类：
 
-1. Web ：指 Web-Mobile、Web-Desktop 两个平台
+1. Web：指 Web-Mobile、Web-Desktop 两个平台
 2. Mac & Windows
 3. iOS
 4. Mini Game: 指代各个产商平台的小游戏，比如微信小游戏、华为快游戏等待；
@@ -160,13 +160,13 @@ interface ICompressPresetItem {
 - 可自定义 0 到 19 个 Layers，当您把输入框清空时即删除原先的设置。
 - 后 12 个 Layers 是引擎内置的，不可修改。
 - 目前使用的位置有：
-    1. 编辑 node 节点时， inspector 面板上的 Layer 属性;
+  1. 编辑 node 节点时， inspector 面板上的 Layer 属性;
 
-    ![Layers-node](./index/layers-node.png)
+  ![Layers-node](./index/layers-node.png)
 
-    2. 编辑 Camera 节点时的 Visibility 属性。节点的 layer 属性匹配相机的 visibility 属性，只有相机 visibility 中包含的 layer 所代表的节点可以被相机看见。更多说明可以参考 [Camera 组件介绍](./../components/camera-component.md);
+  2. 编辑 Camera 节点时的 Visibility 属性。节点的 layer 属性匹配相机的 visibility 属性，只有相机 visibility 中包含的 layer 所代表的节点可以被相机看见。更多说明可以参考 [Camera 组件介绍](./../components/camera-component.md);
 
-    ![Layers-camera](./index/layers-camera.png)
+  ![Layers-camera](./index/layers-camera.png)
 
 <!-- native 引擎设置的修改主要影响的是构建原生项目时使用 cocos2dx 引擎模板，修改后可以实时生效。 -->
 
@@ -182,23 +182,23 @@ interface ICompressPresetItem {
 
 ![Physics](./index/physics-index.png)
 
-- `gravity` 重力矢量，正负数值体现了在坐标轴上的方向性，默认值 *{ x: 0, y: -10, z: 0 }*
-- `allowSleep` 是否允许刚体进入休眠状态，默认值 *true*
-- `sleepThreshold` 进入休眠的默认速度临界值，默认值 *0.1*，最小值 *0*
+- `gravity` 重力矢量，正负数值体现了在坐标轴上的方向性，默认值 `{ x: 0, y: -10, z: 0 }`
+- `allowSleep` 是否允许刚体进入休眠状态，默认值 `true`
+- `sleepThreshold` 进入休眠的默认速度临界值，默认值 `0.1`，最小值 `0`
 - `autoSimulation` 是否开启自动模拟
-- `fixedTimeStep` 每步模拟消耗的固定时间，默认值 *1/60*，最小值 *0*
-- `maxSubSteps` 每步模拟的最大子步数，默认值 *1*，最小值 *0*
-- `friction` 摩擦系数，默认值 *0.5*
-- `rollingFriction` 滚动摩擦系数，默认值 *0.1*
-- `spinningFriction` 自旋摩擦系数，默认值 *0.1*
-- `restitution` 弹性系数，默认值 *0.1*
-- `useCollisionMatrix` 是否使用碰撞矩阵，默认值 *true*
-- `collisionMatrix`  碰撞矩阵的设置结果，{ index: value } 格式，默认值 *{ "0": 1 }*
+- `fixedTimeStep` 每步模拟消耗的固定时间，默认值 `1/60`，最小值 `0`
+- `maxSubSteps` 每步模拟的最大子步数，默认值 `1`，最小值 `0`
+- `friction` 摩擦系数，默认值 `0.5`
+- `rollingFriction` 滚动摩擦系数，默认值 `0.1`
+- `spinningFriction` 自旋摩擦系数，默认值 `0.1`
+- `restitution` 弹性系数，默认值 `0.1`
+- `useCollisionMatrix` 是否使用碰撞矩阵，默认值 `true`
+- `collisionMatrix`  碰撞矩阵的设置结果，`{ index: value }` 格式，默认值 `{ "0": 1 }`
 <!-- - `useNodeChains` 是否使用节点链组合刚体，默认值 *true* -->
 
 ### 碰撞矩阵设置
 
-碰撞矩阵用于管理物理元素的分组和掩码，开启`useCollisionMatrix`后会自动设置对应的掩码值。该功能暂时还比较初期，请谨慎使用。
+碰撞矩阵用于管理物理元素的分组和掩码，开启 `useCollisionMatrix` 后会自动设置对应的掩码值。该功能暂时还比较初期，请谨慎使用。
 
 需要注意的是，碰撞矩阵是 [物理分组掩码](../../physics/physics-group-mask.md) 功能的进一步封装。它与 Creator v2.x 的分组配置类似，但是有所差别。Creator v2.x 的分组配置只负责初始化，而 Creator 3.0 中还会负责自动更新（未来可能会调整为仅初始化）。
 

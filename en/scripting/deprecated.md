@@ -64,7 +64,7 @@ export function setDefaultLogTimes (times: number): void;
 
 According to the module division, each module maintains an obsolete file. In order to facilitate maintenance, the name is unified as deprecated.ts and placed in the directory of the corresponding module, and the file needs to be `import` in the `index.ts` file of the corresponding module, such as `import'./deprecated'`.
 
-> **Note**: The `deprecated.ts` file in the `cocos\utils` directory is a declaration and implementation file.
+> **Note**: the `deprecated.ts` file in the `cocos\utils` directory is a declaration and implementation file.
 
 ## Usage example
 

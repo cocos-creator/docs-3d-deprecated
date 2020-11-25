@@ -27,7 +27,7 @@ But of course it would be cumbersome and error-prone, so what YAML provides is a
   key2: unquoted string
   ```
 
-  **Note**: Never omit the space after colon
+  > **Note**: never omit the space after colon
 
 - Like Python, indentation is part of the syntax, representing hierarchy of the data<sup id="a1">[1](#f1)</sup>
 

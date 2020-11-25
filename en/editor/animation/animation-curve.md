@@ -24,7 +24,7 @@ The curve data during the modification process will be displayed in the input bo
 ## Save custom curve
 Sometimes some custom curve data required by the project needs to be reused, it can be saved in the preset library of User. Specifically, after editing the curve data to be saved, select the User option in the preset menu at the upper left and enter the name of the curve data to be saved in the input box at the lower left, and click add to add.
 
-> **Note**: The curve with the same name will be overwritten, and the custom curve is saved without undo processing, so if it is overwritten, it needs to be added again.
+> **Note**: the curve with the same name will be overwritten, and the custom curve is saved without undo processing, so if it is overwritten, it needs to be added again.
 
 ![add-curve](animation-curve/add-curve.png)
 

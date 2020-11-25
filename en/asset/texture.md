@@ -2,17 +2,17 @@
 
 **Texture mapping** assets are assets used for procedural sampling, such as **textures on models** and the **UI on Sprites**. When the UI or model are rendered, the corresponding texture is sampled, then filled on the model grid, plus a series of processing such as lighting to render the entire scene.
 
-___Texture assets__ can be generated from __ImageAsset__. Some common image formats, including,  `.png`, `.jpeg`, etc. can be used in __ImageAsset__.
+___Texture assets__ can be generated from __ImageAsset__. Some common image formats, including `.png`, `.jpeg`, etc. can be used in __ImageAsset__.
 
 ## Texture2D
 
-__Texture2D__ is a type of __texture asset__ that is usually used for rendering of __3D models__, such as *reflection maps*, *ambient light mask maps*, etc. in model materials.
+__Texture2D__ is a type of __texture asset__ that is usually used for rendering of __3D models__, such as **reflection maps**, **ambient light mask maps**, etc. in model materials.
 
 __Texture2D__ in __Cocos Creator__:
 
 ![Texture2D](texture/Texture2D.jpg)
 
-> **Note**: The texture type is a **Texture2D** asset.
+> **Note**: the texture type is a **Texture2D** asset.
 
 ### Adjusting the Properties of a Texture2D
 
@@ -41,12 +41,12 @@ The following describes the properties of the panel:
 
 ### Using Texture2D
 
-__Texture2D__ is a very widely used asset. Any property marked as __Texture2D__ in the __Property Panel__ can be dragged into a __Texture2D__ asset type.
+__Texture2D__ is a very widely used asset. Any property marked as __Texture2D__ in the __Inspector__ panel can be dragged into a __Texture2D__ asset type.
 
 The usage scenario is mainly in the __Editor__ environment and for __dynamic acquisition__:
 
-  - In the __Editor__, just drag the assets in;
-  - For __dynamic acquisition__, you need to obtain the __ImageAsset__ asset first, and then instantiate the __Texture2D__ asset based on the obtained __ImageAsset__;
+- In the __Editor__, just drag the assets in;
+- For __dynamic acquisition__, you need to obtain the __ImageAsset__ asset first, and then instantiate the __Texture2D__ asset based on the obtained __ImageAsset__.
 
 ## TextureCube
 
@@ -58,6 +58,6 @@ __TextureCube__ obtained from a __panorama__ in __Cocos Creator__:
 
 __TextureCube__ obtained by making a __CubeMap__ in __Cocos Creator__:
 
-![CubeMap](../concepts/scene/skybox/Cubemap.jpg)
+![CubeMap](../../../concepts/scene/skybox/Cubemap.jpg)
 
-To learn more about the use of **TextureCube** and **CubeMaps**, please refer to the [Sky Box](../scripting/setup.md) documentation.
+To learn more about the use of **TextureCube** and **CubeMaps**, please refer to the [Skybox](../concepts/scene/skybox.md) documentation.

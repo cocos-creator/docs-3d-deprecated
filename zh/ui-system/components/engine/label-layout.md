@@ -117,7 +117,3 @@ Label 组件中的 `Enable Wrap Text`（自动换行）属性，可以切换文�
 ## 查看组件参考
 
 关于 Label 组件的属性，也可以查阅 [Label 组件参考](../editor/label.md) 文档。
-
----
-
-#### [UI 结构介绍](index.md)

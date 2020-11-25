@@ -1,6 +1,6 @@
 # Sub-package loading
 
-As a game becomes more complex, it can get larger in size. This leaves the developer needing to balance out the package size. __Cocos Creator__ supports **Sub-package loading**, which supports both the loading  __code__ and **assets**. __Sub-package loading__ currently only supports various __instant game platforms__, such as __WeChat Mini Games__.
+As a game becomes more complex, it can get larger in size. This leaves the developer needing to balance out the package size. __Cocos Creator__ supports **Sub-package loading**, which supports both the loading __code__ and **assets**. __Sub-package loading__ currently only supports various __instant game platforms__, such as __WeChat Mini Games__.
 
 __Sub-package loading__, is the splitting the game content into several packages according to certain rules. Only the necessary packages are downloaded when first started. This necessary package is called the **main package**. The __main package__ can trigger the download of other __sub-packages__, which can effectively reduce the time taken for the first startup.
 
@@ -12,9 +12,9 @@ __Cocos Creator's__ __sub-packaging__ is configured __folder by folder__. When a
 
 After selecting **Configure as a sub-package**, click **OK** in the upper right. The assets (including code and other assets) under this folder will be treated as the contents of the __sub-package__. **Sub-package name** will be passed in as the loading name when the __sub-package** is loaded. By default, this folder name will be used.
 
-> **Note**: When configured as a __sub-package__, only native assets, such as *pictures* and *audio*, will eventually be placed in the __sub-package__. __Prefabs__, __AnimationClip__ and other __JSON__ type assets will still be placed in the **main package**.
+> **Note**: when configured as a __sub-package__, only native assets, such as *pictures* and *audio*, will eventually be placed in the __sub-package__. __Prefabs__, __AnimationClip__ and other __JSON__ type assets will still be placed in the **main package**.
 
-> **Note**: Nesting of __sub-packages__ should be avoided as much as possible. For example, after __folder A__ is selected as a __sub-package__, __folder B__ under __ folder A__ is also selected as a __sub-package__. If there is nesting, the parent folder will not package the content in the child folders.
+> **Note**: nesting of __sub-packages__ should be avoided as much as possible. For example, after __folder A__ is selected as a __sub-package__, __folder B__ under __ folder A__ is also selected as a __sub-package__. If there is nesting, the parent folder will not package the content in the child folders.
 
 ## Constructing
 
@@ -26,7 +26,7 @@ The role of **sub-packaing** will only be reflected after the project is built. 
 
 When building and publishing, all the **code** and **assets** in the **cases/01_graphics** sub-package folder will be processed as follows:
 
-  - **Code**: all code in the **cases/01_graphics** folder will be merged into an entry script file named **01_graphics/game.js**, and these codes will be removed from the main package .
+  - **Code**: all code in the **cases/01_graphics** folder will be merged into an entry script file named **01_graphics/game.js**, and these codes will be removed from the main package.
 
   - **Assets**: will move the **cases/01_graphics** sub-package assets from the **res/raw-assets** folder in the release package directory to **sub-packages/01_graphics** in the release package directory under __contents__.
 

@@ -1,17 +1,17 @@
 # Tweening
 
-In order to be fully compatible with and maintain the experience of the __Cocos Creator 2D__ easing system, all the __Cocos Creator 2D__ functions are transplanted in __Cocos Creator__.
+In order to be fully compatible with and maintain the experience of the __Cocos Creator v2.x__ easing system, all the __Cocos Creator v2.x__ functions are transplanted in __Cocos Creator 3.0__.
 
 > **Note**: `action` has been abandoned, please use `tween`.
 
-> **Note**: Starting from `v1.0.3` there is no longer a dependency on `tween.js`. If you use the relevant features of `tween.js`, please adapt.
+> **Note**: there is no longer a dependency on `tween.js`. If you use the relevant features of `tween.js`, please adapt.
 
-> **Note**: In `v1.0.4` the `onStart, onUpdate, onComplete` callbacks were added to the optional attributes of `to` and `by`.
+> **Note**: the `onStart, onUpdate, onComplete` callbacks were added to the optional attributes of `to` and `by`.
 
 The difference from the previous `tween.js` is mainly optional attributes, explained as follows:
 
-  - The value definition of `easing` has been changed (compatibility is done here).
-  - In addition to `easing`, `onStart`, `onUpdate`, `onComplete`, other properties are not supported yet (checked here, the console will have a corresponding warning).
+- The value definition of `easing` has been changed (compatibility is done here).
+- In addition to `easing`, `onStart`, `onUpdate`, `onComplete`, other properties are not supported yet (checked here, the console will have a corresponding warning).
 
 ## Example
 
@@ -131,8 +131,8 @@ tween(tweenTargetVec3)
 
 ## Automatic destruction
 
-Starting from `v1.0.4` when the easing target is `Node`, it will listen to its destruction event for automatic destruction of the easing. This calls the `target` method and also automatically updates the listener.
+In Cocos Creator 3.0, when the easing target is `Node`, it will listen to its destruction event for automatic destruction of the easing. This calls the `target` method and also automatically updates the listener.
 
 > **Note**: related test cases are located on [GitHub](https://github.com/cocos-creator/test-cases-3d).
 
-> **Note**: Please refer to [Using the Tween System](https://docs.cocos.com/creator/manual/en/scripting/tween.html) documentation.
+> **Note**: please refer to [Using the Tween System](https://docs.cocos.com/creator/manual/en/scripting/tween.html) documentation.

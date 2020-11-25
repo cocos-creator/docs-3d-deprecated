@@ -6,19 +6,19 @@ In __Cocos Creator__, the __Scene__ is the cornerstone for organizing game conte
 
 There are __three__ ways to create a __Scene__:
 
-In order to have a good directory structure in your project, it is strongly recommend that you use **Method 1** to create a __Scene__.
+1. Select the folder where you want to create the __Scene__ file in the __Assets__. On the folder __Right click --> New --> Scene file__, and then type the desired __Scene__ name.
 
-__Method 1__: Select the folder where you want to create the __Scene__ file in the __Assets__. On the folder __Right click --> New --> Scene file__, and then type the desired __Scene__ name.
+    ![](scene/new_scene_1.png)
 
-![](scene/new_scene_1.png)
+    In order to have a good directory structure in your project, it is strongly recommend that you use this method to create a __Scene__.
 
-__Method 2__: Click the __Create__ menu in the __Assets__ to create a new __Scene__.
+2. Click the __Create__ menu in the __Assets__ to create a new __Scene__.
 
-![](scene/new_scene_2.png)
+    ![](scene/new_scene_2.png)
 
-__Method 3__: Select __File --> New Scene__, a new __Scene__ will appear directly in the __Hierarchy Panel__, but a new __Scene__ will not appear in the __Assets__. You need to save it in the root of the asset folder. A `New Scene.scene` __Scene__ file appears in the directory.
+3. Select __File -> New Scene__, a new __Scene__ will appear directly in the __Hierarchy__ panel, but a new __Scene__ will not appear in the __Assets__. You need to save it in the root of the asset folder. A `New Scene.scene` __Scene__ file appears in the directory.
 
-![](scene/new_scene_3.png)
+    ![](scene/new_scene_3.png)
 
 ## Saving a Scene
 
@@ -26,7 +26,7 @@ While creating __Scenes__, you can quickly save __Scenes__ with the shortcut key
 
 ## Switching Scenes
 
-In the __Assets__, __double-click__ the __Scene__ you want to open. When needing to switch __Scenes__ in the game, you can use the `director.loadScene()` API to implement dynamic scene loading and switching in the game. For further details, please see the API documentation.
+In the __Assets__, __double-click__ the __Scene__ you want to open. When needing to switch __Scenes__ in the game, you can use the `director.loadScene()` API to implement dynamic scene loading and switching in the game. For further details, please see the [API documentation](https://docs.cocos.com/creator3d/api/en/classes/core.director-2.html#loadscene).
 
 ## Scene Asset Properties
 
@@ -34,7 +34,7 @@ Since the __Scene__ is an __Asset__ a property can be set in the __Assets__ to l
 
 ![](scene/scene_set.png)
 
-After opening the __Scene__ file, *Scene* is the root node of the __Scene__ node tree. Select the __Scene__ node in the __Hierarchy Manager__. In the __Property Inspector__ on the left, you can set the properties of the entire __Scene__, including *ambient light* settings, *shadow* settings and *sky box* settings.
+After opening the __Scene__ file, *Scene* is the root node of the __Scene__ node tree. Select the __Scene__ node in the __Hierarchy__ panel. In the __Inspector__ panel on the left, you can set the properties of the entire __Scene__, including **ambient light** settings, **shadow** settings and **sky box** settings.
 
 ![](scene/scene_node_set.png)
 

@@ -112,14 +112,14 @@ loader.loadRes("test assets/anim", AnimationClip, (err: any, clip: AnimationClip
 
 ```typescript
 // 加载 SpriteFrame，image 是 ImageAsset，spriteFrame 是 image/spriteFrame，texture 是 image/texture
-loader.loadRes("test assets/image/spriteFrame", SpriteFrame ,(err: any, spriteFrame: SpriteFrame) => {
+loader.loadRes("test assets/image/spriteFrame", SpriteFrame, (err: any, spriteFrame: SpriteFrame) => {
     this.node.getComponent(Sprite).spriteFrame = spriteFrame;
 });
 ```
 
 ```typescript
 // 加载 texture
-loader.loadRes("test assets/image/texture", Texture2D ,(err: any, texture: Texture2D) => {
+loader.loadRes("test assets/image/texture", Texture2D, (err: any, texture: Texture2D) => {
     const spriteFrame = new SpriteFrame();
     spriteFrame.texture = texture;
     this.node.getComponent(Sprite).spriteFrame = spriteFrame;

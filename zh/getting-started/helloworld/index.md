@@ -66,6 +66,7 @@
 <img src="index/property.png"/>
 
 ## 添加脚本
+
 - 新建脚本
   <br/>在资源管理器面板<font color=#A52A2A>点击鼠标右键</font>，选择<font color=#A52A2A>新建</font>-><font color=#A52A2A>TypeScript</font>。</br>
   <img src="index/script.png"/>

@@ -6,7 +6,7 @@ __Mask__ is used to specify the range which clip the render results of the child
 
 Select a node in the __Hierarchy__ panel, then click the __Add Component__ button at the bottom of the __Inspector__ panel and select __Mask__ from __UI -> Render__. Then you can add the Mask component to the node.
 
-> __Note__: The Mask component cannot be added to a node with other renderer components such as __Sprite__, __Label__, etc.
+> __Note__: the Mask component cannot be added to a node with other renderer components such as __Sprite__, __Label__, etc.
 
 To use `Mask`, please refer to the [Mask API](https://docs.cocos.com/creator3d/api/en/classes/ui.mask-1.html) documentation and the [mask](https://github.com/cocos-creator/test-cases-3d/tree/master/assets/cases/ui/08.mask) scene of the test-cases-3d project.
 

@@ -1,16 +1,15 @@
 # 纹理贴图资源
 
-纹理贴图资源是一种用于程序采样的资源，如模型上的贴图、精灵上的UI。
-当程序渲染UI或者模型时，会对相应的纹理进行采样，然后填充在模型网格上，再加上光照等等一系列处理便渲染出了整个场景。
+纹理贴图资源是一种用于程序采样的资源，如模型上的贴图、精灵上的 UI。当程序渲染 UI 或者模型时，会对相应的纹理进行采样，然后填充在模型网格上，再加上光照等等一系列处理便渲染出了整个场景。
 
-纹理资源可由 ImageAsset 转化而成，一些通用的图像交换格式如 png , jpeg 等等都可为 ImageAsset。
+纹理资源可由 ImageAsset 转化而成，一些通用的图像交换格式如 png、jpeg 等等都可为 ImageAsset。
 
 ## Texture2D
 
-Texture2D 是纹理资源的一种，通常用于 3D 模型的渲染，如模型材质中的反射贴图、环境光遮罩贴图等等。
-在 Cocos Creator 中的 Texture2D:
+Texture2D 是纹理资源的一种，通常用于 3D 模型的渲染，如模型材质中的反射贴图、环境光遮罩贴图等等。在 Cocos Creator 3.0 中的 Texture2D：
 
 ![Texture2D](texture/Texture2D.jpg)
+
 **注：texture 类型即为 Texture2D 资源**。
 
 ### 调整 Texture2D 的属性
@@ -19,7 +18,7 @@ Texture2D 是纹理资源的一种，通常用于 3D 模型的渲染，如模型
 
 ![查看子资源](texture/SubAssets.gif)
 
-选中生成的 Texture2D 子资源后可以看到以下面板
+选中生成的 Texture2D 子资源后可以看到以下面板：
 
 ![ Texture2D 子资源](texture/Texture2DPanel.jpg)
 
@@ -49,14 +48,14 @@ Texture2D 是使用范围非常广泛的资源，在属性面板上任何标记�
 
 ## TextureCube
 
-TextureCube 为立方体纹理，可用于设置场景的[天空盒](../concepts/scene/skybox.md)，可以通过设置全景图 ImageAsset 为 TextureCube 类型获得，也可以通过制作 CubeMap 资源获得，在场景的天空盒章节有详细的使用和制作方式。
+TextureCube 为立方体纹理，可用于设置场景的 [天空盒](../concepts/scene/skybox.md)，可以通过设置全景图 ImageAsset 为 TextureCube 类型获得，也可以通过制作 CubeMap 资源获得，在场景的天空盒章节有详细的使用和制作方式。
 
-在 Cocos Creator 中通过全景图获得的 TextureCube:
+在 Cocos Creator 中通过全景图获得的 TextureCube：
 
 ![全景图](texture/Panorama.jpg)
 
-在 Cocos Creator 中通过制作 CubeMap 获得的 TextureCube:
+在 Cocos Creator 中通过制作 CubeMap 获得的 TextureCube：
 
-![CubeMap](../concepts/scene/skybox/Cubemap.jpg)
+![CubeMap](../../../concepts/scene/skybox/Cubemap.jpg)
 
-**阅读[天空盒](../concepts/scene/skybox.md) 章节去了解更多 TextureCube 的使用与制作 CubeMap 的方式**。
+更多关于 TextureCube 的使用与制作 CubeMap 的方式，请参考 [天空盒](../concepts/scene/skybox.md)。

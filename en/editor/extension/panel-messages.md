@@ -56,33 +56,32 @@ exports.unload = function() {};
 
 **Last**, define the main file of the panel:
 
- ```javascript
- exports.ready = async () => {
-    const tab = await Editor.Message.request('hello-world','query','tab');
-    const subTab = await Editor.Message.request('hello-world','query','subTab');
+```javascript
+exports.ready = async () => {
+    const tab = await Editor.Message.request('hello-world', 'query', 'tab');
+    const subTab = await Editor.Message.request('hello-world', 'query', 'subTab');
 
     // Print the queried data
     console.log(tab, subTab):
     // TODO uses these two data to initialize
- };
- exports.close() {
-        // Upload the data to the extension process after receiving the data
-        Editor.Message.send('hello-world','upload','tab', 1);
-        Editor.Message.send('hello-world','upload','subTab', 0);
-    },
- };
- ```
+};
+exports.close() {
+    // Upload the data to the extension process after receiving the data
+    Editor.Message.send('hello-world', 'upload', 'tab', 1);
+    Editor.Message.send('hello-world', 'upload', 'subTab', 0);
+};
+```
 
- ## Send a message
+## Send a message
 
- After defining the extension and the panels in the extension, we can try to trigger these messages.
+After defining the extension and the panels in the extension, we can try to trigger these messages.
 
- Press **ctrl(cmd) + shift + i** to open the console. Open the panel in the console:
+Press **ctrl(cmd) + shift + i** to open the console. Open the panel in the console:
 
- ```javascript
- // default can be omitted, if the panel name is not default, you need to fill in'hello-world.xxx'
- Editor.Panel.open('hello-world');
- ```
+```javascript
+// Default can be omitted, if the panel name is not default, you need to fill in'hello-world.xxx'
+Editor.Panel.open('hello-world');
+```
 
 After opening the panel, the console will print out a sentence:
 
@@ -92,24 +91,24 @@ undefined, undefined
 
 This is because the data has not yet been submitted. Now, close this panel and open it again. At this time, the console prints out the data:
 
- ```sh
+```sh
 1, 0
- ```
-
- Because when the panel is closed, two messages are sent:
-
-```javascript
-Editor.Message.send('hello-world','upload','tab', 1);
-Editor.Message.send('hello-world','upload','subTab', 0);
 ```
 
-Through these two messages, the Message system first saves the data to the extension process according to the upload definition in messages ("methods": ["saveData"]).
-
-When opening the panel again, pass:
+Because when the panel is closed, two messages are sent:
 
 ```javascript
-const tab = await Editor.Message.send('hello-world','query','tab');
-const subTab = await Editor.Message.send('hello-world','query','subTab');
+Editor.Message.send('hello-world', 'upload', 'tab', 1);
+Editor.Message.send('hello-world', 'upload', 'subTab', 0);
 ```
 
-Query the data just saved, initialize the interface, and print to the console.
+Through these two messages, the Message system first saves the data to the extension process according to the upload definition in messages `"methods": ["saveData"]`.
+
+When opening the panel again, use the following code to query for the data you just saved, initialize the interface, and print to the console.
+
+```javascript
+const tab = await Editor.Message.send('hello-world', 'query', 'tab');
+const subTab = await Editor.Message.send('hello-world', 'query', 'subTab');
+```
+
+At this point, we have completed an interaction between the panel and the extension process.

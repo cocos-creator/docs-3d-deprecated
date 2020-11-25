@@ -1,10 +1,10 @@
 # 扩展面板
 
-在实现一个功能的同时，很可能需要界面上的 UI 交互，Cocos Creator 也为扩展提供了这种能力。
+在实现一个功能的同时，很可能需要界面上的 UI 交互，Cocos Creator 3.0 也提供了扩展功能。
 
 ## 在扩展里声明面板
 
-在 package.json 里可以定义 panels 字段。
+在 `package.json` 里可以定义 panels 字段：
 
 ```json
 {
@@ -71,7 +71,7 @@ interface PanelSize {
 
 ## 编写面板
 
-上面我们注册的时候定义了 panel 入口文件 panels/default.js
+上面我们注册的时候定义了 panel 入口文件 `panels/default.js`：
 
 ```javascript
 // 监听面板事件
@@ -103,4 +103,4 @@ exports.beforeClose = function() {};
 exports.close = function() {};
 ```
 
-另外我们还定义了一个 list 面板，也需要按照上面的格式编写一个 list.js 文件
+另外我们还定义了一个 list 面板，也需要按照上面的格式编写一个 `list.js` 文件。

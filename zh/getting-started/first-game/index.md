@@ -579,7 +579,7 @@ onStartButtonClicked() {
  
     ```ts
     init() {
-        \\ ...
+        // ...
         this.playerCtrl.reset();
     }
     ```

@@ -31,7 +31,7 @@ The __animation clip__ defines the position of the data by the name of the node,
 
 ![paste-node-data](animation-clip/paste-node-data.gif)
 
-> **Note**: When using **shortcut keys to copy and paste node data**, please **make sure that no attribute track or keyframe is currently selected**. Because when there is a selected attribute track or key frame, the animation data will be copied first.
+> **Note**: when using **shortcut keys to copy and paste node data**, please **make sure that no attribute track or keyframe is currently selected**. Because when there is a selected attribute track or key frame, the animation data will be copied first.
 > If the paste target node does not exist when the attribute track in the animation data is copied, it will not be created automatically. Please create the required components in advance.
 
 - **Migrating node data**: sometimes we will rename the node after the animation is completed, which will cause problems with the animation data, as shown below:
@@ -96,7 +96,7 @@ To add a __key frame__:
 
     ![](./animation-clip/add-keyframe_4.gif)
 
-- After adding the __property track__, move the time cursor to desired position of the __Property Inspector__ or perform scene operations to automatically generate __key frames__.
+- After adding the __property track__, move the time cursor to desired position of the __Inspector__ panel or perform scene operations to automatically generate __key frames__.
 
 ### Removing key frames
 
@@ -108,11 +108,11 @@ To add a __key frame__:
 
 ### Modifying key frame data
 
-On the __timeline__ **double-click** the __key frame__ that needs to be modified. The __time cursor__ will move to that position. You can also directly drag the __time cursor__ to the corresponding position, and modify the corresponding properties directly in the **Property Inspector**. Make sure the __animation editor__ is in __edit mode__. For example, there are three property tracks in the property list: *position*, *scale*, and *rotation*. After the __key frame__ is selected, you can modify the *position*, *scale*, and *rotation* properties in the **Property Inspector**.
+On the __timeline__ **double-click** the __key frame__ that needs to be modified. The __time cursor__ will move to that position. You can also directly drag the __time cursor__ to the corresponding position, and modify the corresponding properties directly in the **Inspector** panel. Make sure the __animation editor__ is in __edit mode__. For example, there are three property tracks in the property list: *position*, *scale*, and *rotation*. After the __key frame__ is selected, you can modify the *position*, *scale*, and *rotation* properties in the **Inspector** panel.
 
 ![](./animation-clip/edit-keyframe_1.gif)
 
-In __animation editing mode__, move the __time control__ line to a position where there are no __key frames__ on the timeline, and then modify the corresponding properties in the __Property Inspector__, and a frame will also be inserted automatically.
+In __animation editing mode__, move the __time control__ line to a position where there are no __key frames__ on the timeline, and then modify the corresponding properties in the __Inspector__ panel, and a frame will also be inserted automatically.
 
 ### Moving a key frame
 
@@ -141,6 +141,6 @@ After selecting multiple __key frames__, adjust the number of interval __key fra
 
 The copy and paste of key frame data supports cross-node and cross-clip use.
 
-> **Note**: There is a difference between A and B. When using the shortcut key to paste the keyframe data, it will be pasted one by one in the order of the copied track data, while right-clicking on the target property track and selecting paste will only pasted on the target property track.Please be sure to copy the correct data to produce unexpected results.
+> **Note**: there is a difference between A and B. When using the shortcut key to paste the keyframe data, it will be pasted one by one in the order of the copied track data, while right-clicking on the target property track and selecting paste will only pasted on the target property track.Please be sure to copy the correct data to produce unexpected results.
 
 For more about the design of animation sequences and the content of scripting animations, you can refer to the [Animation Clip](./../../engine/animation/animation-clip.md) documentation.

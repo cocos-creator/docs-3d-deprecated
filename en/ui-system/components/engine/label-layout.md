@@ -70,7 +70,7 @@ Resize height mode will make sure the bounding box of the labels fits the height
 
 The `Enable Wrap Text` property of the Label component can switch the auto wrap switch of labels. When `Enable Wrap Text` is opened, labels will automatically wrap acccording to the width of the bounding box without manual input of `\r` or `\n` when inputting labels.
 
-__Note__: The `Enable Wrap Text` property is only available in the __CLAMP__ and __SHRINK__ modes of the label layout mode. In __RESIZE_HEIGHT__ mode, the `Enable Wrap Text` property is compulsorily opened.
+> __Note__: the `Enable Wrap Text` property is only available in the __CLAMP__ and __SHRINK__ modes of the label layout mode. In __RESIZE_HEIGHT__ mode, the `Enable Wrap Text` property is compulsorily opened.
 
 ### Auto Wrap in Clamp Mode
 

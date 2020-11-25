@@ -61,7 +61,7 @@ __Cocos Creator__ provides a powerful, flexible and convenient timer component.
     this.schedule(this.callback, 1);
     ```
 
-> **Note**: When the component's timer calls the callback, the `this` of the callback is specified as the component itself, so `this` can be used directly in the callback.
+> **Note**: when the component's timer calls the callback, the `this` of the callback is specified as the component itself, so `this` can be used directly in the callback.
 
 Here is a list of all of the timer functions in **Component**:
 

@@ -1,74 +1,89 @@
 # Terrain system
 
-The __terrain system__ displays the mountainous landscape of nature in an efficient way. Developers can easily use a __brush__ to sculpt *basins*, *mountains*, *valleys*, *plains* and *other landforms*.
+The __terrain system__ displays the mountainous landscape of nature in an efficient way. Developers can easily use a __brush__ to sculpt basins, mountains, valleys, plains and other landforms.
 
 ![terrain](./images/terrain.png)
 
 ## Creating a terrain
+
 Two steps are required to create a terrain:
 
-1. Click the right mouse button in __Hierarchy Manager__ and click __Create -> Terrain__ to create a terrain node. Terrain nodes can be moved, but rotation and zoom are not yet supported.
+1. Click the right mouse button in __Hierarchy__ panel and click __Create -> Terrain__ to create a terrain node. Terrain nodes can be moved, but rotation and zoom are not yet supported.
    
-   ![create terrain](./images/create-terrain.png)
+    ![create terrain](./images/create-terrain.png)
 
-2. Click the right mouse button in the __Assets Panel__ and click __Create -> Terrain__ in the pop-up menu to create the necessary terrain assets.
+2. Click the right mouse button in the __Assets__ panel and click __Create -> Terrain__ in the pop-up menu to create the necessary terrain assets.
    
-   ![create terrain asset](./images/createTerrainAsset.png)
+    ![create terrain asset](./images/createTerrainAsset.png)
 
-## Using a terrain
-Click on the created terrain node. There is a terrain component in the __Inspector Panel__, and the created terrain assets are assigned to the __Asset__ in the terrain component.
+3. Click on the created terrain node. There is a terrain component (`cc.Terrain`) in the __Inspector__ panel, and the created terrain assets are assigned to the __Asset__ in the terrain component.
 
-![terrain inspector](./images/terrain-inspector.png)
+    ![terrain inspector](./images/terrain-inspector.png)
 
 ## Editing a terrain
-After assigning the terrain assets, the editing panel can be accessed from the `Scene`. The terrain editing system includes three major functions: *management of terrains*, *sculpting terrains*, and *painting terrains*. These three functions can be switched between by clicking on the corresponding tabs. It is also possible to switch between each more using the 
-![terrain component](./images/toolbar.png) icon on the toolbar.
+
+After assigning the terrain assets, the editing panel can be accessed from the **Scene** panel. The terrain editing system includes three major functions: **Manage**, **Sculpt**, and **Paint**. These three functions can be switched between by clicking on the corresponding tabs.
 
 ![terrain component](./images/terrain-panel.png)
 
+It is also possible to switch functions via the tools in the upper left corner of the **Scene** panel:
+- 1 -- Corresponds to the **Manage** function.
+- 2 -- Corresponds to the **Bulge** `BrushMode` in the **Sculpt** function.
+- 3 -- Corresponds to the **Sunken** `BrushMode` in the **Sculpt** function.
+- 4 -- Corresponds to the **Smooth** `BrushMode` in the **Sculpt** function.
+- 5 -- Corresponds to the **Paint** function.
 
 ### Management of terrains
+
 Management is adjusting various parameters of a terrain. Tile is the smallest unit of terrain. Tile constitutes one 32x32 block of tiles with each terrain needing to consist of at least one tile block.
 
-Parameter | Description
----|---
-*TileSize* | The size of the terrain tile. Currently, a terrain block consists of 32 x 32 tiles, so the side length of a terrain block is 32 x TileSize.
-*BlockCount* | Number of terrain blocks in two dimensions
-*WeightMapSize* | Weight map size
-*LightMapSize* | Lightmap size
+![edit layer](./images/terrain-manage.png)
+
+| Parameter | Description |
+| :--- | :-- |
+| TileSize | The size of the terrain tile. Currently, a terrain block consists of 32 x 32 tiles, so the side length of a terrain block is **32 x TileSize**. | 
+| BlockCount | Number of terrain blocks in two dimensions | 
+| WeightMapSize | Weight map size | 
+| LightMapSize | Lightmap size | 
 
 ### Sculpting a terrain
+
 Sculpting is changing the shape of a terrain.
 
-#### Brush function
-Brush controls are as follows:
+![edit layer](./images/terrain-sculpt.png)
 
-- Up/Down, left mouse button/Shift+left mouse button.
-- Smooth, raised and depressed operations tend to make the terrain look sharp.
+| Parameter | Description |
+| :--- | :--- |
+| BrushSize     | The size of the brush |
+| BrushStrength | The strength of the brush |
+| BrushMode | The type of the brush, including **Bulge**、**Sunken** and **Smooth** |
 
-#### Brush type
-Currently only round brushes are supported. The brush can have the following parameters:
+To control the bulging/depression of the terrain, use the **left mouse** button and the **Shift + left mouse** button, respectively. The bulge and depression operation often makes the terrain look sharp, so you can use the smoothing function to overdo it.
 
-Parameter | Description
----|---
-*BrushSize* | The size of the brush
-*BrushStrength* | Brush strength
-*Brush Falloff* | Brush falloff, this value determines the sharpness of the brush edge. 0.0 means that the brush has full effect in the whole range (all covered by the current layer texture), with sharp edges, 1.0 means that the brush has full effect only in its center, and the influence will be attenuated when reaching the edge.
+> **Note**: currently only round brushes are supported.
 
 ### Painting a terrain
+
 Painting is the texture used to depict the appearance of a terrain.
 
-Parameter | Description
----|---
-*DetailMap* | Current Layer texture
-*TileSize*| The tile size of the texture. The smaller the value, the more tiles will be used in the same size area.
+![edit layer](./images/terrain-paint.png)
+
+| Parameter | Description |
+| :--- | :--- |
+| TileLayer | Set the Layer of the terrain, as described in section **Layer editing** below. |
+| BrushSize | The size of the brush |
+| BrushStrength | The strength of the brush  |
+| BrushFalloff | Brush falloff, this value determines the sharpness of the brush edge.<br>**0.0** means that the brush has full effect in the whole range (all covered by the current layer texture), with sharp edges.<br>**1.0** means that the brush has full effect only in its center, and the influence will be attenuated when reaching the edge. |
+
+> **Note**: currently only round brushes are supported.
 
 #### Layer editing
-1. Click +/- to add and delete layers (up to __4 layers__ are supported).
 
-   ![add layer](./images/layer-plus-minus.png)
+![edit layer](./images/terrain-paint-layer.png)
 
-2. After selecting a Layer, you can edit the *DetailMap* and *TileSize* parameters.
-   
-   ![edit layer](./images/select-pic.png)
+Click the **+** or **-** button at the top right to **add** or **delete** layers (up to **4** layers are supported). Once a Layer is selected, you can edit the Layer and its texture.
 
+| Parameter | Description |
+| :--- | :--- |
+| `cc.Texture2D` | Current Layer texture |
+| TileSize       | The tile size of the texture. The smaller the value, the more tiles will be used in the same size area |

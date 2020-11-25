@@ -62,7 +62,7 @@ export function setDefaultLogTimes (times: number): void;
 
 ## 使用规范
 
-按照模块划分，每个模块维护一份废弃文件。为了便于维护，命名统一为 deprecated.ts ，并且放在相应模块的目录下，并需要在相应的模块的`index.ts`文件中`import`该文件，例如`import './deprecated'`。
+按照模块划分，每个模块维护一份废弃文件。为了便于维护，命名统一为 deprecated.ts，并且放在相应模块的目录下，并需要在相应的模块的`index.ts`文件中`import`该文件，例如`import './deprecated'`。
 
 **注：`cocos\utils`目录下的`deprecated.ts`文件为声明和实现文件**。
 

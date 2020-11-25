@@ -62,7 +62,7 @@ __Right-click__ on the __timeline position__ or __click__ the __timeline button_
 
 The __index node__ in the __animation data__ is based on the relative path of the node where the __Animation component__ is attached. Therefore, a node with the same name under the same parent node can only generate one copy of __animation data__, and can only be applied to the first node with the same name.
 
-The nodes here and the nodes of the __Hierarchy Manager__ are mapped one by one. Using this relationship, when the number of nodes in the node list is too large to be consulted, you can use the search function of the __Hierarchy Manager__ to locate the nodes. Click on the node in the __Hierarchy Manager__, and it will also jump to the corresponding node position in the __Animation Editor__ to achieve a reasonable display effect.
+The nodes here and the nodes of the __Hierarchy__ panel are mapped one by one. Using this relationship, when the number of nodes in the node list is too large to be consulted, you can use the search function of the __Hierarchy__ panel to locate the nodes. Click on the node in the __Hierarchy__ panel, and it will also jump to the corresponding node position in the __Animation Editor__ to achieve a reasonable display effect.
 
 #### Selected node icon
 
@@ -76,7 +76,7 @@ This is mainly to display a preview of all frames on each node. Here, you can de
 
 ### Property list
 
-Mainly displays the property list of the currently selected node participating in the animation. Each property display item has a key frame icon, corresponding to the current property track and the key frame status of the current time control line position. __Click__ to __add/remove__ the corresponding key frame . The __right-click__ menu can remove the current track or clear data. __Click__ on the plus button at the top to add an property track for the currently selected node.
+Mainly displays the property list of the currently selected node participating in the animation. Each property display item has a key frame icon, corresponding to the current property track and the key frame status of the current time control line position. __Click__ to __add/remove__ the corresponding key frame. The __right-click__ menu can remove the current track or clear data. __Click__ on the plus button at the top to add an property track for the currently selected node.
 
 Like the node, the property track may also be lost. The property recorded in the animation clip does not exist on the current node. This property is the property lost under the current node. The missing __Properties__ are also displayed in yellow. In this case, you can add the relevant __Properties__ to the corresponding node or directly remove the missing property track after exiting the editing mode.
 

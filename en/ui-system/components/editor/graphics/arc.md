@@ -2,7 +2,7 @@
 
 The `arc()` method creates an arc/curve (used to create circles or partial circles).
 
-> __Note__: To create a circle with `arc()`, set the start angle to `0` and the end angle to `2 * Math.PI`.
+> __Note__: to create a circle with `arc()`, set the start angle to `0` and the end angle to `2 * Math.PI`.
 
 | Parameter | Description |
 | -------------- | ----------- |

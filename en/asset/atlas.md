@@ -33,7 +33,7 @@ Users of the __TexturePacker__ software need to pay attention to a few items:
 
 ## Importing Atlas Assets
 
-Drag the **.plist** and the **.png** files shown above into the **Assets Panel** at the same time. You can generate __Atlas__ assets that can be used in the editor and scripts.
+Drag the **.plist** and the **.png** files shown above into the **Assets** panel at the same time. You can generate __Atlas__ assets that can be used in the editor and scripts.
 
 ### Atlas and SpriteFrame
 

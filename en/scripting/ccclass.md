@@ -1,69 +1,66 @@
+# CCClass
+
+When the decorator [ccclass](#ccclass) is applied to a class, the class is called `ccclass`. The `ccclass` injects additional information to control __Cocos Creator 3.0__'s serialization of this kind of object along with the editor's display for these types of objects.
+
 ## ccclass
-
-When the decorator [ccclass](#ccclass) is applied to a class, the class is called `ccclass`. The `ccclass` injects additional information to control __Cocos Creator 3D__'s serialization of this kind of object along with the editor's display for these types of objects.
-
-### ccclass
 
 Various characteristics of the `ccclass` are specified by the `ccclass` option parameter of `ccclass(name)`.
 
-#### ccclass name
+### ccclass name
 
 The option `name` specifies the name of the `ccclass`. The `ccclass` name should be **unique**.
 
 When you need the corresponding `ccclass`, you can find it by its `ccclass` name, for example:
 
-- Serialization.
-  If the object is a cc object, the `ccclass` name of the object will be recorded during serialization. During deserialization, the corresponding `ccclass` will be found for serialization based on this name.
+- Serialization. If the object is a cc object, the `ccclass` name of the object will be recorded during serialization. During deserialization, the corresponding `ccclass` will be found for serialization based on this name.
 
 - When the `ccclass` is a component class, `Node` can find the component by its `ccclass` name.
 
-## ccattributes
+## cc Attributes
 
 When the decorator [property](#property) is applied to a property or accessor of the `ccclass`, this property is called a `ccproperty`.
-Similar to the `ccclass`, the `ccattribute` injects additional information to control the serialization of the attribute in **Cocos Creator 3D** and the display of the attribute in the editor.
+
+Similar to the `ccclass`, the `ccattribute` injects additional information to control the serialization of the attribute in **Cocos Creator 3.0** and the display of the attribute in the editor.
 
 ### Property
 
 Various characteristics of the `ccattribute` are specified by the `ccattribute` option parameter of `property()`.
 
-#### cctype
+### cc type
 
-The option `type` specifies the `cctype` of the attribute.
+The option `type` specifies the `cctype` of the attribute. The type can be specified by the following parameters:
 
-The type can be specified by the following parameters:
+- Constructor
 
-- Constructor.
-  The type specified by the constructor is directly used as the `cctype` of the attribute.
-
+  The type specified by the constructor is directly used as the `cctype` of the attribute.<br>
   > **Note**: when Javascript built-in constructors `Number`, `String`, `Boolean` A warning will be given when used as a `cctype`, and they are regarded as `cctype`s `CCFloat`, `CCString`, and `CCBoolean` respectively.
 
-- Cocos Creator 3D built-in attribute type identification. 
+- Cocos Creator 3.0 built-in attribute type identification. 
 
-  - `CCInteger`, `CCFloat`, `CCBoolean`, and `CCString` are built-in attribute type identifiers.
-  - `CCInteger` declares the type as **Cocos Creator 3D integer**.
-  - `CCFloat` declares the type as **Cocos Creator 3D floating point number**.
-  - `CCString` declares the type as **Cocos Creator 3D string**.
-  - `CCBoolean` declares the type as **Cocos Creator 3D Boolean**.
+  `CCInteger`, `CCFloat`, `CCBoolean`, and `CCString` are built-in attribute type identifiers.
+  - `CCInteger` declares the type as **integer**.
+  - `CCFloat` declares the type as **floating point number**.
+  - `CCString` declares the type as **string**.
+  - `CCBoolean` declares the type as **Boolean**.
 
-- Array.
+- Array
 
-  When using the constructor, Cocos Creator 3D built-in property type identification or array as the array element, the properties are specified as **Cocos Creator 3D** array. For example, `[CCInteger]` declares the type as a **Cocos Creator 3D** array whose elements are **Cocos Creator 3D** integers.
+  When using the constructor, built-in property type identification or array as the array element, the properties are specified as **Cocos Creator 3.0** array. For example, `[CCInteger]` declares the type as a array whose elements are integers.
 
-If the attribute does not specify the `cctype`, **Cocos Creator 3D** will derive its `cctype` from the default value of the attribute or the evaluation result of the initialization formula:
-
-  - If the value type is Javascript primitive type `number`, `string`, `boolean`, the `cctype`s are **Cocos Creator 3D** floating point numbers, **Cocos Creator 3D** strings, and **Cocos Creator 3D** Boolean values.
-  - Otherwise, if the value is an object type, it is equivalent to using the object's constructor to specify the `cctype`.
-  - Otherwise, the `cctype` of the attribute is **undefined**.
+If the attribute does not specify the `cctype`, **Cocos Creator 3.0** will derive its `cctype` from the default value of the attribute or the evaluation result of the initialization formula:
+- If the value type is Javascript primitive type `number`, `string`, `boolean`, the `cctype`s are Creator floating point, string, and boolean values, respectively.
+- Otherwise, if the value is an object type, it is equivalent to using the object's constructor to specify the `cctype`.
+- Otherwise, the `cctype` of the attribute is **undefined**.
 
 Generally, you only need to explicitly declare the `cctype` in the following situations:
 
-  - When the attribute needs to be displayed as an integer.
-  - When the actual value of the attribute may be of multiple types.
+- When the attribute needs to be displayed as an integer.
+- When the actual value of the attribute may be of multiple types.
 
 For how the `cctype` affects the cc attribute and the treatment of attributes that do not define the `cctype`, see:
 
-  - [Attribute Type](#AttributeParameters)
-  - [Serialization parameter](#serializableparameter)
+- [Attribute Type](#AttributeParameters)
+- [Serialization parameter](#serializableparameter)
 
 For convenience, the following decorators are additionally provided to quickly declare the `cctype`:
 
@@ -75,7 +72,7 @@ For convenience, the following decorators are additionally provided to quickly d
 | @string | @property(CCString) |
 | @boolean | @property(CCBoolean) |
 
-The following code demonstrates the declaration of `ccattributes` of different `cctype`s:
+The following code demonstrates the declaration of `cc` attributes of different `cctype`s:
 
 ```ts
 import { _decorator, CCInteger, Node } from "cc";
@@ -103,7 +100,7 @@ class MyClass {
 }
 ```
 
-#### Defaults
+### Defaults
 
 The option `default` specifies the default value of the cc attribute.
 
@@ -113,7 +110,7 @@ The option `default` specifies the default value of the cc attribute.
 
 The constructor of `CCClass` is defined by `constructor`. To ensure that deserialization can always run correctly, `constructor` **is not allowed to define **constructor parameters**.
 
-> **Note**: If developers really need to use construction parameters, they can get them through `arguments`, but remember that if this class will be serialized, you must ensure that the object can still be new when the construction parameters are all default.
+> **Note**: if developers really need to use construction parameters, they can get them through `arguments`, but remember that if this class will be serialized, you must ensure that the object can still be new when the construction parameters are all default.
 
 ## Judging The Type
 
@@ -138,7 +135,7 @@ console.log(base instanceof Sub);  // false
 
 ### Instance Variables
 
-The instance variables defined in the constructor cannot be serialized, nor can they be viewed in the **Property Inspector**.
+The instance variables defined in the constructor cannot be serialized, nor can they be viewed in the **Inspector** panel.
 
 ```typescript
 class Sprite {
@@ -153,7 +150,7 @@ class Sprite {
 }
 ```
 
-> **Note**: If it is a private variable, it is recommended to add an underscore `_` in front of the variable name to distinguish it.
+> **Note**: if it is a private variable, it is recommended to add an underscore `_` in front of the variable name to distinguish it.
 
 ### Example Method
 
@@ -276,7 +273,7 @@ console.log(obj.getName());    // "rect"
 
 ## Attributes
 
-Attributes are special instance variables that can be displayed in the **Attribute Inspector** and can also be serialized.
+Attributes are special instance variables that can be displayed in the **Inspector** panel and can also be serialized.
 
 ### Properties and Constructors
 
@@ -300,24 +297,26 @@ However, it should be noted that the process of property deserialization occurs 
 
 `default` is used to declare the default value of the attribute. The attribute with the default value will be implemented as a member variable by `ccclass`. The default value is only used when the object is created for the first time, which means that when the default value is modified, the current value of the component that has been added to the scene will not be changed.
 
-> **Note**: After you add a component to the editor, go back to the script to modify a default value, there is no change in the **Property Inspector**. Because the current value of the property has been serialized into the scene, it is no longer the default value used when it was first created. If you want to force all properties to be reset to default values, you can select Reset in the component menu of the **Property Inspector**.
+> **Note**: after you add a component to the editor, go back to the script to modify a default value, there is no change in the **Inspector** panel. Because the current value of the property has been serialized into the scene, it is no longer the default value used when it was first created. If you want to force all properties to be reset to default values, you can select Reset in the component menu of the **Inspector** panel.
 
 `default` can be set to the following value types:
 
 1. Any number, string or boolean type value
-2. `null` or ʻundefined`
+2. `null` or `undefined`
 3. Subclasses inherited from `ValueType`, such as instantiated objects of `Vec3`, `Color` or `Rect`:
+
     ```typescript
     @property({type:Vec3})
     private pos = null;
     ```
+
 4. Empty array `[]` or empty object `{}`
 
 #### Visible Parameter
 
-By default, whether it is displayed in the **Property Inspector** depends on whether the attribute name starts with an underscore `_`. If it starts with an underscore, it will not be displayed in the **Property Inspector** by default, otherwise it will be displayed by default.
+By default, whether it is displayed in the **Inspector** panel depends on whether the attribute name starts with an underscore `_`. If it starts with an underscore, it will not be displayed in the **Inspector** panel by default, otherwise it will be displayed by default.
 
-If you want to force it to be displayed in the **Property Inspector**, you can set the `visible` parameter to true:
+If you want to force it to be displayed in the **Inspector** panel, you can set the `visible` parameter to true:
 
 ```typescript
 @property({visible:true})
@@ -333,7 +332,7 @@ If you want to force hiding, you can set the `visible` parameter to false:
 
 #### Serializable Parameters
 
-Attributes with a default value of `default` will be serialized by default. After serialization, the values set in the editor will be saved to resource files such as scenes, and the previously set values will be automatically restored when the scene is loaded . If you don't want to serialize, you can set `serializable: false`.
+Attributes with a default value of `default` will be serialized by default. After serialization, the values set in the editor will be saved to resource files such as scenes, and the previously set values will be automatically restored when the scene is loaded. If you don't want to serialize, you can set `serializable: false`.
 
 ```typescript
 @property({serializable:false})
@@ -342,23 +341,23 @@ Attributes with a default value of `default` will be serialized by default. Afte
 
 #### Type Parameter
 
-When `default` cannot provide enough detailed type information, in order to display the correct input control in the **Property Inspector**, you must use `type` to explicitly declare the specific type:
+When `default` cannot provide enough detailed type information, in order to display the correct input control in the **Inspector** panel, you must use `type` to explicitly declare the specific type:
 
-- When the default value is null, set type to the constructor of the specified type, so that the **Property Inspector** knows that a Node control should be displayed.
+- When the default value is null, set type to the constructor of the specified type, so that the **Inspector** panel knows that a Node control should be displayed.
 
     ```typescript
     @property({type:Node})
     private enemy = null;
     ```
 
-- When the default value is a number type, set the type to `cc.Integer` to indicate that this is an integer, so that the attribute cannot be entered in the decimal point in the **Property Inspector**.
+- When the default value is a number type, set the type to `cc.Integer` to indicate that this is an integer, so that the attribute cannot be entered in the decimal point in the **Inspector** panel.
 
     ```typescript
     @property({type:CCInteger})
     private num = 0;
     ```
 
-- When the default value is an enumeration (`Enum`), since the enumeration value itself is actually a number, the type must be set to the enumeration type to be displayed in the **Property Inspector** enumerate the drop-down box.
+- When the default value is an enumeration (`Enum`), since the enumeration value itself is actually a number, the type must be set to the enumeration type to be displayed in the **Inspector** panel enumerate the drop-down box.
 
     ```typescript
     enum A{
@@ -410,7 +409,7 @@ private get num(){
 
 The get method can return any type of value.
 
-This property can also be displayed in the **Property Inspector** and can be directly accessed in all codes including the constructor.
+This property can also be displayed in the **Inspector** panel and can be directly accessed in all codes including the constructor.
 
 ```typescript
 class Sprite{
@@ -427,7 +426,7 @@ class Sprite{
 };
 ```
 
-> **Note**: As get accessor is used, this property cannot be serialized, nor can it be assigned a default value, but most parameters except `default` and `serializable` can still be attached.
+> **Note**: as get accessor is used, this property cannot be serialized, nor can it be assigned a default value, but most parameters except `default` and `serializable` can still be attached.
     ```typescript
     @property({type:CCInteger,tooltip: "The width of sprite"})
     private _width = 0;
@@ -436,7 +435,7 @@ class Sprite{
     }
     ```
 
-> **Note**: The `get` accessor is read-only, but the returned object is not read-only. Users can still modify the internal properties of the object using code, for example:
+> **Note**: the `get` accessor is read-only, but the returned object is not read-only. Users can still modify the internal properties of the object using code, for example:
     ```typescript
     @property
     _num=0;
@@ -479,6 +478,6 @@ set(value){
 }
 ```
 
-> **Note**: If it is not defined together with `get`, the `set` itself cannot be accompanied by any parameters.
-
-> **Note**: Like `get`, after `set` is set, this property cannot be serialized, nor can it be assigned a default value.
+> **Note**:
+> 1. If it is not defined together with `get`, the `set` itself cannot be accompanied by any parameters.
+> 2. like `get`, after `set` is set, this property cannot be serialized, nor can it be assigned a default value.

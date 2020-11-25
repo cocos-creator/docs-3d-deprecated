@@ -6,8 +6,8 @@ __Cocos Creator__ currently provides users with a variety of __collider componen
 
 The __collider component__ is used to represent the shape of the __collision body__ of a __rigid body__. Different geometric shapes have different properties.
 
-> **Note**: The following property names are all lowercase in the actual code.
-> **Note**: Currently only box, sphere and capsule are supported in `builtin`.
+> **Note**: the following property names are all lowercase in the actual code.
+> **Note**: currently only box, sphere and capsule are supported in `builtin`.
 
 ### BoxCollider
 
@@ -48,7 +48,7 @@ To use `CylinderCollider`, please refer to the [CylinderCollider API](https://do
 
 ![CapsuleCollider](img/collider-capsule.jpg)
 
-Properties | Description（Other reference cylinders and box colliders）
+Properties | Description (Other reference cylinders and box colliders)
 ---|---
 **cylinderHeight** | The height of the cylinder in the capsule
 **radius** | The radius of the sphere in the capsule
@@ -61,7 +61,7 @@ To use `CapsuleCollider`, please refer to the [CapsuleCollider API](https://docs
 
 ![ConeCollider](img/collider-cone.jpg)
 
-Properties | Description（Other reference cylinders and box colliders）
+Properties | Description (Other reference cylinders and box colliders)
 ---|---
 **radius** | The radius of the circle of the underside of the cone
 **height** | The height of the cone
@@ -91,7 +91,7 @@ Properties | Description (Other reference box colliders)
 To use `MeshCollider`, please refer to the [MeshCollider API](https://docs.cocos.com/creator3d/api/en/classes/physics.meshcollider.html).
 
 > **Note**: `cannon.js` has poor support for the mesh collider component, and only allows detection with the sphere collider.
-> **Note**: Currently only `ammo.js` backend supports `convex` functionality.
+> **Note**: currently only `ammo.js` backend supports `convex` functionality.
 
 ### SimplexCollider
 

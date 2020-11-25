@@ -21,8 +21,8 @@ There are a number of control in **Preview** page:
 
 ![refresh](index/refresh.jpg)
 
-If we want to refresh the preview page after some modified, just refresh in browser or click the refresh button in editor.
-The difference is that click refresh button in editor will **refresh all preview pages**.If you want the preview page to refresh automatically, just save the scene.The settings for saving scene auto-refresh can be enable in __Project Settings-> Project Preview__.
+If we want to refresh the preview page after some modified, just refresh in browser or click the refresh button in editor.<br>
+The difference is that click refresh button in editor will **refresh all preview pages**.If you want the preview page to refresh automatically, just save the scene.The settings for saving scene auto-refresh can be enable in __Project Settings -> Project Preview__.
 
 ![start-scene](index/auto-refresh.jpg)
 
@@ -44,13 +44,13 @@ There are the following ways to debug the preview page on the mobile phone:
 
 - Directly **Enter the preview address in the mobile browser**
 
-![preview-url](index/preview-url.jpg)
+  ![preview-url](index/preview-url.jpg)
 
-> **Note**: Make sure the mobile phone and the computer is **on the same network segment**.Since there will be multiple networks on the computer, if the IP address of the preview URL in the editor is incorrectly, you can modify it in `Preferences-> General Settings-> Select Local Preview Address`. Please refer to the description of the[preference settings](../preference/index.md) documentation.
+> **Note**: make sure the mobile phone and the computer is **on the same network segment**.Since there will be multiple networks on the computer, if the IP address of the preview URL in the editor is incorrectly, you can modify it in **Preferences-> General Settings-> Select Local Preview Address**. Please refer to the description of the [preference settings](../preference/index.md) documentation.
 
 ## Custom Preview Template
 
-We can add custom preview template to change the preview result,just put your template in **`preview-template`** folder in the project dictionary.Editor also use template to render to `index.html`. If there is a file named `index.ejs` in this dictionary,editor will use it as the template that render to `index.html`.Your can click the menu in editor **Project ——> Generate Preview Template** to get the latest template used in editor.
+We can add custom preview template to change the preview result, just put your template in `preview-template` folder in the project dictionary. Editor also use template to render to `index.html`. If there is a file named `index.ejs` in this dictionary, editor will use it as the template that render to `index.html`. You can click the menu in editor **Project —> Generate Preview Template** to get the latest template used in editor.
 
 ```
 project-folder
@@ -60,7 +60,7 @@ project-folder
         |--index.ejs
 ```
 
-> **Note**: There are some preview menu items and preview debugging tools in the preview template, We recommended you keep all the content and **just add what you need** or modified code carefully to avoid some unexpected errors.. In addition, if `index.html` and `index.ejs` coexist, `index.html` **will replace** `index.ejs` as the render-template for preview page.
+> **Note**: there are some preview menu items and preview debugging tools in the preview template, We recommended you keep all the content and **just add what you need** or modified code carefully to avoid some unexpected errors.. In addition, if `index.html` and `index.ejs` coexist, `index.html` **will replace** `index.ejs` as the render-template for preview page.
 
 ### Examples of Use
 
@@ -72,30 +72,30 @@ Code of this example is stored in the [test-case-3d](https://github.com/cocos-cr
 
 2. **Add script in folder**
 
-    Add the scripts you need to use in folder, such as `test.js`, where `<%-include (cocosTemplate, {})%>` contains the default logic for starting the game.`test.js` in the example below will be loaded after the game starts.
+    Add the scripts you need to use in folder, such as `test.js`, where `<%-include (cocosTemplate, {})%>` contains the default logic for starting the game. `test.js` in the example below will be loaded after the game starts.
 
 3. **Modify `index.ejs`**
 
     Open `index.ejs` and modify as follows:
 
-```html
-<html>
-    ...
-    <body>
+    ```html
+    <html>
         ...
-        <%- include(cocosTemplate, {}) %> // Game start processing logic
-        <script src="/test.js"></script> // New script
-    </body>
-</html>
-```
+        <body>
+            ...
+            <%- include(cocosTemplate, {}) %> // Game start processing logic
+            <script src="/test.js"></script> // New script
+        </body>
+    </html>
+    ```
 
 4. **Place `test.js` in the `preview-template` folder like blow**
 
-```
- |--preview-template
-        |--index.ejs
-        |--test.js
-```
+    ```
+    |--preview-template
+            |--index.ejs
+            |--test.js
+    ```
 
 5. **Preview**
 
@@ -103,7 +103,7 @@ Code of this example is stored in the [test-case-3d](https://github.com/cocos-cr
 
 ## Add Custom Devices Info
 
-Open __Project ——> Project Preview__. Custom device info can be modified on this page, and changes will work after refreshing the preview page.
+Open __Project —> Project Preview__. Custom device info can be modified on this page, and changes will work after refreshing the preview page.
 
 ![Custom Devices Info](./browser/user_device.jpg)
 
@@ -115,4 +115,6 @@ To learn more about using DevTools, please read the [Chrome Dev Tools User Guide
 
 ## Browser compatibility
 
-The desktop browsers tested during __Cocos Creator__ development include: Chrome, Firefox (Firefox), other browsers can be used as long as the kernel version is high enough. Please do not enable IE6 compatibility mode. Browsers tested on mobile devices include: **Safari (iOS)**, **Chrome**, **QQ browser**, **UC browser**, and **WeChat built-in Webview**.
+The desktop browsers tested during __Cocos Creator__ development include: **Chrome**, **Firefox (Firefox)**. Other browsers can be used as long as the kernel version is high enough, for some browsers do not enable IE6 compatibility mode.
+
+Browsers tested on mobile devices include: **Safari (iOS)**, **Chrome**, **QQ browser**, **UC browser**, and **WeChat built-in Webview**.

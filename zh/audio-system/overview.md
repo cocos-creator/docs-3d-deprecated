@@ -19,4 +19,4 @@
 我们已经尽力在引擎中最小化这部分差异，但还是会存在一部分不可协调的不一致性：
 * iOS 平台 DOM 音频模式不支持调整音量大小，所有 volume 相关属性将不会有效；
 * 只有 Web Audio 模式支持同一音频的多重播放，其他模式下为避免重复创建，多次调用 `playOneShot` 的默认行为是从头开始重新播放；
-* 目前大部分平台都已遵守最新的 [auto play police](https://www.chromium.org/audio-video/autoplay)，即使设置了 `playOnAwake` 也会在第一次接收到用户输入时才开始播放；
+* 目前大部分平台都已遵守最新的 [Audio Play Police](https://www.chromium.org/audio-video/autoplay)，即使设置了 `playOnAwake` 也会在第一次接收到用户输入时才开始播放；

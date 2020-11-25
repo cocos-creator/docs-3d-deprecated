@@ -2,7 +2,7 @@
 
 ## Creating component scripts
 
-In __Cocos Creator__, scripts are also part of resources. You can add and select **TypeScript** to create a component script by clicking the **Create** button in the **Resource Editor**. Example:
+In __Cocos Creator__, scripts are also part of resources. You can add and select **TypeScript** to create a component script by clicking the **Create** button in the **Asset** panel. Example:
 
 ![create-script](setup/create-script.png)
 
@@ -43,15 +43,15 @@ Before writing code, please read [Basics of Scripting](basic.md) documentation t
 
 ## Add a script to a scene node
 
-Adding the script to the scene node is actually adding a component to this node. Let's first rename the newly created **NewScript.js** to **say-hello.js**. Then select the scene node we want to add, and the attributes of the node will be displayed in the **Attribute Inspector**. At the bottom of the **Property Inspector**, there is a **Add component** button. Click the button and select **Add User Script -> say-hello** to add the script component we just wrote.
+Adding the script to the scene node is actually adding a component to this node. Let's first rename the newly created **NewScript.js** to **say-hello.js**. Then select the scene node we want to add, and the attributes of the node will be displayed in the **Attribute Inspector**. At the bottom of the **Inspector** panel, there is a **Add component** button. Click the button and select **Add User Script -> say-hello** to add the script component we just wrote.
 
 ![add-script](setup/add-script.png)
 
-If all goes well, you will see your script displayed in the **Property Inspector**:
+If all goes well, you will see your script displayed in the **Inspector** panel:
 
 ![script-in-properties](setup/script-in-inspector.png)
 
-> **Note**: Users can also add scripts by directly dragging and dropping script resources to the **Property Inspector**.
+> **Note**: users can also add scripts by directly dragging and dropping script resources to the **Inspector** panel.
 
 ## Default script editing tool configuration
 

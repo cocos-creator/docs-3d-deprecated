@@ -2,7 +2,7 @@
 
 The `fill()` method is used to fill the current image (path). The color used is [`fillColor`](./fillColor.md).
 
-> __Note__: If the path is not closed, the `fill()` method adds a line from the end of the path to the start point to close the path and then fills the path.
+> __Note__: if the path is not closed, the `fill()` method adds a line from the end of the path to the start point to close the path and then fills the path.
 
 ## Example
 

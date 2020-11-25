@@ -54,7 +54,7 @@ update (deltaTime: number) {
 
 ## Control the execution order of components on the same node
 
-The execution order of component scripts on the same node can be controlled by the order of the components in the **Property Inspector**. The components arranged above will be executed before the components arranged below. We can adjust the arrangement order and execution order of the components through the `Move Up` and `Move Down` menus in the gear button at the upper right corner of the component.
+The execution order of component scripts on the same node can be controlled by the order of the components in the **Inspector** panel. The components arranged above will be executed before the components arranged below. We can adjust the arrangement order and execution order of the components through the `Move Up` and `Move Down` menus in the gear button at the upper right corner of the component.
 
 If there are two components: `CompA` and `CompB`, their contents may be similar to this example:
 

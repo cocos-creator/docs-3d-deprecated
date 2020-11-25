@@ -35,7 +35,7 @@ RichText 组件用来显示一段带有不同样式效果的文字，你可以�
 
 下面分别是应用 size 和 color 标签的一个例子：
 
-`<color=green>你好</color>，<size=50>Creator3D</>`
+`<color=green>你好</color>，<size=50>Creator</>`
 
 ### 支持标签
 

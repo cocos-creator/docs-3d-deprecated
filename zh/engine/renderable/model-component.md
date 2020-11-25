@@ -10,7 +10,7 @@
 
 属性 | 功能
 --- | ---
-**mesh** | 用于渲染的3D模型资源。
+**mesh** | 用于渲染的 3D 模型资源。
 **materials** | 用于渲染模型的材质，一个材质对应mesh中的一个 submesh。
 **shadowCastingMode** | 指定当前模型是否会投射阴影，需要先在场景中启用平面阴影系统。
 **visibility** | 用于模型会被哪个摄像机渲染，只有visibility与模型相同的摄像机才会渲染该模型。
@@ -23,7 +23,7 @@
 
 目前静态合批方案为运行时静态合批，通过调用 `BatchingUtility.batchStaticModel` 可进行静态合批。<br>
 该函数接收一个节点，然后将该节点下的所有 `MeshRenderer` 里的 `Mesh` 合并成一个，并将其挂到另一个节点下。<br>
-在合批后，将无法改变原有的 `MeshRenderer` 的 transform，但可以改变合批后的根节点的 transform。只有满足以下条件的结点才能进行静态合批：
+在合批后，将无法改变原有的 `MeshRenderer` 的 transform，但可以改变合批后的根节点的 transform。只有满足以下条件的节点才能进行静态合批：
 * 子节点中只能包含 `MeshRenderer`；
 * 子节点下的 `MeshRenderer` 的 `Mesh` 的顶点数据结构必须一致；
 * 子节点下的 `MeshRenderer` 的材质必须相同；
@@ -58,7 +58,5 @@
 如果存在大量相同的模型重复绘制，相互间只有相对可控的小差异，就可以使用 instancing 合批。<br>
 如果存在大量面数很低但顶点数据又各不相同的模型，可以考虑尝试合并 VB 合批。<br>
 
----
-
 <b id="f1">[1]</b> 注意目前使用 uniform 上传合批后的世界变换矩阵，考虑到 WebGL 标准的 uniform 数量限制，目前一批最多绘制 10 个模型，所以对大量同材质的模型，开启合批后 drawcall 数量预期最多会减少 10 倍。 [↩](#a1)<br>
-<b id="f2">[2]</b> 关于合批与性能的话题业界一直有不少探讨，可以参考比如 [这里](https://www.nvidia.com/docs/IO/8228/BatchBatchBatch.pdf) 的 slide [↩](#a2)<br>
+<b id="f2">[2]</b> 关于合批与性能的话题业界一直有不少探讨，比如可以参考 [这里](https://www.nvidia.com/docs/IO/8228/BatchBatchBatch.pdf) 的 slide [↩](#a2)<br>

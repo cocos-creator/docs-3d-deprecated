@@ -6,16 +6,16 @@
 
 The colors displayed are as follows:
 
-- **console.log()**: output log, gray text, the content that developers in the editor and plug-in feel necessary to print to the console.
-  
+- **console.log()**: output log, <font color=#b6b6b6>gray text</font>, the content that developers in the editor and plug-in feel necessary to print to the console.
+
   ![log](index/log.png)
 
-- **console.warn()**: output warning, yellow text, the abnormal situation encountered by the program that does not affect the result.
-  
+- **console.warn()**: output warning, <font color=#ebbe09>yellow text</font>, the abnormal situation encountered by the program that does not affect the result.
+
   ![warn](index/warn.png)
 
-- **console.error()**: output error, red text, the exception encountered during operation that will affect the result, the severity is the highest.
-  
+- **console.error()**: output error, <font color=#dd3c43>red text</font>, the exception encountered during operation that will affect the result, the severity is the highest.
+
   ![error](index/error.png)
 
 ## Panel operation
