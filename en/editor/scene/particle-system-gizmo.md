@@ -1,6 +1,6 @@
 # Particle System Gizmo
 
-Particle System Gizmo is used for the visualization of the [ShapeModule](../particle-system/emitter.md) of particle system.
+Particle System Gizmo is used for the visualization of the [ShapeModule](../../particle-system/emitter.md) of particle system.
 
 ## Box
 

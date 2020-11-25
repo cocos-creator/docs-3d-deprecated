@@ -4,7 +4,7 @@
 
 ![camera](camera/camera.png)
 
-相机的可视范围是通过 6 个平面组成一个 **视锥体（Frustum）** 构成， **近裁剪面（Near Plane）** 和 **远裁剪面（Far Plane）** 用于控制近处和远处的可视距离与范围，同时它们也构成了视口的大小。
+相机的可视范围是通过 6 个平面组成一个 **视锥体（Frustum）** 构成，**近裁剪面（Near Plane）** 和 **远裁剪面（Far Plane）** 用于控制近处和远处的可视距离与范围，同时它们也构成了视口的大小。
 
 ![camera view](camera/camera-view.gif)
 
@@ -19,7 +19,7 @@
 | 属性名称 | 说明 |
 |:-------:|:---:|
 | priority | 相机的渲染优先级，值越小越优先渲染 |
-| visibility | 可见性掩码，声明在当前相机中可见的节点层级集合。 |
+| visibility | 可见性掩码，声明在当前相机中可见的节点层级集合 |
 | clearFlags | 相机的缓冲清除标志位，指定帧缓冲的哪部分要每帧清除。包含：<br>DONT_CLEAR：不清空；<br>DEPTH_ONLY：只清空深度；<br> SOLID_COLOR：清空颜色、深度与模板缓冲；<br> SKYBOX：启用天空盒，只清空深度 |
 | clearColor | 指定清空颜色 |
 | clearDepth | 指定深度缓冲清空值 |

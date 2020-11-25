@@ -43,11 +43,12 @@ hello-world
 }
 ```
 
-现在需要在 contributions 内定义一个 messages 对象，这是编辑器消息注册的方法。
-这个消息可以绑定一个或多个的扩展内定义的方法。
+现在需要在 contributions 内定义一个 messages 对象，这是编辑器消息注册的方法。这个消息可以绑定一个或多个的扩展内定义的方法。
+
 更多定义数据请参考 [消息通信](./contributions-messages.md)
 
 然后需要在 contributions 内再定义一个 menu 数组，向 menu 组件提供一个菜单的基础信息。
+
 最后将这个菜单绑定到一条的消息。更详细的请参考：[扩展主菜单](./contributions-menu.md)
 
 细心的你可能发现了，菜单按下后，触发的动作是通过扩展间的消息进行通知的，消息系统是扩展间交互的方式。

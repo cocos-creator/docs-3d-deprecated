@@ -1,12 +1,10 @@
 # 发布到支付宝小游戏
 
-Cocos Creator 从 **v1.0.3** 版本开始正式支持将游戏发布到支付宝小游戏。
-
 ## 参数选项说明
 
 | 参数名 | 可选 | 默认值 | 说明 |
 | - | - | - | - |
-| polyfills | 选填 | { asyncFunctions: true } | 自 v1.0.3 版本起，构建支持一些新特性的 polyfills ，主要是在打包脚本时会做对应处理，开发者可以根据实际需求选择需要的 polyfills, 这组选项暂时只有`异步函数`，后续将会开放更多功能。|
+| polyfills | 选填 | { asyncFunctions: true } | 构建支持一些新特性的 polyfills，主要是在打包脚本时会做对应处理，开发者可以根据实际需求选择需要的 polyfills，这组选项暂时只有 **异步函数**，后续将会开放更多功能。|
 | remoteUrl | 选填 | ' ' | 服务器地址，指定了服务器地址后，资源将会从服务器上下载，具体加载规则可以参考微信小程序端
 deviceOrientation | 必填 | 'auto' | 设备方向，可选值为`'landscape' | 'portrait'`。|
 

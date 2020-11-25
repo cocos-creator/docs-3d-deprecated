@@ -67,13 +67,14 @@
   
       开发者可以根据自己的需要看是否勾选该项。然后点击 **构建**。
 
-  3. 构建完成后，点击 **发布路径** 后面的 **打开** 按钮，将发布路径下的 **res** 目录上传到小包模式服务器。例如：默认发布路径是 build，构建任务名为 vivo-mini-game, 则需要上传 /build/vivo-mini-game/res 目录。
+  3. 构建完成后，点击 **发布路径** 后面的 **打开** 按钮，将发布路径下的 **res** 目录上传到小包模式服务器。例如：默认发布路径是 build，构建任务名为 vivo-mini-game，则需要上传 /build/vivo-mini-game/res 目录。
   **注意**：如果是命令行编译小包模式，记得备份 **build/vivo-mini-game/res** 目录，然后删除 **build/vivo-mini-game/res** 目录，再进行命令行编译（npm run build）。
-  2、
+
   此时，构建出来的 rpk 将不再包含 res 目录，res 目录里的资源将通过网络请求从填写的 **小包模式服务器路径** 上下载。
 
 - **分包**
-  v1.0.4 起添加该选项，默认值为 true，用于控制分包功能的开启。
+
+  该功能默认开启。
 
 - **密钥库**
 
@@ -129,7 +130,7 @@
 
     ```bash
     # 先把命令行指定到编辑器安装目录下的 resources/tools/vivo-pack-tools 目录下
-    cd ${CocosCreator3D}/resources/tools/vivo-pack-tools
+    cd ${CocosCreator}/resources/tools/vivo-pack-tools
     # 生成网址和二维码
     npm run server
     ```

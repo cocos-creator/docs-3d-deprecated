@@ -33,7 +33,7 @@ xxx.off(type, func, target);
 xxx.emit(type, ...arg);
 ```
 
-**Note**: Due to the performance considerations of the underlying event dispatch, only a maximum of **5** event parameters are supported here. Therefore, it is necessary to pay attention to the number of control parameters when passing parameters.
+> **Note**: due to the performance considerations of the underlying event dispatch, only a maximum of **5** event parameters are supported here. Therefore, it is necessary to pay attention to the number of control parameters when passing parameters.
 
 ## Event descriptions
 

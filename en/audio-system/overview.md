@@ -1,6 +1,6 @@
 # Overview of sound systems
 
-There are __two__ types of sounds available in the audio system: __sound effects__ and __music__.  __Sound effects__ are short bursts of quick sounds that signal the player of the game making progress. A few examples of __sound effects__ are __gun noises__, __bullets firing__, a __character jumping__, __physics contact events__ and many others. __Music__ is longer in length and usually played in a loop. A few examples of __music__ are __background music__, __cut scenes__, __successfully completing a milestone in the game__ and many others.
+There are __two__ types of sounds available in the audio system: __sound effects__ and __music__. __Sound effects__ are short bursts of quick sounds that signal the player of the game making progress. A few examples of __sound effects__ are __gun noises__, __bullets firing__, a __character jumping__, __physics contact events__ and many others. __Music__ is longer in length and usually played in a loop. A few examples of __music__ are __background music__, __cut scenes__, __successfully completing a milestone in the game__ and many others.
 
 All audio assets are imported into the editor in the format of **audioClip** assets. If you want to play audio, you first need to create an **AudioSource** in the scene.
 
@@ -28,4 +28,4 @@ There is, however, some incongruity in the engine:
 
 * Only *Web Audio* mode supports multiple playback of the same audio. In other modes, to avoid repeated creation,the playing
 
-* Most platforms have complied with the latest [auto play policy](https://www.chromium.org/audio-video/autoplay). Even if `playOnAwake` is set, it will only start playing when user input is first received.
+* Most platforms have complied with the latest [Audio Play Police](https://www.chromium.org/audio-video/autoplay). Even if `playOnAwake` is set, it will only start playing when user input is first received.

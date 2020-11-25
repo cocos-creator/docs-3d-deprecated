@@ -12,9 +12,3 @@ LabelOutline 组件会为所在节点的 Label 添加描边效果，不支持 BM
 | -------------- | ----------- |
 | Color | 字体发光边缘颜色 |
 | Width | 字体发光边缘宽度 |
-
----
-
-- [其他渲染模块参考](render-component.md)
-
-- [基础模块参考](base-component.md)

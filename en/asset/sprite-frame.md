@@ -4,17 +4,17 @@ __Sprite Frame__ is a container for __UI rendering__ and basic graphics, which m
 
 ## Importing Sprite Frame Assets
 
-Use the __default asset import__ method to import image assets into the project, then set the type of image as __sprite-frame__ and can then be seen in the **Assets Panel**.
+Use the __default asset import__ method to import image assets into the project, then set the type of image as __sprite-frame__ and can then be seen in the **Assets** panel.
 
 ![imported texture](sprite-frame/imported_texture.png)
 
-Image assets will use thumbnails of their own pictures as icons in the **Assets Panel**. When the image sub-asset is selected in the **Assets Panel**, a thumbnail of the image is displayed below the **Property Inspector**.
+Image assets will use thumbnails of their own pictures as icons in the **Assets** panel. When the image sub-asset is selected in the **Assets** panel, a thumbnail of the image is displayed below the **Inspector** panel.
 
 ## Using a Sprite Frame
 
 **1. The object contained in the container is using textures**
 
-In the editor, drag the __SpriteFrame__ asset to the __Sprite Frame__ property of the **Sprite** component to switch the image displayed by the __Sprite__. At runtime, taking the content picture in the above picture as an example, The entire asset is divided into image asset (`content`) ,its sub-asset (`spriteFrame`) and sub-asset (`texture`). The assets in the game package can be obtained by the following methods:
+In the editor, drag the __SpriteFrame__ asset to the __Sprite Frame__ property of the **Sprite** component to switch the image displayed by the __Sprite__. At runtime, taking the content picture in the above picture as an example, The entire asset is divided into image asset (`content`), its sub-asset (`spriteFrame`) and sub-asset (`texture`). The assets in the game package can be obtained by the following methods:
 
 __Method 1__: (load __ImageAsset__):
 
@@ -31,12 +31,12 @@ loader.loadRes(url, ImageAsset,(err: any, imageAsset) => {
 });
 ```
 
-__Method 2__:（load SpriteFrame):
+__Method 2__: (load SpriteFrame):
 
 ```typescript
 const self = this;
 const url = 'test_assets/test_altas/content/spriteFrame';
-loader.loadRes(url, SpriteFrame,(err: any , spriteFrame) => {
+loader.loadRes(url, SpriteFrame,(err: any, spriteFrame) => {
   const sprite = this.getComponent(Sprite);
   sprite.spriteFrame = spriteFrame;
 });

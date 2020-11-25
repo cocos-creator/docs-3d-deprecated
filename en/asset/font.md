@@ -8,7 +8,7 @@ The __system font__ renders text by calling the __system font__ that comes with 
 
 ### Dynamic fonts
 
-__Cocos Creator__ currently supports dynamic fonts in **True Type** format. Simply drag a font file with an extension of `.ttf` into the **Assets Panel**, and you can import the font asset.
+__Cocos Creator__ currently supports dynamic fonts in **True Type** format. Simply drag a font file with an extension of `.ttf` into the **Assets** panel, and you can import the font asset.
 
 ### Bitmap fonts
 
@@ -18,11 +18,11 @@ The bitmap font is composed of a font file in `.fnt` format and a `.png` image. 
   - [Hiero](https://github.com/libgdx/libgdx/wiki/Hiero)
   - [BMFont (Windows)](http://www.angelcode.com/products/bmfont/)
 
-When importing bitmap fonts, be sure to drag both the `.fnt` file and the `.png` file into the **Assets Panel** at the same time.
+When importing bitmap fonts, be sure to drag both the `.fnt` file and the `.png` file into the **Assets** panel at the same time.
 
 > **Note**: after importing the bitmap font, you need to change the type of the `.png` file to __sprite-frame__, otherwise the bitmap font will not work properly.
 
-The imported fonts are displayed in the **Assets Panel**, as follows:
+The imported fonts are displayed in the **Assets** panel, as follows:
 
 ![imported font asset](font/imported.png)
 
@@ -34,7 +34,7 @@ The font asset needs to be rendered through the `Label` component. Here is how t
 
 ### Creating a Label (Font) Node Using the Menu
 
-Click on the **Create Node** button in the upper left corner of the **Hierarchy Manager** and select `Create Render Node --> Label (Text)`, and a component with `Label` will be created in the `Scene` node.
+Click on the **Create Node** button in the upper left corner of the **Hierarchy** panel and select `Create Render Node --> Label (Text)`, and a component with `Label` will be created in the `Scene` node.
 
 ![from hierarchy](font/create_label.png)
 
@@ -54,7 +54,7 @@ If you want to restore the use of __system fonts__, you can click the property c
 
 ### Dragging and droping to create a Label node
 
-Another quick way to create font nodes using specified assets is to directly __drag and drop__ font files, either __TTF__ or __bitmap fonts__, from the **Assets Panel** into the __Hierarchy Panel__. The only difference from the menu created above is that text nodes created using drag and drop will automatically use the dragged font asset to set the `Font` property of the **Label** component.
+Another quick way to create font nodes using specified assets is to directly __drag and drop__ font files, either __TTF__ or __bitmap fonts__, from the **Assets** panel into the __Hierarchy__ panel. The only difference from the menu created above is that text nodes created using drag and drop will automatically use the dragged font asset to set the `Font` property of the **Label** component.
 
 <!-- ## 位图字体合并渲染
 

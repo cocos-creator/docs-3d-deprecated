@@ -1,12 +1,12 @@
 # Access Nodes and Components
 
-You can modify __Nodes__ and __Components__ in the **Property Inspector**, and also dynamically using scripts. The advantage of dynamic modification is that it can continuously modify attributes and transition attributes within a period of time to achieve gradual effects. Scripts can also respond to player input, modify, create and destroy __Nodes__ or __Components__, and implement various game logic. To achieve these effects, developers need to obtain the __Node__ or __Component__ that needs to be modified in the script.
+You can modify __Nodes__ and __Components__ in the **Inspector** panel, and also dynamically using scripts. The advantage of dynamic modification is that it can continuously modify attributes and transition attributes within a period of time to achieve gradual effects. Scripts can also respond to player input, modify, create and destroy __Nodes__ or __Components__, and implement various game logic. To achieve these effects, developers need to obtain the __Node__ or __Component__ that needs to be modified in the script.
 
 ## Document topics
 
 - Obtain the node where the component is located.
 - Obtain other components.
-- Use **Property Inspector** to set up nodes and components.
+- Use **Inspector** panel to set up nodes and components.
 - Find child nodes.
 - Global node search.
 - Access values in existing variables.
@@ -82,9 +82,9 @@ export class test extends Component {
 
 It is usually not enough to only have access to the node's own components, and scripts usually require interaction between multiple nodes. For example, a cannon that automatically aims at the player needs to constantly obtain the latest position of the player. __Cocos Creator__ provides some different methods to obtain other nodes or components.
 
-### Use the Property Inspector to set the node
+### Use the Inspector panel to set the node
 
-The most straightforward way is to set the objects you need in the **Property Inspector**. Take node as an example, this only needs to declare an attribute with type `Node` in the script:
+The most straightforward way is to set the objects you need in the **Inspector** panel. Take node as an example, this only needs to declare an attribute with type `Node` in the script:
 
 ```ts
 // Cannon.ts
@@ -100,11 +100,11 @@ export class Cannon extends Component {
 }
 ```
 
-This code declares a `player` property in `properties`, the default value is `null`, and its object type is specified as `Node`. This is equivalent to declaring `public Node player = null;` in other languages. After the script is compiled, this component looks like this in the **Property Inspector**:
+This code declares a `player` property in `properties`, the default value is `null`, and its object type is specified as `Node`. This is equivalent to declaring `public Node player = null;` in other languages. After the script is compiled, this component looks like this in the **Inspector** panel:
 
 ![player-in-inspector-null](access-node-component/player-in-inspector-null.png)
 
-Then you can drag any node on the __Hierarchy Manager__ to the `Player` control:
+Then you can drag any node on the __Hierarchy__ panel to the `Player` control:
 
 ![player-in-inspector](access-node-component/player-in-inspector.png)
 
@@ -128,9 +128,9 @@ export class Cannon extends Component {
 }
 ```
 
-### Use the Property Inspector to set up components
+### Use the Inspector panel to set up components
 
-In the above example, if the type of the attribute is declared as a `Player` component, when the `Player` node is dragged to the **Property Inspector**, the `Player` attribute will be set to the `Player` component in this node. This way developers don't need to call `getComponent()` themselves.
+In the above example, if the type of the attribute is declared as a `Player` component, when the `Player` node is dragged to the **Inspector** panel, the `Player` attribute will be set to the `Player` component in this node. This way developers don't need to call `getComponent()` themselves.
 
 ```ts
 // Cannon.ts
@@ -150,11 +150,11 @@ export class Cannon extends Component {
 }
 ```
 
-The default value of the property can be changed from `null` to array `[]`, so that multiple objects in the **Property Inspector** can be set at the same time. However, if dynamically obtaining other objects at runtime is needed, it is also necessary to use the search method described below.
+The default value of the property can be changed from `null` to array `[]`, so that multiple objects in the **Inspector** panel can be set at the same time. However, if dynamically obtaining other objects at runtime is needed, it is also necessary to use the search method described below.
 
 ### Find child nodes
 
-Sometimes, there are many objects of the same type in the game scene, such as turrets, enemies, and special effects, and they usually have a global script to manage them uniformly. Using the **Property Inspector** to associate them with this script one by one, the work will be very tedious. In-order to better manage these objects uniformly, they can be put under a unified parent object, and then obtain all the child objects through the parent object:
+Sometimes, there are many objects of the same type in the game scene, such as turrets, enemies, and special effects, and they usually have a global script to manage them uniformly. Using the **Inspector** panel to associate them with this script one by one, the work will be very tedious. In-order to better manage these objects uniformly, they can be put under a unified parent object, and then obtain all the child objects through the parent object:
 
 ```ts
 // CannonManager.ts

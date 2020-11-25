@@ -1,6 +1,6 @@
 # 发布到原生平台
 
-Cocos Creator 自 v1.0.3 起正式支持原生平台，点击菜单栏的 **项目 -> 构建发布** 选项，打开构建发布面板，参照文档配置完项目信息后即可打包。
+点击菜单栏的 **项目 -> 构建发布** 选项，打开 **构建发布** 面板，参照文档配置完项目信息后即可打包。
 
 支持的原生平台包括 Android、iOS、Mac、Windows 四个，其中 iOS、Mac 和 Windows 的选项只能在相应的操作系统中才会出现，目前原生平台是集合在一起打包的，可以在同一界面上配置各个原生平台的参数选项，打包一次即可生成所有原生平台的项目包。
 
@@ -18,8 +18,8 @@ Cocos Creator 自 v1.0.3 起正式支持原生平台，点击菜单栏的 **项�
 
 ### MD5 Cache
 
-作为通用选项，主要是给构建后的所有资源文件名将加上 MD5 信息，解决热更新时的 CDN 资源缓存问题。
-启用后，如果出现资源加载不了的情况，说明找不到重命名后的新文件。这通常是因为有些 C++ 中用到的第三方资源没通过 cc.loader 加载引起的。这时可以在加载前先用以下方法转换 url ，转换后的路径就能正确加载，具体代码如下：
+作为通用选项，主要是给构建后的所有资源文件名将加上 MD5 信息，解决热更新时的 CDN 资源缓存问题。<br>
+启用后，如果出现资源加载不了的情况，说明找不到重命名后的新文件。这通常是因为有些 C++ 中用到的第三方资源没通过 cc.loader 加载引起的。这时可以在加载前先用以下方法转换 url，转换后的路径就能正确加载，具体代码如下：
 
 ```cpp
 auto cx = ScriptingCore::getInstance()->getGlobalContext();
@@ -53,7 +53,7 @@ jsval_to_string(cx, returnParam, &url);
 
 #### Polyfills
 
-这里是脚本系统支持的一些新特性的 polyfills 选项，勾选后生成的项目会带上对应的 polyfills 也就是会增大包体，开发者可以根据实际需求选择需要的 polyfills, 这组选项暂时只有异步函数，后续将会开放更多功能。
+这里是脚本系统支持的一些新特性的 polyfills 选项，勾选后生成的项目会带上对应的 polyfills 也就是会增大包体，开发者可以根据实际需求选择需要的 polyfills，这组选项暂时只有异步函数，后续将会开放更多功能。
 
 ### Android 平台选项
 
@@ -93,7 +93,7 @@ Android 要求所有 APK 必须先使用证书进行数字签署，然后才能�
 
 #### 生成 App Bundle (Google Play)
 
-勾选该项即可将游戏打包成 App Bundle 格式用于上传到 Google Play 商店。具体请参考 [官方文档](https://developer.android.google.cn/guide/app-bundle/) 。
+勾选该项即可将游戏打包成 App Bundle 格式用于上传到 Google Play 商店。具体请参考 [官方文档](https://developer.android.google.cn/guide/app-bundle/)。
 
 ### Mac 平台选项
 

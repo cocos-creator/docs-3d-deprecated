@@ -4,9 +4,9 @@ In the panel **Project -> Project Settings -> Module Options** of the Editor, yo
 
 ![Physics Engine Options](img/physics-module.jpg)
 
-> **Note**: The default is `cannon.js` physics engine.
+> **Note**: the default is `cannon.js` physics engine.
 
-> **Note**: The physics engine can be switched at will during development.
+> **Note**: the physics engine can be switched at will during development.
 
 ## Collision Detection:`builtin`
 
@@ -32,6 +32,6 @@ It should be noted that currently the `ammo.js` module has a size of about 1MB.
 
 If you don't need to use any physics related components and interfaces, you can uncheck the yellow box, so that you can get a smaller package when publishing.
 
-> **Note**: If it is unchecked, the project will not be able to use physics related components and interfaces, otherwise an error will be reported during runtime.
+> **Note**: if it is unchecked, the project will not be able to use physics related components and interfaces, otherwise an error will be reported during runtime.
 
 <!-- ## Expand the physical backend -->

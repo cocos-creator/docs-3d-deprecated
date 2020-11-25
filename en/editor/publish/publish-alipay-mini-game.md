@@ -1,6 +1,6 @@
 # Publishing to Alipay Mini Games
 
-> **Note**: Some platforms only have Chinese documentation available when visiting the platforms website. It may be necessary to use Google Translate in-order to review the documentation.
+> **Note**: some platforms only have Chinese documentation available when visiting the platforms website. It may be necessary to use Google Translate in-order to review the documentation.
 
 **Cocos Creator** officially supports the release of games to the **Alipay Mini Games**.
 
@@ -14,7 +14,7 @@
 
 ## Release Process
 
-**First**, use **Cocos Creator** to open the project that needs to be released. Select **Alipay Mini Game** in the **Platform** dropdown of the **Build** panel, and then click **Build**.
+**First**, use **Cocos Creator 3.0** to open the project that needs to be released. Select **Alipay Mini Game** in the **Platform** dropdown of the **Build** panel, and then click **Build**.
 
 ![](./publish-alipay-mini-game/build_option.png)
 

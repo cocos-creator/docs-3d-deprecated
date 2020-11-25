@@ -1,6 +1,6 @@
 # 精灵帧资源（SpriteFrame）
 
-Cocos Creator SpriteFrame 是 UI 渲染基础图形的容器。其本身管理图像的裁剪和九宫格信息，默认持有一个与其同级的 Texture2D 资源引用。
+Cocos Creator 3.0 的 SpriteFrame 是 UI 渲染基础图形的容器。其本身管理图像的裁剪和九宫格信息，默认持有一个与其同级的 Texture2D 资源引用。
 
 ## 导入精灵帧资源
 
@@ -12,23 +12,32 @@ Cocos Creator SpriteFrame 是 UI 渲染基础图形的容器。其本身管理�
 
 ## 使用 SpriteFrame
 
-** 1. 容器内包含对象是贴图的使用方式 **
+### 容器内包含对象是贴图的使用方式
 
-在编辑器中，拖拽 SpriteFrame 资源到该 **Sprite** 组件的 `Sprite Frame` 属性栏中，来切换该 Sprite 显示的图像。在运行时，以上图中的 content 图片为例，整个资源分为 `content`（图像源资源 ImageAsset）及其子资源 `spriteFrame`（精灵帧资源 SpriteFrame）和子资源 `texture`（贴图资源 Texture2D）。在游戏包内（也就是已经放在 resources 目录下）的资源可以通过
+在编辑器中，拖拽 SpriteFrame 资源到 **Sprite** 组件的 `Sprite Frame` 属性栏中，来切换 Sprite 显示的图像。<br>
+在运行时，以上图中的 content 图片为例，整个资源分为三部分：
+- `content`（图像源资源 ImageAsset）
+- `content` 的子资源 `spriteFrame`（精灵帧资源 SpriteFrame）
+- `content` 的子资源 `texture`（贴图资源 Texture2D）。
+
+在游戏包内（也就是已经放在 resources 目录下）的资源可以通过：
 
 方法一（加载 SpriteFrame）：
+
 ```typescript
 const url = 'test_assets/test_atlas/content/spriteFrame';
-loader.loadRes(url, SpriteFrame,(err: any , spriteFrame) => {
+loader.loadRes(url, SpriteFrame, (err: any, spriteFrame) => {
   const sprite = this.getComponent(Sprite);
   sprite.spriteFrame = spriteFrame;
 });
 ```
 
-在服务器上的资源只能加载到图像源 ImageAsset，具体方法请参考: [资源加载](./load-assets.md)。
-我们提供了 createWithImage 方法来帮助用户快捷的将 ImageAsset 或者原始图像资源 ImageSource 包装为 SpriteFrame，使用方法如下：
+在服务器上的资源只能加载到图像源 ImageAsset，具体方法请参考 [资源加载](./load-assets.md)。
+
+我们提供了 `createWithImage` 方法来帮助用户快捷的将 ImageAsset 或者原始图像资源 ImageSource 包装为 SpriteFrame：
 
 方法二（加载 ImageAsset）：
+
 ```typescript
 const self = this;
 const url = 'test_assets/test_atlas/content';
@@ -37,7 +46,8 @@ loader.loadRes(url, ImageAsset,(err: any, imageAsset) => {
   sprite.spriteFrame = SpriteFrame.createWithImage(imageAsset);
 });
 ```
-或者用户也可以手动来填充信息如下：
+
+或者用户也可以手动填充信息，如下：
 
 ```typescript
 const self = this;
@@ -53,12 +63,13 @@ loader.loadRes(url, ImageAsset,(err: any, imageAsset) => {
 ```
 
 方法三（canvas 绘制内容 UI 上显示）（加载 ImageSource）：
+
 ```typescript
 const sprite = this.getComponent(Sprite);
 sprite.spriteFrame = SpriteFrame.createWithImage(canvas);
 ```
 
-或者用户也可以手动来填充信息如下：
+或者用户也可以手动填充信息，如下：
 
 ```typescript
 const sprite = this.getComponent(Sprite);
@@ -70,7 +81,7 @@ sp.texture = tex;
 sprite.spriteFrame = sp;
 ```
 
-** 2. 容器内包含对象是 RenderTexture 的使用方式 **
+### 容器内包含对象是 RenderTexture 的使用方式
 
 RenderTexture 是一个渲染纹理，它可以将摄像机上的内容直接渲染到一张纹理上而不是屏幕上。SpriteFrame 通过管理 RenderTexture 可以轻松的将 3D 相机内容显示在 UI 上。使用方法如下：
 

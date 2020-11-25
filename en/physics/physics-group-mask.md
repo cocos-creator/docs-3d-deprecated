@@ -22,7 +22,7 @@ The formula `(1 & 2) && (2 & 3)` is __false__, so here `A` will not be detected 
 
 Here according to the mask value of `B` is `2`, we can know that the detectable group of `B` is `1`, and the group of `A` is `0`, so it is not detected.
 
-> **Note**: The expression depends on bit operation, the bit operation of JavaScript is limited to `32` bits, and the last bit is the sign bit. To avoid exceeding the operation range, it is recommended that the range of the group is `[0, 31 )`.
+> **Note**: the expression depends on bit operation, the bit operation of JavaScript is limited to `32` bits, and the last bit is the sign bit. To avoid exceeding the operation range, it is recommended that the range of the group is `[0, 31 )`.
 
 ## Groups
 
@@ -57,9 +57,9 @@ const group = 1 << 2;
 Collider.removeGroup(group);
 ```
 
-> **Note**: It is recommended to fix in a group, you can use the node's `layer` property as a group.
+> **Note**: it is recommended to fix in a group, you can use the node's `layer` property as a group.
 
-> **Note**: The receiving parameters of the above methods are all decimal numbers. For easy understanding, binary explanation is used here. Developers can also directly input decimal numbers for group operation after they are familiar**.
+> **Note**: the receiving parameters of the above methods are all decimal numbers. For easy understanding, binary explanation is used here. Developers can also directly input decimal numbers for group operation after they are familiar**.
 
 ## Masks
 
@@ -94,8 +94,8 @@ const mask = 1 << 2;
 Collider.removeMask(mask);
 ```
 
-> **Note**: The addition and subtraction operation have higher priority than the shift operation.
-> **Note**: Flexible use of group and mask can reduce the cost of additional detecting.
+> **Note**: the addition and subtraction operation have higher priority than the shift operation.
+> **Note**: flexible use of group and mask can reduce the cost of additional detecting.
 
 ## Examples
 
@@ -121,11 +121,11 @@ enum PHY_GROUP {
 };
 ```
 
-> **Note**: You can consider to reuse the preset layers in `Layer`.
+> **Note**: you can consider to reuse the preset layers in `Layer`.
 
 In order to be able to set up groups on the panel, you need to register the defined groups to the editor `Enum(PHY_GROUP)` through the `Enum` function exported by the `cc` module.
 
-> **Note**: For historical reasons, the `Enum` function has special treatment for `-1`. If you are not familiar with it, do not define an attribute with a value of `-1`.
+> **Note**: for historical reasons, the `Enum` function has special treatment for `-1`. If you are not familiar with it, do not define an attribute with a value of `-1`.
 
 ### Using a Mask
 

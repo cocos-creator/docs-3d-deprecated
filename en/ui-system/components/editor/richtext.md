@@ -17,7 +17,7 @@ To use `RichText`, please refer to the [RichText API](https://docs.cocos.com/cre
 | Properties       | Function Explanation  |
 | --------------   | -----------   |
 | Font             | Custom TTF font of __RichText__, all the label segments will use the same custom TTF font.  |
-| FontSize         | Font size, in points (__Note__: This field does not affect the font size set in BBCode.) |
+| FontSize         | Font size, in points (__Note__: this field does not affect the font size set in BBCode.) |
 | HandleTouchEvent | Once checked, the __RichText__ will block all input events (mouse and touch) within the bounding box of the node, preventing the input from penetrating into the underlying node. |
 | Horizontal Align | Horizontal alignment   |
 | ImageAtlas       | The image atlas for the `img` tag. For each `src` value in the `img` tag, there should be a valid `spriteFrame` in the imageAtlas. |
@@ -38,11 +38,11 @@ It will check the start tag name, but the end tag name restrict is loose, it onl
 
 Here is an example of the `size` and `color` tag:
 
-`<color=green>Hello</color>, <size=50>Creator3D</>`
+`<color=green>Hello</color>, <size=50>Creator</>`
 
 ### Supported tags
 
-__Note__: All tag names should be lowercase and the attribute assignment should use `=` sign.
+> __Note__: all tag names should be lowercase and the attribute assignment should use `=` sign.
 
 | Name    | Description | Example | Note |
 | ------- |------- | -----|------ |
@@ -75,7 +75,7 @@ To support custom image layout, the `offset` attribute can be used to fine-tune 
 | --------- | ------- | ----------- | ------ |
 | Y         | `<img src='foo' offset=5 />`    | Specify the SpriteFrame to offset y + 5           | If offset only set one Integer value it's will be offset Y
 | Y         | `<img src='foo' offset=-5 />`   | Specify the SpriteFrame to offset y - 5           | You can use minus to decrease Y position
-| X, Y      | `<img src='foo' offset=6,-5 />` | Specify the SpriteFrame to offset x + 6 and y - 5 | The offset values should only contains `0-9` , `-` and `,` characters
+| X, Y      | `<img src='foo' offset=6,-5 />` | Specify the SpriteFrame to offset x + 6 and y - 5 | The offset values should only contains `0-9`, `-` and `,` characters
 
 
 ### Nested Tags
@@ -98,7 +98,7 @@ Since the RichText component is assembled from multiple Label nodes, the number 
 |BITMAP| After selection, for each Label node created by RichText, set its CacheMode to BITMAP type, that is, generate a bitmap of the entire text of each Label, and add the bitmap to the dynamic atlas, and then according to the dynamic atlas to assemble and render.
 | CHAR | After selection, each Label node created by RichText has its CacheMode set to CHAR type, that is, the text of each Label is cached in a globally shared bitmap in "words". Each of the same font style and size is Characters will share a cache globally.
 
-**Note**: The **RenderTexture** module in the **Project -> Project Settings -> Module Config** panel cannot be removed when using the cache mode.
+> **Note**: the **RenderTexture** module in the **Project -> Project Settings -> Module Config** panel cannot be removed when using the cache mode.
 
 ## Detailed Explanation
 

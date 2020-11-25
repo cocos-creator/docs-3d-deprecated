@@ -1,7 +1,5 @@
 # 发布到 Cocos Play（即刻玩）
 
-Cocos Creator 从 **v1.0.3** 版本开始正式支持将游戏发布到 Cocos Play。
-
 ## 发布流程
 
 ### 准备工作

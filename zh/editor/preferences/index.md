@@ -1,6 +1,6 @@
 # 偏好设置
 
-**偏好设置** 面板中提供了编辑器的个性化设置，要打开 **偏好设置** 面板，请从主菜单的 `Cocos Creator -> 偏好设置` 菜单进入。
+**偏好设置** 面板中提供了编辑器的个性化设置，要打开 **偏好设置** 面板，请点击主菜单的 **Cocos Creator -> 偏好设置**。
 
 设置可以分成下列几部分：
 
@@ -29,7 +29,7 @@
 
 ### 保存场景后自动刷新
 
-勾选后，只要保存场景，就会刷新所有预览打开的页面；
+勾选后，只要保存场景，就会刷新所有预览打开的页面。
 
 ### 初始化预览场景
 
@@ -45,17 +45,17 @@
 
 ![native](./index/native.jpg)
 
-这个分类用于设置构建发布到原生平台（iOS, Android, Mac, Windows）时，所需的开发环境路径。
+这个分类用于设置构建发布到原生平台（iOS、Android、Mac、Windows）时，所需的开发环境路径。
 
--   使用内置 JavaScript 引擎：是否使用 Cocos Creator 安装路径下自带的 engine 路径作为 JavaScript 引擎路径。这个引擎用于场景编辑器里场景的渲染，内置组件的声明和其他 Web 环境下的引擎模块。
+- 使用内置 JavaScript 引擎：是否使用 Cocos Creator 安装路径下自带的 engine 路径作为 JavaScript 引擎路径。这个引擎用于场景编辑器里场景的渲染，内置组件的声明和其他 Web 环境下的引擎模块。
 
--   自定义 JavaScript 引擎路径：除了使用自带的 engine，您也可以前往 [engine 仓库](https://github.com/cocos-creator/engine) 来克隆或 fork 一份引擎到本地的任意位置进行定制，然后取消勾选 使用内置 JavaScript 引擎，然后设置 JavaScript 引擎路径 到您定制好的引擎路径，就可以在编辑器中使用这份定制后的引擎了。
+- 自定义 JavaScript 引擎路径：除了使用自带的 engine，您也可以前往 [engine 仓库](https://github.com/cocos-creator/engine) 来克隆或 fork 一份引擎到本地的任意位置进行定制，然后取消勾选 使用内置 JavaScript 引擎，然后设置 JavaScript 引擎路径 到您定制好的引擎路径，就可以在编辑器中使用这份定制后的引擎了。
 
--   WeChatGame 程序路径：设置 WeChatGame 程序路径，详情见 [发布到微信小游戏](../publish/publish-wechatgame.md)。
+- WeChatGame 程序路径：设置 WeChatGame 程序路径，详情见 [发布到微信小游戏](../publish/publish-wechatgame.md)。
 
--   Android NDK 路径：设置 Android NDK 路径，详情见 [安装配置原生开发环境](../publish/setup-native-development.md)。
+- Android NDK 路径：设置 Android NDK 路径，详情见 [安装配置原生开发环境](../publish/setup-native-development.md)。
 
--   Android SDK 路径：设置 Android SDK 路径，详情见 [安装配置原生开发环境](../publish/setup-native-development.md)。
+- Android SDK 路径：设置 Android SDK 路径，详情见 [安装配置原生开发环境](../publish/setup-native-development.md)。
 
 ## 数据编辑
 
@@ -63,9 +63,9 @@
 
 ![edit](./index/edit.jpg)
 
--   **外部脚本编辑器**：可以选用任意外部文本编辑工具的可执行文件，作为在资源管理器里双击脚本文件时的打开方式。
+- **外部脚本编辑器**：可以选用任意外部文本编辑工具的可执行文件，作为在资源管理器里双击脚本文件时的打开方式。
 
--   **外部图片编辑器**：和上面的选项类似，这里用来设置在资源管理器中双击图片文件时，默认打开图片用的应用程序路径。
+- **外部图片编辑器**：和上面的选项类似，这里用来设置在资源管理器中双击图片文件时，默认打开图片用的应用程序路径。
 
 ## 扩展
 
@@ -91,8 +91,8 @@
 
 为了方便使用，我们还添加一些辅助设计：
 
--   打开弹窗时焦点将会在搜索框内，你可以直接搜索相关关键词而无需鼠标点击展开；
--   在搜索找到相关组件时，你可以直接使用 `↑↓`快捷键来快速的切换组件选项，按下 `enter` 键即可添加该组件；
+- 打开弹窗时焦点将会在搜索框内，你可以直接搜索相关关键词而无需鼠标点击展开；
+- 在搜索找到相关组件时，你可以直接使用 `↑↓`快捷键来快速的切换组件选项，按下 `enter` 键即可添加该组件；
 
 对于这个功能，如果你有更好的建议欢迎到论坛告诉我们。
 

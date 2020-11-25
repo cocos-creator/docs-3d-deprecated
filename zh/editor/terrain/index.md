@@ -4,94 +4,86 @@
 
 ![terrain](./images/terrain.png)
 
-## 创建
+## 创建地形
 
-创建地形包括以下两个步骤：
+创建地形需要以下步骤：
 
-1. 在 **层级管理器** 中点击鼠标右键，在弹出菜单中选择 **创建 -> 地形**，创建一个地形节点（地形节点可移动，但不支持旋转与缩放）。
+1. 在 **层级管理器** 中点击鼠标右键，在弹出菜单中点击 **创建 -> 地形** 来创建地形节点（地形节点可移动，但不支持旋转与缩放）。
 
     ![create terrain](./images/create-terrain.png)
 
-2. 在 **资源管理器** 中点击鼠标右键，在弹出菜单中选择 **创建 -> Terrain**，创建地形资源。
+2. 在 **资源管理器** 中点击鼠标右键，在弹出菜单中点击 **创建 -> 地形** 来创建地形资源。
 
     ![create terrain asset](./images/createTerrainAsset.png)
 
-## 使用
+3. 点击创建后的地形节点，此时在 **属性检查器** 中可以看到 `cc.Terrain` 地形组件，将已经创建好的地形资源拖拽到地形组件中的 `Asset` 属性框中。
 
-点击创建后的地形节点，此时在 **属性检查器** 中可以看到一个 `cc.Terrain` 地形组件，将 **资源管理器** 中已经创建好的地形资源拖拽到地形组件中的 `Asset` 属性框中。
-
-![terrain inspector](./images/terrain-inspector.png)
+    ![terrain inspector](./images/terrain-inspector.png)
 
 ## 编辑
 
-拖拽完成后，可以看到在 **场景编辑器** 中弹出了一个 **cc.Terrain** 的编辑面板，Cocos Creator 中的地形编辑主要包括 **管理**、**雕塑**、**涂料** 三大功能。可以通过点击三个 Tab 标签页来切换三个功能。
+地形资源设置完成后会在 **场景编辑器** 的右下角弹出 **cc.Terrain** 编辑面板，Cocos Creator 中的地形编辑主要包括三大功能：管理（Manage）、雕塑（Sculpt）、涂料（Paint）。可以通过点击三个 Tab 标签页来切换功能。
 
 ![terrain component](./images/terrain-panel.png)
 
-除了编辑面板，也可以通过 **场景编辑器** 左上方的工具来调整地形：
-
-![terrain component](./images/toolbar.png)
+除了编辑面板，也可以通过 **场景编辑器** 左上角的工具来切换功能：
+- 1 — 对应 **管理** 功能
+- 2 — 对应 **雕塑** 功能中的 **Bulge**（隆起）画刷类型
+- 3 — 对应 **雕塑** 功能中的 **Sunken**（凹陷）画刷类型
+- 4 — 对应 **雕塑** 功能中的 **Smooth**（平滑）画刷类型
+- 5 — 对应 **涂料** 功能
 
 ### 管理（Manage）
 
-用于调整地形的各种参数。Tile 是地形的最小单位，Tile 组成地形块（Block），目前一个 Block 由 **32x32** 个 Tile 组成，一个地形由至少 1 个 Block 组成。
+用于调整地形的各种参数。Tile 是地形的最小单位，Tile 组成地形块（Block），目前一个 Block 由 **32x32** 个 Tile 组成，一个地形至少由 1 个 Block 组成。
+
+![edit layer](./images/terrain-manage.png)
 
 | 参数 | 说明 |
-| :--- | :--- |
-| TileSize      | Tile 的大小，一个地形块（Block）的边长是 **32 x TileSize**。|
-| BlockCount    | 地形块在两个维度上的数量（**注意**：该值调整过大会造成顶点数过多造成卡顿) |
-| WeightMapSize | 权重图大小   |
-| LightMapSize  | 光照贴图大小 |
+| :--- | :-- |
+| TileSize | 地形 Tile 的大小，目前一个地形块由 32 x 32 个 Tile 组成，所以一个地形块的边长是 **32 x TileSize** | 
+| BlockCount | 地形块在两个维度上的数量（**注意：若该值设置过大会造成顶点数过多，导致卡顿） | 
+| WeightMapSize | 权重图大小 | 
+| LightMapSize | 光照贴图大小 | 
 
 ### 雕刻（Sculpt）
 
 用于改变地形的形状。
 
+![edit layer](./images/terrain-sculpt.png)
+
 | 参数 | 说明 |
 | :--- | :--- |
-| BrushSize      | 画刷大小 |
-| BrushStrength    | 画刷力度 |
-| BrushMode | 画刷类型，包括 **Bulge**、**Sunken**、**Smooth** 三种   |
+| BrushSize     | 画刷的大小 |
+| BrushStrength | 画刷的力度  |
+| BrushMode | 画刷类型，包括 **Bulge**、**Sunken** 和 **Smooth** |
 
-#### 画刷功能
+可通过 **鼠标左键** 控制地形的 **隆起**，通过 **Shift + 鼠标左键** 控制地形的 **凹陷**。而隆起/凹陷的操作往往会使地形看上去很尖锐，此时就可以使用平滑功能进行过度。
 
-- 隆起/凹下，鼠标左键/Shift+鼠标左键。
-- 平滑,隆起凹下的操作往往会使地形看上去很尖锐,此时就可以使用平滑的功能。
-
-#### 画刷参数设置
-
-参数| 描述
----|---
-BrushSize | 画刷的大小
-BrushStrength | 画刷的力度
+**注意**：画刷目前仅支持圆形画刷。
 
 ### 涂料（Paint）
 
 用于描绘地形的纹理
 
-#### Layer编辑
+![edit layer](./images/terrain-paint.png)
 
-1. 点击+/-可以进行Layer的添加和删除(最多支持4层layer)。
+| 参数 | 说明 |
+| :--- | :--- |
+| TileLayer | 设置地形的 Layer。详情可参考下方的 **Layer 编辑** |
+| BrushSize | 画刷的大小 |
+| BrushStrength | 画刷的力度  |
+| BrushFalloff | 画刷衰减度，决定了画刷边缘的锐利程度。<br>**0.0** 表示画刷在整个范围内都有完全效果（全部被当前层纹理覆盖），具有尖锐的边缘。<br>**1.0** 表示画刷仅在它中心具有完全效果，在到达边缘的过程中效果逐渐衰减 |
 
-   ![add layer](./images/layer-plus-minus.png)
+**注意**：画刷目前仅支持圆形画刷。
 
-2. 选中某个Layer后可以编辑DetailMap和TileSize
+#### Layer 编辑
 
-   ![edit layer](./images/select-pic.png)
+![edit layer](./images/terrain-paint-layer.png)
 
-参数 | 描述
----|---
-DetailMap | 当前Layer的纹理
-TileSize | 纹理的平铺大小，值越小会在同样大小的区域内进行更多次的平铺
+点击右上方的 **+/-** 按钮可以添加/删除 Layer（最多支持 4 层 layer）。选中某个 Layer 后就可以对 Layer 及其纹理进行编辑。
 
-#### 画刷类型
-
-目前只支持圆形画刷
-
-#### 画刷参数设置
-
-参数| 描述
----|---
-BrushSize | 画刷的大小
-BrushStrength | 画刷的力度
-Brush Falloff | 画刷衰减度，这个值决定了画刷边缘的锐利程度。0.0意味着画刷在整个范围内都有完全效果（全部被当前层纹理覆盖），具有尖锐的边缘，1.0意味着画刷仅在它中心具有完全效果，在到达边缘的过程中影响会衰减。
+| 参数 | 说明 |
+| :--- | :--- |
+| `cc.Texture2D` | 设置当前 Layer 的纹理 |
+| TileSize       | 纹理的平铺大小，值越小会在同样大小的区域内进行更多次的平铺 |
