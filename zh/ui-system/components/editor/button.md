@@ -120,7 +120,7 @@ export class example extends Component {
     @property(Button)
     button: Button | null = null;
     onLoad(){
-        this.button.node.on('click', this.callback, this);
+        this.button.node.on(Button.EventType.CLICK, this.callback, this);
     }
 
     callback(button: Button) {
