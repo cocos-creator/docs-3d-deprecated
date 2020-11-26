@@ -16,9 +16,21 @@
 
     ![create terrain asset](./images/createTerrainAsset.png)
 
-3. 点击创建后的地形节点，此时在 **属性检查器** 中可以看到 `cc.Terrain` 地形组件，将已经创建好的地形资源拖拽到地形组件中的 `Asset` 属性框中。
+## 地形组件属性
 
-    ![terrain inspector](./images/terrain-inspector.png)
+| 参数 | 说明 |
+|:-----|:----|
+| Asset | 地形资源 |
+| EffectAsset | 地形特效资源 |
+| ReceiveShadow | 是否接受阴影 |
+| UseNormalMap | 是否使用法线贴图 |
+| UsePBR | 是否使用物理材质 |
+
+## 使用
+
+点击创建后的地形节点，此时在 **属性检查器** 中可以看到 `cc.Terrain` 地形组件，将已经创建好的地形资源拖拽到地形组件中的 `Asset` 属性框中。
+
+![terrain inspector](./images/terrain-inspector.png)
 
 ## 编辑
 
@@ -42,7 +54,7 @@
 | 参数 | 说明 |
 | :--- | :-- |
 | TileSize | 地形 Tile 的大小，目前一个地形块由 32 x 32 个 Tile 组成，所以一个地形块的边长是 **32 x TileSize** | 
-| BlockCount | 地形块在两个维度上的数量（**注意：若该值设置过大会造成顶点数过多，导致卡顿） | 
+| BlockCount | 地形块在两个维度上的数量（**注意**：若该值设置过大会造成顶点数过多，导致卡顿） | 
 | WeightMapSize | 权重图大小 | 
 | LightMapSize | 光照贴图大小 | 
 
