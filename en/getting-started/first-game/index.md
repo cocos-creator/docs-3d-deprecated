@@ -275,7 +275,7 @@ It is necesssary to make the basic element `cube` of the road into a __Prefab__,
    ![create cube prefab](./images/create-cube-prefab.gif)
 
 ### Adding the automatic road creation
-A very long road is needed. The ideal method is to dynamically increase the length of the road, so that the `Player` can run forever. First, generate a fixed-length road with a length that is arbitrary. To do so, replace the code in the `GameManager` script with the following code:
+A very long road is needed. The ideal method is to dynamically increase the length of the road, so that the `Player` can run forever. First, generate a fixed-length road with a length that is arbitrary. To do this, replace the code in the `GameManager` script with the following code:
 
 ```ts
 import { _decorator, Component, Prefab, instantiate, Node, CCInteger} from "cc";
