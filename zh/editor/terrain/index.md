@@ -15,7 +15,7 @@
 2. 在 **资源管理器** 中点击鼠标右键，在弹出菜单中点击 **创建 -> 地形** 来创建地形资源。
 
     ![create terrain asset](./images/createTerrainAsset.png)
-3. 点击创建后的地形节点，此时在 **属性检查器** 中可以看到 `cc.Terrain` 地形组件，将已经创建好的地形资源拖拽到地形组件中的 `Asset` 属性框中。
+
 ## 地形组件属性
 
 | 参数 | 说明 |
@@ -28,7 +28,9 @@
 
 ## 使用
 
-    ![terrain inspector](./images/terrain-inspector.png)
+点击创建后的地形节点，此时在 **属性检查器** 中可以看到 `cc.Terrain` 地形组件，将已经创建好的地形资源拖拽到地形组件中的 `Asset` 属性框中。
+
+![terrain inspector](./images/terrain-inspector.png)
 
 ## 编辑
 

@@ -16,7 +16,6 @@ Two steps are required to create a terrain:
    
     ![create terrain asset](./images/createTerrainAsset.png)
 
-3. Click on the created terrain node. There is a terrain component (`cc.Terrain`) in the __Inspector__ panel, and the created terrain assets are assigned to the __Asset__ in the terrain component.
 ## Terrain component properties
 
 | Parameter | Description |
@@ -28,9 +27,10 @@ Two steps are required to create a terrain:
 | UsePBR | Use physical materials |
 
 ## Using a terrain
-Click on the created terrain node. There is a terrain component in the __Inspector Panel__, and the created terrain assets are assigned to the __Asset__ in the terrain component.
 
-    ![terrain inspector](./images/terrain-inspector.png)
+Click on the created terrain node. There is a terrain component (`cc.Terrain`) in the __Inspector__ panel, and the created terrain assets are assigned to the __Asset__ in the terrain component.
+
+![terrain inspector](./images/terrain-inspector.png)
 
 ## Editing a terrain
 
