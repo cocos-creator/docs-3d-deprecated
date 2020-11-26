@@ -34,9 +34,7 @@
 
 ### 更改节点的父节点
 
-假设父节点为 `parentNode`，子节点为 `this.node`
-
-您可以：
+假设父节点为 `parentNode`，子节点为 `this.node`，您可以：
 
 ```ts
 this.node.parent = parentNode;
@@ -51,16 +49,16 @@ parentNode.addChild(this.node);
 
 这两种方法是等价的。
 
-注意：
- - `removeFromParent` 通常需要传入一个 `false`，否则默认会清空节点上绑定的事件和 action 等。
- - 通过 [创建和销毁节点](create-destroy.md) 介绍的方法创建出新节点后，要为节点设置一个父节点才能正确完成节点的初始化。
+**注意**：
+- `removeFromParent` 通常需要传入一个 `false`，否则默认会清空节点上绑定的事件和 action 等。
+- 通过 [创建和销毁节点](create-destroy.md) 介绍的方法创建出新节点后，要为节点设置一个父节点才能正确完成节点的初始化。
 
 ### 索引节点的子节点
 
 - `this.node.children`：返回节点的所有子节点数组。
 - `this.node.childrenCount`：返回节点的子节点数量。
 
-**注意** 以上两个 API 都只会返回节点的直接子节点，不会返回子节点的子节点。
+**注意**：以上两个 API 都只会返回节点的直接子节点，不会返回子节点的子节点。
 
 ## 更改节点的变换（位置、旋转、缩放）
 

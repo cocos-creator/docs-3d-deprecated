@@ -13,7 +13,6 @@ The global fog function is used to obtain different fog effects with the fogging
 
 ![image](./fog/fogInspector.png)
 
-
 Click on the scene node in the hierarchy panel, expand the fog option in the inspector panel, check the `Enabled` property to enable the global fog function, and set the type of global fog. You can set the color of the global fog through `FogColor`.
 
 ## Different types of use

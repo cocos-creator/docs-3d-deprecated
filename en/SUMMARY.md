@@ -13,8 +13,8 @@
 ## Editor Manual
 
 - [Editor Introduction](editor/index.md)
-  - [Scene Editor](editor/scene/index.md)
-  - [Hierarchy Manager](editor/hierarchy/index.md)
+  - [Scene](editor/scene/index.md)
+  - [Hierarchy](editor/hierarchy/index.md)
   - [Assets](editor/assets/index.md)
   - [Inspector](editor/inspector/index.md)
   - [Console](editor/console/index.md)

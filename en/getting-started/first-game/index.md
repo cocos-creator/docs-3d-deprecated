@@ -31,23 +31,23 @@ In __Cocos Creator__, **Scene** is the center for organizing game content during
 
 When the player runs the game, the game scene will be loaded. After the game scene is loaded, scripts of the included components will be automatically run. Apart from __assets__, game scenes are the foundation of all content creation. Now, to create a new __Scene__:
 
-1. In the **Explorer**, click to select the **assets** directory, click the __+__ button in the upper left corner, select the folder, and name it __Scenes__. Example:
+1. In the __Asset__ panel, click to select the __assets__ directory, click the __+__ button in the upper left corner, select the folder, and name it __Scenes__. Example:
 
     ![create scene](./images/create-folder.png)
 
-2. Click the __Scenes__ directory first (the following pictures create some common folders in advance), click the right mouse button, and select **Scene Files** from the pop-up menu. Example:
+2. Click the __Scenes__ directory first (the following pictures create some common folders in advance), click the right mouse button, and select __Scene Files__ from the pop-up menu. Example:
 
     ![create scene](./images/create-scene.png)
 
 3. We created a __Scene__ file named __New Scene__. After the creation, the name of the scene file __New Scene__ will be in the edit state. Rename it from __New Scene__ to __Main__.
 
-4. Double-click __Main__ to open this __Scene__ in **Scene Editor** and **Hierarchy Manager**.
+4. Double-click __Main__ to open this __Scene__ in __Scene__ panel and __Hierarchy__ panel.
 
 ## Adding a road
 
 Our main character needs to run from left to right on a road composed of cubes (blocks). Let's make the road by using a built-in cube.
 
-1. Right click on __Scene Node__ in the **Hierarchy Manager**, then choose __Create --> 3D Object --> Cube__
+1. Right click on __Scene Node__ in the **Hierarchy** panel, then choose __Create -> 3D Object -> Cube__
 
     ![create cube](./images/create-cube.gif)
 
@@ -86,13 +86,13 @@ It is necessary for the main character to be affected when the mouse moves. To d
 
 #### Creating a script
 
-1. If you have not yet created a `Scripts` folder, right-click the **assets** folder in the __Explorer__ panel, select **New -> Folder**, and rename the newly created folder to `Scripts`.
+1. If you have not yet created a `Scripts` folder, right-click the **assets** folder in the __Assets__ panel, select **New -> Folder**, and rename the newly created folder to `Scripts`.
 2. Right-click the `Scripts` folder and select **New -> TypeScript** to create a new, blank __TypeScript__ script. For __TypeScript__ information, you can view the [TypeScript Official Website](https://www.typescriptlang.org/).
 3. Change the name of the newly created script to `PlayerController` and the double-click the script to open the code editor (in, for example, __VSCode__).
 
     ![create player script](./images/create-player-script.gif)
 
-    > **Note**: The name of the script in __Cocos Creator 3.0__ is the name of the component. This name is case sensitive! If the capitalization of the component name is incorrect, the component cannot be used correctly by the name!
+    > **Note**: the name of the script in __Cocos Creator 3.0__ is the name of the component. This name is case sensitive! If the capitalization of the component name is incorrect, the component cannot be used correctly by the name!
 
 #### Writing script code
 
@@ -121,7 +121,7 @@ export class PlayerController extends Component {
 }
 ```
 
-This code is the structure needed to write a __component__. Scripts with this structure are **Components in Cocos Creator**. They can be attached to nodes in a __Scene__ and provide various functionality for controlling nodes. For detailed information review the [Script]( ../../scripting/index.md) documentation.
+This code is the structure needed to write a __component__. Scripts with this structure are **Components in Cocos Creator**. They can be attached to nodes in a __Scene__ and provide various functionality for controlling nodes. For detailed information review the [Script](../../scripting/index.md) documentation.
 
 Monitoring of mouse events needs to be added in the script to let the `Player` node move. Modify the code in `PlayerController` as follows:
 
@@ -201,7 +201,7 @@ export class PlayerController extends Component {
 }
 ```
 
-__Next__, attach the `PlayerController` component to the `Player` node. Select the `Player` node in the **Hierarchy Manager**, then click the **Add Component** button in the **Property Inspector**, select **Custom Script Component- > PlayerController** to the `Player` node to add the `PlayerController` component.
+__Next__, attach the `PlayerController` component to the `Player` node. Select the `Player` node in the **Hierarchy** panel, then click the **Add Component** button in the **Inspector** panel, select **Custom Script Component- > PlayerController** to the `Player` node to add the `PlayerController` component.
 
 ![add player controller comp](./images/add-player-controller.png)
 
@@ -219,11 +219,11 @@ For additional details please refer to the [Project Preview Debugging](../../edi
 
 The `Player` can be moved in a horizontal direction. This is a start, but not good enough. `Player` must become more life-like. This effect can be achieved by adding a vertical animation to the character.
 
-> **Note**: Before proceeding, please read the [Animation Editor](../../editor/animation/index.md) documentation.
+> **Note**: before proceeding, please read the [Animation Editor](../../editor/animation/index.md) documentation.
 
 After reading and understanding the capabilities of the __Animation Editor__ character animations can be implemented!
 
-1. Locate the **Animation Editor**, at the bottom of the editor alongside the __Assets Preview__ and the **Console** panels. Select the `Body` node in the __Scene__ and click to add an __Animation Component__ and then click again tp create a new __Animation Clip__. Give this new __Animation Clip__ a name of `oneStep`.
+1. Locate the __Animation__ panel, at the bottom of the editor alongside the __Assets Preview__ and the __Console__ panels. Select the `Body` node in the __Scene__ and click to add an __Animation Component__ and then click again tp create a new __Animation Clip__. Give this new __Animation Clip__ a name of `oneStep`.
 
     ![player move](./images/add-animation.gif)
 
@@ -231,13 +231,13 @@ After reading and understanding the capabilities of the __Animation Editor__ cha
 
     ![add keyframe](./images/add-keyframe.gif)
 
-    > **Note**: Remember to save the animation before exiting the animation editing mode, otherwise the animation will be lost.
+    > **Note**: remember to save the animation before exiting the animation editing mode, otherwise the animation will be lost.
 
-3. __Animation Clips__ can also be created using the **Explorer** panel. Next, Create a __Clip__ named `twoStep` and add it to the __AnimationComponent__ on `Body`.
+3. __Animation Clips__ can also be created using the __Asset__ panel. Next, Create a __Clip__ named `twoStep` and add it to the __AnimationComponent__ on `Body`.
 
     ![add animation from assets](./images/add-animation-from-assets.gif)
 
-    > **Note**: The panel layout was adjusted for recording convenience.
+    > **Note**: the panel layout was adjusted for recording convenience.
 
 4. Enter the __animation editing mode__, select and edit the `twoStep` clip. Similar to the second step, add three key frames at positions __(0, 0, 0)__, __(0, 1, 0)__, __(0, 0, 0)__.
 
@@ -252,7 +252,7 @@ After reading and understanding the capabilities of the __Animation Editor__ cha
     public BodyAnim: Animation = null;
     ```
    
-    Then in the **Property Inspector**, drag the `Animation` to the `Body` variable.
+    Then in the **Inspector** panel, drag the `Animation` to the `Body` variable.
 
     ![drag to animComp](./images/drag-to-animComp.gif)
 
@@ -282,7 +282,7 @@ Most games have a __manager__, which is mainly responsible for the management of
 
 For a node that needs to be generated repeatedly, it can be saved as a **Prefab (prefabricated)** resource. This means it can be used as a template when we dynamically generate other nodes of this same type.
 
-> **Note**: Before proceeding, please read the [Prefab Resources](../../asset/prefab.md) documentation.
+> **Note**: before proceeding, please read the [Prefab Resources](../../asset/prefab.md) documentation.
 
 It is necesssary to make the basic element `cube` of the road into a __Prefab__, after which all three cubes in the __Scene__ can be deleted.
 
@@ -382,7 +382,7 @@ The __start menu__ is an indispensable part of most any game. Add the game name,
 
     > **Note**: 2D View is this toolbar button ![2d-view](./images/2d-view.png).
 
-    > **Note**: Before proceeding, please read the [Scene Editing](../../editor/scene/index.md) documentation.
+    > **Note**: before proceeding, please read the [Scene Editing](../../editor/scene/index.md) documentation.
 
 3. Add a background frame by creating a `Sprite` node named `BG` under `StartMenu`. Adjust `BG`'s position to above the `PlayButton`, setting the __W(width)__ and __H(height)__ of `ContentSize` to __(200, 200)__, and setting its __SpriteFrame__ to `internal/default_ui/ default_sprite_splash`.
 
@@ -526,6 +526,7 @@ The game character is just running forward, with no purpose. Adding game rules t
     ```
 
     Send a message at the end of each jump:
+
     ```ts
     onOnceJumpEnd() {
         this._isMoving = false;
@@ -576,7 +577,7 @@ The game character is just running forward, with no purpose. Adding game rules t
   
     ```ts
     init() {
-        \\ ...
+        // ...
         this.playerCtrl.reset();
     }
     ```
@@ -637,7 +638,7 @@ Where there is light, there will be a shadow. Light and shadows create a 3D worl
 
 ### Turning on shadows
 
-1. In the **Hierarchy Manager**, click the `Scene` node at the top, check `Enabled` in the `shadows` property, and modify the `Distance` and `Normal` parameters
+1. In the **Hierarchy** panel, click the `Scene` node at the top, check `Enabled` in the `shadows` property, and modify the `Distance` and `Normal` parameters
 
     ![planar shadows](./images/planarShadows.png)
 
@@ -653,7 +654,7 @@ A patch of shadow can be seen in the in the __Scene__ editor. However, this shad
 
 When creating a new scene, a `DirectionalLight` will be added __by default__, and the shadow will be calculated from this parallel light. The direction of this parallel light can be adjusted in-order to display the shadow in another position.
 
-In the **Hierarchy Manager**, click to select the `Main Light` node and adjust the `Rotation` parameter to __(-10, 17, 0)__.
+In the **Hierarchy** panel, click to select the `Main Light` node and adjust the `Rotation` parameter to __(-10, 17, 0)__.
 
 ![main light](./images/main-light.png)
 

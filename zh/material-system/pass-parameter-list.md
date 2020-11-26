@@ -8,7 +8,7 @@ Pass 中的参数主要分为开发者可自定义的 effect 参数和引擎提�
 | priority       | 指定这个 pass 的渲染优先级，数值越小渲染优先级越高，取值范围为 **0 ~ 255** | 128 | 可结合四则运算符指定相对值 |
 | stage          | 指定这个 pass 归属于管线的哪个 stage。可以是运行时管线中任何注册的 Stage 名称 | **default** | 对于默认的 forward 管线，只有 `default` 一个 stage |
 | phase          | 指定这个 pass 归属于管线的哪个 phase。可以是运行时管线中任何注册的 Phase 名称 | **default** | 对于默认的 forward 管线，可以是 `default`、`forward-add` 或者 `shadow-caster`  |
-| propertyIndex  | 指定这个 pass 运行时的 uniform 属性数据要和哪个 pass 保持一致，例如 forward add 等 pass 需要和 base pass 一致才能保证正确的渲染效果。可以是任意有效的 pass 索引 | 未定义 | 一旦指定了此参数，材质面板上就不会再显示这个 pass 的任何属性。 |
+| propertyIndex  | 指定这个 pass 运行时的 uniform 属性数据要和哪个 pass 保持一致，例如 forward add 等 pass 需要和 base pass 一致才能保证正确的渲染效果。可以是任意有效的 pass 索引 | 未定义 | 一旦指定了此参数，材质面板上就不会再显示这个 pass 的任何属性 |
 | embeddedMacros | 指定在这个 pass 的 shader 基础上额外定义的常量宏，可以是一个包含任意宏键值对的对象 | 未定义 | 只有当宏定义不同时才能在多个 pass 中使用此参数来复用 shader 资源 |
 | properties     | Properties 存储着这个 pass 中需要显示在 **属性检查器** 上的可定制的参数 |                 | 详见下文 **Properties** 部分的介绍    |
 | migrations     | 迁移旧的材质数据  |           | 详见下文 **Migrations** 部分的介绍                                                     |

@@ -1,7 +1,5 @@
 # 发布到 OPPO 小游戏
 
-Cocos Creator 从 v1.0.2 开始正式支持将游戏发布到 OPPO 小游戏。目前本文档是基于 v1.0.2 编写的，如果您使用的是其他低于该版本的编辑器，建议升级到 1.0.2 以上版本。下面我们来看一下具体的发布流程。
-
 ## 环境配置
 
 - 下载 [OPPO 小游戏调试器](https://cdofs.oppomobile.com/cdo-activity/static/201810/26/quickgame/documentation/#/games/use)，并安装到 Android 设备上（建议 Android Phone 6.0 或以上版本）
@@ -54,17 +52,17 @@ Cocos Creator 从 v1.0.2 开始正式支持将游戏发布到 OPPO 小游戏。�
 
   1. 构建时，勾选 **小包模式**，填写 **小包模式服务器路径**。然后点击 **构建**。
 
-  2. 构建完成后，点击 **发布路径** 后面的 **打开** 按钮，将发布路径下的 **res** 目录上传到小包模式服务器。例如：默认发布路径是 build，构建任务名为 oppo-mini-game, 则需要上传 /build/oppo-mini-game/res 目录。
+  2. 构建完成后，点击 **发布路径** 后面的 **打开** 按钮，将发布路径下的 **res** 目录上传到小包模式服务器。例如：默认发布路径是 build，构建任务名为 oppo-mini-game，则需要上传 `/build/oppo-mini-game/res` 目录。
 
   此时，构建出来的 rpk 将不再包含 res 目录，res 目录里的资源将通过网络请求从填写的 **小包模式服务器地址** 上下载。
 
 - **分包**
 
-  v1.0.4 起添加该选项，默认开启，用于控制分包功能的开启。详情请查看本文档末尾的 **分包** 介绍。
+  该功能默认开启，详情请查看本文档末尾的 **分包** 介绍。
 
 - **密钥库**
 
-  勾选 **密钥库** 时，表示默认用的是 Creator 自带的证书构建 rpk 包，仅用于 **调试** 时使用。
+  勾选 **密钥库** 时，表示默认用的是 Creator 自带的证书构建 rpk 包，仅用于 **调试** 时使用。<br>
   > **注意**：若 rpk 包要用于提交审核，则构建时不要勾选该项。
 
   如果不勾选 **密钥库**，则需要配置签名文件 **certificate.pem 路径** 和 **private.pem 路径**，此时构建出的是可以 **直接发布** 的 rpk 包。用户可通过输入框右边的 **...** 按钮来配置两个签名文件。<br>
@@ -90,13 +88,11 @@ Cocos Creator 从 v1.0.2 开始正式支持将游戏发布到 OPPO 小游戏。�
 
 将构建生成的小游戏 rpk 包（ dist 目录中）拷贝到手机 SD 卡的 **/sdcard/games/** 目录。然后在 Android 设备上打开之前已经安装完成的 **OPPO 小游戏调试器**，点击 **OPPO 小游戏** 栏目，然后找到填写游戏名相对应的图标即可，如没有发现，可点击右上角的更多按钮-刷新按钮进行刷新。
 
-  **注意：OPPO 小游戏调试器为 V3.2.0 及以上的需要将准备好的 rpk 拷贝到手机 sdcard 的 Android/data/com.nearme.instant.platform/files/games 中, 无 games 目录则需新建**
+  **注意：OPPO 小游戏调试器为 V3.2.0 及以上的需要将准备好的 rpk 拷贝到手机 sdcard 的 Android/data/com.nearme.instant.platform/files/games 中，无 games 目录则需新建**
 
 ![](./oppo-mini-game/rpk_games.jpg)
 
 四、分包 rpk
-
-编辑器自 v1.0.4 开始支持 OPPO 的分包功能，并将分包开关集成到构建面板内，构建之前可以通过该选项快速的关闭和开启分包功能。
 
 分包加载，即把游戏内容按一定规则拆分成几个包，在首次启动的时候只下载必要的包，这个必要的包称为 **主包**，开发者可以在主包内触发下载其他子包，这样可以有效降低首次启动的消耗时间。若要使用该功能需要在 Creator 中设置 [分包配置](../../asset/subpackage.md)，设置完成后构建时就会自动分包。
 
@@ -108,7 +104,7 @@ Cocos Creator 从 v1.0.2 开始正式支持将游戏发布到 OPPO 小游戏。�
 
 **注意**：分包 rpk 需要拷贝到 Android 设备的 **/sdcard/subPkg/** 目录，未分包的 rpk 需要拷贝到 Android 设备的 **/sdcard/games/** 目录，两者不可混用。
 
-**注意：OPPO 小游戏调试器为 V3.2.0 及以上的需要将准备好的 rpk 拷贝到手机 sdcard 的 Android/data/com.nearme.instant.platform/files/subPkg 中, 无 subPkg 目录则需新建**
+**注意：OPPO 小游戏调试器为 V3.2.0 及以上的需要将准备好的 rpk 拷贝到手机 sdcard 的 Android/data/com.nearme.instant.platform/files/subPkg 中，无 subPkg 目录则需新建**
 
 ## 相关参考链接
 

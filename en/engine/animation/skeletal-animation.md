@@ -63,9 +63,9 @@ The fundamental problem here is that the joint texture atlass used by each model
 
 The way to distribute all the animation data used at runtime to each joint texture atlases becomes a project-specific information, thus needs developer's input. See the [joint texture layout panel](../../editor/project/joints-texture-layout.md) documentation for more details on how to configure this.
 
-> **Note**: Instancing is only supported under the pre-baked system. Although we do not strictly prohibit instancing under the real-time calculated system (will only trigger some warnings in the editor), there will be problems with the rendering results. Depending on the asset allocation situation at the time, all the instances could be playing the same clip at best, or more often, completely mad rendering results.
+> **Note**: instancing is only supported under the pre-baked system. Although we do not strictly prohibit instancing under the real-time calculated system (will only trigger some warnings in the editor), there will be problems with the rendering results. Depending on the asset allocation situation at the time, all the instances could be playing the same clip at best, or more often, completely mad rendering results.
 
-> **Note**: For models with instancing turned on in the material, the planar shadow system will also automatically draw using instancing. In particular, the shadow of the skin model has a higher requirement for the layout of the joint texture atlas, because the pipeline state of the shadow is unified, all the animation of the skin model with the shadow turned on needs to be put into the same texture (Compared to when drawing the model itself, only the instances in the same drawcall need to be put into the same texture).
+> **Note**: for models with instancing turned on in the material, the planar shadow system will also automatically draw using instancing. In particular, the shadow of the skin model has a higher requirement for the layout of the joint texture atlas, because the pipeline state of the shadow is unified, all the animation of the skin model with the shadow turned on needs to be put into the same texture (Compared to when drawing the model itself, only the instances in the same drawcall need to be put into the same texture).
 
 ## Batched Skinning Model Component
 
@@ -75,4 +75,4 @@ The joint texture uploaded by the GPU on the bottom layer has been globally auto
 
 The batch version of the effect is relatively complicated to write, but it can basically be based on the common effects used by the sub-materials, adding some relatively direct preprocessing and interface changes. The built-in assets in the editor (util/batched-unlit) provide a The integrated version of builtin-unlit can be referenced.
 
-> **Note**: Only using the Batched Skinning Model Component under the pre-baked system can guarantee the correctness. Although it can also be used under the real-time calculated system, there **will** be rendering problems when the number of joints after the merger exceeds 30 (the maximum number of Uniform arrays).
+> **Note**: only using the Batched Skinning Model Component under the pre-baked system can guarantee the correctness. Although it can also be used under the real-time calculated system, there **will** be rendering problems when the number of joints after the merger exceeds 30 (the maximum number of Uniform arrays).

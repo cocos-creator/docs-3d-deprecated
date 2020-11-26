@@ -6,7 +6,7 @@ __Cocos Creator__ currently supports the lightweight collision detection system 
 
 Elements in the physics world can be divided into **rigid body**. We can adding physics elements by adding a collider (`Collider`) or rigid body (`RigidBody`) component to the game object. The physics system will perform calculations on these elements to make their behaviors the same with the real world.
 
-> **Note**: The __rigid body__ here doesn't refer to the `RigidBody` component. The `RigidBody` component is used to control the properties related to the physical behavior of the rigid body.
+> **Note**: the __rigid body__ here doesn't refer to the `RigidBody` component. The `RigidBody` component is used to control the properties related to the physical behavior of the rigid body.
 
 ### Adding a Physical Element
 

@@ -62,9 +62,3 @@ Label 组件可以通过往 **属性检查器** 里的 **Font** 属性拖拽 TTF
 
  理论上，如果你的游戏 UI 没有使用系统字体或者 TTF 字体，并且所有的 UI 图片资源都可以合在一张图上，那么 UI 是可以只用一个 Draw Call 来完成的。
  更多关于 BMFont 与 UI 合图自动批处理的内容，请参考 [BMFont 与 UI 合图自动批处理](https://docs.cocos.com/creator/2.1/manual/zh/advanced-topics/ui-auto-batch.html) -->
-
----
-
-- [其他渲染模块参考](render-component.md)
-
-- [基础模块参考](base-component.md)

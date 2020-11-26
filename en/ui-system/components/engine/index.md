@@ -18,7 +18,7 @@ The UI is a necessary interaction part of game development. The buttons, labels,
 
 Now that your design resolution is setup, you can start creating the UI elements. All UI elements are contained under the `Canvas` node, you can create a `Canvas` node by clicking the __+__ button at the top left of the __Hierarchy__ panel, and then select the __UI -> Canvas__. There is a [Canvas](../editor/canvas.md) component on the Canvas node, which automatically creates a camera inside. You can achieve true interspersed rendering between 3D camera and 2D camera by adjusting the `RenderMode` property on `Canvas`. And then adjust the display priority between multiple camera with the `priority` property on the component of `Canvas/Camera`.
 
-> __Note__: There can be more than one Canvas node in a scene, but the Canvas should not be nested under another Canvas or its child nodes.
+> __Note__: there can be more than one Canvas node in a scene, but the Canvas should not be nested under another Canvas or its child nodes.
 
 Next, you can create the UI nodes under the Canvas nodes. There are several UI nodes that come with the editor are as follow:
 

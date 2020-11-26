@@ -1,6 +1,6 @@
 # Publishing to OPPO Mini Games
 
-> **Note**: Some platforms only have Chinese documentation available when visiting the platforms website. It may be necessary to use Google Translate in-order to review the documentation.
+> **Note**: some platforms only have Chinese documentation available when visiting the platforms website. It may be necessary to use Google Translate in-order to review the documentation.
 
 __Cocos Creator__ officially supports the release of games to the **OPPO Mini Games**.
 
@@ -14,7 +14,7 @@ __Cocos Creator__ officially supports the release of games to the **OPPO Mini Ga
 
 ## Release Process
 
-1. Use **Cocos Creator** to open the project that needs to be released. Select **OPPO Mini Game** in the **Platform** dropdown of the **Build** panel.
+1. Use **Cocos Creator 3.0** to open the project that needs to be released. Select **OPPO Mini Game** in the **Platform** dropdown of the **Build** panel.
 
     ![](./oppo-mini-game/build_options.jpg)
 
@@ -32,7 +32,7 @@ The specific filling rules for the relevant parameter configuration are as follo
 
 - **Game Version Number**: is required. **Game Version Number** is different from the **Game Version Name**, and the **Game Version Number** is mainly used to distinguish the version update. Each time when you submit audit, the game version number is at least 1 higher than the value of the last submitted audit. It must not be equal to or less than the value of the last submitted audit, and it is recommended that the **Game Version Number** be recursively incremented by 1 each time when the audit is submitted.
 
-  > **Note**: The **Game Version Number** must be a positive integer.
+  > **Note**: the **Game Version Number** must be a positive integer.
 
 - **Supported Minimum Platform Version Number**: is required. According to the requirements for OPPO Mini Games, this value must be greater than or equal to **1031**.
 
@@ -54,7 +54,7 @@ The specific filling rules for the relevant parameter configuration are as follo
 
 - **Keystore**: when you check the **Keystore**, the default is to build the rpk package with a certificate that comes with Creator, which is used only for **debugging**. 
 
-  > **Note**: When the rpk package is to be used to submit an audit, do not check the **Keystore** to build it.
+  > **Note**: when the rpk package is to be used to submit an audit, do not check the **Keystore** to build it.
   
   If you don't check the **Keystore**, you need to configure the signature files **certificate.pem path** and **private.pem path**, where you build a rpk package that you can **publish directly**. The user can configure two signature files by using the **search icon** button to the right of the input box.
 
@@ -83,7 +83,7 @@ After the relevant parameters of the **Build** panel are set, click **Build**. W
 
 Copy the generated mini-game **rpk** file to the `/sdcard/games/` directory on your phone's SD card. Then open the **Mini Game Debugger** that has been installed before on the Android device, click the **OPPO Mini Game** section, and then find the icon corresponding to the game name. If not found, click on the **More -> Refresh** button in the upper right corner to refresh.
 
-  > **Note**: If the OPPO Mini Game Debugger version is `V3.2.0` and above,you need to copy the mini-game **rpk** file to the `Android/data/com.nearme.instant.platform/files/games` directory on your phone's SD card.If there is no `games` directory, you need to create a new one.
+  > **Note**: if the OPPO Mini Game Debugger version is `V3.2.0` and above,you need to copy the mini-game **rpk** file to the `Android/data/com.nearme.instant.platform/files/games` directory on your phone's SD card.If there is no `games` directory, you need to create a new one.
 
 ![](./oppo-mini-game/rpk_games.jpg)
 
@@ -98,13 +98,13 @@ Then switch to the **Package Load** section of OPPO **Mini Game Debugger**, clic
 
 ![](./oppo-mini-game/run_subpackage.jpg)
 
-> **Note**: Subpackage rpk needs to be copied to the `/sdcard/subPkg/` directory of Android devices, and non-subpackage rpk needs to be copied to the `/sdcard/games/` directory of Android devices, both of which cannot be mixed.
+> **Note**: subpackage rpk needs to be copied to the `/sdcard/subPkg/` directory of Android devices, and non-subpackage rpk needs to be copied to the `/sdcard/games/` directory of Android devices, both of which cannot be mixed.
 
-> **Note**: If the OPPO Mini Game Debugger version is `V3.2.0` and above,you need to copy the mini-game **rpk** file to the `Android/data/com.nearme.instant.platform/files/subPkg` directory on your phone's SD card.If there is no `subPkg` directory, you need to create a new one.
+> **Note**: if the OPPO Mini Game Debugger version is `V3.2.0` and above,you need to copy the mini-game **rpk** file to the `Android/data/com.nearme.instant.platform/files/subPkg` directory on your phone's SD card.If there is no `subPkg` directory, you need to create a new one.
 
 ## Reference documentation
 
-> **Note**: Some platforms only have Chinese documentation available when visiting the platforms website. It may be necessary to use Google Translate in-order to review the documentation.
+> **Note**: some platforms only have Chinese documentation available when visiting the platforms website. It may be necessary to use Google Translate in-order to review the documentation.
 
 - [OPPO Mini Game Tutorial](https://cdofs.oppomobile.com/cdo-activity/static/201810/26/quickgame/documentation/games/quickgame.html)
 - [OPPO Mini Game API Documentation](https://cdofs.oppomobile.com/cdo-activity/static/201810/26/quickgame/documentation/feature/account.html)

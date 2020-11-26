@@ -222,7 +222,7 @@ export class PlayerController extends Component {
 
     ![player move](./images/add-animation.gif)
 
-2. 进入动画编辑模式，添加 position 属性轨道，并添加三个关键帧， position 值分别为（0，0，0）、（0，0.5，0）、（0，0，0）。
+2. 进入动画编辑模式，添加 position 属性轨道，并添加三个关键帧，position 值分别为（0，0，0）、（0，0.5，0）、（0，0，0）。
 
     ![add keyframe](./images/add-keyframe.gif)
 
@@ -579,7 +579,7 @@ onStartButtonClicked() {
  
     ```ts
     init() {
-        \\ ...
+        // ...
         this.playerCtrl.reset();
     }
     ```

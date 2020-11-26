@@ -4,8 +4,7 @@
 
 ## 注册菜单
 
-当扩展插件需要添加菜单的时候，只需要填写 contributions.menu 对象。
-例如我们在 "扩展" 菜单里增加一个菜单项：
+当扩展插件需要添加菜单的时候，只需要填写 `contributions.menu` 对象。例如我们在 "扩展" 菜单里增加一个菜单项：
 
 ```json
 {
@@ -34,7 +33,7 @@
 
 类型 {string} 必填
 
-顶部菜单的搜索路径，预设的有:
+顶部菜单的搜索路径，预设的有：
 
 - i18m:menu.project
 - i18n:menu.node
@@ -42,7 +41,7 @@
 - i18n:menu.extension
 - i18n:menu.develop
 
-也可以填写多级菜单，例如 i18n:menu.extension/Hello World
+也可以填写多级菜单，例如 `i18n:menu.extension/Hello World`
 
 ### label
 

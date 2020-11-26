@@ -28,7 +28,7 @@ This panel here provide the convenience to modify the macro configuration. The *
 
 ## Texture Compress
 
-> As of v1.2, the editor has modified the use of compressed texture configuration to configure presets in project settings and select presets for image asset's inspector. After the old version of the project is upgraded, the editor will automatically scan all the compressed texture configurations in the project and sort out as several presets.
+> In Cocos Creator 3.0, the editor has modified the use of compressed texture configuration to configure presets in project settings and select presets for image asset's inspector. After the old version of the project is upgraded, the editor will automatically scan all the compressed texture configurations in the project and sort out as several presets.
 
 Used to add compressed texture preset configuration, you can directly select the compressed texture preset to quickly add in the inspector of image asset. At the same time, after adding presets, you can also directly modify the presets to update batch texture compress configuration. Project settings allow users to add multiple compressed texture configurations, and each compressed texture configuration allows to add different format for different platform categories.
 
@@ -165,7 +165,9 @@ Example:
 
     ![Layers-node](./index/layers-node.png)
 
-    ![Layers-camera](./index/layers-camera.png) For more instructions, please refer to [Camera Component introduction](./../components/camera-component.md);
+    ![Layers-camera](./index/layers-camera.png) 
+
+For more instructions, please refer to [Camera Component introduction](./../components/camera-component.md);
 
 ## Physics
 
@@ -209,7 +211,7 @@ In the editor, the grouping format of the collision matrix is `{index, name}`, `
 
 By clicking the `+` button you can add a new group.
 
-> **Note**: Both `index` and `name` cannot be empty and cannot be repeated with existing items; after adding, the group cannot be deleted, only the name of the group can be modified.
+> **Note**: both `index` and `name` cannot be empty and cannot be repeated with existing items; after adding, the group cannot be deleted, only the name of the group can be modified.
 
 ![Physics-collision-add](./index/physics-collision-add.png)
 

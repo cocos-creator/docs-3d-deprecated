@@ -31,9 +31,9 @@
 }
 ```
 
-contributions.messages 详情请参考 [消息通信](./contributions-messages.md)
+`contributions.messages` 详情请参考 [消息通信](./contributions-messages.md)
 
-contributions.shortcuts 参数说明:
+`contributions.shortcuts` 参数说明请继续查看下文介绍。
 
 ### message
 

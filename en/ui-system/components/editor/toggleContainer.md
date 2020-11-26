@@ -4,7 +4,7 @@ ToggleContainer is not a visible UI component but it can be used to modify the b
 
 ![toggle-container](toggle/toggle-container.png)
 
-__Note__: All the first layer child node containing the Toggle component will auto be added to the container.
+> __Note__: all the first layer child node containing the Toggle component will auto be added to the container.
 
 Click the __Add Component__ button at the bottom of the __Inspector__ panel and select __UI/ToggleContainer__ to add the ToggleContainer component to the node.
 

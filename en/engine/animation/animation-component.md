@@ -82,7 +82,7 @@ The `events` of an `AnimationClip` contains all event descriptions for the anima
 
 `frame` represents the time point at which the event was triggered, in seconds. For example, `0.618` means that the event will be triggered when the animation reaches `0.618` seconds.
 
-`func` represents the method name that is called back when the event is triggered. When the event is triggered, a **search** for a method named `func` on all components of the current node, once found, it is called with  `params` passed to it. Example:
+`func` represents the method name that is called back when the event is triggered. When the event is triggered, a **search** for a method named `func` on all components of the current node, once found, it is called with `params` passed to it. Example:
 
 ```ts
 import { Animation, Component } from "cc";

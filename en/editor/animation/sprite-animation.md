@@ -6,7 +6,7 @@ Previous chapters wrote about the operation of __Attribute Frames__, now how to 
 
 __First__, we need to allow the node to display the texture normally, so we need to add a __Sprite__ component to the node.
 
-__After__ selecting the node, use the **Add Component** button in the __Property Inspector__ and select __UI-> Render-> Sprite__.
+__After__ selecting the node, use the **Add Component** button in the __Inspector__ panel and select __UI-> Render-> Sprite__.
 
 ## Add a Sprite.spriteFrame to the attribute list
 
@@ -16,7 +16,7 @@ Click the `+` next to the __Property List__ of the __Animation Editor__. Select 
 
 ## Adding a Frame
 
-__First__, from the __Explorer__, drag the texture to the __Attribute Frame__ area and place it on the __Sprite.spriteFrame__ track.
+__First__, from the __Asset__ panel, drag the texture to the __Attribute Frame__ area and place it on the __Sprite.spriteFrame__ track.
 
 __Next__, drag the texture to be displayed in the next frame to the specified position, and then __click__ __Play__ to preview the animation that was just created.
 

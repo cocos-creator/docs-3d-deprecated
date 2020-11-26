@@ -39,20 +39,20 @@ Usually, the most commonly used directory is `assets`. There are others:
 
 ## Creating a New Scene
 
-In the bottom left __Explorer__ panel, __click the right mouse button__ and select __New__->__Scene__.
+In the bottom left __Assets__ panel, __click the right mouse button__ and select __New__ -> __Scene__.
 
 ![](index/scene.png)
 
 ## Creating an Object
 
-Upper left __Hierarchy Manager__ panel, click the __right mouse button__, select __Create__ -> __3D object__ -> __Cube cube__. The created cube will appear in the scene editor.
+Upper left __Hierarchy__ panel, click the __right mouse button__, select __Create__ -> __3D object__ -> __Cube cube__. The created cube will appear in the scene editor.
 
 ![](index/cube.png)
 
 ## Modifying the Camera
 
 ### Selecting the `Camera` object
-In the __Hierarchy Manager__ panel, select `Camera`, and the scene editor will select it and display a __Gizmo__.
+In the __Hierarchy__ panel, select `Camera`, and the scene editor will select it and display a __Gizmo__.
 
 ![](index/select.png)
 
@@ -62,14 +62,14 @@ In the scene editor, drag the __Gizmo__ so that the `Camera` can see the created
 ![](index/move.png)
 
 ### Modifying the `Camera` background color
-In the __Property Inspector__ panel, click the `Color` property and select black as the background color. 
+In the __Inspector__ panel panel, click the `Color` property and select black as the background color. 
 
 ![](index/property.png)
 
 ## Adding a script
 
 ### Creating a new script
-In the __Explorer__ panel, __click the right mouse button__, select __New__ -> __TypeScript__. 
+In the __Assets__ panel, __click the right mouse button__, select __New__ -> __TypeScript__. 
 
 ![](index/script.png)
 

@@ -51,9 +51,9 @@ The `ray` is composed of **start point** and **direction**. There are the follow
     cameraCom.screenPointToRay(0, 0, outRay);
     ```
 
-    **Note**:
-    1. First you need to get a reference to a camera component or camera instance.
-    2. The order of the interface parameters exposed by both the camera component and the camera instance is not the same.
+    > **Note**:
+    > 1. First you need to get a reference to a camera component or camera instance.
+    > 2. The order of the interface parameters exposed by both the camera component and the camera instance is not the same.
 
 ## Interface Introduction
 
@@ -78,7 +78,7 @@ To get the detection results of the above interfaces, you need to use the follow
 - Gets the detection result of `raycastAll`: `PhysicsSystem.instance.raycastResults`
 - Gets the detection result of `raycastClosest`: `PhysicsSystem.instance.raycastClosestResult`
 
-> **Note**: The returned object is read-only and reused, and the corresponding result will be updated after each call to the detection interface.
+> **Note**: the returned object is read-only and reused, and the corresponding result will be updated after each call to the detection interface.
 
 ## Information Stored By Results
 

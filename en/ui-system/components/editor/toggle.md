@@ -16,7 +16,7 @@ To use `Toggle`, please refer to the [Toggle API](https://docs.cocos.com/creator
 | CheckMark      | Sprite type. The image displayed when Toggle is selected |
 | CheckEvents    | List type, default is null. Each event added by the user is composed of the node reference, component name and a response function. Please see the __Toggle Event__ section below for details |
 
-__Note__: Because Toggle is inherited from Button, so the properties exists in Button also apply to Toggle, please refer to the [Button Component](button.md) for details.
+> __Note__: because Toggle is inherited from Button, so the properties exists in Button also apply to Toggle, please refer to the [Button Component](button.md) for details.
 
 ## Toggle Event
 
@@ -30,7 +30,7 @@ The generic node hierarchy of Toggle is as below:
 
 ![toggle-node-tree](toggle/toggle-node-tree.png)
 
-__Note__: The checkMark node needs to be placed on the upper level of the background node in the __Scene__.
+> __Note__: the checkMark node needs to be placed on the upper level of the background node in the __Scene__.
 
 ## Add a callback through the script code
 

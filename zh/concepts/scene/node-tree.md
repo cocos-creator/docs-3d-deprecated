@@ -12,15 +12,15 @@
 
 我们用一个简单的游戏场景来看一下什么是节点树。下图中包括背景图像、一个主角（小球）、标题、跳板、钻石和开始游戏的按钮：
 
-![game scene](node-tree/rolling-ball.png)
+![](node-tree/rolling-ball.png)
 
 每个视觉元素都是一个节点，通常我们不会把所有节点平铺在场景上，而是会按照一定的分类和次序（比如根据自己的喜好）组织成节点树，例如：
 
-![in node tree](node-tree/node-tree.png)
+![](node-tree/node-tree.png)
 
 我们把显示在上层的叫做父节点，显示在下层的叫做子节点。在 **层级管理器** 中，上图的节点树就会是这个样子：
 
-![in node tree](node-tree/in_hierarchy.png)
+![](node-tree/in_hierarchy.png)
 
 因为 Creator 3.0 的 UI 节点需要其任意上级节点至少得有一个含有 UITransform 组件，在创建时若不符合规则，便会自动添加一个 Canvas 节点作为它的父级，所以上图中的节点树便将 UI 节点都统一放在了 Canvas 节点下。然后根据类别分别创建父节点，并将同类节点放在一个父节点下，从而构建出的节点树。
 

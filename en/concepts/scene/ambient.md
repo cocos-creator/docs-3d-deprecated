@@ -17,7 +17,3 @@ The following describes all the properties of the panel:
 | **groundAlbedo** | ground reflected light |
 | **skyColor** | sky color |
 | **skyIllum** | sky brightness |
-
----
-
-Return to the [Lighting](light.md) documentation.

@@ -28,7 +28,7 @@ The key factor of the mixed sorting of the **UI camera** and the **3D camera** i
 
 ## Detailed Explanation
 
-**Sorting** is a very simple function, but the final rendering is based on the rendering capabilities provided by different platforms. Therefore, explain here. If you encounter an error in **UI rendering**, such as ***flickering or unwanted artifacts or other please consider the following***.
+**Sorting** is a very simple function, but the final rendering is based on the rendering capabilities provided by different platforms. Therefore, explain here. If you encounter an error in **UI rendering**, such as **flickering or unwanted artifacts or other please consider the following**.
 The first thing to check is the __ClearFlag__ of all cameras (**Camera** and **Canvas**) in the scene, and make sure that the lowest __Canvas__ or __Camera__'s **ClearFlag** property is set to __SOLID_COLOR__ in each scene.
 
 To set the __ClearFlag__ property, please refer to the following situations:

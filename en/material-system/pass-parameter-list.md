@@ -90,7 +90,7 @@ Ideally the public interface of an effect should always be backward-compatible, 
 
 After an effect with migrations is successfully compiled, all the dependent material assets will be immediately updated, new property will be automatically migrated/generated from existing data using specified rules.
 
-**Note**: Please remember to backup your project before doing any migration attemps!
+> **Note**: please remember to backup your project before doing any migration attemps!
 
 For a existing effect, declares the following migration rules:
 
@@ -161,7 +161,7 @@ newFloat: { formerlySerializedAs: oldVec4.w! }
 
 Then the migration is guaranteed to execute, regardless of the existing data.<br>
 
-> **Note**: Migration in force mode will execute in every database event, which is basically every mouse click in editor. So use it as a quick-and-dirty test measure, and be sure not to submit effect files with force mode migrations into version control.
+> **Note**: migration in force mode will execute in every database event, which is basically every mouse click in editor. So use it as a quick-and-dirty test measure, and be sure not to submit effect files with force mode migrations into version control.
 
 Again here are the bottomline rules about preventing potential data losses:<br>
 - Property removal will happen if, and only if, you specify the `removeImmediately` entry explicitly.

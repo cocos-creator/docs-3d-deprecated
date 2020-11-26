@@ -8,7 +8,7 @@ When the physics world iterates, physical calculations will be made on physical 
 
 The current physics execution flow of __Coccos Creator 3.0__: **trigger physics events** -> **sync scene data to physics** -> **physics world iteration** -> **sync physics data to scene**.
 
-> **Note**: There is only a single physical world, and the functional support of the multi-physics world will be discussed later.
+> **Note**: there is only a single physical world, and the functional support of the multi-physics world will be discussed later.
 
 Scene World and Physics World:
 
@@ -18,7 +18,7 @@ Scene World and Physics World:
 
 The properties of the physics system can only be set through the code for the time being. A setting panel will be added in the future, please pay attention to the update announcement.
 
-> **Note**: Gets the instance of physics system using: `PhysicsSystem.instance`
+> **Note**: gets the instance of physics system using: `PhysicsSystem.instance`
 
 | Properties | Description |
 | :--- | :--- |

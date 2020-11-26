@@ -1,10 +1,10 @@
 # Compress texture
 
-**Cocos Creator** can set the compression method required for textures directly in the editor, and then automatically compress the textures when the project is released. For the web platform, multiple image formats can be exported at the same time, and the engine will automatically download the appropriate format according to different browsers.
+**Cocos Creator 3.0** can set the compression method required for textures directly in the editor, and then automatically compress the textures when the project is released. For the web platform, multiple image formats can be exported at the same time, and the engine will automatically download the appropriate format according to different browsers.
 
 ## Configure compressed texture
 
-**Cocos Creator** supports importing images in multiple formats (see the table below for details), but in an actual running game, we do not recommend using the original images as assets to load. For example, on a mobile platform, only 80% or less of the original image quality may be required, or a `.png` without the transparent channel can be converted into a `.jpg`, which can reduce the storage space required.
+**Cocos Creator 3.0** supports importing images in multiple formats (see the table below for details), but in an actual running game, we do not recommend using the original images as assets to load. For example, on a mobile platform, only 80% or less of the original image quality may be required, or a `.png` without the transparent channel can be converted into a `.jpg`, which can reduce the storage space required.
 
 | Image format | Android | iOS | Mini Game | Web  | Mac & Windows |
 | ------- | -------- | ------ | ----- | ------ | ------ |
@@ -16,15 +16,15 @@
 | ETC2 | Partially Supported | Not Supported | Not Supported | Supported Android  | Not Supported |
 | ASTC | Partially Supported  | Partially Supported | Not Supported | Partially Supported  | Mac Supported |
 
-By default, **Cocos Creator** outputs the original image during build. If you need to compress an image during the build process, you can select this image in the **Assets Panel** and then manage it in the **Inspector** to edit the compress texture format of the image.
+By default, **Cocos Creator 3.0** outputs the original image during build. If you need to compress an image during the build process, you can select this image in the **Assets** panel and then manage it in the **Inspector** to edit the compress texture format of the image.
 
 ![compress-texture](compress-texture/compress-texture.png)
 
-The editor will provide a preset by default. If you need to add more presets, you can click the `Edit preset` button to open `Project Settings -> Compress Texture` to add and edit presets. The compression format here is readonly. For how to add texture compression presets, please refer to the [Project Settings](./editor/project/index.md) documentation.
+The editor will provide a preset by default. If you need to add more presets, you can click the **Edit preset** button to open **Project Settings -> Compress Texture** to add and edit presets. The compression format here is readonly. For how to add texture compression presets, please refer to the [Project Settings](./editor/project/index.md) documentation.
 
 ![meta](compress-texture/meta.png)
 
-The compress-texture options on the image asset will be stored in the asset's meta file.`PresetId` is the ID of the selected compressed texture preset.
+The compress-texture options on the image asset will be stored in the asset's meta file. `PresetId` is the ID of the selected compressed texture preset.
 
 ## Detailed compression textures
 
@@ -32,7 +32,7 @@ If you want to use compressed textures, you need to turn on the **compressed tex
 
 ![compress-texture-build](compress-texture/compress-build.png)
 
-When **Cocos Creator** builds the image, it will find whether the current image has been already configured to use compressed textures. If not, it will output the original image.
+When **Cocos Creator 3.0** builds the image, it will find whether the current image has been already configured to use compressed textures. If not, it will output the original image.
 
 If the configuration of the compressed texture is founded, the image will be compressed according to the configuration.The compress texture configuration in the project settings is divided into different platforms, and the support of in the actual platform is also difference. **builder** will make certain elimination and priority selection of the configured texture format according to the **actual build platform**and the current **image texture transparency channel**. You can refer to the following example to understand this rule.
 
@@ -46,17 +46,15 @@ The user can customize the supported image assets for a platform and the priorit
 
 ![1](compress-texture/compress-1.jpg)
 
-**Example (1):**
-As the compress presets of the MiniGame platform shown in the figure, if the build target is **Huawei Quick Game**, **Builder** will not package the **PVR** texture format. For more details about the support of platforms, please refer to [Details of compressed texture support for platforms](##Details of compressed texture support for platforms)
+**Example (1)**: As the compress presets of the MiniGame platform shown in the figure, if the build target is **Huawei Quick Game**, **Builder** will not package the **PVR** texture format. For more details about the support of platforms, please refer to [Details of compressed texture support for platforms](##Details of compressed texture support for platforms)
 
 ![2](compress-texture/compress-2.jpg)
 
-**Example (2):**
-In the example picture above, both **ETC1** and **PVR** types are configured with RGB and RGBA two types of texture formats. In this case, **Builder** will be according to whether the current picture has a transparent channel to choose one of the same types of formats. The image asset in the example is with a transparent channel, then **Builder** will only pack a compressed texture format with REGA type. Of course, if there is only RGB picture format in the configuration, even if the current picture is with a transparent channel, it will be packaged normally.
+**Example (2)**: In the example picture above, both **ETC1** and **PVR** types are configured with RGB and RGBA two types of texture formats. In this case, **Builder** will be according to whether the current picture has a transparent channel to choose one of the same types of formats. The image asset in the example is with a transparent channel, then **Builder** will only pack a compressed texture format with REGA type. Of course, if there is only RGB picture format in the configuration, even if the current picture is with a transparent channel, it will be packaged normally.
 
 ## Details of compressed texture support for platforms
 
-Except for the `JPG and PNG` supported by all platforms, the details of other formats are as follows:
+Except for the `JPG` and `PNG` supported by all platforms, the details of other formats are as follows:
 
 | Platform          | TextureCompressTypes |
 | ----------------- | -------------------- |

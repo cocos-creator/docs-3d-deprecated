@@ -9,7 +9,7 @@ cc 类的各种特性是通过 `ccclass(name)` 的 cc 类选项参数来指定�
 
 ### 类名
 
-选项 `name` 指定了 cc 类的名称。cc 类名应该是 **独一无二** 的。
+选项 `name` 指定了 cc 类的名称，cc 类名应该是 **独一无二** 的。
 
 当需要相应的 cc 类时，可以通过其 cc 类名来查找，例如：
 
@@ -137,7 +137,7 @@ console.log(base instanceof Sub);  // false
 在构造函数中定义的实例变量不能被序列化，也不能在 **属性检查器** 中查看。
 
 ```typescript
-class Sprite{
+class Sprite {
     //声明变量
     url: string;
     id: number;
@@ -156,7 +156,7 @@ class Sprite{
 实例方法请在原型对象中声明：
 
 ```typescript
-class Sprite{
+class Sprite {
     text: string;
     constructor() {
         this.text = "this is sprite"
@@ -284,7 +284,7 @@ class Sprite {
         this.num = 1;
     }
 
-    @property({type:CCInteger})
+    @property({ type: CCInteger })
     private num = 0;
 }
 ```

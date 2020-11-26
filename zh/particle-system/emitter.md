@@ -6,7 +6,7 @@
 **position** | 相对于挂载节点的位置
 **rotation** | 相对于挂载节点的旋转
 **scale** | 相对于挂载节点的缩放
-**sphericalDirectionAmount** | 表示当前发射方向与当前位置到结点中心连线方向的插值
+**sphericalDirectionAmount** | 表示当前发射方向与当前位置到节点中心连线方向的插值
 **randomPositionAmount** | 表示与当前发射位置的偏移
 
 - **方块(Box)**  
