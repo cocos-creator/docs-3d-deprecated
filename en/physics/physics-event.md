@@ -4,9 +4,9 @@ The __physics event system__ in __Cocos Creator 3.0__ are divided into trigger e
 
 ## Trigger and Collider
 
-A Trigger is a Collider component whose `Is Trigger` property is `true`. When a collision occurs, the Trigger does not produce collision effect, so the Trigger is only used for collision detection.
+When colliding, the __collider__ will produce physical a behavior, however the __trigger__ will not. Therefore, the __trigger__ only performs collision detection. The __collider__ performs both collision detection and physical simulation. The difference between them:
 
-A Collider is a Collider component whose `Is Trigger` property is `false`. When a collision occurs, the Collider will produce collision effect. So the Collider can not only perform collision detection, but also produce physical effects.
+A Trigger is a Collider component whose `Is Trigger` property is `true`. When a collision occurs, the Trigger does not produce collision effect, so the Trigger is only used for collision detection.
 
 The differences between Trigger and Collider are as follows:
 
@@ -35,15 +35,15 @@ There are three types of Trigger Events:
 
 In order to add listeners to the trigger event, you need to add the corresponding callback by registering the event:
 
-1. Get `ColliderComponent` through `this.getComponent(ColliderComponent)`
-2. Register the callback of the corresponding event through the `on` or `once` method of `ColliderComponent`
+1. Get __Collider__ through `this.getComponent(Collider)`
+2. Register the callback of the corresponding event through the __on__ or __once__ method of __Collider__
 
 Code example:
 
 ```ts
 public start () {
-    let Collider = this.getComponent(ColliderComponent);
-    Collider.on('onTriggerStay', this.onTrigger, this);
+    let collider = this.getComponent(Collider);
+    collider.on('onTriggerStay', this.onTrigger, this);
 }
 
 private onTrigger (event: ITriggerEvent) {
@@ -67,15 +67,15 @@ Collision events are divided into three types:
 
 In order to add a listener to the collision event, you need to add the corresponding callback by registering the event:
 
-1. Get `ColliderComponent` through `this.getComponent(ColliderComponent)`
-2. Register the callback of the corresponding event through the `on` or `once` method of `ColliderComponent`
+1. Get __Collider__ through `this.getComponent(Collider)`
+2. Register the callback of the corresponding event through the __on__ or __once__ method of __Collider__
 
 Code example:
 
 ```ts
 public start () {
-    let Collider = this.getComponent(ColliderComponent);
-    Collider.on('onCollisionStay', this.onCollision, this);
+    let collider = this.getComponent(Collider);
+    collider.on('onCollisionStay', this.onCollision, this);
 }
 
 private onCollision (event: ICollisionEvent) {

@@ -39,7 +39,7 @@ newPmtl.restitution = 0.1;
 The physics material is set in units of collision bodies, and each `Collider` has a `material` property (when not set, `Collider` will refer to the default physics material in the physics system).
 The application to `Collider` is also divided into editor operation and code operation.
 
-To operate in the editor, just drag the asset into the `cc.PhysicMaterial` property box, as shown in the following figure:
+To operate in the editor, just drag the asset into the `cc.PhysicsMaterial` property box, as shown in the following figure:
 
 ![apply physics material](img/apply-pmtl.jpg)
 

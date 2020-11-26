@@ -35,8 +35,10 @@ Cocos Creator 3.0 的物理事件包括 **触发事件** 和 **碰撞事件**，
 
 需要通过注册事件来添加相应的回调：
 
-1. 通过 `this.getComponent(Collider)` 获取到 `Collider`
-2. 通过 `Collider` 的 `on` 或者 `once` 方法注册相应事件的回调
+1. 通过`this.getComponent(Collider)`获取到 __Collider__
+2. 通过 __Collider__ 的 __on__ 或者 __once__ 方法注册相应事件的回调
+
+> **注**：__Collider__ 是所有碰撞组件的父类。
 
 代码示例：
 
@@ -67,8 +69,8 @@ private onTrigger (event: ITriggerEvent) {
 
 监听碰撞事件需要通过注册事件来添加相应的回调：
 
-1. 通过 `this.getComponent(Collider)` 获取到 `Collider`
-2. 通过 `Collider` 的 `on` 或者 `once` 方法注册相应事件的回调
+1. 通过 `this.getComponent(Collider)` 获取到 __Collider__
+2. 通过 __Collider__ 的 __on__ 或者 __once__ 方法注册相应事件的回调
 
 代码示例：
 
@@ -83,6 +85,4 @@ private onCollision (event: ICollisionEvent) {
 }
 ```
 
-**注意**：
-1. `Collider` 是所有碰撞组件的父类。
-2. 目前碰撞事件以物理元素为单位，所有该元素上的碰撞器组件都会接收到碰撞事件。
+**注意**：目前碰撞事件以物理元素为单位，所有该元素上的碰撞器组件都会接收到碰撞事件。
