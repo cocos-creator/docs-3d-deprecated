@@ -66,18 +66,18 @@ export class Example extends Component {
 
 ## 事件派发
 
-发射事件有两种方式：`emit` 和 `dispatchEvent`。两者的区别在于，后者可以做事件传递。我们先通过一个简单的例子来了解 `emit` 事件
+触发事件有两种方式：`emit` 和 `dispatchEvent`。两者的区别在于，后者可以做事件传递。我们先通过一个简单的例子来了解 `emit` 事件
 
 ```ts
 // 事件派发的时候可以指定派发参数，参数最多只主持 5 个事件参数
 xxx.emit(type, ...args);
 ```
 
-需要说明的是，出于底层事件派发的性能考虑，这里最多只支持传递 5 个事件参数。所以在传参时需要注意控制参数的传递个数
+需要说明的是，出于底层事件派发的性能考虑，这里最多只支持传递 5 个事件参数。所以在传参时需要注意控制参数的传递个数。
 
 ## 事件参数说明
 
-在发射事件时，我们可以在 `emit` 函数的第二个参数开始传递我们的事件参数。同时，在 `on` 注册的回调里，可以获取到对应的事件参数。
+在触发事件时，我们可以在 `emit` 函数的第二个参数开始传递我们的事件参数。同时，在 `on` 注册的回调里，可以获取到对应的事件参数。
 
 ```ts
 import { _decorator, Component, Node } from "cc";
@@ -85,7 +85,7 @@ const { ccclass } = _decorator;
 
 @ccclass("Example")
 export class Example extends Component {
-    onLoad(){
+    onLoad () {
         this.node.on('foo', (arg1, arg2, arg3) => {
             console.log(arg1, arg2, arg3);  // print 1, 2, 3
         });
@@ -101,20 +101,20 @@ export class Example extends Component {
 
 需要说明的是，出于底层事件派发的性能考虑，这里最多只支持传递 5 个事件参数。所以在传参时需要注意控制参数的传递个数。
 
-## 派送事件
+## 派发事件
 
-上文提到了 `dispatchEvent` 方法，通过该方法发射的事件，会进入事件派送阶段。在 Cocos Creator 的事件派送系统中，我们采用冒泡派送的方式。冒泡派送会将事件从事件发起节点，不断地向上传递给他的父级节点，直到到达根节点或者在某个节点的响应函数中做了中断处理 `event.propagationStopped = true`。
+上文提到了 `dispatchEvent` 方法，通过该方法派发的事件，会进入事件派发阶段。在 Cocos Creator 的事件派发系统中，我们采用冒泡派发的方式。冒泡派发会将事件从事件发起节点，不断地向上传递给他的父级节点，直到到达根节点或者在某个节点的响应函数中做了中断处理 `event.propagationStopped = true`。
 
 ![bubble-event](bubble-event.png)
 
-如上图所示，当我们从节点 c 发送事件 `“foobar”`，倘若节点 a，b 均做了 `“foobar”` 事件的监听，则 事件会经由 c 依次传递给 b，a 节点。如：
+如上图所示，当我们从节点 c 发送事件 `“foobar”`，倘若节点 a，b 均做了 `“foobar”` 事件的监听，则事件会经由 c 依次传递给 b，a 节点。如：
 
 ```ts
 // 节点 c 的组件脚本中
 this.node.dispatchEvent( new Event.EventCustom('foobar', true) );
 ```
 
-如果我们希望在 b 节点截获事件后就不再将事件传递，我们可以通过调用 `event.propagationStopped = true` 函数来完成。具体方法如下：
+如果我们希望在 b 节点截获事件后就不再传递事件，我们可以通过调用 `event.propagationStopped = true` 函数来完成。具体方法如下：
 
 ```ts
 // 节点 b 的组件脚本中

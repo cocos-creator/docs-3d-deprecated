@@ -43,7 +43,7 @@ node.on('mouse-down', (event) => {
 | getDelta                  | Vec2              | 获取鼠标距离上一次事件移动的距离对象，对象包含 x 和 y 属性。                      |
 | getDeltaX                 | Number | 获取鼠标距离上一次事件移动的 X 轴距离。                      |
 | getDeltaY                 | Number | 获取鼠标距离上一次事件移动的 Y 轴距离。                      |
-| getButton                 | Number | cc.Event.EventMouse.BUTTON_LEFT 或 cc.Event.EventMouse.BUTTON_RIGHT 或 cc.Event.EventMouse.BUTTON_MIDDLE。                   ｜
+| getButton                 | Number | cc.Event.EventMouse.BUTTON_LEFT 或 cc.Event.EventMouse.BUTTON_RIGHT 或 cc.Event.EventMouse.BUTTON_MIDDLE。                     ｜
 | getUILocation             | Vec2          | 获取当前鼠标在 UI 窗口内相对于左下角的坐标位置，对象包含 x 和 y 属性。                      |
 | getUILocationX            | Number | 获取当前鼠标在 UI 窗口内相对于左下角的 X 轴位置。                      |
 | getUILocationY            | Number | 获取当前鼠标在 UI 窗口内相对于左下角的 Y 轴位置。                      |
