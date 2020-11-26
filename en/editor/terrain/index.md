@@ -18,7 +18,7 @@ Two steps are required to create a terrain:
 ## Terrain component properties
 
 | Parameter | Description |
-| :-----| ----: |
+|:-----|:----|
 | Asset | Terrain asset |
 | EffectAsset | Terrain effect asset |
 | ReceiveShadow | Accept the shadow |
