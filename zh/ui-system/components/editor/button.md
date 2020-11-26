@@ -84,7 +84,7 @@ const { ccclass, property } = _decorator;
 
 @ccclass("example")
 export class example extends Component {
-    onLoad(){
+    onLoad () {
         const clickEventHandler = new EventHandler();
         clickEventHandler.target = this.node; // 这个 node 节点是你的事件处理代码组件所属的节点
         clickEventHandler.component = 'example';// 这个是代码文件名
@@ -95,7 +95,7 @@ export class example extends Component {
         button.clickEvents.push(clickEventHandler);
     }
 
-    callback(event: Event, customEventData: string){
+    callback (event: Event, customEventData: string) {
         // 这里 event 是一个 Touch Event 对象，你可以通过 event.target 取到事件的发送节点
         const node = event.target as Node;
         const button = node.getComponent(Button);
@@ -119,11 +119,11 @@ const { ccclass, property } = _decorator;
 export class example extends Component {
     @property(Button)
     button: Button | null = null;
-    onLoad(){
-        this.button.node.on('click', this.callback, this);
+    onLoad () {
+        this.button.node.on(Button.EventType.CLICK, this.callback, this);
     }
 
-    callback(button: Button) {
+    callback (button: Button) {
         // 注意这种方式注册的事件，无法传递 customEventData
     }
 }

@@ -79,12 +79,12 @@ There are two ways to add a callback through the script.
 1. The event callback added by this method is the same as the event callback added by the editor, all added by the script. First you need to construct a `EventHandler` object, and then set the corresponding `target`, `component`, `handler` and `customEventData` parameters.
 
     ```ts
-    import { _decorator, Component, Event, Node, ButtonComponent, EventHandler } from "cc";
+    import { _decorator, Component, Event, Node, Button, EventHandler } from "cc";
     const { ccclass, property } = _decorator;
 
     @ccclass("example")
     export class example extends Component {
-        onLoad(){
+        onLoad () {
             const clickEventHandler = new EventHandler();
             // This node is the node to which your event handler code component belongs
             clickEventHandler.target = this.node;
@@ -93,14 +93,14 @@ There are two ways to add a callback through the script.
             clickEventHandler.handler = 'callback';
             clickEventHandler.customEventData = 'foobar';
 
-            const button = this.node.getComponent(ButtonComponent);
+            const button = this.node.getComponent(Button);
             button.clickEvents.push(clickEventHandler);
         }
 
-        callback(event: Event, customEventData: string){
+        callback (event: Event, customEventData: string) {
             // The event here is a Touch object, and you can get the send node of the event by event.target
             const node = event.target as Node;
-            const button = node.getComponent(ButtonComponent);
+            const button = node.getComponent(Button);
             console.log(customEventData); // foobar
         }
     }
@@ -110,18 +110,18 @@ There are two ways to add a callback through the script.
 
     ```ts
     // Suppose we add an event handler callback to the onLoad method of a component and handle the event in the callback function:
-    import { _decorator, Component, ButtonComponent } from "cc";
+    import { _decorator, Component, Button } from "cc";
     const { ccclass, property } = _decorator;
 
     @ccclass("example")
     export class example ex tends Component {
-        @property(ButtonComponent)
-        button: ButtonComponent | null = null;
-        onLoad(){
-            this.button.node.on('click', this.callback, this);
+        @property(Button)
+        button: Button | null = null;
+        onLoad () {
+            this.button.node.on(Button.EventType.CLICK, this.callback, this);
         }
 
-        callback(button: ButtonComponent){
+        callback (button: Button) {
             // Note that events registered this way cannot pass customEventData
         }
     }
