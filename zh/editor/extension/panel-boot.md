@@ -51,7 +51,7 @@ exports.template = readFileSync(join(__dirname, '../static/default.html'), 'utf8
 
 当定义好 template 后，面板被打开的时候，将自动把 template 的内容渲染到界面上。
 
-此外编辑器也提供了一些 custom element，可以参考 [UI组件](editor/extension/ui.md) 使用。
+此外编辑器也提供了一些 custom element，可以参考 [UI组件](./editor/extension/ui.md) 使用。
 
 ## style
 

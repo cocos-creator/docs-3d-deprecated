@@ -86,7 +86,7 @@ It is necessary for the main character to be affected when the mouse moves. To d
 
    ![create player script](./images/create-player-script.gif)
 
-> **Note:** The name of the script in __Cocos Creator 3D__ is the name of the component. This name is case sensitive! If the capitalization of the component name is incorrect, the component cannot be used correctly by the name!
+> **Note**: The name of the script in __Cocos Creator 3D__ is the name of the component. This name is case sensitive! If the capitalization of the component name is incorrect, the component cannot be used correctly by the name!
 
 #### Writing script code
 There are already some pre-set code blocks in the `PlayerController` script. Example:
@@ -275,7 +275,7 @@ It is necesssary to make the basic element `cube` of the road into a __Prefab__,
    ![create cube prefab](./images/create-cube-prefab.gif)
 
 ### Adding the automatic road creation
-A very long road is needed. The ideal method is to dynamically increase the length of the road, so that the `Player` can run forever. First, generate a fixed-length road with a length that is arbitrary. To do so, replace the code in the `GameManager` script with the following code:
+A very long road is needed. The ideal method is to dynamically increase the length of the road, so that the `Player` can run forever. First, generate a fixed-length road with a length that is arbitrary. To do this, replace the code in the `GameManager` script with the following code:
 
 ```ts
 import { _decorator, Component, Prefab, instantiate, Node, CCInteger} from "cc";

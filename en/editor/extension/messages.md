@@ -16,7 +16,7 @@ The first is called ordinary messages, and the second is called broadcast messag
 
 ### General News
 
-It can be understood as a kind of external api, for example, **scene editor** defines a **message** API-query-node (query-node).
+It can be understood as a kind of external api, for example, **scene editor** defines a **message** API `query-node`.
 
 ```json
 {
