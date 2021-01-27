@@ -1,5 +1,7 @@
 # Cocos Creator 3D User Manual
 
+## NOTICE: This repository is no longer maintained because the dedicated Cocos Creator 3d engine have been fully merged into Cocos Creator mainstream version 3.0, so please submit any documentation PRs or issues to [Cocos Creator docs repo](https://github.com/cocos-creator/creator-docs).
+
 ## Requirements
 
 This documentation site is powered by [GitBook](https://www.gitbook.com/).
