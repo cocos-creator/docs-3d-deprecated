@@ -89,6 +89,7 @@
 
 - [材质](material-system/overview.md)
   - [YAML 101](material-system/yaml-101.md)
+  - [从 v2.x 升级的用户应该参考升级指南](material-system/effect2.x_TO_3.x.md)
   - [Effect Syntax](material-system/effect-syntax.md)
   - [Pass Params](material-system/pass-parameter-list.md)
   - [Builtin Shader Uniforms](material-system/builtin-shader-uniforms.md)
