@@ -1,5 +1,7 @@
 # 材质系统总览
 
+[从 v2.x 升级的用户应该参考升级指南](effect2.x_TO_3.x.md)
+
 材质系统控制着每个模型最终的着色流程与顺序，在引擎内相关类间结构如下：
 
 [![Assets](material.png "Click to view diagram source")](material.dot)
